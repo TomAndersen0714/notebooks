@@ -112,13 +112,11 @@ PS: Lambda表达式(Lambda Expression), 个人理解, 可以看做是为实现�
      - anonymous class
    - Static nested class
 
+显然, 在"The Java Tutorials"中, Non-static nested class(Inner class)的定义部分, 缺少了关于既非local class, 也非anonymous class的这一类class的分类和定义. 
+
 其中各个术语的定义对应的韦恩图如下: 
 
-<img src="images/Java%20Nested%20Class(%E5%B5%8C%E5%A5%97%E7%B1%BB)%E5%92%8CInner%20Class(%E5%86%85%E9%83%A8%E7%B1%BB)/The_Java_tutorials-Java_classes.jpg" alt="The_Java_tutorials-Java_classes" style="zoom:50%;" />
-
-
-
-显然, 在"The Java Tutorials"中, 在Non-static nested class(Inner class)这一部分, 缺少了关于既非local class, 也非anonymous class的这一类class的分类和定义. 
+<img src="images/Java_Nested_Class(%E5%B5%8C%E5%A5%97%E7%B1%BB)%E5%92%8CInner_Class(%E5%86%85%E9%83%A8%E7%B1%BB)/The_Java_tutorials-Java_classes.jpg" alt="The_Java_tutorials-Java_classes" style="zoom:50%;" />
 
 
 
@@ -133,13 +131,11 @@ PS: Lambda表达式(Lambda Expression), 个人理解, 可以看做是为实现�
      - static member class
      - non-static member class
 
+相较于"The Java Tutorials", "The Java Language Specification, Java SE 11 Edition"中的class分类体系则显然更加全面一些.
+
 其中各个术语的定义对应的韦恩图如下: 
 
-<img src="images/Java%20Nested%20Class(%E5%B5%8C%E5%A5%97%E7%B1%BB)%E5%92%8CInner%20Class(%E5%86%85%E9%83%A8%E7%B1%BB)/JLS-Java_classes.jpg" alt="JLS-Java_classes" style="zoom:50%;" />
-
-
-
-相较于"The Java Tutorials", "The Java Language Specification, Java SE 11 Edition"中的class分类体系显然更加全面一些.
+<img src="images/Java_Nested_Class(%E5%B5%8C%E5%A5%97%E7%B1%BB)%E5%92%8CInner_Class(%E5%86%85%E9%83%A8%E7%B1%BB)/JLS-Java_classes.jpg" alt="JLS-Java_classes" alignstyle="zoom:50%;" />
 
 
 
@@ -155,7 +151,7 @@ PS: Lambda表达式(Lambda Expression), 个人理解, 可以看做是为实现�
 
 
 
-## Reference
+## References
 
 1. [The Java Tutorials - Nested Classes](https://docs.oracle.com/javase/tutorial/java/javaOO/nested.html)
 2. [The Java Tutorials - Why Use Nested Classes?](https://docs.oracle.com/javase/tutorial/java/javaOO/nested.html)
