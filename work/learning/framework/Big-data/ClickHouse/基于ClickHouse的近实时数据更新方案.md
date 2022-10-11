@@ -16,23 +16,31 @@ ClickHouse作为近几年的主流OLAP型数据库，其本身也是基于MPP(Ma
 
 ### 1. ORDER BY + LIMIT BY
 
+**官方文档: **
 
+- https://clickhouse.com/docs/en/sql-reference/statements/select/limit-by/
 
 **使用注意事项:**  
 
 1. 为了避免数据覆盖更新的频率过高，导致表数据量膨胀系数过大，进而使得查询性能下降，建议和ReplacingMergeTree、CollapsingMergeTree等支持后台自动合并的表引擎一起使用，以尽量减少过期的无效数据存储
+2. 从测试结果来看，LIMIT BY子句在合并数据时内存开销与数据量成正相关，不适合大数据量的合并去重操作
 
 
 
-### 2. GROUP BY + argMax、argMin
+### 2. GROUP BY + argMax
 
+**官方文档: **
 
+- https://clickhouse.com/docs/en/sql-reference/aggregate-functions/reference/argmax/
+- https://clickhouse.com/docs/en/sql-reference/aggregate-functions/reference/argmin/
 
 
 
 ### 3. ReplacingMergeTree + FINAL(+ PREWHERE)
 
+**官方文档: **
 
+- https://clickhouse.com/docs/en/engines/table-engines/mergetree-family/replacingmergetree
 
 **使用注意事项: **
 
@@ -44,13 +52,18 @@ ClickHouse作为近几年的主流OLAP型数据库，其本身也是基于MPP(Ma
 
     > [VersionedCollapsingMergeTree#Selecting Data](https://clickhouse.com/docs/en/engines/table-engines/mergetree-family/versionedcollapsingmergetree/#selecting-data): ClickHouse does not guarantee that all of the rows with the same primary key will be in the same resulting data part or even on the same physical server. This is true both for writing the data and for subsequent merging of the data parts.
 
-4. SELECT查询中使用FINAL关键字时，将不会自动开启PREWHERE子句的优化功能，虽然ClickHouse提供了`optimize_move_to_prewhere`和`optimize_move_to_prewhere_if_final`配置来控制这一行为，但在本文实验采用的ClickHouse版本(20.4.2.9)中，这一参数并未起到任何实际作用，只能通过显式使用`PREWHERE`子句来声明筛选条件，以实现非主键字段的谓词下推。([PREWHERE Clause](https://clickhouse.com/docs/en/sql-reference/statements/select/prewhere/))
+4. SELECT查询中使用`FINAL`关键字时，将不会自动开启PREWHERE子句的优化功能，虽然ClickHouse提供了`optimize_move_to_prewhere`和`optimize_move_to_prewhere_if_final`配置来控制这一行为，但在本文实验采用的ClickHouse(20.4.2.9)中，这一参数并未起到任何实际作用，只能通过显式使用`PREWHERE`子句来声明筛选条件，以实现非主键字段的谓词下推，提升查询效率。([PREWHERE Clause](https://clickhouse.com/docs/en/sql-reference/statements/select/prewhere/))。
+    PS: 如果PREWHERE只能用于筛选只读字段，如果筛选可修改字段，会将旧数据一起查询出来
 
 
 
 ### 4. (Versioned)CollapsingMergeTree + FINAL(+ PREWHERE)
 
+**官方文档: **
 
+- https://clickhouse.com/docs/en/engines/table-engines/mergetree-family/collapsingmergetree/
+
+- https://clickhouse.com/docs/en/engines/table-engines/mergetree-family/versionedcollapsingmergetree
 
 **使用注意事项: **
 
@@ -64,11 +77,11 @@ ClickHouse作为近几年的主流OLAP型数据库，其本身也是基于MPP(Ma
 
 ### 5. Mutation
 
-
+**官方文档:** https://clickhouse.com/docs/en/sql-reference/statements/alter/
 
 **使用注意事项: **
 
-1. Mutation操作是很重的异步操作，尤其是在采用分布式执行时，并且数据一致性能力很弱，不建议在实际生产环境中频繁使用
+1. Mutation操作是很重的异步操作，尤其是在分布式语句中执行时，且此类操作的数据一致性能力很弱，不建议在实际生产环境中频繁使用
 2. 提交Mutation查询时，其筛选条件(filter expression)不能过于复杂，否则可能造成Mutation操作过度消耗集群资源，可以通过[system.mutations](https://clickhouse.com/docs/en/operations/system-tables/mutations/#system_tables-mutations)表的`is_done`字段来判断mutation操作的执行状态。如果Mutation操作影响正常使用，可以使用[KILL MUTATION](https://clickhouse.com/docs/en/sql-reference/statements/kill/#kill-mutation)操作来终止Mutation的执行。
 
 
@@ -77,11 +90,13 @@ ClickHouse作为近几年的主流OLAP型数据库，其本身也是基于MPP(Ma
 
 ## 性能测试
 
-### 测试环境
-
 ClickHouse版本：`20.4.2.9`
 
-### 方案1: ORDER BY + LIMIT BY
+
+
+### 测试过程
+
+#### 方案1: ORDER BY + LIMIT BY
 
 **测试表**
 
@@ -138,7 +153,7 @@ LIMIT 1 BY user_id
 **性能测试**
 
 ```sql
--- 简单性能测试用例
+-- 性能测试用例
 SELECT COUNT(1)
 FROM (
     SELECT *
@@ -162,11 +177,97 @@ MemoryTracker: Peak memory usage (for query): 2.56 GiB.
 
 
 
-### 方案2: GROUP BY + argMax、argMin
+#### 方案2: GROUP BY + argMax
+
+**测试表**
+
+```sql
+-- DROP TABLE IF EXISTS update_test_group_by
+CREATE TABLE update_test_group_by
+(
+    `user_id` String,
+    `score` String,
+    `update_time` DateTime
+)
+ENGINE = MergeTree()
+ORDER BY `user_id`
+```
 
 
 
-### 方案3: ReplacingMergeTree + FINAL
+**写入测试数据**
+
+```sql
+INSERT INTO TABLE update_test_group_by(user_id, score)
+WITH(
+  SELECT ['A','B','C','D','E','F','G']
+)AS dict
+SELECT
+    number AS user_id,
+    dict[number%7+1] AS score
+FROM numbers(30000000)
+```
+
+
+
+**写入更新数据**
+
+```sql
+INSERT INTO TABLE update_test_group_by(user_id, score, update_time)
+WITH(
+  SELECT ['AA','BB','CC','DD','EE','FF','GG']
+)AS dict
+SELECT
+    number AS user_id,
+    dict[number%7+1] AS score,
+    now() AS update_time
+FROM numbers(5000000)
+```
+
+
+
+**查询数据更新结果**
+
+```sql
+SELECT
+    user_id,
+    argMax(score, update_time) AS score,
+    max(update_time) AS utime
+FROM update_test_group_by
+WHERE user_id = '200'
+GROUP BY user_id
+```
+
+
+
+**性能测试**
+
+```sql
+-- 性能测试用例
+SELECT COUNT(1)
+FROM (
+    SELECT
+        user_id,
+        argMax(score, update_time) AS score,
+        max(update_time) AS utime
+    FROM update_test_group_by
+    GROUP BY user_id
+)
+
+-- 性能测试结果
+MemoryTracker: Peak memory usage (for query): 1.68 GiB.
+1 rows in set. Elapsed: 5.595 sec. Processed 35.00 million rows, 717.78 MB (6.26 million rows/s., 128.29 MB/s.)
+
+MemoryTracker: Peak memory usage (for query): 1.27 GiB.
+1 rows in set. Elapsed: 5.182 sec. Processed 35.00 million rows, 717.78 MB (6.75 million rows/s., 138.51 MB/s.)
+
+MemoryTracker: Peak memory usage (for query): 1.27 GiB.
+1 rows in set. Elapsed: 5.238 sec. Processed 35.00 million rows, 717.78 MB (6.68 million rows/s., 137.03 MB/s.)
+```
+
+
+
+#### 方案3: ReplacingMergeTree + FINAL
 
 **测试表**
 
@@ -221,7 +322,7 @@ WHERE user_id = '2'
 **性能测试**
 
 ```sql
--- 简单性能测试用例
+-- 性能测试用例
 SELECT COUNT(1)
 FROM update_test_replacing FINAL
 
@@ -238,7 +339,7 @@ MemoryTracker: Peak memory usage (for query): 38.12 MiB
 
 
 
-### 方案4: CollapsingMergeTree + FINAL
+#### 方案4: CollapsingMergeTree + FINAL
 
 **测试表**
 
@@ -308,7 +409,7 @@ SELECT * FROM update_test_collapsing FINAL WHERE user_id = '2'
 **性能测试**
 
 ```sql
--- 简单性能测试用例
+-- 性能测试用例
 SELECT COUNT(1)
 FROM update_test_collapsing FINAL
 
@@ -325,12 +426,60 @@ MemoryTracker: Peak memory usage (for query): 22.13 MiB.
 
 
 
+### 性能测试结果
+
+- **方案1(ORDER BY + LIMIT BY):**
+
+MemoryTracker: Peak memory usage (for query): 2.56 GiB
+1 rows in set. Elapsed: 11.920 sec. Processed 35.00 million rows, 717.78 MB (2.94 million rows/s., 60.22 MB/s.)
+
+MemoryTracker: Peak memory usage (for query): 2.56 GiB.
+1 rows in set. Elapsed: 13.272 sec. Processed 35.00 million rows, 717.78 MB (2.64 million rows/s., 54.08 MB/s.)
+
+MemoryTracker: Peak memory usage (for query): 2.56 GiB.
+1 rows in set. Elapsed: 12.043 sec. Processed 35.00 million rows, 717.78 MB (2.91 million rows/s., 59.60 MB/s.)
+
+- **方案2(GROUP BY + argMax):**
+
+MemoryTracker: Peak memory usage (for query): 1.68 GiB.
+1 rows in set. Elapsed: 5.595 sec. Processed 35.00 million rows, 717.78 MB (6.26 million rows/s., 128.29 MB/s.)
+
+MemoryTracker: Peak memory usage (for query): 1.27 GiB.
+1 rows in set. Elapsed: 5.182 sec. Processed 35.00 million rows, 717.78 MB (6.75 million rows/s., 138.51 MB/s.)
+
+MemoryTracker: Peak memory usage (for query): 1.27 GiB.
+1 rows in set. Elapsed: 5.238 sec. Processed 35.00 million rows, 717.78 MB (6.68 million rows/s., 137.03 MB/s.)
+
+- **方案3(ReplacingMergeTree + FINAL(+ PREWHERE)):**
+
+MemoryTracker: Peak memory usage (for query): 34.56 MiB.
+1 rows in set. Elapsed: 1.783 sec. Processed 35.00 million rows, 717.78 MB (19.63 million rows/s., 402.62 MB/s.)
+
+MemoryTracker: Peak memory usage (for query): 34.69 MiB.
+1 rows in set. Elapsed: 1.777 sec. Processed 35.00 million rows, 717.78 MB (19.70 million rows/s., 404.03 MB/s.)
+
+MemoryTracker: Peak memory usage (for query): 38.12 MiB
+1 rows in set. Elapsed: 1.684 sec. Processed 35.00 million rows, 717.78 MB (20.79 million rows/s., 426.27 MB/s.)
+
+- **方案4((Versioned)CollapsingMergeTree + FINAL(+ PREWHERE)):**
+
+MemoryTracker: Peak memory usage (for query): 22.15 MiB.
+1 rows in set. Elapsed: 2.012 sec. Processed 40.00 million rows, 696.67 MB (19.88 million rows/s., 346.30 MB/s.)
+
+MemoryTracker: Peak memory usage (for query): 22.13 MiB.
+1 rows in set. Elapsed: 2.224 sec. Processed 40.00 million rows, 696.67 MB (17.99 million rows/s., 313.27 MB/s.)
+
+MemoryTracker: Peak memory usage (for query): 22.13 MiB.
+1 rows in set. Elapsed: 2.104 sec. Processed 40.00 million rows, 696.67 MB (19.01 million rows/s., 331.08 MB/s.)
+
+
+
 ## 使用参考建议
 
-1. 查询结果数据量较小，不更改表引擎，选择方案1(ORDER BY + LIMIT BY)
-2. 查询结果数据量较大，不更改表引擎，选择方案2(GROUP BY + argMax、argMin)
-3. 可以更改表引擎，优先选择方案3(ReplacingMergeTree + FINAL(+ PREWHERE))，其次就是方案4(ReplacingMergeTree + FINAL(+ PREWHERE))
-4. 临时性手动修改表数据，选择方案5(Mutation)
+1. 查询结果数据量较小，不支持更改表引擎，不改SQL主体，选择方案1(ORDER BY + LIMIT BY)
+2. 查询结果数据量中等，不支持更改表引擎，修改主体SQL，选择方案2(GROUP BY + argMax)
+3. 支持修改表引擎，优先选择方案3(ReplacingMergeTree + FINAL(+ PREWHERE))，其次有仅删除类需求，选择方案4(ReplacingMergeTree + FINAL(+ PREWHERE))
+4. 临时性手动修改表数据，但非生产环境使用，选择方案5(Mutation)
 
 
 
