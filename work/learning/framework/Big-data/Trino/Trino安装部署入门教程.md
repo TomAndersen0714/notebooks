@@ -174,9 +174,53 @@ WHERE cast(shop_id as varchar) IN (
 ### 跨数据源ETL
 
 ```sql
+trino> DESCRIBE mongodb.xqc.shop;
+     Column     |     Type     | Extra | Comment 
+----------------+--------------+-------+---------
+ create_time    | timestamp(3) |       |         
+ update_time    | timestamp(3) |       |         
+ company_id     | ObjectId     |       |         
+ shop_id        | ObjectId     |       |         
+ platform       | varchar      |       |         
+ seller_nick    | varchar      |       |         
+ plat_shop_name | varchar      |       |         
+ plat_shop_id   | varchar      |       |         
+(8 rows)
 ```
 
 
+
+```sql
+trino> DESCRIBE clickhouse.trino.xqc_shop_all;
+     Column     |   Type    | Extra | Comment 
+----------------+-----------+-------+---------
+ create_time    | varbinary |       |         
+ update_time    | varbinary |       |         
+ company_id     | varbinary |       |         
+ shop_id        | varbinary |       |         
+ platform       | varbinary |       |         
+ seller_nick    | varbinary |       |         
+ plat_shop_name | varbinary |       |         
+ plat_shop_id   | varbinary |       |         
+(8 rows)
+```
+
+
+
+```sql
+INSERT INTO clickhouse.trino.xqc_shop_all
+SELECT
+    to_utf8(CAST(create_time AS varchar)) AS create_time,
+    to_utf8(CAST(update_time AS varchar)) AS update_time,
+    to_utf8(CAST(company_id AS varchar)) AS company_id,
+    to_utf8(CAST(shop_id AS varchar)) AS shop_id,
+    to_utf8(CAST(platform AS varchar)) AS platform,
+    to_utf8(CAST(seller_nick AS varchar)) AS seller_nick,
+    to_utf8(CAST(plat_shop_name AS varchar)) AS plat_shop_name,
+    to_utf8(CAST(plat_shop_id AS varchar)) AS plat_shop_id
+FROM mongodb.xqc.shop
+LIMIT 10
+```
 
 
 
