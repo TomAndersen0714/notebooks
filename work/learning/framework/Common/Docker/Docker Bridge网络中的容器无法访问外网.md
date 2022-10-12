@@ -11,8 +11,6 @@
 3. 宿主机外部无法访问Docker容器端口
 4. Docker以默认的Bridge网络模式启动容器后，`brctl show`依旧显示Docker的默认网桥docker0的bridge id依旧为8000.000000000000
 
-
-
 ### 系统版本
 
 ```shell
@@ -24,6 +22,10 @@ CentOS Linux release 7.9.2009 (Core)
 ```
 
 
+
+### 问题原因
+
+网上部分大佬推测是docker加载内核的bridge.ko驱动模块失败，导致docker network创建网络时，其自动附带创建的网桥无法转发数据包
 
 
 
@@ -77,11 +79,11 @@ systemctl start docker
 
 ### 方案二：新建Docker网桥和网络
 
-手动创建另外一个网桥，写好子网网段、子网掩码、广播网段（可选）
+1. 手动创建另外一个网桥
 
-docker network创建一个网络，使用相同的网桥名字，子网网段、掩码、网关，即可
-
-后续创建容器，使用`--network=<network_name>`连接对应的docker network即可
+2. （可选）设置对应的子网网段、子网掩码、广播网段
+3. docker network创建一个网络，使用相同的网桥名字。PS：如果设置了步骤2，则需要设置成和步骤2相同的子网网段、掩码、网关
+4. 后续创建容器，使用`--network=<network_name>`连接新建的docker network即可
 
 
 
@@ -101,26 +103,18 @@ reboot
 
 
 
-### 使用注意事项
+## 使用注意事项
 
-方案一重建docker默认网桥和网络：不需要重建容器，但是需要重启docker服务
+方案一(重建Docker默认网桥和网络)：不需要重建容器，但是需要重启docker服务
 
-方案二新建docker网桥和网络：不需要重启docker服务，但是需要重建容器
+方案二(新建Docker网桥和网络)：不需要重启docker服务，但是需要重建容器
 
-方案三升级Linux内核：需要重启服务器
+方案三(升级Linux内核)：需要重启服务器
 
-
-
-## 总结
-
-即不要使用docker network为你创建的网桥，要先自己手动创建网桥（包括容器的默认网桥），然后指定网桥名称，无需重启Docker
-
-网上部分文档显示是docker加载内核的bridge.ko驱动异常，导致docker network创建网络时，自动创建的网桥无法正常使用
-
-
+总而言之，遇到这种问题时，建议不要使用docker为你创建的网桥设备
 
 ## 参考链接
 
-[Docker网桥模式ping不通宿主机](https://blog.csdn.net/qq_36059826/article/details/106550332)
-
 [centos7中docker网络docker0与容器间网络不通的坑](https://blog.csdn.net/weixin_42288415/article/details/105366176)
+
+[Docker网桥模式ping不通宿主机](https://blog.csdn.net/qq_36059826/article/details/106550332)
