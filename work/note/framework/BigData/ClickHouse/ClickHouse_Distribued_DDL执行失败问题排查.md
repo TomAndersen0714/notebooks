@@ -32,11 +32,11 @@
 
 ### 方法一：github issue
 
-#### 问题检索
+#### issue检索
 
 https://github.com/ClickHouse/ClickHouse/issues?q=Cannot+execute+replicated+DDL+query+on+leader+
 
-#### issue
+#### 相关issue
 
 https://github.com/ClickHouse/ClickHouse/issues/11884
 
@@ -148,6 +148,12 @@ bool DDLWorker::tryExecuteQueryOnLeaderReplica(
 ```
 
 
+
+
+
+## 问题总结
+
+主要是由于ClickHouse在执行针对Replicated表执行DDL语句时，采取的是
 
 
 
