@@ -382,7 +382,7 @@ systemctl start cloudera-scm-agent
 
 
 
-### 5.创建CDH集群
+### 5.管理CDH集群
 
 #### a) 登录CM Server的Web管理页面
 
@@ -442,6 +442,26 @@ http://znzjk-134218-test-mini-bigdata-clickhouse:7180，初始账号密码皆为
 
 
 
+#### d) 删除集群节点
+
+Cloudera Manager从集群中删除节点有两个步骤，与添加节点进入集群是相反的两个步骤：
+
+第一个步骤是从CDH集群中删除节点，即针对对应节点上的各个CDH角色进行解除授权，停止并删除这些角色，但此时对应的节点依旧被管理在当前的CM集群中；
+
+第二个步骤是从CM集群中删除节点，在第一阶段结束之后，对应的节点依旧存在CM集群中，能够看到对应主机的各种物理资源使用状态，后续依旧可以将其添加到CDH集群中，或者将其删除
+
+PS：[官方链接](https://docs.cloudera.com/documentation/enterprise/6/6.3/topics/cm_mc_delete_hosts.html#cmug_topic_7_9)
+
+###### 步骤一：从CDH集群中删除节点
+
+https://docs.cloudera.com/documentation/enterprise/6/6.3/topics/cm_mc_delete_hosts.html#cmug_topic_7_9__section_c5k_xlm_4n
+
+###### 步骤二：从CM集群中删除节点
+
+https://docs.cloudera.com/documentation/enterprise/6/6.3/topics/cm_mc_delete_hosts.html#cmug_topic_7_9__section_u1w_wlm_4n
+
+
+
 ## 五、Q&A
 
 **Q1**：**HiveServer启动后角色日志报错，进程终止**
@@ -482,12 +502,12 @@ sudo -u hdfs hdfs dfs -chmod 777 /tmp
 
 ## 六、参考链接
 
-- [Adding a Host to the Cluster - Adding a Host by Installing the Packages Using Your Own Method | 6.3.x | Cloudera Documentation](https://docs.cloudera.com/documentation/enterprise/6/6.3/topics/cm_mc_adding_hosts.html#cmug_topic_7_5_2)
-- [Cloudera Installation Guide | 6.3.x | Cloudera Documentation](https://docs.cloudera.com/documentation/enterprise/6/6.3/topics/installation.html)
-- [Install and Configure MySQL for Cloudera Software | 6.3.x | Cloudera Documentation](https://docs.cloudera.com/documentation/enterprise/6/6.3/topics/cm_ig_mysql.html#concept_dsg_3mq_bl)
-- [Step 5: Set up the Cloudera Manager Database | 6.3.x | Cloudera Documentation](https://docs.cloudera.com/documentation/enterprise/6/6.3/topics/prepare_cm_database.html#cmig_topic_5_2)
-- [Parcels | 6.3.x | Cloudera Documentation](https://docs.cloudera.com/documentation/enterprise/6/6.3/topics/cm_ig_parcels.html)
-- [Recommended Cluster Hosts and Role Distribution | 6.3.x | Cloudera Documentation](https://docs.cloudera.com/documentation/enterprise/6/6.3/topics/cm_ig_host_allocations.html#concept_f43_j4y_dw)
+1. [Adding a Host to the Cluster - Adding a Host by Installing the Packages Using Your Own Method | 6.3.x | Cloudera Documentation](https://docs.cloudera.com/documentation/enterprise/6/6.3/topics/cm_mc_adding_hosts.html#cmug_topic_7_5_2)
+2. [Cloudera Installation Guide | 6.3.x | Cloudera Documentation](https://docs.cloudera.com/documentation/enterprise/6/6.3/topics/installation.html)
+3. [Install and Configure MySQL for Cloudera Software | 6.3.x | Cloudera Documentation](https://docs.cloudera.com/documentation/enterprise/6/6.3/topics/cm_ig_mysql.html#concept_dsg_3mq_bl)
+4. [Step 5: Set up the Cloudera Manager Database | 6.3.x | Cloudera Documentation](https://docs.cloudera.com/documentation/enterprise/6/6.3/topics/prepare_cm_database.html#cmig_topic_5_2)
+5. [Parcels | 6.3.x | Cloudera Documentation](https://docs.cloudera.com/documentation/enterprise/6/6.3/topics/cm_ig_parcels.html)
+6. [Recommended Cluster Hosts and Role Distribution | 6.3.x | Cloudera Documentation](https://docs.cloudera.com/documentation/enterprise/6/6.3/topics/cm_ig_host_allocations.html#concept_f43_j4y_dw)
 
 
 

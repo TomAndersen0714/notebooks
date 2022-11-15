@@ -1,8 +1,10 @@
-# CDGA学习笔记
+# DAMA-DMBOK2词汇表
 
 ## chapter 1. 数据管理
 
+Data Management(数据管理)
 
+Data Management Professional(数据管理专业人员)
 
 
 
@@ -67,4 +69,3 @@
 
 
 ## chapter 17. 数据管理和组织变革管理
-
