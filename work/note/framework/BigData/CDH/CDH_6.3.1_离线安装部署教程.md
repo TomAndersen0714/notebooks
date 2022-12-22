@@ -325,6 +325,10 @@ rpm -ivh cloudera-manager-daemons-6.3.1-1466458.el7.x86_64.rpm --nodeps --force
 rpm -ivh cloudera-manager-agent-6.3.1-1466458.el7.x86_64.rpm --nodeps --force
 ```
 
+**一般情况下都会出现“error: Failed dependencies”错误，即需要安装前置依赖，使用“`yum -y install <package1> <package2>...`”命令挨个安装即可**
+
+**其中“/lib/lsb/init-functions is needed”报错，需要安装lsb，即“`yum -y install lsb`”**
+
 
 
 #### e)（集群）修改CM Agent配置，手动指定Server节点
