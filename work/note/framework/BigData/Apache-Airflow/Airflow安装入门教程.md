@@ -17,9 +17,7 @@
 
 
 
-本文主要采用PyPI工具安装Airflow，并以standalone形式初始化各个组件
-
-
+本文主要采用PyPI工具安装Airflow，并以`standalone`形式初始化各个组件
 
 ## 具体步骤
 
@@ -85,7 +83,7 @@ airflow默认会创建`admin`用户，而其默认密码会打印在`$AIRFLOW_HO
 
 报错信息：`error: sqlite C library version too old (< 3.15.0)`
 
-
+解决方案：《sqlite3安装升级入门教程》
 
 
 
