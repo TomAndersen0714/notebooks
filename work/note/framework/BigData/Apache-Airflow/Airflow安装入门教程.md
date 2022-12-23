@@ -77,6 +77,27 @@ airflow默认会创建`admin`用户，而其默认密码会打印在`$AIRFLOW_HO
 
 
 
+或者也可以手动依次执行命令
+
+```shell
+airflow db init
+
+airflow users create \
+    --username admin \
+    --firstname Peter \
+    --lastname Parker \
+    --role Admin \
+    --email spiderman@superhero.org
+
+airflow webserver --port 8080
+
+airflow scheduler
+```
+
+
+
+
+
 ## 常见问题
 
 ### Q1: 默认sqlite3版本太低，需要升级
