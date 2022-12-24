@@ -1,0 +1,10 @@
+{
+  "accentColor": "",
+  "theme": "moonstone",
+  "interfaceFontFamily": "微软雅黑,Hack",
+  "textFontFamily": "微软雅黑,Hack",
+  "monospaceFontFamily": "Hack",
+  "baseFontSize": 15,
+  "nativeMenus": true,
+  "translucency": false
+}

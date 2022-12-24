@@ -1,0 +1,11 @@
+{
+  "foldHeading": true,
+  "showFrontmatter": true,
+  "showLineNumber": false,
+  "spellcheck": true,
+  "spellcheckLanguages": [
+    "zh-CN",
+    "en-US"
+  ],
+  "showInlineTitle": false
+}
