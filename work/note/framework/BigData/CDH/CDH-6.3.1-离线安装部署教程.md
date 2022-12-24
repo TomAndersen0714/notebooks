@@ -157,7 +157,9 @@ systemctl start ntpd
 systemctl status ntpd
 ```
 
-### 4.（集群）关闭透明大页面压缩（可提升性能）
+### 4.（集群）关闭透明大页面压缩
+
+避免出现可能的重大性能问题
 
 ```Bash
 echo never > /sys/kernel/mm/transparent_hugepage/enabled
@@ -247,6 +249,18 @@ sudo mkdir -p /usr/share/java
 
 # 注意此处需要重命名(未测试必要性)
 cp mysql-connector-java-5.1.47.jar /usr/share/java/mysql-connector-java.jar
+```
+
+
+
+
+
+### 7.（集群）安装Python3
+
+在低版本的Linux系统中，默认的Python版本为Python2，需要手动安装Python3。便于在使用如pyspark、spark-shell时，支持python3语法。
+
+```shell
+yum install python3
 ```
 
 
@@ -463,6 +477,21 @@ https://docs.cloudera.com/documentation/enterprise/6/6.3/topics/cm_mc_delete_hos
 ###### 步骤二：从CM集群中删除节点
 
 https://docs.cloudera.com/documentation/enterprise/6/6.3/topics/cm_mc_delete_hosts.html#cmug_topic_7_9__section_u1w_wlm_4n
+
+
+
+
+
+### 6.修改pyspark使用的Python版本（可选）
+
+修改Spark配置路径下的`spark-env.sh`文件，增加环境变量，以修改pyspark使用的Python版本
+
+如：修改`/etc/spark/conf/spark-env.sh`文件
+
+```shell
+export PYSPARK_PYTHON=/usr/bin/python3
+export PYSPARK_DRIVER_PYTHON=/usr/bin/python3
+```
 
 
 
