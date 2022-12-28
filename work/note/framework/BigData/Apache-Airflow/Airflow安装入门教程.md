@@ -61,6 +61,61 @@ pip install "apache-airflow==${AIRFLOW_VERSION}" --constraint "${CONSTRAINT_URL}
 
 ### 3) 初始化并启动Airflow
 
+初始化数据库和创建用户，此命令会自动生成默认的配置文件`$AIRFLOW_HOME/airflow.cfg`
+
+```shell
+# 初始化数据库
+airflow db init
+
+# 创建admin用户, 并手动设置密码
+airflow users create \
+    --username admin \
+    --firstname Peter \
+    --lastname Parker \
+    --role Admin \
+    --email spiderman@superhero.org
+```
+
+
+
+修改配置文件airflow.cfg，调整默认配置
+
+```ini
+# Whether to load the DAG examples that ship with Airflow. It's good to
+# get started, but you probably want to set this to ``False`` in a production
+# environment
+load_examples = False
+
+# How often (in seconds) to scan the DAGs directory for new files. Default to 5 minutes.
+dag_dir_list_interval = 60
+```
+
+
+
+重置数据库，删除默认的example dag
+
+```shell
+airflow db reset
+```
+
+
+
+启动airflow服务
+
+```shell
+airflow webserver -D
+
+airflow scheduler -D
+```
+
+
+
+
+
+也可以直接执行`airflow standalone`命令自动执行
+
+执行此命令后，airflow默认会创建`admin`用户，其默认密码会打印在`$AIRFLOW_HOME/standalone_admin_password.txt`文件中
+
 ```shell
 # The Standalone command will initialise the database, make a user,
 # and start all components for you.
@@ -73,28 +128,17 @@ airflow standalone
 
 
 
-airflow默认会创建`admin`用户，而其默认密码会打印在`$AIRFLOW_HOME/standalone_admin_password.txt`文件中
-
-
-
-或者也可以手动依次执行命令
+### 4) 停止Airflow
 
 ```shell
-airflow db init
+cd $AIRFLOW_HOME
 
-airflow users create \
-    --username admin \
-    --firstname Peter \
-    --lastname Parker \
-    --role Admin \
-    --email spiderman@superhero.org
+cat airflow-webserver.pid | xargs kill
 
-airflow webserver --port 8080
+cat airflow-scheduler.pid | xargs kill
 
-airflow scheduler
+rm *.pid
 ```
-
-
 
 
 
