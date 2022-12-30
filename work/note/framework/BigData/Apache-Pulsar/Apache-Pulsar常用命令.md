@@ -22,11 +22,11 @@
 
      `bin/pulsar-admin tenants create bigdata`
 
-2. Pulsar创建namespaces: 
+2. Pulsar在tenant下创建namespaces: 
 
      `bin/pulsar-admin namespaces create bigdata/data_cross`
 
-3. Pulsar创建partitioned topics: 
+3. Pulsar在namespaces下创建partitioned topics: 
 
      `bin/pulsar-admin topics create-partitioned-topic persistent://bigdata/data_cross/mini_send_tb --partitions 4`
 
