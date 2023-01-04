@@ -17,3 +17,6 @@ ALTER TABLE sxx.shop_day_stats ADD CONSTRAINT unique_1 UNIQUE (day, shop_id, pla
 删除约束
 
 ALTER TABLE sxx.shop_day_stats DROP CONSTRAINT shop_day_stats_day_shop_id_platform_goods_id_stat_label_key
+
+
+
