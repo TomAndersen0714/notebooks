@@ -20,3 +20,8 @@ ALTER TABLE sxx.shop_day_stats DROP CONSTRAINT shop_day_stats_day_shop_id_platfo
 
 
 
+
+
+## 参考链接
+
+1. [数据库教程-PostgreSQL](https://www.sjkjc.com/postgresql/basic/)
