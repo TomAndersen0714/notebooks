@@ -1,6 +1,8 @@
 # ClickHouse常见问题
 
-## 1. ClickHouse在atomic中使用replicated表的坑点
+## 1. ClickHouse在Atomic数据库中使用replicated表的坑点
+
+Atomic数据库是不支持自动复制的，在进行副本迁移时，其数据库并不会自动复制到新节点上，需要手动迁移其metadata到新副本，重启新副本后才会开始正常复制数据
 
 https://github.com/ClickHouse/ClickHouse/issues/12135
 
