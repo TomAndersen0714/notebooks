@@ -2,7 +2,8 @@
 
 ## 前言
 
-[PyPI仓库官方源](https://pypi.org/)
+PyPI(Python Package Index)是Python编程语言的软件存储库。开发者可以通过PyPI查找和安装由Python社区开发和共享的软件，也可以将自己开发的库上传至PyPI。[PyPI官方仓库](https://pypi.org/)
+
 pip3和pip的命令大部分都相同，直接将`pip3`和`pip`相互替换即可，[官方教程](https://pip.pypa.io/en/stable/user_guide/#configuration)
 
 
@@ -37,7 +38,7 @@ pip3和pip的命令大部分都相同，直接将`pip3`和`pip`相互替换即�
 
 
 
-pip工具常用镜像站地址：
+PyPI常用镜像站地址：
 
 阿里云：https://mirrors.aliyun.com/pypi/simple/
 清华：https://pypi.tuna.tsinghua.edu.cn/simple/
