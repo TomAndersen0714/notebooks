@@ -14,6 +14,8 @@ https://github.com/ClickHouse/ClickHouse/issues/12135
 
 **原因解析**：
 
+ClickHouse版本较低，Server的Cache占用的内存开销可能会超出配置的限制
+
 https://github.com/ClickHouse/ClickHouse/issues/12563
 
 **解决方案**：
@@ -28,12 +30,12 @@ https://github.com/ClickHouse/ClickHouse/issues/12563
 
 
 
-## 3. Code: 342. DB::Exception: **Existing table metadata in ZooKeeper differs in partition key expression**. Stored in ZooKeeper: day, platform, local: day. (METADATA_MISMATCH) (version 22.1.2.2 (official build))
+## 3. Code: 342. DB::Exception: Existing table metadata in ZooKeeper differs in partition key expression. Stored in ZooKeeper: day, platform, local: day. (METADATA_MISMATCH) (version 22.1.2.2 (official build))
 
 **原因解析**：
 
-1. 出现此错误的主要原因在于ClickHouse分布式DDL语句默认是采用异步执行的，zookeeper的metadata也是如此，因此如果在提交Distributed DDL之后，立刻再去修改Schema就会导致Zookeeper和本地的metadata不一致，因为zk的数据还未执行更新，解决方案就是在DDL语句添加SYNC后缀，使得其采用Synchronize同步的方式来执行DDL
-2. 在ClickHouse release v20.10.3.30, 2020-10-28版本之后，默认的Database Engine被设置成了Atomic。在删除Atomic数据库的表时，如果没有使用SYNC后缀，则一般需要等待database_atomic_delay_before_drop_table_sec时间之后，才会真正执行删除。在Table未被真正删除之前，zookeeper中的元数据依旧存在，因此这期间创建不同结构的表时，则会出现此错误
+1. 出现此错误的主要原因在于ClickHouse分布式DDL语句默认是采用异步执行的，zookeeper的metadata也是如此，因此如果在提交Distributed DDL之后，立刻再去修改表结构，就会导致Zookeeper和本地的metadata不一致，因为zk的数据还未执行更新，解决方案就是在DDL语句添加SYNC或者NO DELAY语法糖后缀，使其提交时自动带上同步执行的相关配置，即以同步的方式来执行DDL
+2. 在ClickHouse release v20.10.3.30, 2020-10-28版本之后，默认的Database Engine被设置成了Atomic。在删除Atomic数据库的表时，如果没有使用SYNC后缀执行同步删除，则一般需要等待database_atomic_delay_before_drop_table_sec时间之后，才会真正执行删除。在Table未被真正删除之前，zookeeper中的元数据依旧存在，因此这期间创建不同结构的表时，则会抛出此错误
 
 **解决方案**：
 
@@ -43,7 +45,7 @@ https://github.com/ClickHouse/ClickHouse/issues/12563
 
 
 
-## 4. Exception: Code: 48. DB::Exception: **There was an error on [znzjk-113175-prod-mini-bigdata-bigdata:29000]: Cannot execute replicated DDL query on leader**.
+## 4. Code: 48. DB::Exception: **There was an error on [znzjk-113175-prod-mini-bigdata-bigdata:29000]: Cannot execute replicated DDL query on leader**.
 
 **原因解析**：
 
@@ -67,7 +69,9 @@ https://github.com/ClickHouse/ClickHouse/issues/12563
 
 **原因解析**：
 
-此问题主要原因在于，distribued表的数据目录下`/etc/clickhouse/data`，`/var/lib/clickhouse/data`中存在detach目录和format_version.txt文件
+此问题直接原因在于，distribued表的数据目录下`/etc/clickhouse/data`，`/var/lib/clickhouse/data`中存在detach目录和format_version.txt文件。
+
+但此问题的根本原因暂时未知。
 
 **解决方案**：
 
