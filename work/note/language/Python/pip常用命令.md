@@ -4,7 +4,7 @@
 
 PyPI(Python Package Index)是Python编程语言的软件存储库。开发者可以通过PyPI查找和安装由Python社区开发和共享的软件，也可以将自己开发的库上传至PyPI。[PyPI官方仓库](https://pypi.org/)
 
-pip3和pip的命令大部分都相同，直接将`pip3`和`pip`相互替换即可，[官方教程](https://pip.pypa.io/en/stable/user_guide/#configuration)
+pip3和pip的命令大部分都相同，`pip3`和`pip`通常可以直接相互替换，[pip官方教程](https://pip.pypa.io/en/stable/user_guide/#user-guide)
 
 
 ## 常用命令
@@ -12,11 +12,11 @@ pip3和pip的命令大部分都相同，直接将`pip3`和`pip`相互替换即�
 1. **pip升级pip命令**：`pip3 install--upgrade pip`
 
 2. **pip3 install**：
-	1. 安装Python模块，命令格式`pip3 install <module_name>`，如`pip3 install mrjob`
+	1. 安装Python模块，命令格式`pip3 install <package_name>`，如`pip3 install mrjob`
 	2. 安装whl文件（wheel离线安装包）：`pip3 install <wheel_file_name>`
-	3. `-i`，指定本次下载使用的仓库镜像url，使用`-i`选项可以手动指定module的下载源，避免国内下载速度过慢，如`pip3 install mrjob -i https://mirrors.aliyun.com/pypi/simple/ `将下载源修改为阿里云镜像。
+	3. `-i`，指定本次下载使用的仓库镜像url，使用`-i`选项可以手动指定package的下载源，避免国内下载速度过慢，如`pip3 install mrjob -i https://mirrors.aliyun.com/pypi/simple/ `将下载源修改为阿里云镜像。
 	4. `-r`，下载指定文件中标明的Python模块信息（一般为requirements.txt文件），`pip3 install -r <filename>`，如`pip3 install -r requirements.txt`
-	5. `--upgrade`，升级指定包，`pip3 install --upgrade <module_name>`，如`pip3 install--upgrade pip`
+	5. `--upgrade`，升级指定包，`pip3 install --upgrade <package_name>`，如`pip3 install--upgrade pip`
 	6. `--no-cache-dir`，禁用缓存减少内存开销，[官方链接](https://pip.pypa.io/en/stable/topics/caching/)
 
 
@@ -27,7 +27,7 @@ pip3和pip的命令大部分都相同，直接将`pip3`和`pip`相互替换即�
 
 4. **pip3 list**
 	1. 查看已安装的 Python模块（包），命令格式`pip3 list`。加上`--format=columns`可以实现按列格式化输出，即`pip3 list --format=columns`
-	2. pip3 show,查看已安装 Package 的详细信息，命令格式`pip3 show<module_name>`，如`pip3 show mrjob`，此命令查看对应module的安装路径
+	2. pip3 show,查看已安装 Package 的详细信息，命令格式`pip3 show<package_name>`，如`pip3 show mrjob`，此命令查看对应package的安装路径
 
 5. **pip修改PyPI仓库源的三种常用方法**：
 	1. 方法一：修改pip当前用户配置，修改（没有则创建）`$HOME/.pip/pip.conf`或者`$HOME/.config/pip/pip.conf`
