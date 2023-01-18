@@ -7,5 +7,12 @@
     "zh-CN",
     "en-US"
   ],
-  "showInlineTitle": false
+  "showInlineTitle": false,
+  "promptDelete": false,
+  "attachmentFolderPath": "./images",
+  "newFileLocation": "current",
+  "alwaysUpdateLinks": true,
+  "useMarkdownLinks": true,
+  "newLinkFormat": "relative",
+  "strictLineBreaks": false
 }

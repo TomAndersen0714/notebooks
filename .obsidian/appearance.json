@@ -4,7 +4,11 @@
   "interfaceFontFamily": "微软雅黑,Hack",
   "textFontFamily": "微软雅黑,Hack",
   "monospaceFontFamily": "Hack",
-  "baseFontSize": 15,
+  "baseFontSize": 14,
   "nativeMenus": true,
-  "translucency": false
+  "translucency": false,
+  "cssTheme": "",
+  "enabledCssSnippets": [
+    "code-inline"
+  ]
 }
