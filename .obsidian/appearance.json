@@ -9,6 +9,7 @@
   "translucency": false,
   "cssTheme": "",
   "enabledCssSnippets": [
-    "code-inline"
+    "code-inline",
+    "list-number"
   ]
 }

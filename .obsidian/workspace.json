@@ -13,34 +13,42 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "work/schedule/每日学习内容记录.md",
+                "file": "work/note/language/Python/pip常用命令.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "fb4c986eeb97c3ba",
+            "id": "f908ab130e1595a2",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "work/note/tools/git/git常用命令.md",
+                "file": "work/note/language/Python/Python常用命令.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "499e0231746d25b3",
+            "id": "2dc265bf08254a09",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "work/note/tools/git/git常见问题.md",
+                "file": "work/note/language/Python/Python常用命令.md",
                 "mode": "source",
                 "source": false
               }
+            }
+          },
+          {
+            "id": "5727e61d51be736c",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {}
             }
           }
         ]
@@ -93,7 +101,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 226.50288009643555
+    "width": 267.50288009643555
   },
   "right": {
     "id": "6ba34ece4ec5cf8c",
@@ -109,7 +117,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "work/schedule/每日学习内容记录.md"
+                "file": "work/note/language/Python/pip常用命令.md"
               }
             }
           },
@@ -130,7 +138,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "work/schedule/每日学习内容记录.md",
+                "file": "work/note/language/Python/pip常用命令.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -147,7 +155,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "work/schedule/每日学习内容记录.md",
+                "file": "work/note/language/Python/pip常用命令.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -172,15 +180,15 @@
   },
   "active": "d101ef98b658a611",
   "lastOpenFiles": [
+    "work/note/language/Python/Python开发笔记.md",
+    "work/note/language/Python/Python常用命令.md",
+    "work/schedule/每日学习内容记录.md",
     "work/note/tools/git/git常见问题.md",
     "work/note/tools/git/git常用命令.md",
     "work/note/language/Python/pip常用命令.md",
     "work/note/language/Python/pip运维.md",
-    "work/schedule/每日学习内容记录.md",
     "work/schedule/每日学习待办事项.md",
     "work/schedule/每日工作内容记录.md",
-    "work/schedule/每日工作待办事项.md",
-    "work/schedule/每周时间资源梳理.md",
-    "2023-01-17.md"
+    "work/schedule/每日工作待办事项.md"
   ]
 }
