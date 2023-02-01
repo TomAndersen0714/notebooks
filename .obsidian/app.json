@@ -2,7 +2,7 @@
   "foldHeading": true,
   "showFrontmatter": true,
   "showLineNumber": false,
-  "spellcheck": true,
+  "spellcheck": false,
   "spellcheckLanguages": [
     "zh-CN",
     "en-US"
