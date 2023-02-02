@@ -106,6 +106,9 @@ airflow db reset
 airflow webserver -D
 
 airflow scheduler -D
+
+airflow celery worker -D   #启动celery worker
+airflow celery flower -D   #启动flower
 ```
 
 
@@ -136,6 +139,12 @@ cd $AIRFLOW_HOME
 cat airflow-webserver.pid | xargs kill
 
 cat airflow-scheduler.pid | xargs kill
+
+cat airflow-flower.pid | xargs kill
+
+cat airflow-worker.pid | xargs kill
+
+cat airflow-webserver-monitor.pid | xargs kill
 
 rm *.pid
 ```
