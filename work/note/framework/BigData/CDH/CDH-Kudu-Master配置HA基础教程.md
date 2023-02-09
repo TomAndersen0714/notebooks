@@ -1,4 +1,4 @@
-# CDH Kudu添加Master入门教程
+# CDH Kudu Master 配置HA基础教程
 
 
 
