@@ -47,8 +47,12 @@
             "id": "5df2184b1dec14f5",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "work/test/大数据/华为认证/华为认证考试信息.md",
+                "mode": "source",
+                "source": false
+              }
             }
           }
         ],
@@ -98,12 +102,11 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 311.50288009643555
+    "width": 348.5110321044922
   },
   "right": {
     "id": "6ba34ece4ec5cf8c",
@@ -182,15 +185,15 @@
   },
   "active": "34b9e289927a1920",
   "lastOpenFiles": [
-    "work/note/framework/BigData/ClickHouse/mechanics/ClickHouse索引.md",
     "work/note/subject/algorithm/哨兵的作用.md",
+    "work/test/大数据/华为认证/华为认证考试信息.md",
+    "work/test/大数据/CDA认证/CDA认证考试信息.md",
     "work/schedule/每日学习内容记录.md",
-    "work/schedule/每日学习待办事项.md",
-    "Untitled.md",
-    "work/schedule/哨兵.md",
-    "work/note/framework/BigData/Apache-Airflow/Airflow安装入门教程.md",
-    "work/note/framework/BackEnd/PostgreSQL/PostgreSQL常见问题.md",
-    "work/note/framework/BackEnd/PostgreSQL/PostgreSQL常用命令.md",
-    "work/note/language/Java/Java基础/基础语法.md"
+    "work/note/framework/BigData/Apache-Pulsar/Apache-Pulsar部署入门教程.md",
+    "work/note/framework/BigData/Apache-Pulsar/Apache-Pulsar常用命令.md",
+    "work/note/framework/BigData/CDH/CDH-Kudu负载均衡解决方案.md",
+    "work/note/framework/BigData/Apache-Kudu/Apache-Kudu安装Python Client基础教程.md",
+    "work/note/framework/BigData/CDH/CDH-Kudu-Master配置HA基础教程.md",
+    "work/schedule/每日学习待办事项.md"
   ]
 }
