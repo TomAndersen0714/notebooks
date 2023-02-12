@@ -20,7 +20,6 @@ bin/pulsar standalone
 
 
 
-
 ## 本地部署
 
 官方链接: [Set up a standalone Pulsar locally](https://pulsar.apache.org/docs/2.10.x/getting-started-standalone/)
