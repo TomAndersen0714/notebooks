@@ -10,7 +10,7 @@ https://github.com/ClickHouse/ClickHouse/issues/12135
 
 
 
-## 2. ClickHouse Server内存不释放
+## 2. ClickHouse Server内存占用不释放
 
 **原因解析**：
 

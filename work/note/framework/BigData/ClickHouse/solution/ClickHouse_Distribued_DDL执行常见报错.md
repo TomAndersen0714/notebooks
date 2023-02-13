@@ -1,10 +1,21 @@
 # ClickHouse Distribued DDL执行失败问题排查
 
+## 前言
+
+ClickHouse Server: 20.4.2.9
+CentOS: CentOS Linux release 7.6.1810
+
+
 ## 报错示例
 
 
+### Code: 48
 
-### 报错场景1
+Code: 48. DB::Exception: There was an error on [znzjk-113175-prod-mini-bigdata-bigdata:29000]: Cannot execute replicated DDL query on leader
+
+**原因**：DDL执行时对应副本的Leader执行超时导致报错，而非报错信息指向的节点内部存在问题
+
+PS：对于附加了FINAL关键字的DDL查询，每次执行时都会强制进行合并，因此多次执行可能多次超时
 
 ![image-20221108171759644](images/ClickHouse_Distribued_DDL%E6%89%A7%E8%A1%8C%E5%A4%B1%E8%B4%A5%E9%97%AE%E9%A2%98%E6%8E%92%E6%9F%A5/image-20221108171759644.png)
 
@@ -14,18 +25,12 @@
 
 
 
-### 报错场景2
 
-![image-20221108174245567](images/ClickHouse_Distribued_DDL%E6%89%A7%E8%A1%8C%E5%A4%B1%E8%B4%A5%E9%97%AE%E9%A2%98%E6%8E%92%E6%9F%A5/image-20221108174245567.png)
+### Code: 159
 
+Code: 159. DB::Exception: Watching task /clickhouse/task_queue/ddl/query-0000974691 is executing longer than distributed_ddl_task_timeout (=180) seconds. There are 1 unfinished hosts (0 of them are currently active), they are going to execute the query in background.
 
-
-![image-20221108174316014](images/ClickHouse_Distribued_DDL%E6%89%A7%E8%A1%8C%E5%A4%B1%E8%B4%A5%E9%97%AE%E9%A2%98%E6%8E%92%E6%9F%A5/image-20221108174316014.png)
-
-
-
-由于FINAL关键字，重试时需要处理的数据量基本不变，因此时间上不会缩短，依旧会超时
-
+**原因**：DDL执行时超时，可能是DDl队列（FIFO）中存在阻塞，或者当前DDL query执行自身出现问题而超时
 
 
 ## 问题排查
@@ -150,10 +155,9 @@ bool DDLWorker::tryExecuteQueryOnLeaderReplica(
 
 
 
-
 ## 问题总结
 
-主要是由于ClickHouse在执行针对Replicated表执行DDL语句时，采取的是
+主要是由于ClickHouse在执行针对Replicated表执行DDL语句时，采取的是FIFO队列，一旦某个DDL执行速度太慢，就会导致后续的DDL阻塞，进而出现超时。
 
 
 
