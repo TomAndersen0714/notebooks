@@ -2,9 +2,11 @@
 
 PAT-2022秋季考试，报名截止为2022年8月27日，考试时间为2022年9月4日
 PAT-2022冬季考试，报名截止为2022年11月26日22:00，考试时间为2022年12月3日13:30
+PAT-2023春季考试，报名截止为
+
 
 
 ## 参考链接
 
-[官方链接](https://www.patest.cn/reg)  
-[牛客网优惠券链接](https://www.nowcoder.com/discuss/343)
+1. [PAT官方链接](https://www.patest.cn/reg)  
+2. [牛客网PAT题集 - 可获取报名代金券](https://www.nowcoder.com/pat)
