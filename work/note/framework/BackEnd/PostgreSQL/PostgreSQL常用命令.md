@@ -9,11 +9,11 @@
 ## Constraints(约束)
 
 添加约束
-ALTER TABLE sxx.shop_day_stats ADD CONSTRAINT unique_1 UNIQUE (day, shop_id, platform, goods_id, stat_label)
+`ALTER TABLE <table_name> ADD CONSTRAINT <constraint_name> <constraint_type> (<columns...>)`
 
 
 删除约束
-ALTER TABLE sxx.shop_day_stats DROP CONSTRAINT shop_day_stats_day_shop_id_platform_goods_id_stat_label_key
+`ALTER TABLE <table_name> DROP CONSTRAINT <constraint_name>`
 
 
 ## 其他
@@ -26,9 +26,14 @@ select column_name,
     column_default,
     is_nullable
 from INFORMATION_SCHEMA.COLUMNS
-where table_name = 'sxx.ft_product_mapping_tm'
+where table_name = 'sxx.ft_product_mapping_tm';
 ```
 
+
+查看数据类型长度
+```mysql
+SELECT typlen FROM pg_type WHERE oid = pg_typeof(33);
+```
 
 
 ## 参考链接

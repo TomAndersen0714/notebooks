@@ -42,8 +42,10 @@ H~2~O is是液体。
 2. 项目2
 3. 项目3
 
-- [ ] 计划任务、待办事项
-- [x] 完成任务
+
+
+- [ ] 任务列表：计划任务、待办事项
+- [x] 任务列表：完成任务
 
 ```
 
@@ -98,4 +100,6 @@ var foo = 'bar';
 
 
 ## 参考链接
-- CSDN markdown语法提示
+
+1. CSDN markdown语法提示
+2. [Markdown 官方教程](https://markdown.com.cn/cheat-sheet.html)
