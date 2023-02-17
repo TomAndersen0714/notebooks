@@ -2,6 +2,8 @@
 
 ## 1. ClickHouse在Atomic数据库中使用replicated表的坑点
 
+**版本：22.1.2.2**
+
 Atomic数据库是不支持自动复制的，在进行副本迁移时，其数据库并不会自动复制到新节点上，需要手动迁移其metadata到新副本，重启新副本后才会开始正常复制数据
 
 https://github.com/ClickHouse/ClickHouse/issues/12135
@@ -11,6 +13,8 @@ https://github.com/ClickHouse/ClickHouse/issues/12135
 
 
 ## 2. ClickHouse Server内存占用不释放
+
+**版本：22.1.2.2**
 
 **原因解析**：
 
@@ -30,7 +34,10 @@ https://github.com/ClickHouse/ClickHouse/issues/12563
 
 
 
-## 3. Code: 342. DB::Exception: Existing table metadata in ZooKeeper differs in partition key expression. Stored in ZooKeeper: day, platform, local: day. (METADATA_MISMATCH) (version 22.1.2.2 (official build))
+## 3. Code: 342
+**报错：Code: 342. DB::Exception: Existing table metadata in ZooKeeper differs in partition key expression. Stored in ZooKeeper: day, platform, local: day. (METADATA_MISMATCH)** 
+
+**版本：22.1.2.2**
 
 **原因解析**：
 
@@ -45,7 +52,11 @@ https://github.com/ClickHouse/ClickHouse/issues/12563
 
 
 
-## 4. Code: 48. DB::Exception: **There was an error on [znzjk-113175-prod-mini-bigdata-bigdata:29000]: Cannot execute replicated DDL query on leader**.
+## 4. Code: 48
+
+**报错：Code: 48. DB::Exception: There was an error on [znzjk-113175-prod-mini-bigdata-bigdata:29000]: Cannot execute replicated DDL query on leader.**
+
+**版本：20.4.2.9**
 
 **原因解析**：
 
@@ -65,7 +76,11 @@ https://github.com/ClickHouse/ClickHouse/issues/12563
 
 
 
-## 5. Application: Caught exception while loading metadata: Code: 62, e.displayText() = DB::Exception: Incorrect user[:password]@host:port#default_database format detached
+## 5. Code: 62
+
+**报错：Application: Caught exception while loading metadata: Code: 62, e.displayText() = DB::Exception: Incorrect user[:password]@host:port#default_database format detached**
+
+**版本：22.1.2.2**
 
 **原因解析**：
 
