@@ -16,14 +16,10 @@ Code: 48. DB::Exception: There was an error on [znzjk-113175-prod-mini-bigdata-b
 **原因**：DDL执行时对应副本的Leader执行超时导致报错，而非报错信息指向的节点内部存在问题
 
 PS：对于附加了FINAL关键字的DDL查询，每次执行时都会强制进行合并，因此多次执行可能多次超时
-
-![image-20221108171759644](images/ClickHouse_Distribued_DDL%E6%89%A7%E8%A1%8C%E5%A4%B1%E8%B4%A5%E9%97%AE%E9%A2%98%E6%8E%92%E6%9F%A5/image-20221108171759644.png)
-
+![](resources/images/Pasted%20image%2020230218134137.png)
 
 
-![image-20221108171854006](images/ClickHouse_Distribued_DDL%E6%89%A7%E8%A1%8C%E5%A4%B1%E8%B4%A5%E9%97%AE%E9%A2%98%E6%8E%92%E6%9F%A5/image-20221108171854006.png)
-
-
+![](resources/images/Pasted%20image%2020230218134207.png)
 
 
 ### Code: 159
@@ -154,11 +150,9 @@ bool DDLWorker::tryExecuteQueryOnLeaderReplica(
 
 
 
-
 ## 问题总结
 
-主要是由于ClickHouse在执行针对Replicated表执行DDL语句时，采取的是FIFO队列，一旦某个DDL执行速度太慢，就会导致后续的DDL阻塞，进而出现超时。
-
+主要是由于ClickHouse在执行Distributed DDL语句时，采取的是单并行度FIFO队列，一旦某个DDL执行速度太慢，就会导致后续的DDL阻塞，进而出现超时。
 
 
 ## 修复版本
@@ -169,10 +163,7 @@ https://github.com/ClickHouse/ClickHouse/pull/13450
 
 ## 参考链接
 
-https://github.com/ClickHouse/ClickHouse/issues?q=Cannot+execute+replicated+DDL+query+on+leader+
-
-https://github.com/ClickHouse/ClickHouse/issues/11884
-
-https://github.com/ClickHouse/ClickHouse/issues/8282
-
-https://github.com/ClickHouse/ClickHouse/pull/13450
+1. https://github.com/ClickHouse/ClickHouse/issues?q=Cannot+execute+replicated+DDL+query+on+leader+
+2. https://github.com/ClickHouse/ClickHouse/issues/11884
+3. https://github.com/ClickHouse/ClickHouse/issues/8282
+4. https://github.com/ClickHouse/ClickHouse/pull/13450
