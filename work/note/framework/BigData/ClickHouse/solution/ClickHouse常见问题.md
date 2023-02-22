@@ -22,11 +22,14 @@ https://github.com/ClickHouse/ClickHouse/issues/12135
 ClickHouse版本较低，Server的Cache占用的内存开销可能会超出配置的限制，并且不及时回收和释放
 https://github.com/ClickHouse/ClickHouse/issues/12563
 
+可以通过system.asynchronous_metrics表查看cache相关的性能指标统计情况：`SELECT metric, formatReadableSize(value) FROM system.asynchronous_metrics WHERE metric LIKE '%Cache%'`
+
 **解决方案**：
 
-1. `SYSTEM DROP MARK CACHE`
-2. `SYSTEM DROP UNCOMPRESSED CACHE`
-3. https://clickhouse.com/docs/en/sql-reference/statements/system/
+1. `SELECT metric, formatReadableSize(value) FROM system.asynchronous_metrics WHERE metric LIKE '%Cache%'`
+2. `SYSTEM DROP MARK CACHE`
+3. `SYSTEM DROP UNCOMPRESSED CACHE`
+4. https://clickhouse.com/docs/en/sql-reference/statements/system/
 
 
 
