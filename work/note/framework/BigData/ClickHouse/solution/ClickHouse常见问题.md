@@ -25,7 +25,7 @@ https://github.com/ClickHouse/ClickHouse/issues/12563
 **解决方案**：
 
 1. `SYSTEM DROP MARK CACHE`
-2. `SYSTEM DROP UNCOMPRESSED CACHE `
+2. `SYSTEM DROP UNCOMPRESSED CACHE`
 3. https://clickhouse.com/docs/en/sql-reference/statements/system/
 
 
