@@ -1,4 +1,4 @@
-# ClickHouse常见问题
+# ClickHouse运维常见问题
 
 ## 1. ClickHouse中Atomic数据库的坑点
 
@@ -13,7 +13,7 @@ https://github.com/ClickHouse/ClickHouse/issues/12135
 
 
 
-## 2. ClickHouse Server内存开销不释放
+## 2. ClickHouse Server内存占用不释放
 
 **版本：20.4.2.9**
 
@@ -24,12 +24,16 @@ https://github.com/ClickHouse/ClickHouse/issues/12563
 
 可以通过system.asynchronous_metrics表查看cache相关的性能指标统计情况：`SELECT metric, formatReadableSize(value) FROM system.asynchronous_metrics WHERE metric LIKE '%Cache%'`
 
+[mark_cache_size](https://clickhouse.com/docs/en/operations/server-configuration-parameters/settings/#server-mark-cache-size)
+[use_uncompressed_cache](https://clickhouse.com/docs/en/operations/settings/settings/#setting-use_uncompressed_cache)
+[uncompressed_cache_size](https://clickhouse.com/docs/en/operations/server-configuration-parameters/settings/#server-settings-uncompressed_cache_size)
+[SYSTEM Statements](https://clickhouse.com/docs/en/sql-reference/statements/system/)
+
 **解决方案**：
 
 1. `SELECT metric, formatReadableSize(value) FROM system.asynchronous_metrics WHERE metric LIKE '%Cache%'`
 2. `SYSTEM DROP MARK CACHE`
 3. `SYSTEM DROP UNCOMPRESSED CACHE`
-4. https://clickhouse.com/docs/en/sql-reference/statements/system/
 
 
 
