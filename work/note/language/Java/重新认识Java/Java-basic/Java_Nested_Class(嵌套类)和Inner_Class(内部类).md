@@ -116,8 +116,8 @@ PS: Lambda表达式(Lambda Expression), 个人理解, 可以看做是为实现�
 
 其中各个术语的定义对应的韦恩图如下: 
 
-<img src="images/Java_Nested_Class(%E5%B5%8C%E5%A5%97%E7%B1%BB)%E5%92%8CInner_Class(%E5%86%85%E9%83%A8%E7%B1%BB)/The_Java_tutorials-Java_classes.jpg" alt="The_Java_tutorials-Java_classes" style="zoom:50%;" />
 
+![](resources/images/The_Java_tutorials-Java_classes.jpg)
 
 
 **"The Java Language Specification, Java SE 11 Edition"中对于Java Class的分类整理后如下:** 
@@ -135,7 +135,9 @@ PS: Lambda表达式(Lambda Expression), 个人理解, 可以看做是为实现�
 
 其中各个术语的定义对应的韦恩图如下: 
 
-<img src="images/Java_Nested_Class(%E5%B5%8C%E5%A5%97%E7%B1%BB)%E5%92%8CInner_Class(%E5%86%85%E9%83%A8%E7%B1%BB)/JLS-Java_classes.jpg" alt="JLS-Java_classes" alignstyle="zoom:50%;" />
+![](resources/images/JLS-Java_classes.jpg)
+
+
 
 
 
