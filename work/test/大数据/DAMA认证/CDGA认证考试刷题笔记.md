@@ -1,0 +1,20 @@
+# CDGA刷题笔记
+
+## CDGA模拟题2023
+
+模拟题：
+[2023年CDGA考试模拟题库(1-100)](https://blog.csdn.net/m0_66979647/article/details/129220732?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522167777530516800188562121%2522%252C%2522scm%2522%253A%252220140713.130102334.pc%255Fblog.%2522%257D&request_id=167777530516800188562121&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~blog~first_rank_ecpm_v1~times_rank-2-129220732-null-null.article_score_rank_blog&utm_term=CDGA)
+[2023年CDGA考试模拟题库(101-200)](https://blog.csdn.net/m0_66979647/article/details/129220784?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522167777528416800192216100%2522%252C%2522scm%2522%253A%252220140713.130102334.pc%255Fblog.%2522%257D&request_id=167777528416800192216100&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~blog~first_rank_ecpm_v1~times_rank-29-129220784-null-null.article_score_rank_blog&utm_term=CDGA)
+[2023年CDGA考试模拟题库(201-300)](https://blog.csdn.net/m0_66979647/article/details/129220804?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522167777530516800188562121%2522%252C%2522scm%2522%253A%252220140713.130102334.pc%255Fblog.%2522%257D&request_id=167777530516800188562121&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~blog~first_rank_ecpm_v1~times_rank-1-129220804-null-null.article_score_rank_blog&utm_term=CDGA)
+[2023年CDGA考试模拟题库(301-400)](https://blog.csdn.net/m0_66979647/article/details/129220841?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522167777528416800192216100%2522%252C%2522scm%2522%253A%252220140713.130102334.pc%255Fblog.%2522%257D&request_id=167777528416800192216100&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~blog~first_rank_ecpm_v1~times_rank-30-129220841-null-null.article_score_rank_blog&utm_term=CDGA)
+[2023年CDGA考试模拟题库(401-500)](https://blog.csdn.net/m0_66979647/article/details/129220869?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522167777528416800192216100%2522%252C%2522scm%2522%253A%252220140713.130102334.pc%255Fblog.%2522%257D&request_id=167777528416800192216100&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~blog~first_rank_ecpm_v1~times_rank-28-129220869-null-null.article_score_rank_blog&utm_term=CDGA)
+[2023年CDGA考试模拟题库(501-600)](https://blog.csdn.net/m0_66979647/article/details/129220898?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522167777528416800192216100%2522%252C%2522scm%2522%253A%252220140713.130102334.pc%255Fblog.%2522%257D&request_id=167777528416800192216100&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~blog~first_rank_ecpm_v1~times_rank-27-129220898-null-null.article_score_rank_blog&utm_term=CDGA)
+[2023年CDGA考试模拟题库(601-700)](https://blog.csdn.net/m0_66979647/article/details/129220996?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522167777528416800192216100%2522%252C%2522scm%2522%253A%252220140713.130102334.pc%255Fblog.%2522%257D&request_id=167777528416800192216100&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~blog~first_rank_ecpm_v1~times_rank-26-129220996-null-null.article_score_rank_blog&utm_term=CDGA)
+[2023年CDGA考试模拟题库(701-800)](https://blog.csdn.net/m0_66979647/article/details/129221127?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522167777528416800192216100%2522%252C%2522scm%2522%253A%252220140713.130102334.pc%255Fblog.%2522%257D&request_id=167777528416800192216100&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~blog~first_rank_ecpm_v1~times_rank-25-129221127-null-null.article_score_rank_blog&utm_term=CDGA)
+
+CSDN下载链接：
+https://pucsdn.com/main/
+
+
+## 错题集
+
