@@ -33,10 +33,7 @@
 
 ## 参考链接
 
-[2022年第四期CDGA/CDGP认证考试通知](https://mp.weixin.qq.com/s/hk4JAEvlRWw0gkkdH_xFHg)
-
-[3500字帮你全面解析DAMA认证中文版和考试报名](https://mp.weixin.qq.com/s/VyQjNo3ePP90JIs79lRI4Q)
-
-[DAMA中国 CDGA/CDGP 认证考试通关心得](https://zhuanlan.zhihu.com/p/412874995)
-
-[CDGA和CDGP认证考试热点问题解答](https://mp.weixin.qq.com/s?__biz=Mzg4MTY1MzYzMA==&mid=2247483916&idx=3&sn=4f987af5df327aeea581f0880ac76088&scene=21#wechat_redirect)
+1. [2022年第四期CDGA/CDGP认证考试通知](https://mp.weixin.qq.com/s/hk4JAEvlRWw0gkkdH_xFHg)
+2. [3500字帮你全面解析DAMA认证中文版和考试报名](https://mp.weixin.qq.com/s/VyQjNo3ePP90JIs79lRI4Q)
+3. [DAMA中国 CDGA/CDGP 认证考试通关心得](https://zhuanlan.zhihu.com/p/412874995)
+4. [CDGA和CDGP认证考试热点问题解答](https://mp.weixin.qq.com/s?__biz=Mzg4MTY1MzYzMA==&mid=2247483916&idx=3&sn=4f987af5df327aeea581f0880ac76088&scene=21#wechat_redirect)

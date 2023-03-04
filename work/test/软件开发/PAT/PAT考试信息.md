@@ -9,4 +9,3 @@ PAT-2023春季考试，报名截止为2023年02月24日17:00，考试时间为20
 ## 参考链接
 
 1. [PAT官方链接](https://www.patest.cn/reg)  
-2. [牛客网PAT题集 - 可获取报名代金券](https://www.nowcoder.com/pat)
