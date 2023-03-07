@@ -19,6 +19,7 @@ pip3和pip的命令大部分都相同，`pip3`和`pip`通常可以直接相互�
 	5. **--upgrade**，升级指定包，`pip3 install --upgrade <package_name>`，如`pip3 install--upgrade pip`
 	6. **--no-cache-dir**，禁用缓存减少内存开销，[官方链接](https://pip.pypa.io/en/stable/topics/caching/)
 
+3. **pip3 uninstall**：
 
 3. **pip3 freeze**
 	1. 提取并生成当前Python环境对应的所有安装包信息（requirements.txt）
