@@ -19,18 +19,18 @@ pip3和pip的命令大部分都相同，`pip3`和`pip`通常可以直接相互�
 	5. **--upgrade**，升级指定包，`pip3 install --upgrade <package_name>`，如`pip3 install--upgrade pip`
 	6. **--no-cache-dir**，禁用缓存减少内存开销，[官方链接](https://pip.pypa.io/en/stable/topics/caching/)
 
-3. **pip3 uninstall**：
+3. **pip3 uninstall**：卸载对应包
 
-3. **pip3 freeze**
+4. **pip3 freeze**
 	1. 提取并生成当前Python环境对应的所有安装包信息（requirements.txt）
 	2. `pip3 freeze> <filename>`，如`pip3 freeze > requirements.txt`。导出当前Python环境模块到requirements.txt文件中，通常用于Python环境迁移
 
 
-4. **pip3 list**
+5. **pip3 list**
 	1. 查看已安装的 Python模块（包），命令格式`pip3 list`。加上`--format=columns`可以实现按列格式化输出，即`pip3 list --format=columns`
 	2. pip3 show,查看已安装 Package 的详细信息，命令格式`pip3 show<package_name>`，如`pip3 show mrjob`，此命令查看对应package的安装路径
 
-5. **pip修改PyPI仓库源的三种常用方法**：
+6. **pip修改PyPI仓库源的三种常用方法**：
 	1. 方法一：修改pip当前用户配置，修改（没有则创建）`$HOME/.pip/pip.conf`或者`$HOME/.config/pip/pip.conf`
 	2. 方法二：修改pip全局配置，修改（没有则创建）`/etc/pip.conf`
 	3. 方法三：通过`-i`参数指定本次使用下载源：`sudo pipinstall <package name> -i <mirror_url>`
