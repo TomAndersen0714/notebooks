@@ -146,7 +146,12 @@ AS SELECT * FROM tmp.test_kudu_source_tbl
 
 
 ## 其他
-
+1) 低版本Kudu（如：1.1）中通过Impala修改Impala和Kudu表名步骤：
+	a. 修改Impala表名
+	b. 将Impala表改为外部表
+	c. 修改Kudu表表名
+	d. 修改Impala表的'kudu.table_name'属性
+	e. 将Impala改成内部表
 
 
 ## 参考链接
