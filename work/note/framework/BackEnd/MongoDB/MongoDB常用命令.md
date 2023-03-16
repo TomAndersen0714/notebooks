@@ -10,12 +10,13 @@
 6. `db.version()`：查看数据库版本
 7. `db.stats()`：查看数据库的统计信息
 
-## Collections
+## collections
 1. [官方链接](https://www.mongodb.com/docs/manual/reference/method/js-collection/)
 2. 调用格式：db.collection.findOne()，将collection替换为对应的collection即可，如“db.<collection_name>.findOne()”
 3. `show collections`：查看当前数据库中所有的Collection
 4. `show tables`：同`show collections`
-5. 
+5. `db.collection.findOne()`：查询单个文档
+
 
 
 

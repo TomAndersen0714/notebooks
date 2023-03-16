@@ -2,8 +2,12 @@
 
 ## 前言
 
-1. Apache Impala中的函数都是非大小写敏感的（Non-case sensitive），无视大小写
-2. Apache Impala支持的数据类型：[Cloudera Enterprise 6.3.x - Data Types](https://docs.cloudera.com/documentation/enterprise/6/6.3/topics/impala_datatypes.html#datatypes)
+Apache Impala中的**函数都是非大小写敏感的（Non-case sensitive）**，无视大小写
+[Impala内置函数 - 官方文档](https://docs.cloudera.com/documentation/enterprise/6/6.3/topics/impala_functions.html)
+
+## Impala数据类型
+
+Apache Impala支持的数据类型：[Cloudera Enterprise 6.3.x - Data Types](https://docs.cloudera.com/documentation/enterprise/6/6.3/topics/impala_datatypes.html#datatypes)
 
 
 ## [类型转换函数](https://docs.cloudera.com/documentation/enterprise/6/6.3/topics/impala_conversion_functions.html#conversion_functions)
@@ -28,7 +32,8 @@
 
 ## 聚合函数
 
-1. **GROUP_CONCAT(STRING col, STRING sep)**：**列转行函数**，将当前数据集下指定列的所有值按照指定分隔符拼接成单个字符串，默认分隔符为英文逗号。返回值为String类型。PS：行转列，目前只能通过“union”关键字实现，且只能支持有限行
+1. **GROUP_CONCAT(STRING col, STRING sep)**：**列转行函数**，将当前数据集下指定列的所有值按照指定分隔符拼接成单个字符串，默认分隔符为英文逗号。返回值为String类型。
+   PS：**行转列**，目前只能通过“union”关键字实现，且只能支持有限行\
 
 
 
