@@ -1,4 +1,4 @@
-# Apache Impala常用语句
+# Apache Impala常用命令
 
 
 ## Apache Impala通用
