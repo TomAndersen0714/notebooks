@@ -182,7 +182,8 @@ https://www.w3cschool.cn/htmltags/ref-standardattributes.html
 
 其中，**优先级：内联式 > 嵌入式 > 外联式**，通常情况下样式都以外部样式保存在.css文件中，通过引入外部样式表，可以在不同的html文档页面中使用相同的样式
 
-### CSS样式表的分类及优先级
+
+#### CSS样式表的分类及优先级
 
 当同一个HTML元素定义了多个样式时，高优先级的样式会覆盖低优先级样，优先级如下
 1. 浏览器缺省设置
@@ -233,11 +234,9 @@ id和class是HTML元素中最常用的两个属性，CSS的id和class选择器�
 
 
 
-
-
 #### id选择器
 
-CSS中id选择器，以`#`符号开头来定义，如下的CSS样式定义，仅应用于属性id的属性值为"para1"的元素
+CSS中id选择器，以`#`符号开头来定义，格式为`#id`，如下的CSS样式定义，仅应用于属性id的属性值为"para1"的元素，如：
 
 ```css
 #para1 {
@@ -249,10 +248,27 @@ CSS中id选择器，以`#`符号开头来定义，如下的CSS样式定义，仅
 
 #### class选择器
 
-CSS中的Class选择器，以一个点`.`符号开头定义，用于描述一组元素的样式，
+CSS中的Class选择器，以一个点`.`符号开头定义，格式为`.class`，用于描述一组class属性值相同的元素的样式，如：
+```css
+.center {
+    text-align: center;
+}
+```
 
 
+### CSS选择器参考手册
 
+CSS选择器，除了id和class选择器外，还有很多其他类别的选择器，用于筛选HTML元素，并给筛选的元素指定对应的样式，如使用通配符、元素名来选择HTML元素的选择器
+https://www.w3cschool.cn/cssref/css-selectors.html
+
+
+### CSS样式声明和引入方式
+
+#### 外部样式表
+
+#### 内部样式表
+
+#### 内联样式
 
 
 ## 常用帮助手册
@@ -264,7 +280,7 @@ https://www.w3cschool.cn/htmltags/html-reference.html
 https://www.w3cschool.cn/htmltags/ref-standardattributes.html
 
 ## CSS3选择器参考手册
-https://www.w3school.com.cn/cssref/css_selectors.asp
+https://www.w3cschool.cn/cssref/css-selectors.html
 
 ## 参考链接
 1. [W3Cschool - HTML/CSS教程](https://www.w3cschool.cn/tutorial)
