@@ -16,9 +16,25 @@
 HTML文件以`.html`和`.htm`后缀为结尾。
 
 
-### HTML5文档的基本组成元素
+### HTML元素
 
-#### 最小的HTML5文档
+HTML 文档由相互嵌套的 HTML 元素构成。大多数 HTML 元素可以嵌套（HTML 元素可以包含其他 HTML 元素）。
+
+#### HTML元素语法
+
+1. HTML元素以**起始标签（opening tag），或开始标签**为开始，以**闭合标签（closing tag），或结束标签**为终止。
+2. 起止标签之间的内容即为**元素的内容**，某些元素的内容可以为空（empty content）。
+3. 没有内容的元素被称为**空元素**，空元素可以直接在开始标签中进行终止。
+4. **HTML标签必须小写**。
+5. 大多数HTML元素都拥有属性。
+6. 大多数HTML元素都支持嵌套其他HTML元素，HTML文档由相互嵌套的HTML元素组成。
+
+#### HTML5元素标签手册
+https://www.w3cschool.cn/htmltags/html-reference.html
+
+#### HTML5文档的基础元素
+
+##### 最小的HTML5文档
 ```html
 <!DOCTYPE html>
 <html>
@@ -35,7 +51,7 @@ HTML文件以`.html`和`.htm`后缀为结尾。
 </html>
 ```
 
-#### DOCTYPE声明
+##### DOCTYPE声明
 
 HTML 文档类型声明，也被称为 DOCTYPE，是每个 HTML 或 XHTML 文档中需要的第一行代码。DOCTYPE 声明是给 Web 浏览器的一个指令，说明网页是用什么版本的 HTML 写的。这可以确保不同的网络浏览器对网页的解析方式是相同的。
 
@@ -45,13 +61,13 @@ HTML 文档类型声明，也被称为 DOCTYPE，是每个 HTML 或 XHTML 文档
 [HTML 中的 DOCTYPE 声明是什么](https://www.freecodecamp.org/chinese/news/what-is-the-doctype-declaration-in-html/)
 
 
-#### html元素
+##### html元素
 
 一个HTML文档的所有其他元素都被包含在一个html元素中，所有其他的元素都被包含在html元素的html起止标签中。
 
 即所有其他的元素都是html元素的子元素，html是所有元素的父元素。
 
-###### head元素
+##### head元素
 
 标签表示文档的头部，其中包含了与该文档有关的描述信息，同时`<head>` 元素是所有头部元素的容器。
 
@@ -69,7 +85,7 @@ HTML 文档类型声明，也被称为 DOCTYPE，是每个 HTML 或 XHTML 文档
 ```
 
 
-###### meta元素
+##### meta元素
 
 ` <meta> `元素仅在` <head> `元素内部使用，用于声明 HTML 文档的元数据信息，如：
 ```html
@@ -82,7 +98,7 @@ HTML 文档类型声明，也被称为 DOCTYPE，是每个 HTML 或 XHTML 文档
 ```
 
 
-###### title元素
+##### title元素
 
 ` <title> `元素仅在` <head> `元素内部使用，用于定义html文档的标题
 ```html
@@ -94,6 +110,7 @@ HTML 文档类型声明，也被称为 DOCTYPE，是每个 HTML 或 XHTML 文档
 
 
 ##### body元素
+
 ` <body> ` 标签定义文档的主体。
 ` <body> ` 元素包含文档的所有内容（比如文本、超链接、图像、表格和列表等等）。
 
@@ -103,6 +120,39 @@ HTML 文档类型声明，也被称为 DOCTYPE，是每个 HTML 或 XHTML 文档
     文档内容
 </body>
 ```
+
+
+
+
+### HTML属性
+
+HTML 属性是 HTML 元素的附加信息
+
+示例：
+```html
+<a href="https://www.w3cschool.cn">这是一个链接使用了 href 属性</a>
+```
+
+#### HTML属性语法
+
+1. HTML属性一般定义在HTML元素的开始标签中
+2. HTML属性总是以键值对的形式出现，即属性名（key）和属性值（value），如`name="value"`
+3. HTML属性名（key）和属性值（value）都应该小写
+4. HTML属性值（value）应该始终被包括在双引号内，如果属性值中带有双引号，则需要使用单引号
+
+
+#### HTML5常用属性
+
+1. class：为html元素定义一个或多个类名（classname）(类名从样式文件引入)
+2. id：定义元素的唯一id，不应该以数字为开头，虽然浏览器容忍单个文档出现重复id，但是**规范中禁止重复id**
+3. style：规定元素的内联样式（inline style）
+4. title：描述了元素的额外信息（常作为工具条使用）
+
+
+#### HTML5全局通用属性手册
+
+https://www.w3cschool.cn/htmltags/ref-standardattributes.html
+
 
 
 ## CSS
@@ -126,26 +176,95 @@ HTML 文档类型声明，也被称为 DOCTYPE，是每个 HTML 或 XHTML 文档
 #### 如何使用CSS
 
 有三种方法可以在站点网页上使用样式表：
-1. 外联式Linking（也叫外部样式）：将网页链接到外部样式表。
-2. 嵌入式Embedding（也叫内页样式）：在网页上创建嵌入的样式表。
-3. 内联式Inline（也叫行内样式）：应用内嵌样式到各个网页元素。
+1. 外联式Linking（也叫**外部样式**）：将网页链接到外部样式表。
+2. 嵌入式Embedding（也叫**内页样式**）：在网页上创建嵌入的样式表。
+3. 内联式Inline（也叫**行内样式**）：内嵌样式到各个网页元素。
 
-其中，优先级：内联式 > 嵌入式 > 外联式
+其中，**优先级：内联式 > 嵌入式 > 外联式**，通常情况下样式都以外部样式保存在.css文件中，通过引入外部样式表，可以在不同的html文档页面中使用相同的样式
 
+### CSS样式表的分类及优先级
+
+当同一个HTML元素定义了多个样式时，高优先级的样式会覆盖低优先级样，优先级如下
+1. 浏览器缺省设置
+2. **外部样式表(External style sheet)**：以 **.css文件**的形式声明的样式表，通过文件的方式进行引入
+3. **内部样式表(Internal style sheet)**：在HTML文档中，以` <style> `**标签**声明的元素，并通常放置于` <head> `标签内部，作为其子元素
+4. **内联样式表、行内样式表(Inline style)**：在 HTML 元素的起始标签内部**style属性**中设定css样式，适用于修改简单样式
+
+内联样式（在 HTML 元素内部）拥有最高的优先权，这意味着它将优先于以下的样式声明：标签中的样式声明，外部样式表中的样式声明，或者浏览器中的样式声明（缺省值）。
 
 ### CSS语法
 
+#### CSS实例
+
+CSS实例的声明由两个主要部分构成，选择器（Selector）和声明（Declaration）。多个选择器（Selector）之间使用英文逗号进行分割，每个声明（Declaration）使用英文分号作结尾，所有声明使用花括号进行囊括。
+
+声明（Declaration）由属性（property）和属性值（value）组成，每个属性（property）都有一个属性值（value）与其一一对应，属性和值之间使用英文冒号分割。
+
+CSS实例的示例：
+```css
+h1, h2 {
+    color: red;
+    text-align: center;
+}
+```
 
 
-## 其他
+#### CSS注释
+
+CSS注释以 \/\* 开始, 以 \*\/ 结束, 实例如下:
+```css
+/*这是个注释*/
+p {
+    text-align: center;
+    /*这是另一个注释*/
+    color: black;
+    font-family: arial;
+}
+```
+
+
+### CSS选择器
+
+id和class是HTML元素中最常用的两个属性，CSS的id和class选择器可以**为具有对应属性的HTML元素设置对应的展示样式**。
+
+通常HTML元素的id属性的属性值不允许重复，但class属性有别于id属性，相同的class属性值，可以在相同HTML文档中的多个HTML元素中重复使用。
+
+#### 标签选择器
+
+
+
+
+
+#### id选择器
+
+CSS中id选择器，以`#`符号开头来定义，如下的CSS样式定义，仅应用于属性id的属性值为"para1"的元素
+
+```css
+#para1 {
+    text-align: center;
+    color: red;
+}
+```
+
+
+#### class选择器
+
+CSS中的Class选择器，以一个点`.`符号开头定义，用于描述一组元素的样式，
+
+
+
+
+
+## 常用帮助手册
 
 ### HTML5元素标签手册
-https://www.runoob.com/tags/html-reference.html
+https://www.w3cschool.cn/htmltags/html-reference.html
 
-### HTML5元素属性手册
-https://www.runoob.com/tags/ref-standardattributes.html
+### HTML5元素全局通用属性手册
+https://www.w3cschool.cn/htmltags/ref-standardattributes.html
 
-
+## CSS3选择器参考手册
+https://www.w3school.com.cn/cssref/css_selectors.asp
 
 ## 参考链接
 1. [W3Cschool - HTML/CSS教程](https://www.w3cschool.cn/tutorial)
