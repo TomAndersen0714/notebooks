@@ -26,6 +26,10 @@ Python3： 3.6.9
 ## CSP常见问题答疑
 https://cspro.org/cms/show.action?code=publish_8ac21fad692439c7016932b9e83e010d&siteid=100000
 
+## 注意事项
+
+1. 提交Java代码时，类名需要声明为非public类型，且类名必须为Main
+
 
 ## 参考链接
 
