@@ -97,6 +97,11 @@ VALUES("007","TomAndersen")
 
 1. 清空表：`TRUNCATE <table>`
 
+
+### LOAD DATA
+
+1. 加载HDFS文件入表：`LOAD DATA INPATH '/path/to/hdfs/directory' [OVERWRITE] INTO TABLE tablename [PARTITION (partcol1=val1, partcol2=val2 ...)]`
+
 ## Apache Kudu
 
 ### CREATE
