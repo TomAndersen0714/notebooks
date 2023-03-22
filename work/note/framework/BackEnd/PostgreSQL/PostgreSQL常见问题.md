@@ -4,8 +4,6 @@
 
 
 
-
-
 ## 1. PostgreSQL命令行执行`\d table_name`命令查看表结构时报错
 
 
