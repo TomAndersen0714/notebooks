@@ -148,7 +148,7 @@ AS SELECT * FROM tmp.test_kudu_source_tbl
 1. 删除数据（Impala 2.8 or higher only）
 	1. 删除表：`DELETE FROM <table>`，或`DELETE <table>`
 	2. 删除指定行：`DELETE FROM <table> WHERE <where_statement>`，PS：注意命中索引
-
+ 
 
 ## 其他
 1) 低版本Kudu（如：1.1）中通过Impala修改Impala和Kudu表名步骤：

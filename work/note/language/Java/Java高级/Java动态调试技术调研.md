@@ -1,10 +1,4 @@
-# 如何追踪Java程序的执行过程
-
-
-
-
-
-
+# Java动态调试技术调研
 
 
 
@@ -19,7 +13,6 @@ https://www.eclipse.org/aspectj/
 ## BTrace
 
 Source Code：https://github.com/btraceio/btrace
-
 
 
 

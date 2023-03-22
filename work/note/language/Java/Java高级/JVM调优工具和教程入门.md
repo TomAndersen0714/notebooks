@@ -3,8 +3,7 @@
 
 
 
-
 ## 参考链接
 
 1. [JVM调优工具锦囊：JDK自带工具与Arthas线上分析工具对比](https://zhuanlan.zhihu.com/p/456055625)
-1. [Arthas](https://arthas.aliyun.com/doc/arthas-properties.html)
+2. [Arthas](https://arthas.aliyun.com/doc/arthas-properties.html)
