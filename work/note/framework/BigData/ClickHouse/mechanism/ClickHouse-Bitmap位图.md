@@ -2,6 +2,13 @@
 
 
 
+## 应用场景
+
+1. 用户画像
+2. 人群圈选
+3. AB测试
+
+
 ## Bitmap相关的函数
 
 ### Bitmap Functions
@@ -104,15 +111,9 @@ SELECT COUNT(DISTINCT UserID) FROM test.visits;
 ```
 
 
-## 应用场景
-
-1. 用户画像
-2. AB测试
-3. 标签分类
-
-
 ## 参考链接
 1. https://clickhouse.com/docs/en/sql-reference/data-types/aggregatefunction
 2. https://clickhouse.com/docs/en/sql-reference/aggregate-functions/reference/groupbitmap
 3. https://clickhouse.com/docs/en/sql-reference/aggregate-functions/reference/groupbitmapand
 4. https://clickhouse.com/docs/en/sql-reference/functions/bitmap-functions
+5. [技术干货 | ClickHouse 在十亿级用户画像平台的应用实践](https://maimai.cn/article/detail?fid=1666603389&efid=FJ9ko6oJOUycWo_q5WdZDg)
