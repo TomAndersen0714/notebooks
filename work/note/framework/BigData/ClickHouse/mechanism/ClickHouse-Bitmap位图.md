@@ -1,12 +1,20 @@
 # ClickHouse Bitmap位图
 
 
+## Bitmap简介
+RoaringBitmap
+
+
+## ClickHouse Bitmap
+RoaringBitmap
+
 
 ## 应用场景
 
 1. 用户画像
 2. 人群圈选
 3. AB测试
+4. UV统计
 
 
 ## Bitmap相关的函数
