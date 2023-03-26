@@ -1,10 +1,5 @@
 # ClickHouse Bitmap位图
 
-
-## Bitmap简介
-RoaringBitmap
-
-
 ## ClickHouse Bitmap
 RoaringBitmap
 

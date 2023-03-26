@@ -1,4 +1,4 @@
-# ClickHouse MergeTree Indexes
+# ClickHouse MergeTree Index
 
 ## 前言
 
