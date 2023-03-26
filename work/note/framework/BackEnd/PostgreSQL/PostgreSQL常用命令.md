@@ -24,6 +24,7 @@ psql postgresql://db_user:db_passwd@host:port/db_name
 psql -h 10.248.32.3 -p 5432 -U qc_object qc_object
 psql postgresql://qc_object:qcobjadmin@10.248.32.3:5432/qc_object
 psql postgresql://sxx:sxxdosngzimv@10.248.32.3:5432/postgres
+psql postgresql://airflow_user:airflow_pass@10.0.2.2:5432/airflow_db
 ```
 
 
@@ -67,20 +68,34 @@ https://www.postgresql.org/docs/14/sql-altertable.html
 
 ## 其他常用命令
 
-查询表结构
+查询表结构，information_schema.columns表
+https://www.postgresql.org/docs/current/information-schema.html
+
 ```mysql
 select column_name,
     data_type,
     character_maximum_length,
     column_default,
     is_nullable
-from INFORMATION_SCHEMA.COLUMNS
+from information_schema.columns
 where table_name = 'sxx.ft_product_mapping_tm';
 ```
 
-查看数据类型长度
+
+查看数据类型信息，pg_type表
+https://www.postgresql.org/docs/14/catalogs.html
 ```mysql
+-- 查看数据类型长度
 SELECT typlen FROM pg_type WHERE oid = pg_typeof(33);
+```
+
+
+查看index信息，pg_indexes表
+https://www.postgresql.org/docs/14/catalogs.html
+```mysql
+SELECT *
+FROM pg_indexes
+LIMIT 100
 ```
 
 
@@ -90,4 +105,5 @@ SELECT typlen FROM pg_type WHERE oid = pg_typeof(33);
 2. [PostgreSQL 14.7 Documentation](https://www.postgresql.org/docs/14/index.html)
 3. [PostgreSQL 14.7 Documentation - SQL Commands](https://www.postgresql.org/docs/14/sql-commands.html)
 4. [PostgreSQL 14.7 - PostgreSQL interactive terminal](https://www.postgresql.org/docs/14/app-psql.html)
-5. [数据库教程 - PostgreSQL](https://www.sjkjc.com/postgresql/basic/)
+5. [PostgreSQL 14.7 - Catalogs](https://www.postgresql.org/docs/14/catalogs.html)
+6. [数据库教程 - PostgreSQL](https://www.sjkjc.com/postgresql/basic/)
