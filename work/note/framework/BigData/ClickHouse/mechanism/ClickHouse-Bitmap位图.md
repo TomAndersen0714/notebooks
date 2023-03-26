@@ -2,7 +2,6 @@
 
 
 
-
 ## Bitmap相关的函数
 
 ### Bitmap Functions
@@ -104,6 +103,12 @@ FROM test.dws_mv_visits;
 SELECT COUNT(DISTINCT UserID) FROM test.visits;
 ```
 
+
+## 应用场景
+
+1. 用户画像
+2. AB测试
+3. 标签分类
 
 
 ## 参考链接

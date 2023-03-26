@@ -1,6 +1,7 @@
 # ClickHouse MergeTree Indexes
 
 ## 前言
+
 本文主要介绍MergeTree表引擎相关的索引
 
 

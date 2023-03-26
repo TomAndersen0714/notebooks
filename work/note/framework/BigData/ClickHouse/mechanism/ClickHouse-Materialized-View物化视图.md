@@ -1,7 +1,7 @@
 # ClickHouse Materialized View
 
 
-在ClickHouse中，Materialized View 实际上是一种**针对 INSERT 事件的触发器（`Trigger`）**，每当向源表中插入数据时，依赖此源表的Materialized View 便会通过其创建时声明的 SELECT 查询，将本次插入的数据进行转换，并将转换后的结果数据写入到 Materialized View 声明的目标表中。
+在ClickHouse中，Materialized View 实际上是一种**针对 INSERT 事件的触发器（`Trigger`）**，且**只增不删**，每当向源表中插入数据时，依赖此源表的Materialized View 便会通过其创建时声明的 SELECT 查询，将本次插入的数据进行转换，并将转换后的结果数据写入到 Materialized View 声明的目标表中。
 
 使用 Materialized View 物化视图，能够在数据 INSERT 时对其进行近实时处理，相当于一种数据的预处理，通常可以用于提升后续的SELECT查询性能，如：通过预聚合源表的数据并写入目标表，减少ClickHouse在查询目标表时需要扫描的数据量，以及运算量。
 
