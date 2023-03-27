@@ -1,28 +1,75 @@
 # ClickHouse Bitmap位图
 
+
 ## ClickHouse Bitmap
-RoaringBitmap
+
+### 简介
+
+ClickHouse中，`Bitmap Object`通常有两种构建方式：
+1. 一种是使用`groupBitmap`聚合函数附加`State`后缀，即`groupBitmapState`将任意个无符号整型聚合后，生成对应的Bitmap对象；
+2. 二是使用`bitmapBuild`函数，将输入的无符号整型数组，转换后生成对应的Bitmap对象。
+
+ClickHouse中Bitmap对象的基数（即不同非符号整数数量）小于等于32时，实际上存储时使用的是`Set`对象，当基数大于32时，则使用的是`RoaringBitmap`对象，这也是为什么ClickHouse低基数的bitmap会比高基数的bitmap速度要快。
 
 
-## 应用场景
+### 应用场景
 
 1. 用户画像
 2. 人群圈选
 3. AB测试
-4. UV统计
+4. 精准去重计数
 
 
 ## Bitmap相关的函数
 
 ### Bitmap Functions
-1. https://clickhouse.com/docs/en/sql-reference/functions/bitmap-functions
+https://clickhouse.com/docs/en/sql-reference/functions/bitmap-functions
+
+Bitmap Function主要用于处理单个或两个Bitmap对象的运算。
+
+
+#### bitmapBuild
+
+将无符号整型数组，转换为对应的Bitmap对象。PS：bitmap中重复记录只会记录一次。
+
+```sql
+SELECT bitmapBuild([1, 2, 3, 4, 5]) AS res, toTypeName(res);
+```
+
+#### bitmapToArray
+
+将bitmap对象，转换为无符号整型数组的形式。
+
+```sql
+SELECT bitmapToArray(bitmapBuild([1, 2, 3, 4, 5])) AS res;
+```
 
 
 ### Bitmap Aggregate Functions
-1. groupBitmap: https://clickhouse.com/docs/en/sql-reference/aggregate-functions/reference/groupbitmap
-2. groupBitmapAnd: https://clickhouse.com/docs/en/sql-reference/aggregate-functions/reference/groupbitmapand
-3. groupBitmapOr: https://clickhouse.com/docs/en/sql-reference/aggregate-functions/reference/groupbitmapor
-4. groupBitmapXor: https://clickhouse.com/docs/en/sql-reference/aggregate-functions/reference/groupbitmapxor
+
+#### groupBitmap
+https://clickhouse.com/docs/en/sql-reference/aggregate-functions/reference/groupbitmap
+
+输入任意数量`UInt*`类型的无符号整数，生成对应的bitmap对象后，仅返回bitmap的基数。
+
+如果附加`State`后缀，则返回对应的Bitmap对象，即`AggregateFunction(groupBitmap, UInt*)`类型的数值。
+如果附加`Merge`后缀，则是输入任意数量Bitmap对象，返回对应聚合后的bitmap基数（UInt64类型）。
+
+
+#### groupBitmapAnd
+https://clickhouse.com/docs/en/sql-reference/aggregate-functions/reference/groupbitmapand
+
+输入任意数量`AggregateFunction(groupBitmap, UInt*)`类型数值，执行AND与运算，最后返回UInt64类型的bitmap基数。
+
+如果附加`State`后缀，则返回AND与运算后对应的Bitmap对象结果，即`AggregateFunction(groupBitmap, UInt*)`类型的数值。
+
+
+#### groupBitmapOr
+https://clickhouse.com/docs/en/sql-reference/aggregate-functions/reference/groupbitmapor
+
+
+#### groupBitmapXor
+https://clickhouse.com/docs/en/sql-reference/aggregate-functions/reference/groupbitmapxor
 
 ```sql
 SELECT *
@@ -111,6 +158,8 @@ FROM test.dws_mv_visits;
 -- SELECT
 -- 1 rows in set. Elapsed: 0.064 sec. Processed 1.60 million rows, 6.40 MB (25.05 million rows/s., 100.22 MB/s.)
 SELECT COUNT(DISTINCT UserID) FROM test.visits;
+
+SELECT uniqExact(UserID) FROM test.visits;
 ```
 
 
@@ -120,3 +169,5 @@ SELECT COUNT(DISTINCT UserID) FROM test.visits;
 3. https://clickhouse.com/docs/en/sql-reference/aggregate-functions/reference/groupbitmapand
 4. https://clickhouse.com/docs/en/sql-reference/functions/bitmap-functions
 5. [技术干货 | ClickHouse 在十亿级用户画像平台的应用实践](https://maimai.cn/article/detail?fid=1666603389&efid=FJ9ko6oJOUycWo_q5WdZDg)
+6. [ClickHouse Meetup-在苏宁用户画像场景的实践](https://mp.weixin.qq.com/s/sLFD5llh8YaECtqsNjSbjQ)
+7. 

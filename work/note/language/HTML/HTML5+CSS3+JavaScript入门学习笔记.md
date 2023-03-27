@@ -29,9 +29,6 @@ HTML 文档由相互嵌套的 HTML 元素构成。大多数 HTML 元素可以嵌
 5. 大多数HTML元素都拥有属性。
 6. 大多数HTML元素都支持嵌套其他HTML元素，HTML文档由相互嵌套的HTML元素组成。
 
-#### HTML5元素标签手册
-https://www.w3cschool.cn/htmltags/html-reference.html
-
 #### HTML5文档的基础元素
 
 ##### 最小的HTML5文档
@@ -123,6 +120,9 @@ HTML 文档类型声明，也被称为 DOCTYPE，是每个 HTML 或 XHTML 文档
 
 
 
+
+#### HTML5元素标签手册
+https://www.w3cschool.cn/htmltags/html-reference.html
 
 ### HTML属性
 
@@ -230,8 +230,11 @@ id和class是HTML元素中最常用的两个属性，CSS的id和class选择器�
 
 通常HTML元素的id属性的属性值不允许重复，但class属性有别于id属性，相同的class属性值，可以在相同HTML文档中的多个HTML元素中重复使用。
 
-#### 标签选择器
+在CSS3中，支持了多种多样的选择器，除了支持元素选择器、id和class选择器外，还支持以通配符的方式来定位需要渲染的元素。
 
+#### 元素选择器
+
+CSS中元素选择器，即以 HTML 标签作为 CSS 修饰所用的选择器，相当于直接指定对应标签囊括的内容，需要使用当前的CSS实例来进行渲染。
 
 
 #### id选择器
@@ -256,15 +259,29 @@ CSS中的Class选择器，以一个点`.`符号开头定义，格式为`.class`�
 ```
 
 
-### CSS选择器参考手册
+#### 分组选择器
+
+
+
+#### CSS选择器参考手册
 
 CSS选择器，除了id和class选择器外，还有很多其他类别的选择器，用于筛选HTML元素，并给筛选的元素指定对应的样式，如使用通配符、元素名来选择HTML元素的选择器
 https://www.w3cschool.cn/cssref/css-selectors.html
+
+### CSS属性
+
+
+#### CSS属性参考手册
+https://www.w3cschool.cn/cssref/3ps212do.html
 
 
 ### CSS样式声明和引入方式
 
 #### 外部样式表
+
+当CSS样式需要同时应用于很多页面时，外部样式表将是理想的选择。在使用外部样式表的情况下，可以通过改变一个文件来改变整个站点的外观。每个页面的元素使用标签`<link>`来链接样式表。
+
+
 
 #### 内部样式表
 
@@ -279,9 +296,16 @@ https://www.w3cschool.cn/htmltags/html-reference.html
 ### HTML5元素全局通用属性手册
 https://www.w3cschool.cn/htmltags/ref-standardattributes.html
 
-## CSS3选择器参考手册
+### CSS选择器参考手册
 https://www.w3cschool.cn/cssref/css-selectors.html
+
+### CSS属性参考手册
+https://www.w3cschool.cn/cssref/3ps212do.html
+
+### CSS参考手册
+https://www.w3cschool.cn/cssref/
 
 ## 参考链接
 1. [W3Cschool - HTML/CSS教程](https://www.w3cschool.cn/tutorial)
 2. [HTML5教程-菜鸟教程](https://www.runoob.com/html/html-tutorial.html)
+3. [CSS属性在线视觉引导](https://www.w3cschool.cn/moresource/cssreference/index.html)
