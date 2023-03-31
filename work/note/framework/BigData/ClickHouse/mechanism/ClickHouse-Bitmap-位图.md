@@ -163,6 +163,22 @@ SELECT uniqExact(UserID) FROM test.visits;
 ```
 
 
+## 常见问题
+
+### 问题1: groupBitmapOr result incorrect in distribued table #31335
+在低版本中groupBitmapOr、groupBitmapAnd在查询Distribued表时，计算结果不正确
+https://github.com/ClickHouse/ClickHouse/issues/31335
+https://github.com/ClickHouse/ClickHouse/pull/32529
+
+**解决方案**：
+不要针对Distribued表直接查询并使用对应的聚合函数，需要将Distribued表中所需的字段以子查询的形式查询出来，如`SELECT * FROM test.distribued_all`，然后在再使用聚合函数进行聚合。
+
+个人推测是因为在直接查询分布式Distribued表时，查询会被转换为对应的本地表查询，进而导致查询结果与实际不符。
+
+
+
+
+
 ## 参考链接
 1. https://clickhouse.com/docs/en/sql-reference/data-types/aggregatefunction
 2. https://clickhouse.com/docs/en/sql-reference/aggregate-functions/reference/groupbitmap

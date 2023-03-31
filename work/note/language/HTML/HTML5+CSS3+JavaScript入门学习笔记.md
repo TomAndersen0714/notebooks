@@ -279,15 +279,64 @@ https://www.w3cschool.cn/cssref/3ps212do.html
 
 #### 外部样式表
 
-当CSS样式需要同时应用于很多页面时，外部样式表将是理想的选择。在使用外部样式表的情况下，可以通过改变一个文件来改变整个站点的外观。每个页面的元素使用标签`<link>`来链接样式表。
+当CSS样式需要同时应用于很多页面时，外部样式表将是理想的选择。在使用外部样式表的情况下，可以通过改变一个文件来改变整个站点的外观。
+
+
+CSS外部样式表可以在任何文本编辑器中进行编辑。CSS文件不能包含任何的 html 标签。样式表应该以 .css 扩展名进行保存。下面是一个样式表文件的例子：
+
+```css
+hr {
+    color: rgb(255, 0, 0);
+}
+
+h1 {
+    color: green;
+}
+
+p {
+    margin-left: 20px;
+}
+
+body {
+    background-image: url("../img/background.jpg");
+}
+```
+
+
+每个页面的元素使用标签`<link>`来链接样式表。`<link>`标签需要声明在HTML文档的头部：
+
+```html
+<head>
+    <link rel="stylesheet" type="text/css" href="mystyle.css">
+</head>
+```
 
 
 
 #### 内部样式表
 
+当单个HTML文档需要特殊的样式时，就应该使用内部样式表，便可以使用`<style>`标签在文档头部元素`<head>`内定义内部样式表，如：
+```html
+<head>
+    <style>
+        hr {
+            color: sienna;
+        }
+
+        p {
+            margin-left: 20px;
+        }
+
+        body {
+            background-image: url("images/back40.gif");
+        }
+    </style>
+</head>
+```
 
 
 #### 内联样式
+
 
 
 
