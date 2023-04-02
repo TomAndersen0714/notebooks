@@ -47,6 +47,13 @@ SELECT bitmapToArray(bitmapBuild([1, 2, 3, 4, 5])) AS res;
 
 ### Bitmap Aggregate Functions
 
+```sql
+SELECT *
+FROM system.functions
+WHERE name LIKE '%groupBitmap%'
+```
+
+
 #### groupBitmap
 https://clickhouse.com/docs/en/sql-reference/aggregate-functions/reference/groupbitmap
 
@@ -71,11 +78,6 @@ https://clickhouse.com/docs/en/sql-reference/aggregate-functions/reference/group
 #### groupBitmapXor
 https://clickhouse.com/docs/en/sql-reference/aggregate-functions/reference/groupbitmapxor
 
-```sql
-SELECT *
-FROM system.functions
-WHERE name LIKE '%groupBitmap%'
-```
 
 
 ## Example
@@ -171,10 +173,9 @@ https://github.com/ClickHouse/ClickHouse/issues/31335
 https://github.com/ClickHouse/ClickHouse/pull/32529
 
 **解决方案**：
-不要针对Distribued表直接查询并使用对应的聚合函数，需要将Distribued表中所需的字段以子查询的形式查询出来，如`SELECT * FROM test.distribued_all`，然后在再使用聚合函数进行聚合。
+不要针对Distribued表直接查询并使用对应的聚合函数，需要将Distribued表中所需的字段以子查询的形式查询出来，如`SELECT * FROM test.distribued_all`，然后在再使用bitmap相关的聚合函数进行聚合。
 
-个人推测是因为在直接查询分布式Distribued表时，查询会被转换为对应的本地表查询，进而导致查询结果与实际不符。
-
+个人推测是因为在直接查询分布式Distribued表时，查询会被转换为对应的本地表查询，而在将本地表的查询结果汇总时，低版本ClickHouse中并没有针对此问题进行特殊处理，进而导致查询结果与实际不符。
 
 
 
@@ -186,4 +187,3 @@ https://github.com/ClickHouse/ClickHouse/pull/32529
 4. https://clickhouse.com/docs/en/sql-reference/functions/bitmap-functions
 5. [技术干货 | ClickHouse 在十亿级用户画像平台的应用实践](https://maimai.cn/article/detail?fid=1666603389&efid=FJ9ko6oJOUycWo_q5WdZDg)
 6. [ClickHouse Meetup-在苏宁用户画像场景的实践](https://mp.weixin.qq.com/s/sLFD5llh8YaECtqsNjSbjQ)
-7. 
