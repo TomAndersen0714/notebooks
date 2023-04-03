@@ -166,7 +166,7 @@ HTML 属性是 HTML 元素的附加信息
 
 #### HTML5常用属性
 
-1. class：为html元素定义一个或多个类名（classname）(类名从样式文件引入)
+1. class：为html元素定义一个或多个类名（classname）(类名从CSS样式文件引入)
 2. id：定义元素的唯一id，不应该以数字为开头，虽然浏览器容忍单个文档出现重复id，但是**规范中禁止重复id**
 3. style：规定元素的内联样式（inline style）
 4. title：描述了元素的额外信息（常作为工具条使用）
@@ -220,7 +220,9 @@ https://www.w3cschool.cn/htmltags/ref-standardattributes.html
 
 #### CSS实例
 
-CSS实例的声明由两个主要部分构成，选择器（Selector）和声明（Declaration）。多个选择器（Selector）之间使用英文逗号进行分割，每个声明（Declaration）使用英文分号作结尾，所有声明使用花括号进行囊括。
+CSS实例的声明由两个主要部分构成，选择器（Selector）和声明（Declaration）。
+1. 多个选择器（Selector）之间使用特殊符号进行连接，不同的连接符号，代表不同的元素选择规则。
+2. 每个声明（Declaration）使用英文分号作结尾，所有声明使用花括号进行囊括。
 
 声明（Declaration）由属性（property）和属性值（value）组成，每个属性（property）都有一个属性值（value）与其一一对应，属性和值之间使用英文冒号分割。
 
@@ -255,12 +257,28 @@ id和class是HTML元素中最常用的两个属性，CSS的id和class选择器�
 
 在CSS3中，支持了多种多样的选择器，除了支持元素选择器、id和class选择器外，还支持以通配符的方式来定位需要渲染的元素。
 
-#### 元素选择器
-
-CSS中元素选择器，即以 HTML 标签作为 CSS 修饰所用的选择器，相当于直接指定对应标签囊括的内容，需要使用当前的CSS实例来进行渲染。
+**多个选择器（Selector）之间使用使用不同的符号（如：英文逗号、空格等）进行连接时，其指定元素的方式也不相同**。
 
 
-#### id选择器
+#### CSS选择器分类
+
+[CSS3选择器归类整理](https://www.w3cschool.cn/css3/css3-selector.html)
+
+##### 基本选择器
+
+###### 元素/标签选择器
+
+CSS中元素选择器，即以 HTML 标签作为 CSS 修饰所用的选择器，相当于直接指定对应标签囊括的内容，需要使用当前的CSS实例来进行渲染。如：
+
+```CSS
+p {
+    text-align: center;
+}
+```
+
+
+
+###### id选择器
 
 CSS中id选择器，以`#`符号开头来定义，格式为`#id`，如下的CSS样式定义，仅应用于属性id的属性值为"para1"的元素，如：
 
@@ -272,18 +290,36 @@ CSS中id选择器，以`#`符号开头来定义，格式为`#id`，如下的CSS�
 ```
 
 
-#### class选择器
+###### class选择器
 
 CSS中的Class选择器，以一个点`.`符号开头定义，格式为`.class`，用于描述一组class属性值相同的元素的样式，如：
-```css
+```CSS
 .center {
     text-align: center;
 }
 ```
 
+或同时声明HTML元素，即仅针对特定的HTML元素生效
+```CSS
+p.center {
+    text-align: center;
+}
+```
 
-#### 分组选择器
 
+###### 分组/群组选择器
+
+分组选择器，实际上多个选择器的一个组合，命中的是各个子选择器命中的元素的并集。多个选择器之间，使用英文逗号进行连接。如：
+
+```CSS
+h1,h2{
+    text-align: center;
+}
+```
+
+
+##### 层次选择器
+[CSS的选择器——逗号、空格分隔和连写的区别](https://blog.csdn.net/qq_40314214/article/details/106819267)
 
 
 #### CSS选择器参考手册
@@ -301,6 +337,8 @@ https://www.w3cschool.cn/cssref/3ps212do.html
 ### CSS样式声明和引入方式
 
 #### 外部样式表
+
+外部样式，在`.css`文件中声明，在HTML文档的`head`元素的`link`空元素中进行引入。
 
 当CSS样式需要同时应用于很多页面时，外部样式表将是理想的选择。在使用外部样式表的情况下，可以通过改变一个文件来改变整个站点的外观。
 
@@ -337,6 +375,8 @@ body {
 
 #### 内部样式表
 
+内部样式，在HTML文档的`head`元素的`style`子元素中进行声明。
+
 当单个HTML文档需要特殊的样式时，就应该使用内部样式表，便可以使用`<style>`标签在HTML文档的元素`<head>`（即HTML头）内定义内部样式表，如：
 ```html
 <head>
@@ -357,7 +397,9 @@ body {
 ```
 
 
-#### 内联样式表
+#### 内联样式
+
+内联样式，位于对应的HTML元素的起始标签内部，通过`style`属性进行声明。
 
 内联样式表，是当将内容和样式混杂在一起，会损失掉样式表的许多优势，使用时需要慎重。内两样式表，仅针对当前声明时所在的元素生效，且不需要声明CSS选择器。还需要在对应的HTML元素的起始标签内，使用`style`属性，即样式属性，来声明当前元素所需要使用的样式即可。如：
 
@@ -365,9 +407,10 @@ body {
 <p style="color:sienna;margin-left:20px">这是一个段落。</p>
 ```
 
-#### 样式表之间的优先级
 
-一般情况下，优先级如下所示：
+#### CSS样式之间的优先级
+
+通常情况下，优先级如下所示：
 **（内联样式）Inline style > （内部样式）Internal style sheet ≈（外部样式）External style sheet > 浏览器默认样式**
 
 其中值得注意的是，内部样式（Internal Style Sheet）和外部样式（External Style Sheet）之间的优先级，取决于两者的声明先后顺序。
@@ -375,6 +418,7 @@ body {
 如果外部样式的引入声明（即`<head>`标签的`<link>`子标签）的位置，在内部样式表的声明（即`<head>`标签的`<style>`子标签）之后，则外部样式表会覆盖内部样式表中的属性。
 
 但一般而言，外部样式表的声明都在`<head>`标签中的首几行，且在内部样式表之前。
+
 
 
 ## 常用帮助手册
@@ -385,14 +429,15 @@ https://www.w3cschool.cn/htmltags/html-reference.html
 ### HTML5元素全局通用属性手册
 https://www.w3cschool.cn/htmltags/ref-standardattributes.html
 
+### CSS参考手册
+https://www.w3cschool.cn/cssref/
+
 ### CSS选择器参考手册
 https://www.w3cschool.cn/cssref/css-selectors.html
 
 ### CSS属性参考手册
 https://www.w3cschool.cn/cssref/3ps212do.html
 
-### CSS参考手册
-https://www.w3cschool.cn/cssref/
 
 ## 参考链接
 1. [W3Cschool - HTML/CSS教程](https://www.w3cschool.cn/tutorial)
