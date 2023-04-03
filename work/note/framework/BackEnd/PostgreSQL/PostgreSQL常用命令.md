@@ -46,7 +46,7 @@ psql postgresql://airflow_user:airflow_pass@10.0.2.2:5432/airflow_db
 `\di[S+] [PATTERN]`：查看所有indexes
 
 
-## SQL命令
+## SQL命令手册
 
 [PostgreSQL 14.7 Documentation - SQL Commands](https://www.postgresql.org/docs/14/sql-commands.html)
 
