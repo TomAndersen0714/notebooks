@@ -17,6 +17,11 @@ https://www.postgresql.org/docs/14/functions-info.html
    获取指定值的数据类型，如：`SELECT pg_typeof(33)`
 
 
+## Window Functions
+https://www.postgresql.org/docs/14/sql-expressions.html#SYNTAX-WINDOW-FUNCTIONS
+https://www.postgresql.org/docs/14/tutorial-window.html
+https://www.postgresql.org/docs/14/functions-window.html
+
 
 ## Type Conversion
 https://www.postgresql.org/docs/14/typeconv.html

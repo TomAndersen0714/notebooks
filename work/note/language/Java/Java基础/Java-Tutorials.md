@@ -37,6 +37,15 @@ https://docs.oracle.com/javase/tutorial/index.html
 
 ### Essential Java Classes
 
+#### Exceptions
+
+#### Basic I/O
+
+#### Concurrency
+
+#### The Platform Environment
+
+#### Regular Expressions
 
 ### Collections
 
