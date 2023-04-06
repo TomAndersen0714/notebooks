@@ -147,3 +147,9 @@ Programs use `byte streams` to perform input and output of `8-bit bytes`. All by
 
 
 ### JavaBeans
+
+
+
+### Reflection
+
+https://docs.oracle.com/javase/tutorial/reflect/index.html
