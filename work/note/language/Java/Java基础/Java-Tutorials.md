@@ -145,6 +145,8 @@ Programs use `byte streams` to perform input and output of `8-bit bytes`. All by
 ## 3. Specialized Trails and Lessons
 
 
+### The Extension Mechanism
+
 
 ### JavaBeans
 
