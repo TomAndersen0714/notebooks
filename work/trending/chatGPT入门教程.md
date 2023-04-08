@@ -62,6 +62,8 @@ https://github.com/oceanlvr/ChatGPT-ProBot
 
 ## ChatGPT调教教程
 
+即通过自然语言的提示（prompt）指令，来使得AI模拟特定的角色
+
 https://github.com/PlexPt/awesome-ChatGPT-prompts-zh
 https://www.w3cschool.cn/openai_doc/openai_doc-vw723r6a.html
 
@@ -69,7 +71,7 @@ https://www.w3cschool.cn/openai_doc/openai_doc-vw723r6a.html
 
 ## ChatGPT账号购买
 
-
+https://shop.bchatgpt.top/
 
 
 ## 参考链接
