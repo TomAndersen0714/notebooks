@@ -1,3 +1,5 @@
+# ClickHouse近实时数据更新方案
+
 ## 前言
 
 众所周知，主攻OLAP场景的数据库引擎一般都会采用某种列式存储格式，以支撑其强大的数据处理性能，当无法同时兼顾行级事务，以及频繁的数据实时更新操作。如ROLAP中的Hive、Impala、Presto、ClickHouse，以及MOLAP中的Druid、Kylin，等等。
