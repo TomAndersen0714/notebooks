@@ -14,6 +14,10 @@
 参考《Node.js入门教程》
 
 
+### 安装VSCode
+
+
+
 ### 安装插件
 
 #### JavaScript (ES6) code snippets
@@ -59,6 +63,18 @@ Vetur是一个用于在VSCode中编辑Vue.js项目的插件，可以帮助开发
 
 
 ## WebStrom
+
+
+### 安装WebStrom
+
+
+### 安装插件
+
+#### .ignore
+
+
+#### translation
+
 
 
 

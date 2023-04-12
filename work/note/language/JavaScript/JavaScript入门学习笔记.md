@@ -53,6 +53,8 @@ JavaScript 能够改变页面中的所有 HTML 属性
 JavaScript 能够改变页面中的所有 CSS 样式
 
 
+[JavaScript 和 HTML DOM 参考手册](https://www.w3cschool.cn/jsref/jsref-tutorial.html)
+
 
 ## 事件处理
 
@@ -62,11 +64,22 @@ JavaScript 能够对页面中的所有事件做出反应
 ## 使用Ajax
 
 
-## 参考手册
-1. [JavaScript 和 HTML DOM 参考手册](https://www.w3cschool.cn/jsref/jsref-tutorial.html)
+
+## 开发规范
+
+Google开发规范：
+[Google 开源项目风格指南](https://github.com/zh-google-styleguide/zh-google-styleguide)
+[Google style guide](https://github.com/google/styleguide)
+
+JavaScript文件名命名规范通常遵循以下几个约定：
+1. 文件名应该具有描述性，以便其他开发人员可以很容易地理解文件的用途。
+2. 文件名应该全部使用小写字母，避免使用大写字母和特殊字符。
+3. 如果文件名包含多个单词，则可以使用连字符（-）将它们连接在一起，以提高可读性。例如：my-script.js。
+4. 对于包含JavaScript模块的文件，通常会使用“module”单词作为文件名的一部分，例如：app-module.js。
 
 
 ## 参考链接
 
-1. [菜鸟教程-JavaScript教程](https://www.runoob.com/js/js-tutorial.html)
-2. [W3CSchool-JavaScript教程](https://www.w3cschool.cn/javascript/)
+1. [菜鸟教程 - JavaScript教程](https://www.runoob.com/js/js-tutorial.html)
+2. [W3CSchool - JavaScript教程](https://www.w3cschool.cn/javascript/)
+3. [W3CSchool - JavaScript Tutorial](https://www.w3schools.com/js/default.asp)
