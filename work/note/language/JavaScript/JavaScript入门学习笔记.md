@@ -25,9 +25,13 @@ JS是一种编程语言，可以实现具体的算法和应用程序，而HTML�
 >除了在Web浏览器中使用，JavaScript还可以在服务器端使用，例如使用Node.js。Node.js可以使JavaScript运行在服务器上，以实现Web应用程序、命令行工具等。此外，JavaScript也被广泛用于开发移动应用程序、桌面应用程序和游戏等。
 
 
+
+## JS开发环境搭建
+
+参考《JavaScript开发环境搭建》
+
+
 ## JS基础
-
-
 
 
 ### chrome浏览器中运行JavaScript
@@ -35,13 +39,20 @@ https://www.runoob.com/js/js-chrome.html
 
 
 ## 操作BOM
+https://www.runoob.com/js/js-window.html
+BOM（Browser Object Model）浏览器对象模型
 
 
 ## 操作DOM
+https://www.runoob.com/js/js-htmldom.html
+DOM（Document Object Model）文档对象模型
+
 
 JavaScript 能够改变页面中的所有 HTML 元素
 JavaScript 能够改变页面中的所有 HTML 属性
 JavaScript 能够改变页面中的所有 CSS 样式
+
+
 
 ## 事件处理
 

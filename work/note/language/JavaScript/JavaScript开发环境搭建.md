@@ -25,11 +25,6 @@
 ESLint是一个JavaScript代码静态检查工具，检查代码是否符合一些预定义的规则和最佳实践。Microsoft将ESLint以此模块的形式集成到了VSCode中。
 
 
-#### Vetur
-
-Vetur是一个用于在VSCode中编辑Vue.js项目的插件，可以帮助开发人员更轻松地编写Vue.js代码，包括语法高亮、代码补全、代码片段生成等。
-
-
 #### Prettier
 
 Prettier插件是一个用于格式化代码的工具，它可以帮助你自动规范和优化你的代码，让你的代码更加易读和一致性。Prettier支持多种编程语言，包括JavaScript、TypeScript、CSS、HTML等。例如，对于JavaScript文件，可以使用快捷键"Shift+Alt+F"来格式化代码。
@@ -45,6 +40,11 @@ Prettier插件是一个用于格式化代码的工具，它可以帮助你自动
 2. 热更新：当你对代码进行修改并保存后，Live Server会自动刷新页面并应用最新的更改，这样你可以立即看到代码变化的效果。
 3. 支持多种文件类型：Live Server支持多种文件类型，包括HTML、CSS、JavaScript等等。
 4. 支持跨域：Live Server支持跨域请求，可以让你在本地开发时测试跨域请求，将请求代理到指定地址。
+
+#### Vetur
+
+Vetur是一个用于在VSCode中编辑Vue.js项目的插件，可以帮助开发人员更轻松地编写Vue.js代码，包括语法高亮、代码补全、代码片段生成等。
+
 
 ### 修改配置
 
