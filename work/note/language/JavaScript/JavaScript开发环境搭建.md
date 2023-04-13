@@ -72,6 +72,7 @@ Vetur是一个用于在VSCode中编辑Vue.js项目的插件，可以帮助开发
 
 #### .ignore
 
+用于生成.ignore文件，避免提交
 
 #### translation
 
