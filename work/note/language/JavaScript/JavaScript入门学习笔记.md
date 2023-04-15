@@ -38,6 +38,30 @@ JS是一种编程语言，可以实现具体的算法和应用程序，而HTML�
 https://www.runoob.com/js/js-chrome.html
 
 
+### Module
+
+
+#### Module多种多样的标准和语法
+
+https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Modules
+https://www.ruanyifeng.com/blog/2020/08/how-nodejs-use-es6-module.html
+
+JavaScript Module标准并不统一，故在不同的运行环境中，其语法也不同。
+
+目前最主流的两种标准，一种是`CommonJS`，即Node.js中使用的Module标准，支持同步和动态加载，主要用于Node.js服务端项目中，使用 require 和 module.exports 或 exports 关键字来声明和使用模块。
+
+另外一种是`ES6 Module`，是JavaScript的新标准（2015），支持静态编译和动态编译，主要用于浏览器，即客户端项目中，使用 import 和 export 关键字来声明和使用模块。
+
+#### Node.js环境下使用ES6 Module标准
+
+方法一：
+在Node.js中要想使用ES6的模块语法，需要将所有使用ES6 Module语法（即export、import）的JS文件后缀，设置为`.mjs`；
+
+方法二：
+在ES6 Module文件的同级路径下添加Node.js package.json文件，并将type的值设置为`"module"`
+
+
+
 ## 操作BOM
 https://www.runoob.com/js/js-window.html
 BOM（Browser Object Model）浏览器对象模型
@@ -85,3 +109,4 @@ JavaScript规范中要求，任何表达式结尾都必须使用分号。
 1. [菜鸟教程 - JavaScript教程](https://www.runoob.com/js/js-tutorial.html)
 2. [W3CSchool - JavaScript教程](https://www.w3cschool.cn/javascript/)
 3. [W3CSchool - JavaScript Tutorial](https://www.w3schools.com/js/default.asp)
+4. [JavaScript 指南](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide)

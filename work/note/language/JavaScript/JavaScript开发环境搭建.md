@@ -72,14 +72,31 @@ Vetur是一个用于在VSCode中编辑Vue.js项目的插件，可以帮助开发
 
 #### .ignore
 
-用于生成.ignore文件，避免提交
+用于交互式生成.ignore文件
 
 #### translation
+
+一个JetBrain上的翻译插件，支持各大主流翻译工具，建议使用有道翻译
 
 
 ### 修改配置
 
-Postfix 
+#### Postfix Completion
+
+File | Settings | Editor | General | Postfix Completion
+
+Postfix Completion中增加template，可以在编辑器中表达式之后，键入对应后缀，快速生成对应代码段。
+
+增加Key名为“logvar”，表达式为`console.log("$EXPR$ = " + $EXPR$)`的template，即可以通过“表达式.logvar”的方式来在编辑器中自动生成对应的console调用代码段。
+
+
+#### Live Templates
+
+File | Settings | Editor | Live Templates
+
+Live Templates配置中增加Live Templates，可以在编辑器中，通过键入对应Key，快速生成对应代码段。
+
+在JavaScript Group下增加，名为logvar的template，template text设置为`console.log("$EXPR$ = " + $EXPR$)`，即可以通过直接键入“logvar”的方式，来自动生成对应的console调用代码段。
 
 
 ## 参考链接
