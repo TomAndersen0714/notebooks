@@ -41,12 +41,12 @@ https://www.runoob.com/js/js-chrome.html
 ### Module
 
 
-#### Module多种多样的标准和语法
+#### JavaScript在发展过程中演进出了多种Module标准
 
 https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Modules
 https://www.ruanyifeng.com/blog/2020/08/how-nodejs-use-es6-module.html
 
-JavaScript Module标准并不统一，故在不同的运行环境中，其语法也不同。
+JavaScript Module标准并未实现统一，故在不同的运行环境中，其语法也不同。
 
 目前最主流的两种标准，一种是`CommonJS`，即Node.js中使用的Module标准，支持同步和动态加载，主要用于Node.js服务端项目中，使用 require 和 module.exports 或 exports 关键字来声明和使用模块。
 
