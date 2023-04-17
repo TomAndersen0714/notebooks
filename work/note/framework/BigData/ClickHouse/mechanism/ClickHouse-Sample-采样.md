@@ -1,2 +1,2 @@
-# ClickHouse Sample 采用
+# ClickHouse Sample 采样
 
