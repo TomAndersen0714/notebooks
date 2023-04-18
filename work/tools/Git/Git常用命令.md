@@ -67,3 +67,17 @@ Rebase的行为可以大致分为三类：
 2、fixup: 这类commit不会保留，会直接与相邻的上一次commit合并，与squash不同之处在于，它的commit message回直接丢弃，即这次commit会被视为对前一次commit的一次小的补充修改（fixup），commit message就以前一次为准
 第三类：不保留，直接删除commit
 1、drop：标记为skip的commit会直接被删除，就相当于这次commit从来没有发生过。同时，这个commit中涉及的所有代码修改全部会被删除。
+
+
+
+### git rm
+
+```
+
+git rm --cached <file>
+git rm -r --cached <dir>
+```
+
+
+## 参考链接
+
