@@ -83,6 +83,11 @@ https://www.w3cschool.cn/openai_doc/openai_doc-vw723r6a.html
 https://shop.bchatgpt.top/
 
 
+## 总结
+
+ChatGPT真的很强大且包容，不论在专业人士看来多容易的问题他都能帮助解答，不论多难的问题他也能说上两句。用来充当一个学习工具，再合适不过了。
+
+
 ## 参考链接
 
 1. https://chat.openai.com
