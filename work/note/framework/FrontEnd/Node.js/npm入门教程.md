@@ -62,11 +62,11 @@ alias: c
 ```
 
 
-#### npm config修改registry
+#### 修改registry
 
 **持续生效**
-1. 查看npm安装包源地址，`npm config get registry`
-2. 修改npm为中国npm镜像，`npm config set registry http://registry.npmmirror.com`
+1. 查看npm安装包源地址：`npm config get registry`
+2. 修改npm为中国npm镜像：`npm config set registry http://registry.npmmirror.com`
 
 **临时生效**
 1. 也可以在npm安装时临时指定源地址，`npm install --registry=http://registry.npmmirror.com <pacakge_name>`
@@ -83,7 +83,7 @@ npm init <initializer>
 
 其中`initializer`指的是一些按照`create-<initializer>`命名的npm package，此package在`npm init`命令执行时被安装后，会由`npm exec`命令执行其bin文件，可能会创建或者更新`package.json`文件，或者执行其他相关的初始化动作。
 
-指定了`initializer`的`npm init`命令，会被替换为对应的`npm exec`命令，如：
+指定了`initializer`的`npm init`命令，等价于`npm exec`命令，如：
 ```bash
 npm init foo -> npm exec create-foo
 npm init @usr/foo -> npm exec @usr/create-foo
@@ -93,6 +93,15 @@ npm init @usr/foo@2.0.0 -> npm exec @usr/create-foo@2.0.0
 ```
 
 
+
+### npm exec
+
+执行指定npm package的可执行文件。
+
+
+### npm run
+
+执行npm package中package.json文件的`scripts`部分定义的脚本。比如格式化，`npm run format`。
 
 ## 参考链接
 1. [npm CLI Commands](https://docs.npmjs.com/cli/v9/commands)
