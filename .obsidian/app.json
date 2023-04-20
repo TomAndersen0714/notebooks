@@ -9,10 +9,18 @@
   ],
   "showInlineTitle": false,
   "promptDelete": false,
-  "attachmentFolderPath": "./images",
+  "attachmentFolderPath": "/resources/images",
   "newFileLocation": "current",
   "alwaysUpdateLinks": true,
   "useMarkdownLinks": true,
-  "newLinkFormat": "relative",
-  "strictLineBreaks": false
+  "newLinkFormat": "absolute",
+  "strictLineBreaks": false,
+  "autoConvertHtml": false,
+  "pdfExportSettings": {
+    "includeName": false,
+    "pageSize": "A4",
+    "landscape": false,
+    "margin": "1",
+    "downscalePercent": 50
+  }
 }
