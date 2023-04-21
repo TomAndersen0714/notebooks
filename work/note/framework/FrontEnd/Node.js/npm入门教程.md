@@ -15,12 +15,15 @@ Yarn是另一种常用的JavaScript包管理器，类似于npm，也是用于安
 ## 常用命令
 
 ### npm
+
 1. 查看当前版本：`npm -v`
 
 
 ### npm install
 
 此命令用于安装指定package，以及同时安装此package中依赖的所有其他package。
+安装时，会将`Node.js Module`放置于`node_modules`路径下，会将可执行文件放置于`node_modules/.bin`路径下。
+
 其中package可以是以下类型中的任意一种：
 ```
 a) a folder containing a program described by a package.json file
@@ -96,12 +99,48 @@ npm init @usr/foo@2.0.0 -> npm exec @usr/create-foo@2.0.0
 
 ### npm exec
 
-执行指定npm package的可执行文件。
+执行指定npm package对应的可执行文件。
 
 
 ### npm run
 
-执行npm package中package.json文件的`scripts`部分定义的脚本。比如格式化，`npm run format`。
+执行npm package中package.json文件的`scripts`部分定义的脚本。
+
+如package.json文件内容如下：
+```json
+{
+  "name": "my-first-vue-project",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test:unit": "vitest",
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
+    "format": "prettier --write src/"
+  },
+  "dependencies": {
+    "vue": "^3.2.47",
+    "vue-router": "^4.1.6"
+  },
+  "devDependencies": {
+    "@rushstack/eslint-patch": "^1.2.0",
+    "@vitejs/plugin-vue": "^4.0.0",
+    "@vue/eslint-config-prettier": "^7.1.0",
+    "@vue/test-utils": "^2.3.0",
+    "eslint": "^8.34.0",
+    "eslint-plugin-vue": "^9.9.0",
+    "jsdom": "^21.1.0",
+    "prettier": "^2.8.4",
+    "vite": "^4.1.4",
+    "vitest": "^0.29.1"
+  }
+}
+
+```
+
+如，在执行`npm run format`命令，实际上执行`package.json`文件中`format`值的对应命令`prettier --write src/`，而此命令实际上则是执行`node_modules/.bin`路径下的可执行文件`prettier`，并附带参数`--write src/`。
 
 ## 参考链接
 1. [npm CLI Commands](https://docs.npmjs.com/cli/v9/commands)

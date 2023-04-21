@@ -37,6 +37,18 @@ PS：`npm init vue@latest`命令实际上是先安装vue，然后转换为`npm e
 https://cn.vuejs.org/guide/scaling-up/tooling.html
 
 
+## Vue.js术语表
+
+**单文件组件（Single File Component，SFC）**
+https://cn.vuejs.org/guide/scaling-up/sfc.html
+
+**路由（Router）**
+https://cn.vuejs.org/guide/scaling-up/routing.html
+
+**容器（Container）**
+在Vue3中，容器（container）是指一个可以包含其他Vue组件的HTML元素或Vue组件。容器可以用来在页面中布局其他组件，或者用来封装其他组件以提供特定的功能。
+
+常见的容器包括`<div>`、`<section>`、`<main>`等HTML元素，以及Vue提供的`<component>`、`<transition>`等组件。
 
 ## 参考链接
 

@@ -62,22 +62,109 @@ JavaScript Module标准并未实现统一，故在不同的运行环境中，其
 
 
 
-## 操作BOM
+## DOM（Document Object Model）
+https://www.runoob.com/js/js-htmldom.html
+
+当网页被加载时，浏览器会创建页面的文档对象模型DOM（Document Object Model）。每个HTML元素都有与之一一对应的DOM元素对象，可以将DOM元素对象视为运行态的HTML元素。
+
+通过可编程的对象模型，JavaScript 获得了足够的能力来修改动态的 HTML：
+1. JavaScript 能够改变页面中的所有 HTML 元素
+2. JavaScript 能够改变页面中的所有 HTML 属性
+3. JavaScript 能够改变页面中的所有 CSS 样式
+4. JavaScript 能够对页面中的所有事件做出反应
+
+
+### HTML Document（文档对象）
+
+#### methods
+
+##### document.getElementById()
+
+返回对拥有指定 id 的第一个对象的引用。
+
+
+Demo: https://www.w3cschool.cn/tryrun/showhtml/tryjsref_document_getelementbyid
+
+```html
+<!DOCTYPE html>
+<html>
+<body>
+
+<p id="demo">Click the button to change the text in this paragraph.</p>
+
+<button onclick="myFunction()">Try it</button>
+
+<script>
+
+    function myFunction() {
+        document.getElementById("demo").innerHTML = "Hello World";
+    };
+
+</script>
+
+</body>
+</html>
+```
+
+
+#### properties
+
+
+### HTML Element（元素对象）
+
+
+#### methods
+
+
+#### properties
+
+
+##### innerHTML
+
+设置或者返回HTML元素的内容，即起止标签之间的内容。
+
+示例: https://www.w3cschool.cn/tryrun/showhtml/tryjsref_elmnt_innerhtml
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>菜鸟教程(runoob.com)</title>
+<script>
+function changeLink(){
+	document.getElementById('myAnchor').innerHTML="RUNOOB";
+	document.getElementById('myAnchor').href="//www.runoob.com";
+	document.getElementById('myAnchor').target="_blank";
+}
+</script>
+</head>
+<body>
+ 
+<a id="myAnchor" href="//www.microsoft.com">Microsoft</a>
+<input type="button" onclick="changeLink()" value="修改链接">
+ 
+</body>
+</html>
+```
+
+
+### HTML Attributes（属性对象）
+
+
+### HTML Events（事件对象）
+
+
+
+### DOM参考手册
+
+[JavaScript 和 HTML DOM 参考手册](https://www.w3cschool.cn/jsref/jsref-tutorial.html)
+
+
+## BOM（Browser Object Model）
 https://www.runoob.com/js/js-window.html
 BOM（Browser Object Model）浏览器对象模型
 
-
-## 操作DOM
-https://www.runoob.com/js/js-htmldom.html
-DOM（Document Object Model）文档对象模型
-
-
-JavaScript 能够改变页面中的所有 HTML 元素
-JavaScript 能够改变页面中的所有 HTML 属性
-JavaScript 能够改变页面中的所有 CSS 样式
-
-
-[JavaScript 和 HTML DOM 参考手册](https://www.w3cschool.cn/jsref/jsref-tutorial.html)
 
 
 ## 事件处理
