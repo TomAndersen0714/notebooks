@@ -112,5 +112,34 @@ File | Settings | Editor | TODO
 
 在patterns选项中，增加pattern值为`\bnote\b.*`的选项，勾选`use color scheme TODO default colors`，便于在注视中，通过`NOTE`关键字来高亮显示注释内容，便于在注视中记录笔记。
 
+
+### 使用技巧
+
+#### 标签自动补全
+```
+（1）纯标签补全
+例：输入h1,按Tab键，
+
+
+（2）纯标签+地址“id”
+例：输入h1#ccg,按Tab键，
+
+
+（3）纯标签+类“class”
+例：输入h1.ccg,按Tab键，
+
+
+（4）标签+子标签+子标签个数
+例：输入div>p*6,按Tab键，
+
+（5）标签+类+子标签+子标签个数+子子标签+地址+}HTML}
+例：输入ul.menu>li*6>a[href=#]{HTML},按Tab键，
+```
+
+
+自动补全标签：输入标签在，在浮动列表中，选择一项后，输入`>`符号，则自动补全结束标签。
+
+
 ## 参考链接
 1. [Microsoft - JavaScript in Visual Studio Code](https://code.visualstudio.com/docs/languages/javascript)
+2. [那些你可能不知道却强大方便的WebStorm快捷键](https://blog.csdn.net/haoshidai/article/details/50810980)

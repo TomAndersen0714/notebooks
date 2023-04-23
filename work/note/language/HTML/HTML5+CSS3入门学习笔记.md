@@ -92,7 +92,7 @@ HTML 文档类型声明，也被称为 DOCTYPE，是每个 HTML 或 XHTML 文档
 在W3C推荐标准中，在每个文档中都应该声明html标签的lang属性，这样有助于浏览器和搜索引擎更好地识别页面的语言，提供更好的用户体验和搜索结果，如：主动提示是否需要将页面进行翻译。
 
 HTML语言代码参考手册: https://www.runoob.com/tags/html-language-codes.html
-   
+
 
 ##### head元素
 

@@ -29,7 +29,7 @@ https://cn.vuejs.org/guide/introduction.html
 ```bash
 npm init vue@latest
 ```
-PS：`npm init vue@latest`命令实际上是先安装vue，然后转换为`npm exec create-vue@latest`命令执行后续安装create-vue package，以及初始化vue项目的流程。
+PS：`npm init vue@latest`命令实际上是先安装vue，然后转换为`npm exec create-vue@latest`命令安装create-vue package，以及执行初始化vue项目的脚本。
 
 
 ## Vue.js开发常用工具
