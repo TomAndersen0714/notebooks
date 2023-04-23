@@ -178,8 +178,10 @@ JavaScript 能够对页面中的所有事件做出反应
 
 ## 开发规范
 
-Google开发规范：
-[Google 开源项目风格指南](https://github.com/zh-google-styleguide/zh-google-styleguide)
+### Google开发规范
+
+[Google 风格指南中文版](https://github.com/zh-google-styleguide/zh-google-styleguide)
+[Google 风格指南-中文版-JavaScript](https://zh-google-styleguide.readthedocs.io/en/latest/google-javascript-styleguide/contents/)
 [Google style guide](https://github.com/google/styleguide)
 
 JavaScript文件名命名规范通常遵循以下几个约定：

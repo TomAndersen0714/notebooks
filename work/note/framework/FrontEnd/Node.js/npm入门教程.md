@@ -75,6 +75,14 @@ alias: c
 1. 也可以在npm安装时临时指定源地址，`npm install --registry=http://registry.npmmirror.com <pacakge_name>`
 
 
+### npm ls
+
+用于查看已安装的package。
+
+常用选项：
+`-g|--global`：查看全局环境下安装的包。
+
+
 ### npm init
 
 用于初始化一个npm package，或者配置一个已经存在的package。
@@ -95,11 +103,6 @@ npm init @usr@2.0.0 -> npm exec @usr/create@2.0.0
 npm init @usr/foo@2.0.0 -> npm exec @usr/create-foo@2.0.0
 ```
 
-
-
-### npm exec
-
-执行指定npm package对应的可执行文件。
 
 
 ### npm run
@@ -141,6 +144,19 @@ npm init @usr/foo@2.0.0 -> npm exec @usr/create-foo@2.0.0
 ```
 
 如，在执行`npm run format`命令，实际上执行`package.json`文件中`format`值的对应命令`prettier --write src/`，而此命令实际上则是执行`node_modules/.bin`路径下的可执行文件`prettier`，并附带参数`--write src/`。
+
+### npm exec
+
+执行指定npm package对应的可执行文件。默认从全局安装路径下定位对应的脚本。
+
+
+### npx
+
+和`npm exec`命令类似，都是用于执行指定npm package对应的可执行文件。但npx并不会从全局安装路径下定位package的脚本，而是在当前项目中寻找对应package，如果没有则会**临时安装**并执行对应脚本，执行完成之后，再删除掉对应的package。这样可以避免在本地安装一些不必要的package，同时也能保证脚本在执行时所依赖的package是最新的。
+
+https://docs.npmjs.com/cli/v9/commands/npx
+
+
 
 ## 参考链接
 1. [npm CLI Commands](https://docs.npmjs.com/cli/v9/commands)
