@@ -106,5 +106,11 @@ Live Templates配置中增加Live Templates，可以在编辑器中，通过键�
 在JavaScript Group下增加，名为logvar的template，template text设置为`console.log("$EXPR$ = " + $EXPR$)`，即可以通过直接键入“logvar”的方式，来自动生成对应的console调用代码段。
 
 
+#### TODO（可选）
+
+File | Settings | Editor | TODO
+
+在patterns选项中，增加pattern值为`\bnote\b.*`的选项，勾选`use color scheme TODO default colors`，便于在注视中，通过`NOTE`关键字来高亮显示注释内容，便于在注视中记录笔记。
+
 ## 参考链接
 1. [Microsoft - JavaScript in Visual Studio Code](https://code.visualstudio.com/docs/languages/javascript)
