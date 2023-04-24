@@ -1,4 +1,4 @@
-# Element-plus安装入门教程
+# Element-plus安装基础教程
 
 选择任意一款包管理器安装下载即可
 ```

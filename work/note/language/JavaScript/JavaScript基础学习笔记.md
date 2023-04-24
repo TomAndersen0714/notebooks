@@ -1,4 +1,4 @@
-# JavaScript入门学习笔记
+# JavaScript基础学习笔记
 
 
 ## JavaScript简介
@@ -197,5 +197,5 @@ JavaScript规范中要求，任何表达式结尾都必须使用分号。
 
 1. [菜鸟教程 - JavaScript教程](https://www.runoob.com/js/js-tutorial.html)
 2. [W3CSchool - JavaScript教程](https://www.w3cschool.cn/javascript/)
-3. [W3CSchool - JavaScript Tutorial](https://www.w3schools.com/js/default.asp)
+3. [W3School - JavaScript Tutorial](https://www.w3schools.com/js/default.asp)
 4. [JavaScript 指南](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide)

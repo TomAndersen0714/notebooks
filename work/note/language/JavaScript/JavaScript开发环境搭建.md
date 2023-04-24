@@ -105,6 +105,11 @@ Live Templates配置中增加Live Templates，可以在编辑器中，通过键�
 
 在JavaScript Group下增加，名为logvar的template，template text设置为`console.log("$EXPR$ = " + $EXPR$)`，即可以通过直接键入“logvar”的方式，来自动生成对应的console调用代码段。
 
+#### Code Style
+
+File | Settings | Editor | Code Style | HTML
+
+在Code Generation中，g取消`Link comment at first column`的勾选，避免注释起始标签放置在行首，使得注释更加紧凑。
 
 #### TODO（可选）
 

@@ -1,4 +1,4 @@
-# Obsidian使用入门教程
+# Obsidian使用基础教程
 
 
 

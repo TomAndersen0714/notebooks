@@ -1,4 +1,4 @@
-# npm入门教程
+# npm基础教程
 
 ## 前言
 
@@ -45,7 +45,6 @@ aliases: add, i, in, ins, inst, insta, instal, isnt, isnta, isntal, isntall
 常用选项：
 1. `-g` or `--global`：全局安装Node.js的包，会应用于所有使用当前Node.js环境的项目，通常建议仅将一些重要的大型package采用全局安装的方式，而小型package则可以仅安装在当前项目路径下
 2. `--registry=<url>`：安装时临时指定registry源地址，如`npm install --registry=http://registry.npmmirror.com <pacakge_name>`
-
 
 
 ### npm config

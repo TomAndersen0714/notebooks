@@ -13,8 +13,8 @@ MongoDB单点查询，只要索引能够唯一命中（如：\_id），则qps和
 一般情况下，建议禁止使用hint强制索引，直接使用Mongo默认的优化计划，除非你十分了解Mongo底层的索引原理
 
 
-**读取MongoDB数据时，如果对数据一致性要求不严格，可以将secondaryPreferred参数设置为secondaryPreferred**
-MongoDB读取database和collection拉取数据时，可以尝试使用read_preference参数，并将其显式设置为secondaryPreferred，而非默认的Primary，即避免直接查询主库，增加主库的负载，保证主要业务流程不受影响，即手动进行资源隔离。
+**读取MongoDB数据时，如果对数据一致性要求不严格，可以将secondaryPreferred参数设置为SECONDARY**
+MongoDB读取database和collection拉取数据时，可以尝试使用read_preference参数，并将其显式设置为SECONDARY，而非默认的Primary，即避免直接查询主库，增加主库的负载，保证主要业务流程不受影响，即手动进行资源隔离，即便从库宕机，也不影响主库的正常业务。
 
 
 **读取MongoDB数据时，需要查看查询的执行计划，保证查询性能，并且测试性能时需要使用LIMIT 1，避免提交慢查询**

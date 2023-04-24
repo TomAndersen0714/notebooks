@@ -1,4 +1,4 @@
-# ChatGPT
+# ChatGPT基础教程
 
 
 ## ChatGPT简介

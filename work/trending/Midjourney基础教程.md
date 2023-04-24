@@ -1,4 +1,4 @@
-# Midjourney入门教程
+# Midjourney基础教程
 
 
 

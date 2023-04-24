@@ -1,4 +1,4 @@
-# Vue入门学习笔记
+# Vue基础学习笔记
 
 Vue (发音为 /vjuː/，类似 view) 是一款用于构建用户界面的 JavaScript 框架。它基于标准 HTML、CSS 和 JavaScript 构建，并提供了一套声明式的、组件化的编程模型，帮助你高效地开发用户界面。无论是简单还是复杂的界面，Vue 都可以胜任。
 
@@ -6,6 +6,13 @@ Vue (发音为 /vjuː/，类似 view) 是一款用于构建用户界面的 JavaS
 ## 简介
 
 https://cn.vuejs.org/guide/introduction.html
+
+
+### Vue的特点
+
+1. 采用**组件化**模式，提高代码复用率，且让代码更好维护
+2. **声明式**编码，让编码人员无需直接操作DOM，提高开发效率
+3. 使用**虚拟DOM**，和优秀的**Diff算法**，尽量复用DOM节点
 
 ### Vue核心功能
 
@@ -52,6 +59,8 @@ https://cn.vuejs.org/guide/scaling-up/routing.html
 
 ## 参考链接
 
-1. [Vue.js](https://cn.vuejs.org/guide/introduction.html)
-2. [W3CScheool-Vue3教程](https://www.w3cschool.cn/vuejs3/)
-3. [Element Plus](https://element-plus.gitee.io/zh-CN/)
+1. [Vue.js - Documentation](https://cn.vuejs.org/guide/introduction.html)
+2. [Vue.js - API](https://cn.vuejs.org/api/)
+3. [W3CScheool-Vue3教程](https://www.w3cschool.cn/vuejs3/)
+4. [Element Plus](https://element-plus.gitee.io/zh-CN/)
+5. [Bilibili - 尚硅谷Vue2.0+Vue3.0全套教程丨vuejs从入门到精通](https://www.bilibili.com/video/BV1Zy4y1K7SH/)
