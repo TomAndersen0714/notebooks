@@ -58,7 +58,8 @@ JavaScript Module标准并未实现统一，故在不同的运行环境中，其
 在Node.js中要想使用ES6的模块语法，需要将所有使用ES6 Module语法（即export、import）的JS文件后缀，设置为`.mjs`；
 
 方法二：
-在ES6 Module文件的同级路径下添加Node.js package.json文件，并将type的值设置为`"module"`
+在ES6 Module文件的同级路径下添加Node.js package.json文件，并将的type值设置为module，即`"type": "module"`。
+**一般在开发项目时，会在项目根目录下生成对应的`package.json`文件，故在根目录的package.json文件中增加`"type": "module"`条目即可实现项目全局生效ES6语法。**
 
 
 

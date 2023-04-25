@@ -57,6 +57,11 @@ https://cn.vuejs.org/guide/scaling-up/routing.html
 
 常见的容器包括`<div>`、`<section>`、`<main>`等HTML元素，以及Vue提供的`<component>`、`<transition>`等组件。
 
+
+## Vue awesome
+
+https://github.com/vuejs/awesome-vue
+
 ## 参考链接
 
 1. [Vue.js - Documentation](https://cn.vuejs.org/guide/introduction.html)
