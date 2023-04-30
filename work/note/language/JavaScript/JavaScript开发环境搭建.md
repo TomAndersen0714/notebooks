@@ -155,8 +155,13 @@ File | Settings | Editor | TODO
 ### Chrome
 
 #### Postman Interceptor
+https://learning.postman.com/docs/sending-requests/capturing-request-data/interceptor/#installing-interceptor
 
+支持监听并复制请求到Postman Desktop App中，而不需要手动录入
 
+#### Ajax Interceptor
+
+支持修改Ajax HTTP请求的返回体，便于前端调试
 
 ## 参考链接
 1. [Microsoft - JavaScript in Visual Studio Code](https://code.visualstudio.com/docs/languages/javascript)

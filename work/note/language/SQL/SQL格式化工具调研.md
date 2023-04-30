@@ -49,7 +49,7 @@ https://github.com/sql-formatter-org/sql-formatter
 
 
 
-### ~~clickhouse-format~~
+### clickhouse-format
 
 https://clickhouse.com/docs/en/operations/utilities/clickhouse-format
 https://github.com/ClickHouse/ClickHouse/tree/master/programs/format

@@ -173,7 +173,9 @@ BOM（Browser Object Model）浏览器对象模型
 JavaScript 能够对页面中的所有事件做出反应
 
 
-## 使用Ajax
+## Ajax
+
+Asynchronous JavaScript and XML
 
 
 

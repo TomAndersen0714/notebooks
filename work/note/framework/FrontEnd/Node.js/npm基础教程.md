@@ -43,8 +43,12 @@ aliases: add, i, in, ins, inst, insta, instal, isnt, isnta, isntal, isntall
 ```
 
 常用选项：
-1. `-g` or `--global`：全局安装Node.js的包，会应用于所有使用当前Node.js环境的项目，通常建议仅将一些重要的大型package采用全局安装的方式，而小型package则可以仅安装在当前项目路径下
-2. `--registry=<url>`：安装时临时指定registry源地址，如`npm install --registry=http://registry.npmmirror.com <pacakge_name>`
+1. `-g, --global`：全局安装Node.js的包，会应用于所有使用当前Node.js环境的项目，通常建议仅将一些重要的大型package采用全局安装的方式，而小型package则可以仅安装在当前项目路径下
+2. `-P, --save-prod`：安装Package的同时，会将Package Name添加到当前Node.js Package的package.json文件的`dependencies`属性中
+3. `-D, --save-dev`：安装Package的同时，会将Package Name添加到当前Node.js Package的package.json文件的`devDependencies`属性中
+4. `-O, --save-optional`：安装Package的同时，会将Package Name添加到当前Node.js Package的package.json文件的`optionalDependencies`属性中
+5. `--no-save`：禁止将Package Name添加到package.json文件的`dependencies`属性中
+6. `--registry=<url>`：安装时临时指定registry源地址，如`npm install --registry=http://registry.npmmirror.com <pacakge_name>`
 
 
 ### npm config
@@ -79,7 +83,7 @@ alias: c
 用于查看已安装的package。
 
 常用选项：
-`-g|--global`：查看全局环境下安装的包。
+`-g, --global`：查看全局环境下安装的包。
 
 
 ### npm init
@@ -108,7 +112,7 @@ npm init @usr/foo@2.0.0 -> npm exec @usr/create-foo@2.0.0
 
 执行npm package中package.json文件的`scripts`部分定义的脚本。
 
-如package.json文件内容如下：
+package.json文件示例内容如下：
 ```json
 {
   "name": "my-first-vue-project",
@@ -142,7 +146,7 @@ npm init @usr/foo@2.0.0 -> npm exec @usr/create-foo@2.0.0
 
 ```
 
-如，在执行`npm run format`命令，实际上执行`package.json`文件中`format`值的对应命令`prettier --write src/`，而此命令实际上则是执行`node_modules/.bin`路径下的可执行文件`prettier`，并附带参数`--write src/`。
+如，提交`npm run format`命令后，实际上执行`package.json`文件中`format`值的对应命令`prettier --write src/`，而此命令实际上则是执行`node_modules/.bin`路径下的可执行文件`prettier`，并附带参数`--write src/`。
 
 ### npm exec
 
