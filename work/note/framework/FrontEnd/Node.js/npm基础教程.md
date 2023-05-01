@@ -12,6 +12,8 @@ Yarn是另一种常用的JavaScript包管理器，类似于npm，也是用于安
 
 
 
+
+
 ## 常用命令
 
 ### npm
@@ -88,14 +90,14 @@ alias: c
 
 ### npm init
 
-用于初始化一个npm package，或者配置一个已经存在的package。
+用于初始化一个package.json文件，或者配置一个已经存在的package.json文件。常用于初始化一个Node.js空项目。
 
 语法：
 ```bash
 npm init <initializer>
 ```
 
-其中`initializer`指的是一些按照`create-<initializer>`命名的npm package，此package在`npm init`命令执行时被安装后，会由`npm exec`命令执行其bin文件，可能会创建或者更新`package.json`文件，或者执行其他相关的初始化动作。
+其中`initializer`是可选参数，指的是一些按照`create-<initializer>`命名的npm package，此package在`npm init`命令执行时被安装后，会由`npm exec`命令执行其bin文件，会创建或者更新`package.json`文件，或者执行其他相关的初始化动作。
 
 指定了`initializer`的`npm init`命令，等价于`npm exec`命令，如：
 ```bash

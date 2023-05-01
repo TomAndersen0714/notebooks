@@ -52,15 +52,25 @@ JavaScript Module标准并未实现统一，故在不同的运行环境中，其
 
 另外一种是`ES6 Module`，是JavaScript的新标准（2015），支持静态编译和动态编译，主要用于浏览器，即客户端项目中，使用 import 和 export 关键字来声明和使用模块。
 
+
+#### ES6 Module中使用CommonJS Module
+
+ES6 Module是完全兼容CommonJS Module的，可以直接通过import语法来引入CommonJS Module，一般CommonJS Module的文件，以`cjs`后缀结尾。
+
+
+
+
 #### Node.js环境下使用ES6 Module标准
 
-方法一：
-在Node.js中要想使用ES6的模块语法，需要将所有使用ES6 Module语法（即export、import）的JS文件后缀，设置为`.mjs`；
+在Node.js默认是使用CommonJS Module语法，要想使用ES6的模块语法，需要进行调整。
 
-方法二：
+方法一（推荐）：
 在ES6 Module文件的同级路径下添加Node.js package.json文件，并将的type值设置为module，即`"type": "module"`。
 **一般在开发项目时，会在项目根目录下生成对应的`package.json`文件，故在根目录的package.json文件中增加`"type": "module"`条目即可实现项目全局生效ES6语法。**
 
+
+方法二：
+将项目中所有使用ES6 Module语法（即export、import）的JS文件后缀，设置为`.mjs`；
 
 
 ## DOM（Document Object Model）
