@@ -549,6 +549,7 @@ HTML标签选择器（即通过元素的标签名匹配的选择）的权值为1
 ## 常用帮助手册
 
 ### HTML5元素标签手册
+https://www.w3schools.com/html/default.asp
 https://www.w3cschool.cn/htmltags/html-reference.html
 
 ### HTML5元素全局通用属性手册
@@ -570,3 +571,4 @@ https://www.w3cschool.cn/cssref/3ps212do.html
 3. [菜鸟教程-CSS教程](https://www.runoob.com/css/css-tutorial.html)
 4. [菜鸟教程-CSS3教程](https://www.runoob.com/css3/css3-tutorial.html)
 5. [CSS属性在线视觉引导](https://www.w3cschool.cn/moresource/cssreference/index.html)
+6. [W3School - HTML References](https://www.w3schools.com/html/default.asp)
