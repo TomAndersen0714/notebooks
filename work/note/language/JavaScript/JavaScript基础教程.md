@@ -1,18 +1,18 @@
-# JavaScript基础学习笔记
+# JavaScript基础教程
 
 
 ## JavaScript简介
 
-JavaScript是世界上最流行的脚本语言。JavaScript是属于Web的语言，适用于PC、笔记本电脑、平板电脑和手机。
+JavaScript是世界上最流行的脚本语言。JavaScript是属于Web的语言，适用于PC、笔记本电脑、平板电脑和手机，最初是为了在浏览器中运行而设计出来。
 
-JavaScript被设计为向HTML页面增加交互性。许多HTML开发者都不是程序员，但是JavaScript却拥有非常简单的语法，几乎每个人都有能力将小的JavaScript代码块添加到HTML文档中。
+JavaScript最初被设计为向HTML页面增加交互性。许多HTML开发者都不是程序员，但是JavaScript却拥有非常简单的语法，几乎每个人都有能力将小的JavaScript代码块添加到HTML文档中。
 
 JavaScript是Web开发人员必学的三门语言之一：
 1. HTML定义了网页的内容和层级
 2. CSS定义了网页内容的样式
 3. JavaScript定义了网页元素的行为
 
-JavaScript是一种轻量级的脚本编程语言，支持插入HTML文档中，可由所有的现代浏览器执行。
+JavaScript是一种轻量级的脚本编程语言，支持插入HTML文档中，可由所有的现代浏览器执行。其中JavaScript标准版本，被称为ECMAScript，由Ecma国际组织维护和发布，目前主流的标准版本为`ECMAScript 6, ES6`。
 
 JS是一种编程语言，可以实现具体的算法和应用程序，而HTML和CSS只是一种标记和描述性语言。
 
@@ -34,35 +34,52 @@ JS是一种编程语言，可以实现具体的算法和应用程序，而HTML�
 ## JS基础
 
 
-### chrome浏览器中运行JavaScript
+### JavaScript Runtime Environment
+
+#### Browser
+
+##### chrome
 https://www.runoob.com/js/js-chrome.html
 
 
-### Module
+##### Firefox
+
+#### Node.js
 
 
-#### JavaScript在发展过程中演进出了多种Module标准
+
+### JavaScript Module
+
+#### JavaScript Module标准
 
 https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Modules
 https://www.ruanyifeng.com/blog/2020/08/how-nodejs-use-es6-module.html
 
-JavaScript Module标准并未实现统一，故在不同的运行环境中，其语法也不同。
+JavaScript Module标准并未实现统一，在不同的运行环境中，其语法也存在大大小小的差异（如：Browser、Node.js等）。
 
 目前最主流的两种标准，一种是`CommonJS`，即Node.js中使用的Module标准，支持同步和动态加载，主要用于Node.js服务端项目中，使用 require 和 module.exports 或 exports 关键字来声明和使用模块。
 
-另外一种是`ES6 Module`，是JavaScript的新标准（2015），支持静态编译和动态编译，主要用于浏览器，即客户端项目中，使用 import 和 export 关键字来声明和使用模块。
+另外一种是`ES6 Module`，是JavaScript的2015官方标准，即`ECMAScript 6, ECMAScript 2015, ES6`，支持静态编译和动态编译，主要用于在浏览器（Browser）上运行的客户端项目中，使用 import 和 export 关键字来声明和使用模块。
 
 
-#### ES6 Module中使用CommonJS Module
+#### Browser Environment
 
-ES6 Module是完全兼容CommonJS Module的，可以直接通过import语法来引入CommonJS Module，一般CommonJS Module的文件，以`cjs`后缀结尾。
-
-
+##### \<script type="module">
 
 
-#### Node.js环境下使用ES6 Module标准
+##### \<script type="module" src="...">
 
-在Node.js默认是使用CommonJS Module语法，要想使用ES6的模块语法，需要进行调整。
+
+
+#### Node.js Environment
+
+##### ECMAScript modules in Node.js
+
+https://nodejs.org/dist/latest-v18.x/docs/api/esm.html
+https://nodejs.org/docs/latest-v18.x/api/esm.html#enabling
+https://nodejs.org/docs/latest-v18.x/api/packages.html#determining-module-system
+
+在Node.js默认是使用CommonJS Module语法，要想使用ECMAScript的模块语法，需要进行调整。
 
 方法一（推荐）：
 在ES6 Module文件的同级路径下添加Node.js package.json文件，并将的type值设置为module，即`"type": "module"`。
@@ -71,6 +88,10 @@ ES6 Module是完全兼容CommonJS Module的，可以直接通过import语法来�
 
 方法二：
 将项目中所有使用ES6 Module语法（即export、import）的JS文件后缀，设置为`.mjs`；
+
+
+##### CommonJS modules in Node.js
+https://nodejs.org/dist/latest-v18.x/docs/api/modules.html
 
 
 ## DOM（Document Object Model）
@@ -211,4 +232,4 @@ JavaScript规范中要求，任何表达式结尾都必须使用分号。
 1. [菜鸟教程 - JavaScript教程](https://www.runoob.com/js/js-tutorial.html)
 2. [W3CSchool - JavaScript教程](https://www.w3cschool.cn/javascript/)
 3. [W3School - JavaScript Tutorial](https://www.w3schools.com/js/default.asp)
-4. [MDN Web Doc - JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+4. [MDN Web Doc - JavaScript Guide]https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide)

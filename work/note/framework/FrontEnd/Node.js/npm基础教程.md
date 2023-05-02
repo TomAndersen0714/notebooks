@@ -11,9 +11,6 @@ Node主要是用于运行JavaScript代码，而npm主要是用于管理和共享
 Yarn是另一种常用的JavaScript包管理器，类似于npm，也是用于安装、管理和共享JavaScript模块。它由Facebook、Google和Exponent共同开发，旨在解决npm一些性能和安全性问题。Yarn提供了更友好的命令行界面和更详细的错误提示，以帮助开发人员更容易地诊断和解决问题。
 
 
-
-
-
 ## 常用命令
 
 ### npm
