@@ -50,12 +50,22 @@ https://nodejs.org/docs/latest-v18.x/api/module.html
 ## Package
 
 在Node.js中，一个Package通常被定义为一个具有描述文件package.json的目录。package.json文件描述了该Package的属性，例如名称、版本、作者、依赖项等。Package 可以包含多个模块（Module）。
-https://nodejs.org/dist/latest-v18.x/docs/api/packages.html
+https://nodejs.org/docs/latest-v18.x/api/packages.html
 
 
 ### package.json
 
+https://nodejs.org/docs/latest-v18.x/api/packages.html
 https://docs.npmjs.com/cli/v9/configuring-npm/package-json
+
+#### exports
+https://nodejs.org/docs/latest-v18.x/api/packages.html#exports
+
+##### Conditional exports
+https://nodejs.org/docs/latest-v18.x/api/packages.html#conditional-exports
+
+##### Subpath exports
+https://nodejs.org/docs/latest-v18.x/api/packages.html#subpath-exports
 
 
 ### index.d.ts
