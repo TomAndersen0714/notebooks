@@ -23,6 +23,6 @@ MongoDB拉取数据时，在正式执行之前，务必进行先要使用limit�
 
 
 **MongoDB读写datetime类型字段注意事项：所有不带时区的datetime字段，在Mongo中读写时都会被视为UTC时间**
-1. MongoDB在读取datetime类型的字段时，会返回不带时区信息的UTC datetime对象（如：Pymongo中会返回Python datetime对象）
+1. MongoDB在读取datetime类型的字段时，会默认返回不带时区信息的UTC datetime对象（如：Pymongo中会返回Python datetime对象）
 2. MongoDB在写入datetime类型的字段时，会自动根据其时区转换为通用的时间戳（64bit）进行存储（和对应时区linux元年的相对时间），如果未定义时区（不论是何种开发语言），则默认为UTC时间，即时区为0。
 3. MongoDB在筛选datetime类型的字段时，也是同样的原理，即如果过滤条件中的datetime字段没有规定时区，则认为是UTC时间，即在转换成时间戳时便按照UTC时区进行转换，然后使用对应的时间戳进行过滤。

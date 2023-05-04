@@ -1,0 +1,6 @@
+
+ClickHouse对于Datetime字段读写查时的默认时区问题：
+
+对于Datetime类型的字段，使用Datetime对象写入时，如果写入的Datetime对象带有分区信息，则会转换为对应的时间戳来实现写入；
+
+如果写入的Datetime对象不带分区信息，则会将其视为服务器本地时间Local Datetime，并转换为对应的时间戳；
