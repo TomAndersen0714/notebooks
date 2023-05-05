@@ -14,6 +14,11 @@ HTTP原本是一种无状态协议（Stateless Protocol），即协议中并未�
 HTTP由两部分组成：请求（Request）和响应（Response）。
 
 
+## An overview of HTTP
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview
+
+
+
 ## HTTP Request Message
 
 
@@ -63,13 +68,14 @@ HTTP请求中的，payload是指请求消息的主体部分，也就是请求体
 
 ### Response Body
 
+
 ## HTTP Client Libraries
 
 通常情况下，各个语言的HTTP API库中，都会有Session对象，用来维持会话状态，会自动维护连续请求的Cookie
 
 
 ## 参考链接
-1. [MDN - HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP)
-2. [MDN - HTTP response status codes](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status)
-3. [阮一峰 - HTTP 协议入门](http://www.ruanyifeng.com/blog/2016/08/http.html)
-4. [阮一峰 - HTTPS 升级指南](http://www.ruanyifeng.com/blog/2016/08/migrate-from-http-to-https.html)
+1. [阮一峰 - HTTP 协议入门](http://www.ruanyifeng.com/blog/2016/08/http.html)
+2. [阮一峰 - HTTPS 升级指南](http://www.ruanyifeng.com/blog/2016/08/migrate-from-http-to-https.html)
+3. [MDN - HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP)
+4. [MDN - HTTP response status codes](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status)
