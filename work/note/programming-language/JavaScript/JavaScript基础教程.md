@@ -229,7 +229,6 @@ JavaScript规范中要求，任何表达式结尾都必须使用分号。
 
 
 ## 参考链接
-
 1. [菜鸟教程 - JavaScript教程](https://www.runoob.com/js/js-tutorial.html)
 2. [W3CSchool - JavaScript教程](https://www.w3cschool.cn/javascript/)
 3. [W3School - JavaScript Tutorial](https://www.w3schools.com/js/default.asp)
