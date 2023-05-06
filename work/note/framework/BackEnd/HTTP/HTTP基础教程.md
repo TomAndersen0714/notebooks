@@ -79,3 +79,5 @@ HTTP请求中的，payload是指请求消息的主体部分，也就是请求体
 2. [阮一峰 - HTTPS 升级指南](http://www.ruanyifeng.com/blog/2016/08/migrate-from-http-to-https.html)
 3. [MDN - HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP)
 4. [MDN - HTTP response status codes](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status)
+5. [菜鸟教程 - HTTP 状态码](https://www.runoob.com/http/http-status-codes.html)
+6. [有关重定向的一些细节](https://blog.lishunyang.com/2020/06/redirect.html)

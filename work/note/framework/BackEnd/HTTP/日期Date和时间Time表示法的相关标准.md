@@ -1,4 +1,4 @@
-# 日期和时间表示法的相关标准
+# 日期Date和时间Time表示法的相关标准
 
 
 ## 前言
@@ -91,7 +91,7 @@ YYYY-MM-DD hh:mm:ss.ssssss
 [stackoverflow - How do I translate an ISO 8601 datetime string into a Python datetime object?](stackoverflow.com/questions/969285/how-do-i-translate-an-iso-8601-datetime-string-into-a-python-datetime-object)
 [stackoverflow - How do I parse an ISO 8601-formatted date?](https://stackoverflow.com/questions/127803/how-do-i-parse-an-iso-8601-formatted-date)
 
-建议针对所有日期时间字段的序列化和传输，统一采取时间戳的形式，因为时间戳是全球统一的，不带有时区信息，不会产生歧义，便于排序，但相对的会降低可读性。
+建议针对所有日期时间字段的序列化和传输，统一采取时间戳（timestamp）的形式，因为时间戳是全球统一的，不带有时区信息，不会产生歧义，且整型便于存储和排序，但相对的会牺牲部分可读性。
 
 
 ## 参考链接
