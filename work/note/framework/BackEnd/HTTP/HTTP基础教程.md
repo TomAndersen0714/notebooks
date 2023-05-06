@@ -22,16 +22,32 @@ https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview
 ## HTTP Request Message
 
 
-### Request Line
+### Request Line/Start Line
 
 #### Method
 https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods
+
+GET
+
+POST
+
+PUT
+
+HEAD
+
+DELETE
+
+OPTIONS
+
+TRACE
+
+CONNECT
 
 #### Request-URI
 
 #### HTTP-Version
 
-#### CRLF
+
 
 ### Request Headers
 
@@ -40,6 +56,9 @@ https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods
 对于HTTP GET请求，一般请求的参数通常是通过URL中的查询字符串传递的，因此它的payload一般是空的，但HTTP并未强制规定GET请求的payload是否为空，因此GET请求的payload具体是否为空，需要根据需求的具体实现方式来确定。
 
 而对于HTTPPOST、PUT、DELETE等请求，请求的参数通常是通过请求体传递的，它的payload就是请求体的内容。在请求头中会有Content-Type字段指明请求体的类型，例如application/json、application/x-www-form-urlencoded等。
+
+
+### CRLF
 
 
 ### Request Body
@@ -56,7 +75,7 @@ https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
 
 #### Reason-Phrase
 
-#### CRLF
+
 
 ### Response Headers
 
@@ -65,6 +84,9 @@ https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
 HTTP请求中，响应头（Response Headers）中的Set-Cookie字段，是用于告知客户端在下次请求中需要将Headers中的cookie字段设置成对应值，主要用于鉴别客户端身份。
 
 HTTP请求中的，payload是指请求消息的主体部分，也就是请求体（RequestBody）。通常情况下，HTTP请求的payload包含了客户端发送给服务器的数据，例如表单数据、JSON数据等。
+
+### CRLF
+
 
 ### Response Body
 
@@ -78,6 +100,7 @@ HTTP请求中的，payload是指请求消息的主体部分，也就是请求体
 1. [阮一峰 - HTTP 协议入门](http://www.ruanyifeng.com/blog/2016/08/http.html)
 2. [阮一峰 - HTTPS 升级指南](http://www.ruanyifeng.com/blog/2016/08/migrate-from-http-to-https.html)
 3. [MDN - HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP)
-4. [MDN - HTTP response status codes](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status)
-5. [菜鸟教程 - HTTP 状态码](https://www.runoob.com/http/http-status-codes.html)
-6. [有关重定向的一些细节](https://blog.lishunyang.com/2020/06/redirect.html)
+4. [MDN - HTTP - HTTP Messages](https://developer.mozilla.org/en-US/docs/Web/HTTP/Messages)
+5. [MDN - HTTP response status codes](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status)
+6. [菜鸟教程 - HTTP 状态码](https://www.runoob.com/http/http-status-codes.html)
+7. [有关重定向的一些细节](https://blog.lishunyang.com/2020/06/redirect.html)
