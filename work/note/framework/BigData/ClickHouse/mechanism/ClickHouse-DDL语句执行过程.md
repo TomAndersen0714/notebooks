@@ -1,9 +1,14 @@
 # ClickHouse DDL语句执行过程
 
 
+## DDL Query
 
+
+## Mutation
 
 
 
 ## 参考链接
-1. [delete SQL Cause memory overflow](https://github.com/ClickHouse/ClickHouse/issues/9670)
+1. [知乎 - DataFunTalk​ - ClickHouse 分布式 DDL 执行原理剖析](https://zhuanlan.zhihu.com/p/590261481)
+2. [ClickHouse - Distributed DDL Queries](https://clickhouse.com/docs/en/sql-reference/distributed-ddl)
+3. [delete SQL Cause memory overflow](https://github.com/ClickHouse/ClickHouse/issues/9670)
