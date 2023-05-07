@@ -94,12 +94,72 @@ var foo = 'bar';
 
 ## 高级语法
 
-公式
-流程图
+### 公式
 
 
+
+### 图
+
+#### 横向流程图
+
+
+```mermaid
+graph LR
+A[方形] -->B(圆角)
+    B --> C{条件a}
+    C -->|a=1| D[结果1]
+    C -->|a=2| E[结果2]
+    F[横向流程图]
+```
+
+
+
+#### 竖向流程图
+
+
+
+
+```mermaid
+graph TD
+A[方形] --> B(圆角)
+    B --> C{条件a}
+    C --> |a=1| D[结果1]
+    C --> |a=2| E[结果2]
+    F[竖向流程图]
+```
+
+#### 标准竖向流程图
+
+~~~flow
+st=>start: 开始框
+op=>operation: 处理框
+cond=>condition: 判断框(是或否?)
+sub1=>subroutine: 子流程
+io=>inputoutput: 输入输出框
+e=>end: 结束框
+st->op->cond
+cond(yes)->io->e
+cond(no)->sub1(right)->op
+~~~
+
+
+
+#### 标准横向流程图
+
+~~~flow
+st=>start: 开始框
+op=>operation: 处理框
+cond=>condition: 判断框(是或否?)
+sub1=>subroutine: 子流程
+io=>inputoutput: 输入输出框
+e=>end: 结束框
+st(right)->op(right)->cond
+cond(yes)->io(bottom)->e
+cond(no)->sub1(right)->op
+~~~
 
 ## 参考链接
 
-1. CSDN markdown语法提示
-2. [Markdown 官方教程](https://markdown.com.cn/cheat-sheet.html)
+1. [Markdown 官方教程](https://markdown.com.cn/cheat-sheet.html)
+2. [菜鸟教程-Markdown教程](https://www.runoob.com/markdown/md-tutorial.html)
+3. [菜鸟教程-Markdown教程-Markdown高级教程](https://www.runoob.com/markdown/md-advance.html?tdsourcetag=s_pctim_aiomsg)

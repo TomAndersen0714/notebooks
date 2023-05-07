@@ -75,16 +75,29 @@ https://github.com/oceanlvr/ChatGPT-ProBot
 https://github.com/PlexPt/awesome-ChatGPT-prompts-zh
 https://www.w3cschool.cn/openai_doc/openai_doc-vw723r6a.html
 
-
+## ChatGPT账号注册教程
+https://github.com/xiaoming2028/FreePAC/wiki/ChatGPT%E6%B3%A8%E5%86%8C%E6%95%99%E7%A8%8B%EF%BC%88%E5%AE%8C%E6%95%B4%E6%8C%87%E5%8D%97%EF%BC%89
 
 ## ChatGPT账号购买
 
 https://shop.bchatgpt.top/
+https://buy.openai.run/
 
 
-## ChatGPT镜像免账号网站
+## ChatGPT镜像免账号登录网站
 https://github.com/xx025/carrot
 https://github.com/LiLittleCat/awesome-free-chatgpt
+
+
+## 接码平台
+
+### sms-activete
+https://sms-activate.org/getNumber
+俄罗斯战斗民族的网站，支持短信和号码验证。
+
+注册ChatGPT只需要选择短信验证，不需要号码验证，建议地区选择英格兰（价格约为30卢布）。
+如果ChatGPT注册时，输入号码后提示号码不行，可以关闭激活，再次购买，直到选中合适号码。如果出现非号码问题，如账号被标记等，则需要通常是VPN节点问题，需要更换VPN节点。
+
 
 ## 总结
 
