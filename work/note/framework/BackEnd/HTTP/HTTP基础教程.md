@@ -85,6 +85,7 @@ HTTP请求中，响应头（Response Headers）中的Set-Cookie字段，是用�
 
 HTTP请求中的，payload是指请求消息的主体部分，也就是请求体（RequestBody）。通常情况下，HTTP请求的payload包含了客户端发送给服务器的数据，例如表单数据、JSON数据等。
 
+
 ### CRLF
 
 
