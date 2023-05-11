@@ -1,6 +1,5 @@
 # JavaScript基础教程
 
-
 ## JavaScript简介
 
 JavaScript是世界上最流行的脚本语言。JavaScript是属于Web的语言，适用于PC、笔记本电脑、平板电脑和手机，最初是为了在浏览器中运行而设计出来。

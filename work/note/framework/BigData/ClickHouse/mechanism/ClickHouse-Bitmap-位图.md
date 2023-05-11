@@ -80,7 +80,7 @@ https://clickhouse.com/docs/en/sql-reference/aggregate-functions/reference/group
 
 
 
-## Example
+## Example & Benchmark
 
 ```sql
 -- DROP TABLE IF EXISTS test.visits;
