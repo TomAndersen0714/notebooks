@@ -39,6 +39,10 @@ DELETE
 
 OPTIONS
 
+预检请求（preflight request）
+预检响应（preflight response）
+
+
 TRACE
 
 CONNECT
@@ -102,6 +106,7 @@ HTTP请求中的，payload是指请求消息的主体部分，也就是请求体
 2. [阮一峰 - HTTPS 升级指南](http://www.ruanyifeng.com/blog/2016/08/migrate-from-http-to-https.html)
 3. [MDN - HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP)
 4. [MDN - HTTP - HTTP Messages](https://developer.mozilla.org/en-US/docs/Web/HTTP/Messages)
-5. [MDN - HTTP response status codes](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status)
-6. [菜鸟教程 - HTTP 状态码](https://www.runoob.com/http/http-status-codes.html)
-7. [有关重定向的一些细节](https://blog.lishunyang.com/2020/06/redirect.html)
+5. [MDN - HTTP - HTTP Headers](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers)
+6. [MDN - HTTP response status codes](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status)
+7. [菜鸟教程 - HTTP 状态码](https://www.runoob.com/http/http-status-codes.html)
+8. [有关重定向的一些细节](https://blog.lishunyang.com/2020/06/redirect.html)

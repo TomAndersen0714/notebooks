@@ -92,6 +92,12 @@ PS：Volar和Vetur扩展功能冲突，只能二选一。
 
 ### 修改配置
 
+#### Debugger
+
+File | Settings | Build, Execution, Deployment | Debugger
+
+勾选“Allow unsigned requests”，避免WebStorm使用自定义的request header来发送HTTP请求，导致无法调试。
+
 #### Postfix Completion
 
 File | Settings | Editor | General | Postfix Completion
