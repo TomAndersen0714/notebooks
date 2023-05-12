@@ -48,6 +48,8 @@ https://github.com/wong2/ChatGPT-google-extension
 https://github.com/lencx/ChatGPT
 这个软件把 ChatGPT 包装成了跨平台的桌面应用，它可以同时在macOS、Windows、Linux上使用，通过这款应用程序可以直接和ChatGPT聊天。
 
+#### ChatBox
+https://github.com/Bin-Huang/chatbox
 
 
 ### ChatGPT API
