@@ -96,9 +96,31 @@ HTTP请求中的，payload是指请求消息的主体部分，也就是请求体
 ### Response Body
 
 
+## HTTP Headers
+
+### Content-Type
+
+HTTP 中的Content-Type头部字段用于指示发送或接收的实体主体（body）的媒体类型（MIME type），用于告知HTTP消息的接收端如何解析和处理实体主体数据。
+
+
 ## HTTP Client Libraries
 
-通常情况下，各个语言的HTTP API库中，都会有Session对象，用来维持会话状态，会自动维护连续请求的Cookie
+### JavaScript
+
+#### ECMAScript API
+##### XMLHttpRequest
+##### fetch
+
+#### Node.js Package
+##### Axios
+
+
+### Python
+
+#### Python package
+##### requests
+
+Session对象，用来维持会话状态，会自动维护连续请求的Cookie值
 
 
 ## 参考链接
