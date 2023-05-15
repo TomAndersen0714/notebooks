@@ -70,14 +70,16 @@ https://github.com/oceanlvr/ChatGPT-ProBot
 这是一个基于ChatGPT实现的Github机器人，可以让ChatGPT帮你审核代码、重构代码，还可以在Github页面上和它进行聊天，咨询问题。
 
 
-## ChatGPT调教教程
+## ChatGPT Prompt教程
 
 即通过自然语言的提示（prompt）指令，来使得AI模拟特定的角色
 
 https://github.com/PlexPt/awesome-ChatGPT-prompts-zh
 https://www.w3cschool.cn/openai_doc/openai_doc-vw723r6a.html
 
+
 ## ChatGPT账号注册教程
+
 https://github.com/xiaoming2028/FreePAC/wiki/ChatGPT%E6%B3%A8%E5%86%8C%E6%95%99%E7%A8%8B%EF%BC%88%E5%AE%8C%E6%95%B4%E6%8C%87%E5%8D%97%EF%BC%89
 
 ## ChatGPT账号购买

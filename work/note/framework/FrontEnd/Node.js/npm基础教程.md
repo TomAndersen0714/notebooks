@@ -109,7 +109,9 @@ npm init @usr/foo@2.0.0 -> npm exec @usr/create-foo@2.0.0
 
 ### npm run
 
-执行npm package中package.json文件的`scripts`部分定义的脚本。
+执行package.json文件中的`scripts`部分对应的脚本命令。
+
+如，提交`npm run format`命令后，实际上执行`package.json`文件中`format`值的对应命令`prettier --write src/`，而此命令实际上则是执行`node_modules/.bin`路径下的可执行文件`prettier`，并附带参数`--write src/`。
 
 package.json文件示例内容如下：
 ```json
@@ -144,8 +146,6 @@ package.json文件示例内容如下：
 }
 
 ```
-
-如，提交`npm run format`命令后，实际上执行`package.json`文件中`format`值的对应命令`prettier --write src/`，而此命令实际上则是执行`node_modules/.bin`路径下的可执行文件`prettier`，并附带参数`--write src/`。
 
 ### npm exec
 
