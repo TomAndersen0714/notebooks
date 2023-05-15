@@ -154,6 +154,13 @@ File | Settings | Editor | TODO
 
 自动补全标签：输入标签在，在浮动列表中，选择一项后，输入`>`符号，则自动补全结束标签。
 
+#### Show npm Scripts
+
+鼠标右键npm项目的package.json文件，点击`Show npm Scripts`。
+
+或者，`View | Tool Windows | npm`，即可打开npm脚本命令窗口，类似于Maven脚本命令窗口，可以快速执行对应脚本命令。
+
+
 
 ## 浏览器插件
 
