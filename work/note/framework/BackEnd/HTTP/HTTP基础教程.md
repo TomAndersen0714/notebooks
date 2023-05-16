@@ -102,6 +102,9 @@ HTTP请求中的，payload是指请求消息的主体部分，也就是请求体
 
 HTTP 中的Content-Type头部字段用于指示发送或接收的实体主体（body）的媒体类型（MIME type），用于告知HTTP消息的接收端如何解析和处理实体主体数据。
 
+## HTTPS
+
+
 
 ## HTTP Client Libraries
 

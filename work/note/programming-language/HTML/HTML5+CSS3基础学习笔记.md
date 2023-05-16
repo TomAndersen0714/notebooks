@@ -211,17 +211,36 @@ HTML 属性是 HTML 元素的附加信息
 
 #### HTML常见属性
 
-1. class：为html元素定义一个或多个类名（classname）(类名从CSS样式文件引入)
-2. id：定义元素的唯一id，不应该以数字为开头，虽然浏览器容忍单个文档出现重复id，但是**规范中禁止重复id**
-3. style：规定元素的内联样式（inline style）
-4. title：描述了元素的额外信息（常作为工具条使用）
-5. lang：通常在`<html>`标签中使用，表示当前html文档内容所使用的语言，用于告知搜索引擎和浏览器。如`lang="en"`表示当前文档内容使用的是英文，`lang="zh-CN"`则表示当前文档内容使用的是中文。有助于浏览器和搜索引擎更好地识别页面的语言，提供更好的用户体验和搜索结果。
+##### 全局通用属性
+
+###### class
+为html元素定义一个或多个类名（classname）(类名从CSS样式文件引入)
+
+###### id
+定义元素的唯一id，不应该以数字为开头，虽然浏览器容忍单个文档出现重复id，但是**规范中禁止重复id**
+
+###### style
+规定元素的内联样式（inline style）
+
+###### title
+描述了元素的额外信息（常作为工具条使用）
+
+###### lang
+通常在`<html>`标签中使用，表示当前html文档内容所使用的语言，用于告知搜索引擎和浏览器。如`lang="en"`表示当前文档内容使用的是英文，`lang="zh-CN"`则表示当前文档内容使用的是中文。有助于浏览器和搜索引擎更好地识别页面的语言，提供更好的用户体验和搜索结果。
 
 
-#### HTML5全局通用属性手册
+##### 全局通用属性手册
 
 https://www.w3cschool.cn/htmltags/ref-standardattributes.html
 
+
+##### 非全局通用属性
+
+###### src
+src属性用于指定资源的URL，用于元素引入外部资源。目前支持src属性的标签有：
+```
+<audio>, <embed>, <iframe>, <img>, <input>, <script>, <source>, <track>, <video>
+```
 
 
 ## CSS
@@ -551,6 +570,9 @@ HTML标签选择器（即通过元素的标签名匹配的选择）的权值为1
 ### HTML5元素标签手册
 https://www.w3schools.com/html/default.asp
 https://www.w3cschool.cn/htmltags/html-reference.html
+
+### HTML5元素属性参考手册
+https://www.w3schools.com/tags/ref_attributes.asp
 
 ### HTML5元素全局通用属性手册
 https://www.w3cschool.cn/htmltags/ref-standardattributes.html
