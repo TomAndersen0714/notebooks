@@ -232,6 +232,7 @@ HTML 属性是 HTML 元素的附加信息
 ##### 全局通用属性手册
 
 https://www.w3cschool.cn/htmltags/ref-standardattributes.html
+https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes
 
 
 ##### 非全局通用属性
@@ -241,6 +242,16 @@ src属性用于指定资源的URL，用于元素引入外部资源。目前支�
 ```
 <audio>, <embed>, <iframe>, <img>, <input>, <script>, <source>, <track>, <video>
 ```
+
+### HTML实体
+
+HTML Entity实体，指的是一个以ampersand (&)为开头，以semicolon (;)为结尾的字符串片段。
+
+某些HTML保留字，无法直接在HTML元素中直接使用，否则会被视为HTML代码，故需要使用特殊字符组合进行等价替换，而这些特殊字符的组合，则被称为HTML Entity。
+
+如符号`<`，在HTML文档中，需要被替换为`&lt;`，才能正常显示。
+
+https://developer.mozilla.org/en-US/docs/Glossary/Entity
 
 
 ## CSS
@@ -568,7 +579,7 @@ HTML标签选择器（即通过元素的标签名匹配的选择）的权值为1
 ## 常用帮助手册
 
 ### HTML5元素标签手册
-https://www.w3schools.com/html/default.asp
+https://www.w3schools.com/tags/default.asp
 https://www.w3cschool.cn/htmltags/html-reference.html
 
 ### HTML5元素属性参考手册
