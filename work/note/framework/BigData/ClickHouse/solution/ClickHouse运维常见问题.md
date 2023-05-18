@@ -86,3 +86,9 @@ https://github.com/ClickHouse/ClickHouse/issues/12563
 
 将Distribued表的数据路径下的detach目录和format_version.txt文件后重启即可
 https://github.com/ClickHouse/ClickHouse/issues/7005
+
+
+## 6. Clickhouse KILL QUERY hangs forever
+
+If you are using a recent CH release (21.12+), then the KILL flag will be checked after each block is processed (on older releases it might never be checked).
+https://stackoverflow.com/questions/72364629/clickhouse-kill-query-hangs-forever
