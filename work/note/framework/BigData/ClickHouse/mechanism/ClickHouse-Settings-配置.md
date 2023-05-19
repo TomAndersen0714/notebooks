@@ -23,4 +23,7 @@ https://github.com/ClickHouse/ClickHouse/issues/8505
 
 
 ## 参考链接
-1. 
+1. https://clickhouse.com/docs/en/operations/settings
+2. https://clickhouse.com/docs/en/operations/settings/settings
+3. https://clickhouse.com/docs/en/operations/settings/query-complexity
+4. https://clickhouse.com/docs/en/sql-reference/statements/select#settings-in-select-query
