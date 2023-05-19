@@ -2,6 +2,7 @@
 
 
 ## Restrictions on Query Complexity
+
 https://clickhouse.com/docs/en/operations/settings/query-complexity
 
 
