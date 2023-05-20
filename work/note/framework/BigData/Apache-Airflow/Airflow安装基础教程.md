@@ -3,7 +3,6 @@
 
 
 
-
 ## 前言
 
 目前（2022-12-22），[官方文档](https://airflow.apache.org/docs/apache-airflow/stable/installation/index.html#)中提供了共计6种安装方案：
@@ -20,7 +19,6 @@
 本文主要采用PyPI工具安装Airflow，并以`standalone`形式初始化各个组件
 
 ## 具体步骤
-
 
 
 ### 1) 创建Python虚拟环境
@@ -77,7 +75,6 @@ airflow users create \
 ```
 
 
-
 修改配置文件airflow.cfg，调整默认配置
 
 ```ini
@@ -91,13 +88,11 @@ dag_dir_list_interval = 60
 ```
 
 
-
 重置数据库，删除默认的example dag
 
 ```shell
 airflow db reset
 ```
-
 
 
 启动airflow服务
@@ -106,13 +101,7 @@ airflow db reset
 airflow webserver -D
 
 airflow scheduler -D
-
-airflow celery worker -D   #启动celery worker
-airflow celery flower -D   #启动flower
 ```
-
-
-
 
 
 也可以直接执行`airflow standalone`命令自动执行
@@ -140,13 +129,7 @@ cat airflow-webserver.pid | xargs kill
 
 cat airflow-scheduler.pid | xargs kill
 
-cat airflow-flower.pid | xargs kill
-
-cat airflow-worker.pid | xargs kill
-
-cat airflow-webserver-monitor.pid | xargs kill
-
-rm *.pid
+mv *.pid /tmp/
 ```
 
 
@@ -157,7 +140,7 @@ rm *.pid
 
 报错信息：`error: sqlite C library version too old (< 3.15.0)`
 
-解决方案：《sqlite3安装升级入门教程》
+解决方案：[sqlite3安装基础教程](work/note/framework/BackEnd/SQLite/sqlite3安装基础教程.md)
 
 
 
