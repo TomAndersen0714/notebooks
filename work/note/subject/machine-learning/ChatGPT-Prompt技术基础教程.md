@@ -3,7 +3,7 @@
 
 ## 前言
 
-本文主要基于OpenAI ChatGPT，讲解Prompt和LLM的基础只
+本文主要基于OpenAI ChatGPT，讲解Prompt和LLM的基础知识。
 
 
 ## LLM简介
@@ -51,7 +51,7 @@ check assumptions required to do the task，即Promt中最好包含对意外情�
 
 通过显式声明Task的执行步骤，来定义Task，会使得Task的运行结果更加准确。
 
-##### tactic2: Instruct the model to work out its own solution beforce rushing to a conclusion
+##### tactic2: Instruct the model to work out its own solution before rushing to a conclusion
 
 如果在Prompt中直接让Model来判断一个复杂问题的解答过程正确与否，如：求解方程，Model很容易会造成误判。建议通过指令来引导Model自己一步步思考，最终来确定问题的答案，并与Prompt之前提供的解答过程进行对比。
 
