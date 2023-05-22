@@ -8,11 +8,11 @@ kubectl [command] [TYPE] [NAME] [flags]
 ```
 
 
-### Type
+## Type
 
 https://kubernetes.io/docs/reference/kubectl/#resource-types
 
-#### nodes
+### nodes
 
 ```bash
 # Display all the nodes 
@@ -22,29 +22,29 @@ kubectl get nodes
 kubectl describe nodes <node-name>
 ```
 
-#### namespaces
+### namespaces
 
 
-#### services
+### services
 
 
-#### deployments
+### deployments
 
 在 Kubernetes 中，Deployments（部署）是一种用于管理 Pod（容器）副本的资源对象。Deployments 提供了一种声明式的方式来定义和控制 Pod 的创建、更新和删除过程，从而实现应用的部署和扩缩容。
 
 通过 Deployments，可以指定所需的 Pod 副本数量、使用的容器镜像、资源限制等参数。Deployments 会根据指定的配置自动创建和管理 Pod 的副本，并确保在发生故障或扩缩容时进行适当的调整。
 
 
-#### pods
+### pods
 
-#### configmaps
-
-
-
-### Command
+### configmaps
 
 
-#### get
+
+## Command
+
+
+### get
 
 kubectl get services query-panel-service -o yaml
 
@@ -65,21 +65,21 @@ kubectl get configmap conf-query-sdk -o yaml
 kubectl get configmaps conf-query-sdk
 
 
-#### describe
+### describe
 
 kubectl describe pods --selector=app=query-panel
 
-#### edit
+### edit
 
 ```bash
-kubectl 
+kubectl edit configmap <configmap_name>
 ```
 
-### Name
+## Name
 
 
 
-### Flags
+## Flags
 
 `-o`: 支持yaml、json、wide
 ```
