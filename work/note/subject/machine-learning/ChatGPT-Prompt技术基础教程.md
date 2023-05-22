@@ -39,7 +39,7 @@ XML tags: <tag></tag>
 
 ##### tactic3: Check whether conditions are satisfied
 
-check assumptions required to do the task，即Promt中最好包含对意外情况的检查，避免在意外情况下返回的结果不符合需求。Prompt中，最好尽可能对所有情况的处理方式阐述清楚。
+check assumptions required to do the task，即Prompt中最好包含对意外情况的检查，避免在意外情况下返回的结果不符合需求。Prompt中，最好尽可能对所有情况的处理方式阐述清楚。
 
 ##### tactic4: Few-shot prompting
 
@@ -53,14 +53,60 @@ check assumptions required to do the task，即Promt中最好包含对意外情�
 
 ##### tactic2: Instruct the model to work out its own solution before rushing to a conclusion
 
-如果在Prompt中直接让Model来判断一个复杂问题的解答过程正确与否，如：求解方程，Model很容易会造成误判。建议通过指令来引导Model自己一步步思考，最终来确定问题的答案，并与Prompt之前提供的解答过程进行对比。
+如果在Prompt中直接让Model来判断一个复杂问题的解答过程正确与否，如：求解方程，Model很容易会造成误判。
+
+建议通过指令来引导Model自己一步步思考，最终来确定问题的解答过程和答案，并可以将Model返回的答案与Prompt之前提供的解答过程进行对比。
 
 
 ## Model Limitations
+
+### Hallucination: makes statements that sounds plausible but not true
+
+尽管LLM是基于海量的只是进行训练的，但是在它的训练过程中，并没有完全记住训练时使用的数据，所以它对于一些知识的边界不是很了解。
+
+当Model在回答一些比较晦涩和冷门的问题时，很可能会出现编造内容，返回一些拼凑起来的、看起来有道理的，但实际上却不正确的内容。如，在咨询某些软件的高级配置参数的使用指南时。
+
+#### Reducing hallucination
+
+应对Model Hallucination的常见方案是，先通过Prompt让Model找到需要咨询内容的相关信息，然后从中选取高质量的信息，并要求Model后续回答的内容基于此信息。
+
+
+## Iterative Prompt Development
+
+机器学习训练基本流程：
+Idea、Implementation、Experimental result、Error analysis、Idea...
+
+Prompt开发基本流程，和机器学习的训练过程类似：
+Idea、Prompt、Experimental result、Error analysis、Idea...
+
+在大部分情况下，需求都是个性化的，一些通用的Prompt并不能很好地解决这类问题，因此需要针对应用将Prompt进行个性化调整，并通过不断迭代，最终生成满足需求的Prompt。
+
+**Model无法精确限制数据长度，但会将结果限制在阈值附近。**
+
+**PS：机器学习模型的预测结果必然存在误差，在实际运用中，通常还需要搭配额外的程序来兜底，来保证应用的准确率尽可能接近百分百。**
+
+
+### Example
+
+一个针对产品描述的Prompt开发示例：
+1. 要求Model创建一个针对特定产品的文本描述
+2. 限制Model返回的文本内容长度
+3. 限制Model返回的文本中需要包含特定内容
+
+
+## Application
+
+### Summarize Text
+
+如针对文章、针对评论等文本内容的提炼总结。
+
+
+### Inferences
 
 
 
 ## 参考链接
 1. [Wiki - Large language model](https://en.wikipedia.org/wiki/Large_language_model)
 2. [Bilibili-【中文完整版全9集】ChatGPT提示工程师｜AI大神吴恩达教你写提示词｜prompt engineering](https://www.bilibili.com/video/BV14M4y147yH)
-3. [YouTube-ChatGPT Prompt Engineering for Developers: A short course from OpenAI and DeepLearning.AI](https://www.youtube.com/watch?v=H4YK_7MAckk
+3. [YouTube-ChatGPT Prompt Engineering for Developers: A short course from OpenAI and DeepLearning.AI](https://www.youtube.com/watch?v=H4YK_7MAckk&list=RDCMUCcIXc5mJsHVYTZR1maL5l9w&index=1)
+4. [DeepLearning.AI](https://learn.deeplearning.ai/chatgpt-prompt-eng/lesson/1/introduction)
