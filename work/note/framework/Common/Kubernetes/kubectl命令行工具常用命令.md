@@ -12,6 +12,7 @@ kubectl [command] [TYPE] [NAME] [flags]
 
 https://kubernetes.io/docs/reference/kubectl/#resource-types
 
+
 ### nodes
 
 ```bash
@@ -37,20 +38,29 @@ kubectl describe nodes <node-name>
 
 ### pods
 
+
 ### configmaps
 
 
 
-## Command
-
+## Command/Operations
+https://kubernetes.io/docs/reference/kubectl/#operations
 
 ### get
+
+Syntax: `kubectl exec (POD | TYPE/NAME) [-c CONTAINER] [flags] -- COMMAND [args...]`
+
+Example: 
+```
+# Display all the nodes 
+kubectl get nodes
+
+# Display the details of the node with name <node-name>.
+kubectl describe nodes <node-name>
 
 kubectl get services query-panel-service -o yaml
 
 kubectl get pods --selector=app=query-panel -o yaml
-
-其中`spec.volumes`字段声明了当前pod需要使用的volume的详细信息，如使用的是ConfigMap，那么`spec.volumes.configMap`还会声明对应的ConfigMap信息。而配置中的`.spec.containers[*].volumeMounts`字段则定义了volume在pod中的具体挂载路径。
 
 kubectl describe configmaps conf-query-panel
 kubectl get configmaps conf-query-panel -o yaml
@@ -63,17 +73,42 @@ kubectl get pods --selector=app=xdsync -o yaml
 kubectl get deployments --selector=app=query-panel
 kubectl get configmap conf-query-sdk -o yaml
 kubectl get configmaps conf-query-sdk
+```
 
 
 ### describe
 
-kubectl describe pods --selector=app=query-panel
+Syntax: `kubectl describe (-f FILENAME | TYPE [NAME_PREFIX | -l label] | TYPE/NAME)`
+
+Example: 
+```bash
+kubectl describe pods -l app=query-panel
+```
+
+
+### exec
+https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#exec
+Execute a command against a container in a pod.
+
+Syntax: `kubectl exec (POD | TYPE/NAME) [-c CONTAINER] [flags] -- COMMAND [args...]`
+
+Example: 
+```bash
+kubectl exec query-sdk-deploy-7fc6667c66-8mp8q -it -- bash
+
+docker exec -it 691d760d5240 bash
+```
+
 
 ### edit
 
+Syntax: `kubectl edit (RESOURCE/NAME | -f FILENAME)`
+
+Example: 
 ```bash
 kubectl edit configmap <configmap_name>
 ```
+
 
 ## Name
 
@@ -81,21 +116,34 @@ kubectl edit configmap <configmap_name>
 
 ## Flags
 
-`-o`: 支持yaml、json、wide
+
+### Selector
+
+Syntax: `-l | --selector <label_key=label_value>`
+
+Examples: 
 ```
-kubectl get pods --selector=<key=value> -o yaml
+kubectl get pods -l app=query-panel -o yaml
+kubectl get pods --selector app=query-panel -o yaml
+```
 
 
+
+### Formatting output
+https://kubernetes.io/docs/reference/kubectl/#formatting-output
+
+Syntax: `-o|--output <output_format>`
+
+output_format: json, name, wide, yaml
+
+Examples: 
+```
 kubectl get pods --selector=app=query-panel -o yaml
 ```
 
-`--selector`
-```
-kubectl get pods --selector=<key=value> -o yaml
 
+### Sorting list objects
 
-kubectl get pods --selector=app=query-panel -o yaml
-```
 
 
 ## 参考链接
