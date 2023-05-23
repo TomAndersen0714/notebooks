@@ -3,14 +3,27 @@
 
 ## Text
 
-1. alias: 
-	1. `-p`
-	2. example: `alias kd='kubectl -n dev-lane'`
+
+### alias
+
+option:
+`-p`: 打印所有配置的alias
+example: 
+```bash
+# 设置别名命令
+`alias kd='kubectl -n dev-lane'`
+
+# 取消别名命令
+unalias kd
+```
+
+### id
 
 
 ## Network
 
-ifconfig
+
+### ifconfig
 
 
 ## Environment
