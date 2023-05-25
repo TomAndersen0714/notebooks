@@ -15,7 +15,7 @@ https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/
 
 Label是用于标记kubernetes object（如：pods）的键值对，label本身并不具备唯一性，并且通常情况下，kubernetes建议使用相同的Label来标注object。
 
-Kubernetes中的configmap、service等resources，都是通过selector来确定其管理的pod。
+Kubernetes中的deployment、service等resources，都是通过selector来确定其关联的pod。
 
 
 ### Workloads
