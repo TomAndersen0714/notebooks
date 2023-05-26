@@ -6,7 +6,7 @@
 本文主要基于OpenAI ChatGPT，讲解Prompt和LLM的基础知识。
 
 
-## LLM简介
+## Introduction
 
 Base LLM，基于训练数据，可以预测下一个可能出现的词语。
 
