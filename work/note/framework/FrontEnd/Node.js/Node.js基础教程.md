@@ -7,9 +7,7 @@
 > 
 > Node.js主要用于构建高效、可伸缩的网络应用程序和后端服务，例如Web服务器、API服务器、实时通信应用程序等。它还支持一些流行的Web框架和库，如Express、Socket.IO等。由于其高效性和易用性，Node.js在Web开发中变得越来越流行。
 
-
 https://developer.mozilla.org/en-US/docs/Glossary/Node.js
-
 
 ## 安装教程
 
@@ -20,16 +18,13 @@ PS：安装时，如果指定自定义文件夹，则建议新建nodejs文件夹
 
 安装完成后，cmd窗口下，使用`node -v`、`npm -v`命令验证安装结果。
 
-
 ### Linux安装步骤
 
 下载完对应版本压缩包，在指定文件夹中使用`tar -xvf node-v18.15.0-linux-x64.tar.xz`命令解压即可
 
 https://blog.csdn.net/qq_45830276/article/details/126022778
 
-
 ## 基础概念
-
 
 ## Module
 
@@ -41,7 +36,6 @@ https://nodejs.org/dist/latest-v18.x/docs/api/modules.html
 
 #### ECMAScript modules
 https://nodejs.org/dist/latest-v18.x/docs/api/esm.html
-
 
 
 #### node:module API
