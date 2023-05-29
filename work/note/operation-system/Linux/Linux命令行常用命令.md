@@ -26,6 +26,21 @@ unalias kd
 ### ifconfig
 
 
+### hostname
+
+```bash
+# 打印当前主机的hostname
+hostname
+
+# 修改主机hostname
+hostname <new_name>
+
+# 打印当前主机的所有网络中的IP
+hostname -I
+```
+
+
+
 ## Environment
 
 设置命令行前缀格式

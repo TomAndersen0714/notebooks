@@ -1,4 +1,4 @@
-# 浏览器同源策略Same-origin policy
+# Same-origin policy浏览器同源策略
 
 
 ## 简介
