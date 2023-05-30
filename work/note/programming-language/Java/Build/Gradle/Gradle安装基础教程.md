@@ -99,6 +99,13 @@ OS:           Windows 11 10.0 amd64
 ```
 
 
+## Setting Environment Variable
+
+### GRADLE_USER_HOME
+
+设置环境变量`GRADLE_USER_HOME`，以修改`Gradle user home directory`，避免Gradle Wrapper安装Gradle和Package到默认路径`<home directory of the current user>/.gradle`下，便于后续管理。
+
+如，设置为`$GRADLE_HOME$/.gradle`，统一放置在Gradle安装路径下，其中`$GRADLE_HOME$`代表Gradle安装路径。
 
 ## Upgrading
 
