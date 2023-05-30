@@ -28,7 +28,12 @@ gradle --help
 ```
 
 
-执行指定Task
+执行当前Project的build.gradle脚本
+```
+gradle
+```
+
+执行当前Project的指定Task
 ```
 gradle [task...]
 

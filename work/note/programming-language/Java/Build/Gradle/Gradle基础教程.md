@@ -89,7 +89,48 @@ Gradle项目根目录下的`build.gradle.kts`文件就是使用Kotlin语言编�
 
 https://docs.gradle.org/current/userguide/gradle_wrapper.html
 
+Gradle官方推荐使用Gradle Wrapper来辅助执行Build。Wrapper是一个脚本，用于获取和下载指定版本的Gradle，并使用此版本执行Build过程。因此，使用Wrapper脚本，可以不需要事先手动安装Gradle，可以直接通过调用脚本来构建Project。
 
+
+![](work/note/framework/BigData/Visualization/Pasted%20image%2020230530221731.png)
+
+**使用Gradle Wrapper的优势，主要有以下几点**：
+1. 版本兼容：在特定版本的Gradle下编译Project，使得Build过程更加可靠。由于Gradle Wrapper将Gradle的版本与Project一起绑定，可以确保Project在不同的开发环境中使用相同的Gradle版本执行Build，从而避免由于Gradle版本不一致而导致的构建问题。
+2. 环境隔离：使用Gradle Wrapper，项目可以独立管理自己的Gradle版本和插件版本，不会与其他项目的配置发生冲突，实现了环境的隔离。
+3. 简化Build环境配置：Gradle Wrapper允许项目将Gradle的版本和配置文件捆绑在一起，使得每个项目都有自己独立的构建环境，不依赖于全局的Gradle安装。这样可以简化项目的配置和迁移，并且确保每个开发人员使用的是相同的Gradle版本。
+
+**PS：解耦可以使系统更灵活，聚合可以使系统更简单，切忌教条主义。**
+
+
+#### Adding the Gradle Wrapper
+
+通过执行Gradle内置的Task，给当前Project创建Wrapper脚本
+```bash
+gradle wrapper
+```
+
+#### Using the Gradle Wrapper
+
+Windows: 
+```bash
+gradlew.bat build
+```
+
+Unix: 
+```
+gradlew build
+```
+
+
+#### Upgrading the Gradle Wrapper
+
+```bash
+# Example: Upgrading the Wrapper to the latest version
+./gradlew wrapper --gradle-version latest
+
+# Example: Upgrading the Wrapper to a specific version
+./gradlew wrapper --gradle-version 8.1.1
+```
 
 
 ## Build Lifecycle
@@ -99,10 +140,12 @@ Gradle是一种基于依赖关系的编程范例，通过定义任务和任务�
 ### Build Phases
 
 Gradle每次Build都按照先后顺序执行三个阶段，initialization、configuration和execution。
+**PS: 直接命令行执行gradle，即是开始执行Build过程。**
+
 
 #### Initialization
 
-1. 在当前路径下，定位Gradle项目配置文件，即`settings.gradle (Groovy DSL)` 或 `settings.gradle.kts (Kotlin DSL)`
+1. 在当前路径下，定位Gradle Project的配置文件，即`settings.gradle (Groovy DSL)` 或 `settings.gradle.kts (Kotlin DSL)`
 2. 读取Gradle项目配置文件，决定本次Build过程中需要处理的project，以及其对应的build
 3. 给每个Project创建对应的Instance
 
@@ -235,7 +278,123 @@ Execution failed for task ':broken'.
 BUILD FAILED in 0s
 ```
 
-## Gradle Project Example
+
+## Build Script Basics
+
+https://docs.gradle.org/current/userguide/tutorial_using_tasks.html
+
+### Gradle Directories and Files
+
+Gradle主要使用`gradle user home directory`和`project root directory`两个文件夹，来存放配置文件，和构建过程中生成的文件。
+
+#### Gradle user home directory
+
+`Gradle user home directory`的默认值为`<home directory of the current user>/.gradle`，主要用于存储全局配置文件、initialization脚本、cache、log文件等。
+
+可以通过修改`GRADLE_USER_HOME`环境变量，来改变`Gradle user home directory`的值。
+https://docs.gradle.org/current/userguide/build_environment.html#sec:gradle_environment_variables
+https://blog.mrhaki.com/2010/09/gradle-goodness-changing-gradle-user.html
+
+
+此文件夹的路径树，如下所示：
+```bash
+├── caches 
+│   ├── 4.8 
+│   ├── 4.9 
+│   ├── ⋮
+│   ├── jars-3 
+│   └── modules-2 
+├── daemon 
+│   ├── ⋮
+│   ├── 4.8
+│   └── 4.9
+├── init.d 
+│   └── my-setup.gradle
+├── jdks 
+│   ├── ⋮
+│   └── jdk-14.0.2+12
+├── wrapper
+│   └── dists 
+│       ├── ⋮
+│       ├── gradle-4.8-bin
+│       ├── gradle-4.9-all
+│       └── gradle-4.9-bin
+└── gradle.properties 
+```
+
+各文件夹功能介绍如下：
+```
+caches: Global cache directory (for everything that’s not project-specific)
+
+caches/4.8: Version-specific caches (e.g. to support incremental builds)
+
+caches/jars-3, caches/modules-2: Shared caches (e.g. for artifacts of dependencies)
+
+daemon: Registry and logs of the Gradle Daemon
+
+init.d: Global initialization scripts
+
+jdks: JDKs downloaded by the toolchain support
+
+wrapper/dists: Distributions downloaded by the Gradle Wrapper
+
+gradle.properties: Global Gradle configuration properties
+```
+
+默认情况下，Gradle会自动清理`user home directory`。
+
+
+#### Project root directory
+
+`Project root directory`指的是Gradle Project项目的根路径。其中包含Gradle Project的各种配置文件，以及Gradle在编译过程中生成的`.gradle`、`build`等文件夹。
+
+Gradle Build过程中生成的文件，都是临时文件，不应该纳入版本管理工具。Gradle Project root directory的路径树大致如下：
+
+```
+├── .gradle 
+│   ├── 4.8 
+│   ├── 4.9 
+│   └── ⋮
+├── build 
+├── gradle
+│   └── wrapper 
+├── gradle.properties 
+├── gradlew 
+├── gradlew.bat 
+├── settings.gradle or settings.gradle.kts 
+├── subproject-one 
+|   └── build.gradle or build.gradle.kts 
+├── subproject-two 
+|   └── build.gradle or build.gradle.kts 
+└── ⋮
+```
+
+其中各文件的作用如下：
+
+```
+.gradle: Project-specific cache directory generated by Gradle
+
+.gradle/4.8, .gradle/4.9: Version-specific caches (e.g. to support incremental builds)
+
+build: The build directory of this project into which Gradle generates all build artifacts.
+
+gradle/wrapper: Contains the JAR file and configuration of the Gradle Wrapper
+
+gradle.properties: Project-specific Gradle configuration properties
+
+gradlew, gradlew.bat: Scripts for executing builds using the Gradle Wrapper
+
+settings.gradle or settings.gradle.kts: The project’s settings file where the list of subprojects is defined
+
+subproject-one, subproject-two: Usually a project is organized into one or multiple subprojects
+
+build.gradle or build.gradle.kts: Each subproject has its own Gradle build script
+```
+
+和`user home directory`类似，默认情况下，Gradle会自动清理`project root directory`。
+
+
+## Gradle Project Building Example
 
 https://docs.gradle.org/current/samples/index.html
 
@@ -246,3 +405,4 @@ https://docs.gradle.org/current/samples/sample_building_java_applications.html
 ## 参考链接
 1. [Gradle-Docs-What is Gradle?](https://docs.gradle.org/current/userguide/what_is_gradle.html)
 2. [Gradle-Docs-Build Lifecycle](https://docs.gradle.org/current/userguide/build_lifecycle.html)
+3. [Gradle-Docs-The Gradle Wrapper](https://docs.gradle.org/current/userguide/gradle_wrapper.html#sec:using_wrapper)
