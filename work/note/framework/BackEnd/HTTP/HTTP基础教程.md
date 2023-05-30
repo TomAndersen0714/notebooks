@@ -67,6 +67,8 @@ CONNECT
 
 ### Request Body
 
+Request Body（请求体），是HTTP请求中的数据部分，由客户端填充，和Respond Body（响应体）一起并称为payload。
+
 
 ## HTTP Response Message
 
@@ -94,6 +96,8 @@ HTTP请求中的，payload是指请求消息的主体部分，也就是请求体
 
 
 ### Response Body
+
+Respond Body（响应体），是HTTP响应中的数据部分，由服务端填充，和Request Body（请求体）一起并称为payload。
 
 
 ## HTTP Headers
