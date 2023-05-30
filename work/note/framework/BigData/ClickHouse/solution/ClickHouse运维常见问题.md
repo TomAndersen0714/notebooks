@@ -1,6 +1,6 @@
 # ClickHouse运维常见问题
 
-## 1. ClickHouse中Atomic数据库的坑点
+## ClickHouse中Atomic数据库的坑点
 
 **版本：22.1.2.2**
 
@@ -13,7 +13,7 @@ https://github.com/ClickHouse/ClickHouse/issues/12135
 
 
 
-## 2. ClickHouse Server内存占用不释放
+## ClickHouse Server内存占用不释放
 
 **版本：20.4.2.9**
 
@@ -37,9 +37,50 @@ https://github.com/ClickHouse/ClickHouse/issues/12563
 
 
 
-## 3. Code: 342
+## Clickhouse KILL QUERY hangs forever
 
-**报错：Code: 342. DB::Exception: Existing table metadata in ZooKeeper differs in partition key expression. Stored in ZooKeeper: day, platform, local: day. (METADATA_MISMATCH)** 
+If you are using a recent CH release (21.12+), then the KILL flag will be checked after each block is processed (on older releases it might never be checked).
+https://stackoverflow.com/questions/72364629/clickhouse-kill-query-hangs-forever
+
+
+## 错误日志
+
+### Code: 48
+
+错误日志：Code: 48. DB::Exception: There was an error on [znzjk-113175-prod-mini-bigdata-bigdata:29000]: Cannot execute replicated DDL query on leader.
+
+**版本：20.4.2.9**
+
+**原因解析1**：
+- **报错对应节点本身存在错误**。最常见的就是对应节点表结构存在问题，无法执行对应的DDL语句。
+
+**原因解析2：**
+- **可能是Distribued DDL执行超时，出现死锁**。在执行DDL时，ClickHouse Server将对应的查询添加到了zookeeper的Distribued DDL队列中，但是cluster中的某个副本节点执行报错，或者超时，导致该Leader节点对应的其他Slave副本节点报错，因而需要去对应报错节点的Leader节点上查看具体的报错信息。
+
+**解决方案**：
+1. 可以通过clusterAllReplicas函数查询system.query表，获取整个集群的query日志，定位问题节点。
+
+
+### Code: 62
+
+错误日志：Application: Caught exception while loading metadata: Code: 62, e.displayText() = DB::Exception: Incorrect user[:password]@host:port#default_database format detached
+
+**版本：22.1.2.2**
+
+**原因解析**：
+
+1. 此问题直接原因在于，distribued表的数据目录下`/etc/clickhouse/data`，`/var/lib/clickhouse/data`中存在detach目录和format_version.txt文件。
+2. 此问题的根本原因暂时未知。
+
+**解决方案**：
+
+将Distribued表的数据路径下的detach目录和format_version.txt文件后重启即可
+https://github.com/ClickHouse/ClickHouse/issues/7005
+
+
+### Code: 342
+
+错误日志：Code: 342. DB::Exception: Existing table metadata in ZooKeeper differs in partition key expression. Stored in ZooKeeper: day, platform, local: day. (METADATA_MISMATCH) 
 
 **版本：22.1.2.2**
 
@@ -55,40 +96,11 @@ https://github.com/ClickHouse/ClickHouse/issues/12563
 `DROP TABLE xqc_dim.xqc_shop_local ON CLUSTER cluster_3s_2r NO DELAY;`
 
 
-## 4. Code: 48
+### Code: 524
 
-**报错：Code: 48. DB::Exception: There was an error on [znzjk-113175-prod-mini-bigdata-bigdata:29000]: Cannot execute replicated DDL query on leader.**
-
-**版本：20.4.2.9**
-
-**原因解析1**：
-- **报错对应节点本身存在错误**。最常见的就是对应节点表结构存在问题，无法执行对应的DDL语句。
-
-**原因解析2：**
-- **可能是Distribued DDL执行超时，出现死锁**。在执行DDL时，ClickHouse Server将对应的查询添加到了zookeeper的Distribued DDL队列中，但是cluster中的某个副本节点执行报错，或者超时，导致该Leader节点对应的其他Slave副本节点报错，因而需要去对应报错节点的Leader节点上查看具体的报错信息。
-
-**解决方案**：
-1. 可以通过clusterAllReplicas函数查询system.query表，获取整个集群的query日志，定位问题节点。
+错误日志：Code: 524, e.displayText() = DB::Exception: Trying to ALTER RENAME key sid column which is a part of key expression (version 21.8.14.5 (official build)).
 
 
-## 5. Code: 62
+Columns specified in the key expression of the table (either with ORDER BY or PRIMARY KEY) cannot be renamed. Trying to change these columns will produce SQL Error [524].
 
-**报错：Application: Caught exception while loading metadata: Code: 62, e.displayText() = DB::Exception: Incorrect user[:password]@host:port#default_database format detached**
-
-**版本：22.1.2.2**
-
-**原因解析**：
-
-1. 此问题直接原因在于，distribued表的数据目录下`/etc/clickhouse/data`，`/var/lib/clickhouse/data`中存在detach目录和format_version.txt文件。
-2. 此问题的根本原因暂时未知。
-
-**解决方案**：
-
-将Distribued表的数据路径下的detach目录和format_version.txt文件后重启即可
-https://github.com/ClickHouse/ClickHouse/issues/7005
-
-
-## 6. Clickhouse KILL QUERY hangs forever
-
-If you are using a recent CH release (21.12+), then the KILL flag will be checked after each block is processed (on older releases it might never be checked).
-https://stackoverflow.com/questions/72364629/clickhouse-kill-query-hangs-forever
+https://clickhouse.com/docs/en/sql-reference/statements/alter/column#rename-column

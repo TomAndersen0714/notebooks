@@ -5,7 +5,12 @@
 
 ## Prerequisites
 
-需要 jdk8 及以上，使用`java -version`检查java版本。
+Gradle至少需要 jdk8 及以上，使用`java -version`检查java版本。
+
+### Compatibility
+
+Gradle和Java的版本兼容表格
+https://docs.gradle.org/current/userguide/compatibility.html
 
 
 ## Installing
@@ -93,11 +98,11 @@ JVM:          11.0.15.1 (Oracle Corporation 11.0.15.1+2-LTS-10)
 OS:           Windows 11 10.0 amd64
 ```
 
-## Gradle Wrapper
 
-官方建议在升级Gradle时，使用Gradle Wrapper。
-https://docs.gradle.org/current/userguide/gradle_wrapper.html#sec:upgrading_wrapper
 
+## Upgrading
+
+https://docs.gradle.org/current/userguide/upgrading_version_7.html
 
 
 ## 参考链接
