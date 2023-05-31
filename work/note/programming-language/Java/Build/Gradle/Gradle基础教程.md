@@ -105,9 +105,17 @@ Gradle官方推荐使用Gradle Wrapper来辅助执行Build。Wrapper是一个脚
 #### Adding the Gradle Wrapper
 
 通过执行Gradle内置的Task，给当前Project创建Wrapper脚本
+
 ```bash
 gradle wrapper
 ```
+
+其中生成的`gradle/wrapper/gradle-wrapper.properties`会存储当前project使用的Gradle版本信息。例如：
+
+```properties
+distributionUrl=https\://services.gradle.org/distributions/gradle-8.1.1-bin.zip
+```
+
 
 #### Using the Gradle Wrapper
 
@@ -394,7 +402,7 @@ build.gradle or build.gradle.kts: Each subproject has its own Gradle build scrip
 和`user home directory`类似，默认情况下，Gradle会自动清理`project root directory`。
 
 
-## Gradle Project Building Example
+## Gradle Project Example
 
 https://docs.gradle.org/current/samples/index.html
 
