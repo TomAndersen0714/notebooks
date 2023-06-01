@@ -22,7 +22,7 @@ File | Settings | Project Structure | Platform Settings | SDKs | Add New SDK
 将之前安装的Java对应的JAVA_HOME路径，作为SDK的路径，将SDK添加到IDEA中。
 
 
-**JetBrains IDE中无法更新Windows System Environment的方案：**
+**JetBrains IDE中无法更新System Environment系统环境变量的解决方案：**
 1. 建议使用下载安装JetBrains ToolBox启动或升级IDE
 2. 直接重启主机
 

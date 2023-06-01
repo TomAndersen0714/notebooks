@@ -89,10 +89,13 @@ Gradle项目根目录下的`build.gradle.kts`文件就是使用Kotlin语言编�
 
 https://docs.gradle.org/current/userguide/gradle_wrapper.html
 
-Gradle官方推荐使用Gradle Wrapper来辅助执行Build。Wrapper是一个脚本，用于获取和下载指定版本的Gradle，并使用此版本执行Build过程。因此，使用Wrapper脚本，可以不需要事先手动安装Gradle，可以直接通过调用脚本来构建Project。
+Gradle官方推荐使用Gradle Wrapper来辅助执行Build。Wrapper是一个脚本（`gradlew(.bat)`），用于使用指定版本的Gradle来执行Gradle Task，如果对应的Gradle不在`gradle user home directory`路径下，则会获取和下载指定版本的Gradle，并使用此版本Gradle执行Task。
+
+因此，使用Wrapper脚本，可以不需要事先手动全局安装Gradle，可以直接通过调用该脚本来执行Gradle Task，如构建Project等。Wrapper脚本（`gradlew(.bat)`）通常和Project是强绑定的，不同的Project对应的Wrapper脚本不尽相同。
 
 
 ![](work/note/framework/BigData/Visualization/Pasted%20image%2020230530221731.png)
+
 
 **使用Gradle Wrapper的优势，主要有以下几点**：
 1. 版本兼容：在特定版本的Gradle下编译Project，使得Build过程更加可靠。由于Gradle Wrapper将Gradle的版本与Project一起绑定，可以确保Project在不同的开发环境中使用相同的Gradle版本执行Build，从而避免由于Gradle版本不一致而导致的构建问题。
@@ -102,15 +105,15 @@ Gradle官方推荐使用Gradle Wrapper来辅助执行Build。Wrapper是一个脚
 **PS：解耦可以使系统更灵活，聚合可以使系统更简单，切忌教条主义。**
 
 
-#### Adding the Gradle Wrapper
+#### Create the Gradle Wrapper
 
-通过执行Gradle内置的Task，给当前Project创建Wrapper脚本
+在一个Gradle新项目中，可以通过全局的Gradle工具来执行Gradle内置的Wrapper Task，给当前的Project创建Wrapper脚本
 
 ```bash
 gradle wrapper
 ```
 
-其中生成的`gradle/wrapper/gradle-wrapper.properties`会存储当前project使用的Gradle版本信息。例如：
+其中生成的`gradle/wrapper/gradle-wrapper.properties`会存储当前project使用的Gradle版本信息，后续在其他环境下使用Gradle Wrapper时，则会自动校验Gradle此版本是否存在，不存在则下载。例如：
 
 ```properties
 distributionUrl=https\://services.gradle.org/distributions/gradle-8.1.1-bin.zip
@@ -118,6 +121,8 @@ distributionUrl=https\://services.gradle.org/distributions/gradle-8.1.1-bin.zip
 
 
 #### Using the Gradle Wrapper
+
+使用Gradle Wrapper脚本，可以代替全局安装的Gradle来执行Gradle Task
 
 Windows: 
 ```bash
@@ -131,6 +136,8 @@ gradlew build
 
 
 #### Upgrading the Gradle Wrapper
+
+Gradle Wrapper支持通过执行Gradle Task升级Wrapper版本。
 
 ```bash
 # Example: Upgrading the Wrapper to the latest version
