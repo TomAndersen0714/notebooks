@@ -16,6 +16,20 @@ Git是一种用来实现版本管理的工具，在实际使用过程中，不�
 ### git clone
 
 
+
+`-b <name>, --branch <name>`
+```
+git clone -b v1.55.1 https://github.com/grpc/grpc-java
+```
+
+`--depth <depth>`: Create a shallow clone with a history truncated to the specified number of commits.
+```
+git clone --depth 1 https://github.com/grpc/grpc-java
+```
+
+
+
+
 ### git pull
 
 
@@ -34,6 +48,42 @@ Git是一种用来实现版本管理的工具，在实际使用过程中，不�
 建议使用JetBrains、Git GUI等可视化工具来简化Git高级命令的使用。
 
 ### git config
+
+`--global`
+
+`--local
+`
+`--unset, --unset-all`
+
+`--add`
+
+#### config
+
+
+`http.proxy, https.proxy`
+```
+git config --global http.proxy <protocol://><host:port>
+git config --global https.proxy <protocol://><host:port>
+
+
+git config --global http.proxy http://127.0.0.1:58591
+git config --global https.proxy https://127.0.0.1:58591
+PS: WSL中需要使用宿主机IP, 即DNS(cat /etc/resolv.conf), 替换127.0.0.1本机地址
+
+
+git config --global --unset http.proxy
+git config --global --unset https.proxy
+```
+
+`safe.directory`
+```
+git config --global --add safe.directory <directory>
+git config --global safe.directory '*'
+
+git config --global --unset safe.directory <directory>
+git config --global --unset-all safe.directory
+
+```
 
 
 ### git rebase

@@ -89,9 +89,11 @@ Gradle项目根目录下的`build.gradle.kts`文件就是使用Kotlin语言编�
 
 https://docs.gradle.org/current/userguide/gradle_wrapper.html
 
-Gradle官方推荐使用Gradle Wrapper来辅助执行Build。Wrapper是一个脚本（`gradlew(.bat)`），用于使用指定版本的Gradle来执行Gradle Task，如果对应的Gradle不在`gradle user home directory`路径下，则会获取和下载指定版本的Gradle，并使用此版本Gradle执行Task。
+Gradle官方推荐使用Gradle Wrapper来辅助执行Build。Wrapper是一个脚本（`gradlew(.bat)`），完全支持Gradle的各种命令。
 
-因此，使用Wrapper脚本，可以不需要事先手动全局安装Gradle，可以直接通过调用该脚本来执行Gradle Task，如构建Project等。Wrapper脚本（`gradlew(.bat)`）通常和Project是强绑定的，不同的Project对应的Wrapper脚本不尽相同。
+但不同的是Wrapper在执行Gradle Task之前会检查是否存在特定版本的Gradle，如果指定的Gradle不在`Gradle User Home Directory`路径下，则会下载指定版本的Gradle到`Gradle User Home Directory`，并使用此版本Gradle执行Task。
+
+因此，使用Wrapper脚本，可以不需要事先手动全局安装Gradle，可以直接通过调用该脚本来执行Gradle Task，如构建Project等。Wrapper脚本（`gradlew(.bat)`）通常和Project是强绑定的，不同的Project对应的Wrapper脚本通常也不同。
 
 
 ![](work/note/framework/BigData/Visualization/Pasted%20image%2020230530221731.png)
@@ -107,7 +109,7 @@ Gradle官方推荐使用Gradle Wrapper来辅助执行Build。Wrapper是一个脚
 
 #### Create the Gradle Wrapper
 
-在一个Gradle新项目中，可以通过全局的Gradle工具来执行Gradle内置的Wrapper Task，给当前的Project创建Wrapper脚本
+在一个Gradle新项目中，可以通过全局的Gradle工具来执行Gradle内置的Wrapper Task，给当前的Project构建Wrapper脚本
 
 ```bash
 gradle wrapper
@@ -162,7 +164,9 @@ Gradle每次Build都按照先后顺序执行三个阶段，initialization、conf
 
 1. 在当前路径下，定位Gradle Project的配置文件，即`settings.gradle (Groovy DSL)` 或 `settings.gradle.kts (Kotlin DSL)`
 2. 读取Gradle项目配置文件，决定本次Build过程中需要处理的project，以及其对应的build
-3. 给每个Project创建对应的Instance
+3. 给每个Project创建对应的Gradle Instance
+
+`settings.gradle`文件中的内容，实际上就是用于定义Gradle Settings对象的代码块，即用户可以在`settings.gradle`文件中执行特定的命令，如打印日志、修改Settings对象的属性等等。
 
 `settings.gradle` example:
 ```Groovy
@@ -294,15 +298,13 @@ BUILD FAILED in 0s
 ```
 
 
-## Build Script Basics
+## Managed Directories
 
-https://docs.gradle.org/current/userguide/tutorial_using_tasks.html
-
-### Gradle Directories and Files
+https://docs.gradle.org/current/userguide/directory_layout.html
 
 Gradle主要使用`gradle user home directory`和`project root directory`两个文件夹，来存放配置文件，和构建过程中生成的文件。
 
-#### Gradle user home directory
+### Gradle user home directory
 
 `Gradle user home directory`的默认值为`<home directory of the current user>/.gradle`，主要用于存储全局配置文件、initialization脚本、cache、log文件等。
 
@@ -334,7 +336,7 @@ https://blog.mrhaki.com/2010/09/gradle-goodness-changing-gradle-user.html
 │       ├── gradle-4.8-bin
 │       ├── gradle-4.9-all
 │       └── gradle-4.9-bin
-└── gradle.properties 
+└── gradle.properties
 ```
 
 各文件夹功能介绍如下：
@@ -359,7 +361,7 @@ gradle.properties: Global Gradle configuration properties
 默认情况下，Gradle会自动清理`user home directory`。
 
 
-#### Project root directory
+### Project root directory
 
 `Project root directory`指的是Gradle Project项目的根路径。其中包含Gradle Project的各种配置文件，以及Gradle在编译过程中生成的`.gradle`、`build`等文件夹。
 
@@ -407,6 +409,17 @@ build.gradle or build.gradle.kts: Each subproject has its own Gradle build scrip
 ```
 
 和`user home directory`类似，默认情况下，Gradle会自动清理`project root directory`。
+
+
+
+## Build Environment
+
+### Property Priorities
+
+### Gradle properties
+
+### System properties
+
 
 
 ## Gradle Project Example

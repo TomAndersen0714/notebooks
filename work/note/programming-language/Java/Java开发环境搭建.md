@@ -57,7 +57,7 @@ File | Settings | Build, Execution, Deployment | Build Tools | Gradle
 
 `Build and run using`，选择Intellij IDEA，即选择在IDEA中编译和运行编译后的Java程序，而不是通过gradle task的方式来运行编译结果。
 
-`Use Gradle from`，选择`gradle-wrapper.properties file`，即Gradle官方推荐的Wrapper。
+`Use Gradle from`，选择`gradle-wrapper.properties file`，即使用Gradle官方推荐的Wrapper来执行Gradle命令。
 
 
 ## VSCode
