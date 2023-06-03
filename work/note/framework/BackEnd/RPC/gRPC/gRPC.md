@@ -4,6 +4,7 @@
 
 ## Overview
 
+gRPC是Google开源的一个RPC框架。
 
 ### Protocol Buffers
 
@@ -57,11 +58,16 @@
 
 ## Supported languages/platforms
 
+
+
 ### Java
+
 https://grpc.io/docs/languages/java/quickstart/
 
-
 在编译代码之前，记得切换到指定tag，而不是直接使用master分支，master分支代码并不稳定，属于未发布版本，仅针对开发者使用，一般子项目依赖之间都或多或少存在的版本兼容问题，无法正常编译。
+
+官方建议使用Gradle
+
 
 
 ### Python
