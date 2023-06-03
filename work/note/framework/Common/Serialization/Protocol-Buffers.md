@@ -24,6 +24,7 @@ PS：向前兼容（forward-compatible），指的是新版本中可以使用历
 使用proto编译器`protoc`来编译`.proto`文件，以生成对应编程语言的源代码，用于处理protocol buffer对象。其中主要包含基本的accessor和setter方法，以及序列化和反序列化方法。
 
 
+
 The following code samples show you an example of this flow in Java. As shown earlier, this is a `.proto` definition:
 ```bash
 syntax = "proto3";
@@ -57,7 +58,12 @@ std::string name = john.name();
 std::string email = john.email();
 ```
 
+#### Field
+
+
 #### Service
+
+https://protobuf.dev/programming-guides/proto3/#services
 
 
 
@@ -92,6 +98,9 @@ Protocol buffers do not fit all data. In particular:
 ![](work/note/framework/BigData/Visualization/Pasted%20image%2020230603233616.png)
 
 
+### What's Generated From Your .proto?
+https://protobuf.dev/programming-guides/proto3/#generated
+
 
 ## Installation
 
@@ -119,6 +128,21 @@ https://protobuf.dev/programming-guides/
 ### Language Guide (proto3)
 
 
+#### Message
+
+https://protobuf.dev/programming-guides/proto3/#simple
+
+
+##### Scalar Data Types
+https://protobuf.dev/programming-guides/proto3/#scalar
+
+##### Additional Data Types
+https://protobuf.dev/overview/#common-types
+
+
+#### Service
+
+https://protobuf.dev/programming-guides/proto3/#services
 
 ## Examples
 
