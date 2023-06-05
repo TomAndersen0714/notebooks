@@ -119,6 +119,14 @@ Rebase的行为可以大致分为三类：
 1、drop：标记为skip的commit会直接被删除，就相当于这次commit从来没有发生过。同时，这个commit中涉及的所有代码修改全部会被删除。
 
 
+### git diff
+
+
+查看上一次`git pull`中发生过变更的文件名
+```bash
+git diff --name-only HEAD@{1}..HEAD
+```
+
 
 ### git rm
 
