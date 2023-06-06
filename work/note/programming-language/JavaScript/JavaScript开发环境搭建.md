@@ -63,6 +63,13 @@ File | Settings | Editor | Code Style | HTML
 
 在Code Generation中，取消`Link comment at first column`的勾选，避免注释起始标签放置在行首，使得注释更加紧凑。勾选`Block comment at first column`，勾选`Add spaces around block comments`，使得注释标签内容首位增加空格。
 
+#### Keymap
+
+File | Settings | Keymap
+
+删除或者调整快捷键配置Plugins | Terminal | Close Tab，避免Terminal中Bash快捷键和IDEA Terminal快捷键发生冲突。
+
+
 #### TODO（可选）
 
 File | Settings | Editor | TODO

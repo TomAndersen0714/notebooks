@@ -64,13 +64,21 @@ File | Settings | Build, Execution, Deployment | Build Tools | Gradle
 
 File | Settings | Editor | File Encodings
 
-设置文件编码方式，避免出现命令行乱码
+设置文件编码方式，避免出现命令行乱码。
 
 `Global Encoding`和`Project Encoding`都设置成`UTF-8`
 
 `Default encoding for properties files`设置成`UTF-8`
 
 `Create UTF-8 files`设置成`with NO BOM`
+
+
+#### Keymap
+
+File | Settings | Keymap
+
+删除或者调整快捷键配置Plugins | Terminal | Close Tab，避免Terminal中Bash快捷键和IDEA Terminal快捷键发生冲突。
+
 
 
 ## VSCode

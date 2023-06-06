@@ -19,7 +19,7 @@
    db.collection.findOne()，将collection替换为对应的collection名称即可，如“db.<collection_name>.findOne()”
 3. `show collections | db.getCollectionNames()`：查看当前数据库中所有的Collection
 4. `show tables`：同`show collections`
-5. `db.collection.findOne()`：查询单个文档，如查询ID为指定值的文档：“db.<collection_name>.findOne({"_id" : ObjectId("619b57f58846b9000182a354")})”
+5. `db.collection.findOne()`：查询单个文档，如查询ID为指定值的文档：`db.<collection_name>.findOne({"_id" : ObjectId("619b57f58846b9000182a354")})`
 6. `db.collection.getIndexes()`：查看集合collection索引，“db.<collection_name>.getIndexes()”
 
 

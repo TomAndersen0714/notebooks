@@ -25,6 +25,11 @@ kubectl describe nodes <node-name>
 
 ### namespaces
 
+```bash
+# Display all the nodes 
+kubectl get namespaces
+
+```
 
 ### services
 

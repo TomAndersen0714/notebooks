@@ -106,7 +106,6 @@ git config --global --unset-all safe.directory
 # Note that empty commits are commented out
 ```
 
-
 Rebase的行为可以大致分为三类：
 第一类：保留commit，不合并
 1、pick: 标记为pick的commit会在rebase操作后会直接保留下来，不做任何改动，也不会合并，最上面的commit最好标记为这一类
@@ -120,7 +119,6 @@ Rebase的行为可以大致分为三类：
 
 
 ### git diff
-
 
 查看上次操作中发生过变更的文件名
 ```bash
