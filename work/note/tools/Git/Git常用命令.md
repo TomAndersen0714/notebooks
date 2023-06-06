@@ -122,7 +122,7 @@ Rebase的行为可以大致分为三类：
 ### git diff
 
 
-查看上一次`git pull`中发生过变更的文件名
+查看上次操作中发生过变更的文件名
 ```bash
 git diff --name-only HEAD@{1}..HEAD
 ```
