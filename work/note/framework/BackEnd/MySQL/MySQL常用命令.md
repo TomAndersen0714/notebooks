@@ -2,6 +2,8 @@
 
 
 
+## MySQL Client
+
 mysql -u root -p
 
 

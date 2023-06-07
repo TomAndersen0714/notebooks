@@ -1,6 +1,13 @@
 # Linux命令行常用命令
 
 
+## Environment
+
+设置命令行前缀格式
+`export PS1='[\u@\h \W]\$ '`
+
+
+
 ## Text
 
 
@@ -19,11 +26,7 @@ unalias kd
 
 ### id
 
-
-## Environment
-
-设置命令行前缀格式
-`export PS1='[\u@\h \W]\$ '`
+## File
 
 
 

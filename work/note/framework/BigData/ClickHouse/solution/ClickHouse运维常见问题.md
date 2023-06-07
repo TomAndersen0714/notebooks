@@ -43,11 +43,53 @@ If you are using a recent CH release (21.12+), then the KILL flag will be checke
 https://stackoverflow.com/questions/72364629/clickhouse-kill-query-hangs-forever
 
 
+## ClickHouse IN Subquery无法命中Primary Key索引
+
+**错误版本：20.4.2.9**
+ClickHouse IN Operator+Subquery无法命中Primary Key索引
+
+**相关Issue：**
+Index not used for IN operator with literals
+https://github.com/ClickHouse/ClickHouse/issues/10574
+
+**解决方案：**
+方案一：将IN Subquery再嵌套一层子查询，在新的子查询中将索引字段检索出来
+
+Example：
+修改前
+```sql
+SELECT *
+FROM ods.xdrs_logs_all
+WHERE day = 20230517
+    AND shop_id IN (
+        SELECT '62416239773256001c03f83b' AS shop_id
+    )
+LIMIT 100
+```
+修改后
+```sql
+SELECT *
+FROM ods.xdrs_logs_all
+WHERE day = 20230517
+    AND shop_id IN (
+        SELECT shop_id
+        FROM (
+            SELECT '62416239773256001c03f83b' AS shop_id
+        )
+    )
+LIMIT 100
+```
+
+
+方案二：升级ClickHouse版本
+
+
 ## 错误日志
 
 ### Code: 48
 
-错误日志：Code: 48. DB::Exception: There was an error on [znzjk-113175-prod-mini-bigdata-bigdata:29000]: Cannot execute replicated DDL query on leader.
+**错误日志：**
+Code: 48. DB::Exception: There was an error on [znzjk-113175-prod-mini-bigdata-bigdata:29000]: Cannot execute replicated DDL query on leader.
 
 **版本：20.4.2.9**
 
@@ -63,7 +105,8 @@ https://stackoverflow.com/questions/72364629/clickhouse-kill-query-hangs-forever
 
 ### Code: 62
 
-错误日志：Application: Caught exception while loading metadata: Code: 62, e.displayText() = DB::Exception: Incorrect user[:password]@host:port#default_database format detached
+**错误日志：**
+Application: Caught exception while loading metadata: Code: 62, e.displayText() = DB::Exception: Incorrect user[:password]@host:port#default_database format detached
 
 **版本：22.1.2.2**
 
@@ -76,6 +119,50 @@ https://stackoverflow.com/questions/72364629/clickhouse-kill-query-hangs-forever
 
 将Distribued表的数据路径下的detach目录和format_version.txt文件后重启即可
 https://github.com/ClickHouse/ClickHouse/issues/7005
+
+
+### Code: 100
+
+**错误日志：**
+Code: 100. DB::Exception: Received from localhost:19000. DB::Exception: Unknown packet from server: While executing SourceFromInputStream.
+
+**版本：20.4.2.9**
+
+**相关Issues：**
+https://github.com/ClickHouse/ClickHouse/issues/10574
+https://github.com/ClickHouse/ClickHouse/issues/14833
+
+**问题描述：**
+
+**20.4.2.9版本使用`IN Subquery`子查询时，日志打印信息以及system.query都表明查询未命中Primary Key**，且查询性能和直接使用非子查询字面量差距很大。同时Server端出现报错日志，但Client端返回了正常结果。
+
+触发Example：
+```SQL
+SELECT *
+FROM ods.xdrs_logs_all
+WHERE day BETWEEN toYYYYMMDD(toDate('2023-05-17')) AND toYYYYMMDD(toDate('2023-05-18'))
+AND shop_id GLOBAL IN (
+    SELECT '62416239773256001c03f83b' AS a
+)
+LIMIT 100
+```
+
+执行日志：
+```
+2023.06.07 15:46:17.798896 [ 69194 ] {5b76a4f2-fb28-48e9-bd07-5d9fb2808280} <Debug> ods.xdrs_logs_bak_local (SelectExecutor): Key condition: unknown, unknown, and, unknown, and, unknown, unknown, and, and
+
+2023.06.07 15:46:17.798941 [ 69194 ] {5b76a4f2-fb28-48e9-bd07-5d9fb2808280} <Debug> ods.xdrs_logs_bak_local (SelectExecutor): MinMax index condition: (column 0 in [20230517, +inf)), (column 0 in (-inf, 20230518]), and, unknown, and, (column 0 in [20230517, +inf)), (column 0 in (-inf, 20230518]), and, and
+
+2023.06.07 15:46:17.798981 [ 69194 ] {5b76a4f2-fb28-48e9-bd07-5d9fb2808280} <Debug> ods.xdrs_logs_bak_local (SelectExecutor): Selected 6 parts by date, 6 parts by key, 7183 marks to read from 6 ranges
+```
+
+**原因解析：**
+原因暂时未知
+
+**解决方案：**
+方案一：将IN Subquery再嵌套一层子查询，在新的子查询中将索引字段检索出来
+方案二：升级ClickHouse版本
+
 
 
 ### Code: 342
