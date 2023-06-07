@@ -20,6 +20,13 @@ unalias kd
 ### id
 
 
+## Environment
+
+设置命令行前缀格式
+`export PS1='[\u@\h \W]\$ '`
+
+
+
 ## Network
 
 
@@ -39,15 +46,33 @@ hostname <new_name>
 hostname -I
 ```
 
+## Disk
+
+### lsblk
+查看磁盘信息
+
+## Other
 
 
-## Environment
+### lshw
+查看主机硬件配置
 
-设置命令行前缀格式
-`export PS1='[\u@\h \W]\$ '`
+```bash
+# 打印硬件详细信息
+lshw
 
+# 打印硬件路径, 以及简短信息
+lshw --short
 
+# 查看内存信息
+lshw -short -class memory
 
+# 查看处理器信息
+lshw -short -class processor
+```
+
+### lscpu
+查看Processor信息
 
 ## 参考链接
 1. 

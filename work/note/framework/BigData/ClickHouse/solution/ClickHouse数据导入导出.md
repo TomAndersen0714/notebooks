@@ -1,4 +1,4 @@
-# ClickHouse数据导入导出
+# ClickHouse数据导入导出解决方案
 
 
 
@@ -33,6 +33,8 @@ https://clickhouse.com/docs/en/interfaces/formats#data-format-arrow
 https://clickhouse.com/docs/en/integrations/data-ingestion/insert-local-files
 
 
+
+
 #### docker
 
 Example
@@ -48,6 +50,16 @@ PS：切记通过容器终端导出时，不要加上“-t”参数，此命令�
 ### 基于文件
 
 
+#### Table Function - File
+
+https://clickhouse.com/docs/en/sql-reference/table-functions/file
+
+查看当前ClickHouse版本是否支持`file`表函数
+```SQL
+SELECT * FROM system.functions WHERE name like '%file%'
+```
+
+
 #### INFILE and OUTFILE
 
 INSERT INTO ... FROM INFILE
@@ -56,15 +68,6 @@ https://clickhouse.com/docs/en/sql-reference/statements/insert-into#inserting-da
 
 SELECT ... INTO OUTFILE
 https://clickhouse.com/docs/en/sql-reference/statements/select/into-outfile
-
-
-#### Table Function - File
-https://clickhouse.com/docs/en/sql-reference/table-functions/file
-
-查看当前ClickHouse版本是否支持`file`表函数
-```SQL
-SELECT * FROM system.functions WHERE name like '%file%'
-```
 
 
 ## 示例

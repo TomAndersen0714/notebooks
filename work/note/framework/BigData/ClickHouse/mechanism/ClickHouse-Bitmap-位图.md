@@ -80,8 +80,19 @@ https://clickhouse.com/docs/en/sql-reference/aggregate-functions/reference/group
 
 
 
-## Example & Benchmark
+## Example and Benchmark
 
+主机配置
+```
+Intel(R) Xeon(R) Silver 4110 CPU @ 2.10GHz
+Intel(R) Xeon(R) Silver 4110 CPU @ 2.10GHz
+
+16GiB DIMM DDR4 Synchronous Registered (Buffered) 2666 MHz (0.4 ns)
+16GiB DIMM DDR4 Synchronous Registered (Buffered) 2666 MHz (0.4 ns)
+32GiB DIMM DDR4 Synchronous Registered (Buffered) 2666 MHz (0.4 ns)
+```
+
+Benchmark
 ```sql
 -- DROP TABLE IF EXISTS test.visits;
 CREATE TABLE test.visits
@@ -163,6 +174,8 @@ SELECT COUNT(DISTINCT UserID) FROM test.visits;
 
 SELECT uniqExact(UserID) FROM test.visits;
 ```
+
+小结：在160-40w数据量的情况下，使用groupBitmapMerge去重，耗时约为uniqExact的7分之1。
 
 
 ## 常见问题

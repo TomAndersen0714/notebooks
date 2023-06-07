@@ -68,7 +68,7 @@ https://www.postgresql.org/docs/14/sql-altertable.html
 
 ## 其他常用命令
 
-查询表结构，information_schema.columns表
+information_schema.columns表：查询表结构
 https://www.postgresql.org/docs/current/information-schema.html
 
 ```mysql
@@ -82,7 +82,7 @@ where table_name = 'sxx.ft_product_mapping_tm';
 ```
 
 
-查看数据类型信息，pg_type表
+pg_type表：查看数据类型信息
 https://www.postgresql.org/docs/14/catalogs.html
 ```mysql
 -- 查看数据类型长度
@@ -90,7 +90,7 @@ SELECT typlen FROM pg_type WHERE oid = pg_typeof(33);
 ```
 
 
-查看index信息，pg_indexes表
+pg_indexes表：查看index信息
 https://www.postgresql.org/docs/14/catalogs.html
 ```mysql
 SELECT *
