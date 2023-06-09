@@ -1,4 +1,4 @@
-# Trino安装部署基础教程
+# Trino安装基础教程
 
 ## 安装部署
 
@@ -225,5 +225,4 @@ LIMIT 10
 
 
 ## 参考链接
-
-[Trino in containers - Trino 399 Documentation](https://trino.io/docs/current/installation/containers.html)
+1. [Trino in containers - Trino 399 Documentation](https://trino.io/docs/current/installation/containers.html)

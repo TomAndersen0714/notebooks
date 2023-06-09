@@ -52,11 +52,7 @@ ClickHouse IN Operator+Subquery无法命中Primary Key索引
 Index not used for IN operator with literals
 https://github.com/ClickHouse/ClickHouse/issues/10574
 
-**解决方案：**
-方案一：将IN Subquery再嵌套一层子查询，在新的子查询中将索引字段检索出来
-
-Example：
-修改前
+**Sample：**
 ```sql
 SELECT *
 FROM ods.xdrs_logs_all
@@ -66,7 +62,11 @@ WHERE day = 20230517
     )
 LIMIT 100
 ```
-修改后
+
+
+**解决方案：**
+**方案一**：如果子查询是常量查询，则可以直接将IN Subquery再嵌套一层子查询，在新的子查询中将索引字段检索出来
+
 ```sql
 SELECT *
 FROM ods.xdrs_logs_all
@@ -81,7 +81,28 @@ LIMIT 100
 ```
 
 
-方案二：升级ClickHouse版本
+**方案二**：如果子查询不是常量查询，则可以在外部查询中使用`PREWHERE`来替换原来的`WHERE`子句，提升查询性能。
+https://clickhouse.com/docs/en/sql-reference/statements/select/prewhere
+
+PS：虽然性能提升十分明显，但是在执行日志中，依旧显示性能开销较大，初步判断可能是这些性能指标的计算存在误差
+
+```sql
+SELECT *
+FROM ods.xdrs_logs_all
+PREWHERE day = 20230517
+AND shop_id GLOBAL IN (
+    SELECT shop_id
+    FROM (
+        SELECT shop_id
+        FROM xqc_dim.xqc_shop_all
+        WHERE day = 20230608
+        AND shop_id = '61616faa112fa5000dcc7fba'
+    )
+)
+LIMIT 100
+```
+
+**方案三**：升级ClickHouse版本
 
 
 ## 错误日志
