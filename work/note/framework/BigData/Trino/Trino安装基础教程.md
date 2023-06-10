@@ -225,4 +225,5 @@ LIMIT 10
 
 
 ## 参考链接
-1. [Trino in containers - Trino 399 Documentation](https://trino.io/docs/current/installation/containers.html)
+1. [Trino Documentation-Installation](https://trino.io/docs/current/installation.html)
+2. [Trino Documentation-Trino in containers](https://trino.io/docs/current/installation/containers.html)
