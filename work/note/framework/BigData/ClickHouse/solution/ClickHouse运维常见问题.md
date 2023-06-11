@@ -1,6 +1,6 @@
 # ClickHouse运维常见问题
 
-## ClickHouse中Atomic数据库的坑点
+## ClickHouse Atomic Database的坑点
 
 **版本：22.1.2.2**
 
@@ -13,7 +13,7 @@ https://github.com/ClickHouse/ClickHouse/issues/12135
 
 
 
-## ClickHouse Server内存占用不释放
+## ClickHouse Server内存不释放
 
 **版本：20.4.2.9**
 
@@ -37,13 +37,18 @@ https://github.com/ClickHouse/ClickHouse/issues/12563
 
 
 
-## Clickhouse KILL QUERY hangs forever
+## ClickHouse ReplacingMergeTree无法命中索引
+
+查询ReplacingMergeTree表时，默认无法使用`PREWHERE`优化机制，即无法命中主键索引，需要显示使用`PREWHERE`子句。
+
+
+## Killed query hangs forever
 
 If you are using a recent CH release (21.12+), then the KILL flag will be checked after each block is processed (on older releases it might never be checked).
 https://stackoverflow.com/questions/72364629/clickhouse-kill-query-hangs-forever
 
 
-## ClickHouse IN Subquery无法命中Primary Key索引
+## IN Subquery无法命中Primary Key索引
 
 **错误版本：20.4.2.9**
 ClickHouse IN Operator+Subquery无法命中Primary Key索引

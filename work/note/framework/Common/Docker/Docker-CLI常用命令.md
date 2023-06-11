@@ -57,7 +57,10 @@
 
 ## 其他
 
-
+1. root赋予指定用户docker组权限
+```
+sudo usermod -aG docker <username>
+```
 
 ## 参考链接
 1. [Docker - Use the Docker command line](https://docs.docker.com/engine/reference/commandline/cli/)

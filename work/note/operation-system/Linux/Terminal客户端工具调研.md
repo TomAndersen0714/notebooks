@@ -1,12 +1,12 @@
-# 远程SSH客户端工具调研
+# Terminal客户端工具调研
 
 ## 前言
 
-Shell和Terminal的区别，简单理解，Shell即建立在对应操作系统之上的命令行工具，如Bash、Sh、ZSH等，而Terminal则是在Shell之上，连接和展示各类Shell工具的可视化工具，如iterm2、Windows Terminal、on-my-zsh等，而远程的Terminal工具则有XShell、SecuritySRT等。
+Shell（Shell解释器）：Shell是一种命令行解释器，负责解释和执行用户输入的命令。它是用户与操作系统内核之间的接口。在Linux系统中，常见的Shell有Bash（Bourne Again Shell）、Sh（Bourne Shell）、Ksh（Korn Shell）、Csh（C Shell）等。Shell提供了命令行界面（CLI）来与系统进行交互，并支持执行命令、编写脚本、管道操作、环境变量设置等功能，如Bash、Sh、ZSH等。
 
-Shell与Terminal的关系，我个人理解，可类比于网页和浏览器之间多对多的关系。
+Terminal（终端）：Terminal是用户与Shell进行交互的界面。它是一个提供输入和输出功能的程序。在Linux系统中，Terminal通常指的是一个模拟终端窗口，也称为终端仿真器。终端窗口可以打开一个Shell会话，使用户能够在其中输入命令、执行程序、查看输出结果等。每个终端窗口都会运行一个Shell进程，用户通过终端窗口与Shell进行交互。主流的Terminal工具有iterm2、Windows Terminal、on-my-zsh等，支持远程登录的Terminal客户端工具则有XShell、SecuritySRT等。
 
-
+Shell与Terminal的关系，本人理解，可类比于网页和浏览器之间多对多的关系。
 
 ## 收费
 
