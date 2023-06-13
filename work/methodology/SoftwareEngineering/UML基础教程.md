@@ -33,29 +33,36 @@ UML（统一建模语言）最初确实是为面向对象方法设计的，但�
 ## UML图
 
 
-## UML设计工具
+## UML工具
 
 
 
 ### PlantUML
 
+PlantUML是一种开源工具，可以使用简单的文本描述语言来生成图形化的图表，包括UML（统一建模语言）图形。它允许开发人员和设计师使用纯文本来描述系统的结构、行为和交互，然后自动生成相应的图形表示。
+
+使用PlantUML，您可以使用简单的文本语法来定义类、接口、关系、活动、时序等元素，并通过解析这些文本描述生成对应的图形。它支持多种类型的UML图，包括类图、时序图、活动图、用例图、组件图等。
+
 https://github.com/plantuml/plantuml
 
-https://www.planttext.com/
+https://www.plantuml.com/
 
-
-### C4-PlantUML
-https://github.com/plantuml-stdlib/C4-PlantUML
+[微信公众号-程序媛山楂-神仙级UML工具，助你高效绘制流程图～](https://mp.weixin.qq.com/s/qyE4dpiwqfBpMbwR6TH68Q)
 
 
 ### Visual Paradigm
 
-https://mp.weixin.qq.com/s/WWqbBMS7-3TNGcOXLJ26KQ
+Desktop应用，图形绘制专业软件，支持社区版本
+
+https://www.visual-paradigm.com/cn/download/community.jsp
+
+[微信公众号-陶朱公Boy-绝杀processOn，这款UML画图神器，阿里字节都用疯了，你还不知道？](https://mp.weixin.qq.com/s/WWqbBMS7-3TNGcOXLJ26KQ)
 
 ### ProcessOn
 
-在线版，云端存储
+Web应用，在线版图形绘制工具，云端存储
 
+https://www.processon.com/
 
 ## 参考链接
 1. [Wiki-Unified Modeling Language](https://en.wikipedia.org/wiki/Unified_Modeling_Language)
