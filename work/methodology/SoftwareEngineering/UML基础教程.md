@@ -69,36 +69,43 @@ extend、include、dependency
 
 ### 结构图（Structural Diagrams）
 
-包图（Package diagrams）
+#### 包图（Package Diagrams）
 
-类图（Class or Structural diagrams）
+#### 类图（Class or Structural Diagrams）
 
-对象图（Object diagrams）
+#### 对象图（Object Diagrams）
 
-组合结构图（Composite Structure diagrams）
+#### 组合结构图（Composite Structure Diagrams）
 
-组件图（Component diagrams）
+#### 组件图（Component Diagrams）
 
-部署图（Deployment diagrams）
+#### 部署图（Deployment Diagrams）
 
 
 ### 行为图（Behavioral Diagrams）
 
-用例图（Use Case diagrams）
+#### 用例图（Use Case Diagrams）
 
-活动图（Activity diagrams）
+用于描述User和System（Use Case）之间的联系，常用于业务分析和需求分析阶段。
 
-状态机图（State Machine diagrams）
+组成元素：参与者（Actor）、用例（Use Case）、关系、系统。
 
-通信图（Communication diagrams）
+关系：关联、泛化、包含、扩展
 
-协作图（Collaboration Diagram）
 
-顺序图（Sequence diagrams）
+#### 活动图（Activity Diagrams）
 
-时间图（Timing diagrams）
+#### 状态图、状态机图（State Machine Diagrams）
 
-交互概览图（Interaction Overview diagrams）
+#### 通信图（Communication Diagrams）
+
+#### 协作图（Collaboration Diagram）
+
+#### 顺序图（Sequence Diagrams）
+
+#### 时序图（Timing Diagrams）
+
+#### 交互概览图（Interaction Overview Diagrams）
 
 
 ## UML工具
@@ -142,6 +149,38 @@ https://www.visual-paradigm.com/cn/download/community.jsp
 Desktop桌面应用，收费，提供30天试用版，同时支持学术license
 
 
+## 软件开发UML分析设计过程解析
+
+取自《UML2面向对象分析与设计》。本章节所讨论的UML分析设计过程起始于业务建模，接下来是需求建模、用例分析、架构设计和构建设计，最后终止于代码实现。当然，这个过程并不是完整的软件开发过程（如缺少计划、管理、测试、维护等方面内容），因为这里重点讲解的是分析和设计。在实际的软件开发过程中，这些阶段可以是多次迭代重复的增量开发过程，而不一定是线性的顺序过程。
+
+### 业务建模
+
+通过软件建模的方式，分析和理解待开发或者已有的业务，描述业务流程。此阶段的目标是认识业务的本质，此阶段的理解是后续用例建模的基础。
+
+本阶段中主要使用扩展的UML用例图（Use Case Diagrams）进行业务建模，来描述整体业务，采用UML活动图（Activity Diagrams）或顺序图（Sequence Diagrams）来描述业务用例，进行业务流程的细化（或User之间的交互）。
+
+如：自助点餐软件中，User有服务员、食客、厨师等等，Use Case有点餐、收拾餐桌、获取菜单等等，同时可以使用顺序图来描述各个User之间的依赖和交互关系；如银行交易系统，User有储户、柜员、行长等，Use Case有开户、存钱、取钱等，也**可以使用用例图（Use Case Diagrams）来描述User-System之间的关系、顺序图（Sequence Diagrams），来描述User-System之间的交互**。
+
+
+### 用例建模
+
+本阶段采用**UML用例图**（Use Case Diagrams）来进行需求建模，采用**用例文档**描述软件需求，作为后续用例分析的输入。
+
+### 用例分析
+
+采用UML用例分析技术分析软件需求，建立软件系统的分析模型。本阶段主要使用扩展的类图（Class Diagrams）来表示类之间的静态关系，采用通信图（Communication Diagrams）来表示动态交互。
+
+### 架构设计
+
+在系统的全局范围内，以分析模型为基础，设计系统构件的实现细节。本阶段和构件设计阶段，则主要采用包、构建、部署等图表示软件架构，采用类图、状态机图、时序图来进行详细的类设计。
+
+### 构件设计
+
+本阶段根据架构设计的结果，将分析模型细化，设计系统构件的实现细节。
+
+### 代码实现
+
+本阶段将系统构件映射到目标语言上，即根据类图、时序图、状态机图等生成代码。
 
 ## 参考链接
 1. [Wiki-Unified Modeling Language](https://en.wikipedia.org/wiki/Unified_Modeling_Language)
@@ -149,3 +188,4 @@ Desktop桌面应用，收费，提供30天试用版，同时支持学术license
 3. 《UML2面向对象分析与设计（第2版）》-清华大学出版社
 4. [Bilibili-北京航空航天大学-软件学院-UML2面向对象分析与设计](https://www.bilibili.com/video/BV1fq4y1q7KP)
 5. [清华大学出版社-UML2面向对象分析与设计（第2版）-资源下载](http://www.tup.tsinghua.edu.cn/booksCenter/book_07138701.html#)
+6. [阿里巴巴-Java开发手册(黄山版)](https://github.com/alibaba/p3c)
