@@ -24,6 +24,7 @@ ChatGPT很可能会使得工人的角色变得多元化，工种之间的界限�
 2. 可以让ChatGPT帮忙写Prompt。
 3. 不断调整和迭代Prompt。
 4. 使用现成的Prompt，或者自动生成的Prompt，如AIPRM。
+5. 可以让ChatGPT生成代码来执行原任务。
 
 
 ## 参考资料
