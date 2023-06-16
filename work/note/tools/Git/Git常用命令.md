@@ -57,7 +57,7 @@ git clone --depth 1 https://github.com/grpc/grpc-java
 
 `--add`
 
-#### config
+#### 常用config
 
 
 `http.proxy, https.proxy`
@@ -87,6 +87,13 @@ git config --global --unset-all safe.directory
 
 ```
 
+
+### git submodule
+
+PS: Git submodule管理起来十分复杂，不建议使用
+```bash
+git submodule add <remote URL> <directory>
+```
 
 ### git rebase
 

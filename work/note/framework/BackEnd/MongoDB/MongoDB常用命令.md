@@ -1,7 +1,8 @@
 # MongoDB常用命令
 
+## Methods
 
-## db
+### db
 1. [官方链接](https://www.mongodb.com/docs/manual/reference/method/js-database/)
 2. `show databases | db.getMongo().getDBNames()`：查看所有数据库清单
 3. `use <database>`：切换数据库
@@ -13,7 +14,7 @@
 9. `db.killOp()`：终止输入的opid对应的操作，对集群都生效
 
 
-## collections
+### collections
 1. [官方链接](https://www.mongodb.com/docs/manual/reference/method/js-collection/)
 2. 语法：
    db.collection.findOne()，将collection替换为对应的collection名称即可，如“db.<collection_name>.findOne()”
@@ -24,6 +25,21 @@
 
 
 
+## Operators
+
+### Query and Projection Operators
+https://www.mongodb.com/docs/manual/reference/operator/query/#std-label-query-selectors
+
+
+`$exists`
+```sql
+db.<collection_name>.findOne({"_id": { $exists: true }})
+```
+
+
+
+
+
 ## Mongo查询常见问题
 报错“MongoServerError: not primary and secondaryOk=false”，可以在命令行执行“rs.secondaryOk()”命令解决
 
@@ -31,3 +47,4 @@
 
 ## 参考链接
 1. [MongoDB Manual - method](https://www.mongodb.com/docs/manual/reference/method/)
+2. [MongoDB Manual - operators](https://www.mongodb.com/docs/manual/reference/operator/)
