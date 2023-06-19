@@ -42,7 +42,6 @@ OPTIONS
 预检请求（preflight request）
 预检响应（preflight response）
 
-
 TRACE
 
 CONNECT
@@ -52,10 +51,9 @@ CONNECT
 #### HTTP-Version
 
 
-
 ### Request Headers
 
-请求头Request headers
+请求头Request headers。
 
 对于HTTP GET请求，一般请求的参数通常是通过URL中的查询字符串传递的，因此它的payload一般是空的，但HTTP并未强制规定GET请求的payload是否为空，因此GET请求的payload具体是否为空，需要根据需求的具体实现方式来确定。
 
@@ -104,7 +102,7 @@ Respond Body（响应体），是HTTP响应中的数据部分，由服务端填�
 
 ### Content-Type
 
-HTTP 中的Content-Type头部字段用于指示发送或接收的实体主体（body）的媒体类型（MIME type），用于告知HTTP消息的接收端如何解析和处理实体主体数据。
+HTTP 中的Content-Type头部字段用于标识发送或接收的实体主体（body）的媒体数据类型（MIME type），用于告知HTTP消息的接收端如何解析和处理实体主体数据。
 
 ## HTTPS
 
