@@ -3,6 +3,10 @@
 
 ## Shell相关命令
 
+### Shell通用
+
+netsh：重置所有网络配置（需要重启主机）`netsh winsock reset`
+
 ### cmd Shell
 
 cd：打开指定路径
@@ -12,8 +16,6 @@ del：删除文件
 where：查看可执行文件位置
 
 echo：打印指定内容，如打印环境变量：`echo %GOPROXY%`
-
-netsh：重置所有网络配置（需要重启主机）`netsh winsock reset`
 
 
 ### PowerShell
