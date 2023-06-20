@@ -63,4 +63,6 @@ DataOps不是什么
 5. [中国信通院-DataOps成熟度框架](https://mp.weixin.qq.com/s/PjdR0Gk5NEpkv7RAgi5oEQ)
 6. [从“数据孤岛”到统一数据体系，明源云DataOps实践探索之路](https://mp.weixin.qq.com/s/_AZeWs-rhNOn8CaL0afleA)
 7. [为什么说DataOps是数据中台的拐点？](https://mp.weixin.qq.com/s/fHuvwDD0SA_qMkT418BptQ)
-8. [Wiki-Five Ws](https://en.wikipedia.org/wiki/Five_Ws)
+8. [凯哥：DataOps企业数据价值链的自动化底座](https://mp.weixin.qq.com/s/e_gEpd91awGo0j-E9p_Jhw)
+9. [数据要素产业链分析报告](https://mp.weixin.qq.com/s/XAqDsx5BlvnKV_iAMiEpAg)
+10. [Wiki-Five Ws](https://en.wikipedia.org/wiki/Five_Ws)

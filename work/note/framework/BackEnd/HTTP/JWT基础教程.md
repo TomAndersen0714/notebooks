@@ -1,4 +1,4 @@
-## JWT基础教程
+# JWT基础教程
 
 ## 简介
 
@@ -9,6 +9,24 @@ JSON web token (JWT)，发音对应英文单词"jot"，/dʒɑːt/（美），是
 
 PS：JWT Token中的签名（Signature），与传统的加密技术领域的数字签名（Sigital Signature）技术不完全相同，最大的区别是JWT中的Signature可以通过对称加密算法（如：HS256）来生成。
 
+
+## JWT Libraries
+
+GoLang：
+
+jwt-go
+https://github.com/golang-jwt/jwt
+https://golang-jwt.github.io/jwt/usage/create/
+
+
+Python：
+
+pyjwt
+https://github.com/jpadilla/pyjwt/
+https://pyjwt.readthedocs.io/en/stable/index.html
+
+authlib
+https://github.com/lepture/authlib
 
 
 ## 参考链接
