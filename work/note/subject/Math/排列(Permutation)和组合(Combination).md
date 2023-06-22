@@ -16,7 +16,7 @@ $$
 
 
 ## 参考链接
-1. ChatGPT
+1. ChatGPT3.5
 2. [知乎-5分钟彻底了解排列组合](https://zhuanlan.zhihu.com/p/41855459)
 3. [Permutation](https://en.wikipedia.org/wiki/Permutation)
 4. [Combination](https://en.wikipedia.org/wiki/Combination)
