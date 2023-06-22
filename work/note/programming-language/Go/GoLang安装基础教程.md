@@ -66,7 +66,7 @@ Linux：
 export GOPROXY=https://goproxy.cn,https://goproxy.io,direct
 ```
 
-参考：[Linux-Bash环境变量配置](work/note/operation-system/Linux/Linux-Bash环境变量配置.md)
+参考：[Linux-Bash环境变量配置](work/note/subject/Computer/Operating-System/Linux/Linux-Bash环境变量配置.md)
 
 ### GOPRIVATE
 
