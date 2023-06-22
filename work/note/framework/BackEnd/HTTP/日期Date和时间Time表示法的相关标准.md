@@ -1,6 +1,5 @@
 # 日期Date和时间Time表示法的相关标准
 
-
 ## 前言
 
 关于日期和时间表示法的标准，目前实际生活中使用最多的两个标准是`ISO 8601`和`RFC 3339`，其中后者是基于前者的一种扩展格式。
@@ -44,8 +43,7 @@ YYYY-MM-DDThh:mm:ss.ssssss±hh:mm
 
 ## ISO 8601和RFC 3339标准的区别
 
-—参考ChatGPT3.5
-
+本节内容参考自ChatGPT3.5
 
 RFC 3339标准规定的格式也是基于ISO 8601标准的扩展格式，主要是针对互联网协议中需要使用日期时间的情况做出了一些特定的规定，旨在解决一些在使用 ISO 8601 时可能存在的模糊和歧义问题。以下是 RFC 3339 标准和 ISO 8601 标准的一些区别：
 
@@ -92,7 +90,7 @@ YYYY-MM-DD hh:mm:ss.ssssss
 [stackoverflow - How do I translate an ISO 8601 datetime string into a Python datetime object?](stackoverflow.com/questions/969285/how-do-i-translate-an-iso-8601-datetime-string-into-a-python-datetime-object)
 [stackoverflow - How do I parse an ISO 8601-formatted date?](https://stackoverflow.com/questions/127803/how-do-i-parse-an-iso-8601-formatted-date)
 
-建议针对所有日期时间字段的序列化和传输，统一采取时间戳（timestamp）的形式，因为时间戳是全球统一的，不带有时区信息，不会产生歧义，且整型便于存储和排序，但相对的会牺牲部分可读性。
+**建议针对所有日期时间字段的序列化和传输，统一采取时间戳（timestamp）的形式**，原因在于时间戳是全球统一的，不带有时区信息，不存在歧义，且整型便于存储和排序，但相对的会牺牲部分可读性。
 
 
 ## 参考链接
