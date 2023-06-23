@@ -17,6 +17,7 @@ Image Toolkit
 
 LaTex Suite
 
+Advanced Table
 
 ## Canvas功能
 https://sspai.com/post/77463
