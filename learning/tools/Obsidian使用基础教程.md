@@ -1,17 +1,21 @@
 # Obsidian使用基础教程
 
 
-
-
 ## 自定义配置
 
 
 
-
-## 插件安装
+## 安装开源插件
 
 Editing Toolbar
 
+Easy Typing
+
+Emoji Toolbar
+
+Image Toolkit
+
+LaTex Suite
 
 
 ## Canvas功能
