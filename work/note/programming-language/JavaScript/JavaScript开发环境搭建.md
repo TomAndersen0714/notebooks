@@ -1,5 +1,6 @@
 # JavaScript开发环境搭建
 
+
 ## 前言
 
 工欲善其事，必先利其器。本文主要用于记录JavaScript开发环境搭建过程，仅介绍VSCode和WebStorm这两种主流JS开发环境的搭建方式。
@@ -12,103 +13,9 @@
 参考[Node.js基础教程](work/note/framework/FrontEnd/Node.js/Node.js基础教程.md)
 
 
-
 ## WebStrom
 
-### 安装WebStrom
-
-### 安装插件
-
-#### .ignore
-
-用于交互式生成.ignore文件
-
-#### translation
-
-一个JetBrain上的翻译插件，支持各大主流翻译工具，建议使用有道翻译
-
-#### Live Edit
-
-此插件作用类似于VSCode中的Live Server插件，主要用于在本地免打包启动Web服务，自动加载和刷新代码，即时查看页面效果
-
-
-### 修改配置
-
-#### Debugger
-
-File | Settings | Build, Execution, Deployment | Debugger
-
-勾选“Allow unsigned requests”，避免WebStorm使用自定义的request header来发送HTTP请求，导致无法调试。
-
-#### Postfix Completion
-
-File | Settings | Editor | General | Postfix Completion
-
-Postfix Completion中增加template，可以在编辑器中表达式之后，键入对应后缀，快速生成对应代码段。
-
-增加Key名为“logvar”，表达式为`console.log("$EXPR$ = " + $EXPR$)`的template，即可以通过“表达式.logvar”的方式来在编辑器中自动生成对应的console调用代码段。
-
-
-#### Live Templates
-
-File | Settings | Editor | Live Templates
-
-Live Templates配置中增加Live Templates，可以在编辑器中，通过键入对应Key，快速生成对应代码段。
-
-在JavaScript Group下增加，名为logvar的template，template text设置为`console.log("$EXPR$ = " + $EXPR$)`，即可以通过直接键入“logvar”的方式，来自动生成对应的console调用代码段。
-
-#### Code Style
-
-File | Settings | Editor | Code Style | HTML
-
-在Code Generation中，取消`Link comment at first column`的勾选，避免注释起始标签放置在行首，使得注释更加紧凑。勾选`Block comment at first column`，勾选`Add spaces around block comments`，使得注释标签内容首位增加空格。
-
-#### Keymap
-
-File | Settings | Keymap
-
-删除或者调整快捷键配置Plugins | Terminal | Close Tab，避免Terminal中Bash快捷键和IDEA Terminal快捷键发生冲突。
-
-
-#### TODO（可选）
-
-File | Settings | Editor | TODO
-
-在patterns选项中，增加pattern值为`\bnote\b.*`的选项，勾选`use color scheme TODO default colors`，便于在注视中，通过`NOTE`关键字来高亮显示注释内容，便于在注视中记录笔记。
-
-
-### 使用技巧
-
-#### 标签自动补全
-```
-（1）纯标签补全
-例：输入h1,按Tab键，
-
-
-（2）纯标签+地址“id”
-例：输入h1#ccg,按Tab键，
-
-
-（3）纯标签+类“class”
-例：输入h1.ccg,按Tab键，
-
-
-（4）标签+子标签+子标签个数
-例：输入div>p*6,按Tab键，
-
-（5）标签+类+子标签+子标签个数+子子标签+地址+}HTML}
-例：输入ul.menu>li*6>a[href=#]{HTML},按Tab键，
-```
-
-
-自动补全标签：输入标签在，在浮动列表中，选择一项后，输入`>`符号，则自动补全结束标签。
-
-#### Show npm Scripts
-
-鼠标右键npm项目的package.json文件，点击`Show npm Scripts`。
-
-或者，`View | Tool Windows | npm`，即可打开npm脚本命令窗口，类似于Maven脚本命令窗口，可以快速执行对应脚本命令。
-
+[WebStorm基础教程](work/note/tools/JetBrains/WebStorm基础教程.md)
 
 
 ## VSCode
