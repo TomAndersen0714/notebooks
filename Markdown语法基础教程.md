@@ -101,10 +101,10 @@ var foo = 'bar';
 ## 高级语法
 
 
-### Latex语法
+### Tex语法
 
 
-#### Latex行内公式
+#### Tex行内公式
 ```
 $\sum_{x=0}^{n}$
 ```
@@ -112,7 +112,7 @@ $\sum_{x=0}^{n}$
 求和公式：$\sum_{x=0}^{n}$
 
 
-#### Latex公式块
+#### Tex公式块
 
 ```
 $$
@@ -127,8 +127,11 @@ $$
 
 ### 图
 
-#### 横向流程图
+#### Mermaid
 
+[Mermaid](work/note/programming-language/JavaScript/Libraries/Mermaid.md)
+
+##### 横向流程图
 
 ```mermaid
 graph LR
@@ -141,9 +144,7 @@ A[方形] -->B(圆角)
 
 
 
-#### 竖向流程图
-
-
+##### 竖向流程图
 
 
 ```mermaid
@@ -155,35 +156,29 @@ A[方形] --> B(圆角)
     F[竖向流程图]
 ```
 
-#### 标准竖向流程图
 
-~~~flow
-st=>start: 开始框
-op=>operation: 处理框
-cond=>condition: 判断框(是或否?)
-sub1=>subroutine: 子流程
-io=>inputoutput: 输入输出框
-e=>end: 结束框
-st->op->cond
-cond(yes)->io->e
-cond(no)->sub1(right)->op
-~~~
+##### UML
 
+```mermaid
+classDiagram
+    class Animal {
+        -name: string
+        +eat(): void
+        +sleep(): void
+    }
 
+    class Dog {
+        +bark(): void
+    }
 
-#### 标准横向流程图
+    class Cat {
+        +meow(): void
+    }
 
-~~~flow
-st=>start: 开始框
-op=>operation: 处理框
-cond=>condition: 判断框(是或否?)
-sub1=>subroutine: 子流程
-io=>inputoutput: 输入输出框
-e=>end: 结束框
-st(right)->op(right)->cond
-cond(yes)->io(bottom)->e
-cond(no)->sub1(right)->op
-~~~
+    Animal <|-- Dog
+    Animal <|-- Cat
+
+```
 
 ## 参考链接
 

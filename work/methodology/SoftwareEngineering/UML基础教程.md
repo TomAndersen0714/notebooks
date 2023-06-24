@@ -36,16 +36,22 @@ UML 概念模型主要包含三个部分：
 
 ## UML Things（事物）
 
-结构事物（Structural Thing）：UML模型中的名词
+结构事物（Structural Thing）：UML 模型中的名词
 
-行为事物（Behavioral Thing）：UML模型中的动词
+行为事物（Behavioral Thing）：UML 模型中的动词
 
-分组事物（Grouping Thing）：UML模型中的组织
+分组事物（Grouping Thing）：UML 模型中的结构
 
-注释事物（Annotational Thing）：UML模型的解释部分
+注释事物（Annotational Thing）：UML 模型的注解部分
 
 
 ## UML Relationship (关系)
+
+UML 中本节的内容虽然介绍的是 UML Relationship，但实际上官方的 UML Relationship 中仅仅介绍了部分 Diagram 中的 Relationship，而非全部。
+
+UML Relationship 主要介绍了类图（Class Diagram）、对象图（Object Diagram）、包图 （Package Diagram），和组合结构图（Composite Structure Diagram）中各个组件元素之间的关系，以及其对应的图形符号。
+
+而在其他的 UML 图中，如用例图（Use Case Diagram）、构件图（Component Diagram）、部署图（Deployment Diagram）中，各个组件元素之间的关系，并不完全和本节中的 Relationship 一一对应，如果想要获知各个 Diagram 中的 Relationship，需要到对应的章节进行查看。
 
 ### 依赖（Dependency）
 若 A 使用了 B，则表明 A 依赖于 B。
@@ -71,7 +77,7 @@ A ..> B : dependency: A use B
 class A
 class B
 
-A <-- B : association
+A "1" <-- "0..1" B
 
 @enduml
 
@@ -121,6 +127,26 @@ Product <|.. ProductB
 
 #### 包图（Package Diagrams）
 
+```plantuml
+@startuml
+
+package "Package 1" {
+    class ClassA
+    class ClassB
+}
+
+package "Package 2" {
+    class ClassC
+    class ClassD
+}
+
+ClassA --> ClassB
+ClassC --> ClassD
+
+@enduml
+
+```
+
 #### 类图（Class or Structural Diagrams）
 
 ```plantuml
@@ -153,7 +179,41 @@ Car <|-- GasolineCar
 
 #### 对象图（Object Diagrams）
 
+```plantuml
+@startuml
+
+object ObjectA
+object ObjectB
+object ObjectC
+
+ObjectA ..> ObjectB
+ObjectB --> ObjectC
+
+@enduml
+
+```
+
 #### 组合结构图（Composite Structure Diagrams）
+
+```plantuml
+@startuml
+    boundary b1
+    control c1
+    b1 -(0)- c1
+
+    component comp1
+    interface interf1
+    comp1 #~~( interf1
+
+    :mode1actor: -0)- fooa1
+    :mode1actorl: -le0)- foo1l
+
+    [component1] 0)-(0-(0 [componentC]
+    () component3 )-0-(0 "foo" [componentC]
+
+    [aze1] #-->> [aze2]
+@enduml
+```
 
 #### 组件图（Component Diagrams）
 
@@ -170,6 +230,16 @@ Car <|-- GasolineCar
 
 关系：关联（Association）、泛化（Generalization）、包含（include）、扩展（Extend）。
 
+```plantuml
+@startuml
+actor User
+rectangle System
+User --> (Case1)
+User --> (Case2)
+@enduml
+
+```
+
 
 #### 活动图（Activity Diagrams）
 
@@ -181,7 +251,29 @@ Car <|-- GasolineCar
 
 #### 顺序图（Sequence Diagrams）
 
+```plantuml
+@startuml
+actor User
+participant ObjectA
+participant ObjectB
+
+User -> ObjectA: Message1
+User <-- ObjectA: Message2
+ObjectA -> ObjectB: Message3
+@enduml
+
+```
+
 #### 时序图（Timing Diagrams）
+
+```plantuml
+@startuml
+participant A
+participant B
+A -> B: Message 1
+B -> A: Message 2
+@enduml
+```
 
 #### 交互概览图（Interaction Overview Diagrams）
 
@@ -200,9 +292,13 @@ PlantUML是一种开源工具，定义了一种特殊的描述性语言来表示
 https://github.com/plantuml/plantuml
 
 https://www.plantuml.com/
+https://www.planttext.com/
 
 [微信公众号-程序媛山楂-神仙级UML工具，助你高效绘制流程图～](https://mp.weixin.qq.com/s/qyE4dpiwqfBpMbwR6TH68Q)
 
+### Mermaid
+
+Mermaid 是一个开源的 JavaScript 库，用于绘制流程图、时序图、类图和其他各种图表。它使用简洁的文本语法来描述图表结构，并将其转换为可视化图形。Mermaid 可以直接嵌入到 Markdown 文档、网页或其他文档中，以创建可交互和易于阅读的图表。
 
 ### ProcessOn
 
