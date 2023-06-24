@@ -8,43 +8,7 @@
         "type": "tabs",
         "children": [
           {
-            "id": "e4f2ef09499069f8",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Markdown语法基础教程.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "a300c8b1de420288",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "work/methodology/SoftwareEngineering/软件工程基础教程.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "e5f494f228090ed2",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "work/methodology/SoftwareEngineering/软件工程相关基础概念.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "7ccbb697c68a6b1c",
+            "id": "b706f501dfd9196a",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -54,8 +18,81 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "4b1bd7160f433fb9",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "work/methodology/SoftwareEngineering/UML基础教程.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "51e2066586943b24",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "work/methodology/SoftwareEngineering/Analysis-and-Design/Object-Oriented-Design/面向对象的基本概念.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "6e59fcdd9b66a0c5",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "work/methodology/SoftwareEngineering/Analysis-and-Design/Object-Oriented-Design/面向对象分析与设计基础教程.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "9f7a4e122c721e83",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "work/note/framework/BackEnd/HTTP/JWT基础教程.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "5ee953ac3c9fa418",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "work/note/subject/Computer/Data-Structures-and-Algorithm/数据结构和算法常见术语.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "bfb30e411cb541f1",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "work/note/subject/Computer/Data-Structures-and-Algorithm/算法复杂度计算方法.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -84,7 +121,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "数字签名",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -129,7 +166,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Markdown语法基础教程.md"
+                "file": "work/methodology/SoftwareEngineering/Analysis-and-Design/Object-Oriented-Design/面向对象分析与设计基础教程.md"
               }
             }
           },
@@ -150,7 +187,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Markdown语法基础教程.md",
+                "file": "work/methodology/SoftwareEngineering/Analysis-and-Design/Object-Oriented-Design/面向对象分析与设计基础教程.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -167,10 +204,18 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Markdown语法基础教程.md",
+                "file": "work/methodology/SoftwareEngineering/Analysis-and-Design/Object-Oriented-Design/面向对象分析与设计基础教程.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
+            }
+          },
+          {
+            "id": "a611d2fe5504d622",
+            "type": "leaf",
+            "state": {
+              "type": "advanced-tables-toolbar",
+              "state": {}
             }
           }
         ]
@@ -181,6 +226,7 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "table-editor-obsidian:Advanced Tables Toolbar": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "daily-notes:Open today's daily note": false,
@@ -190,48 +236,48 @@
       "canvas:Create new canvas": false
     }
   },
-  "active": "e4f2ef09499069f8",
+  "active": "6e59fcdd9b66a0c5",
   "lastOpenFiles": [
-    "Markdown语法提示.md",
-    "Markdown语法基础教程.md",
+    "work/methodology/SoftwareEngineering/Analysis-and-Design/Object-Oriented-Design/面向对象的基本概念.md",
     "work/methodology/SoftwareEngineering/UML基础教程.md",
-    "work/methodology/SoftwareEngineering/软件工程基础教程.md",
+    "work/methodology/SoftwareEngineering/Analysis-and-Design/Object-Oriented-Design/面向对象的设计规范.md",
+    "work/methodology/SoftwareEngineering/Analysis-and-Design/Object-Oriented-Design/面向对象的设计模式.md",
+    "work/methodology/SoftwareEngineering/Analysis-and-Design/Object-Oriented-Design/面向对象分析与设计基础教程.md",
     "work/schedule/每日学习内容记录.md",
-    "work/methodology/SoftwareEngineering/软件工程相关基础概念.md",
     "work/note/framework/BackEnd/HTTP/JWT基础教程.md",
-    "work/note/framework/BackEnd/MongoDB/MongoDB常用命令.md",
+    "work/note/subject/Computer/Data-Structures-and-Algorithm/算法复杂度计算方法.md",
+    "work/note/subject/Computer/Data-Structures-and-Algorithm/数据结构和算法常见术语.md",
+    "work/note/subject/Math/数学常用符号.md",
+    "learning/tools/Markdown笔记工具调研.md",
+    "learning/tools/Obsidian基础教程.md",
+    "work/interview/面试经验/大数据面试考点汇总.md",
+    "work/interview/面试经验/后端面试考点汇总.md",
+    "work/interview/面试经验/大数据高质量面经汇总.md",
+    "work/interview/面试经验/程序员面试流程及注意事项.md",
+    "work/note/programming-language/Java/Tools/Arthas基础教程.md",
+    "work/note/programming-language/Java/Tools/JVM调优工具基础教程.md",
+    "work/note/programming-language/Java/Tools",
+    "work/note/programming-language/Java/Feature/Java-senior/Java动态调试技术调研.md",
+    "work/note/programming-language/Java/Cmd/Java命令行工具基础教程.md",
+    "work/note/programming-language/Java/Feature/Java-junior/Java语法.md",
+    "work/note/tools/JetBrains/IDEA基础教程.md",
+    "work/note/tools/JetBrains/PyCharm基础教程.md",
+    "work/note/tools/JetBrains/WebStorm基础教程.md",
     "work/note/programming-language/JavaScript/JavaScript开发环境搭建.md",
-    "work/note/programming-language/Go/GoLang开发环境搭建.md",
-    "work/note/programming-language/Go/GoLang安装基础教程.md",
-    "work/note/operation-system/Windows/Windows命令行常用命令.md",
-    "work/note/operation-system/Windows/WSL/WSL配置基础教程.md",
-    "work/note/programming-language/Java/Java开发环境搭建.md",
-    "work/note/framework/BackEnd/HTTP/URI和URL的区别和联系.md",
-    "work/note/tools/Git/Git常用命令.md",
-    "work/note/operation-system/Windows/WSL/WSL常见问题.md",
-    "work/note/operation-system/Windows/WSL/WSL常用.md",
-    "work/note/subject/Computer/Operating-System",
-    "work/note/subject/Computer/Networking/加密技术.md",
-    "work/test/软件开发/计算机技术与软件专业技术考试/软件设计师/考试学习笔记.md",
-    "work/note/subject/Computer",
-    "work/note/subject/AI/人工智能漫谈.md",
-    "work/note/subject/Computer/Networking",
-    "work/note/framework/BackEnd/HTTP/HTTP基础教程.md",
-    "work/note/operation-system/Linux/Linux-Bash环境变量配置.md",
-    "work/note/programming-language/Go/GoLang命令行常用命令.md",
-    "work/note/operation-system/Linux/Linux命令行常用命令.md",
-    "work/note/operation-system/Linux/Linux-Bash-Shell的类别.md",
+    "work/note/programming-language/JavaScript/JavaScript基础教程.md",
+    "work/note/tools/JetBrains",
+    "work/note/framework/FrontEnd/Libraries/Untitled",
+    "work/note/framework/FrontEnd/Libraries",
+    "work/note/programming-language/JavaScript/Untitled",
+    "life/delicious",
+    "life/travel",
+    "work/note/subject/Computer/Data-Structures-and-Algorithm/Data-Structures/Graph",
+    "work/note/subject/Computer/Data-Structures-and-Algorithm/Data-Structures/Tree",
+    "work/methodology/SoftwareEngineering/Development-and-Management/COMET",
     "resources/images/Pasted image 20230618235539.png",
     "resources/images/JLS-Java_classes.jpg",
-    "work/note/operation-system/Linux/Untitled",
-    "work/methodology/SoftwareEngineering/Development-and-Management/Rational-Unifed-Process",
-    "life/methodology",
-    "work/note/programming-language/Go",
-    "life/methodology/Habits",
     "resources/images/考试学习笔记/image-20221031084459321.png",
     "work/test/软件开发/计算机技术与软件专业技术考试/软件设计师/images/考试学习笔记/image-20221031084459321.png",
-    "work/methodology/SoftwareEngineering/Development-and-Management/Agile-Development",
-    "work/methodology/SoftwareEngineering/Analysis-and-Design/Structured-Design",
     "work/note/framework/BigData/Visualization/Pasted image 20230609114653.png",
     "work/note/framework/BigData/Visualization/Pasted image 20230603233616.png",
     "work/note/framework/BigData/Visualization/Pasted image 20230530221731.png",

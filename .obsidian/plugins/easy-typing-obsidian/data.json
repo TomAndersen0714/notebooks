@@ -10,7 +10,7 @@
   "ChineseNoSpace": true,
   "PunctuationSpace": true,
   "AutoCapital": true,
-  "AutoCapitalMode": "typing",
+  "AutoCapitalMode": "global",
   "PunctuationSpaceMode": "global",
   "InlineCodeSpaceMode": 1,
   "InlineFormulaSpaceMode": 1,
@@ -49,7 +49,7 @@
       "\\n\\n|"
     ]
   ],
-  "userSelRuleSettingsOpen": true,
-  "userDelRuleSettingsOpen": true,
-  "userCvtRuleSettingsOpen": true
+  "userSelRuleSettingsOpen": false,
+  "userDelRuleSettingsOpen": false,
+  "userCvtRuleSettingsOpen": false
 }
