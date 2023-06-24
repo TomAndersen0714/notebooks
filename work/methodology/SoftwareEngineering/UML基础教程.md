@@ -3,9 +3,19 @@
 
 ## UML 概述
 
-UML（Unified Modeling Language，统一建模语言）是由对象管理组织（Object Management Group, OMG）制定的一个通用的、可视化的建模语言标准，可以用来描述、可视化、构造和文档化 （specifying, visualizing, constructing, and documenting）软件密集型系统的各种工件，并且已被 ISO 确立为国际标准。
+UML（Unified Modeling Language，统一建模语言）是由对象管理组织（Object Management Group, OMG）制定的一个通用的、可视化的建模语言标准，可以用来描述、可视化、构造和文档化（specifying, visualizing, constructing, and documenting）软件密集型系统的各种工件，并且已被 ISO 确立为国际标准。
 
-UML（统一建模语言）最初确实是为面向对象方法设计的，但它并不仅限于面向对象建模。UML可以用于描述和表示各种类型的系统和问题领域，不仅局限于面向对象的软件分析和设计。
+**UML（统一建模语言）最初确实是为面向对象方法设计的，但它并不仅限于面向对象建模**。UML 可以用于描述和表示各种类型的系统和问题领域，不仅局限于面向对象的软件分析和设计。
+
+目前最新版本的 UML 名为 UML2。
+
+
+### UML 概念模型
+
+UML 概念模型主要包含三个部分：
+1. 事物（Things）
+2. 关系（Relationship）
+3. UML 图（Diagrams）
 
 
 ### UML 适用和不适用的场景
@@ -20,38 +30,11 @@ UML（统一建模语言）最初确实是为面向对象方法设计的，但�
 2. 需求实现难度低，文字描述就可以阐述清楚
 
 
-### UML 概念模型
-
-UML 概念模型主要包含三个部分：
-1. 事物（Things）
-2. 关系（Relationship）
-3. UML 图（Diagrams）
-
-
 ### OO 基本概念
 
-对象（Objects）: 对象代表一个实体的基本构建块.
+[面向对象的基本概念](work/methodology/SoftwareEngineering/Analysis-and-Design/Object-Oriented-Design/面向对象的基本概念.md)
 
-类（Class）: 类是对象的蓝图.
-
-抽象（Abstraction）: 抽象代表现实世界中实体的行为.
-
-封装（Encapsulation）: 封装是将数据绑定在一起，并隐藏他们外部世界的机制。
-
-继承（Inheritance）: 继承是从现有的机制作出新的类，或者说泛化（Generalization）。
-
-多态性（Polymorphism）: 定义的机制来以不同的形式存在.
-
-
-### OO 分析和设计
-
-面向对象软件开发的基本步骤：
-```bash
-OO Analysis → OO Design → OO implementation using OO languages
-```
-
-
-## UML 事物
+## UML Things（事物）
 
 结构事物（Structural Thing）：UML模型中的名词
 
@@ -62,10 +45,10 @@ OO Analysis → OO Design → OO implementation using OO languages
 注释事物（Annotational Thing）：UML模型的解释部分
 
 
-## UML 关系
+## UML Relationship (关系)
 
-依赖关系（Dependency）
-即若 A 使用了 B，则表明 A 依赖于 B。
+### 依赖（Dependency）
+若 A 使用了 B，则表明 A 依赖于 B。
 
 ```plantuml
 @startuml
@@ -77,7 +60,12 @@ A ..> B : dependency: A use B
 @enduml
 ```
 
-关联关系（Association）
+### 关联（Association）
+
+关联（Association）是一种强语义联系的结构关系，表名两个事物之间存在明确的、稳定的语义联系。聚合（Aggregation）和组合（Combination）是两种不同类型的关联关系。
+
+在关联关系的图形符号中，可以使用实线+箭头，也可以不使用箭头，单独使用实线，默认也视为关联关系，不过是双向关联。
+
 ```plantuml
 @startuml
 class A
@@ -89,15 +77,15 @@ A <-- B : association
 
 ```
 
-关联关系-聚合关系（Aggregation）
+#### 关联关系-聚合（Aggregation）
 即Has-a 的关系
 ```plantuml
 @startuml
-Teacher o-- Student
+Class o-- Student
 @enduml
 ```
 
-关联关系-组合关系（Combination）
+#### 关联关系-组合（Combination）
 即 contains-a 的关系
 ```plantuml
 @startuml
@@ -106,9 +94,8 @@ Human *-- Body
 @enduml
 ```
 
-
-泛化关系（Generalization）
-即继承和实现
+### 泛化（Generalization）
+即继承（extend）
 ```plantuml
 @startuml
 Parents <|-- Son
@@ -116,8 +103,8 @@ Parents <|-- Daughter
 @enduml
 ```
 
+### 实现（Realization）
 
-实现关系（Realization）
 ```plantuml
 @startuml
 Product <|.. ProductA
@@ -126,8 +113,9 @@ Product <|.. ProductB
 ```
 
 
-## UML 图
+## UML Diagrams（图）
 
+建议参考《UML2 面向对象分析与设计（第 2 版）》，2.5 应用 UML2 建模
 
 ### 结构图（Structural Diagrams）
 
@@ -162,6 +150,7 @@ Car <|-- GasolineCar
 
 @enduml
 ```
+
 #### 对象图（Object Diagrams）
 
 #### 组合结构图（Composite Structure Diagrams）
@@ -175,11 +164,11 @@ Car <|-- GasolineCar
 #### 用例图（Use Case Diagrams）
 
 
-用于描述User和System（Use Case）之间的联系，常用于业务分析和需求分析阶段。
+作用：用于描述 Actor 和 System 中的 Use Case 之间的联系，常用于业务分析和需求分析阶段。
 
-组成元素：参与者（Actor）、用例（Use Case）、关系、系统。
+组成元素：参与者（Actor）、用例（Use Case）、关系（Relationship）、系统（System）。
 
-关系：关联、泛化、包含、扩展
+关系：关联（Association）、泛化（Generalization）、包含（include）、扩展（Extend）。
 
 
 #### 活动图（Activity Diagrams）
