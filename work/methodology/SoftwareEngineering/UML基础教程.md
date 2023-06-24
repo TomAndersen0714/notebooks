@@ -66,6 +66,7 @@ A ..> B : dependency: A use B
 @enduml
 ```
 
+
 ### 关联（Association）
 
 关联（Association）是一种强语义联系的结构关系，表名两个事物之间存在明确的、稳定的语义联系。聚合（Aggregation）和组合（Combination）是两种不同类型的关联关系。
@@ -193,27 +194,8 @@ ObjectB --> ObjectC
 
 ```
 
+
 #### 组合结构图（Composite Structure Diagrams）
-
-```plantuml
-@startuml
-    boundary b1
-    control c1
-    b1 -(0)- c1
-
-    component comp1
-    interface interf1
-    comp1 #~~( interf1
-
-    :mode1actor: -0)- fooa1
-    :mode1actorl: -le0)- foo1l
-
-    [component1] 0)-(0-(0 [componentC]
-    () component3 )-0-(0 "foo" [componentC]
-
-    [aze1] #-->> [aze2]
-@enduml
-```
 
 #### 组件图（Component Diagrams）
 
@@ -264,6 +246,7 @@ ObjectA -> ObjectB: Message3
 
 ```
 
+
 #### 时序图（Timing Diagrams）
 
 ```plantuml
@@ -271,7 +254,7 @@ ObjectA -> ObjectB: Message3
 participant A
 participant B
 A -> B: Message 1
-B -> A: Message 2
+B --> A: Message 2
 @enduml
 ```
 

@@ -127,6 +127,43 @@ $$
 
 ### 图
 
+#### PlantUML
+
+专业绘制 UML 图形的语法和开源工具
+
+##### UML 类图
+
+```plantuml
+@startuml
+class Car {
+  + brand: String
+  + color: String
+  + speed: int
+  + accelerate(): void
+  + brake(): void
+}
+
+class ElectricCar {
+  + batteryCapacity: int
+  + chargeLevel: int
+  + charge(): void
+}
+
+class GasolineCar {
+  + fuelCapacity: int
+  + fuelLevel: int
+  + refuel(): void
+}
+
+Car <|-- ElectricCar
+Car <|-- GasolineCar
+
+@enduml
+```
+
+
+
+
 #### Mermaid
 
 [Mermaid](work/note/programming-language/JavaScript/Libraries/Mermaid.md)
@@ -157,28 +194,7 @@ A[方形] --> B(圆角)
 ```
 
 
-##### UML
 
-```mermaid
-classDiagram
-    class Animal {
-        -name: string
-        +eat(): void
-        +sleep(): void
-    }
-
-    class Dog {
-        +bark(): void
-    }
-
-    class Cat {
-        +meow(): void
-    }
-
-    Animal <|-- Dog
-    Animal <|-- Cat
-
-```
 
 ## 参考链接
 
