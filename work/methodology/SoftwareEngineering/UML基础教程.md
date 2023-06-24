@@ -1,31 +1,34 @@
 # UML(统一建模语言)基础教程
 
 
-## UML简介
+## UML 概述
 
-UML（Unified Modeling Language，统一建模语言）是由对象管理组织（Object Management Group, OMG）制定的一个通用的、可视化的建模语言标准，可以用来可视化、描述、构造和文档化软件密集型系统的各种工件，并且已被ISO确立为国际标准。
+UML（Unified Modeling Language，统一建模语言）是由对象管理组织（Object Management Group, OMG）制定的一个通用的、可视化的建模语言标准，可以用来描述、可视化、构造和文档化 （specifying, visualizing, constructing, and documenting）软件密集型系统的各种工件，并且已被 ISO 确立为国际标准。
 
 UML（统一建模语言）最初确实是为面向对象方法设计的，但它并不仅限于面向对象建模。UML可以用于描述和表示各种类型的系统和问题领域，不仅局限于面向对象的软件分析和设计。
 
 
-### UML适用场景
+### UML 适用和不适用的场景
 
-1. 项目采用了OO的方法论
+**使用场景**：
+1. 项目采用了 Object-Oriented 的方法论
 2. 问题复杂，需要更加抽象的方式来概括描述，抓住问题本质，同时提高交流效率
 3. 方案需要归档，已便后续复用，减少重复开发成本
 
-
-### UML不适用的场景
-
-1. OO技术使用很少，项目中现有的方式已经完全适用
+**不适用场景**：
+1. OO 技术使用很少，项目中现有的方式已经完全适用
 2. 需求实现难度低，文字描述就可以阐述清楚
 
 
-### UML历史
+### UML 概念模型
+
+UML 概念模型主要包含三个部分：
+1. 事物（Things）
+2. 关系（Relationship）
+3. UML 图（Diagrams）
 
 
-
-### Object-Oriented基本概念
+### OO 基本概念
 
 对象（Objects）: 对象代表一个实体的基本构建块.
 
@@ -35,12 +38,20 @@ UML（统一建模语言）最初确实是为面向对象方法设计的，但�
 
 封装（Encapsulation）: 封装是将数据绑定在一起，并隐藏他们外部世界的机制。
 
-继承（Inheritance）: 继承是从现有的机制作出新的类。
+继承（Inheritance）: 继承是从现有的机制作出新的类，或者说泛化（Generalization）。
 
 多态性（Polymorphism）: 定义的机制来以不同的形式存在.
 
 
-## UML2事物
+### OO 分析和设计
+
+面向对象软件开发的基本步骤：
+```bash
+OO Analysis → OO Design → OO implementation using OO languages
+```
+
+
+## UML 事物
 
 结构事物（Structural Thing）：UML模型中的名词
 
@@ -51,20 +62,71 @@ UML（统一建模语言）最初确实是为面向对象方法设计的，但�
 注释事物（Annotational Thing）：UML模型的解释部分
 
 
-## UML2关系
+## UML 关系
 
 依赖关系（Dependency）
+即若 A 使用了 B，则表明 A 依赖于 B。
 
-extend、include、dependency
+```plantuml
+@startuml
+class A
+class B
+
+A ..> B : dependency: A use B
+
+@enduml
+```
 
 关联关系（Association）
+```plantuml
+@startuml
+class A
+class B
+
+A <-- B : association
+
+@enduml
+
+```
+
+关联关系-聚合关系（Aggregation）
+即Has-a 的关系
+```plantuml
+@startuml
+Teacher o-- Student
+@enduml
+```
+
+关联关系-组合关系（Combination）
+即 contains-a 的关系
+```plantuml
+@startuml
+Human *-- Head
+Human *-- Body
+@enduml
+```
+
 
 泛化关系（Generalization）
+即继承和实现
+```plantuml
+@startuml
+Parents <|-- Son
+Parents <|-- Daughter
+@enduml
+```
+
 
 实现关系（Realization）
+```plantuml
+@startuml
+Product <|.. ProductA
+Product <|.. ProductB
+@enduml
+```
 
 
-## UML2图
+## UML 图
 
 
 ### 结构图（Structural Diagrams）
@@ -73,6 +135,33 @@ extend、include、dependency
 
 #### 类图（Class or Structural Diagrams）
 
+```plantuml
+@startuml
+class Car {
+  + brand: String
+  + color: String
+  + speed: int
+  + accelerate(): void
+  + brake(): void
+}
+
+class ElectricCar {
+  + batteryCapacity: int
+  + chargeLevel: int
+  + charge(): void
+}
+
+class GasolineCar {
+  + fuelCapacity: int
+  + fuelLevel: int
+  + refuel(): void
+}
+
+Car <|-- ElectricCar
+Car <|-- GasolineCar
+
+@enduml
+```
 #### 对象图（Object Diagrams）
 
 #### 组合结构图（Composite Structure Diagrams）
@@ -81,10 +170,10 @@ extend、include、dependency
 
 #### 部署图（Deployment Diagrams）
 
-
 ### 行为图（Behavioral Diagrams）
 
 #### 用例图（Use Case Diagrams）
+
 
 用于描述User和System（Use Case）之间的联系，常用于业务分析和需求分析阶段。
 
@@ -108,7 +197,7 @@ extend、include、dependency
 #### 交互概览图（Interaction Overview Diagrams）
 
 
-## UML工具
+## UML 工具
 
 
 ### PlantUML
@@ -152,8 +241,9 @@ Desktop桌面应用，收费，提供30天试用版，同时支持学术license
 
 ## 参考链接
 1. [Wiki-Unified Modeling Language](https://en.wikipedia.org/wiki/Unified_Modeling_Language)
-2. [UML2 Tutorial](https://sparxsystems.com/resources/tutorials/uml2/index.html)
-3. 《UML2面向对象分析与设计（第2版）》-清华大学出版社
-4. [Bilibili-北京航空航天大学-软件学院-UML2面向对象分析与设计](https://www.bilibili.com/video/BV1fq4y1q7KP)
-5. [清华大学出版社-UML2面向对象分析与设计（第2版）-资源下载](http://www.tup.tsinghua.edu.cn/booksCenter/book_07138701.html#)
-6. [阿里巴巴-Java开发手册(黄山版)](https://github.com/alibaba/p3c)
+2. [SparxSystems - UML2 Tutorial](https://sparxsystems.com/resources/tutorials/uml2/index.html)
+3. [Tutorialspoint - UML Tutorial](https://www.tutorialspoint.com/uml/index.htm)
+4. 《UML2面向对象分析与设计（第2版）》-清华大学出版社
+5. [Bilibili-北京航空航天大学-软件学院-UML2面向对象分析与设计](https://www.bilibili.com/video/BV1fq4y1q7KP)
+6. [清华大学出版社-UML2面向对象分析与设计（第2版）-资源下载](http://www.tup.tsinghua.edu.cn/booksCenter/book_07138701.html#)
+7. [阿里巴巴-Java开发手册(黄山版)](https://github.com/alibaba/p3c)

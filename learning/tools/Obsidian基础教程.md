@@ -1,4 +1,4 @@
-# Obsidian使用基础教程
+# Obsidian基础教程
 
 
 ## 自定义配置
@@ -18,6 +18,9 @@ Image Toolkit
 LaTex Suite
 
 Advanced Table
+
+PlantUML
+
 
 ## Canvas功能
 https://sspai.com/post/77463
