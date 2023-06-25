@@ -49,11 +49,12 @@ UML 概念模型主要包含三个部分：
 
 UML 中本节的内容虽然介绍的是 UML Relationship，但实际上官方的 UML Relationship 中仅仅介绍了部分 Diagram 中的 Relationship，而非全部。
 
-UML Relationship 主要介绍了类图（Class Diagram）、对象图（Object Diagram）、包图 （Package Diagram），和组合结构图（Composite Structure Diagram）中各个组件元素之间的关系，以及其对应的图形符号。
+**UML Relationship 主要介绍了类图（Class Diagram）、对象图（Object Diagram）、包图 （Package Diagram），和组合结构图（Composite Structure Diagram）中各个组件元素之间的关系，以及其对应的图形符号**。
 
-而在其他的 UML 图中，如用例图（Use Case Diagram）、构件图（Component Diagram）、部署图（Deployment Diagram）中，各个组件元素之间的关系，并不完全和本节中的 Relationship 一一对应，如果想要获知各个 Diagram 中的 Relationship，需要到对应的章节进行查看。
+而在其他的 UML 图中，如用例图（Use Case Diagram）、构件图（Component Diagram）、部署图（Deployment Diagram）中，各个组件元素之间的关系，和本节中介绍的 Relationship 并不相同，如果想要获知各个 Diagram 中的 Relationship 图形，需要到对应的章节进行查看。
 
 ### 依赖（Dependency）
+
 若 A 使用了 B，则表明 A 依赖于 B。
 
 ```plantuml
@@ -85,6 +86,7 @@ A "1" <-- "0..1" B
 ```
 
 #### 关联关系-聚合（Aggregation）
+
 即Has-a 的关系
 ```plantuml
 @startuml
@@ -93,6 +95,7 @@ Class o-- Student
 ```
 
 #### 关联关系-组合（Combination）
+
 即 contains-a 的关系
 ```plantuml
 @startuml
@@ -102,6 +105,7 @@ Human *-- Body
 ```
 
 ### 泛化（Generalization）
+
 即继承（extend）
 ```plantuml
 @startuml
@@ -265,7 +269,11 @@ B --> A: Message 2
 #### 交互概览图（Interaction Overview Diagrams）
 
 
-## UML 工具
+## UML 绘制工具
+
+**图表只是一种工具，一种表达方式,重要的是方法，工具可以平替，但方法却很难平替。**
+
+对于比较简单的、临时性的图形，建议使用 PlantUML、Mermaid 这种支持文本化保存的工具来绘制，简单快捷，不需要关心图形的相对位置；而对于比较复杂的、需要长期存储的图形，建议使用在线的（如：ProcessOn）、离线的（如：Visual Paradigm）的应用工具来绘制，支持的图形功能也更强。
 
 
 ### PlantUML
@@ -276,11 +284,12 @@ PlantUML是一种开源工具，定义了一种特殊的描述性语言来表示
 
 使用PlantUML，您可以使用简单的文本语法来定义类、接口、关系、活动、时序等元素，并通过解析这些文本描述生成对应的图形。它支持多种类型的UML图，包括类图、时序图、活动图、用例图、组件图等。
 
+Documentation
 https://github.com/plantuml/plantuml
 https://plantuml.com/en/
 [微信公众号-程序媛山楂-神仙级UML工具，助你高效绘制流程图～](https://mp.weixin.qq.com/s/qyE4dpiwqfBpMbwR6TH68Q)
 
-Online Demo Server
+Online Demo
 https://www.plantuml.com/
 https://www.planttext.com/
 
@@ -289,6 +298,16 @@ https://www.planttext.com/
 Mermaid 是一个开源的 JavaScript 库，用于绘制流程图、时序图、类图和其他各种图表。它使用简洁的文本语法来描述图表结构，并将其转换为可视化图形。Mermaid 可以直接嵌入到 Markdown 文档、网页或其他文档中，以创建可交互和易于阅读的图表。
 
 但 Mermaid 能够支持的 UML 图形有限，只能支持一些常用的 UML 图形，如果想要自由使用所有的 UML 图形，还是需要使用 PlantUML 这类专业绘图工具。
+
+这类通过代码自动生成图形的工具，其特点都是无法自行控制结构，不适合复杂图形。
+
+Documentation
+https://github.com/mermaid-js/mermaid
+https://mermaid.js.org/intro/
+
+Online Demo
+https://mermaid.live/
+
 
 ### ProcessOn
 
