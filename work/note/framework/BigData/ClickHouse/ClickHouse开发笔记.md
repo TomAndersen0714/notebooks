@@ -1,6 +1,15 @@
+# ClickHouse 开发笔记
 
-ClickHouse Python Client API-clickhouse_driver，对于Datetime字段读写查时的默认时区问题：
 
-对于Datetime类型的字段，使用Datetime对象写入时，如果写入的Datetime对象带有分区信息，则会转换为对应的时间戳来实现写入；
+## ClickHouse Python API
 
-如果写入的Datetime对象不带分区信息，则会将其视为服务器本地时间Local Datetime，并转换为对应的时间戳；
+
+### Clickhouse_driver
+
+**对于 ClickHouse Datetime 字段读写时的默认时区问题**
+
+在写入时：
+如果写入的 Python Datetime 对象带有分区信息，则会转换为对应的时间戳来实现写入；如果写入的 Python Datetime 对象不带分区信息，则会将其视为服务器本地时间 Local Datetime，并转换为对应的时间戳，来执行写入过程；
+
+在读取时：
+如果 ClickHouse Datetime 数据类型的字段，没有设置时区信息，则会使用系统配置中的时区信息，并将对应的时间戳转换为本地时间。
