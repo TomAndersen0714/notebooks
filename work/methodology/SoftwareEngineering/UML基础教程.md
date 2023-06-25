@@ -205,7 +205,6 @@ ObjectB --> ObjectC
 
 #### 用例图（Use Case Diagrams）
 
-
 作用：用于描述 Actor 和 System 中的 Use Case 之间的联系，常用于业务分析和需求分析阶段。
 
 组成元素：参与者（Actor）、用例（Use Case）、关系（Relationship）、系统（System）。
@@ -214,12 +213,17 @@ ObjectB --> ObjectC
 
 ```plantuml
 @startuml
-actor User
-rectangle System
-User --> (Case1)
-User --> (Case2)
+left to right direction
+actor "Food Critic" as fc
+rectangle Restaurant {
+  usecase "Eat Food" as UC1
+  usecase "Pay for Food" as UC2
+  usecase "Drink" as UC3
+}
+fc --> UC1
+fc --> UC2
+fc --> UC3
 @enduml
-
 ```
 
 
@@ -273,11 +277,12 @@ PlantUML是一种开源工具，定义了一种特殊的描述性语言来表示
 使用PlantUML，您可以使用简单的文本语法来定义类、接口、关系、活动、时序等元素，并通过解析这些文本描述生成对应的图形。它支持多种类型的UML图，包括类图、时序图、活动图、用例图、组件图等。
 
 https://github.com/plantuml/plantuml
+https://plantuml.com/en/
+[微信公众号-程序媛山楂-神仙级UML工具，助你高效绘制流程图～](https://mp.weixin.qq.com/s/qyE4dpiwqfBpMbwR6TH68Q)
 
+Online Demo Server
 https://www.plantuml.com/
 https://www.planttext.com/
-
-[微信公众号-程序媛山楂-神仙级UML工具，助你高效绘制流程图～](https://mp.weixin.qq.com/s/qyE4dpiwqfBpMbwR6TH68Q)
 
 ### Mermaid
 
