@@ -29,12 +29,13 @@ Shell与Terminal的关系，本人理解，可类比于网页和浏览器之间�
 
 1. Electerm: https://github.com/electerm/electerm, Windows, Linux, MacOS
 2. Tabby: https://github.com/Eugeny/tabby, Windows, Linux, MacOS
-3. PuTTy: https://www.putty.org, Windows
-4. Hyper: https://github.com/vercel/hyper
-5. KiTTY: https://github.com/cyd01/KiTTY
-6. WindTerm: https://github.com/kingToolbox/WindTerm
-7. VScode remote-ssh: https://github.com/microsoft/vscode-remote-release
-8. WinSCP: https://github.com/winscp/winscp, Windows
+3. PuTTy: https://www.putty.org , Windows
+4. MRemoteNG: https://github.com/mRemoteNG/mRemoteNG , Windows
+5. Hyper: https://github.com/vercel/hyper
+6. KiTTY: https://github.com/cyd01/KiTTY
+7. WindTerm: https://github.com/kingToolbox/WindTerm
+8. VScode remote-ssh: https://github.com/microsoft/vscode-remote-release
+9. WinSCP: https://github.com/winscp/winscp, Windows
 
 
 

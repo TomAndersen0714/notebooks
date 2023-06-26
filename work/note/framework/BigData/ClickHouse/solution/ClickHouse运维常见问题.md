@@ -62,9 +62,9 @@ https://github.com/ClickHouse/ClickHouse/issues/10574
 SELECT *
 FROM ods.xdrs_logs_all
 WHERE day = 20230517
-    AND shop_id IN (
-        SELECT '62416239773256001c03f83b' AS shop_id
-    )
+AND shop_id IN (
+	SELECT '62416239773256001c03f83b' AS shop_id
+)
 LIMIT 100
 ```
 
@@ -76,12 +76,12 @@ LIMIT 100
 SELECT *
 FROM ods.xdrs_logs_all
 WHERE day = 20230517
-    AND shop_id IN (
-        SELECT shop_id
-        FROM (
-            SELECT '62416239773256001c03f83b' AS shop_id
-        )
-    )
+AND shop_id IN (
+	SELECT shop_id
+	FROM (
+		SELECT '62416239773256001c03f83b' AS shop_id
+	)
+)
 LIMIT 100
 ```
 
@@ -95,20 +95,15 @@ PS：虽然性能提升十分明显，但是在执行日志中，依旧显示性
 SELECT *
 FROM ods.xdrs_logs_all
 PREWHERE day = 20230517
-AND shop_id GLOBAL IN (
-    SELECT shop_id
-    FROM (
-        SELECT shop_id
-        FROM xqc_dim.xqc_shop_all
-        WHERE day = 20230608
-        AND shop_id = '61616faa112fa5000dcc7fba'
-    )
+AND shop_id IN (
+	SELECT '62416239773256001c03f83b' AS shop_id
 )
 LIMIT 100
 ```
 
 **方案三**：升级ClickHouse版本
 
+ClickHouse 于 v20.5 之后修复了此类问题
 
 ## 错误日志
 
@@ -186,8 +181,8 @@ LIMIT 100
 原因暂时未知
 
 **解决方案：**
-方案一：将IN Subquery再嵌套一层子查询，在新的子查询中将索引字段检索出来
-方案二：升级ClickHouse版本
+方案一：将 IN Subquery 再嵌套一层子查询，在新的子查询中将索引字段检索出来
+方案二：升级 ClickHouse 版本至于 v20.5 之后
 
 
 
@@ -199,7 +194,7 @@ LIMIT 100
 
 **原因解析**：
 
-1. 在ClickHouse release v20.10.3.30, 2020-10-28版本之后，默认的Database Engine被设置成了Atomic。在删除Atomic数据库的表时，默认会先进行标记删除，但zookeeper上节点路径依旧存在，需要等待`database_atomic_delay_before_drop_table_sec`时间之后，才会真正去。在Table未被真正删除之前，zookeeper中的元数据依旧存在，因此这期间创建不同结构的表时，则会抛出此错误。
+1. 在 ClickHouse release v20.10.3.30, 2020-10-28 版本之后，默认的 Database Engine 被设置成了 Atomic。在删除 Atomic 数据库的表时，默认会先进行标记删除，但 zookeeper 上节点路径依旧存在，需要等待 `database_atomic_delay_before_drop_table_sec` 时间之后，才会真正去。在 Table 未被真正删除之前，zookeeper 中的元数据依旧存在，因此这期间创建不同结构的表时，则会抛出此错误。 
    https://github.com/ClickHouse/ClickHouse/issues/12135
 2. [官方链接](https://clickhouse.com/docs/en/engines/database-engines/atomic/#drop-detach-table)
 
