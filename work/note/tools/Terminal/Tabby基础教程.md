@@ -2,10 +2,14 @@
 
 
 
-## 配色方案
+## 推荐配色方案
 
-推荐
 
+黑色
+Flat
 Argonaut
+JetBrains Darcula
+Solarized Darcula
 
-Afterglow
+白色
+Terminal Basic

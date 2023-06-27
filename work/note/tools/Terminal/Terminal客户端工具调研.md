@@ -35,7 +35,8 @@ Shell与Terminal的关系，本人理解，可类比于网页和浏览器之间�
 6. KiTTY: https://github.com/cyd01/KiTTY
 7. WindTerm: https://github.com/kingToolbox/WindTerm
 8. VScode remote-ssh: https://github.com/microsoft/vscode-remote-release
-9. WinSCP: https://github.com/winscp/winscp, Windows
+9. WinSCP: https://github.com/winscp/winscp , Windows
+10. Alacritty: https://github.com/alacritty/alacritty 
 
 
 
