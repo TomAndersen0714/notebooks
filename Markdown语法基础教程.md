@@ -166,7 +166,7 @@ Car <|-- GasolineCar
 
 #### Mermaid
 
-[Mermaid](work/note/programming-language/JavaScript/Libraries/Mermaid.md)
+[Mermaid](work/programming/JavaScript/Libraries/Mermaid.md)
 
 ##### 横向流程图
 
