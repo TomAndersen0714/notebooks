@@ -1,4 +1,4 @@
-# 对数(Logarithm)
+# 对数 (Logarithm)
 
 
 在数学中，对数（logarithm）运算是幂运算的逆运算。如，当 $x=\beta ^{y}$ 时，则有 $y=\log_\beta x\!$ 。其中 $\beta$ 是对数的底，也被称为基数，而y就是x（相对于底数 $\beta$ ）的对数，x也被称为反对数。
