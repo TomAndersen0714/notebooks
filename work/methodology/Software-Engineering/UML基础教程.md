@@ -127,6 +127,8 @@ Product <|.. ProductB
 ## UML Diagrams（图）
 
 建议参考《UML2 面向对象分析与设计（第 2 版）》，2.5 应用 UML2 建模
+也可以参考：
+https://www.cnblogs.com/wolf-sun/category/531196.html
 
 ### 结构图（Structural Diagrams）
 
@@ -232,6 +234,8 @@ fc --> UC3
 
 
 #### 活动图（Activity Diagrams）
+
+https://www.cnblogs.com/wolf-sun/p/3432135.html
 
 #### 状态图、状态机图（State Machine Diagrams）
 

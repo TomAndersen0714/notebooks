@@ -17,3 +17,7 @@ http://lxw1234.com/archives/2015/04/20.htm
 https://www.cnblogs.com/rango-lhl/p/14310487.html
 https://juejin.cn/post/7024067235517825061
 
+
+## 宽表
+
+可以通过将待更新数据写入临时表，然后将所有待更新数据 JOIN 后写入最终表的方式来实现更新
