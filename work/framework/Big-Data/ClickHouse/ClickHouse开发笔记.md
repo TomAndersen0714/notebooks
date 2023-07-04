@@ -13,3 +13,10 @@
 
 在读取时：
 如果 ClickHouse Datetime 数据类型的字段，没有设置时区信息，则会使用系统配置中的时区信息，并将对应的时间戳转换为本地时间。
+
+
+
+## ClickHouse DDL
+
+
+ClickHouse Truncate

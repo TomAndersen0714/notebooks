@@ -6,12 +6,13 @@ ClickHouse Server: 20.4.2.9
 CentOS: CentOS Linux release 7.6.1810
 
 
-## 报错示例
+## 常见报错
 
 
 ### Code: 48
-
+```
 Code: 48. DB::Exception: There was an error on [znzjk-113175-prod-mini-bigdata-bigdata:29000]: Cannot execute replicated DDL query on leader
+```
 
 **原因**：DDL执行时对应副本的Leader执行超时导致报错，而非报错信息指向的节点内部存在问题
 
@@ -24,12 +25,10 @@ PS：对于附加了FINAL关键字的DDL查询，每次执行时都会强制进�
 
 ### Code: 159
 
-Code: 159. DB::Exception: Watching task /clickhouse/task_queue/ddl/query-0000974691 is executing longer than distributed_ddl_task_timeout (=180) seconds. There are 1 unfinished hosts (0 of them are currently active), they are going to execute the query in background.
-
-**原因**：DDL执行时超时，可能是DDl队列（FIFO）中存在阻塞，或者当前DDL query执行自身出现问题而超时
 
 
-## 问题排查
+
+## 排查方法
 
 ### 方法一：github issue
 
