@@ -3,7 +3,7 @@
 
 ## 运维问题
 
-### ClickHouse Cluster DDL 执行太慢，甚至超时
+### ClickHouse Distributed DDL 执行太慢，甚至超时
 
 参考 `Code: 159` 小节相关内容。
 
@@ -229,7 +229,7 @@ https://github.com/ClickHouse/ClickHouse/issues/11779
 https://github.com/ClickHouse/ClickHouse/issues/39250
 
 **推测原因 1：**
-ClickHouse block_numbers太多。
+DDL 查询对应的表的 block_numbers 太多，导致对应表的 Distributed DDL 执行速度太慢。
 
 ClickHouse 在针对 Partitioned Replicated Table 执行 Truncate On Cluster 时，会查询 Zookeeper 中所有的 block_numbers。而 Partitioned Replicated Table 在写入数据后，便会在 Zookeeper 的 block_numbers 路径下增加 child znode，用来存储 Partition 信息。
 
@@ -251,7 +251,9 @@ WHERE path = '/clickhouse/ods/tables/01_02/xdqc_dialog_local/block_numbers/'
 修改技术方案，禁止针对 Partitioned Replicated Table 表进行 Truncate 操作，避免分区 block_numbers 不断积累。目前社区，针对这部分的设计，还未有特定的解决方案。
 
 **推测原因 2：**
-DDL 执行时超时，可能是 DDl 队列（FIFO）中存在阻塞，建议查询 DDL Queue 进行排查。
+在对应语句之前，某些 DDL 语句执行较慢，导致后续提交的 DDL 出现超时。
+
+由于 Distributed DDL 队列是个并行度为 1 的 FIFO 队列，当某些 Distributed DDL 执行较慢时，则会增加后续的 DDL 执行耗时，甚至超时，因此建议查询 DDL Queue 中的记录，依次进行排查。
 ```sql
 SELECT *
 FROM system.zookeeper
@@ -266,7 +268,9 @@ LIMIT 10
 ```
 
 **推测原因 3：**
-如果日志显示 `(0 of them are currently active)`，则表明 ClickHouse Cluster 的配置可能存在问题，导致执行查询时，无法获取其他节点信息。
+在执行 Distributed DDL 语句时，无法获取正确其他节点信息，因而出现等待超时。
+
+如果日志内容显示 `(0 of them are currently active)`，这类信息，则表明 ClickHouse Cluster 的配置可能存在问题。
 
 
 ### Code: 342
@@ -279,7 +283,6 @@ Code: 342. DB::Exception: Existing table metadata in ZooKeeper differs in partit
 ```
 
 **推测原因 1**：
-
 1. 在 ClickHouse release v20.10.3.30, 2020-10-28 版本之后，默认的 Database Engine 被设置成了 Atomic。在删除 Atomic 数据库的表时，默认会先进行标记删除，但 zookeeper 上节点路径依旧存在，需要等待 `database_atomic_delay_before_drop_table_sec` 时间之后，才会真正去。在 Table 未被真正删除之前，zookeeper 中的元数据依旧存在，因此这期间创建不同结构的表时，则会抛出此错误。 
    https://github.com/ClickHouse/ClickHouse/issues/12135
 2. [官方链接](https://clickhouse.com/docs/en/engines/database-engines/atomic/#drop-detach-table)
