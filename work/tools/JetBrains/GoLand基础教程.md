@@ -21,4 +21,4 @@
 
 File | Settings | Go | Imports
 
-取消勾选“Add unambiguous imports on the fly”，避免 GoLand 每次调整代码时都会自动 import module。
+取消勾选“Add unambiguous imports on the fly”，避免 GoLand 每次调整代码时都会自动生成 import module 语句。

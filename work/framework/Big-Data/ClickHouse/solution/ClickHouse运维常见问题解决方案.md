@@ -1,7 +1,118 @@
-# ClickHouse运维常见问题
+# ClickHouse 运维常见问题解决方案
 
 
-## 运维问题
+## 排查方法
+
+### 方法一：github issue 检索
+
+https://github.com/ClickHouse/ClickHouse/issues?q=Cannot+execute+replicated+DDL+query+on+leader+
+
+### 方法二：源码阅读
+
+通过日志，定位方法名，进而定位原文件名，阅读源码，排查问题。
+
+```c++
+bool DDLWorker::tryExecuteQueryOnLeaderReplica(
+    DDLTask & task,
+    StoragePtr storage,
+    const String & rewritten_query,
+    const String & node_path,
+    const ZooKeeperPtr & zookeeper)
+{
+    StorageReplicatedMergeTree * replicated_storage = dynamic_cast<StorageReplicatedMergeTree *>(storage.get());
+
+    /// If we will develop new replicated storage
+    if (!replicated_storage)
+        throw Exception("Storage type '" + storage->getName() + "' is not supported by distributed DDL", ErrorCodes::NOT_IMPLEMENTED);
+
+    /// Generate unique name for shard node, it will be used to execute the query by only single host
+    /// Shard node name has format 'replica_name1,replica_name2,...,replica_nameN'
+    /// Where replica_name is 'replica_config_host_name:replica_port'
+    auto get_shard_name = [] (const Cluster::Addresses & shard_addresses)
+    {
+        Strings replica_names;
+        for (const Cluster::Address & address : shard_addresses)
+            replica_names.emplace_back(address.readableString());
+        std::sort(replica_names.begin(), replica_names.end());
+
+        String res;
+        for (auto it = replica_names.begin(); it != replica_names.end(); ++it)
+            res += *it + (std::next(it) != replica_names.end() ? "," : "");
+
+        return res;
+    };
+
+    String shard_node_name = get_shard_name(task.cluster->getShardsAddresses().at(task.host_shard_num));
+    String shard_path = node_path + "/shards/" + shard_node_name;
+    String is_executed_path = shard_path + "/executed";
+    zookeeper->createAncestors(shard_path + "/");
+
+    auto is_already_executed = [&]() -> bool
+    {
+        String executed_by;
+        if (zookeeper->tryGet(is_executed_path, executed_by))
+        {
+            LOG_DEBUG(log, "Task " << task.entry_name << " has already been executed by leader replica ("
+                << executed_by << ") of the same shard.");
+            return true;
+        }
+
+        return false;
+    };
+
+    pcg64 rng(randomSeed());
+
+    auto lock = createSimpleZooKeeperLock(zookeeper, shard_path, "lock", task.host_id_str);
+    static const size_t max_tries = 20;
+    bool executed_by_leader = false;
+    for (size_t num_tries = 0; num_tries < max_tries; ++num_tries)
+    {
+        if (is_already_executed())
+        {
+            executed_by_leader = true;
+            break;
+        }
+
+        StorageReplicatedMergeTree::Status status;
+        replicated_storage->getStatus(status);
+
+        /// Leader replica take lock
+        if (status.is_leader && lock->tryLock())
+        {
+            if (is_already_executed())
+            {
+                executed_by_leader = true;
+                break;
+            }
+
+            /// If the leader will unexpectedly changed this method will return false
+            /// and on the next iteration new leader will take lock
+            if (tryExecuteQuery(rewritten_query, task, task.execution_status))
+            {
+                zookeeper->create(is_executed_path, task.host_id_str, zkutil::CreateMode::Persistent);
+                executed_by_leader = true;
+                break;
+            }
+
+        }
+
+        /// Does nothing if wasn't previously locked
+        lock->unlock();
+        std::this_thread::sleep_for(std::chrono::milliseconds(std::uniform_int_distribution<int>(0, 1000)(rng)));
+    }
+
+    /// Not executed by leader so was not executed at all
+    if (!executed_by_leader)
+    {
+        task.execution_status = ExecutionStatus(ErrorCodes::NOT_IMPLEMENTED,
+                                                "Cannot execute replicated DDL query on leader");
+        return false;
+    }
+    return true;
+}
+```
+
+## 常见运维问题
 
 ### ClickHouse Distributed DDL 执行太慢，甚至超时
 
@@ -113,7 +224,7 @@ https://github.com/ClickHouse/ClickHouse/issues/12135
 
 
 
-## 错误日志问题
+## 常见错误日志
 
 ### Code: 48
 
@@ -272,6 +383,8 @@ LIMIT 10
 
 如果日志内容显示 `(0 of them are currently active)`，这类信息，则表明 ClickHouse Cluster 的配置可能存在问题。
 
+**推测原因 4（未验证）：**
+在执行 Distribued DDL 语句时，有 SQL 查询在读取对应的表，导致基于 Zookeeper 实现的分布式锁已经被获取，DDL 需要监听 Zookeeper 锁的状态，直到 SQL 查询释放对应的锁。
 
 ### Code: 342
 
@@ -356,3 +469,5 @@ Query was cancelled.
 Received exception from server (version 21.3.13):
 Code: 999. DB::Exception: Received from 11.127.24.238:9600. DB::Exception: Connection loss. (KEEPER_EXCEPTION)
 ```
+
+

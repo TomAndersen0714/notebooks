@@ -60,7 +60,7 @@ SELECT * FROM system.functions WHERE name like '%file%'
 ```
 
 
-#### INFILE and OUTFILE
+#### INFILE and OUTFILE clause
 
 INSERT INTO ... FROM INFILE
 https://clickhouse.com/docs/en/sql-reference/statements/insert-into#inserting-data-from-a-file

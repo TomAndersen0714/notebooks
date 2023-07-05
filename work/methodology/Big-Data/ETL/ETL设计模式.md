@@ -21,3 +21,7 @@ https://juejin.cn/post/7024067235517825061
 ## 宽表
 
 可以通过将待更新数据写入临时表，然后将所有待更新数据 JOIN 后写入最终表的方式来实现更新
+
+
+## 5 种流式 ETL 模式
+https://mp.weixin.qq.com/s/Mj56qNBqEpMT6w2jw5axGg
