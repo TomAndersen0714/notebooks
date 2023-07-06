@@ -1,4 +1,4 @@
-# Apache Kudu安装Python Client基础教程
+# Apache Kudu 安装 Python Client 基础教程
 
 
 ## 前言
