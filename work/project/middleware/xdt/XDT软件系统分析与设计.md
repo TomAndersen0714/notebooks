@@ -1,4 +1,4 @@
-# XDT 分析与设计
+# XDT 软件系统分析与设计
 
 [面向对象OO分析与设计基础教程](work/methodology/Software-Engineering/Analysis-and-Design/Object-Oriented-Design/面向对象OO分析与设计基础教程.md)
 
@@ -29,6 +29,9 @@ https://github.com/tkem/cachetools
 
 
 ### 软件详细设计
+
+
+消息数据有多种状态，需要建立 UML 状态机图来进行区分
 
 
 

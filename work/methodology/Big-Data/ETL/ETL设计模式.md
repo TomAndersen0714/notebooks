@@ -1,6 +1,8 @@
 # ETL 设计模式
 
 
+将 [ETL常用算法](work/methodology/Big-Data/ETL/ETL常用算法.md) 中的内容搬运过来，进行整合。
+
 ## 数仓设计模式
 
 [数仓设计模式](work/methodology/Big-Data/DW-Analysis-and-Design/数仓设计模式.md)
