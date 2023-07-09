@@ -103,6 +103,7 @@ var foo = 'bar';
 
 ### Tex语法
 
+一般需要前端使用 [KaTeX](work/programming/JavaScript/Libraries/Visualization/KaTeX.md) 或 [MathJax](work/programming/JavaScript/Libraries/Visualization/MathJax.md) 等工具才能实现文本解析和图像渲染。
 
 #### Tex行内公式
 ```
@@ -125,11 +126,84 @@ $$
 $\ce{Zn^2+  <=>[+ 2OH-][+ 2H+]  $\underset{\text{amphoteres Hydroxid}}{\ce{Zn(OH)2 v}}$  <=>[+ 2OH-][+ 2H+]  $\underset{\text{Hydroxozikat}}{\ce{[Zn(OH)4]^2-}}$}$
 $$
 
-### 图
+### 图表类
+
+需要注意的是，通过声明式语言来绘制图表，仅限于一些简单的图表，当图表比较复杂时，则建议使用专业的图形绘制工具来设计和生成，毕竟声明式语言的功能都十分有限，越是复杂的图表维护起来相比于专业软件，要困难得多。
+
+#### Mermaid
+
+[Mermaid](work/programming/JavaScript/Libraries/Visualization/Mermaid.md)
+
+##### 流程图
+
+从左到右
+```mermaid
+flowchart LR
+A[方形] -->B(圆角)
+    B --> C{条件a}
+    C -->|a=1| D[结果1]
+    C -->|a=2| E[结果2]
+```
+
+从上至下
+
+
+```mermaid
+flowchart TD
+A[方形] --> B(圆角)
+    B --> C{条件a}
+    C --> |a=1| D[结果1]
+    C --> |a=2| E[结果2]
+```
+
+
+
+##### 用户旅程图
+User Journey Diagram
+```mermaid
+journey
+    title My working day
+    section Go to work
+      Make tea: 5: Me
+      Go upstairs: 3: Me
+      Do work: 1: Me, Cat
+    section Go home
+      Go downstairs: 5: Me
+      Sit down: 5: Me
+```
+
+##### 饼图
+Pie Chart
+
+```mermaid
+pie
+title Pets adopted by volunteers
+    "Dogs" : 386
+    "Cats" : 85
+    "Rats" : 15
+```
+
+
+##### 甘特图
+
+```mermaid
+gantt
+    title A Gantt Diagram
+    dateFormat YYYY-MM-DD
+    section Section
+        A task          :a1, 2014-01-01, 30d
+        Another task    :after a1, 20d
+    section Another
+        Task in Another :2014-01-12, 12d
+        another task    :24d
+```
+
 
 #### PlantUML
 
-专业绘制 UML 图形的语法和开源工具
+专业绘制 UML 图形的语法和开源工具，但并不算是流行，一般需要前端使用对应的工具才能进行文本解析和图像渲染。 
+
+https://github.com/plantuml/plantuml
 
 ##### UML 类图
 
@@ -159,38 +233,6 @@ Car <|-- ElectricCar
 Car <|-- GasolineCar
 
 @enduml
-```
-
-
-
-
-#### Mermaid
-
-[Mermaid](work/programming/JavaScript/Libraries/Mermaid.md)
-
-##### 横向流程图
-
-```mermaid
-graph LR
-A[方形] -->B(圆角)
-    B --> C{条件a}
-    C -->|a=1| D[结果1]
-    C -->|a=2| E[结果2]
-    F[横向流程图]
-```
-
-
-
-##### 竖向流程图
-
-
-```mermaid
-graph TD
-A[方形] --> B(圆角)
-    B --> C{条件a}
-    C --> |a=1| D[结果1]
-    C --> |a=2| E[结果2]
-    F[竖向流程图]
 ```
 
 
