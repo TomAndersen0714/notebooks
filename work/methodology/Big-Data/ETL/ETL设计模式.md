@@ -1,13 +1,14 @@
 # ETL 设计模式
 
+## 前言
 
-将 [ETL常用算法](work/methodology/Big-Data/ETL/ETL常用算法.md) 中的内容搬运过来，进行整合。
+ETL 设计属于数仓设计中的子任务之一。
 
-## 数仓设计模式
 
-[数仓设计模式](work/methodology/Big-Data/DW-Analysis-and-Design/数仓设计模式.md)
-数仓设计是设计关键节点，ETL 设计是设计关键路径
+将 [ETL常用算法](work/methodology/Big-Data/ETL/ETL常用算法.md)和[数仓离线统计常用算法](work/methodology/Big-Data/ETL/数仓离线统计常用算法.md) 中的内容搬运过来，进行整合。
 
+
+判断依据，数据实时性要求、数据量的规模
 
 
 ## 拉链表
