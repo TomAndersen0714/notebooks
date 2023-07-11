@@ -13,9 +13,8 @@
 问题概述：在一个数组中查找两个数，使得它们的和等于目标值。
 
 解题思路：
-1. Brute Force
-2. HashMap：使用 HashMao 存储数组中的数值-索引对。遍历数组，创建并添加元素。每次添加元素时，检索 Map 中是否包含对应的另一个元素，如果包含则直接输出，否则添加进 Map，继续迭代。
-3. Two pointers：
+1. Brute Force：双重循环，算法时间复杂度为 $O(n^2)$
+2. HashMap：使用 HashMao 存储数组中的数值-索引对。遍历数组，创建并添加元素。每次添加元素时，检索 Map 中是否包含对应的另一个元素，如果包含则直接输出，否则添加进 Map，继续迭代。由于 HashMap get/put 方法的平均时间复杂度为 $O(1)$，故整体算法时间复杂度为 $O(n)$
 
 例题：
 [LeetCode 1. Two Sum](https://leetcode.com/problems/two-sum/)
@@ -25,7 +24,8 @@
 
 问题概述：在一个有序数组中查找两个数，使得它们的和等于目标值。
 
-解题思路： https://blog.csdn.net/weixin_43445477/article/details/117561685
+解题思路： 
+1. Two pointers：左右指针的初始位置分别为数组的起止位置，当两指针元素数值之和大于目标值，即 $a+b>target$ 时，则右指针左移，反之则左指针右移，其中 $target=res[0]+res[1]$。由于左指针元素 $a$ 必定小于等于 $res[0]$，即 $a\leq{res[0]}$，故右指针在左移过程中，必定存在 $b\geq{res[1]}$，同理左指针右移时候也是同理。由于题目说明仅有唯一解，故只有当 $a+b=target$ 时，左右指针才会停止移动。算法时间复杂度为 $O (n)$。 https://blog.csdn.net/weixin_43445477/article/details/117561685
 
 例题：
 [LeetCode 167. Two Sum II - Input Array Is Sorted](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/)
