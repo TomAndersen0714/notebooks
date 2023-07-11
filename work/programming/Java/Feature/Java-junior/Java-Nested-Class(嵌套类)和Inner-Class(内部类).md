@@ -2,9 +2,9 @@
 
 ## 废话在前
 
-最近在阅读《Java核心技术-卷I开发基础(原书12版)》第6.3章时, 感觉书中对于Java的内部类(inner class)以及嵌套类(nested class)的定义不够清晰和严谨, 其中静态内部类(static inner class)的定义, 又与内部类本身部分特性的描述产生冲突, 感觉难以理解并且无法自洽, 故而在网上冲浪过程中搜寻与Java内部类更为严谨可靠的定义和分类. 
+最近在阅读《Java 核心技术-卷 I 开发基础 (原书 12 版)》第 6.3 章时, 感觉书中对于 Java 的内部类 (inner class) 以及嵌套类 (nested class) 的定义不够清晰和严谨, 其中静态内部类 (static inner class) 的定义, 又与内部类本身部分特性的描述产生冲突, 感觉难以理解并且无法自洽, 故而在网上冲浪过程中搜寻与 Java 内部类更为严谨可靠的定义和分类. 
 
-目前找到的, 可信度较高的两个文档, 分别是Oracle官网的"The Java Tutorials", 和"The Java Language Specification, Java SE 11 Edition". 本文中的主要内容, 也是摘录这两份文档中的相关术语的定义, 并进行了简单的梳理和对比, 为了后续回忆起相关概念时能有个可靠的依据.
+目前找到的, 可信度较高的两个文档, 分别是 Oracle 官网的"The Java Tutorials" 和 "The Java Language Specification, Java SE 11 Edition". 本文中的主要内容, 也是摘录这两份文档中的相关术语的定义, 并进行了简单的梳理和对比, 为了后续回忆起相关概念时能有个可靠的依据.
 
 
 
@@ -12,13 +12,13 @@
 
 
 
-Top Level Class:
+### Top Level Class
 
 - A top level class is a class that is not a nested class. (The Java Language Specification, Java SE 11 Edition, §8)
 
 
 
-Nested Class:
+### Nested Class
 
 - A `nested class` is any class whose declaration occurs within the body of another class or interface. (The Java Language Specification, Java SE 11 Edition, §8)
 - This chapter discusses the common semantics of all classes - top level (§7.6) and `nested` (including member classes (§8.5, §9.5), local classes (§14.3) and anonymous classes (§15.9.5)). (The Java Language Specification, Java SE 11 Edition, §8)
@@ -27,13 +27,13 @@ Nested Class:
 
 
 
-Static Nested Class:
+### Static Nested Class
 
 - Nested classes are divided into two categories: non-static and static. Non-static nested classes are called inner classes. Nested classes that are declared static are called `static nested classes`. (The Java Tutorials - Nested Classes)
 
 
 
-Inner Class:
+### Inner Class
 
 - An `inner class` is a nested class that is not explicitly or implicitly declared static. (The Java Language Specification, Java SE 11 Edition, §8.1.3)
 - An `inner class` may be a non-static member class (§8.5), a local class (§14.3), or an anonymous class (§15.9.5). A member class of an interface is implicitly static (§9.5) so is never considered to be an inner class. (The Java Language Specification, Java SE 11 Edition, §8.1.3)
@@ -41,7 +41,7 @@ Inner Class:
 
 
 
-Member Class:
+### Member Class
 
 - `Member class` declarations (§8.5) describe nested classes that are members of the surrounding class. Member classes may be static, in which case they have no access to the instance variables of the surrounding class; or they may be inner classes (§8.1.3). (The Java Language Specification, Java SE 11 Edition, §8)
 - `Member interface` declarations (§8.5) describe nested interfaces that are members of the surrounding class. (The Java Language Specification, Java SE 11 Edition, §8)
@@ -50,7 +50,7 @@ Member Class:
 
 
 
-Local Class:
+### Local Class
 
 - A local class is a nested class (§8 (Classes)) that is not a member of any class and that has a name (§6.2, §6.7). (The Java Language Specification, Java SE 11 Edition, §14.3)
 - All local classes are inner classes (§8.1.3). (The Java Language Specification, Java SE 11 Edition, §14.3)
@@ -58,7 +58,7 @@ Local Class:
 
 
 
-Anonymous Class:
+### Anonymous Class
 
 - An anonymous class declaration is automatically derived from a class instance creation expression by the Java compiler. (The Java Language Specification, Java SE 11 Edition, §15.9.5)
 - An anonymous class is never abstract (§8.1.1.1). An anonymous class is never final (§8.1.1.2). An anonymous class is always an inner class (§8.1.3); it is never static (§8.1.1, §8.5.1). (The Java Language Specification, Java SE 11 Edition, §15.9.5)
@@ -66,7 +66,7 @@ Anonymous Class:
 
 
 
-Lambda Expressions:
+### Lambda Expressions
 
 - A `lambda expression` is like a method: it provides a list of formal parameters and a body - an expression or block - expressed in terms of those parameters. (The Java Language Specification, Java SE 11 Edition, §15.27)
 - Evaluation of a `lambda expression` produces an instance of a `functional interface`(§9.8). Lambda expression evaluation does not cause the execution of the expression's body; instead, this may occur at a later time when an appropriate method of the functional interface is invoked. (The Java Language Specification, Java SE 11 Edition, §15.27)
@@ -103,7 +103,9 @@ PS: Lambda表达式(Lambda Expression), 个人理解, 可以看做是为实现�
 
 ## Conclusion
 
-**"The Java Tutorials"中对于Java Class的分类整理后如下:** 
+### The Java Tutorials
+
+**"The Java Tutorials"中对于 Java Class 的分类整理后如下:** 
 
 1. Top-level class
 2. Nested class
@@ -120,6 +122,8 @@ PS: Lambda表达式(Lambda Expression), 个人理解, 可以看做是为实现�
 ![](resources/images/The_Java_tutorials-Java_classes.jpg)
 
 
+### The Java Language Specification
+
 **"The Java Language Specification, Java SE 11 Edition"中对于Java Class的分类整理后如下:** 
 
 1. Top level class
@@ -131,7 +135,7 @@ PS: Lambda表达式(Lambda Expression), 个人理解, 可以看做是为实现�
      - static member class
      - non-static member class
 
-相较于"The Java Tutorials", "The Java Language Specification, Java SE 11 Edition"中的class分类体系则显然更加全面一些.
+相较于"The Java Tutorials", "The Java Language Specification, Java SE 11 Edition"中的 class 分类体系则显然更加全面一些。
 
 其中各个术语的定义对应的韦恩图如下: 
 
@@ -141,15 +145,15 @@ PS: Lambda表达式(Lambda Expression), 个人理解, 可以看做是为实现�
 
 
 
-**两书中关于`static nested class`和`static member class`之间的区别和联系:**
+**两书中关于 `static nested class` 和 `static member class` 之间的区别和联系:** 
 
-1. 在`"The Java Language Specification, Java SE 11 Edition"`全书中并未出现`static nested class`关键词, 但是却明确说明了`member class`, 可以为static或non-static类型, 并且将nested class分为了三类(member class, local class, anonymous class), 其中local class, anonymous class都属于inner class, 即为non-static类型, 同时文中也指出了inner class的定义也和non-static member class存在交集. 
-2. 在`"The Java Tutorials"`的`Nested Classes`章节中, 作者明确描述了nested class可以分为两类, `non-static nested class`(即`inner class`), 和`static nested class`. 其中关于`inner class`的定义和描述, 与`"The Java Language Specification, Java SE 11 Edition"`中的`Inner Classes and Enclosing Instances`章节中的完全相同. 
-3. 由前面两点可知, `"The Java Language Specification, Java SE 11 Edition"`中定义的`static member class`和`"The Java Tutorials"`中定义的`static nested class`, 两者的定义不谋而合
+1. 在 `"The Java Language Specification, Java SE 11 Edition"` 全书中并未出现 `static nested class` 关键词, 但是却明确说明了 `member class`, 可以为 static 或 non-static 类型, 并且将 nested class 分为了三类 (member class, local class, anonymous class), 其中 local class, anonymous class 都属于 inner class, 即为 non-static 类型, 同时文中也指出了 inner class 的定义也和 non-static member class 存在交集。
+2. 在 `"The Java Tutorials"` 的 `Nested Classes` 章节中, 作者明确描述了 nested class 可以分为两类, `non-static nested class` (即 `inner class`), 和 `static nested class`. 其中关于 `inner class` 的定义和描述, 与 `"The Java Language Specification, Java SE 11 Edition"` 中的 `Inner Classes and Enclosing Instances` 章节中的完全相同。
+3. 由前面两点可知, `"The Java Language Specification, Java SE 11 Edition"` 中定义的 `static member class` 和 `"The Java Tutorials"` 中定义的 `static nested class`, 两者的定义不谋而合。
 
 
 
-**综上所述, "The Java Tutorials"和"The Java Language Specification, Java SE 11 Edition"虽然都是Oracle官方提供的文档, 但两者对于Java Class的分类却仍然存在部分分歧, 且各自自成体系, 具体应该采用哪一种, 目前似乎也并没有一个官方的, 或者大家都支持的定义和描述.** 
+**综上所述, "The Java Tutorials"和"The Java Language Specification, Java SE 11 Edition"虽然都是 Oracle 官方提供的文档, 但两者对于 Java Class 的分类却仍然存在部分分歧, 且各自自成体系, 具体应该采用哪一种, 目前似乎也并没有一个官方的, 或者大家都支持的定义和描述。**  
 
 
 

@@ -2,7 +2,7 @@
 
 ## 安装JDK
 
-[Oracle_JDK安装教程](work/programming/Java/Feature/Java-junior/Oracle_JDK安装教程.md)
+[Oracle-JDK安装教程](work/programming/Java/Feature/Java-junior/Oracle-JDK安装教程.md)
 
 
 ## 安装Gradle
