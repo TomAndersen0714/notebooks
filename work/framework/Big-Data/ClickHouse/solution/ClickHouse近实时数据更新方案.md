@@ -2,103 +2,105 @@
 
 ## 前言
 
-众所周知，主攻OLAP场景的数据库引擎一般都会采用某种列式存储格式，以支撑其强大的数据处理性能，当无法同时兼顾行级事务，以及频繁的数据实时更新操作。如ROLAP中的Hive、Impala、Presto、ClickHouse，以及MOLAP中的Druid、Kylin，等等。
+众所周知，主攻 OLAP 场景的数据库引擎一般都会采用某种列式存储格式，以支撑其强大的数据处理性能，当无法同时兼顾行级事务，以及频繁的数据实时更新操作。如 ROLAP 中的 Hive、Impala、Presto、ClickHouse，以及 MOLAP 中的 Druid、Kylin，等等。
 
-虽然OLAP引擎中不少能够通过挂载外部表，接入外部数据库引擎来弥补自身的读、写或存储能力缺陷，但由于对接外部数据库时存在的SQL转译、索引命中、谓词下推、数据序列化、类型转换等等问题的存在，操作外接数据库意味着相比于直接原生数据库，通常表现出更低的性能和更高的资源开销。如果与外部数据源功能兼容得不够完善，那么在大批量数据处理或者较高并发的场景下，常常会变得捉襟见肘，十分尴尬。
+虽然 OLAP 引擎中不少能够通过挂载外部表，接入外部数据库引擎来弥补自身的读、写或存储能力缺陷，但由于对接外部数据库时存在的 SQL 转译、索引命中、谓词下推、数据序列化、类型转换等等问题的存在，操作外接数据库意味着相比于直接原生数据库，通常表现出更低的性能和更高的资源开销。如果与外部数据源功能兼容得不够完善，那么在大批量数据处理或者较高并发的场景下，常常会变得捉襟见肘，十分尴尬。
 
-ClickHouse作为近几年的主流OLAP型数据库，其本身也是基于MPP(Massively Parallel Processing)架构践行者之一，具备强大的数据并行处理能力，但其最初的版本并不具备数据行级更新的能力，虽然后续迭代的版本中新增了Mutation操作来支持行级更新和删除，但这种操作是异步、非事务型操作且性能较差，不支持频繁使用，无法适用于高并发的实时更新场景。
+ClickHouse 作为近几年的主流 OLAP 型数据库，其本身也是基于 MPP (Massively Parallel Processing) 架构践行者之一，具备强大的数据并行处理能力，但其最初的版本并不具备数据行级更新的能力，虽然后续迭代的版本中新增了 Mutation 操作来支持行级更新和删除，但这种操作是异步、非事务型操作且性能较差，不支持频繁使用，无法适用于高并发的实时更新场景。
 
-而本文的主要内容是，仅基于ClickHouse的原生特性，调研和总结近实时数据更新方案。
+而本文的主要内容是，仅基于 ClickHouse 的原生特性，调研和总结近实时数据更新方案。
 
-本文基于ClickHouse版本`20.4.2.9`。
+本文实验，届基于 ClickHouse  `v20.4.2.9`。
 
-----
+## 01. 行级近实时更新方案
 
-
-## 01.行级近实时更新方案
 
 ### 1. ORDER BY + LIMIT BY
 
 **官方文档:**
-
 - [ClickHouse - LIMIT BY Clause](https://clickhouse.com/docs/en/sql-reference/statements/select/limit-by/)
 
-**使用注意事项:**  
-
-1. 为了避免数据覆盖更新的频率过高，导致表数据量膨胀系数过大，进而使得查询性能下降，建议和ReplacingMergeTree、CollapsingMergeTree等支持后台自动合并的表引擎一起使用，以尽量减少过期的无效数据存储
-2. 从测试结果来看，LIMIT BY子句在合并数据时内存开销与数据量的正相关系数较大，不适合大数据量的合并去重操作
-
+**注意事项:**  
+1. 为了避免数据覆盖更新的频率过高，导致表数据量膨胀系数过大，进而使得查询性能下降，建议和 ReplacingMergeTree、CollapsingMergeTree 等支持后台自动合并的表引擎一起使用，以尽量减少过期的无效数据存储。
+2. 从测试结果来看，LIMIT BY 子句在合并数据时内存开销与数据量的正相关系数较大，不适合大数据量的合并去重操作。
 
 
 ### 2. GROUP BY + argMax
 
 **官方文档:**
-
 - [ClickHouse - aggregate function - argMax](https://clickhouse.com/docs/en/sql-reference/aggregate-functions/reference/argmax/)
-- [ClickHouse - aggregate function - argMin](https://clickhouse.com/docs/en/sql-reference/aggregate-functions/reference/argmin/
-  )
+- [ClickHouse - aggregate function - argMin](https://clickhouse.com/docs/en/sql-reference/aggregate-functions/reference/argmin/  )
 
 
-### 3. ReplacingMergeTree + FINAL(+ PREWHERE)
+### 3. ReplacingMergeTree + FINAL (+ PREWHERE)
 
 **官方文档:**
-
 - [ClickHouse - ReplacingMergeTree](https://clickhouse.com/docs/en/engines/table-engines/mergetree-family/replacingmergetree)
 
-**使用注意事项:**
-
-1. Order By表达式必须以Primary Key表达式为前缀(即索引KVs的存储顺序，必须和数据的存储顺序严格对应)
-
-2. 单纯使用此类表引擎支撑数据更新时，其数据更新的实时性取决于数据合并的频率，而ClickHouse默认的合并策略是无法预估合并时机的，合并间隔可达到小时级别。类似于ReplacingMergeTree表引擎这种基于MergeTree的数据合并策略来实现数据更新的组件，单独使用时无法保证数据不出现重复，通常还需要搭配特定的查询才可以实现数据最终读一致性。
-
-3. ReplacingMergeTree只能消除将要合并到同一个data part文件夹下的数据记录，但ClickHouse默认的合并策略无法保证Primary Key相同的数据会被写入到同一个data part中，即使这些数据都存储在同一个ClickHouse服务器上，并且就算后续进行过合并也无法保证这一点。通常需要手动执行`OPTIMIZE...FINAL`来触发强制合并后，才将相同Primary Key的数据强制合并到同一个data part中。
-
-> [VersionedCollapsingMergeTree#Selecting Data](https://clickhouse.com/docs/en/engines/table-engines/mergetree-family/versionedcollapsingmergetree/#selecting-data): ClickHouse does not guarantee that all of the rows with the same primary key will be in the same resulting data part or even on the same physical server. This is true both for writing the data and for subsequent merging of the data parts.
-
-4. SELECT查询中使用`FINAL`关键字时，将不会自动开启PREWHERE子句的优化功能，虽然ClickHouse提供了`optimize_move_to_prewhere`和`optimize_move_to_prewhere_if_final`配置来控制这一行为，但在本文实验采用的ClickHouse(20.4.2.9)中，这一参数并未起到任何实际作用，只能通过显式使用`PREWHERE`子句来声明筛选条件，以实现非主键字段的谓词下推，提升查询效率。([PREWHERE Clause](https://clickhouse.com/docs/en/sql-reference/statements/select/prewhere/))。
-   PS: 如果PREWHERE只能用于筛选只读字段，如果筛选可修改字段，会将旧数据一起查询出来
+**注意事项:**
+> [VersionedCollapsingMergeTree#Selecting Data](https://clickhouse.com/docs/en/engines/table-engines/mergetree-family/versionedcollapsingmergetree/#selecting-data) : ClickHouse does not guarantee that all of the rows with the same primary key will be in the same resulting data part or even on the same physical server. This is true both for writing the data and for subsequent merging of the data parts.
 
 
+1. Order By 表达式必须以 Primary Key 表达式为前缀 (即索引 KVs 的存储顺序，必须和数据的存储顺序严格对应) 。
+2. 单纯使用此类表引擎支撑数据更新时，其数据更新的实时性取决于数据合并的频率，而 ClickHouse 默认的合并策略是无法预估合并时机的，合并间隔可达到小时级别，乃至于不进行合并。类似于 ReplacingMergeTree 表引擎这种基于 MergeTree 的数据合并策略来实现数据更新的组件，单独使用时无法保证数据不出现重复，通常还需要搭配 FINAL 子句才能实现数据最终读一致性。
+3. ReplacingMergeTree 只能消除将要合并到同一个 data part 文件夹下的数据记录，但 ClickHouse 默认的合并策略无法保证 Primary Key 相同的数据会被写入到同一个 data part 中，即使这些数据都存储在同一个 ClickHouse 服务器上，并且就算后续进行过合并也无法保证这一点。通常需要手动执行 `OPTIMIZE...FINAL` 来触发强制合并后，才将相同 Primary Key 的数据强制合并到同一个 data part 中。
+4. SELECT 查询中使用 `FINAL` 关键字时，将不会自动开启 PREWHERE 子句的优化功能，虽然 ClickHouse 提供了 `optimize_move_to_prewhere` 和 `optimize_move_to_prewhere_if_final` 配置来控制这一行为，但在本文实验采用的 ClickHouse (20.4.2.9) 中，这一参数并未起到任何实际作用，只能通过显式使用 `PREWHERE` 子句来声明筛选条件，以实现非主键字段的谓词下推，提升查询效率。([PREWHERE Clause](https://clickhouse.com/docs/en/sql-reference/statements/select/prewhere/))。其中，PREWHERE 只能用于筛选只读字段，如果筛选可修改字段，会将旧数据一起查询出来。
 
-### 4. (Versioned)CollapsingMergeTree + FINAL(+ PREWHERE)
+
+### 4. (Versioned) CollapsingMergeTree + FINAL (+ PREWHERE)
 
 **官方文档:**
-
 - [ClickHouse - CollapsingMergeTree](https://clickhouse.com/docs/en/engines/table-engines/mergetree-family/collapsingmergetree/)
-
 - [ClickHouse - VersionedCollapsingMergeTree](https://clickhouse.com/docs/en/engines/table-engines/mergetree-family/versionedcollapsingmergetree)
 
-**使用注意事项:**
-
+**注意事项:**
 1. CollapsingMergeTree在写入时，对于数据的写入顺序有严格要求，必须要保证sign等于1的记录先写入，sign等于-1的记录后写入，才能实现数据删除。如果写入顺序错误，则合并数据时无法实现抵消，旧的数据将一直存在，只能在后续查询时显式剔除。
 2. CollapsingMergeTree表引擎在删除数据时，只需要写入Primary Key表达式中的所有字段，以及值为-1的标识字段sign即可，不必将整行中全部字段全都写入。
-3. FINAL关键字存在的性能问题，以及ClickHouse生成data part时存在的数据合并问题，同ReplacingMergeTree。
+3. FINAL 关键字存在的性能问题，以及 ClickHouse 生成 data part 时存在的数据合并问题，同 ReplacingMergeTree。
 
 
+### 5. GROUP BY In Subquery+INNER JOIN
 
-## 02.字段级近实时更新方案: 
+与 `ORDER BY + LIMIT BY`、`GROUP BY + argMax` 两个方法类似，此方法也是一种 MOR (Merge On Read) 方法，但此方法在类 ANSI SQL 中都可以使用，不属于 ClickHouse 的特性。
+
+此算法的主要思路是，通过子查询获取更新后数据的唯一主键，然后使用子查询的主键和全量的数据进行 JOIN，进而查询出更新后的数据。
+
+```sql
+SELECT *
+FROM (
+	SELECT _id, update_time
+	FROM test.table
+)
+INNER JOIN (
+	SELECT _id, max(update_time)
+	FROM test.table
+	GROUP BY _id
+)
+USING(_id, update_time)
+```
+
+
+## 02. 字段级近实时更新方案
 
 ### 5. Mutation
 
 **官方文档:**
-
 - [ClickHouse - mutations](https://clickhouse.com/docs/en/sql-reference/statements/alter/#mutations)
 
-**使用注意事项:**
-
-1. Mutation操作是很重的异步操作，尤其是在分布式语句中执行时，且此类操作的数据一致性能力很弱，不建议在实际生产环境中频繁使用
-2. 提交Mutation查询时，其筛选条件(filter expression)不能过于复杂，否则可能造成Mutation操作过度消耗集群资源，可以通过[system.mutations](https://clickhouse.com/docs/en/operations/system-tables/mutations/#system_tables-mutations)表的`is_done`字段来判断mutation操作的执行状态。如果Mutation操作影响正常使用，可以使用[KILL MUTATION](https://clickhouse.com/docs/en/sql-reference/statements/kill/#kill-mutation)操作来终止Mutation的执行。
+**注意事项:**
+1. Mutation 操作是很重的异步操作，尤其是在分布式语句中执行时，且此类操作的数据一致性能力很弱，不建议在实际生产环境中频繁使用。
+2. 提交 Mutation 查询时，其筛选条件 (filter expression) 不能过于复杂，否则可能造成 Mutation 操作过度消耗集群资源，可以通过 [system.mutations](https://clickhouse.com/docs/en/operations/system-tables/mutations/#system_tables-mutations) 表的 `is_done` 字段来判断 mutation 操作的执行状态。如果 Mutation 操作影响正常使用，可以使用 [KILL MUTATION](https://clickhouse.com/docs/en/sql-reference/statements/kill/#kill-mutation) 操作来终止 Mutation 的执行。
 
 ---
 
-## 03.简单性能测试
+## 03. 简单性能测试
 
-ClickHouse版本：`20.4.2.9`
+ClickHouse:  `20.4.2.9`
 
 
 ### 测试过程
 
-#### 方案1: ORDER BY + LIMIT BY
+#### 方案 1: ORDER BY + LIMIT BY
 
 **测试表**
 
@@ -114,7 +116,7 @@ ENGINE = MergeTree()
 ORDER BY `user_id`
 ```
 
-**写入测试数据**
+**测试数据**
 
 ```sql
 INSERT INTO TABLE update_test_limit_by(user_id, score)
@@ -124,12 +126,9 @@ WITH(
 SELECT
    number AS user_id,
    dict[number%7+1] AS score
-FROM numbers(30000000)
-```
+FROM numbers(30000000);
 
-**写入更新数据**
 
-```sql
 INSERT INTO TABLE update_test_limit_by(user_id, score, update_time)
 WITH(
  SELECT ['AA','BB','CC','DD','EE','FF','GG']
@@ -141,11 +140,11 @@ SELECT
 FROM numbers(5000000)
 ```
 
-**查询数据更新结果**
+**验证数据准确性**
 
 ```sql
 SELECT
-   *
+	*
 FROM update_test_limit_by
 WHERE user_id = '2'
 ORDER BY update_time DESC
@@ -176,10 +175,7 @@ MemoryTracker: Peak memory usage (for query): 2.56 GiB.
 ```
 
 
-
-
-
-#### 方案2: GROUP BY + argMax
+#### 方案 2: GROUP BY + argMax
 
 **测试表**
 
@@ -195,9 +191,7 @@ ENGINE = MergeTree()
 ORDER BY `user_id`
 ```
 
-
-
-**写入测试数据**
+**测试数据**
 
 ```sql
 INSERT INTO TABLE update_test_group_by(user_id, score)
@@ -207,14 +201,9 @@ WITH(
 SELECT
    number AS user_id,
    dict[number%7+1] AS score
-FROM numbers(30000000)
-```
+FROM numbers(30000000);
 
 
-
-**写入更新数据**
-
-```sql
 INSERT INTO TABLE update_test_group_by(user_id, score, update_time)
 WITH(
  SELECT ['AA','BB','CC','DD','EE','FF','GG']
@@ -226,9 +215,7 @@ SELECT
 FROM numbers(5000000)
 ```
 
-
-
-**查询数据更新结果**
+**验证数据准确性**
 
 ```sql
 SELECT
@@ -268,7 +255,7 @@ MemoryTracker: Peak memory usage (for query): 1.27 GiB.
 ```
 
 
-#### 方案3: ReplacingMergeTree + FINAL
+#### 方案 3: ReplacingMergeTree + FINAL
 
 **测试表**
 
@@ -284,7 +271,7 @@ ENGINE = ReplacingMergeTree(update_time)
 ORDER BY `user_id`
 ```
 
-**写入测试数据**
+**测试数据**
 
 ```sql
 INSERT INTO TABLE update_test_replacing(user_id, score)
@@ -294,12 +281,9 @@ WITH(
 SELECT
    number AS user_id,
    dict[number%7+1] AS score
-FROM numbers(30000000)
-```
+FROM numbers(30000000);
 
-**写入更新数据**
 
-```sql
 INSERT INTO TABLE update_test_replacing(user_id, score, update_time)
 WITH(
  SELECT ['AA','BB','CC','DD','EE','FF','GG']
@@ -308,14 +292,14 @@ SELECT
    number AS user_id,
    dict[number%7+1] AS score,
    now() AS update_time
-FROM numbers(5000000)
+FROM numbers(5000000);
 ```
 
-**查询数据更新结果**
+**验证数据准确性**
 
 ```sql
 SELECT
-*
+	*
 FROM update_test_replacing FINAL
 WHERE user_id = '2'
 ```
@@ -339,8 +323,7 @@ MemoryTracker: Peak memory usage (for query): 38.12 MiB
 ```
 
 
-
-#### 方案4: CollapsingMergeTree + FINAL
+#### 方案 4: CollapsingMergeTree + FINAL
 
 **测试表**
 
@@ -357,7 +340,7 @@ ENGINE = CollapsingMergeTree(sign)
 ORDER BY `user_id`
 ```
 
-**写入测试数据**
+**测试数据**
 
 ```sql
 INSERT INTO TABLE update_test_collapsing(user_id, score, sign)
@@ -368,12 +351,8 @@ SELECT
    number AS user_id,
    dict[number%7+1] AS score,
    1 AS sign
-FROM numbers(30000000)
-```
+FROM numbers(30000000);
 
-**写入更新数据**
-
-```sql
 -- 删除旧数据
 INSERT INTO TABLE update_test_collapsing(user_id, score, sign)
 WITH(
@@ -404,7 +383,6 @@ FROM numbers(5000000)
 SELECT COUNT(1) FROM update_test_collapsing FINAL
 SELECT * FROM update_test_collapsing FINAL WHERE user_id = '2'
 
-
 ```
 
 **性能测试**
@@ -426,9 +404,10 @@ MemoryTracker: Peak memory usage (for query): 22.13 MiB.
 ```
 
 
+
 ### 性能测试结果汇总
 
-- **方案1(ORDER BY + LIMIT BY):**
+- **方案 1 (ORDER BY + LIMIT BY):**
 
 
 ```
@@ -482,18 +461,14 @@ MemoryTracker: Peak memory usage (for query): 22.13 MiB.
 1 rows in set. Elapsed: 2.104 sec. Processed 40.00 million rows, 696.67 MB (19.01 million rows/s., 331.08 MB/s.)
 ```
 
-## 04.使用参考建议
+## 04. 使用参考建议 
 
-1. **查询结果数据量较小，不支持更改表引擎，不改SQL主体，选择方案1(ORDER BY + LIMIT BY)**
-2. **查询结果数据量中等，不支持更改表引擎，修改主体SQL，选择方案2(GROUP BY + argMax)**
-3. **支持修改表引擎，优先选择方案3(ReplacingMergeTree + FINAL(+ PREWHERE))，其次有仅删除类需求，选择方案4((Versioned)CollapsingMergeTree + FINAL(+ PREWHERE))**
-4. **临时手动修改表数据，但非生产环境使用，选择方案5(Mutation)**
+1. **查询结果数据量较小，不支持更改表引擎，不改 SQL，选择方案 1 (ORDER BY + LIMIT BY);**
+2. **查询结果数据量中等，不支持更改表引擎，修改主体 SQL，选择方案 2 (GROUP BY + argMax);**
+3. **支持修改表引擎，优先选择方案 3 (ReplacingMergeTree + FINAL (+ PREWHERE))，其次有仅删除类需求，选择方案 4 ((Versioned) CollapsingMergeTree + FINAL (+ PREWHERE));**
+4. **临时手动修改表数据，但非生产环境使用，选择方案 5 (Mutation)**
 
-
-
-
-
-## 05.参考链接
+## 05. 参考链接 
 
 1. [ClickHouse Document-Alter-mutations](https://clickhouse.com/docs/en/sql-reference/statements/alter/#mutations)
 2. [ClickHouse的秘密基地-ClickHouse准实时数据更新的新思路](https://cloud.tencent.com/developer/article/1644570)
