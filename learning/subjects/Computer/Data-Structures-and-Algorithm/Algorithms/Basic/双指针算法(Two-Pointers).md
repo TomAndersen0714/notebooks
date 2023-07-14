@@ -1,4 +1,4 @@
-# 双指针算法 (Two pointers)
+# 双指针算法 (Two Pointers)
 
 
 ## 左右指针

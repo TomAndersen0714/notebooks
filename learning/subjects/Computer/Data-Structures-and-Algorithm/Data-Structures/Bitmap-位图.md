@@ -36,6 +36,8 @@ RoaringBitmap支持稀疏，也支持稠密序列
 
 只会返回两个结果，可能在（存在假阳性的可能），或者一定不在
 
+[Bloom-Filter-布隆过滤器](learning/subjects/Computer/Data-Structures-and-Algorithm/Data-Structures/Bloom-Filter-布隆过滤器.md)
+
 
 ### 应用场景
 
