@@ -2,7 +2,6 @@
 
 
 
-
 ## Prerequisites
 
 Gradle至少需要 jdk8 及以上，使用`java -version`检查java版本。
@@ -27,6 +26,7 @@ MacOS:
 brew install gradle
 sudo port install gradle
 ```
+
 
 ### Method2: Installing manually
 
@@ -99,7 +99,7 @@ OS:           Windows 11 10.0 amd64
 ```
 
 
-## Setting Environment Variable
+## Setting Environment
 
 ### GRADLE_USER_HOME
 
@@ -107,7 +107,8 @@ OS:           Windows 11 10.0 amd64
 
 如，设置为`$GRADLE_HOME$/.gradle`，即统一放置在Gradle安装路径下，其中`$GRADLE_HOME$`代表Gradle安装路径。
 
-**PS: JetBrains IDE中无法更新Windows System Environment的方案**
+**如果出现 JetBrains IDE 中无法更新 Windows System Environment 的方案，打开 Gradle 菜单和 Terminal 打印都无法显示正确的环境变量值**
+
 1. 安装JetBrains ToolBox，升级和管理IDE
 2. 直接重启主机
 
