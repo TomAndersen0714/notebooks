@@ -51,19 +51,42 @@ psql postgresql://airflow_user:airflow_pass@10.0.2.2:5432/airflow_db
 [PostgreSQL 14.7 Documentation - SQL Commands](https://www.postgresql.org/docs/14/sql-commands.html)
 
 
-### ALTER TABLE
+### INDEX
 
-https://www.postgresql.org/docs/14/sql-altertable.html
+#### CREATE INDEX
+
+https://www.postgresql.org/docs/14/sql-createindex.html
 
 
-#### Constraint
+### CONSTRAINT
 
-添加 UNIQUE Constraint
-`ALTER TABLE <table_name> ADD CONSTRAINT <constraint_name> UNIQUE (column_name [, ... ])`
-添加 PRIMARY KEY Constraint
-`ALTER TABLE <table_name> ADD CONSTRAINT <constraint_name> PRIMARY KEY (column_name [, ... ])`
-删除 Constraint
-`ALTER TABLE <table_name> DROP CONSTRAINT [ IF EXISTS ]  constraint_name [ RESTRICT | CASCADE ]`
+添加 UNIQUE Constraint：
+```SQL
+ALTER TABLE <table_name> ADD CONSTRAINT <constraint_name> UNIQUE (column_name [, ... ])
+```
+
+
+添加 PRIMARY KEY Constraint：
+```SQL
+ALTER TABLE <table_name> ADD CONSTRAINT <constraint_name> PRIMARY KEY (column_name [, ... ])
+```
+PS：Primary key constraint 创建的同时也会创建名为 tablename_pkey 的 Primary Key。
+
+
+基于 UNIQUE KEY 添加 PRIMARY KEY Constraint：
+```sql
+CREATE UNIQUE INDEX CONCURRENTLY dist_id_temp_idx ON distributors (dist_id);
+
+ALTER TABLE distributors DROP CONSTRAINT distributors_pkey,
+ADD CONSTRAINT distributors_pkey PRIMARY KEY USING INDEX dist_id_temp_idx;
+```
+
+
+删除 Constraint：
+```SQL
+ALTER TABLE <table_name> DROP CONSTRAINT [ IF EXISTS ]  constraint_name [ RESTRICT | CASCADE ]
+```
+
 
 
 ## 其他常用命令

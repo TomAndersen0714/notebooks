@@ -1,9 +1,6 @@
 # MongoDB开发笔记
 
 
-**MongoDB Python API官方文档：**
-pymongo：“https://pymongo.readthedocs.io/en/stable/api/pymongo/index.html#module-pymongo”
-
 **MongoDB的适用场景**
 MongoDB单点查询，只要索引能够唯一命中（如：\_id），则qps和查询性能都很强，但是MongoDB并不适合批量查询和聚合，速度会很慢，因为一旦某个查询没有命中索引，查询性能就会直线下降，而且MongoDB的索引构建之后，难以维护。
 
@@ -22,7 +19,13 @@ MongoDB拉取数据时，在正式执行之前，务必进行先要使用limit�
 **PS：MongoDB慢查询，通常即便客户端断开链接也不会被动结束，需要服务器端手动终结**
 
 
-**MongoDB读写datetime类型字段注意事项：所有不带时区的datetime字段，在Mongo中读写时都会被视为UTC时间**
-1. MongoDB在读取datetime类型的字段时，会默认返回不带时区信息的UTC datetime对象（如：Pymongo中会返回Python datetime对象）
-2. MongoDB在写入datetime类型的字段时，会自动根据其时区转换为通用的时间戳（64bit）进行存储（和对应时区linux元年的相对时间），如果未定义时区（不论是何种开发语言），则默认为UTC时间，即时区为0。
-3. MongoDB在筛选datetime类型的字段时，也是同样的原理，即如果过滤条件中的datetime字段没有规定时区，则认为是UTC时间，即在转换成时间戳时便按照UTC时区进行转换，然后使用对应的时间戳进行过滤。
+
+## PyMongo
+
+**MongoDB Python API 官方文档：**
+Pymongo：“ https://pymongo.readthedocs.io/en/stable/api/pymongo/index.html#module-pymongo ”
+
+**PyMongo 读写 datetime 类型字段注意事项：所有不带时区的 datetime 字段，在 Mongo 中读写时都会被视为 UTC 时间**
+1. PyMongo 在读取 MongoDB datetime 类型的字段时，默认会返回不带时区信息的 UTC datetime 对象
+2. PyMongo 在写入 datetime 类型的字段时，会自动根据其时区转换为通用的时间戳（64bit）进行存储（和对应时区 linux epoch 的相对时间），如果未定义时区（不论是何种开发语言），则默认为 UTC 时间，即时区为 0
+3. PyMongo 在筛选 datetime 类型的字段时，也是同样的原理，即如果过滤条件中的 datetime 字段没有规定时区，则视为 UTC 时间，即在转换成时间戳时便按照 UTC 时区进行转换，然后使用对应的时间戳进行过滤
