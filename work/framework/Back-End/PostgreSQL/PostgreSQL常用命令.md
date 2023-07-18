@@ -53,6 +53,7 @@ psql postgresql://airflow_user:airflow_pass@10.0.2.2:5432/airflow_db
 
 ### INDEX
 
+
 #### CREATE INDEX
 
 https://www.postgresql.org/docs/14/sql-createindex.html

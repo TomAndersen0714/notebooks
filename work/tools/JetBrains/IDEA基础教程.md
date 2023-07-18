@@ -70,6 +70,12 @@ File | Settings | Keymap
 删除或者调整快捷键配置 Plugins | Terminal | Close Tab，避免 Terminal 中 Bash 快捷键和 IDEA Terminal 快捷键发生冲突。
 
 
+### Project
+
+Project View - Options - Tree Appearance
+
+勾选 `Show Members`，`Folds Always on Top`
+
 
 ## 调试技巧
 
