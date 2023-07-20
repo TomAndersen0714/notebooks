@@ -62,15 +62,20 @@
 [LeetCode 653. Two Sum IV - Input is a BST](https://leetcode.com/problems/two-sum-iv-input-is-a-bst/)
 
 
-#### 双数求和-值最接近+解不唯一
-
-条件：
-1. 解不唯一
+#### 双数求和-值最接近
 
 [LeetCode 1099. Two Sum Less Than K](https://leetcode.com/problems/two-sum-less-than-k/)
 [LeetCode 1099. Two Sum Less Than K](https://wentao-shao.gitbook.io/leetcode/two-pointers/1099.two-sum-less-than-k)
 
+问题概述：在一个数组中，查找两个数，使得这两个数之和小于目标值，并返回两数之和的最大值。
 
+条件：
+1. 目标值大于 0
+2. 数组元素也都大于 0
+
+解题思路：
+1. Two pointers：
+	1. 先排序，后对撞指针
 
 ### 三数求和
 
@@ -94,14 +99,14 @@
 	1. 思路：根据三个指针指向的元素和目标值之间的关系，先将数组进行排序 Sort，然后遍历数组，假设当前游标指向的元素为结果向量中的最小元素。那么接下来的任务就是判断，游标之后的元素中是否有某两个元素的值之和等于特定值（或满足某特定条件），故而将三数问题，转换为了双数问题，从而可以应用 Binary Search 进行求解。
 
 
-#### 三数求和-值最接近+解不唯一
+#### 三数求和-值最接近
 
 [LeetCode 16. 3Sum Closest](https://leetcode.com/problems/3sum-closest/)
 
 问题概述：在一个数组中查找三个数，使得它们的和最接近目标值，并返回这三元素之和。
 
 条件：
-1. 解不唯一
+1. 解唯一
 
 解题思路：
 1. Two pointers：
@@ -116,7 +121,6 @@
 
 ### 回文字符串
 
-例题：
 [LeetCode 344. Reverse String](https://leetcode.com/problems/reverse-string/)
 
 
