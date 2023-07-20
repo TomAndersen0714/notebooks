@@ -28,6 +28,9 @@ File | Settings | Project Structure | Platform Settings | SDKs | Add New SDK
 
 一个 JetBrain 上的翻译插件，支持各大主流翻译工具，建议使用有道翻译
 
+### CodeGlance
+
+提供代码缩略图
 
 ## 修改配置
 

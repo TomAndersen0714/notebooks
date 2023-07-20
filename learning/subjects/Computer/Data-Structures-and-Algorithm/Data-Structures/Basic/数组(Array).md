@@ -12,5 +12,5 @@
 
 常用解题算法
 1. Two (or three) pointers
+2. Binary Search
 3. A sliding window
-4. Binary Search

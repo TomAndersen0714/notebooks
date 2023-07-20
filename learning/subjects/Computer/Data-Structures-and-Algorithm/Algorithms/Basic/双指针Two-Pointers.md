@@ -114,19 +114,6 @@
 [LeetCode 18. 4Sum](https://leetcode.com/problems/4sum/)
 
 
-### 二分查找
-
-例题：
-[LeetCode 34. Find First and Last Position of Element in Sorted Array](https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/)
-
-问题概述：双指针根据下一个位置的值，不断缩小范围，最终确定目标值的位置。
-
-解题思路：经典二分查找，注意求下一个元素位置时，不要直接左右指针位置求和均分，而是应该左指针位置增加一半距离，避免精度溢出。
-
-注意事项：
-1. 避免在计算下一个检索元素的数组下标时出现精度溢出。
-
-
 ### 回文字符串
 
 例题：
