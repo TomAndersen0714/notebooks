@@ -1,7 +1,7 @@
-# ClickHouse实时数仓搭建方案
+# ClickHouse 实时数仓搭建方案
 
 
-## 方案一：MaterializedView
+## 方案一：Materialized View
 
 Buffer+Distribued+ReplicatedMergeTree+MaterializedView+ReplicatedMergeTree
 
@@ -14,7 +14,9 @@ PS：如果要删除或者修正，则需要以增代删
 
 ## 方案二：Projection
 
-和方案一类似，也是利用预计算的思路来提高查询效率
+和方案一的 Materialized View 类似，也是利用预计算的思路来提高查询效率。
+
+Projection 本质上也是一种索引，能够加速特定模式下的查询。
 
 
 

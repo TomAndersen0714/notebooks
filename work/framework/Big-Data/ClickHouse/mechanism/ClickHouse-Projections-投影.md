@@ -4,7 +4,7 @@
 
 > So basically projection is a kind of a row db index, but more flexible.
 
-但值得注意的时，索引 Index 并不是万能的，很多时候还是需要通过新建表，来降低单表的复杂度，提升数据的易用性。
+但值得注意的时，索引 Index 并不是万能的，很多时候还是需要通过新建表，来降低单表的复杂度，提升数据的易用性，其次才是考虑索引 Index 来提升查询性能。
 
 ## 参考链接
 1. https://medium.com/datadenys/using-projections-to-speedup-queries-in-clickhouse-cd58e393b1cd
