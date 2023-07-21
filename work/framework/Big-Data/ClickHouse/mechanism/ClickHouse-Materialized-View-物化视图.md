@@ -1,5 +1,4 @@
-# ClickHouse Materialized View
-
+# ClickHouse Materialized View 物化视图
 
 在ClickHouse中，Materialized View 实际上是一种**针对 INSERT 事件的触发器（`Trigger`）**，且**只增不删**，每当向源表中插入数据时，依赖此源表的Materialized View 便会通过其创建时声明的 SELECT 查询，将本次插入的数据进行转换，并将转换后的结果数据写入到 Materialized View 声明的目标表中。
 
@@ -10,7 +9,11 @@ Materialized View 物化视图实际上本身也并不存储数据，如果未�
 ## Syntax
 
 ```sql
-CREATE MATERIALIZED VIEW [IF NOT EXISTS] [db.]table_name [ON CLUSTER] [TO [db.]name] [ENGINE = engine] [POPULATE] AS SELECT ...
+CREATE MATERIALIZED VIEW [IF NOT EXISTS] [db.]table_name [ON CLUSTER] 
+[TO [db.]name] 
+[ENGINE = engine] [POPULATE] 
+AS 
+SELECT ...
 ```
 
 1. 如果创建 Materialized View 时，未指定`TO [db].[table]`，则必须在创建时声明`ENGINE`，即表明无目标表，使用 Materialized View 来存储转换后的数据（实际上是通过创建了一个对应库下的内部表`.inner.<VIEW_NAME>`的方式，来实现存储）。
@@ -58,8 +61,15 @@ FROM test.sink_mv;
 ```
 
 
-## PS
-1. 由于Schema在生产环境中经常会发生变化，如果不同时修改对应的Materialized View 物化视图，则默认情况下会导致INSERT数据阻塞，除非将`materialized_views_ignore_errors`参数设置为`true`。
+## 应用场景
+
+1. Materialized View 天然适合于各种数据实时处理的应用场景，可以用于构建“实时数据仓库”，但由于 ClickHouse Server qps 负载有限的问题，因此主要适合于构建“准实时数仓”，实时性不算强。
+
+
+## 注意事项
+
+1. 由于 Table Schema 在开发和生产环境中经常会发生变化，如果不同时修改对应的 Materialized View 物化视图，则默认情况下会导致 INSERT 数据阻塞，除非将 `materialized_views_ignore_errors` 参数设置为 `true`。
+2. Materialized View 支持定义 SELECT 语句中使用 JOIN，但在实际开发和生产环境中，需要注意 JOIN 的性能问题，避免因 qps 太高，而导致资源开销太大。
 
 
 ## 参考链接
