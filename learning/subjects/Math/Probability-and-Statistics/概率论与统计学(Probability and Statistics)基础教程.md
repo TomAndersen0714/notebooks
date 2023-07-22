@@ -2,7 +2,6 @@
 
 Probability and Statistics
 
-
 ## 概率分布
 
 Probability Distribution

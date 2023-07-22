@@ -1,6 +1,16 @@
 # 字符串 (String)
 
 
+## 反转字符串
+
+[LeetCode 344. Reverse String](https://leetcode.com/problems/reverse-string/)
+
+问题概述：将字符串反转，要求是 in-place 算法，只能使用常量的额外空间。
+
+解题思路：
+1. Two pointers
+
+
 ## Zigzag 字符串转换
 
 [LeetCode 6. Zigzag Conversion](https://leetcode.com/problems/zigzag-conversion/)
@@ -12,15 +22,12 @@
 	1. 时间复杂度： $O(n)$，空间复杂度：$O(n)$。 
 
 
+## 反转整数
+
+[LeetCode 7. Reverse Integer](https://leetcode.com/problems/reverse-integer/)
+
+问题概述：
+
+
 ## 回文字符串
 
-
-
-## 反转字符串
-
-[LeetCode 344. Reverse String](https://leetcode.com/problems/reverse-string/)
-
-问题概述：将字符串反转，要求是 in-place 算法，只能使用常量的额外空间。
-
-解题思路：
-1. Two pointers
