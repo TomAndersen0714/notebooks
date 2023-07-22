@@ -26,7 +26,10 @@
 
 [LeetCode 7. Reverse Integer](https://leetcode.com/problems/reverse-integer/)
 
-问题概述：
+问题概述：将输入的 unsigned 32-bit 的数字进行反转，保留其符号位；如果反转结果溢出，则返回 0，反之则返回反转后的 unsigned 32-bit 数值。
+
+解题思路：
+1. Math：自低位向高位，
 
 
 ## 回文字符串
