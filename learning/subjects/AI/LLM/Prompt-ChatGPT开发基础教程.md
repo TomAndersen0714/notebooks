@@ -1,9 +1,9 @@
-# ChatGPT Prompt技术基础教程
+# ChatGPT Prompt 技术基础教程
 
 
 ## 前言
 
-本文主要基于 OpenAI ChatGPT，讲解 Prompt 和 LLM 的技巧。
+本文主要基于 OpenAI ChatGPT，讲解 Prompt 和 LLM 的技巧，而本文的内容主要来自于 DeepLearning AI 的课程 ChatGPT Prompt Engineering for Developers。
 
 
 ## Introduction
@@ -179,6 +179,6 @@ https://platform.openai.com/docs/guides/chat
 3. [YouTube-ChatGPT Prompt Engineering for Developers: A short course from OpenAI and DeepLearning.AI](https://www.youtube.com/watch?v=H4YK_7MAckk&list=RDCMUCcIXc5mJsHVYTZR1maL5l9w&index=1)
 4. [ChatGPT|万字长文总结吴恩达prompt-engineering课](https://mp.weixin.qq.com/s/gUtB71uWI7Dg_tfRzaidCA)
 5. [ChatGPT Prompt Engineering for Developers](https://www.youtube.com/playlist?list=PLZnV2TKiv3wC0F5AQJwL3RGCfInRpu-LA)
-6. [DeepLearning.AI](https://learn.deeplearning.ai/chatgpt-prompt-eng/lesson/1/introduction)
+6. [DeepLearning.AI-ChatGPT Prompt Engineering for Developers](https://learn.deeplearning.ai/chatgpt-prompt-eng/lesson/1/introduction)
 7. [OpenAI Documentation](https://platform.openai.com/docs/introduction)
 8. [OpenAI Documentation Guides](https://platform.openai.com/docs/guides/)
