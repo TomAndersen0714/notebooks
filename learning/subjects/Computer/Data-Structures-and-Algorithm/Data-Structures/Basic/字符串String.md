@@ -22,17 +22,35 @@
 	1. 时间复杂度： $O(n)$，空间复杂度：$O(n)$。 
 
 
-## 反转整数
+## 回文字符串 (Palindromic Substring)
+
+
+### 最长回文字符子串
+
+[LeetCode 5. Longest Palindromic Substring](https://leetcode.com/problems/longest-palindromic-substring/)
+
+问题概述：输入一个字符串，返回对应字符串的最长回文子串
+
+条件：
+1. 答案不唯一
+
+
+
+## 反转整数（属于Math 题）
+
+[数学Math](learning/subjects/Computer/Data-Structures-and-Algorithm/Algorithms/Basic/数学Math.md)
 
 [LeetCode 7. Reverse Integer](https://leetcode.com/problems/reverse-integer/)
 
+
 问题概述：将输入的 unsigned 32-bit 的数字进行反转，保留其符号位；如果反转结果溢出，则返回 0，反之则返回反转后的 unsigned 32-bit 数值。
 
-前提条件：
+条件：
+1. 不能使用可以存储 32 bit 以上整型的数据结构
 
 解题思路：
-1. Math：自低位向高位，每次除 10 取余对应
+1. Math：
+	1. 方法：每次将 x 作为被除数，除 10 取余获得最低位数字 `remainder`，并执行 `x/=x`；然后先判断 y 是否小于等于 `MAX_VALUE/10`，满足则代表不会溢出，然后执行 `y=y*10`；然后再判断 y 是否小于等于 `MAX_VALUE-remainder`，满足则代表不会溢出，然后执行 `y+=remainder`，直到 `x=0` 时，退出循环。
+	2. 时间复杂度： $O(n)$，空间复杂度：$O(1)$。 
 
-
-## 回文字符串
 
