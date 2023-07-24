@@ -1,4 +1,4 @@
-# Cookie、Session、Token 三者的区别与联系
+# Cookie、Session、Token 三者的区别和联系
 
 
 ## HTTP 
@@ -13,7 +13,7 @@ Cookie 浏览器中的存放的一种小型文件，同时也是 HTTP Request He
 
 默认情况下，浏览器在每次发起 HTTP Request 时，都会将 Cookie 中的数据添加到 HTTP Request Header 的 Cookie 字段中，一起发出。
 
-而服务器端则可以通过 HTTP 的响应头 HTTP Response Header 中的 Set-Cookie 字段，来指示浏览器将该字段中的 Key-Value 数据，保存到浏览器的 Cookie 中，这是 RFC 6265 协议中明确声明浏览器必须支持的标准功能。
+而服务器端则可以通过 HTTP 的响应头 HTTP Response Header 中的 Set-Cookie 字段，来指示浏览器将该字段中的 Key-Value 数据，保存到浏览器的 Cookie 中，这是 `RFC 6265` 协议中明确声明浏览器必须支持的标准功能。
 
 通过 Cookie ，客户端可以保存状态，服务器可以让客户端（浏览器）存储 HTTP 请求的状态数据。
 
