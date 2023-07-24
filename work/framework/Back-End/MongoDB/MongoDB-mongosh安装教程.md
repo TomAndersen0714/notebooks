@@ -9,9 +9,11 @@ mongosh是MongoDB 5.0及以上版本的官方推出的跨平台、可扩展的Ja
 
 ## 安装方法
 
-### 方法一：通过配置Yum Repository安装
+### 一：通过 Yum Repository 安装
 
-生成yum repository配置文件，`/etc/yum.repos.d/mongodb-org-6.0.repo`
+#### 生成 yum repository 配置文件
+
+`/etc/yum.repos.d/mongodb-org-6.0.repo`
 
 ```repo
 [mongodb-org-6.0]
@@ -22,16 +24,16 @@ enabled=1
 gpgkey=https://www.mongodb.org/static/pgp/server-6.0.asc
 ```
 
-安装mongosh
+#### 安装 mongosh
 `sudo yum install -y mongodb-mongosh`
 
-测试链接
-`mongosh  mongodb://root:3SqzSt65@10.248.33.114:27017`
+#### 连接测试
+`mongosh mongodb://root:3SqzSt65@10.248.33.114:27017`
 
 
-### 方法二：离线下载RPM包进行安装
+### 二：离线下载RPM包进行安装
 
-①Mongo官网下载版本适配的RPM离线包：
+#### 下载RPM离线包
 
 https://www.mongodb.com/try/download/shell
 
@@ -46,12 +48,12 @@ Architecture (for example, x86_64)
 如：`wget https://downloads.mongodb.com/compass/mongodb-mongosh-1.1.0.el7.x86_64.rpm`
 
 
-②安装RPM包：
+#### 安装RPM包
 `rpm -ivh <rpm_package_name>`
 
 
-③连接MongoDB，测试安装结果：
-如使用URL连接，`mongosh mongodb://xdmp:20E6QK8V@10.0.0.8:27017`
+#### 连接测试
+如使用 URL 连接，`mongosh mongodb://xdmp:20E6QK8V@10.248.33.114:27017` 
 
 
 ## 参考链接
