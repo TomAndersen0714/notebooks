@@ -40,4 +40,5 @@ Session 是一种在服务器端维护的会话状态管理机制，用于跟踪
 ## 参考链接
 
 1. [博客园 - Session和cookie的作用](https://www.cnblogs.com/seamy/p/15648557.html)
-2. [Wiki - Session(computer science)](https://en.wikipedia.org/wiki/Session_(computer_science))
+2. [Wiki - Session (computer science)]( https://en.wikipedia.org/wiki/Session_ (computer_science))
+3. [BiliBili-【全栈】cookie、session、token 发展史与请求响应鉴权](https://www.bilibili.com/video/BV1b14y1J7Yv)

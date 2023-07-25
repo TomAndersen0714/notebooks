@@ -213,7 +213,7 @@ LIMIT 100
 
 ### ClickHouse Atomic Database 的坑点
 
-**版本：22.1.2.2**
+**版本：21.8.14.5**
 
 **坑点1：Atomic数据库是不支持自动复制数据库及其表结构的**。在进行副本迁移或扩容时，Atomic数据库以及其中的表结构并不会自动复制到新节点上，需要手动迁移其metadata到新副本，重启新副本后才会开始加载其元数据，最后才会根据已经加载的元数据，去复制其中Replicated表的数据到新节点上
 https://github.com/ClickHouse/ClickHouse/issues/12135
@@ -247,7 +247,7 @@ Code: 48. DB::Exception: There was an error on [znzjk-113175-prod-mini-bigdata-b
 
 ### Code: 62
 
-**版本：22.1.2.2**
+**版本：21.8.14.5**
 
 **错误日志：**
 ```
@@ -312,7 +312,7 @@ LIMIT 100
 
 ### Code: 159
 
-**版本：22.1.2.2**
+**版本：21.8.14.5**
 
 **错误日志：**
 ```
@@ -386,9 +386,22 @@ LIMIT 10
 **推测原因 4（未验证）：**
 在执行 Distribued DDL 语句时，有 SQL 查询在读取对应的表，导致基于 Zookeeper 实现的分布式锁已经被获取，DDL 需要监听 Zookeeper 锁的状态，直到 SQL 查询释放对应的锁。
 
+
+### Code: 241
+
+**版本：21.8.14.5**
+
+**错误日志：**
+```
+Code: 241. DB::Exception: Memory limit (for query) exceeded: would use 9.53 GiB (attempt to allocate chunk of 2147483648 bytes), maximum: 9.31 GiB: while executing 'FUNCTION arrayMap(__lambda_9 :: 6, arraySort(lambda(tuple(x, y), y), groupArray(act), groupArray(msg_milli_timestamp)) :: 13, arrayEnumerate(arraySort(lambda(tuple(x, y), y), groupArray(act), groupArray(msg_milli_timestamp))) :: 7) -> arrayMap(lambda(tuple(x, y), if(and(equals(x, 'send_msg'), equals(arrayElement(arraySort(lambda(tuple(x, y), y), groupArray(act), groupArray(msg_milli_timestamp)), minus(y, 1)), 'recv_msg')), 1, 0)), arraySort(lambda(tuple(x, y), y), groupArray(act), groupArray(msg_milli_timestamp)), arrayEnumerate(arraySort(lambda(tuple(x, y), y), groupArray(act), groupArray(msg_milli_timestamp)))) Array(UInt8) : 12'. Stack trace:
+
+```
+
+
+
 ### Code: 342
 
-**版本：22.1.2.2**
+**版本：21.8.14.5**
 
 **错误日志：**
 ```
@@ -408,7 +421,7 @@ Code: 342. DB::Exception: Existing table metadata in ZooKeeper differs in partit
 
 ### Code: 524
 
-**版本：22.1.2.2**
+**版本：21.8.14.5**
 
 **错误日志：**
 ```
