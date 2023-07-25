@@ -44,6 +44,16 @@
 	2. 时间复杂度： $O(n^2)$，空间复杂度：$O(n^2)$。 
 
 
+### 回文字符串
+
+[LeetCode 647. Palindromic Substrings](https://leetcode.com/problems/palindromic-substrings/)
+
+
+### 最小回文字符串转换
+
+[LeetCode 214. Shortest Palindrome](https://leetcode.com/problems/shortest-palindrome/)
+
+
 
 ## 反转整数（属于Math 题）
 

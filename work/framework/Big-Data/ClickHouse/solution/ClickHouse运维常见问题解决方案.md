@@ -394,10 +394,19 @@ LIMIT 10
 **错误日志：**
 ```
 Code: 241. DB::Exception: Memory limit (for query) exceeded: would use 9.53 GiB (attempt to allocate chunk of 2147483648 bytes), maximum: 9.31 GiB: while executing 'FUNCTION arrayMap(__lambda_9 :: 6, arraySort(lambda(tuple(x, y), y), groupArray(act), groupArray(msg_milli_timestamp)) :: 13, arrayEnumerate(arraySort(lambda(tuple(x, y), y), groupArray(act), groupArray(msg_milli_timestamp))) :: 7) -> arrayMap(lambda(tuple(x, y), if(and(equals(x, 'send_msg'), equals(arrayElement(arraySort(lambda(tuple(x, y), y), groupArray(act), groupArray(msg_milli_timestamp)), minus(y, 1)), 'recv_msg')), 1, 0)), arraySort(lambda(tuple(x, y), y), groupArray(act), groupArray(msg_milli_timestamp)), arrayEnumerate(arraySort(lambda(tuple(x, y), y), groupArray(act), groupArray(msg_milli_timestamp)))) Array(UInt8) : 12'. Stack trace:
-
 ```
 
+**推测原因 1：**
+1. ClickHouse Query 的 SELECT 下字段，引用其他表达式结果的字段时，同时会重复计算被引用字段对应的表达式：ClickHouse 在一个 Query 中，针对某个表达式（如：函数）的计算结果使用别名后，如果当前查询中其他的表达式，也使用了这个字段，ClickHouse 会直接将原表达式直接复制过来，而非其计算结果，这就导致，如果一个同一个 Query 的 SELECT 中字段引用次数越多，计算量也就越大。
 
+**解决方案 1：**
+1. 使用多层级的 Query，代替原来的单层级 Query，避免同级 Query 的 SELECT 子句中，表达式之间相互依赖。
+
+**推测原因 2：**
+1. 查询的表中存在脏数据问题
+
+**推测原因 3：**
+1. `arrayEnumerate` 函数处理大数组时，会错误估算 RAM 内存开销
 
 ### Code: 342
 

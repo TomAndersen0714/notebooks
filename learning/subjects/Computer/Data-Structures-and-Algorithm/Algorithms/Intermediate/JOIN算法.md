@@ -14,5 +14,5 @@ https://en.wikipedia.org/wiki/Hash_join
 
 
 ## 参考链接
-1. [Wiki-JOIN]( https://en.wikipedia.org/wiki/Join_ (SQL))
+1. [Wiki-JOIN](https://en.wikipedia.org/wiki/Join_(SQL))
 2. [Wiki-Hash Join](https://en.wikipedia.org/wiki/Hash_join)
