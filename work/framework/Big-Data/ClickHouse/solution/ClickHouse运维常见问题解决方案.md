@@ -216,7 +216,7 @@ LIMIT 100
 **版本：21.8.14.5**
 
 **坑点1：Atomic数据库是不支持自动复制数据库及其表结构的**。在进行副本迁移或扩容时，Atomic数据库以及其中的表结构并不会自动复制到新节点上，需要手动迁移其metadata到新副本，重启新副本后才会开始加载其元数据，最后才会根据已经加载的元数据，去复制其中Replicated表的数据到新节点上
-https://github.com/ClickHouse/ClickHouse/issues/12135
+**Issue**： https://github.com/ClickHouse/ClickHouse/issues/12135
 
 **坑点2：Atomic数据库删除Replicated表时，暂时只是标记删除，在此期间无法使用相同的ZK路径创建Replicated表**。 在执行删除时，需要使用`SYNC`或`NO DELAY`关键词作为后缀，表示同步删除zookeeper路径，否则就需要等待`database_atomic_delay_before_drop_table_sec`对应的时长
 
@@ -262,7 +262,7 @@ Application: Caught exception while loading metadata: Code: 62, e.displayText() 
 **解决方案**：
 
 将Distribued表的数据路径下的detach目录和format_version.txt文件后重启即可
-https://github.com/ClickHouse/ClickHouse/issues/7005
+**Issue**： https://github.com/ClickHouse/ClickHouse/issues/7005
 
 
 ### Code: 100
@@ -397,16 +397,22 @@ Code: 241. DB::Exception: Memory limit (for query) exceeded: would use 9.53 GiB 
 ```
 
 **推测原因 1：**
-1. ClickHouse Query 的 SELECT 下字段，引用其他表达式结果的字段时，同时会重复计算被引用字段对应的表达式：ClickHouse 在一个 Query 中，针对某个表达式（如：函数）的计算结果使用别名后，如果当前查询中其他的表达式，也使用了这个字段，ClickHouse 会直接将原表达式直接复制过来，而非其计算结果，这就导致，如果一个同一个 Query 的 SELECT 中字段引用次数越多，计算量也就越大。
+1. **同一个 Query 中 SELECT 子句中复杂表达式引用次数太多**：ClickHouse Query 的 SELECT 下字段，引用其他表达式结果的字段时，同时会重复计算被引用字段对应的表达式：ClickHouse 在一个 Query 中，针对某个表达式（如：函数）的计算结果使用别名后，如果当前查询中其他的表达式，也使用了这个字段，ClickHouse 会直接将原表达式直接复制过来，而非其计算结果，这就导致，如果一个同一个 Query 的 SELECT 中字段引用次数越多，计算量也就越大。
 
 **解决方案 1：**
-1. 使用多层级的 Query，代替原来的单层级 Query，避免同级 Query 的 SELECT 子句中，表达式之间相互依赖。
+1. 使用多层级的 Query，代替原来的单层级 Query，避免同级 Query 的 SELECT 子句中，表达式之间，以引用的方式相互依赖，重复计算。
 
 **推测原因 2：**
-1. 查询的表中存在脏数据问题
+1. Query 查询的表中存在脏数据问题
 
 **推测原因 3：**
-1. `arrayEnumerate` 函数处理大数组时，会错误估算 RAM 内存开销
+1. ClickHouse 的 `arrayEnumerate` 函数，在处理大数组时，会错误估算 RAM 内存开销
+
+**关联 issues**：
+https://github.com/ClickHouse/ClickHouse/issues/5105
+https://github.com/ClickHouse/ClickHouse/issues/17317
+https://github.com/ClickHouse/ClickHouse/issues/38871
+
 
 ### Code: 342
 
