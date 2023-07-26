@@ -223,6 +223,19 @@ LIMIT 100
 **坑点3：在Atomic数据库中创建表时，存储路径是基于UUID生成的。** https://clickhouse.com/docs/en/engines/database-engines/atomic/#table-uuid
 
 
+### ClickHouse Lambda Expression 中使用 Array 导致内存开销超出限制
+
+**版本：21.8.14.5
+
+**Error Code: 241**
+
+**推测原因**：
+1. Lambda 表达式中使用了 Array：Array Function 中 Lamda 表达式里使用某数组 Array 时，该数组会被复制多份，复制的系数为 Array Function 遍历的数组的长度
+**相关链接**：
+1. https://kb.altinity.com/altinity-kb-functions/array-like-memory-usage/
+**解决方案**：
+1. 提前处理需要在 Lambda 表达式中引用的数组，并将处理后的数组，通过参数的形式传递给 Array Function，而不是嵌套在 Lambda 表达式中。
+
 
 ## 常见错误日志
 
@@ -414,6 +427,14 @@ Code: 241. DB::Exception: Memory limit (for query) exceeded: would use 9.53 GiB 
 
 
 **推测原因 4**：
+1. Lambda 表达式中使用了 Array：Array Function 中 Lamda 表达式里使用某数组 Array 时，该数组会被复制多份，复制的系数为 Array Function 遍历的数组的长度
+**相关链接**：
+1. https://kb.altinity.com/altinity-kb-functions/array-like-memory-usage/
+**解决方案**：
+1. 提前处理需要在 Lambda 表达式中引用的数组，并将处理后的数组，通过参数的形式传递给 Array Function，而不是嵌套在 Lambda 表达式中。
+
+
+**推测原因 5**：
 1. Query 查询的数据量本来就很大，内存开销属于正常
 **关联 issues**：
 1.  https://github.com/ClickHouse/ClickHouse/issues/39026
