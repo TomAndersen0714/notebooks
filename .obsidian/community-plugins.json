@@ -1,6 +1,5 @@
 [
   "editing-toolbar",
-  "obsidian-image-toolkit",
   "obsidian-emoji-toolbar",
   "tag-wrangler",
   "number-headings-obsidian",
@@ -8,5 +7,6 @@
   "obsidian-latex-suite",
   "easy-typing-obsidian",
   "table-editor-obsidian",
-  "obsidian-plantuml"
+  "obsidian-plantuml",
+  "obsidian-image-toolkit"
 ]

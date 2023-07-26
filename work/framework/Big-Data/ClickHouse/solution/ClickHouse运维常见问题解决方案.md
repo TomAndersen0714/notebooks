@@ -406,12 +406,19 @@ Code: 241. DB::Exception: Memory limit (for query) exceeded: would use 9.53 GiB 
 1. Query 查询的表中存在脏数据问题
 
 **推测原因 3：**
-1. ClickHouse 的 `arrayEnumerate` 函数，在处理大数组时，会错误估算 RAM 内存开销
-
+1. ClickHouse 的 `arrayEnumerate` 函数，在处理大数组时，会错误分配 RAM 内存开销，或者错误估算 RAM 内存开销
 **关联 issues**：
-https://github.com/ClickHouse/ClickHouse/issues/5105
-https://github.com/ClickHouse/ClickHouse/issues/17317
-https://github.com/ClickHouse/ClickHouse/issues/38871
+1. https://github.com/ClickHouse/ClickHouse/issues/5105
+2. https://github.com/ClickHouse/ClickHouse/issues/17317
+3. https://github.com/ClickHouse/ClickHouse/issues/38871
+
+
+**推测原因 4**：
+1. Query 查询的数据量本来就很大，内存开销属于正常
+**关联 issues**：
+1.  https://github.com/ClickHouse/ClickHouse/issues/39026
+**解决方案**：
+1. 尝试使用 `optimize_aggregation_in_order` 等 Setting 来开启特定场景下的查询优化
 
 
 ### Code: 342
