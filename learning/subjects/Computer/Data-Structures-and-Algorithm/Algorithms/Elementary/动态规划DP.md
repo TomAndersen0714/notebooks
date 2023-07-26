@@ -13,7 +13,7 @@
 
 即，动态规划算法中的核心部分在于以下两点：
 1. **状态转移方程（state transfer equation）**
-2. **状态缓存（state memory）**
+2. **状态缓存（state cache）**
 
 
 ## 与其他算法的区别和联系

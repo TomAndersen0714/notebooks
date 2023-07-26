@@ -223,18 +223,68 @@ LIMIT 100
 **坑点3：在Atomic数据库中创建表时，存储路径是基于UUID生成的。** https://clickhouse.com/docs/en/engines/database-engines/atomic/#table-uuid
 
 
-### ClickHouse Lambda Expression 中使用 Array 导致内存开销超出限制
+### ClickHouse Array Function 告警内存开销超出限制
 
 **版本：21.8.14.5
 
 **Error Code: 241**
 
 **推测原因**：
-1. Lambda 表达式中使用了 Array：Array Function 中 Lamda 表达式里使用某数组 Array 时，该数组会被复制多份，复制的系数为 Array Function 遍历的数组的长度
+1. Array Function 的 Lambda 表达式中使用了 Array：Array Function 中 Lamda 表达式里使用某数组 Array 时，该数组会被复制多份，复制的系数为 Array Function 后续传入的数组的长度
 **相关链接**：
 1. https://kb.altinity.com/altinity-kb-functions/array-like-memory-usage/
+2. https://github.com/ClickHouse/ClickHouse/issues/5105
+3. https://github.com/ClickHouse/ClickHouse/issues/17317
+4. https://github.com/ClickHouse/ClickHouse/issues/38871
+5. https://github.com/ClickHouse/ClickHouse/issues/51184
 **解决方案**：
 1. 提前处理需要在 Lambda 表达式中引用的数组，并将处理后的数组，通过参数的形式传递给 Array Function，而不是嵌套在 Lambda 表达式中。
+**Demo**：
+```SQL
+drop table test.X
+
+create table test.X(A Array(String)) engine = Memory;
+
+insert into test.X select arrayMap(x->toString (x) , range(1, 1001)) from numbers(50);
+
+
+select arrayFilter(x->x='777', A) from test.X format Null;
+Peak memory usage (for query): 0.00 B.
+
+select arrayFilter((x, y)->A[y]='777', A, arrayEnumerate(A)) from test.X format Null;
+Peak memory usage (for query): 1.00 GiB.
+
+-- Array function 的 lambda expression 中取消Array引用, 有效
+select arrayFilter((v, k)-> k = '777', A, A) from test.X format Null;
+Peak memory usage (for query): 0.00 B.
+
+-- 设置 max_block_size, 无效
+select arrayFilter((x, y)->A[y]='777', A, arrayEnumerate(A)) from test.X SETTINGS max_block_size = 1 format Null;
+Peak memory usage (for query): 1.00 GiB.
+
+
+-- 设置 max_threads, 无效
+select arrayFilter((x, y)->A[y]='777', A, arrayEnumerate(A)) from test.X SETTINGS max_threads=1 format Null;
+
+
+-- 设置 max_block_size 和 max_threads, 无效
+select arrayFilter((x, y)->A[y]='777', A, arrayEnumerate(A)) from test.X SETTINGS max_block_size = 1, max_threads=1 format Null;
+Peak memory usage (for query): 1.00 GiB.
+
+
+-- 嵌套子查询, 无效
+select arrayFilter((x, y)->A[y]='777', A, keys) from (select A, arrayEnumerate(A) as keys from test.X) format Null;
+Peak memory usage (for query): 1.00 GiB.
+
+
+-- 更换数组生成函数为range, 无效
+select arrayFilter((x, y)->A[y]='777', A, keys) from (select A, range(length(A)) as keys from test.X) format Null;
+Peak memory usage (for query): 1.00 GiB.
+
+-- 嵌套子查询, Array function 的 lambda expression 中取消Array引用, 有效
+select arrayFilter((v, k)-> k = 777, A, keys) from (select A, arrayEnumerate(A) as keys from test.X) format Null;
+Peak memory usage (for query): 0.00 B.
+```
 
 
 ## 常见错误日志
@@ -425,11 +475,14 @@ Code: 241. DB::Exception: Memory limit (for query) exceeded: would use 9.53 GiB 
 2. https://github.com/ClickHouse/ClickHouse/issues/17317
 3. https://github.com/ClickHouse/ClickHouse/issues/38871
 
-
 **推测原因 4**：
 1. Lambda 表达式中使用了 Array：Array Function 中 Lamda 表达式里使用某数组 Array 时，该数组会被复制多份，复制的系数为 Array Function 遍历的数组的长度
 **相关链接**：
 1. https://kb.altinity.com/altinity-kb-functions/array-like-memory-usage/
+2. https://github.com/ClickHouse/ClickHouse/issues/5105
+3. https://github.com/ClickHouse/ClickHouse/issues/17317
+4. https://github.com/ClickHouse/ClickHouse/issues/38871
+5. https://github.com/ClickHouse/ClickHouse/issues/51184
 **解决方案**：
 1. 提前处理需要在 Lambda 表达式中引用的数组，并将处理后的数组，通过参数的形式传递给 Array Function，而不是嵌套在 Lambda 表达式中。
 

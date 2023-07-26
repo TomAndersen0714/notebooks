@@ -76,7 +76,7 @@
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -149,7 +149,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "work/framework/Big-Data/ClickHouse/solution/ClickHouse运维常见问题解决方案.md"
+              }
             }
           },
           {
@@ -169,6 +171,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "work/framework/Big-Data/ClickHouse/solution/ClickHouse运维常见问题解决方案.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -185,6 +188,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "work/framework/Big-Data/ClickHouse/solution/ClickHouse运维常见问题解决方案.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -216,7 +220,7 @@
       "canvas:Create new canvas": false
     }
   },
-  "active": "c9b194390fa45d29",
+  "active": "5853b9e54ed10f05",
   "lastOpenFiles": [
     "learning/subjects/Computer/Data-Structures-and-Algorithm/Algorithms/Intermediate/JOIN算法.md",
     "work/framework/Big-Data/ClickHouse/solution/ClickHouse运维常见问题解决方案.md",
