@@ -55,7 +55,7 @@
 	1. 按照子串长度从 1 到 n 遍历所有的子串，将原始问题拆解遍历所有子串，以及判断子串是否是回文字符串问题。对于后者，通过**状态转移方程（state transfer equation）** $dp[i][j] = \begin{cases} true & \text{if}\ j-i<=1 \\ dp[i-1][j-1]& \text{if}\ chars[i]=chars[j] \end{cases}$ ，以及构建**状态缓存 (state cache)** 的方式来进行求解。同时使用计数器，来汇总遍历过程中的每一次计算结果，遍历结束即获得最终结果。
 	2. 时间复杂度： $O(n^2)$，空间复杂度：$O(n^2)$。 
 2. 中心扩展（Expanding from centers）
-3. 中心扩展（Expanding from centers）升级版
+	1. 时间复杂度： $O(n^2)$，空间复杂度：$O(1)$。 
 
 
 ### 最小回文字符串转换

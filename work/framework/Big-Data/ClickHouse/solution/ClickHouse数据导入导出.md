@@ -39,9 +39,15 @@ https://clickhouse.com/docs/en/integrations/data-ingestion/insert-local-files
 
 Example
 ```bash
-docker exec -i 96 clickhouse-client --port=19000 --query="select * tmp.table FORMAT Parquet" > /tmp/export.parq
+docker exec -i 96 clickhouse-client --port=19000 --query="
+	select * tmp.table 
+	FORMAT Parquet
+" > /tmp/export.parq
 
-docker exec -i 96 clickhouse-client --port=19000 --query="INSERT INTO tmp.table FORMAT Parquet" < /tmp/export.parq
+docker exec -i 96 clickhouse-client --port=19000 --query="
+	INSERT INTO tmp.table
+	FORMAT Parquet
+" < /tmp/export.parq
 ```
 
 PS：切记通过容器终端导出时，不要加上“-t”参数，此命令会输出一些固定文本到标准输出中，污染数据文件，破坏文件格式
