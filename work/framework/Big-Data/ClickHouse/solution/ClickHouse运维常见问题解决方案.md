@@ -227,7 +227,7 @@ LIMIT 100
 
 **版本：21.8.14.5
 
-**Error Code: 241**
+**见 Code: 241 小节内容**
 
 **推测原因**：
 1. Array Function 的 Lambda 表达式中使用了 Array：Array Function 中 Lamda 表达式里使用某数组 Array 时，该数组会被复制多份，复制的系数为 Array Function 后续传入的数组的长度
