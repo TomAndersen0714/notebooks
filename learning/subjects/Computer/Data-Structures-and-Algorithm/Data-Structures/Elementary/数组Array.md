@@ -29,4 +29,8 @@
 1. Binary Search+Two pointers：使用双指针实现的二分查找算法。设置循环条件为 `left<=right` ，退出条件为找到了对应元素，每次循环时通过左右双指针来确定下一次检索的位置，`index = left + (right - left) / 2`（注意这里先执行减法和除法，再执行加法，避免精度溢出）。循环退出时，再判断一次最后一次位置指向的元素是否等于指定数值，因为有可能没找到元素循环就结束了。
 
 
+#### 有序数组的平方
+
+[LeetCode 977. Squares of a Sorted Array](https://leetcode.com/problems/squares-of-a-sorted-array/)
+
 
