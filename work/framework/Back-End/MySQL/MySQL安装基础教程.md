@@ -1,0 +1,13 @@
+# MySQL 安装基础教程
+
+
+## 安装 MySQL Server 和 Client
+
+通常情况下安装 MySQL Server 时，会一起安装 MySQL Client ，两者一般都是绑定打包。
+
+[MySQL Document - A Quick Guide to Using the MySQL Yum Repository](https://dev.mysql.com/doc/mysql-yum-repo-quick-guide/en/)
+
+
+
+## 参考链接
+1. [Install and Configure MySQL for Cloudera Software](https://docs.cloudera.com/documentation/enterprise/6/6.3/topics/cm_ig_mysql.html#cmig_topic_5_5_1)
