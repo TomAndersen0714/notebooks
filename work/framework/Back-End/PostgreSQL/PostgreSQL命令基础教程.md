@@ -1,4 +1,4 @@
-# PostgreSQL常用命令
+# PostgreSQL 命令基础教程
 
 ## 前言
 
@@ -6,12 +6,12 @@
 利用此功能，直接添加`Postgre Source`，通过UI交互实现数据库的基本管理，并且IDE也支持辅助构建各种SQL命令，提供执行。
 
 
-## psql命令
+## Psql cmd
 
 [PostgreSQL 14.7 Documentation - psql - PostgreSQL interactive terminal](https://www.postgresql.org/docs/14/app-psql.html)
 
 
-### connect command
+### Connect command
 
 常用格式
 ```postgresql
@@ -28,27 +28,94 @@ psql postgresql://airflow_user:airflow_pass@10.0.2.2:5432/airflow_db
 ```
 
 
-### backslash command
+### Psql backslash command
 
-`\q`：退出psql终端
-`\?`：显示命令帮助信息
-`\a`：切换打印内容对齐模式
-`\c dbname`：连接指定数据库
-`\conninfo`：打印当前连接信息
-`\encoding`：打印当前的字符集
-`\set`：查看当前psql变量
-`\l[+] [ pattern ]`：查看所有databases，`[+]`表示同时打印Size、Description等额外信息
-`\dg[+]  [PATTERN]`：查看所有roles
-`\dn[S+] [PATTERN]`：查看所有schemas
-`\dt[S+] [PATTERN]`：查看所有tables
-`\db[+]  [PATTERN]`：查看所有tablespace
-`\dv[S+] [PATTERN]`：查看所有views
-`\di[S+] [PATTERN]`：查看所有indexes
+`\q` ：退出 psql 终端
+`\?` ：显示命令帮助信息
+`\a` ：切换打印内容对齐模式
+
+`\c dbname` ：连接指定数据库
+`\conninfo` ：打印当前连接信息
+`\encoding` ：打印当前的字符集
+`\set` ：查看当前 psql 变量
+
+`\dg[+]  [PATTERN]` ：查看所有 roles
+`\l[+] [ pattern ]` ：查看所有 database，`[+]` 表示同时打印 Size、Description 等额外信息
+`\db[+]  [PATTERN]` ：查看所有 tablespace
+
+`\dn[S+] [PATTERN]` ：查看所有 schema
+`\dt[S+] [PATTERN]` ：查看所有 table
+`\dv[S+] [PATTERN]` ：查看所有 view
+`\di[S+] [PATTERN]` ：查看所有 index
 
 
-## SQL命令手册
+## SQL DQL
+
+### Functions and Operators
+
+[PostgreSQL常用操作符和函数](work/framework/Back-End/PostgreSQL/PostgreSQL常用操作符和函数.md)
+
+
+## SQL DDL
 
 [PostgreSQL 14.7 Documentation - SQL Commands](https://www.postgresql.org/docs/14/sql-commands.html)
+
+
+### ROLE
+
+#### CREATE ROLE
+
+`CREATE ROLE miriam WITH PASSWORD 'jw8s0F4';`
+
+#### ALTER ROLE
+
+https://www.postgresql.org/docs/14/sql-alterrole.html
+
+
+
+### DATABASE
+
+`SELECT datname FROM pg_database;`
+
+#### CREATE DATABASE
+
+https://www.postgresql.org/docs/14/sql-createdatabase.html
+
+
+#### DROP DATABASE
+
+https://www.postgresql.org/docs/14/sql-dropdatabase.html
+
+
+### SCHEMA
+
+#### CREATE SCHEMA
+
+https://www.postgresql.org/docs/14/sql-createschema.html
+
+#### DROP SCHEMA
+
+https://www.postgresql.org/docs/14/sql-dropschema.html
+
+
+### TABLE
+
+#### CREATE TABLE
+
+https://www.postgresql.org/docs/14/sql-createtable.html
+
+
+Example
+```sql
+CREATE TABLE test (
+    id     integer UNIQUE,
+    name    varchar(40)
+);
+```
+
+#### DROP TABLE
+
+https://www.postgresql.org/docs/14/sql-droptable.html
 
 
 ### INDEX
@@ -89,20 +156,31 @@ ALTER TABLE <table_name> DROP CONSTRAINT [ IF EXISTS ]  constraint_name [ RESTRI
 ```
 
 
+## 其他命令
 
-## 其他常用命令
+查看 PostgreSQL 版本
+```sql
+SELECT version()
+```
+
+查看 PostgreSQL 保留字
+```sql
+SELECT pg_get_keywords();
+```
 
 information_schema.columns表：查询表结构
 https://www.postgresql.org/docs/current/information-schema.html
 
 ```mysql
-select column_name,
+select
+	column_name,
     data_type,
     character_maximum_length,
     column_default,
     is_nullable
 from information_schema.columns
-where table_name = 'sxx.ft_product_mapping_tm';
+where table_schema = 'public'
+and table_name = 'xqc.test';
 ```
 
 

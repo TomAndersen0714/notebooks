@@ -15,7 +15,7 @@ LINE 1: ..., c.relhasindex, c.relhasrules, c.relhastriggers, c.relhasoi...
 
 **问题原因**
 
-由于PostgreSQL在Postgre12之后，table的OID不再作为一个特殊列，因此显示`relhasoids`列不存在
+由于 PostgreSQL 在 Postgre12 之后，table 不在具备默认 OID 不再作为一个特殊列，因此显示 `relhasoids` 列不存在
 
 
 **解决方案**
