@@ -27,27 +27,26 @@
 
 **版本信息**：
 
-- Cloudera Manager：cm6.3.1-redhat7.tar.gz
-- Oracle Java JRE：jre-8u181-linux-x64.tar.gz
-- MySQL：
+- Cloudera Manager : cm6.3.1-redhat7.tar.gz
+- Oracle Java JRE : jre-8u181-linux-x64.tar.gz
+- MySQL : 
   - mysql-5.7.11-linux-glibc2.5-x86_64.tar.gz
-  - mysql-connector-java-5.1.47.jar（部署时，需更名为mysql-connector-java.jar，未测试）
+  - mysql-connector-java-5.1.47.jar （部署时，需更名为 mysql-connector-java.jar ，未测试）
 - CDH Parcel：
   - CDH-6.3.1-1.cdh6.3.1.p0.1470567-el7.parcel
-  - CDH-6.3.1-1.cdh6.3.1.p0.1470567-el7.parcel.sha1（部署时需更名为CDH-6.3.1-1.cdh6.3.1.p0.1470567-el7.parcel.sha，未测试）
-  - PS：此文件为CDH-6.3.1-1.cdh6.3.1.p0.1470567-el7.parcel的sha1校验和计算结果，建议保证`sha1sum CDH-6.3.1-1.cdh6.3.1.p0.1470567-el7.parcel`的结果与其中内容一致，如果不一致，可以新建，避免踩坑
-
+  - CDH-6.3.1-1.cdh6.3.1.p0.1470567-el7.parcel.sha1 （部署时需更名为 CDH-6.3.1-1.cdh6.3.1.p0.1470567-el7.parcel.sha ，未测试）
+  - PS : 此文件为 `CDH-6.3.1-1.cdh6.3.1.p0.1470567-el7.parcel` 的 sha1 校验和计算结果，建议保证 `sha1sum CDH-6.3.1-1.cdh6.3.1.p0.1470567-el7.parcel` 的结果与其中内容一致，如果不一致，可以新建，避免踩坑
 - manifest.json
 
 
 
 **下载链接**：
 
-6.3.1 百度云链接：
+6.3.1 百度云链接:
 
--  https://pan.baidu.com/s/16wYx16QwQ9QcVawEV47TMQ?pwd=hp45 提取码: hp45 复制这段内容后打开百度网盘手机App，操作更方便哦
+-  https://pan.baidu.com/s/16wYx16QwQ9QcVawEV47TMQ?pwd=hp45 提取码: hp45 复制这段内容后打开百度网盘手机 App ，操作更方便哦
 
-6.2.x 镜像源：
+6.2.x 镜像源:
 
 - Cloudera Manger：[Index of /cloudera-repos/cm6/redhat/7/x86_64/cm/](https://ro-bucharest-repo.bigstepcloud.com/cloudera-repos/cm6/redhat/7/x86_64/cm/)
 - CDH Parcel：[Index of /cloudera-repos/cdh6/parcels/](https://ro-bucharest-repo.bigstepcloud.com/cloudera-repos/cdh6/parcels/)
@@ -74,8 +73,7 @@ hostname
 ```
 
 
-
-各节点**/etc/hosts**文件中新增集群节点映射
+各节点 /etc/hosts 文件中新增集群节点映射
 
 **PS：请确保同各个节点的/etc/hosts，hostname到ip的映射是唯一，避免出现CM Agent给CM Server上报hostname时，值与对应节点的hostname输出不符。**
 
@@ -108,13 +106,11 @@ timedatectl set-timezone Asia/Shanghai
 ```
 
 
-
 可以使用ntpdate命令直接手动同步时间，或者使用ntp服务同步时间
 
 ```Shell
 ntpdate ntp.api.bz
 ```
-
 
 
 各节点安装**ntp**时钟同步工具（可选）
@@ -169,9 +165,6 @@ echo never > /sys/kernel/mm/transparent_hugepage/defrag
 建议同时添加到``/etc/rc.local``中，节点重启后同样生效此设置
 
 
-
-
-
 ### 5.（集群）部署JRE
 
 ```Bash
@@ -197,7 +190,6 @@ Java HotSpot(TM) 64-Bit Server VM (build 25.181-b13, mixed mode)
 ```
 
 
-
 ### 6.（主节点）部署MySQL
 
 #### a) 主节点安装并启动MySQL
@@ -209,7 +201,6 @@ https://docs.cloudera.com/documentation/enterprise/6/6.3/topics/cm_ig_mysql.html
 https://blog.csdn.net/m0_64684588/article/details/121636825
 
 https://github.com/Hackeruncle/MySQL/blob/master/MySQL%205.7.11%20Install.txt
-
 
 
 #### b) 连接MySQL创建CM Server所需数据库和用户

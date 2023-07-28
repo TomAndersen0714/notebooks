@@ -18,7 +18,7 @@ LINE 1: ..., c.relhasindex, c.relhasrules, c.relhastriggers, c.relhasoi...
 
 **解决方案**
 
-使用 Postgre12 以上的客户端进行链接，如：
+使用 Postgre12 以上的 psql 客户端进行连接，如：
 1. （推荐）使用 JetBrain 等内嵌 Postgre 客户端的工具，直接使用更高版本的 Postgre 客户端，并直接进行连接
 2. 升级本地的 Postgre psql 客户端
 

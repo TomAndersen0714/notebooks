@@ -79,3 +79,4 @@
 ## 参考链接
 1. [PostgreSQL 中文社区-PostgreSQL 数据库开发规范](https://mp.weixin.qq.com/s/qOobyeo3ROnFnA4NAbG4fg)
 2. [Pg 使用规范]( https://wiki.sqlfans.cn/postgresql/pg-std-using.html )
+3. [PostgreSQL 中文社区-探探 PostgreSQL 开发规约](https://mp.weixin.qq.com/s/WV9EKnp155MHMpSuXCOFnA)
