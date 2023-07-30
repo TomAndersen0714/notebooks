@@ -44,20 +44,67 @@ Memory Types:
 5. Vector Data Memory
 6. Entity Memory
 
+### Chains
+
+#### LLM Chain
+
+LLM Chain 是最简单的 Chain，可以将 LLM 与 Pormpt 组合在一起使用，简化用户的操作。
+
+#### Sequential Chain
+
+Sequential Chain 可以将各种类型的 Chain 拼接成为一个序列，上一个 Chain 的输出即为下一个 Chain 的输入。
+
+Sequential Chain 有两个子类型：
+1. SimpleSequentialChain：其中的每个子 Chain 仅支持单个输入输出
+2. SequentialChain：其中的每个子 Chain 支持多个输入输出的
+
+#### Router Chain
+
+在多个 Chain 之间提供输出路由功能，用于链接不同的 Chain。
+
+
 ### Indexes
 
-
-
-### Chains
 
 
 ### Agents
 
 
+#### Question and Answer Over Documents
+
+问题现状：
+LLM 一次性只能查询上千个单词，如果有非常大的文档该如何回答问题呢？
+
+规律：
+相似的文本，其在映射到某向量空间时，对应向量之间的某种空间距离也相近
+
+解决思路：
+1. 文档切分，使用 Embeddings 技术将文本向量化
+2. 使用向量数据库（Vector Database）存储这些文本向量，并构建索引
+3. 通过 Vector Database 与查询问题文本相匹配，获取文档中的相似的内容
+4. 将这些内容作为上下文和原始问题，一起提交给 LLM，进而获得近似答案
+
+#### Stuff Method
+
+将部分相关的文档内容和问题一起发送给 LLM
+
+#### Map Reduce Method
+
+将所有的相关的文档内容和问题依次发送给 LLM，最后再通过 LLM 将这些多次的回答进行汇总
+
+#### Refine Method
+
+将所有的相关的文档内容和问题依次发送给 LLM，与 Map Reduce Method 不同的是 Refine Method 的每次提问，都会带上上一次问题的回答结果，即会将所有相关的文档内容都迭代后，才会得到最终答案。
+
+
+#### Map Re-rank Method
+
+将所有的相关的文档内容和问题依次发送给 LLM，并给每次回答判分，最终选取分数最高的那个回答。
+
+
 ## 参考连接
 1. [LangChain for LLM Application Development]( https://learn.deeplearning.ai/langchain )
 2. [LangChain Documentation - getting start](https://python.langchain.com/en/latest/getting_started/getting_started.html)
-2. [Github-LangChain](https://github.com/hwchase17/langchain)
-3. [BiliBili-吴恩达最新 ChatGPT 课程《LLM 应用程序开发的 LangChain》](https://www.bilibili.com/video/BV1zu4y1Z7mc/?p=1&vd_source=2c8ffe4f87b0f9d96f6386c909e5ac1d) 
-4. [YouTuber-LangChain for LLM Application Development]( https://www.youtube.com/playlist?list=PLnZF6_W2vM2o_-a8FcC24DZNkmEe3Crrm )
+3. [Github-LangChain](https://github.com/hwchase17/langchain)
+4. [BiliBili-吴恩达最新 ChatGPT 课程《LLM 应用程序开发的 LangChain》](https://www.bilibili.com/video/BV1zu4y1Z7mc/?p=1&vd_source=2c8ffe4f87b0f9d96f6386c909e5ac1d) 
 5. [稀土掘金-精华笔记：吴恩达 x LangChain《基于 LangChain 的大语言模型应用开发》(上)](https://juejin.cn/post/7248599585735114789#heading-31)
