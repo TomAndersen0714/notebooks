@@ -8,9 +8,11 @@
 如双数求和、回文判断、字符串匹配、二分查找等。
 
 
-### 2 Sum
+### K 数求和
 
-#### 双数求和-解唯一
+#### 2 Sum
+
+##### 双数求和-解唯一
 
 [LeetCode 1. Two Sum](https://leetcode.com/problems/two-sum/)
 
@@ -27,7 +29,7 @@
 	1. 使用 HashMao 存储数组中的数值-索引对。遍历数组，创建并添加元素。每次添加元素时，检索 Map 中是否包含对应的另一个元素，如果包含则直接输出，否则添加进 Map，继续迭代。
 	2. 由于 HashMap get/put 方法的平均时间复杂度为 $O(1)$，故整体算法时间复杂度为 $O(n)$
 
-#### 双数求和-有序数组+解唯一
+##### 双数求和-有序数组+解唯一
 
 [LeetCode 167. Two Sum II - Input Array Is Sorted](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/)
 
@@ -57,12 +59,12 @@
 	1. 双重循环，依次配对
 
 
-#### 双数求和-输入为 BST
+##### 双数求和-输入为 BST
 
 [LeetCode 653. Two Sum IV - Input is a BST](https://leetcode.com/problems/two-sum-iv-input-is-a-bst/)
 
 
-#### 双数求和-值最接近
+##### 双数求和-值最接近
 
 [LeetCode 1099. Two Sum Less Than K](https://leetcode.com/problems/two-sum-less-than-k/)
 [LeetCode 1099. Two Sum Less Than K](https://wentao-shao.gitbook.io/leetcode/two-pointers/1099.two-sum-less-than-k)
@@ -75,12 +77,12 @@
 
 解题思路：
 1. Two pointers：
-	1. 先排序，后对撞指针
+	1. 先排序，后左右指针
 
-### 3 Sum
+#### 3 Sum
 
 
-#### 三数求和-解不唯一
+##### 三数求和-解不唯一
 
 [LeetCode 15. 3Sum](https://leetcode.com/problems/3sum/)
 
@@ -99,7 +101,7 @@
 	1. 思路：根据三个指针指向的元素和目标值之间的关系，先将数组进行排序 Sort，然后遍历数组，假设当前游标指向的元素为结果向量中的最小元素。那么接下来的任务就是判断，游标之后的元素中是否有某两个元素的值之和等于特定值（或满足某特定条件），故而将三数问题，转换为了双数问题，从而可以应用 Binary Search 进行求解。
 
 
-#### 三数求和-值最接近
+##### 三数求和-值最接近
 
 [LeetCode 16. 3Sum Closest](https://leetcode.com/problems/3sum-closest/)
 
@@ -114,19 +116,22 @@
 	2. 证明 1：由于条件 1，因此在进行排序 Sort 之后，此问题便变成了多个子问题 [双数求和-值最接近+解不唯一](learning/subjects/Computer/Data-Structures-and-Algorithm/Algorithms/Elementary/双指针Two-Pointers.md#双数求和-值最接近+解不唯一) 。
 
 
-### 4 Sum
+#### 4 Sum
 
 [LeetCode 18. 4Sum](https://leetcode.com/problems/4sum/)
 
-问题概述：输入一个整型数组，返回一个由其中四个不重复元素构成的子数组，此子数组的元素之和需等于指定值。
+问题概述：输入一个整型数组，返回所有由其中四个元素构成的子数组组合 Combination，其中所有子数组的元素之和需等于指定值。
+
+条件：
+1. 返回答案中的元素顺序可以随意，但组合不能重复
 
 解题思路：
 1. 双指针 Two Poiners：
-	1. 方法：首先将数组进行排序，然后将 k 指针逐步依次拆解，简化为 2 Sum 问题进行求解。
+	1. 方法：首先将数组进行排序 Sort，然后将 k 指针逐步依次拆解，简化为 2 Sum 问题进行求解。
 
 注意事项：
-1. 在进行数值运算时，要看清题目中给定的条件，是否存在 **整型溢出（Integer Overflow）** 的可能，如果存在溢出可能，建议直接采用更长的数据类型进行存储。
-2. 要注意**数组中的元素是否可能重复**，如果可能重复，而**题目要求答案中的元素不重复**，则在移动指针时，当某个指针遇到和之前相同的元素时，则需要跳过当前循环。
+1. 在进行数值运算时，要看清题目中给定的条件，是否存在 **整型溢出（Integer Overflow）** 的可能，如果存在溢出可能，建议**直接采用更长的数据类型进行存储**。
+2. 要注意**数组中的元素是否可以重复**，如果可能重复，而**题目要求答案中的元素不重复**，则在每次迭代中移动指针之后，**如果指针当前元素和上一个元素相同，则需要跳过当前循环**。
 
 ### 回文字符串
 

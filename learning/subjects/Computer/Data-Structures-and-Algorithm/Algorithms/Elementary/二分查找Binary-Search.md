@@ -2,7 +2,7 @@
 
 只要是有序数组中查找元素，可以优先尝试二分查找。
 
-## 概览
+## 算法概览
 
 ### 算法简介
 
@@ -31,20 +31,22 @@
 例题：
 [LeetCode 34. Find First and Last Position of Element in Sorted Array](https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/)
 
-问题概述：双指针根据下一个位置的值，不断缩小范围，最终确定目标值的位置。
+问题概述：输入一个递增的整型数组和一个整数，返回这个整数在这个递增数组中的起止位置。
 
-解题思路：经典二分查找。
+解题思路：
+1. 二分查找（Binary Search）+中心扩展（Expanding from Center）。二分查找定位目标元素的其中一个位置，然后从中心扩展，找到所有相同元素，以及对应的起止范围。
 
+### K 数求和
 
-### 双数求和
+#### 双数求和
 
-#### 双数求和-输入为有序数组+解唯一
+##### 双数求和-输入为有序数组+解唯一
 
 [LeetCode 167. Two Sum II - Input Array Is Sorted](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/)
 
-### 三数求和
+#### 三数求和
 
-#### 三数求和-解不唯一
+##### 三数求和-解不唯一
 
 [LeetCode 15. 3Sum](https://leetcode.com/problems/3sum/)
 
