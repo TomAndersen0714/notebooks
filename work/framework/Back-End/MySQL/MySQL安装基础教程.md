@@ -7,7 +7,13 @@
 
 [MySQL Document - A Quick Guide to Using the MySQL Yum Repository](https://dev.mysql.com/doc/mysql-yum-repo-quick-guide/en/)
 
+## 配置 MySQL Server
+
+[MySQL 8.0 Documentation - 4.2.2 Specifying Program Options](https://dev.mysql.com/doc/refman/8.0/en/program-options.html)
 
 
 ## 参考链接
-1. [Install and Configure MySQL for Cloudera Software](https://docs.cloudera.com/documentation/enterprise/6/6.3/topics/cm_ig_mysql.html#cmig_topic_5_5_1)
+1. [MySQL 8.0 Documentation - MySQL Installation Guide](https://dev.mysql.com/doc/mysql-installation-excerpt/8.0/en/)
+2. [MySQL 8.0 Reference Manual - Chapter 2 Installing and Upgrading MySQL](https://dev.mysql.com/doc/refman/8.0/en/installing.html)
+3. [MySQL Document - A Quick Guide to Using the MySQL Yum Repository](https://dev.mysql.com/doc/mysql-yum-repo-quick-guide/en/)
+4. [Install and Configure MySQL for Cloudera Software](https://docs.cloudera.com/documentation/enterprise/6/6.3/topics/cm_ig_mysql.html#cmig_topic_5_5_1)

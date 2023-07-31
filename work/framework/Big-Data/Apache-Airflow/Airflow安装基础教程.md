@@ -2,10 +2,9 @@
 
 
 
-
 ## 前言
 
-目前（2022-12-22），[官方文档](https://airflow.apache.org/docs/apache-airflow/stable/installation/index.html#)中提供了共计6种安装方案：
+本文安装 Airflow 为 `Airflow2.x` 版本。目前（2022-12-22），[官方文档](https://airflow.apache.org/docs/apache-airflow/stable/installation/index.html#)中提供了共计6种安装方案：
 
 1. [Using released sources](https://airflow.apache.org/docs/apache-airflow/stable/installation/index.html#using-released-sources)
 2. [Using PyPI](https://airflow.apache.org/docs/apache-airflow/stable/installation/index.html#using-pypi)
@@ -101,6 +100,11 @@ airflow db reset
 airflow webserver -D
 
 airflow scheduler -D
+
+
+# 如果使用了celery, 可以通过以下命令启动
+airflow celery worker -D   #启动celery worker
+airflow celery flower -D   #启动flower
 ```
 
 
