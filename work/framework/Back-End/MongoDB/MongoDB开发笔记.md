@@ -1,26 +1,33 @@
-# MongoDB开发笔记
+# MongoDB 开发笔记
 
 
-**MongoDB的适用场景**
-MongoDB单点查询，只要索引能够唯一命中（如：\_id），则qps和查询性能都很强，但是MongoDB并不适合批量查询和聚合，速度会很慢，因为一旦某个查询没有命中索引，查询性能就会直线下降，而且MongoDB的索引构建之后，难以维护。
+## Reading
 
-因此MongoDB通常会搭配ES一起使用，ES充当一级索引引擎，Mongo索引充当二级索引。如存储各个字段到_id的映射关系，充当二级索引，查询到MongoDB ObjectId之后，再去反查MongoDB命中索引，以获取对应的明细数据。
+### Explain
 
-**Mongo索引使用注意事项：**
-一般情况下，建议禁止使用hint强制索引，直接使用Mongo默认的优化计划，除非你十分了解Mongo底层的索引原理
+**读取 MongoDB 数据时，需要查看查询的执行计划，以及使用 LIMIT 1 来执行冒烟测试，保证 Mongo 查询的性能，避免提交慢查询**
 
+**MongoDB 慢查询，通常即便客户端断开链接也不会被动结束，需要服务器端手动终结**
 
-**读取MongoDB数据时，如果对数据一致性要求不严格，可以将secondaryPreferred参数设置为SECONDARY**
-MongoDB读取database和collection拉取数据时，可以尝试使用read_preference参数，并将其显式设置为SECONDARY，而非默认的Primary，即避免直接查询主库，增加主库的负载，保证主要业务流程不受影响，即手动进行资源隔离，即便从库宕机，也不影响主库的正常业务。
+MongoDB 拉取数据时，在正式执行之前，必须通过 `cursor.explain`  方法获取对应的执行计划，观察是否命中索引，同时查询要使用 `limit(1)` 避免提交慢查询导致执行时间太久。
 
-
-**读取MongoDB数据时，需要查看查询的执行计划，保证查询性能，并且测试性能时需要使用LIMIT 1，避免提交慢查询**
-MongoDB拉取数据时，在正式执行之前，务必进行先要使用limit和（冒烟测试），并且最好先在Mongo Shell中通过cursor explain获取对应的执行计划，观察是否命中索引。
-**PS：MongoDB慢查询，通常即便客户端断开链接也不会被动结束，需要服务器端手动终结**
+其中 explain 的 verbose 参数使用默认值 `queryPlanner`。
 
 
+### Index Hint
 
-## PyMongo
+一般情况下，**建议不要使用 Index hint 强制使用索引**，直接使用 Mongo 默认的优化计划，除非你十分了解 Mongo 底层的索引原理
+
+
+### SecondaryPreferred
+
+**读取 MongoDB 数据时，如果对数据一致性要求不严格，可以将 secondaryPreferred 参数设置为 SECONDARY**
+MongoDB 读取 database 和 collection 拉取数据时，可以尝试使用 read_preference 参数，并将其显式设置为 SECONDARY，而非默认的 Primary，即避免直接查询主库，增加主库的负载，保证主要业务流程不受影响，即手动进行资源隔离，即便从库宕机，也不影响主库的正常业务。
+
+
+## Mongo Client
+
+### PyMongo
 
 **MongoDB Python API 官方文档：**
 Pymongo：“ https://pymongo.readthedocs.io/en/stable/api/pymongo/index.html#module-pymongo ”

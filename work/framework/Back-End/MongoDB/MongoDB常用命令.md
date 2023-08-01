@@ -2,7 +2,8 @@
 
 ## Methods
 
-### db
+### Db
+
 1. [官方链接](https://www.mongodb.com/docs/manual/reference/method/js-database/)
 2. `show databases | db.getMongo().getDBNames()`：查看所有数据库清单
 3. `use <database>`：切换数据库
@@ -14,7 +15,8 @@
 9. `db.killOp()`：终止输入的opid对应的操作，对集群都生效
 
 
-### collections
+### Collections
+
 1. [官方链接](https://www.mongodb.com/docs/manual/reference/method/js-collection/)
 2. `db.getCollectionNames()`：查看当前数据库中所有的Collection，同`show tables`和`show collections`
 3. `db.collection.findOne()`：查询单个文档，如查询ID为指定值的文档：`db.<collection_name>.findOne({"_id" : ObjectId("619b57f58846b9000182a354")})`
@@ -25,12 +27,35 @@
 ## Operators
 
 ### Query and Projection Operators
+
 https://www.mongodb.com/docs/manual/reference/operator/query/#std-label-query-selectors
 
 
 `$exists`
+
 ```sql
 db.<collection_name>.findOne({"_id": { $exists: true }})
+```
+
+
+### Aggregate operators
+
+`aggregate`
+
+```sql
+db.voc_customer.aggregate([
+  {
+    $group: {
+      _id: "$day",
+      count: { $sum: 1 }
+    }
+  },
+  {
+    $sort: {
+      _id: 1
+    }
+  }
+])
 ```
 
 
