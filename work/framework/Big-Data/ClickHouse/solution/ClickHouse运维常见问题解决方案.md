@@ -405,7 +405,7 @@ https://github.com/ClickHouse/ClickHouse/issues/39250
 **推测原因 1：**
 DDL 查询对应的表的 block_numbers 太多，导致对应表的 Distributed DDL 执行速度太慢。
 
-ClickHouse 在针对 Partitioned Replicated Table 执行 Truncate On Cluster 时，会查询 Zookeeper 中所有的 block_numbers。而 Partitioned Replicated Table 在写入数据后，便会在 Zookeeper 的 block_numbers 路径下增加 child znode，用来存储 Partition 信息。
+ClickHouse 在针对 Partitioned Replicated Table 执行 `Truncate` on cluster 时，会查询 Zookeeper 中所有的 block_numbers。而 Partitioned Replicated Table 在写入数据后，便会在 Zookeeper 的 block_numbers 路径下增加 child znode，用来存储 Partition 信息。
 
 Zookeeper block_numbers 路径下的 Znode，在 ClickHouse 创建后便不会主动删除，即便是执行 Truncate 或者 Drop Partition 操作。进而随着分区数量的不断增加，Partitioned Replicated Table DDL 执行速度也越来越慢，最终超时。
 
@@ -416,7 +416,7 @@ FROM system.zookeeper
 WHERE path = '/clickhouse/ods/tables/01_02/xdqc_dialog_local/block_numbers/'
 ```
 
-虽然社区已经有人提交了相关 issue，希望社区支持类似特性，但并未获得社区支持，社区给出的理由是，如果在 Truncate 时删除 znode，会导致在 Truncate 和 Insert 操作并发时，可能出现数据一致性问题。[issue-11779](https://github.com/ClickHouse/ClickHouse/issues/11779)
+虽然社区已经有人提交了相关 issue，希望社区支持类似特性，但并未获得社区支持，社区给出的理由是，Insert 操作时，会去 ZK 中创建 Znode，即获取分布式锁，如果 ClickHouse 支持在 Truncate 时删除 znode，即删除 ZK 分布式锁，会导致在 Truncate 和 Insert 操作并发时，可能出现数据一致性问题。[issue-11779](https://github.com/ClickHouse/ClickHouse/issues/11779)
 
 **解决方案 1-1：**
 重建 Partitioned Replicated Table 表，ClickHouse 便会自动删除 Zookeeper 中 `/<path-to-table>/block_numbers/` 下的 Znode。
