@@ -1,4 +1,4 @@
-# kubectl命令行工具常用命令
+# Kubectl 命令行工具常用命令
 
 
 ## Syntax
@@ -49,6 +49,7 @@ kubectl get namespaces
 
 
 ## Command/Operations
+
 https://kubernetes.io/docs/reference/kubectl/#operations
 
 ### get
@@ -118,7 +119,6 @@ kubectl edit configmap <configmap_name>
 ## Name
 
 
-
 ## Flags
 
 
@@ -133,8 +133,8 @@ kubectl get pods --selector app=query-panel -o yaml
 ```
 
 
-
 ### Formatting output
+
 https://kubernetes.io/docs/reference/kubectl/#formatting-output
 
 Syntax: `-o|--output <output_format>`

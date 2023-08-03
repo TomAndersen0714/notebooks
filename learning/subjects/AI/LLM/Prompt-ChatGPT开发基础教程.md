@@ -18,7 +18,6 @@ Instrument Tuned LLM 的一个常见训练方式，是在 Base LLM 的基础之�
 ## Prompt Principles and Strategies
 
 
-
 #### Principle1: write clear and specific instruction
 
 ##### tactic1: Use delimiters

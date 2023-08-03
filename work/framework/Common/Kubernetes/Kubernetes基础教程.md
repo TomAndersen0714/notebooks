@@ -20,7 +20,6 @@ Kubernetes中的deployment、service等resources，都是通过selector来确定
 
 ### Workloads
 
-
 #### Pods
 https://kubernetes.io/docs/concepts/workloads/pods/
 
@@ -45,6 +44,7 @@ https://kubernetes.io/docs/concepts/workloads/controllers/deployment/
 ### Services, Load Balancing, and Networking
 
 #### Service ClusterIP allocation
+
 https://kubernetes.io/docs/concepts/services-networking/cluster-ip-allocation/
 
 Service是一种为pod提供网络代理的资源，而集群中同一个namespace下的所有的pod能通过DNS解析Service的hostname，并解析出对应的代理IP，即ClusterIP，后续的请求则由Service代理到对应的pod上。
@@ -52,6 +52,7 @@ Service是一种为pod提供网络代理的资源，而集群中同一个namespa
 ### Storage
 
 #### Volumes
+
 [Kubernetes Documentation/Concepts/Storage/Volumes](https://kubernetes.io/docs/concepts/storage/volumes/)
 
 
@@ -62,7 +63,7 @@ Service是一种为pod提供网络代理的资源，而集群中同一个namespa
 
 ## 其他
 
-### OpenStack和Kubernetes的区别
+### OpenStack 和 Kubernetes 的区别
 
 云计算服务的种类从下往上，主要可以分为三类，即基础架构即服务（Infrastructure as a Service, IaaS）、平台即服务（Platform as a Service）、和软件即服务（Software as a Service）。
 
@@ -78,13 +79,14 @@ OpenStack是基于Linux的IaaS（Infrastructure as a Service）云服务的解�
 PS：虚拟化技术的主要作用，个人认为主要两点就是，1是资源池化，灵活分配，提高资源利用率，2是资源隔离，提高服务质量。
 
 
-### OpenStack和VMware vSphere的区别
+### OpenStack 和 VMware vSphere 的区别
 
-VMware vSphere是一种企业级虚拟化和云计算平台，用于构建和管理大规模的虚拟化基础设施，包括服务器、存储和网络等资源。而VMware WorkStation，是一种面向个人用户和小规模部署的虚拟化工具，，同时也是一款桌面级应用软件，可以直接安装在个人主机上。
+VMware vSphere 是一种企业级虚拟化和云计算平台，用于构建和管理大规模的虚拟化基础设施，包括服务器、存储和网络等资源。而 VMware WorkStation，是一种面向个人用户和小规模部署的虚拟化工具，，同时也是一款桌面级应用软件，可以直接安装在个人主机上。
 
-OpenStack和VMware vSphere的主要区别在于，OpenStack是开源的分布式云计算平台，而VMware vSphere则是由VMware负责开发和提供的。
+OpenStack 和 VMware vSphere 的主要区别在于，OpenStack 是开源的分布式云计算平台，而 VMware vSphere 则是由 VMware 负责开发和提供的。
 
-两者都是IaaS的解决方案，属于同类型的产品。
+两者都是 IaaS 的解决方案，属于同类型的产品。
+
 https://www.cnblogs.com/sdjnzqr/p/3798990.html
 
 ## 参考链接
