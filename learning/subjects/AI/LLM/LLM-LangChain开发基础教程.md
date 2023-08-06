@@ -63,14 +63,7 @@ Sequential Chain 有两个子类型：
 在多个 Chain 之间提供输出路由功能，用于链接不同的 Chain。
 
 
-### Indexes
-
-
-
-### Agents
-
-
-#### Question and Answer Over Documents
+### Question and Answer Over Documents
 
 问题现状：
 LLM 一次性只能查询上千个单词，如果有非常大的文档该如何回答问题呢？
@@ -101,10 +94,35 @@ LLM 一次性只能查询上千个单词，如果有非常大的文档该如何�
 
 将所有的相关的文档内容和问题依次发送给 LLM，并给每次回答判分，最终选取分数最高的那个回答。
 
+### Agents
+
+LangChain Agent 中包含有特定的 Tools，可以根据用户的输入内容，调用对应的外部 Chain，进而实现了 LLM 的插件式功能扩展。
+
+### Indexes
+
+## Evaluation
+
+### RetrievalQA、QAGenerateChain、QAEvalChain
+
+**方法一：手动创建测试数据集，手动评估测试结果**
+
+测试人员手动创建测试数据集，自行构建 QA 测试用例，使用这些 QA 测试用例输入 RetrievalQA Chain 来测试 LLM 应用。
+
+全局的 `Langchain.debug` 选项，可以用于打印 RetrievalQA Chain 测试过程中的详细日志。
+
+缺陷：扩展性较低、效率较低。
+
+**方法二：通过 LLM 生成 QA ，通过 LLM 来评估 LLM Application**
+
+LangChain 提供了 QAGenerateChain 用于读取文档，并基于文档生成 QAs。然后使用 RetrievalQA 来执行测试用例，使用 QAEvalChain 来评估 QA 的标准答案（也是 LLM 生成），与 LLM 生成的预测答案之间的相似性。
+
+通过 LLM 来评估 Answer 之间的相似性，可以优化人工流程，同时也实现了传统的字符串匹配程序无法实现的功能。
 
 ## 参考连接
-1. [LangChain for LLM Application Development]( https://learn.deeplearning.ai/langchain )
-2. [LangChain Documentation - getting start](https://python.langchain.com/en/latest/getting_started/getting_started.html)
-3. [Github-LangChain](https://github.com/hwchase17/langchain)
-4. [BiliBili-吴恩达最新 ChatGPT 课程《LLM 应用程序开发的 LangChain》](https://www.bilibili.com/video/BV1zu4y1Z7mc/?p=1&vd_source=2c8ffe4f87b0f9d96f6386c909e5ac1d) 
-5. [稀土掘金-精华笔记：吴恩达 x LangChain《基于 LangChain 的大语言模型应用开发》(上)](https://juejin.cn/post/7248599585735114789#heading-31)
+
+1. [Embedding](https://en.wikipedia.org/wiki/Embedding)
+2. [Deeplearning AI - LangChain for LLM Application Development]( https://learn.deeplearning.ai/langchain )
+3. [LangChain Documentation - getting start](https://python.langchain.com/en/latest/getting_started/getting_started.html)
+4. [Github-LangChain](https://github.com/hwchase17/langchain)
+5. [BiliBili-吴恩达最新 ChatGPT 课程《LLM 应用程序开发的 LangChain》](https://www.bilibili.com/video/BV1zu4y1Z7mc/?p=1&vd_source=2c8ffe4f87b0f9d96f6386c909e5ac1d) 
+6. [稀土掘金-精华笔记：吴恩达 x LangChain《基于 LangChain 的大语言模型应用开发》(上)](https://juejin.cn/post/7248599585735114789#heading-31)

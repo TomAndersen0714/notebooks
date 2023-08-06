@@ -32,7 +32,7 @@ UML 概念模型主要包含三个部分：
 
 ### OO 基本概念
 
-[面向对象的基础概念](work/methodology/Software-Engineering/Analysis-and-Design/Object-Oriented-Design/面向对象的基础概念.md)
+[面向对象的基础概念](work/methodology/Software-Engineering/Alalysis-and-Design/Software-Analysis-and-Design/Object-Oriented-Design/面向对象的基础概念.md)
 
 ## UML Things（事物）
 

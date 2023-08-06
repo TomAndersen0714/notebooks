@@ -40,7 +40,7 @@ psql postgresql://airflow_user:airflow_pass@10.0.2.2:5432/airflow_db
 `\set` ：查看当前 psql 变量
 
 `\dg[+]  [PATTERN]` ：查看所有 roles
-`\l[+] [ pattern ]` ：查看所有 database，`[+]` 表示同时打印 Size、Description 等额外信息
+`\l[+]  [PATTERN]` ：查看所有 database，`[+]` 表示同时打印 Size、Description 等额外信息
 `\db[+]  [PATTERN]` ：查看所有 tablespace
 
 `\dn[S+] [PATTERN]` ：查看所有 schema

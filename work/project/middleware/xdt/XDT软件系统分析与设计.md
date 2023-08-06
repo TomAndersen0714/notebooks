@@ -1,6 +1,6 @@
 # XDT 软件系统分析与设计
 
-[面向对象分析与设计基础教程](work/methodology/Software-Engineering/Analysis-and-Design/Object-Oriented-Design/面向对象分析与设计基础教程.md)
+[面向对象分析与设计基础教程](work/methodology/Software-Engineering/Alalysis-and-Design/Software-Analysis-and-Design/Object-Oriented-Design/面向对象分析与设计基础教程.md)
 
 RPC Connector:
 应该将 RCP 接口数据抽象成 RPC connector ，数据同步工具，仅仅支持简单的数据同步，SQL RPC 仅仅是通过 RPC 传递 SQL 参数的一种 connector 罢了
