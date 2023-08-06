@@ -3,7 +3,6 @@
 
 ## Apache Impala通用
 
-
 ### SHOW
 1. 查看当前数据库：`select current_database()`
 2. 查看库中表：`show tables in <database>`
