@@ -1,15 +1,13 @@
-# Docker Bridge网络中的容器无法访问外网
+# Docker Bridge 网络中的容器无法访问外网问题排查
 
 ## 前言
 
 ### 问题症状
 
 1. 宿主机能访问Docker容器端口
-
 2. Docker容器无法访问宿主机端口
-
 3. 宿主机外部无法访问Docker容器端口
-4. Docker以默认的Bridge网络模式启动容器后，`brctl show`依旧显示Docker的默认网桥docker0的bridge id依旧为8000.000000000000
+4. Docker 以默认的 Bridge 网络模式启动容器后，`brctl show` 依旧显示 Docker 的默认网桥 docker0 的 bridge id 依旧为 `8000.000000000000`
 
 ### 系统版本
 
@@ -22,14 +20,12 @@ CentOS Linux release 7.9.2009 (Core)
 ```
 
 
-
 ### 问题原因
 
-网上部分大佬推测是docker加载内核的bridge.ko驱动模块失败，导致docker network创建网络时，其自动附带创建的网桥无法转发数据包
+网上部分大佬推测是 docker 加载内核的 `bridge.ko` 驱动模块失败，导致 docker network 创建网络时，其自动附带创建的网桥无法转发数据包。
 
 
-
-## 操作步骤
+## 解决方案
 
 ### 方案一：重建Docker默认网桥和网络
 
@@ -76,7 +72,6 @@ ip link set dev docker0 up，或ifconfig docker0 up
 systemctl start docker
 
 
-
 ### 方案二：新建Docker网桥和网络
 
 1. 手动创建另外一个网桥
@@ -84,7 +79,6 @@ systemctl start docker
 2. （可选）设置对应的子网网段、子网掩码、广播网段
 3. docker network创建一个网络，使用相同的网桥名字。PS：如果设置了步骤2，则需要设置成和步骤2相同的子网网段、掩码、网关
 4. 后续创建容器，使用`--network=<network_name>`连接新建的docker network即可
-
 
 
 ### 方案三：升级Linux内核
@@ -101,9 +95,7 @@ reboot
 
 
 
-
-
-## 使用注意事项
+### 注意事项
 
 方案一(重建Docker默认网桥和网络)：不需要重建容器，但是需要重启docker服务
 
@@ -115,6 +107,5 @@ reboot
 
 ## 参考链接
 
-[centos7中docker网络docker0与容器间网络不通的坑](https://blog.csdn.net/weixin_42288415/article/details/105366176)
-
-[Docker网桥模式ping不通宿主机](https://blog.csdn.net/qq_36059826/article/details/106550332)
+1. [centos7中docker网络docker0与容器间网络不通的坑](https://blog.csdn.net/weixin_42288415/article/details/105366176)
+2. [Docker网桥模式ping不通宿主机](https://blog.csdn.net/qq_36059826/article/details/106550332)

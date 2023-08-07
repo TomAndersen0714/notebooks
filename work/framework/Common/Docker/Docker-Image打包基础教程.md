@@ -1,8 +1,9 @@
-# Docker 镜像打包上传基础教程
+# Docker Image 打包上传基础教程
+
 
 ## 前言
 
-本文主要简单介绍一下，docker打包镜像，并上传到指定镜像仓库，并在目标节点拉取的过程
+本文主要简单介绍一下，docker 打包镜像（image），并上传到指定镜像仓库，并在目标节点拉取的过程。
 
 
 
@@ -15,7 +16,7 @@
 | registry.cn-hangzhou.aliyuncs.com        | testuser     | testpassword |
 | registry-vpc.cn-zhangjiakou.aliyuncs.com | testuser     | testpassword |
 
-本次实验中，registry.cn-hangzhou.aliyuncs.com是内网环境访问镜像仓库地址，registry-vpc.cn-zhangjiakou.aliyuncs.com是云主机环境环境镜像仓库地址，两者设置了自动同步，如果是同一环境，则使用相同url即可
+本次实验中，registry. Cn-hangzhou. Aliyuncs. Com 是内网环境访问镜像仓库地址，registry-vpc. Cn-zhangjiakou. Aliyuncs. Com 是云主机环境环境镜像仓库地址，两者设置了自动同步，如果是同一环境，则使用相同 url 即可。
 
 
 
