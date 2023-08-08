@@ -118,6 +118,26 @@ bool DDLWorker::tryExecuteQueryOnLeaderReplica(
 
 参考 `Code: 159` 小节相关内容。
 
+### ClickHouse Distributed DDL 阻塞
+
+https://kb.altinity.com/altinity-kb-setup-and-maintenance/altinity-kb-ddlworker/
+
+ClickHouse Distribued DDL 依靠 Zookeeper 协助执行，ClickHouse 在 Zookeeper 上维护了一个 ZNode 来作为 Distribued DDL Queue，ClickHouse Server 每次处理 Distribued DDL Query 时都会在此 Znode 下创建子 ZNode 来保存 DDL Query 信息。
+
+ClickHouse Server 的 DDLWorker 会不断检查 Distribued DDL Queue，并在本地执行属于当前节点的 DDL Task，并将执行结果更新到 DDL Queue Znode 中。
+
+**解决方案 1：**
+1. 调整 `distributed_ddl` 配置，设置一个新的 Zookeeper 路径，重启所有 ClickHouse Server。此方法相当于新建 ZNode 来保存 DDL Queue。
+**参考链接**：
+1. https://github.com/ClickHouse/ClickHouse/issues/34990#issuecomment-1078829240
+
+**解决方案 2（未测试，且不建议）**：
+1. 手动删除 Zookeeper 上 Distribued DDL Queue 对应的 ZNode。不建议直接操作 Zookeeper。在部分版本的 ClickHouse 下会出现 BUG。
+**参考链接**：
+1. https://github.com/ClickHouse/ClickHouse/issues/20016
+
+**解决方案 3（未测试）**：
+1. 通过 `RENAME TABLE`，跳过当前阻塞的 DDL Query，但如果 Zookeeper Distributed DDL Queue 中依旧存在很多未执行的 Distribued DDL，那么当前节点依旧会在执行后续 DDL 时出现阻塞。
 
 ### ClickHouse Server 内存不释放
 
