@@ -138,6 +138,8 @@ ClickHouse Server 的 DDLWorker 会不断检查 Distribued DDL Queue，并在本
 
 **解决方案 3（未测试）**：
 1. 通过 `RENAME TABLE`，跳过当前阻塞的 DDL Query，但如果 Zookeeper Distributed DDL Queue 中依旧存在很多未执行的 Distribued DDL，那么当前节点依旧会在执行后续 DDL 时出现阻塞。
+**参考链接**：
+1. https://mp.weixin.qq.com/s/cFG_ayWvOF5-uf2-lBxxpQ
 
 ### ClickHouse Server 内存不释放
 
