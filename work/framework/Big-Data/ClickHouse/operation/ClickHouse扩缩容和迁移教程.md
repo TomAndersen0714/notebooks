@@ -1,4 +1,5 @@
-# ClickHouse 扩容教程
+# ClickHouse 扩缩容和迁移教程
+
 
 ## 扩容
 
@@ -15,3 +16,8 @@ https://clickhouse.com/company/events/scaling-clickhouse
 https://blog.csdn.net/weixin_37692493/article/details/113975249
 
 
+## 迁移
+
+将某个副本节点停止，并将原副本节点上的非 Replicated 表结构复制到新节点上，下线旧节点，并启动新节点。
+
+在新节点复制完成之前，ClickHouse 仅能提供查询和写入服务，无法执行 Truncate 的命令。
