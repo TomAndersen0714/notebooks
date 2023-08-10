@@ -6,7 +6,7 @@ https://clickhouse.com/docs/en/sql-reference
 ## JOIN
 
 
-LEFT JOIN 时，如果右表的 JOIN Key 有空值，则右表空值默认会匹配该字段所有值。
+LEFT JOIN 时，若右表的 JOIN Key 有空值，则右表空值会匹配该字段所有值，因此 LEFT JOIN 时，右表 JOIN Key Expression 中的字段不应该存在空值。
 ```sql
 SELECT *
 FROM (
