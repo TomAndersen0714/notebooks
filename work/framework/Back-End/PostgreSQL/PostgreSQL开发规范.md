@@ -9,7 +9,7 @@
 2. 【强制】查询必须命中索引（黄灯行为）。
 3. 【强制】统一使用 utf8 字符集。
 4. 【强制】统一设置时区 Asia/Shanghai。
-5. 【强制】统一使用默认的 public schema，减少使用复杂度，与其他数据库逻辑层保持一致 (库，表，字段)。
+5. 【推荐】统一使用默认的 public schema，减少使用复杂度，与其他数据库逻辑层保持一致 (库，表，字段)。
 6. 【推荐】存储计算分离，将计算与逻辑约束设计在业务层。
 7. 【推荐】每个业务线使用独立的账号和数据库。
 8. 【强制】数据库版本，新建数据库实例必须选用 14+版本。
@@ -30,28 +30,30 @@
 
 ### 数据库
 
-1. 【推荐】创建数据库的同时绑定账号
-2. 【强制】显式设置字符集为 UTF-8。如 `CREATE DATABASE xxx_pay_gateway WITH OWNER=user_pay_gateway ENCODING='UTF-8';`
-3. 【推荐】不建议使用自定义函数
-4. 【推荐】不建议使用存储过程
-5. 【推荐】不建议使用触发器
-6. 【推荐】不建议使用视图
+1. 【强制】PostgreSQL 默认不支持跨数据库查询，同一个业务线的 Table 必须创建在同一个 Database 中，以支持关联查询。
+2. 【建议】通过 PostgreSQL Schema 来组织和管理同一个业务线下的 Table，可以按模块来区分。
+3. 【强制】显式设置字符集为 UTF-8。如 `CREATE DATABASE xxx_pay_gateway WITH OWNER=user_pay_gateway ENCODING='UTF-8';`
+4. 【推荐】创建数据库的同时绑定账号
+5. 【推荐】不建议使用自定义函数
+6. 【推荐】不建议使用存储过程
+7. 【推荐】不建议使用触发器
+8. 【推荐】不建议使用视图
 
 
 ### 表字段
 
-1. 【强制】在已有业务表上修改、增加字段时字段不能带默认值，应该修改好字段后再设置默认值，否则有锁表风险 （红灯行为：会锁表，导致读写阻塞业务终止）。
-2. 【强制】每个表必须设置 id 字段，而且类型为 bigserial，设置为主键。
-3. 【强制】针对字符串存储，字段类型使用 `varchar(n)` 或者 `text`，避免使用 `char(n)`，因为 `char` 的字符长度不够时，在右侧填充空格。
-4. 【推荐】针对整数存储，字段类型默认使用 4 字节的 integer，若数值很大，使用 8 字节的 bigint。
-5. 【推荐】针对浮点数存储，REAL 是 4 字节存储，FLOAT 是 8 字节存储，根据精度需求选择。
-6. 【推荐】针对精确性数值，比如金钱，使用 `NUMERIC(precision, scale)`，注意设置精度和小数的大小，NUMERIC 类型计算开销很大，只在必须场景使用，不能用来代替浮点型。
-7. 【推荐】建议增加 created_at 字段，类型为 `timestampz (timestamp with time zone)`，默认值为 `now()`。
-8. 【推荐】建议增加 updated_at 字段，类型为 `timestampz (timestamp with time zone)`。
-9. 【推荐】建议给每个字段设定默认值，增加 NOT NULL 限制，避免排序问题和判断逻辑遗漏。
-10. 【推荐】预期超过 5E 条数据或者超过 50GB 的表，在设计初就要考虑垂直拆分或者水平拆分。
-11. 【推荐】避免大宽表设计，单表字段不应超过 30 个。
-
+1. 【强制】PostgreSQL 不支持修改表字段顺序，在设计表字段时，尽量统一字段顺序，保证易用性
+2. 【强制】在已有业务表上修改、增加字段时字段不能带默认值，应该修改好字段后再设置默认值，否则有锁表风险 （红灯行为：会锁表，导致读写阻塞业务终止）。
+3. 【强制】每个表必须设置 id 字段，而且类型为 bigserial，设置为主键。
+4. 【强制】针对字符串存储，字段类型使用 `varchar(n)` 或者 `text`，避免使用 `char(n)`，因为 `char` 的字符长度不够时，在右侧填充空格。
+5. 【推荐】针对整数存储，字段类型默认使用 4 字节的 integer，若数值很大，使用 8 字节的 bigint。
+6. 【推荐】针对浮点数存储，REAL 是 4 字节存储，FLOAT 是 8 字节存储，根据精度需求选择。
+7. 【推荐】针对精确性数值，比如金钱，使用 `NUMERIC(precision, scale)`，注意设置精度和小数的大小，NUMERIC 类型计算开销很大，只在必须场景使用，不能用来代替浮点型。
+8. 【推荐】建议增加 created_at 字段，类型为 `timestampz (timestamp with time zone)`，默认值为 `now()`。
+9. 【推荐】建议增加 updated_at 字段，类型为 `timestampz (timestamp with time zone)`。
+10. 【推荐】建议给每个字段设定默认值，增加 NOT NULL 限制，避免排序问题和判断逻辑遗漏。
+11. 【推荐】预期超过 5E 条数据或者超过 50GB 的表，在设计初就要考虑垂直拆分或者水平拆分。
+12. 【推荐】避免大宽表设计，单表字段不应超过 30 个。
 
 ### 表索引
 
@@ -80,3 +82,4 @@
 1. [PostgreSQL 中文社区-PostgreSQL 数据库开发规范](https://mp.weixin.qq.com/s/qOobyeo3ROnFnA4NAbG4fg)
 2. [Pg 使用规范]( https://wiki.sqlfans.cn/postgresql/pg-std-using.html )
 3. [PostgreSQL 中文社区-探探 PostgreSQL 开发规约](https://mp.weixin.qq.com/s/WV9EKnp155MHMpSuXCOFnA)
+4. [阿里云社区-PostgreSQL 数据库开发规范](https://developer.aliyun.com/article/60899)
