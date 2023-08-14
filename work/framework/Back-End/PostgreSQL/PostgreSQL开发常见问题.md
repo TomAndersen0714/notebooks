@@ -39,6 +39,8 @@ https://stackoverflow.com/questions/51784903/cross-database-references-are-not-i
 
 ## PostgreSQL 无法直接添加 NOT NULL 字段
 
+ERROR: column 'test' of relation 'snick_stat' contains null values.
+
 在 RDMBS 中一般都是无法直接添加具有 NOT NULL Constraint 的字段，因为此类 Constraint 的字段添加时必须要带有默认值（即 Default Expression），否则 PostgreSQL 会默认使用 NULL 值来填充新增字段，但这又与新增字段的 NOT NULL Constraint 属性冲突，故而报错。
 
 解决方案 1：

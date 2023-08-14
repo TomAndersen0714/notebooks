@@ -1,4 +1,4 @@
-# Python常用命令
+# Python 命令行基础教程
 
 1. **Python3命令行选项“-m”参数的作用**：
 	1) 如果bar是一个模块（.py/.pyc/.pyd等），如“python3 -m foor.bar”（注意没有加上文件名后缀），则会直接执行对应的文件。同时会将Python命令行执行时当前路径添加到sys.path中
