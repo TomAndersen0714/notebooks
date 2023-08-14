@@ -10,6 +10,17 @@ https://www.postgresql.org/docs/14/functions-json.html
    将输入参数组组装成json并返回，如：`SELECT json_build_object('foo', 1, 2, row(3,'bar'))`
 
 
+## NULL Functions and Operators
+
+https://www.postgresql.org/docs/14/functions-comparison.html
+IS NULL → boolean
+IS NOT NULL → boolean
+ISNULL → boolean
+NOTNULL → boolean
+
+https://www.postgresql.org/docs/14/functions-conditional.html#FUNCTIONS-NULLIF
+NULLIF (value1, value2)
+
 ## System Information Functions and Operators
 https://www.postgresql.org/docs/14/functions-info.html
 

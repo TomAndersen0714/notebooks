@@ -36,6 +36,17 @@ PostgreSQL 提供了 dblink 扩展，允许通过外部函数在一个数据库�
 **参考链接：**
 https://stackoverflow.com/questions/51784903/cross-database-references-are-not-implemented
 
+
+## PostgreSQL 无法直接添加 NOT NULL 字段
+
+在 RDMBS 中一般都是无法直接添加具有 NOT NULL Constraint 的字段，因为此类 Constraint 的字段添加时必须要带有默认值（即 Default Expression），否则 PostgreSQL 会默认使用 NULL 值来填充新增字段，但这又与新增字段的 NOT NULL Constraint 属性冲突，故而报错。
+
+解决方案 1：
+添加 NOT NULL 字段同时，带上 Default Expression，缺点是当表比较大时，DDL 执行时锁表时间比较长。
+
+解决方案 2：
+先添加普通字段，然后通过 UPDATE 的方式，手动设置默认值，避免 DDL 执行时锁表时间过长，然后再给字段添加 Default Expression，保证新增行的对应字段有默认值。
+
 ## 参考链接
 
 1. [stackoverflow - How to fix "ERROR: column c.relhasoids does not exist" in Postgres?](https://stackoverflow.com/questions/58461178/how-to-fix-error-column-c-relhasoids-does-not-exist-in-postgres)
