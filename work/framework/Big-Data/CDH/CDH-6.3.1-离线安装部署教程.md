@@ -550,5 +550,4 @@ sudo -u hdfs hdfs dfs -chmod 777 /tmp
 6. [Recommended Cluster Hosts and Role Distribution | 6.3.x | Cloudera Documentation](https://docs.cloudera.com/documentation/enterprise/6/6.3/topics/cm_ig_host_allocations.html#concept_f43_j4y_dw)
 
 
-
 ## End~

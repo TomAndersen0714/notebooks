@@ -1,7 +1,6 @@
 # Apache Pulsar部署基础教程
 
 
-
 ## Docker部署
 
 官方链接: [Set up a standalone Pulsar in Docker](https://pulsar.apache.org/docs/2.10.x/getting-started-docker/)
@@ -16,8 +15,6 @@ docker run -d \
 apachepulsar/pulsar:2.8.4 \
 bin/pulsar standalone
 ```
-
-
 
 
 ## 本地部署

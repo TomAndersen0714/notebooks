@@ -32,6 +32,10 @@ File | Settings | Project Structure | Platform Settings | SDKs | Add New SDK
 
 提供代码缩略图
 
+### Github Copilot
+
+Microsoft Github AI 编程神器。
+
 ## 修改配置
 
 ### Build

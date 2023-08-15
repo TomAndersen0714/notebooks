@@ -1,4 +1,4 @@
-# Apache Kudu 安装 Python Client 基础教程
+# Kudu Python Client 安装基础教程
 
 
 ## 前言
@@ -35,13 +35,13 @@ sudo yum install kudu-client-devel-1.4.0+cdh5.12.2+0-1.cdh5.12.2.p0.8.el7.x86_64
 
 ### 2. 安装Kudu Python Client
 
-pip3 安装Cpython：`pip3 install cython`
-yum 安装python3-devel：`sudo yum install python-devel python3-devel`
-pip3 安装升级setup tools：`pip3 install --upgrade pip setuptools`
-yum 安装C++编译器：`sudo yum -y install gcc-c++`
-pip3 安装kudu-python：`pip3 install kudu-python==1.2.0`
+pip3 安装 Cpython：`pip3 install cython`
+yum 安装 python3-devel：`sudo yum install python-devel python3-devel`
+pip3 安装升级 setup tools：`pip3 install --upgrade pip setuptools`
+yum 安装 C++编译器：`sudo yum -y install gcc-c++`
+pip3 安装 kudu-python：`pip3 install kudu-python==1.2.0`
 
-PS：必要时可以使用阿里云PyPI源`-i https://mirrors.aliyun.com/pypi/simple/`
+PS：必要时可以使用阿里云 PyPI 源 `-i https://mirrors.aliyun.com/pypi/simple/`
 
 ## 常见问题
 
