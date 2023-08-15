@@ -21,8 +21,10 @@
 ### Python Application
 
 #### Binary
-Pyinstaller
+https://pyinstaller.org/en/stable/
 
 #### Source
+
+不支持 C/C++ Library 自动部署，需要手动安装 C/C++ Library。
 https://blog.csdn.net/smilehappiness/article/details/117337943
 
