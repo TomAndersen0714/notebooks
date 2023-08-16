@@ -1,5 +1,6 @@
 # Linux Bash环境变量配置
 
+
 ## 前言
 
 在Linux中，不同的Shell的环境配置文件也是不同的。以Bash（Bourne Again SHell）和Sh（Bourne SHell）为例，虽然Bash可以运行大部分Sh脚本，并且在大多数Linux系统中，默认使用Bash作为默认Shell，但它们加载的环境配置文件是不同的。
