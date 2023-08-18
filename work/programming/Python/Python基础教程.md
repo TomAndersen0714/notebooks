@@ -79,6 +79,9 @@ Python 的作用域（Scope）一共有 4 种，分别是：
 - G（Global）：当前脚本的最外层，比如当前模块的全局变量。
 - B（Built-in）： 包含了内建的变量/关键字等，最后被搜索。
 
+### Python Import 原理
+
+
 
 ## Q&A
 
