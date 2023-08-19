@@ -10,7 +10,9 @@
 建议初学者，可以自己申请，或者淘宝购买学生账号，支持 JetBrains 全家桶。
 
 
-## 配置远程解释器
+## 远程 Run/Debug
+
+### 配置远程解释器
 
 创建 SSH Remote Interpreter 时，建议选择远程的虚拟环境，如果选择远程系统环境，可能导致无法正常使用，触发 PyCharm 的 BUG。
 
@@ -55,4 +57,4 @@ https://blog.csdn.net/roughman9999/article/details/79458262
 
 ### 远程解释器无法使用
 
-创建 Remote SSH Interpreter 时，建议选择虚拟环境，如果选择系统环境，可能导致无法正常使用
+创建 Remote SSH Interpreter 时，建议优先选择虚拟环境（没有，则需要在开发机服务器上创建，一般每个项目都有独立的 Python 虚拟环境，保证环境隔离），如果选择系统环境，可能导致无法正常使用。
