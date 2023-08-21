@@ -11,10 +11,10 @@
 打开Github Account Settings | SSH and GPG keys，将SSH Key的.pub配置文件内容，复制粘贴到Github Account的Key表单下。
 
 
-## 验证配置
+## 验证 SSH 配置
 
 ```bash
-ssh -T git@github.com
+ssh -Tv git@github.com
 ```
 
 ## 参考链接

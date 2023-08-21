@@ -42,6 +42,12 @@ git clone --depth 1 https://github.com/grpc/grpc-java
 ### git push
 
 
+### git branch
+
+
+### git tag
+
+
 
 ## 高级命令
 
@@ -70,8 +76,8 @@ git config --global http.proxy http://127.0.0.1:58591
 git config --global https.proxy https://127.0.0.1:58591
 
 # PS: WSL中需要使用宿主机IP, 即DNS(cat /etc/resolv.conf), 替换127.0.0.1本机地址
-git config --global http.proxy http://172.23.16.1:58591
-git config --global https.proxy https://172.23.16.1:58591
+git config --global http.proxy http://172.30.32.1:58591
+git config --global https.proxy https://172.30.32.1:58591
 
 git config --global --unset http.proxy
 git config --global --unset https.proxy

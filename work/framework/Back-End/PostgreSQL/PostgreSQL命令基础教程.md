@@ -156,6 +156,16 @@ ALTER TABLE <table_name> DROP CONSTRAINT [ IF EXISTS ]  constraint_name [ RESTRI
 ```
 
 
+## SQL DML
+
+
+### INSERT
+
+https://www.postgresql.org/docs/current/sql-insert.html
+
+
+
+
 ## 其他命令
 
 查看 PostgreSQL 版本
