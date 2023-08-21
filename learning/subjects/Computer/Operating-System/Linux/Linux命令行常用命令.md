@@ -61,6 +61,10 @@ hostname <new_name>
 hostname -I
 ```
 
+### User
+
+
+
 ### Disk
 
 #### lsblk
