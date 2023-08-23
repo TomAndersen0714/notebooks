@@ -22,6 +22,7 @@
 
 代码上传完成后，就可以通过 SSH Remote Interpreter 来运行和调试，远程的代码。具体的 working directory、parameter、run model as script 等配置项，都可以通过修改 Run/Debug Configuration 配置来调整。
 
+Run/Debug Configuration 支持设置 Working Directory、Parameter 等等，既可以按照 Module 方式执行 `__init__`，也可以按照 Script 的方式直接执行 Python 脚本。
 ## 安装插件
 
 ### . Ignore

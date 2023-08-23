@@ -178,7 +178,15 @@ SELECT version()
 SELECT pg_get_keywords();
 ```
 
-information_schema.columns表：查询表结构
+
+查看 Table 名
+```sql
+SELECT table_name
+FROM information_schema.tables
+WHERE table_schema = 'public';
+```
+
+查询 Table 结构
 https://www.postgresql.org/docs/current/information-schema.html
 
 ```mysql
@@ -194,7 +202,7 @@ and table_name = 'xqc.test';
 ```
 
 
-pg_type表：查看数据类型信息
+查看数据类型信息，pg_type 表
 https://www.postgresql.org/docs/14/catalogs.html
 ```mysql
 -- 查看数据类型长度
@@ -202,7 +210,7 @@ SELECT typlen FROM pg_type WHERE oid = pg_typeof(33);
 ```
 
 
-pg_indexes表：查看index信息
+查看 index 信息：pg_indexes 表
 https://www.postgresql.org/docs/14/catalogs.html
 ```mysql
 SELECT *
