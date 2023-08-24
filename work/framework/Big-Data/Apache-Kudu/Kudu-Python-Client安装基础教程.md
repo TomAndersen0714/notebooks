@@ -45,9 +45,11 @@ yum 安装 python3-devel：`sudo yum -y install python-devel python3-devel`
 **Python 环境**
 
 Pip3 升级 pip：`pip3 install --upgrade pip`
-pip3 安装升级 setup tools：`pip3 install --upgrade pip setuptools`
-pip3 安装 Cpython：`pip3 install cython`
-pip3 安装 kudu-python：`pip3 install kudu-python==1.2.0`
+Pip3 升级 setup tools：`pip3 install --upgrade pip setuptools`
+Pip3 安装 Cpython：`pip3 install cython==0.29.32`
+Pip3 安装 pytest-runner：`pip3 install pytest-runner==5.3.2`
+Pip3 安装 kudu-python：`pip3 install kudu-python==1.2.0`
+
 
 PS：必要时可以使用 PyPI 镜像源，清华 `-i https://pypi.tuna.tsinghua.edu.cn/simple/`，阿里云 `-i https://mirrors.aliyun.com/pypi/simple/`
 
@@ -64,14 +66,10 @@ kudu-python和kudu c++ libraries之间存在版本兼容问题，需要使用`ku
 https://community.cloudera.com/t5/Support-Questions/can-not-install-kudu-python/td-p/67496
 
 3. pip安装kudu-python时，报错 **fatal error: Python.h: No such file or directory**
-未安装python-devel或python3-devel
-`yum install python-devel python3-devel`
+执行 `yum install python-devel python3-devel`，安装 Python 扩展开发包
 https://stackoverflow.com/questions/21530577/fatal-error-python-h-no-such-file-or-directory
 
-4. `ERROR: Could not find a version that satisfies the requirement pytest-runner (from versions: none)`
-执行 `pip3 install pytest-runner` 命令，安装 `pytest-runner`
-
-5. PyCharm 远程调试时，一旦执行到 `import kudu` 命令，便会报错 ``python': free(): invalid pointer`
+4. PyCharm 远程调试时，一旦执行到 `import kudu` 命令，便会报错 ``python': free(): invalid pointer`
 ## 参考链接
 
 1. [CDH 6.3.x - Kudu Python Client](https://docs.cloudera.com/documentation/enterprise/6/6.3/topics/kudu_development.html#concept_jmn_dhc_jkb)
