@@ -1,5 +1,6 @@
 # Python Interpreter Path 基础教程
 
+
 ## sys.path
 
 Python 命令行，直接运行脚本时，即 `python path/to/script/py`，默认会将脚本其所在的路径添加到 ` sys. Path ` 中（而不是将当前工作路径 work directory 添加到 ` sys.path `）。
