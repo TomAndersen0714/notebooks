@@ -59,3 +59,15 @@ https://blog.csdn.net/roughman9999/article/details/79458262
 ### 远程解释器无法使用
 
 创建 Remote SSH Interpreter 时，建议优先选择虚拟环境（没有，则需要在开发机服务器上创建，一般每个项目都有独立的 Python 虚拟环境，保证环境隔离），如果选择系统环境，可能导致无法正常使用。
+
+
+### 远程解释器无法设置 Path Mapping
+
+https://youtrack.jetbrains.com/issue/PY-53568/Targets-API-Path-mappings-field-is-missing-in-the-python-interpreter-settings
+
+此问题出现在 PyCharm 2022.2.1 之后的版本中（不包括 2022.2.1），因此如果想要调整 Interpreter 的 Path Mapping，可以通过以下其他方式实现：
+1. 使用 Docker Interpreter
+2. 使用旧版本 PyCharm
+3. 重建 Remote Interpreter
+4. 修改 Deployment SSH Server 的 Path Mapping
+5. 在 RUN/Debug Configurations 中修改每次运行时配置的 Path Mapping。
