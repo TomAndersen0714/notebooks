@@ -9,9 +9,9 @@
 二分查找（Binary Search）是一种依靠三指针（Three Poiners）来在有序（Sorted）序列中，查找指定元素的算法。
 
 
-### 应用模式
+### 解题模式
 
-假设三指针分别为 left、mid、right，则二分查找的应用模式如下：
+假设三指针分别为 left、mid、right，则二分查找的解题模式如下：
 
 1. 设置循环条件：
 	1. 设置循环条件为 `left<=right` 
