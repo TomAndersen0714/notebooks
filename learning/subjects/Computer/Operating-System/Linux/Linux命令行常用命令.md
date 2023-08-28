@@ -64,6 +64,10 @@ hostname -I
 ### User
 
 
+### Memory
+
+关闭 swap：`sudo swapoff -a`
+开启 swap：`sudo swapoon -a`
 
 ### Disk
 
