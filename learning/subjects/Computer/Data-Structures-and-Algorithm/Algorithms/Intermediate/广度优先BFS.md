@@ -35,6 +35,7 @@
 [LeetCode 102. Binary Tree Level Order Traversal](https://leetcode.com/problems/binary-tree-level-order-traversal/description/)
 
 问题概述：
+输入一个二叉树的根节点，要求自顶向下层次遍历二叉树，并范围层次遍历节点的值组成的 List。
 
 解题思路：
 1. 基于 Queue 实现的 BFS (Breadth First Search) 算法
