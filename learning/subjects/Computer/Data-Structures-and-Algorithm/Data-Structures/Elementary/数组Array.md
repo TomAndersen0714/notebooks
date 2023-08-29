@@ -4,6 +4,10 @@
 
 ## 有序数组（sorted array）
 
+常见问题：
+1. 找符合条件的元素
+2. 找符合条件的元素组合
+
 常用解题算法
 1. Two (or three) pointers
 2. Binary Search
@@ -11,9 +15,13 @@
 
 ## 无序数组 (unsorted array)
 
+常见问题：
+1. 找符合条件的元素
+2. 找符合条件的元素组合
+
 常用解题算法
-1. HashMap
-2. Sorting
+1. Sorting
+2. HashMap
 
 
 ## 相关例题
