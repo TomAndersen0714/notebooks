@@ -41,9 +41,3 @@
 1. 基于 Queue 实现的 BFS (Breadth First Search) 算法
 
 
-### 课程安排
-
-[LeetCode 207. Course Schedule](https://leetcode.com/problems/course-schedule/)
-
-问题概述：
-输入课程数量，以及课程之间的依赖关系，判断是否能够顺利完成课程，即：输入一个有向图 Graph 的顶点个数 vertex，和有向边数组 edge，判断 Graph 中是否有环路。
