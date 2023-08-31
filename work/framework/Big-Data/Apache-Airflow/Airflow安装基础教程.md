@@ -53,9 +53,6 @@ pip install "apache-airflow==${AIRFLOW_VERSION}" --constraint "${CONSTRAINT_URL}
 ```
 
 
-
-
-
 ### 3) 初始化并启动Airflow
 
 初始化数据库和创建用户，此命令会自动生成默认的配置文件`$AIRFLOW_HOME/airflow.cfg`
@@ -98,7 +95,6 @@ airflow db reset
 
 ```shell
 airflow webserver -D
-
 airflow scheduler -D
 
 
@@ -133,6 +129,8 @@ cat airflow-webserver.pid | xargs kill
 
 cat airflow-scheduler.pid | xargs kill
 
+cat airflow-worker.pid | xargs kill
+
 mv *.pid /tmp/
 ```
 
@@ -140,12 +138,20 @@ mv *.pid /tmp/
 
 ## 常见问题
 
-### Q1: 默认sqlite3版本太低，需要升级
+### error: sqlite C library version too old (< 3.15.0)
 
 报错信息：`error: sqlite C library version too old (< 3.15.0)`
 
+问题原因：默认 sqlite3 版本太低，需要升级
+
 解决方案：[sqlite3安装基础教程](work/framework/Back-End/SQLite/sqlite3安装基础教程.md)
 
+
+### Airflow - alembic.util.exc.CommandError: Can't locate revision identified
+
+报错信息：`Airflow - alembic.util.exc.CommandError: Can't locate revision identified`
+
+问题原因：Airflow 数据库存在问题，建议重置 airflow 数据库，`airflow reset db`，如果重置数据库报错无法级联删除，则需要自己手动连接对应数据库执行删除命令。
 
 
 ## 参考链接

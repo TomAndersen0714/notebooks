@@ -5,7 +5,7 @@
 ### Db
 
 1. [官方链接](https://www.mongodb.com/docs/manual/reference/method/js-database/)
-2. `show databases | db.getMongo().getDBNames()`：查看所有数据库清单
+2. `show databases`，`db.getMongo().getDBNames()` ：查看所有数据库清单
 3. `use <database>`：切换数据库
 4. `db.help()`：查看db对象的常用方法
 5. `db.hello()`：查看数据库所有副本状态，PS：返回信息中包括主库和从库信息，可以判断当前是否为从库

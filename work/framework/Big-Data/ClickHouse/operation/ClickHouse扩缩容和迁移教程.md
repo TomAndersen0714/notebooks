@@ -32,15 +32,20 @@ https://blog.csdn.net/weixin_37692493/article/details/113975249
 
 将某个副本节点停止，并将原副本节点上的非 Replicated Engine 的数据库中的表、以及其他数据库中的非 Replicated 表的 metadata 文件复制到新节点上，保存在相同路径下，下线旧节点，并启动新节点。
 
-在新节点复制完成之前（一般不需要等到全部完成，大概等到 70%左右），ClickHouse 仅能提供查询和写入服务，无法执行 Distributed DDL 的命令。
+一旦开启新副本节点复制，在新副本节点复制完成之前（一般不需要等到全部完成，大概等到 70%左右），ClickHouse 仅能提供查询和写入服务，无法执行 Distributed DDL Queue 中的 Task，即 Distributed DDL 会被阻塞。
 
 
 操作步骤：
 1. 修改原集群中的 `remote_servers` 配置，将待迁移副本踢出
-2. 停止待迁移副本
-3. 在新节点上，准备好和待迁移副本相同的配置文件，修改 `remote_servers`，将待迁移副本的相关参数修改为新节点
-4. 启动新节点 Server，开启复制。复制开启后一段时间内，整个集群的 Distributed DDL 会阻塞，直到复制完成大部分内容。
+2. 在新节点上，准备好和待迁移副本相同的配置文件，修改 `remote_servers`，将待迁移副本的相关参数修改为新节点
+3. 停止待迁移副本
+4. 启动新节点 Server，开启复制。新副本节点的复制一旦开启，整个集群的 Distributed DDL 就会阻塞，直到新副本节点的复制进行到一定阶段后，才能正常执行 Distributed DDL。即使将新副本节点 Server stop 关机，也会阻塞。
 
 
 Question：
 1. Distributed DDL 中是否有相关配置，需要等待所有 Replicated 都执行完成，才能返回结果??？
+
+
+## 参考链接
+1. [知乎-ClickHouse 分布式 DDL 执行原理剖析](https://zhuanlan.zhihu.com/p/590261481)
+2. 
