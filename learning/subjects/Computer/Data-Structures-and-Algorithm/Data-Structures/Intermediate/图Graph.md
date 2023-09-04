@@ -36,7 +36,7 @@
 
 ## 相关例题
 
-### 课程安排
+### 课程安排-是否成环
 
 [LeetCode 207. Course Schedule](https://leetcode.com/problems/course-schedule/)
 
@@ -45,7 +45,28 @@
 
 解题思路：
 1. DFS Recursion（深度优先递归遍历）：
-	1. 
+	1. 执行步骤：
+		1. 根据输入参数，使用**邻接表（adjacency list）** 构建图（Graph），使用状态数组（state array）来保存遍历过程中，各个顶点的状态，即 0-未访问，1-访问中，2-未访问。
+		2. 遍历所有顶点，并使用 DFS Recursion 深度优先递归算法，访问每个顶点
+		3. DFS Recursion 深度优先递归算法中，传入参数为邻接表、状态数组、当前顶点序号，返回值为 bool 类型，执行逻辑如下：
+			1. 如果当前顶点，被访问过，即 `state==2`，则返回 true，则代表当前节点已经成功访问过
+			2. 如果当前节点，正在被访问，即 `state==1`，则返回 false，即访问过程中出现环路
+			3. 否则，当前节点满足 `state==0`，于是将当前节点状态值设为 `state=1`，然后 DFS Recursion 访问当前节点所在边，对应的其他节点，如果某个节点 DFS 访问时返回 false，则返回当前 Recursion 递归也返回 false。访问结束时，将当前节点状态值设为 `state=2`。
 	2. 时间复杂度：$O(m+n)$，空间复杂度：$O(m+n)$
 2. Topological Sort（拓扑排序）
+	1. 时间复杂度：$O(m+n)$，空间复杂度：$O(m+n)$
+
+### 课程安排-拓扑排序，层次遍历
+
+[LeetCode 210. Course Schedule II](https://leetcode.com/problems/course-schedule-ii/)
+
+问题概述：
+输入课程数量，以及课程之间的依赖关系，返回课程之间的拓扑排序，如果
+
+解题思路：
+1. Topological Sort（拓扑排序）
+	1. 执行步骤：
+		1. 
+	2. 时间复杂度：$O(m+n)$，空间复杂度：$O(m+n)$
+2. DFS Recursion（深度优先递归遍历）
 	1. 时间复杂度：$O(m+n)$，空间复杂度：$O(m+n)$
