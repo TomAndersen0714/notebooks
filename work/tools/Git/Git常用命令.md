@@ -103,6 +103,8 @@ git submodule add <remote URL> <directory>
 
 ### git rebase
 
+https://waynerv.com/posts/git-rebase-intro/
+
 ```
 # Commands:
 #  p, pick = use commit

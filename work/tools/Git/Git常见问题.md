@@ -31,5 +31,6 @@ Linux：`chown -R <current_user> <repo_folder>`
 方法三：设置git安全路径
 
 
-## `github.com` 对应 IP 无法访问 
+##  DNS 解析 github.com 出的 IP 无法访问
+
 
