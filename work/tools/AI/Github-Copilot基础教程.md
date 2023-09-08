@@ -5,5 +5,17 @@
 
 VSCode、JetBrain 软件皆有 Copilot 插件可以安装使用，每次敲完代码后，直接回车，copilot 默认便会进行 AI 代码提示。
 
+## 安装方式
+
+IDEA extension
+
+VSCode extension
+
+## 订阅方式
+
+Github 首次订阅 Copilot 时，支持试用 30 天。后续则需要付费，目前价格是 10.00$/month 和 $100.00/year。
+
+付费方式建议使用 PayPel，支持绑定国内银联银行卡。
+
 ## 参考链接
-1. https://github.com/features/copilot
+1. [Github Copilot](https://github.com/features/copilot)
