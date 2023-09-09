@@ -95,7 +95,7 @@ Protocol buffers do not fit all data. In particular:
 
 ### How do Protocol Buffers Work?
 
-![](work/framework/Big-Data/Visualization/Pasted%20image%2020230603233616.png)
+![](resources/images/Pasted%20image%2020230603233616.png)
 
 
 ### What's Generated From Your .proto?

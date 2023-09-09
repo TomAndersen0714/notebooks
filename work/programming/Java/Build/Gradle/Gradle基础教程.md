@@ -100,7 +100,7 @@ Gradle官方推荐使用Gradle Wrapper来辅助执行Build。Wrapper是一个脚
 因此，使用Wrapper脚本，可以不需要事先手动全局安装Gradle，可以直接通过调用该脚本来执行Gradle Task，如构建Project等。Wrapper脚本（`gradlew(.bat)`）通常和Project是强绑定的，不同的Project对应的Wrapper脚本通常也不同。
 
 
-![](work/framework/Big-Data/Visualization/Pasted%20image%2020230530221731.png)
+![](resources/images/Pasted%20image%2020230530221731.png)
 
 
 **使用Gradle Wrapper的优势，主要有以下几点**：
