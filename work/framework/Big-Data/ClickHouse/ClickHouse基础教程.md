@@ -15,3 +15,4 @@ https://clickhouse.com/docs/en/sql-reference/data-types
 ## 参考链接
 1. [Altinity ClickHouse Knowledge Base (KB)](https://kb.altinity.com/)
 2. [ClickHouse Documentation](https://clickhouse.com/docs/en/intro)
+3. [ClickHouse 全面学习指南](https://mp.weixin.qq.com/s/Q37TQwdCSjwtLX5BHSI0Ww)
