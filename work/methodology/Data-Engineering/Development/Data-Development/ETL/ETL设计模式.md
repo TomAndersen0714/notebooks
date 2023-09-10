@@ -20,6 +20,7 @@ http://lxw1234.com/archives/2015/04/20.htm
 https://www.cnblogs.com/rango-lhl/p/14310487.html
 https://juejin.cn/post/7024067235517825061
 
+[微信-数据仓库与 Python 大数据-详解数据仓库之拉链表（原理、设计以及在 Hive 中的实现）](https://mp.weixin.qq.com/s/2-4w6jGjVzDmlTMck5gKLg)
 
 ## 宽表
 
