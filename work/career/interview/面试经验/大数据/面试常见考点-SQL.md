@@ -4,12 +4,17 @@
 ## Hive SQL
 
 
+### SQL 场景题
+
 最大在线人数
 
 留存计算
 
 转化计算
 
+### SQL 性能优化
+
+[Apache-HiveSQL优化教程](work/framework/Big-Data/Apache-Hive/Apache-HiveSQL优化教程.md)
 
 ## 参考链接
 1. [飞书文档-语兴-踏踏实实练 SQL](https://oxtwry26ao.feishu.cn/mindnotes/bmncnCxiGnEedT4I8hTHMAwGXtg#mindmap)
