@@ -4,7 +4,7 @@
 ## JVM
 
 
-## Java Collection
+## Collection
 
 Hashmap 为什么不直接用红黑树？
 
