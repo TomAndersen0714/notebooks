@@ -38,7 +38,7 @@
 
 ## ClickHouse SQL
 
-[ClickHouse-SQL优化基础教程](work/framework/Big-Data/ClickHouse/ClickHouse-SQL优化基础教程.md)
+[ClickHouse-SQL优化教程](work/framework/Big-Data/ClickHouse/ClickHouse-SQL优化教程.md)
 
 [ClickHouse慢查询SQL排查方案](work/framework/Big-Data/ClickHouse/operation/ClickHouse慢查询SQL排查方案.md)
 

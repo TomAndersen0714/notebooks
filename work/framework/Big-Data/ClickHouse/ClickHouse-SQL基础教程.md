@@ -38,4 +38,4 @@ USING(a)
 
 ## SQL 优化
 
-[ClickHouse-SQL优化基础教程](work/framework/Big-Data/ClickHouse/ClickHouse-SQL优化基础教程.md)
+[ClickHouse-SQL优化教程](work/framework/Big-Data/ClickHouse/ClickHouse-SQL优化教程.md)
