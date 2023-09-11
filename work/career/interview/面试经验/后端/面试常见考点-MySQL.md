@@ -1,15 +1,13 @@
-# 面试常见考点-后端
+# 面试常见考点 MySQL
 
 
 
-## 后端开发组件
+## 存储引擎
 
 
-### MySQL
-
+- Mysql 中 MyIsam 相对于 Innodb 更适合那些场景？
 
 - MySQL MVCC 的实现原理
-
 
 - 在 MySQL 分布式环境下，为什么不能推荐使用自增 ID 或者 UUID 做 MySQL 的主键
 
@@ -18,10 +16,3 @@
 使用 UUID 作为主键时，由于 UUID 是随机生成的，新增数据的该字段并不具备顺序性，因此在插入数据时，会导致 B+ Tree 的节点不断移动，降低数据的写入性能。
 
 https://www.bilibili.com/video/BV1Mu41177ra
-
-
-### Redis
-
-
-### Pulsar
-

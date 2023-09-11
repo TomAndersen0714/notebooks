@@ -3,7 +3,11 @@
 
 ## 通用知识点
 
-开窗函数 rank、dense_rank、row_number 三者的区别
+开窗函数 rank、dense_rank、row_number 三者的区别？
+
+有一个 sql 突然执行很慢可能有什么原因？
+
+
 
 ## MySQL SQL
 
@@ -16,6 +20,7 @@
 
 ### 常考知识点
 
+大表 JOIN 大表，某个 Key 出现数据倾斜该怎么办？如果 Key 未知怎么办？
 
 
 ### SQL 场景题
