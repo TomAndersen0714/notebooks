@@ -5,7 +5,7 @@
 ETL 设计属于数仓设计中的子任务之一。
 
 
-将 [ETL常用算法](work/methodology/Data-Engineering/Development/Data-Development/ETL/ETL常用算法.md)和[数仓离线统计常用算法](work/methodology/Data-Engineering/Development/Data-Development/ETL/数仓离线统计常用算法.md) 中的内容搬运过来，进行整合。
+将 [ETL常用算法](work/methodology/Data-Engineering/Data-Development/ETL/ETL常用算法.md)和[数仓离线统计常用算法](work/methodology/Data-Engineering/Data-Development/ETL/数仓离线统计常用算法.md) 中的内容搬运过来，进行整合。
 
 
 判断依据，数据实时性要求、数据量的规模
