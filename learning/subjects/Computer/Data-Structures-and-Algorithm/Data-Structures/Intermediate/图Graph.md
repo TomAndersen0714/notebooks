@@ -39,13 +39,21 @@
 #### DFS 深度优先搜索算法
 
 
-#### Union-Find 算法
-
-图的连通性判断
-
-
 ### 最小生成树
 
+
+#### Union-Find 算法
+
+https://en.wikipedia.org/wiki/Disjoint-set_data_structure
+
+Union-Find 算法，是使用 Disjoint-set（并查集、不相交集合）数据结构实现的一种算法，也被称为并查集算法。此算法主要分为 Union（合并） 和 Find（查找） 两个操作，Union（合并）操作用于将两个集合合并成为一个集合，Find（查找）操作用于确定元素属于哪一个集合，或判断两个元素是否属于同一个集合。
+
+Union-Find 算法常用于解决以下问题：
+1. 连通性判断问题
+2. 集合分组问题
+3. 最小生成树问题（Prim 和 Kruskal 算法）
+
+Union-Find 算法和 Disjoint-set 并查集数据结构的优势在于，只需要使用简单的数据结构，就可以解决问题，而不需要构建完整的数据结构（如：图 Graph）。
 
 #### Prim 算法
 
@@ -79,7 +87,7 @@
 
 ## 相关例题
 
-### 课程安排-是否成环
+### 207 课程安排-是否成环
 
 [LeetCode 207. Course Schedule](https://leetcode.com/problems/course-schedule/)
 
@@ -99,7 +107,7 @@
 2. Topological Sort（拓扑排序）
 	1. 时间复杂度：$O(m+n)$，空间复杂度：$O(m+n)$
 
-### 课程安排-拓扑排序，层次遍历
+### 210 课程安排-拓扑排序，层次遍历
 
 [LeetCode 210. Course Schedule II](https://leetcode.com/problems/course-schedule-ii/)
 
@@ -115,3 +123,21 @@
 	2. 时间复杂度：$O(m+n)$，空间复杂度：$O(m+n)$
 2. DFS Recursion（深度优先递归遍历）
 	1. 时间复杂度：$O(m+n)$，空间复杂度：$O(m+n)$
+
+
+### 399 除法求解
+
+[LeetCode 399. Evaluate Division]( https://leetcode.com/problems/evaluate-division/ )
+
+问题概述：给一组边和这组边的权重，要求计算指定两点之间各边权重的类乘结果。
+
+解题思路：参考 https://leetcode.cn/problems/evaluate-division/solutions/548585/chu-fa-qiu-zhi-by-leetcode-solution-8nxb/
+1. 广度优先遍历 BFS、深度优先遍历 DFS
+	1. 主要步骤
+	2. 时间复杂度，空间复杂度
+2. Floyd-Warshall 算法
+	1. 主要步骤
+	2. 时间复杂度，空间复杂度
+3. 带权 Union-Find 算法
+	1. 主要步骤
+	2. 时间复杂度，空间复杂度
