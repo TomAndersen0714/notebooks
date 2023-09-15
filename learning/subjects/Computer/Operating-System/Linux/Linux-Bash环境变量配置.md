@@ -52,7 +52,7 @@ Bash的`--noprofile`选项，可以抑制此动作。
 
 每次non-login shell启动时，都会读取并执行用户级别配置文件`~/.bashrc`中的脚本命令。此行为可以通过`--norc`选项来抑制，也可以通过`--rcfile file`选项来指定其他的文件。
 
-在CentOS，以及Red Hat系统中，`~/.bashrc`还会进一步读取和执行`/etc/bashrc`文件中的命令。其中`/etc/bashrc`文件的命令，除了定义了UMARK值、Bash命令行提示字符（即PS1变量）外，还会去调用`/etc/profile.d/*.sh`文件。
+在 CentOS，以及 Red Hat 系统中，`~/.bashrc` 还会进一步读取和执行 `/etc/bashrc` 文件中的命令，而其他的 Linux 发行版中（如 Ubuntu），通常是通过 `/etc/profile` 文件来读取的。其中 `/etc/bashrc` 文件的命令，除了定义了 UMARK 值、Bash 命令行提示字符（即 PS1 变量）外，还会去调用 `/etc/profile.d/*.sh` 文件。
 
 万一你没有~/.bashrc (可能自己不小心将他删除了)文件，那么你会发现你的 bash 提示字符可能会变成这个样子：
 ```
@@ -62,9 +62,8 @@ Bash的`--noprofile`选项，可以抑制此动作。
 
 ## 小结
 
-如果是设置系统级别环境变量（针对所有用户生效），建议以`.sh`脚本文件的形式，添加到`/etc/profile.d/*.sh`中。
-
-如果是设置用户级别环境变量，建议添加到`~/.bashrc`文件中。
+1. 如果是设置系统级别环境变量（针对所有用户生效），建议以`.sh`脚本文件的形式，添加到`/etc/profile.d/*.sh`中。
+2. 如果是设置用户级别环境变量，建议添加到`~/.bashrc`文件中。
 
 
 ## 参考链接

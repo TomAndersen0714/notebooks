@@ -98,13 +98,6 @@ git config --global --unset-all safe.directory
 ```
 
 
-### git submodule
-
-PS: Git submodule管理起来十分复杂，不建议使用
-```bash
-git submodule add <remote URL> <directory>
-```
-
 ### git rebase
 
 https://waynerv.com/posts/git-rebase-intro/
@@ -139,14 +132,6 @@ Rebase的行为可以大致分为三类：
 1、drop：标记为skip的commit会直接被删除，就相当于这次commit从来没有发生过。同时，这个commit中涉及的所有代码修改全部会被删除。
 
 
-### git diff
-
-查看上次操作中发生过变更的文件名
-```bash
-git diff --name-only HEAD@{1}..HEAD
-```
-
-
 ### git rm
 
 ```shell
@@ -159,6 +144,21 @@ git rm --cached <file>
 git rm -r --cached <dir>
 ```
 
+
+### git diff
+
+查看上次操作中发生过变更的文件名
+```bash
+git diff --name-only HEAD@{1}..HEAD
+```
+
+
+### git submodule
+
+PS: Git submodule管理起来十分复杂，不建议使用
+```bash
+git submodule add <remote URL> <directory>
+```
 
 ## 参考链接
 1. [Git Reference](https://git-scm.com/docs)

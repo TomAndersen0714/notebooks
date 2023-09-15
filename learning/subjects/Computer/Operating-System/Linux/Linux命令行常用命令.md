@@ -98,5 +98,6 @@ lshw -short -class processor
 查看Processor信息
 
 ### 参考链接
-1. 
+1. https://wangchujiang.com/linux-command/
+2. https://github.com/jaywcjlove/linux-command
 
