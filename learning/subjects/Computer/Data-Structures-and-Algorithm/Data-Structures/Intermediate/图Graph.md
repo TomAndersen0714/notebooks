@@ -9,13 +9,13 @@
 二维数组
 ### 邻接表（Adjacency List）
 
-顶点数组+边链表
+顶点数组+边链表（出边或者入边）
 
 ### 十字链表（Orthogonal List）
 
 顶点数组+出边链表+入边链表
 
-### 邻接多重表
+### 邻接多重表（Adjacency Multilist）
 
 
 
@@ -26,6 +26,13 @@
 
 
 ### 有向图 Directed Graph
+
+
+### 带权图 Weighted Graph
+
+
+### 不带权图 Unweighted Graph
+
 
 
 ## 图相关算法
@@ -87,7 +94,7 @@ Union-Find 算法和 Disjoint-set 并查集数据结构的优势在于，只需�
 
 ## 相关例题
 
-### 207 课程安排-是否成环
+### 207 课程安排-图是否成环
 
 [LeetCode 207. Course Schedule](https://leetcode.com/problems/course-schedule/)
 
@@ -107,7 +114,7 @@ Union-Find 算法和 Disjoint-set 并查集数据结构的优势在于，只需�
 2. Topological Sort（拓扑排序）
 	1. 时间复杂度：$O(m+n)$，空间复杂度：$O(m+n)$
 
-### 210 课程安排-拓扑排序，层次遍历
+### 210 课程安排-图的拓扑排序
 
 [LeetCode 210. Course Schedule II](https://leetcode.com/problems/course-schedule-ii/)
 
@@ -125,11 +132,11 @@ Union-Find 算法和 Disjoint-set 并查集数据结构的优势在于，只需�
 	1. 时间复杂度：$O(m+n)$，空间复杂度：$O(m+n)$
 
 
-### 399 除法求解
+### 399 除法求解-带权图中两点距离
 
 [LeetCode 399. Evaluate Division]( https://leetcode.com/problems/evaluate-division/ )
 
-问题概述：给一组边和这组边的权重，要求计算指定两点之间各边权重的类乘结果。
+问题概述：给定图中的一些点（变量），以及某些边的权值（两个变量的比值），试对任意两点（两个变量）求出其路径长（两个变量的比值）。
 
 解题思路：参考 https://leetcode.cn/problems/evaluate-division/solutions/548585/chu-fa-qiu-zhi-by-leetcode-solution-8nxb/
 1. 广度优先遍历 BFS、深度优先遍历 DFS

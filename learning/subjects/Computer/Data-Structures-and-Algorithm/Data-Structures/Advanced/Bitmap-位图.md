@@ -30,6 +30,7 @@ RoaringBitmap支持稀疏，也支持稠密序列
 
 ## RoaringBitmap
 
+Roaring Bitmap，又叫做咆哮位图。
 
 
 ## Bloom Filter
