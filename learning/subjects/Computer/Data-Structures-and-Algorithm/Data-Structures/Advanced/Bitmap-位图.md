@@ -32,6 +32,8 @@ RoaringBitmap支持稀疏，也支持稠密序列
 
 Roaring Bitmap，又叫做咆哮位图。
 
+用于解决普通 Bitmap 存储大整数时，出现的 Bitmap 过大的问题，当 Bitmap 过大时，一次性加载到内存，可能会导内存开销过大。
+
 
 ## Bloom Filter
 
