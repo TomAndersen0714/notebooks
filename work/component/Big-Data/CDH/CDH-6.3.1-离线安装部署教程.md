@@ -379,9 +379,9 @@ PS ： parcel 是 CDH 内置的软件包管理工具，支持软件包的分发�
 
 PS ：后续在 CDH 中创建集群 - 选择存储库步骤中， parcel 的更多选项的配置里，本地 parcel 库的路径需要与此值一致，同时也是默认值 `/opt/cloudera/parcel-repo/`
 
-![img](work/framework/Big-Data/CDH/images/CDH_6.3.1_离线安装部署教程/1668042047378-13.png)
+![img](work/component/Big-Data/CDH/images/CDH_6.3.1_离线安装部署教程/1668042047378-13.png)
 
-![img](work/framework/Big-Data/CDH/images/CDH_6.3.1_离线安装部署教程/1668042047370-1.png)
+![img](work/component/Big-Data/CDH/images/CDH_6.3.1_离线安装部署教程/1668042047370-1.png)
 
 
 
@@ -413,7 +413,7 @@ sudo systemctl start cloudera-scm-agent
 
 http://znzjk-134218-test-mini-bigdata-clickhouse:7180，初始账号密码皆为admin
 
-![img](work/framework/Big-Data/CDH/images/CDH_6.3.1_离线安装部署教程/1668042047371-2.png)
+![img](work/component/Big-Data/CDH/images/CDH_6.3.1_离线安装部署教程/1668042047371-2.png)
 
 
 
@@ -421,49 +421,49 @@ http://znzjk-134218-test-mini-bigdata-clickhouse:7180，初始账号密码皆为
 
 选择免费版的Cloudera Express
 
-![img](work/framework/Big-Data/CDH/images/CDH_6.3.1_离线安装部署教程/1668042047371-3.png)
+![img](work/component/Big-Data/CDH/images/CDH_6.3.1_离线安装部署教程/1668042047371-3.png)
 
 ####  c ) 创建集群
 
 点击集群-创建集群
 
-![img](work/framework/Big-Data/CDH/images/CDH_6.3.1_离线安装部署教程/1668042047371-4.png)
+![img](work/component/Big-Data/CDH/images/CDH_6.3.1_离线安装部署教程/1668042047371-4.png)
 
 
 
-![img](work/framework/Big-Data/CDH/images/CDH_6.3.1_离线安装部署教程/1668042047371-5.png)
+![img](work/component/Big-Data/CDH/images/CDH_6.3.1_离线安装部署教程/1668042047371-5.png)
 
 
 
 由于是离线安装agent，并手动指定server，以及启动了agent服务，与Server构建了连接，故此时节点已经存在于节点列表中，且不再需要提供SSH登录凭证，也不需要为CM和CDH指定yum repository来安装CM agent，以及CDH中的组件
 
-![img](work/framework/Big-Data/CDH/images/CDH_6.3.1_离线安装部署教程/1668042047371-6.png)
+![img](work/component/Big-Data/CDH/images/CDH_6.3.1_离线安装部署教程/1668042047371-6.png)
 
 
 
 安装Parcel库，需要保证在Parcel的更多选项中，保证Parcel的本地源和之前部署的源路径是相同的。此版本Parcel中其中包含有各种服务（如Impala、Hive、HDFS、YARN等）的软件包
 
-![img](work/framework/Big-Data/CDH/images/CDH_6.3.1_离线安装部署教程/1668042047371-7.png)
+![img](work/component/Big-Data/CDH/images/CDH_6.3.1_离线安装部署教程/1668042047371-7.png)
 
 
 
 等待Parcel离线安装
 
-![img](work/framework/Big-Data/CDH/images/CDH_6.3.1_离线安装部署教程/1668042047371-8.png)
+![img](work/component/Big-Data/CDH/images/CDH_6.3.1_离线安装部署教程/1668042047371-8.png)
 
 
 
 之后进行网络性能和主机检查，即可完成集群创建
 
-![img](work/framework/Big-Data/CDH/images/CDH_6.3.1_离线安装部署教程/1668042047372-9.png)
+![img](work/component/Big-Data/CDH/images/CDH_6.3.1_离线安装部署教程/1668042047372-9.png)
 
-![img](work/framework/Big-Data/CDH/images/CDH_6.3.1_离线安装部署教程/1668042047372-10.png)
+![img](work/component/Big-Data/CDH/images/CDH_6.3.1_离线安装部署教程/1668042047372-10.png)
 
 
 
 最终添加完Parcel中各种服务之后的示例结果页面
 
-![img](work/framework/Big-Data/CDH/images/CDH_6.3.1_离线安装部署教程/1668042047372-11.png)
+![img](work/component/Big-Data/CDH/images/CDH_6.3.1_离线安装部署教程/1668042047372-11.png)
 
 
 
@@ -510,7 +510,7 @@ java.lang.RuntimeException: Error applying authorization policy on hive configur
 
 **A1**：使用CM创建
 
-![img](work/framework/Big-Data/CDH/images/CDH_6.3.1_离线安装部署教程/1668042047372-12.png)
+![img](work/component/Big-Data/CDH/images/CDH_6.3.1_离线安装部署教程/1668042047372-12.png)
 
 或者手动解决：
 

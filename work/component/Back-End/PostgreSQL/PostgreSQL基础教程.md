@@ -3,7 +3,7 @@
 
 ## PostgreSQL 安装
 
-[PostgreSQL安装基础教程](work/framework/Back-End/PostgreSQL/PostgreSQL安装基础教程.md)
+[PostgreSQL安装基础教程](work/component/Back-End/PostgreSQL/PostgreSQL安装基础教程.md)
 
 
 ## PostgreSQL DBMS 基本概念
@@ -14,7 +14,7 @@
 
 ## PostgreSQL 开发规范
 
-[PostgreSQL开发规范](work/framework/Back-End/PostgreSQL/PostgreSQL开发规范.md)
+[PostgreSQL开发规范](work/component/Back-End/PostgreSQL/PostgreSQL开发规范.md)
 
 
 ## 参考链接

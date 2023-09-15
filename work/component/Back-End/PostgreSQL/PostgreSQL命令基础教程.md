@@ -53,7 +53,7 @@ psql postgresql://airflow_user:airflow_pass@10.0.2.2:5432/airflow_db
 
 ### Functions and Operators
 
-[PostgreSQL常用操作符和函数](work/framework/Back-End/PostgreSQL/PostgreSQL常用操作符和函数.md)
+[PostgreSQL常用操作符和函数](work/component/Back-End/PostgreSQL/PostgreSQL常用操作符和函数.md)
 
 
 ## SQL DDL

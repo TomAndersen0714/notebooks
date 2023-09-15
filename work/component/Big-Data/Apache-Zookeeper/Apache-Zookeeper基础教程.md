@@ -7,7 +7,7 @@
 
 ## 安装
 
-[Apache-Zookeeper安装基础教程](work/framework/Big-Data/Apache-Zookeeper/Apache-Zookeeper安装基础教程.md)
+[Apache-Zookeeper安装基础教程](work/component/Big-Data/Apache-Zookeeper/Apache-Zookeeper安装基础教程.md)
 
 
 ## 基础概念

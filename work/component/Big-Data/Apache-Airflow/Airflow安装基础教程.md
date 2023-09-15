@@ -144,7 +144,7 @@ mv *.pid /tmp/
 
 问题原因：默认 sqlite3 版本太低，需要升级
 
-解决方案：[sqlite3安装基础教程](work/framework/Back-End/SQLite/sqlite3安装基础教程.md)
+解决方案：[sqlite3安装基础教程](work/component/Back-End/SQLite/sqlite3安装基础教程.md)
 
 
 ### Airflow - alembic.util.exc.CommandError: Can't locate revision identified

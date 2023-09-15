@@ -42,7 +42,7 @@ The property dfs.datanode.balance.max.concurrent.moves sets the maximum number o
 
 **Thread pool size for executing block moves. 默认值1000，修改为10（无需重启）**
 
-![img](work/framework/Big-Data/CDH/images/CDH-HDFS负载均衡方案/1671778903112-10.png)
+![img](work/component/Big-Data/CDH/images/CDH-HDFS负载均衡方案/1671778903112-10.png)
 
 
 
@@ -50,7 +50,7 @@ The property dfs.datanode.balance.max.concurrent.moves sets the maximum number o
 
 **Thread pool size for dispatching block moves. 默认值1000，修改为10（无需重启）**
 
-![img](work/framework/Big-Data/CDH/images/CDH-HDFS负载均衡方案/1671778903113-11.png)
+![img](work/component/Big-Data/CDH/images/CDH-HDFS负载均衡方案/1671778903113-11.png)
 
 
 
@@ -58,7 +58,7 @@ The property dfs.datanode.balance.max.concurrent.moves sets the maximum number o
 
 **Hosts to exclude from the balancing process. 默认值为空，修改为关键服务所在节点，避免资源竞争（无需重启）**
 
-![img](work/framework/Big-Data/CDH/images/CDH-HDFS负载均衡方案/1671778903113-12.png)
+![img](work/component/Big-Data/CDH/images/CDH-HDFS负载均衡方案/1671778903113-12.png)
 
 
 

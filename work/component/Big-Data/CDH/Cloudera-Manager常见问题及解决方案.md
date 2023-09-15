@@ -8,7 +8,7 @@ java.lang.RuntimeException: Error applying authorization policy on hive configur
 
 **A1**：使用CM页面直接创建
 
-![img](work/framework/Big-Data/CDH/images/Cloudera_Manager常见问题及解决方案/1668042047372-12.png)
+![img](work/component/Big-Data/CDH/images/Cloudera_Manager常见问题及解决方案/1668042047372-12.png)
 
 或者手动解决：
 

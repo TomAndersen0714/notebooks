@@ -33,14 +33,14 @@
 
 ### SQL 性能优化
 
-[Apache-HiveSQL优化教程](work/framework/Big-Data/Apache-Hive/Apache-HiveSQL优化教程.md)
+[Apache-HiveSQL优化教程](work/component/Big-Data/Apache-Hive/Apache-HiveSQL优化教程.md)
 
 
 ## ClickHouse SQL
 
-[ClickHouse-SQL优化教程](work/framework/Big-Data/ClickHouse/ClickHouse-SQL优化教程.md)
+[ClickHouse-SQL优化教程](work/component/Big-Data/ClickHouse/ClickHouse-SQL优化教程.md)
 
-[ClickHouse慢查询SQL排查方案](work/framework/Big-Data/ClickHouse/operation/ClickHouse慢查询SQL排查方案.md)
+[ClickHouse慢查询SQL排查方案](work/component/Big-Data/ClickHouse/operation/ClickHouse慢查询SQL排查方案.md)
 
 ## 参考链接
 1. [飞书文档-语兴-踏踏实实练 SQL](https://oxtwry26ao.feishu.cn/mindnotes/bmncnCxiGnEedT4I8hTHMAwGXtg#mindmap)
