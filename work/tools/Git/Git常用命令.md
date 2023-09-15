@@ -7,6 +7,10 @@ Git是一种用来实现版本管理的工具，在实际使用过程中，不�
 个人建议，对于Git工具优先记忆基础命令，用于完成Git项目的初步构建，而高级命令通过GUI的方式来使用，用于维护Git项目。
 
 
+暂存区（stage/index）
+工作区（working tree）
+版本库（repository）：即仓库根路径下的 `.git` 文件夹。
+
 ## 基础命令
 
 
@@ -145,8 +149,12 @@ git diff --name-only HEAD@{1}..HEAD
 
 ### git rm
 
-```
+```shell
+# 删除暂存区(stage/index)中的文件, 保留工作区(working tree)文件
+git rm <file>
+git rm -r <dir>
 
+# --cached 标志的作用是删除暂存区(stage/index)中的文件, 保留工作区(working tree)文件
 git rm --cached <file>
 git rm -r --cached <dir>
 ```
