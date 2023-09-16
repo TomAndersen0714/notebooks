@@ -41,20 +41,29 @@ https://www.bilibili.com/video/BV1Rm4y1P7j8
 
 如，程序抛出异常，则可以通过设置 Exception Breakpoint 异常断点全局定位抛出异常的代码行；如果想观察程序执行过程，则可以在想要设置的代码行处，设置最常见的 Line Breakpoint 行断点，Debug 时按行执行，观察程序。
 
+
+![](resources/images/Pasted%20image%2020230916203939.png)
+
+![](resources/images/Pasted%20image%2020230916204002.png)
+
 ### 方法栈回退（Reset/Delete Frame）
 
 在 Debugger 窗口下的 Frames 是当前程序的方法调用栈，每次都会保存当前的方法调用栈帧（Frame）。
 
-在 Debug 过程中，如果某个方法执行一段时间后，如果想回退到进入此方法之前，则可以通过 Frames 窗口下选中指定的 Frame，然后点击 Reset Frame 或者 Delete Frame，都可以将对应栈帧 Frame 之后的所有 Frame 删除，程序的当前行会回退到方法栈栈顶的方法入口处。
+在 Debug 过程中，如果某个方法执行一段后，如果想回退到进入此方法之前，则可以通过 Frames 窗口下选中指定的 Frame，然后点击 Reset Frame 或者 Delete Frame，都可以将对应栈帧 Frame 之后的所有 Frame 删除，程序的当前行会回退到方法栈栈顶的方法入口处。
 
 通过这种方法，可以在调试进某个方法时，适时回退到入口处，重新执行。指的注意的是，已经执行的代码段中，所修改的变量，不会随之回退。
 
 如：Debug 时，某个方法的执行过程未能及时观测到，则可以通过 Reset/Delete Frame 功能，将程序执行代码行回退到某个方法调用前。
 
+![](resources/images/Pasted%20image%2020230916203912.png)
+
 ### 方法强制返回（Frame Force Return）
 
 
+在 Debug 过程中，如果某个方法执行一段后，不想再执行，可以直接右键点击 Debugger 中 Frames 窗口中的 Frame，选择“Force Return”直接执行 return 代码，如果方法的声明有返回值，则在执行“Force Return”的同时，还需要提供返回值的表达式。
 
+![](resources/images/Pasted%20image%2020230916203842.png)
 ### 执行表达式（Evaluate Expression）
 
 Debug 时，可以通过执行表达式功能（Evaluate Expression），来实时执行特定的代码段，并显示对应的执行结果。
@@ -62,6 +71,9 @@ Debug 时，可以通过执行表达式功能（Evaluate Expression），来实�
 如：Debug 时可以通过设置断点等方式，在执行某段代码之前暂停程序，然后执行代码段，来调整程序运行的分支；或者是在提前停止，并设置变量值，来测试后续的代码行。
 
 
+![](resources/images/Pasted%20image%2020230916204159.png)
+
+![](resources/images/Pasted%20image%2020230916204248.png)
 ## 参考链接
 1. [IntelliJ IDEA 2023.2 Debugging Breakpoints](https://www.jetbrains.com/help/idea/using-breakpoints.html#breakpoint-types)
 2. [BiliBili-分享 4 个我一直在用的 IDEA Debug 小技巧](https://www.bilibili.com/video/BV1Rm4y1P7j8)
