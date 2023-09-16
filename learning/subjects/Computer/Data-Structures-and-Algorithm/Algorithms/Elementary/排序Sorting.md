@@ -1,12 +1,14 @@
 # 排序 (Sorting)
 
-## 基础排序算法
 
-[基础排序算法汇总](learning/subjects/Computer/Data-Structures-and-Algorithm/Algorithms/基础排序算法汇总.md)
+## 算法简介
+
+### 基础排序算法
+
+[常见排序Sorting算法汇总](learning/subjects/Computer/Data-Structures-and-Algorithm/Algorithms/Elementary/常见排序Sorting算法汇总.md)
 
 
-
-## 相关例题
+## 经典例题
 
 ### Top K 问题
 

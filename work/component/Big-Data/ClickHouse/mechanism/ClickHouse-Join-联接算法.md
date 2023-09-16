@@ -3,7 +3,7 @@
 
 ## 常见的 JOIN 算法
 
-[JOIN算法](learning/subjects/Computer/Data-Structures-and-Algorithm/Algorithms/Intermediate/JOIN算法.md)
+[JOIN算法](learning/subjects/Computer/Data-Structures-and-Algorithm/Algorithms/Advanced/JOIN算法.md)
 
 ## ClickHouse JOIN Clause
 https://clickhouse.com/docs/en/sql-reference/statements/select/join#memory-limitations

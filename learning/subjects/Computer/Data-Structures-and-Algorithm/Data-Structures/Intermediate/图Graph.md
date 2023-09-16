@@ -53,16 +53,7 @@
 
 #### Union-Find 算法
 
-https://en.wikipedia.org/wiki/Disjoint-set_data_structure
-
-Union-Find 算法，是使用 Disjoint-set（并查集、不相交集合）数据结构实现的一种算法，也被称为并查集算法。此算法主要分为 Union（合并） 和 Find（查找） 两个操作，Union（合并）操作用于将两个集合合并成为一个集合，Find（查找）操作用于确定元素属于哪一个集合，或判断两个元素是否属于同一个集合。
-
-Union-Find 算法常用于解决以下问题：
-1. 连通性判断问题
-2. 集合分组问题
-3. 最小生成树问题（Prim 和 Kruskal 算法）
-
-Union-Find 算法和 Disjoint-set 并查集数据结构的优势在于，只需要使用简单的数据结构，就可以解决问题，而不需要构建完整的数据结构（如：图 Graph）。
+[并查集Union-Find](learning/subjects/Computer/Data-Structures-and-Algorithm/Algorithms/Intermediate/并查集Union-Find.md)
 
 #### Prim 算法
 
