@@ -1,10 +1,10 @@
 # MySQL常用命令
 
 
-
 ## MySQL Client
 
 mysql -u root -p
+
 
 
 ## 参考链接

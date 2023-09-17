@@ -1,4 +1,4 @@
-# ClickHouse SQL 优化教程
+# ClickHouse SQL 查询性能优化教程
 
 
 

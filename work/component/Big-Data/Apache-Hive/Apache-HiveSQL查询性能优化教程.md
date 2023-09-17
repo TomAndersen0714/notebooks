@@ -1,4 +1,4 @@
-# Apache HiveSQL 优化教程
+# Apache HiveSQL 查询性能优化教程
 
 
 Hive 的四个 By
