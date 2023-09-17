@@ -3,7 +3,11 @@
 
 ## MySQL Client
 
+
+Client CLI 常用登录 Server 命令：
+```
 mysql -u root -p
+```
 
 
 

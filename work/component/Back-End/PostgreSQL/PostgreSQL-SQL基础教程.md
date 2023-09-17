@@ -1,59 +1,12 @@
-# PostgreSQL 命令基础教程
-
-## 前言
-
-由于PostgreSQL客户端版本问题，PostgreSQL某些命令在低版本的客户端上无法执行，故个人建议，如果客户端处于能够直连数据库的网络环境下，可以直接使用`Jetbrain`全家桶下IDE的自带功能`Database`。
-利用此功能，直接添加`Postgre Source`，通过UI交互实现数据库的基本管理，并且IDE也支持辅助构建各种SQL命令，提供执行。
-
-
-## Psql cmd
-
-[PostgreSQL 14.7 Documentation - psql - PostgreSQL interactive terminal](https://www.postgresql.org/docs/14/app-psql.html)
-
-
-### Connect command
-
-常用格式
-```postgresql
-psql -h host -p port -U db_user db_name
-psql postgresql://db_user:db_passwd@host:port/db_name
-```
-
-示例
-```postgresql
-psql -h 10.248.32.3 -p 5432 -U qc_object qc_object
-psql postgresql://qc_object:qcobjadmin@10.248.32.3:5432/qc_object
-psql postgresql://sxx:sxxdosngzimv@10.248.32.3:5432/postgres
-psql postgresql://airflow_user:airflow_pass@10.0.2.2:5432/airflow_db
-```
-
-
-### Psql backslash command
-
-`\q` ：退出 psql 终端
-`\?` ：显示命令帮助信息
-`\a` ：切换打印内容对齐模式
-
-`\c dbname` ：连接指定数据库
-`\conninfo` ：打印当前连接信息
-`\encoding` ：打印当前的字符集
-`\set` ：查看当前 psql 变量
-
-`\dg[+]  [PATTERN]` ：查看所有 roles
-`\l[+]  [PATTERN]` ：查看所有 database，`[+]` 表示同时打印 Size、Description 等额外信息
-`\db[+]  [PATTERN]` ：查看所有 tablespace
-
-`\dn[S+] [PATTERN]` ：查看所有 schema
-`\dt[S+] [PATTERN]` ：查看所有 table
-`\dv[S+] [PATTERN]` ：查看所有 view
-`\di[S+] [PATTERN]` ：查看所有 index
+# PostgreSQL SQL 基础教程
 
 
 ## SQL DQL
 
+
 ### Functions and Operators
 
-[PostgreSQL常用操作符和函数](work/component/Back-End/PostgreSQL/PostgreSQL常用操作符和函数.md)
+[PostgreSQL-SQL常用函数和操作符](work/component/Back-End/PostgreSQL/PostgreSQL-SQL常用函数和操作符.md)
 
 
 ## SQL DDL
@@ -162,8 +115,6 @@ ALTER TABLE <table_name> DROP CONSTRAINT [ IF EXISTS ]  constraint_name [ RESTRI
 ### INSERT
 
 https://www.postgresql.org/docs/current/sql-insert.html
-
-
 
 
 ## 其他命令

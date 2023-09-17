@@ -1,4 +1,4 @@
-# PostgreSQL常用函数和操作符
+# PostgreSQL SQL 常用函数和操作符
 
 https://www.postgresql.org/docs/14/functions.html
 
@@ -29,6 +29,7 @@ https://www.postgresql.org/docs/14/functions-info.html
 
 
 ## Window Functions
+
 https://www.postgresql.org/docs/14/sql-expressions.html#SYNTAX-WINDOW-FUNCTIONS
 https://www.postgresql.org/docs/14/tutorial-window.html
 https://www.postgresql.org/docs/14/functions-window.html
