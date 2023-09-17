@@ -1,29 +1,22 @@
 # ClickHouse慢查询SQL排查方案
 
-## system.query_log
 
-ClickHouse内部会自动搜集查询日志，并写入到system.query_log表中，通过查询此表，可以排查和分析慢查询SQL
+## 查询日志表 system.query_log
 
-
+ClickHouse Server 会自动搜集记录并采集 SQL 查询日志，定时将其写入到 `system.query_log` 表中，通过查询此表，可以排查和分析慢查询 SQL 的日志。
 
 ### 查询qps统计
 
 ```sql
-WITH (
-    SELECT toDateTime('{{datetime.start}}')
-) AS start_datetime,
-(
-    SELECT toDateTime('{{datetime.end}}')
-) AS end_datetime
 SELECT hostname,
     replica,
     hour,
     minute,
     COUNT(1)
 FROM clusterAllReplicas('cluster_3s_2r', 'system.query_log')
-WHERE toYYYYMMDD(event_date) BETWEEN toYYYYMMDD(start_datetime) AND toYYYYMMDD(end_datetime)
+WHERE toYYYYMMDD(event_date) BETWEEN toYYYYMMDD(toDateTime('{{datetime.start}}')) AND toYYYYMMDD(toDateTime('{{datetime.end}}'))
     AND type = 'QueryStart'
-    AND event_time BETWEEN start_datetime AND end_datetime
+    AND event_time BETWEEN toDateTime('{{datetime.start}}') AND toDateTime('{{datetime.end}}')
 GROUP BY hostname() AS hostname,
     getMacro('replica') AS replica,
     toHour(event_time) AS hour,
@@ -39,21 +32,15 @@ ORDER BY hostname,
 ### 慢查询sql查询
 
 ```SQL
-WITH (
-    SELECT toDateTime('{{datetime.start}}')
-) AS start_datetime,
-(
-    SELECT toDateTime('{{datetime.end}}')
-) AS end_datetime
-select
+SELECT
     hostName(),
     *
-from remote('{{host}}', 'system.query_log')
-where toYYYYMMDD(event_date) BETWEEN toYYYYMMDD(start_datetime) AND toYYYYMMDD(end_datetime)
-    and event_time BETWEEN start_datetime AND end_datetime
-    and memory_usage >= {{memory_mb_threshold}}*1024*1024
-    and type in [{{type}}]
-    and query ilike '{{query_segment1}}'
-order by {{desc_order_key}} desc
-limit {{limit}}
+FROM remote('{{host}}', 'system.query_log')
+WHERE toYYYYMMDD(event_date) BETWEEN toYYYYMMDD(toDateTime('{{datetime.start}}')) AND toYYYYMMDD(toDateTime('{{datetime.end}}'))
+    AND event_time BETWEEN toDateTime('{{datetime.start}}') AND toDateTime('{{datetime.end}}')
+    AND memory_usage >= {{memory_mb_threshold}}*1024*1024
+    AND type in [{{type}}]
+    AND query ilike '{{query_segment1}}'
+ORDER BY {{desc_order_key}} desc
+LIMIT {{limit}}
 ```
