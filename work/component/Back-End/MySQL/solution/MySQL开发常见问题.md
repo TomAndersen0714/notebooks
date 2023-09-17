@@ -3,7 +3,7 @@
 
 
 
-## MySQL5.7使用in查询不走索引
+## MySQL5.7 使用in查询不走索引
 
 range_optimizer_max_mem_size参数
 
