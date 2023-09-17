@@ -1,29 +1,25 @@
 # 面试常见考点 SQL
 
 
-## 通用知识点
+## 相关概念
 
 开窗函数 rank、dense_rank、row_number 三者的区别？
-
-有一个 sql 突然执行很慢可能有什么原因？
 
 
 
 ## MySQL SQL
 
 
-### 常考知识点
+### 场景题
 
 
+### 性能优化
+
+有一个 sql 突然执行很慢可能有什么原因？
 ## Hive SQL
 
 
-### 常考知识点
-
-大表 JOIN 大表，某个 Key 出现数据倾斜该怎么办？如果 Key 未知怎么办？
-
-
-### SQL 场景题
+### 场景题
 
 最大在线人数
 
@@ -31,7 +27,11 @@
 
 转化计算
 
-### SQL 性能优化
+### 性能优化
+
+大表 JOIN 大表，某个 Key 出现数据倾斜该怎么办？如果 Key 未知怎么办？
+
+有一个 sql 突然执行很慢可能有什么原因？
 
 [Apache-HiveSQL优化教程](work/component/Big-Data/Apache-Hive/Apache-HiveSQL优化教程.md)
 
