@@ -23,6 +23,8 @@ SELECT 1+1 FROM DUAL
 
 ### Window function
 
+https://dev.mysql.com/doc/refman/8.0/en/window-functions.html
+
 
 ## 参考链接
 1. 
