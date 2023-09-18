@@ -1,4 +1,4 @@
-# Spark Shell 基础教程
+# spark-shell 基础教程
 
 
 ## 简介
@@ -22,5 +22,5 @@ Spark-shell 启动时，默认会使用当前登录的系统用户。从报错�
 
 
 ## 参考链接
-1. [Apache Spark Documentation - spark-shell](https://spark.apache.org/docs/latest/quick-start.html)
+1. [Apache Spark Documentation - spark-shell](https://spark.apache.org/docs/3.2.0/quick-start.html#interactive-analysis-with-the-spark-shell)
 2. [大象教程-Spark Shell 的使用](https://www.hadoopdoc.com/spark/spark-shell)
