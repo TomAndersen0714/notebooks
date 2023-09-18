@@ -1,9 +1,10 @@
 # CDH Kudu负载均衡方案
 
+
 ## kudu cluster rebalance
 
-**官方文档：**[Running Tablet Rebalancing Tool](https://docs.cloudera.com/documentation/enterprise/6/6.3/topics/kudu_administration_cli.html#rebalancer_tool)
 
+**官方文档：**[Running Tablet Rebalancing Tool](https://docs.cloudera.com/documentation/enterprise/6/6.3/topics/kudu_administration_cli.html#rebalancer_tool)
 
 
 **测试环境版本：**
@@ -23,7 +24,6 @@ revision b4310ca4289bd207fd5b32f5fe001609b4093c27
 build type RELEASE
 built by jenkins at 14 Mar 2019 00:03:44 PST on cldrn-ub1604-ec2-c5d-18xlarge-spotblk-0c10.vpc.cloudera.com
 ```
-
 
 
 ### rebalance工具简介
@@ -116,7 +116,6 @@ server.
 ```
 
 
-
 ### 查看集群中表副本分布和数据倾斜情况
 
 **测试环境：**
@@ -130,7 +129,6 @@ sudo -u kudu kudu cluster rebalance --output_replica_distribution_details --repo
 ```Shell
 sudo -u kudu kudu cluster rebalance --output_replica_distribution_details --report_only -max_run_time_sec 300 zjk-bigdata002 > kudu_cluster.log
 ```
-
 
 
 ### 针对指定表进行负载均衡
@@ -154,18 +152,16 @@ sudo -u kudu kudu cluster rebalance --output_replica_distribution_details -max_r
 ```
 
 
-
 ### 线上操作流程记录
 
 **线上操作节点为：jstzjk-133176-prod-tb-bigdata-bigdata（10.20.133.176）**
-
 
 
 1. **记录上线前Kudu集群存储负载情况**
 
 
 
-<img src="images/CDH-Kudu%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/1671778471208-3.png" alt="img" style="zoom:50%;" />
+![1671778471208-3](resources/images/CDH-Kudu负载均衡解决方案/1671778471208-3.png)
 
 
 
@@ -216,7 +212,7 @@ sudo -u kudu kudu cluster rebalance --output_replica_distribution_details --repo
 
 **PS：两者取交集，优先处理**
 
-<img src="images/CDH-Kudu%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/1671778471165-1.png" alt="img" style="zoom:50%;" />
+![1671778471165-1](resources/images/CDH-Kudu负载均衡解决方案/1671778471165-1.png)
 
 
 
@@ -240,7 +236,7 @@ sudo -u kudu kudu cluster rebalance --output_replica_distribution_details -max_r
 
 7. **记录负载均衡后的Kudu集群存储负载情况**
 
-<img src="images/CDH-Kudu%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/1671778471165-2.png" alt="img" style="zoom:50%;" />
+![1671778471165-2](resources/images/CDH-Kudu负载均衡解决方案/1671778471165-2.png)
 
 
 

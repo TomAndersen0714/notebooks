@@ -18,7 +18,7 @@ sudo -u hdfs hdfs dfsadmin -report > balance_report.log
 
 **图标库-DataNode-块数据统计-DataNode块总数分布**
 
-<img src="images/CDH-HDFS%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%E6%96%B9%E6%A1%88/1671778903120-17.png" alt="img" style="zoom:50%;" />
+![1671778903120-17](resources/images/CDH-HDFS负载均衡方案/1671778903120-17.png)
 
 
 
@@ -42,7 +42,7 @@ The property dfs.datanode.balance.max.concurrent.moves sets the maximum number o
 
 **Thread pool size for executing block moves. 默认值1000，修改为10（无需重启）**
 
-![img](work/component/Big-Data/CDH/images/CDH-HDFS负载均衡方案/1671778903112-10.png)
+![img](resources/images/CDH-HDFS负载均衡方案/1671778903112-10.png)
 
 
 
@@ -50,7 +50,7 @@ The property dfs.datanode.balance.max.concurrent.moves sets the maximum number o
 
 **Thread pool size for dispatching block moves. 默认值1000，修改为10（无需重启）**
 
-![img](work/component/Big-Data/CDH/images/CDH-HDFS负载均衡方案/1671778903113-11.png)
+![img](resources/images/CDH-HDFS负载均衡方案/1671778903113-11.png)
 
 
 
@@ -58,7 +58,7 @@ The property dfs.datanode.balance.max.concurrent.moves sets the maximum number o
 
 **Hosts to exclude from the balancing process. 默认值为空，修改为关键服务所在节点，避免资源竞争（无需重启）**
 
-![img](work/component/Big-Data/CDH/images/CDH-HDFS负载均衡方案/1671778903113-12.png)
+![img](resources/images/CDH-HDFS负载均衡方案/1671778903113-12.png)
 
 
 
@@ -66,7 +66,7 @@ The property dfs.datanode.balance.max.concurrent.moves sets the maximum number o
 
 **Hosts to include in the balancing process (uses all, if none specified). 默认值为空，修改为需要迁移数据的节点**
 
-<img src="images/CDH-HDFS%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%E6%96%B9%E6%A1%88/1671778903113-13.png" alt="img" style="zoom:50%;" />
+![1671778903113-13](resources/images/CDH-HDFS负载均衡方案/1671778903113-13.png)
 
 
 
@@ -74,7 +74,7 @@ The property dfs.datanode.balance.max.concurrent.moves sets the maximum number o
 
 6. **设置Balancer堆内存，由于内存资源充足，可以适当增加内存分配（无需重启）**
 
-<img src="images/CDH-HDFS%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%E6%96%B9%E6%A1%88/1671778903114-14.png" alt="img" style="zoom:50%;" />
+![1671778903114-14](resources/images/CDH-HDFS负载均衡方案/1671778903114-14.png)
 
 
 
@@ -82,8 +82,7 @@ The property dfs.datanode.balance.max.concurrent.moves sets the maximum number o
 
 1. **查看HDFS集群DataNode数据块分布情况**
 
-<img src="images/CDH-HDFS%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%E6%96%B9%E6%A1%88/1671778903120-17.png" alt="img" style="zoom:50%;" />
-
+![1671778903120-17](resources/images/CDH-HDFS负载均衡方案/1671778903120-17.png)
 
 
 
@@ -239,13 +238,13 @@ tail -f hadoop-cmf-hdfs-BALANCER-jstzjk-133176-prod-tb-bigdata-bigdata.log.out
 - dfs.balancer.moverThreads，默认值为1000，从之前的10修改为100
 - dfs.balancer.dispatcherThreads，默认值为1000，从之前的10修改为100
 
-<img src="images/CDH-HDFS%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%E6%96%B9%E6%A1%88/1671778903114-15.png" alt="img" style="zoom: 33%;" />
+![1671778903114-15](resources/images/CDH-HDFS负载均衡方案/1671778903114-15.png)
 
 
 
 5. **由于数据传输带宽限制（数据迁移在不影响稳定性前提下，预计需要1000小时左右），重新评估HDFS负载均衡的方案、工作量和必要性后，决定暂时挂起HDFS的负载均衡工作，决定后续再观察集群负载情况**
 
-<img src="images/CDH-HDFS%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%E6%96%B9%E6%A1%88/1671778903114-16.png" alt="img" style="zoom: 33%;" />
+![1671778903114-16](resources/images/CDH-HDFS负载均衡方案/1671778903114-16.png)
 
 
 
