@@ -14,10 +14,9 @@ https://cwiki.apache.org/confluence/display/Hive/LanguageManual+DML
 
 ## DQL
 
+### Functions
 
-### Windowing and Analytics Functions
-
-https://cwiki.apache.org/confluence/display/Hive/LanguageManual+WindowingAndAnalytics
+[Apache-HiveSQL常用函数和运算符](work/component/Big-Data/Apache-Hive/Apache-HiveSQL常用函数和运算符.md)
 
 ## 参考链接
 1. [Hive SQL LanguageManual](https://cwiki.apache.org/confluence/display/Hive/LanguageManual)

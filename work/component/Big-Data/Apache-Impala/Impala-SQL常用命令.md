@@ -16,9 +16,9 @@
 9. 查看统计信息
 	1. 查看表统计信息：`show table stats <table_name>`
 	2. 查看列统计信息：`show column stats <table_name>`
-	3. 手动触发统计信息采集：`compute stats <table_name>`。
+	3. 手动触发统计信息采集：`compute stats <table_name>`
 	4. PS：Impala可以利用分区表的统计信息来加速分区表查询，部分情况下可以自动采集统计信息
-10. 刷新表元数据：`refresh <table>`，PS：新建分区之后，需要刷新元数据
+10. 刷新表元数据：`refresh <table>`，一旦 HDFS 文件路径或文件内容、数量发生变动，对应的表在使用前都需要刷新元数据，保证元数据与实际一致
 11. 刷新UDF：`refresh functions <database>`
 
 
