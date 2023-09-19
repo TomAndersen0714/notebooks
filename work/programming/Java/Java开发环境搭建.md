@@ -8,7 +8,7 @@
 
 ## 安装Gradle
 
-[Gradle安装基础教程](work/programming/Java/Build/Gradle/Gradle安装基础教程.md)
+[Gradle安装基础教程](work/programming/Java/Tools/Gradle/Gradle安装基础教程.md)
 
 
 ## JetBrain IDEA
