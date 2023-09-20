@@ -13,13 +13,15 @@
 
 - Hashmap 的底层实现原理？
 
+[Java-HashMap](work/programming/Java/API/Intermediate/Collections/Java-HashMap.md)
+
 JDk1.8，中 HashMap 是通过数组（Hash 分桶）+链表、红黑树的方式实现的。
 
 https://cloud.tencent.com/developer/article/1830825
 
 HashMap 中有两种节点 Node，一种 Node 是可以构成链表的普通 Node 也是一种 Linked Node，一种 Node 是可以构成树的 TreeNode。
 
-当 Put 方法执行时，某个 Linked Node 组成的链表长度大于 HashMap 类设置的阈值时，Put 方法会调用相应的 Node 链表转换方法，将该 Node 对应的链表转换为 TreeNode 树。
+当 Put 方法执行时，某个 Linked Node 组成的链表长度大于 HashMap 类设置的阈值时，Put 方法会调用相应的 Node 链表转换方法，将该 Node 对应的链表转换为 TreeNode 树，反之，当 TreeNode 树的 Node 数量小于某个阈值时，TreeNode 树也会退化为 Linked Node 链表。
 
 - HashMap 中 Get 和 Put 方法的时间复杂度？
 

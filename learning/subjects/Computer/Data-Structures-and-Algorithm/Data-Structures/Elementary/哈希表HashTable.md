@@ -1,4 +1,4 @@
-# 哈希表 (HashMap)
+# 哈希表 (HashTable)
 
 
 ## 双数求和
