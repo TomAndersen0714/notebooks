@@ -26,8 +26,8 @@ Libraries/Frameworks
 
 ## Python 安装基础教程
 
-[Python安装基础教程](work/programming/Python/Python安装基础教程.md)
-[Python-pip基础教程](work/programming/Python/Python-pip基础教程.md)
+[Python安装基础教程](work/programming/Python/Operation/Python安装基础教程.md)
+[Python-pip基础教程](work/programming/Python/CLI/Python-pip基础教程.md)
 
 
 ## Python Tutorials

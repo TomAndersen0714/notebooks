@@ -1,8 +1,8 @@
 # Java Tutorials
 
 The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.
-https://docs.oracle.com/javase/tutorial/index.html
 
+https://docs.oracle.com/javase/tutorial/index.html
 
 ## 1. Trails Covering the Basics
 
