@@ -84,3 +84,4 @@ https://help.aliyun.com/document_detail/87730.html?spm=a2c4g.87730.0.0.578a49682
 5. [BiliBili-掌握 CORS 跨域请求，看这个视频就够了【渡一教育】](https://www.bilibili.com/video/BV1rp4y1K7nU)
 6. [阮一峰-浏览器同源政策及其规避方法](https://www.ruanyifeng.com/blog/2016/04/same-origin-policy.html)
 7. [阮一峰-跨域资源共享 CORS 详解](https://www.ruanyifeng.com/blog/2016/04/cors.html)
+8. [BiliBili-掌握 CORS 跨域请求，看这个视频就够了【渡一教育】](https://www.bilibili.com/video/BV1rp4y1K7nU/)

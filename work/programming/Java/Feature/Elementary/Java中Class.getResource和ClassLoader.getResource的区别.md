@@ -1,4 +1,4 @@
-# Java中Class.getResource和ClassLoader.getResource的区别
+# Java中 Class.getResource 和 ClassLoader.getResource 的区别
 
 
 
@@ -188,9 +188,9 @@
 ## JDK11源码解析
 
 
-`java.lang.ClassLoader#getResource`方法遵循`双亲委派模型`，即会先尝试委派`父类加载器(Parent Loader)`加载资源，如果父类加载器为null，则直接委派`启动类加载器(Bootstrap Loader)`来加载资源，即在继承链中层层向上传递到`启动类加载器`，让其进行首次处理，然后层层向下传递到当前类加载器中。
+`java.lang.ClassLoader#getResource` 方法遵循 `双亲委派模型`，即会先尝试委派 `父类加载器(Parent Class Loader)` 加载资源，如果父类加载器为 null，则直接委派 `启动类加载器(Bootstrap Class Loader)` 来加载资源，即在继承链中层层向上传递到 `启动类加载器`，让其进行首次处理，然后层层向下传递到当前类加载器中。
 
-而在`Bootstrap ClassLoader`中，会尝试在`bootstrap classpath`和`classpath`中尝试检索和加载对应的资源。
+而在 `Bootstrap ClassLoader` 中，会尝试在 `Bootstrap Classpath` 和 `Classpath` 中尝试检索和加载对应的资源。
 
 而`java.lang.Class#getResource`方法，会先将输入的路径name进行预处理，如果输入的是绝对路径，则会去除其首位的斜杠'/'符号；如果输入的是相对路径，则会给其添加Package路径作为前缀。然后将预处理后的name，传递给`java.lang.ClassLoader#getResource`方法，尝试进行资源检索和加载。
 
