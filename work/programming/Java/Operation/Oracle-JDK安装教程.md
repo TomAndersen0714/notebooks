@@ -13,10 +13,7 @@
 
 ## Installing the 64-Bit JDK 17 on Linux Platforms
 
-
-
 参考链接：[Installing the 64-Bit JDK 17 on Linux Platforms](https://docs.oracle.com/en/java/javase/17/install/installation-jdk-linux-platforms.html#GUID-ADC9C14A-5F51-4C32-802C-9639A947317F)
-
 
 
 ## JDK On Windows
@@ -24,11 +21,9 @@
 参考链接：[Installation of the JDK on Microsoft Windows Platforms](https://docs.oracle.com/en/java/javase/17/install/installation-jdk-microsoft-windows-platforms.html#GUID-A7E27B90-A28D-4237-9383-A58B416071CA)
 
 
-
 ## 参考链接
 
 1. [Oracle JDK Archive](https://www.oracle.com/java/technologies/downloads/archive/)
-
 2. [Overview of JDK Installation(Oracle JDK 17)](https://docs.oracle.com/en/java/javase/17/install/overview-jdk-installation.html)
 3. [Installing the 64-Bit JDK 17 on Linux Platforms](https://docs.oracle.com/en/java/javase/17/install/installation-jdk-linux-platforms.html#GUID-ADC9C14A-5F51-4C32-802C-9639A947317F)
 4. [Installation of the JDK on Microsoft Windows Platforms](https://docs.oracle.com/en/java/javase/17/install/installation-jdk-microsoft-windows-platforms.html#GUID-A7E27B90-A28D-4237-9383-A58B416071CA)

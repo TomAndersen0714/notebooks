@@ -1,19 +1,20 @@
 # Java 基础教程
 
 
+## Java 官方文档
+
+[JDK8 - Java-Tutorials](work/programming/Java/Programming/Java-Tutorials.md)
+[Oracle JDK8 - Documentation](https://docs.oracle.com/javase/8/docs/)
+
+
 ## Java 学习路线
 
-https://github.com/liyupi/code-roadmap/blob/main/docs/roadmap/Java%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF.md
+[鱼皮-飞书-Java 学习路线](https://yuyuanweb.feishu.cn/wiki/RxC8w2uFQiHspQk4L3qcyjBunZd)
+[Java 全栈知识体系](https://pdai.tech/md/algorithm/alg-basic-overview.html)
 
-## Java 教程
+## Java 开发环境搭建
 
-[Java-Tutorials](work/programming/Java/Feature/Java-Tutorials.md)
-
-
-## Java 全栈知识体系
-
-https://pdai.tech/md/algorithm/alg-basic-overview.html
-
+[Java开发环境搭建基础教程](work/programming/Java/Java开发环境搭建基础教程.md)
 
 ## 参考链接
-
+1. [鱼皮-飞书-Java 学习路线](https://yuyuanweb.feishu.cn/wiki/RxC8w2uFQiHspQk4L3qcyjBunZd)

@@ -1,4 +1,5 @@
-# Java Nested Class(嵌套类)和Inner Class(内部类)
+# Java 嵌套类(Nested Class)和内部类(Inner Class)
+
 
 ## 废话在前
 
@@ -7,16 +8,12 @@
 目前找到的, 可信度较高的两个文档, 分别是 Oracle 官网的"The Java Tutorials" 和 "The Java Language Specification, Java SE 11 Edition". 本文中的主要内容, 也是摘录这两份文档中的相关术语的定义, 并进行了简单的梳理和对比, 为了后续回忆起相关概念时能有个可靠的依据.
 
 
-
-## What Are Nested Classes and Inner Classes?
-
+## What are Nested Classes and Inner Classes?
 
 
 ### Top Level Class
 
 - A top level class is a class that is not a nested class. (The Java Language Specification, Java SE 11 Edition, §8)
-
-
 
 ### Nested Class
 
