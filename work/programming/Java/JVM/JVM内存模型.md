@@ -9,7 +9,7 @@
 	2. 幸存区（Survivor）：FromSpace、ToSpace
 2. 老年代（OldGen）
 
-JVM 启动之后创建，Heap 用来存放 Java 对象的实例，堆内存是垃圾收集器 GC 管理的主要区域。
+JVM 启动之后创建，Heap 用来存放 Java 对象的实例，堆内存是垃圾收集器 Garbage Collector（GC） 管理的主要区域。
 
 ## 虚拟机栈（VM Stack）
 
