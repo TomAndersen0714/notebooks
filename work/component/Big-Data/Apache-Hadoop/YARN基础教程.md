@@ -12,9 +12,9 @@
 
 ## YARN 中的资源调度机制
 
-FIFO
-Capacity
-Fair
+FIFO：先入先出队列，无法保证整体服务质量
+Capacity：多个先入先出队列，实现资源隔离，无法保证集群的资源利用率
+Fair：根据当前正在运行的任务，动态分配计算资源，可以在资源利用率和服务质量之间实现平衡
 
 ## 参考链接
 1.  [Hadoop Documents Archive](https://hadoop.apache.org/docs/)
