@@ -17,6 +17,9 @@ A thread state. A thread can be in one of the following states:
 ## Java Thread 线程状态的流转
 
 
+
+![](resources/images/Pasted%20image%2020230921084600.png)
+
 Thread 实例创建完成时，则为 `NEW` 状态，调用完 `start()` 方法后，则进入 `RUNABLE` 状态，并在 JVM 中开始执行。
 
 当 Thread 实例遇到阻塞操作时（如：`Synchronized` 关键字、`Lock.lock` 方法等），则会进入 `BLOCKED` 状态，直到当前 Thread 获得了对应的 Lock，随后便会进入 `RUNABLE` 状态。
@@ -34,3 +37,7 @@ Thread 实例创建完成时，则为 `NEW` 状态，调用完 `start()` 方法�
 5. `LockSupport.parkUntil`
 
 当 Thread 实例的 `start()` 方法执行完成后，Thread 则会进入 `TERMINATED` 状态，等待被销毁。
+
+
+## 参考链接
+1. [【零基础快速学 Java】韩顺平零基础 30 天学会 Java-线程的状态](https://www.bilibili.com/video/BV1fh411y7R8/?p=593&vd_source=31f9517734e43a6c180d5d1d56a5e162)

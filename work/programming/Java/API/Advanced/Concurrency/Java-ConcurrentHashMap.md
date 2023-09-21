@@ -6,5 +6,4 @@
 而自 JDK1.8 开始，ConcurrentHashMap 放弃了 Segment 的实现方式，而是直接采用和 HashMap Entry  类似的数据结构和算法，并且通过 Synchronized 关键字来保证操作的原子性。
 
 
-
-参考链接
+## 参考链接
