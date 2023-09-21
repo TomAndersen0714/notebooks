@@ -34,5 +34,6 @@ JVM 启动之后创建，Heap 用来存放 Java 对象的实例，堆内存是�
 程序计数器是线程私有的内存空间，用于作为当前线程所执行的字节码的行号指示器，通过它实现代码的流程控制。在多线程的情况下，程序计数器用于记录当前线程执行的位置，当线程被切换回来的时候可以通过程序计数器中的信息获取上次执行的位置，然后继续执行。
 
 ## 参考链接
-1. [微信-阿里云开发者-图解 JVM 内存模型及 JAVA 程序运行原理](https://mp.weixin.qq.com/s/lxdePdWP5UFzA06ceuVUfQ)
-2. [CSDN-【JVM】JVM 堆内存 (heap) 详解](https://blog.csdn.net/u011397981/article/details/130714618)
+1. [Java SE 8 Edition - 2.5. Run-Time Data Areas](https://docs.oracle.com/javase/specs/jvms/se8/html/jvms-2.html#jvms-2.5)
+2. [微信-阿里云开发者-图解 JVM 内存模型及 JAVA 程序运行原理](https://mp.weixin.qq.com/s/lxdePdWP5UFzA06ceuVUfQ)
+3. [CSDN-【JVM】JVM 堆内存 (heap) 详解](https://blog.csdn.net/u011397981/article/details/130714618)
