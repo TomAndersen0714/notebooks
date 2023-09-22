@@ -7,7 +7,7 @@ https://spark.apache.org/docs/3.2.0/cluster-overview.html
 
 ## RDD
 
-
+弹性分布式数据集（Resilient Distributed Datasets）
 
 
 ## 参考链接

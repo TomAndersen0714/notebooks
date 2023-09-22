@@ -37,7 +37,7 @@ Pip3 和 pip 的命令大部分都相同，`pip3` 和 `pip` 通常可以直接�
 1. 阿里云： https://mirrors.aliyun.com/pypi/simple/
 2. 清华： https://pypi.tuna.tsinghua.edu.cn/simple/
 3. 中国科技大学： https://pypi.mirrors.ustc.edu.cn/simple/
-4. 华中理工大学： http://pypi.hustunique.com/
+4. 华中科技大学： http://pypi.hustunique.com/
 5. 山东理工大学： http://pypi.sdutlinux.org/
 6. 豆瓣： http://pypi.douban.com/simple/
 
