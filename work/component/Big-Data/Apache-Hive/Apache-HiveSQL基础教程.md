@@ -16,7 +16,7 @@ https://cwiki.apache.org/confluence/display/Hive/LanguageManual+DML
 
 ### Functions
 
-[Apache-HiveSQL常用函数和运算符](work/component/Big-Data/Apache-Hive/Apache-HiveSQL常用函数和运算符.md)
+[Apache-HiveSQL常用函数和运算符](work/component/Big-Data/Apache-Hive/Apache-Hive-SQL/Apache-HiveSQL常用函数和运算符.md)
 
 ## 参考链接
 1. [Hive SQL LanguageManual](https://cwiki.apache.org/confluence/display/Hive/LanguageManual)

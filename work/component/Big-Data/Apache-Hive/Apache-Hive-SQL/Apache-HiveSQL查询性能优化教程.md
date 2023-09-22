@@ -1,18 +1,25 @@
-# Apache HiveSQL 查询性能优化教程
+# Apache Hive SQL 性能优化教程
+
+
 
 [MySQL-SQL查询性能优化教程](work/component/Back-End/MySQL/solution/MySQL-SQL查询性能优化教程.md)
 
 
-Hive 的四个 By
+## JOIN
+
+`JOIN[shuffle]`
+
+## SORT
+
+Sort By、Order By
+Distribute By、Cluster By
+
 
 ## Hive On Spark
 
 
-
-
-## 例题
-
-
+[Cloudera Enterprise 6.3.x Documentation - Tuning Apache Hive on Spark in CDH](https://docs.cloudera.com/documentation/enterprise/6/6.3/topics/admin_hos_tuning.html#hos_tuning)
+[【尚硅谷大数据技术 Hive On Spark 调优（离线数仓项目实战）-哔哩哔哩】](https://b23.tv/f2mPHla)
 
 ## 参考链接
 1. [微信-大数据技术团队-Hive SQL 高级进阶 10 大技巧](https://mp.weixin.qq.com/s/AKXXfbGBqndv6Fe1yjHryA)
