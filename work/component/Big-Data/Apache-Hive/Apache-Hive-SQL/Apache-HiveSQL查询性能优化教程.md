@@ -9,11 +9,14 @@
 
 `JOIN[shuffle]`
 
+
+
 ## Sort/Distribute/Cluster/Order By
 
 Sort By、Order By
 Distribute By、Cluster By
 
+https://blog.csdn.net/lianghecai52171314/article/details/104658201
 
 ## Hive On Spark
 

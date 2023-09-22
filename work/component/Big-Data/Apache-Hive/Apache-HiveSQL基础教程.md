@@ -21,6 +21,9 @@ https://cwiki.apache.org/confluence/display/Hive/LanguageManual+LateralView
 
 [Apache-HiveSQL常用函数和运算符](work/component/Big-Data/Apache-Hive/Apache-Hive-SQL/Apache-HiveSQL常用函数和运算符.md)
 
+### Hive SQL 查询性能优化
+
+[Apache-HiveSQL查询性能优化教程](work/component/Big-Data/Apache-Hive/Apache-Hive-SQL/Apache-HiveSQL查询性能优化教程.md)
 
 ## 参考链接
 1. [Hive SQL LanguageManual](https://cwiki.apache.org/confluence/display/Hive/LanguageManual)
