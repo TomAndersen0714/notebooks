@@ -5,7 +5,9 @@
 
 开窗函数 RANK、DENSE_RANK、ROW_NUMBER、PERCENT_RANK 四者的区别？
 
+LateralView
 
+Window define
 
 ## MySQL SQL
 
