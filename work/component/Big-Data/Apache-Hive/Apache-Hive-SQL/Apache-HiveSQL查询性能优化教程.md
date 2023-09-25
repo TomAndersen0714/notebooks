@@ -10,7 +10,6 @@
 `JOIN[shuffle]`
 
 
-
 ## Sort/Distribute/Cluster/Order By
 
 Sort By、Order By
