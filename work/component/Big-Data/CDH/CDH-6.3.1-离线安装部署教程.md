@@ -265,6 +265,7 @@ cp mysql-connector-java-5.1.47.jar /usr/share/java/mysql-connector-java.jar
 在低版本的Linux系统中，默认的Python版本为Python2，需要手动安装Python3。便于在使用如pyspark、spark-shell时，支持python3语法。
 
 ```shell
+yum install python
 yum install python3
 ```
 
