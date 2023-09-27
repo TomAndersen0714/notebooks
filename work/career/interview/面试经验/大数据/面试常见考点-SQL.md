@@ -7,7 +7,7 @@
 
 LateralView
 
-Window define
+Window define：RANGE BETWEEN UNBOUNDED PROCEEDING AND UNBOUNDED FOLLOWING
 
 ## MySQL SQL
 

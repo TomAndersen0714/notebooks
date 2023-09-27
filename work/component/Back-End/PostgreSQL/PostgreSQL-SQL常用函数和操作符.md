@@ -6,8 +6,8 @@ https://www.postgresql.org/docs/14/functions.html
 ## JSON Functions and Operators
 https://www.postgresql.org/docs/14/functions-json.html
 
-1. **json_build_object ( VARIADIC "any" ) → json**：将输入参数组组装成 json 并返回，如：`SELECT json_build_object('foo', 1, 2, row(3,'bar'))`
-2. Json_array_elements ( JSON "any" ) ->json：
+1. **json_build_object ( VARIADIC "any" ) → json**：将输入参数组装成 json 并返回，如：`SELECT json_build_object('foo', 1, 2, row(3,'bar'))`
+2. **json_array_elements ( json ) → setof json**：将输入的 JSON Array 展开，并返回多个 JSON 对象
 
 
 ## NULL Functions and Operators
