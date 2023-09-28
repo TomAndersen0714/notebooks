@@ -10,7 +10,7 @@
 [JVM内存模型](work/programming/Java/JVM/JVM内存模型.md)
 
 - JVM 类加载过程
-[JVM类加载](work/programming/Java/JVM/JVM类加载.md)
+[JVM类加载机制](work/programming/Java/JVM/JVM类加载机制.md)
 
 
 ### Java Collection
