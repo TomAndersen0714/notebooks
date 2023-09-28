@@ -1,9 +1,21 @@
 # ClickHouse 基础教程
 
+
 ## Architecture Overview
 
 https://clickhouse.com/docs/en/development/architecture
 
+优点：
+无共享、多主结构：每个节点上的角色相同，都支持对外提供服务，每个节点上仅访问自己的本地资源，避免了集群单点故障问题
+数据分片与副本集群：数据通过分片+副本集群的方式，进行数据分布式存储，实现了较高的数据存储能力，同时保障了集群高可用
+向量化执行引擎：通过 CPU 的 SIMD 指令，实现了底层的数据并行处理，实现了较高的数据处理和计算性能
+
+缺点：
+强依赖 Zookeeper
+
+与 HDFS、YARN 的对比：
+1. 各个节点角色相同，每个节点都能提供服务
+2. 不存在单点故障问题，集群可靠性较强
 
 Demo
 https://play.clickhouse.com/play?user=play
