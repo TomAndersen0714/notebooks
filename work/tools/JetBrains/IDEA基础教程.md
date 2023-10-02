@@ -28,6 +28,16 @@ File | Settings | Project Structure | Platform Settings | SDKs | Add New SDK
 
 一个 JetBrain 上的翻译插件，支持各大主流翻译工具，建议使用有道翻译
 
+### Alibaba Java Coding Guidelines
+
+阿里巴巴 Java 开发手册 IDEA 插件，支持实时检查 Java 代码开发规范。
+https://github.com/alibaba/p3c/wiki
+
+常见问题：
+https://github.com/alibaba/p3c/issues/900#issuecomment-1120173751
+https://github.com/alibaba/p3c/files/8644807/Alibaba.Java.Coding.Guidelines-2.1.1-fix-2022.1.zip
+
+
 ### CodeGlance Pro
 
 提供代码缩略图
@@ -35,6 +45,8 @@ File | Settings | Project Structure | Platform Settings | SDKs | Add New SDK
 ### Github Copilot
 
 Microsoft Github AI 编程神器。
+[Github-Copilot基础教程](work/tools/AI/Github-Copilot基础教程.md)
+
 
 ## 修改配置
 
