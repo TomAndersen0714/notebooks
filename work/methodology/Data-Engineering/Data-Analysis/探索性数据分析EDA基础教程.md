@@ -9,7 +9,7 @@
 
 ## EDA 常用工具
 
-Sweetviz
+[Sweetviz](https://github.com/fbdesignpro/sweetviz)
 
 
 ## 参考链接
