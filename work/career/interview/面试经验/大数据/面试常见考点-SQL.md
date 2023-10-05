@@ -49,7 +49,9 @@ Window define：RANGE BETWEEN UNBOUNDED PROCEEDING AND UNBOUNDED FOLLOWING
 
 相互关注
 
-同时在线
+同时在线人数
+
+3 亿
 
 ## Spark SQL
 
