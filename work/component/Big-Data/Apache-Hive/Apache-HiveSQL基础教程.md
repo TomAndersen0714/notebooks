@@ -17,6 +17,9 @@ https://cwiki.apache.org/confluence/display/Hive/LanguageManual+DML
 ### Lateral View
 
 https://cwiki.apache.org/confluence/display/Hive/LanguageManual+LateralView
+
+
+[CSDN-Hive SQL 中的 lateral view 与 explode（列转行）以及行转列](https://blog.csdn.net/qq_42374697/article/details/115273726)
 ### Functions
 
 [Apache-HiveSQL常用函数和运算符](work/component/Big-Data/Apache-Hive/Apache-Hive-SQL/Apache-HiveSQL常用函数和运算符.md)
