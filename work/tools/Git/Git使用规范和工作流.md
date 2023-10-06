@@ -91,7 +91,7 @@ Test 分支是基于 develop 分支创建的，为了和 develop 分支的代码
 
 ### 分支与部署环境对应关系
 
-在系统开发过程中常用代码部署环境：
+在系统开发过程中常用代码部署和运行环境，如下：
 
 1. DEV 环境（Development environment）：用于开发者调试使用
 2. FAT 环境（Feature Acceptance Test environment）：功能验收测试环境，用于测试环境下的软件测试者测试使用
@@ -99,7 +99,7 @@ Test 分支是基于 develop 分支创建的，为了和 develop 分支的代码
 4. PRO 环境（Production environment）：生产环境
 
 
-分支与部署环境对应关系：
+分支与部署和运行环境的对应关系：
 
 | 分支    | 功能                      | 环境 | 可访问 |
 | ------- | ------------------------- | ---- | ------ |
