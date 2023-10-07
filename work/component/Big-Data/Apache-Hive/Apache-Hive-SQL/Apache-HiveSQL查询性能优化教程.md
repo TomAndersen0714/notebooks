@@ -71,7 +71,9 @@ SQL 性能评估指标：
 
 通过将需要 join 的小表分发至 map 端内存中，将 Join 操作提前至 map 端执行，避免因分发 key 值不均匀引发的长尾效应，复杂度从 `（M*N）` 降至 `（M+N）`，从而提高执行效率。
 
-ODPS SQL 与 Hive SQL 使用 map join，Spark 使用 broadcast。
+ODPS SQL 与 Hive SQL 使用 map join（`set hive.auto.convert.join=true`），Spark 使用 broadcast。
+
+The default value for `hive.auto.convert.join` was false in Hive 0.10.0.  Hive 0.11.0 changed the default to true (HIVE-3297). 
 
 ##### 大表手动分桶
 
@@ -121,4 +123,5 @@ https://blog.csdn.net/lianghecai52171314/article/details/104658201
 3. [微信-阿里云云栖号-大数据 SQL 数据倾斜与数据膨胀的优化与经验总结](https://mp.weixin.qq.com/s/0N0ZFFIZtQLp7CBBWuh_pQ)
 4. [【尚硅谷大数据技术 Hive On Spark 调优（离线数仓项目实战）-哔哩哔哩】](https://b23.tv/f2mPHla)
 5. [MySQL-SQL查询性能优化教程](work/component/Back-End/MySQL/solution/MySQL-SQL查询性能优化教程.md)
+6. [Apache Hive - LanguageManual JoinOptimization](https://cwiki.apache.org/confluence/display/hive/languagemanual+joinoptimization)
 
