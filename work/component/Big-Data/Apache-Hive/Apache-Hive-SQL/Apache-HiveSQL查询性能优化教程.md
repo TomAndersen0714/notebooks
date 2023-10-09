@@ -47,19 +47,19 @@ SQL 性能评估指标：
 
 谓词下推，提前过滤
 
-##### 小文件合并读取
-
-提交 SQL 时，设置相应 InputFormat 参数，使用特定的 InputFormat 类来进行文件读取，如 CombineInputFormat，将小文件读取合并后再创建对应的 Mapper 处理数据。
-
-##### 数据重分布
-
-在 Map 阶段做聚合时，使用随机分布函数 `distribute by rand()`，控制 Map 端输出结果的分发，即 map 端如何拆分数据给 reduce 端（默认 hash 算法），打乱数据分布，至少不会在 Map 端发生数据倾斜。
-
 ##### 空值处理
 
 部分实例发生长尾效应，很大程度上由于 null 值，空值导致，使得 Reduce 时含有脏值的数据被分发到同一台机器中。
 
 针对这种问题 SQL，首先确认包含无效值的数据源表是否可以在 Map 阶段直接过滤掉这些异常数据；如果后续 SQL 逻辑仍然需要这些数据，可以通过将空值转变成随机值，既不影响关联也可以避免聚集。
+
+##### 小文件合并读取
+
+提交 SQL 时，设置相应 InputFormat 参数，使用特定的 InputFormat 类来进行文件读取，如 CombineInputFormat，将小文件读取合并后再创建对应的 Mapper 处理数据。
+
+##### 随机数据分布
+
+在 Map 阶段做聚合时，使用随机分布函数 `distribute by rand()`，控制 Map 端输出结果的分发，即 map 端如何拆分数据给 reduce 端（默认 hash 算法），打乱数据分布，至少不会在 Map 端发生数据倾斜。
 
 #### Join 端优化
 
@@ -69,7 +69,7 @@ SQL 性能评估指标：
 
 通过将需要 join 的小表分发至 map 端内存中，将 Join 操作提前至 map 端执行，避免因分发 key 值不均匀引发的长尾效应，复杂度从 `M*N` 降至约为 `M`，从而提高执行效率。
 
-ODPS SQL 与 Hive SQL 使用 map join（`set hive.auto.convert.join=true`），Spark 使用 broadcast。
+ODPS SQL 与 Hive SQL 使用 map join（`set hive.auto.convert.join=true`），Spark 中则可以使用 broadcast 广播变量。
 
 The default value for `hive.auto.convert.join` was false in Hive 0.10.0.  Hive 0.11.0 changed the default to true (HIVE-3297). 
 
