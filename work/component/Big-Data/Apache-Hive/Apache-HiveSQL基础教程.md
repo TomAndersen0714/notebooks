@@ -26,8 +26,12 @@ https://cwiki.apache.org/confluence/display/Hive/LanguageManual+UDF
 
 #### Functions
 
+Normal user-defined functions, such as concat (), take in a single input row and output a single output row.
+
 #### Table-Generating Functions (UDTF)
 
+Table-generating functions transform a single input row to multiple output rows.
+ 
 #### Aggregate Functions (UDAF)
 
 

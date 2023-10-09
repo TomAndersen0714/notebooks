@@ -39,7 +39,7 @@ SQL 性能评估指标：
 
 #### Map 端优化
 
-##### 列裁剪
+##### 列裁剪-按需取值
 
 按需取值，列裁剪。减少使用 `select * from table` 语句，过多选择无用列会增加数据在集群上传输的 IO 开销。
 
@@ -77,7 +77,7 @@ The default value for `hive.auto.convert.join` was false in Hive 0.10.0.  Hive 0
 
 ##### 大表手动分桶
 
-手动 Hash 分区，将大表转换为对应的小表
+手动 Hash 分区，将大表转换为对应的小表，分批进行 JOIN。
 
 #### Reduce 端优化
 
