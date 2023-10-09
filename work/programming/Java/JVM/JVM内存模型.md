@@ -11,7 +11,7 @@
 	2. 幸存区（Survivor）：FromSpace、ToSpace
 2. 老年代（OldGen）
 
-JVM 启动之后创建，Heap 用来存放 Java 对象的实例，堆内存是垃圾收集器 Garbage Collector（GC） 管理的主要区域。
+JVM 启动之后创建，Heap 用来存放 Java 对象的实例，堆内存是垃圾收集器 Garbage Collector（GC） 管理的主要区域。默认情况下，年轻代（YoungGen）和老年代（OldGen）的内存默认分配比例为 1: 2，即老年代内存分配默认是年轻代的 2 倍，即堆的 2/3。
 
 ## 虚拟机栈（VM Stack）
 

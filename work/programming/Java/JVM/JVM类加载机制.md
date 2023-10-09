@@ -31,6 +31,12 @@ JVM 运行时，默认创建有三个类加载器：
 
 ### 解析
 
+解析阶段是虚拟机将常量池内的符号引用（Symbolic References）替换为直接引用（Direct References）的过程。
+
+它包含了被引用元素的名字、描述符等信息，但不包含目标元素的具体内存地址。在 Java 源代码中，当你引用一个类的方法或字段时，这个引用在编译期间会被转化为符号引用。
+
+直接引用是一种在虚拟机运行时期间产生的引用，它包含了能够直接定位到目标的内存地址进而读取信息，可以直接被虚拟机使用。在虚拟机解析类信息时，符号引用会被解析为直接引用，虚拟机会将符号引用转换为能够直接定位目标的指针、偏移量等。
+
 
 ### 初始化
 
@@ -58,4 +64,5 @@ JVM 默认情况下：
 
 
 ## 参考链接
-1. https://mp.weixin.qq.com/s/CCQW0vtr_XZJkjDRKU4jkQ
+1. [微信-JavaGuide-什么是双亲委派模型？](https://mp.weixin.qq.com/s/CCQW0vtr_XZJkjDRKU4jkQ)
+2. https://mp.weixin.qq.com/s/CCQW0vtr_XZJkjDRKU4jkQ
