@@ -81,20 +81,26 @@ The default value for `hive.auto.convert.join` was false in Hive 0.10.0.  Hive 0
 
 #### Reduce 端优化
 
-##### 全局排序优化
+Order by：全局排序，最后会使用单个 Reducer 来实现全局排序，当表数据量过大时，便会出现数据倾斜，产生数据瓶颈；
 
-Order by 为全局排序，当表数据量过大时，性能可能会出现瓶颈；
+Sort by：局部排序，支持使用多个 Reducer 来，确保 Reducer 任务内结果有序，不保证全局有序；
 
-Sort by 为局部排序，确保 Reduce 任务内结果有序，全局排序不保证；
+Distribute by：控制 map 的输出在 reducer 是如何划分的，支持指定分区键，并依据分区键将数据划分到不同的 Reducer 中，distribute by 必须要写在 sort by 之前；
 
-Distribute by 按照指定字段进行 Hash 分片，把数据划分到不同的 Reducer 中；
+Cluster by：根据指定的字段进行分桶，并在桶内进行排序，可以认为 cluster by 是 distribute by+sort by，但仅支持升序排序。
 
-CLUSTER BY：根据指定的字段进行分桶，并在桶内进行排序，可以认为 cluster by 是 distribute by+sort by。
-
-对于排序而言，尝试用 distribute by+sort by 确保 reduce 中结果有序，最后在全局有序。
 
 https://blog.csdn.net/lianghecai52171314/article/details/104658201
 
+##### 按需选择局部排序
+
+如果需求中，要求结果是局部排序，如：按照部门排序，则可以使用 Distribute by 加上 Sort by，而避免使用 Sort By 造成 Reducer 数据倾斜。
+
+##### 全局排序转换为局部排序
+
+对于需要全局排序的整型字段，可以通过截取整型的高位数值作为分桶的标识，然后计算每个桶中的数据量，并按照桶的编号进行排序累加，获得桶中整型数据的偏移量，避免了全局排序的数据倾斜问题。
+
+然后再按照桶编号进行分区排序，在每个桶中计算，整型在桶中的排序后的序号，最后根据桶的全局偏移量和桶中排序序号，求和得到整型字段的全局排序序号。
 
 
 ### 数据膨胀问题

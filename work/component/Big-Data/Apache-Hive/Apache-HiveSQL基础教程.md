@@ -31,6 +31,7 @@ https://cwiki.apache.org/confluence/display/Hive/LanguageManual+UDF
 #### Aggregate Functions (UDAF)
 
 
+
 ### Lateral View
 
 https://cwiki.apache.org/confluence/display/Hive/LanguageManual+LateralView
