@@ -17,7 +17,7 @@
 
 - Hashmap 的底层实现原理？
 
-[Java-HashMap](work/programming/Java/API/Intermediate/Collections/Java-HashMap.md)
+[Java-HashMap基础教程](work/programming/Java/API/Intermediate/Collections/Java-HashMap基础教程.md)
 
 JDk1.8，中 HashMap 是通过数组（Hash 分桶）+链表、红黑树的方式实现的。
 

@@ -20,6 +20,7 @@ A thread state. A thread can be in one of the following states:
 
 ![](resources/images/Pasted%20image%2020230921084600.png)
 
+
 Thread 实例创建完成时，则为 `NEW` 状态，调用完 `start()` 方法后，则进入 `RUNABLE` 状态，并在 JVM 中开始执行。
 
 当 Thread 实例遇到阻塞操作时（如：`Synchronized` 关键字、`Lock.lock` 方法等），则会进入 `BLOCKED` 状态，直到当前 Thread 获得了对应的 Lock，随后便会进入 `RUNABLE` 状态。

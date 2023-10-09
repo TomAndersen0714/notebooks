@@ -3,7 +3,7 @@
 
 ## 堆（Heap）
 
-堆（Heap）是线程私有的 JVM 内存空间。
+堆（Heap）是线程共享的 JVM 内存空间。
 
 堆（Heap）内存区域可以细分为：
 1. 年轻代（YoungGen）
@@ -33,7 +33,7 @@ JVM 启动之后创建，Heap 用来存放 Java 对象的实例，堆内存是�
 
 在 JVM 规范中，方法区（Method Area）主要用来存储加载后的类信息、常量、静态变量、Class 对象、即时编译器编译生成的机器码等数据，方法区也被称为非堆内存（Non-heap）。
 
-在 Oracle JDK 1.7 及之前的 JVM（HotSpot）中，是通过永久代（Perm Generation）的物理方式来实现 JVM 方法区的。
+在 Oracle JDK 1.7 及之前的 JVM（HotSpot）中，是通过堆内存中的永久代（Perm Generation）区域的物理方式来实现 JVM 方法区的。
 
 自 Oracle JDK 1.8 开始，JVM 放弃了 HotSpot 中永久代（PermGen）的实现方式，而是吸取了 JRockit VM 的技术，使用元空间（Meta Space）来代替旧版 HotSpot 中的永久代（PermGen），来实现方法区（Method Area）。
 

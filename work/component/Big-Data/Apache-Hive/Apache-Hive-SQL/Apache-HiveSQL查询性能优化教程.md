@@ -64,12 +64,10 @@ SQL 性能评估指标：
 #### Join 端优化
 
 
-`JOIN[shuffle]`
-
 ##### 小表缓存
 
 
-通过将需要 join 的小表分发至 map 端内存中，将 Join 操作提前至 map 端执行，避免因分发 key 值不均匀引发的长尾效应，复杂度从 `（M*N）` 降至 `（M+N）`，从而提高执行效率。
+通过将需要 join 的小表分发至 map 端内存中，将 Join 操作提前至 map 端执行，避免因分发 key 值不均匀引发的长尾效应，复杂度从 `M*N` 降至约为 `M`，从而提高执行效率。
 
 ODPS SQL 与 Hive SQL 使用 map join（`set hive.auto.convert.join=true`），Spark 使用 broadcast。
 
