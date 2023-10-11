@@ -10,6 +10,9 @@ https://spark.apache.org/docs/3.2.0/cluster-overview.html
 
 弹性分布式数据集（Resilient Distributed Datasets）
 
+宽依赖：一个父 RDD 会对应多个子 RDD，即前后 RDD 的依赖关系是发散的。
+窄依赖：一个父 RDD 只会对应一个子 RDD，一个子 RDD 可以对应任意多个父 RDD，即前后 RDD 的依赖关系是收敛的。
+
 ## Shuffle
 
 Apache Spark 的 shuffle 描述的是数据从 map side task 输出到 reduce side task 输入的这段过程。
