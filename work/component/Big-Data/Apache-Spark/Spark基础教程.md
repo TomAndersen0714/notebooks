@@ -31,3 +31,5 @@ Spark 中每个 Stage 的每个 map/reduce side task 都会有唯一标识：map
 1. [Apache Spark](https://spark.apache.org/)
 2. [微信-五分钟学大数据-Spark SQL 底层执行流程详解](https://mp.weixin.qq.com/s/CWdBLhgUrLxlsavTFhA0rA)
 3. [Github - Spark Shuffle 机制](https://paxinla.github.io/posts/2021/02/spark-shuffle-ji-zhi.html)
+4. [微信-五分钟学大数据-Spark 面试八股文（上万字面试必备宝典）](https://mp.weixin.qq.com/s/Lx3kWDs_XjhuyibX8dhFMQ)
+5. 
