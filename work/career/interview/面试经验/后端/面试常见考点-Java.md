@@ -15,6 +15,8 @@
 
 ### Java Collection
 
+- ArrayList 和 LinkedList 的区别是什么？
+
 - Hashmap 的底层实现原理？
 
 [Java-HashMap基础教程](work/programming/Java/API/Intermediate/Collections/Java-HashMap基础教程.md)
