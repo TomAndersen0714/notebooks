@@ -59,7 +59,7 @@ SQL 性能评估指标：
 
 ##### 随机数据分布
 
-在 Map 阶段做聚合时，使用随机分布函数 `distribute by rand()`，控制 Map 端输出结果的分发，即 map 端如何拆分数据给 reduce 端（默认 hash 算法），打乱数据分布，至少不会在 Map 端发生数据倾斜。
+在 Map 阶段时，可以使用随机分布函数 `distribute by rand()`，控制 Map 端输出结果的分发策略，即 Map 端如何拆分数据给 Reduce 端（默认基于针对列使用 Hash 算法的计算结果），打乱数据分布，至少不会在 Map 端就开始出现数据倾斜。
 
 #### Join 端优化
 
@@ -92,7 +92,7 @@ https://blog.csdn.net/lianghecai52171314/article/details/104658201
 
 ##### 按需选择局部排序
 
-如果需求中，要求结果是局部排序，如：按照部门排序，则可以使用 Distribute by 加上 Sort by，而避免使用 Sort By 造成 Reducer 数据倾斜。
+如果需求中，要求结果是局部排序，如：按照部门排序，则可以使用 ` Distribute by` 加上 `Sort by`，而避免使用 `Order By` 全局排序（只会使用单个 Reducer 来处理最终结果），造成 Reducer 数据倾斜。
 
 ##### 全局排序转换为局部排序
 
