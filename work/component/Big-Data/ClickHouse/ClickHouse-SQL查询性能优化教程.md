@@ -30,3 +30,7 @@ SQL 性能评估指标：
 如何优化
 
 [微信-ClickHouse的秘密基地-ClickHouse SQL 的十项优化技巧](https://mp.weixin.qq.com/s/lOxCyms__qviTGhb9H1-Pw)
+
+
+GLOBAL IN
+GLOBAL JOIN

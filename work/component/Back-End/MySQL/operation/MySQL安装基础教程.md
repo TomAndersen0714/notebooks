@@ -19,10 +19,12 @@
 https://hub.docker.com/_/mysql
 
 ```bash
-docker run --name some-mysql -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mysql:8.1
+docker run --name some-mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mysql:8.1
 ```
 
-用户名：root，密码：my-secret-pw
+用户名：`root`，密码：`my-secret-pw`
+
+连接客户端：`mysql -P 3306 -u root -p`
 
 ## 参考链接
 1. [MySQL 8.0 Documentation - MySQL Installation Guide](https://dev.mysql.com/doc/mysql-installation-excerpt/8.0/en/)

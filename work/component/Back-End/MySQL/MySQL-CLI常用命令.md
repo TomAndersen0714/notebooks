@@ -5,8 +5,8 @@
 
 
 Client CLI 常用登录 Server 命令：
-```
-mysql -u root -p
+```bash
+mysql -P 3306 -h localhost -u root -p
 ```
 
 
