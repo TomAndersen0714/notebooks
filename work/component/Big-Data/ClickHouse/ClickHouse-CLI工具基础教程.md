@@ -5,6 +5,7 @@ https://clickhouse.com/docs/en/integrations/sql-clients/clickhouse-client-local
 ## clickhouse-local
 
 https://clickhouse.com/docs/en/operations/utilities/clickhouse-local
+https://clickhouse.com/blog/extracting-converting-querying-local-files-with-sql-clickhouse-local
 
 ## clickhouse-client
 
@@ -32,3 +33,9 @@ https://clickhouse.com/docs/en/integrations/sql-clients/cli
 - `--hardware-utilization` – Print hardware utilization information in progress bar.
 - `--print-profile-events` – Print ProfileEvents packets.
 - `--profile-events-delay-ms` – Delay between printing ProfileEvents packets (-1 - print only totals, 0 - print every single packet).
+
+
+Clickhouse Client 常用命令：
+```bash
+clickhouse-client -m --send_logs_level=trace --port=19000
+```

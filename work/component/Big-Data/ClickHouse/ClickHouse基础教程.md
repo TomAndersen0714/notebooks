@@ -1,7 +1,17 @@
 # ClickHouse 基础教程
 
 
-## Architecture Overview
+## What Is ClickHouse?
+
+
+https://clickhouse.com/docs/en/intro
+
+## Quick Start
+
+https://clickhouse.com/docs/en/getting-started/quick-start
+
+
+## Overview
 
 https://clickhouse.com/docs/en/development/architecture
 
@@ -25,6 +35,7 @@ https://play.clickhouse.com/play?user=play
 
 Data Type
 https://clickhouse.com/docs/en/sql-reference/data-types
+
 
 ## 参考链接
 1. [Altinity ClickHouse Knowledge Base (KB)](https://kb.altinity.com/)
