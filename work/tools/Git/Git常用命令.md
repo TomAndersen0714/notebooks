@@ -67,11 +67,23 @@ git clone --depth 1 https://github.com/grpc/grpc-java
 
 `--add`
 
-#### 常用config
+#### 常用 config
+
+`user.name`, `user.email`
+```bash
+git config --global user.name "TomAndersen"
+git config --global user.email "1040994898@qq.com"
+```
+
+
+`core.autocrlf`
+```bash
+git config --global core.autocrlf input
+```
 
 
 `http.proxy, https.proxy`
-```
+```bash
 git config --global http.proxy <protocol://><host:port>
 git config --global https.proxy <protocol://><host:port>
 
@@ -88,7 +100,7 @@ git config --global --unset https.proxy
 ```
 
 `safe.directory`
-```
+```bash
 git config --global --add safe.directory <directory>
 git config --global safe.directory '*'
 
@@ -121,15 +133,15 @@ https://waynerv.com/posts/git-rebase-intro/
 ```
 
 Rebase的行为可以大致分为三类：
-第一类：保留commit，不合并
-1、pick: 标记为pick的commit会在rebase操作后会直接保留下来，不做任何改动，也不会合并，最上面的commit最好标记为这一类
-2、reword： 这一类commit也会保存下来，不过在保存下来之前会有一次修改commit message的机会
-3、edit：这一类的commit也会直接保存下来，不过，当合并到这种类型的commit时，整个合并经常会暂停下来，你可以重新修改这次commit中的变动内容，比如给这个commit继续新增一些代码改动、或者修改commit message，然后git add(不要忘记 git add了)， 再继续使用git rebase —continue，来继续rebase操作。
-第二类：不保留commit，与上一次commit合并
-1、squash：标记为squash的commit在rebase操作完成后不会保留，它会与之相邻的上一次commit进行合并。同时它的commit message也会与上一次commit的message合并。
-2、fixup: 这类commit不会保留，会直接与相邻的上一次commit合并，与squash不同之处在于，它的commit message回直接丢弃，即这次commit会被视为对前一次commit的一次小的补充修改（fixup），commit message就以前一次为准
-第三类：不保留，直接删除commit
-1、drop：标记为skip的commit会直接被删除，就相当于这次commit从来没有发生过。同时，这个commit中涉及的所有代码修改全部会被删除。
+1. 第一类：保留 commit，不合并
+	1. Pick: 标记为 pick 的 commit 会在 rebase 操作后会直接保留下来，不做任何改动，也不会合并，最上面的 commit 最好标记为这一类；
+	2. Reword： 这一类 commit 也会保存下来，不过在保存下来之前会有一次修改 commit message 的机会；
+	3. Edit：这一类的 commit 也会直接保存下来，不过，当合并到这种类型的 commit 时，整个合并经常会暂停下来，你可以重新修改这次 commit 中的变动内容，比如给这个 commit 继续新增一些代码改动、或者修改 commit message，然后 git add (不要忘记 git add 了)，再继续使用 git rebase —continue，来继续 rebase 操作。
+2. 第二类：不保留 commit，与上一次 commit 合并
+	1. Squash：标记为 squash 的 commit 在 rebase 操作完成后不会保留，它会与之相邻的上一次 commit 进行合并。同时它的 commit message 也会与上一次 commit 的 message 合并；
+	2. Fixup: 这类 commit 不会保留，会直接与相邻的上一次 commit 合并，与 squash 不同之处在于，它的 commit message 回直接丢弃，即这次 commit 会被视为对前一次 commit 的一次小的补充修改（fixup），commit message 就以前一次为准；
+3. 第三类：不保留，直接删除 commit
+	1. Drop：标记为 skip 的 commit 会直接被删除，就相当于这次 commit 从来没有发生过。同时，这个 commit 中涉及的所有代码修改全部会被删除。
 
 
 ### git rm
