@@ -26,6 +26,10 @@ Git是一种用来实现版本管理的工具，在实际使用过程中，不�
 git clone -b v1.55.1 https://github.com/grpc/grpc-java
 ```
 
+- 限制 `depth` 后，会导致项目只会获取特定数量 commit 相关的分支，而不是全部分支，这样可以大大加快克隆的速度，但同时也无法获取其他 commit 相关的分支信息。
+- 如果要解除限制，可以使用 `git remote set-branches origin '*'` 命令，修改 `.git/Config` 中的配置。
+- 适合用 `git clone --depth=1` 的场景，是想 clone 最新版本来使用或学习，而不是参与整个项目的开发工作。
+
 `--depth <depth>`: Create a shallow clone with a history truncated to the specified number of commits.
 ```
 git clone --depth 1 https://github.com/grpc/grpc-java
@@ -48,9 +52,16 @@ git clone --depth 1 https://github.com/grpc/grpc-java
 
 ### git branch
 
-`-v` 
+
+`-v` ：显示分支详细信息
+`-D <branch>` ：删除指定分支，但不能是删除当前分支。
 
 ### git tag
+
+`-l | --list` : List tags. With optional `<pattern>...`, e.g.  git tag --list `'v-*'`, list only the tags that match the Pattern (s).
+
+
+### git show
 
 
 

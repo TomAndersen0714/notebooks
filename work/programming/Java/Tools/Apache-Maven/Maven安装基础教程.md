@@ -4,6 +4,8 @@
 ## 下载教程
 https://maven.apache.org/download.cgi
 
+Maven3 archive:
+https://archive.apache.org/dist/maven/maven-3/
 
 ## 安装教程
 https://maven.apache.org/install.html
