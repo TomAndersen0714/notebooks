@@ -41,6 +41,6 @@ mvn dependency:get -DrepoUrl=http://repo.maven.apache.org/maven2/ -Dartifact=ro.
 **可能原因 1**：
 1. 当使用 Maven 3.5.2 等版本时，IDEA 在 Load Project 时便会抛出类似信息，如 `[WARNING] 'dependencies.dependency.version' for <groupId>:<artifactId>:jar is either LATEST or RELEASE (both of them are being deprecated)`
 2. 当使用高版本的 Maven，解析使用了已废弃特性的 `pom.xml` 文件时，则会抛出 `ERROR`，而非 `WARNING`，导致 Maven 无法正常构建
-**解决方案**：
+**解决方案 1-1**：
 1. 切换到 Maven 3.3.9 版本以下，进行编译。
 
