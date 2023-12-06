@@ -1,7 +1,6 @@
 # Git常见问题
 
 
-
 ## 权限
 
 **报错 `error updating changes: detected dubious ownership in repository`**

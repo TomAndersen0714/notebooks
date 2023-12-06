@@ -95,7 +95,16 @@ Project View - Options - Tree Appearance
 
 勾选 `Show Members`，`Folds Always on Top`
 
+### Add Back or Forward Button in new UI
 
+1. Right click "Main Menu"
+2. Add "Back" or "Forward"  Button in Menu
+
+https://stackoverflow.com/questions/75554009/intellij-2023-new-ui-back-arrow-icon
+
+### Show tabs in multiple rows
+
+File | Settings | Editor | General | Editor Tabs，Show tabs in multiple rows
 ## 调试技巧
 
 ### Reset Frame
