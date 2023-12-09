@@ -72,6 +72,12 @@ example:
 unalias kd
 ```
 
+
+#### xargs
+
+使用 `xargs -n 1` 命令来换行以此执行速度太慢，建议使用 `tr ' ' '\n\n' | xargs` 命令替换。
+
+
 ### File
 
 
