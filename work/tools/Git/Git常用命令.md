@@ -81,6 +81,7 @@ git clone --depth 1 https://github.com/grpc/grpc-java
 
 #### 常用 config
 
+
 `user.name`, `user.email`
 ```bash
 git config --global user.name "TomAndersen"
@@ -88,9 +89,14 @@ git config --global user.email "1040994898@qq.com"
 ```
 
 
-`core.autocrlf`
+`core.autocrlf` ：控制提交时的换行符转换机制，一般设置为 input，即提交时转换为 Unix 换行符 `\n`
 ```bash
 git config --global core.autocrlf input
+```
+
+`core.quotepath` ：控制 Git 输出路径时的字符解析，一般设置为 false，使得 Git 支持显示中文字符
+```bash
+git config --global core.quotepath false
 ```
 
 
@@ -111,7 +117,7 @@ git config --global --unset http.proxy
 git config --global --unset https.proxy
 ```
 
-`safe.directory`
+`safe.directory` : 避免 Git 告警，一般不会调整此配置
 ```bash
 git config --global --add safe.directory <directory>
 git config --global safe.directory '*'
