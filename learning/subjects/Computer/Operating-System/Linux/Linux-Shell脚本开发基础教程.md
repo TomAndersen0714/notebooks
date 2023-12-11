@@ -7,7 +7,18 @@
 ## 调试
 
 
+### VSCode
 
+Bash Debug
+https://liushiming.cn/article/debug-bash-on-macos.html
+https://zbttl-github-io.vercel.app/vscode-diao-shi-bash-shell-jiao-ben/
+https://blog.csdn.net/babytiger/article/details/119937537
+
+
+### IDEA
+
+BashSupport Pro
+https://cloud.tencent.com/developer/ask/sof/108254071
 ## 常见问题
 
 ### xargs
