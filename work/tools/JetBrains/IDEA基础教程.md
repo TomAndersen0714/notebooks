@@ -49,7 +49,24 @@ Microsoft Github AI 编程神器。
 
 ### Python
 
+在实际项目开发过程中，经常可能出现同一个项目中同时存在 Java 和 Python 代码，而 IDEA 支持安装对应的插件，来实现多语言集成开发。
+
+Plugin 中检索 `Python` 后安装即可。
+### Scala
+
+Plugin 中检索 `Scala` 后安装即可。
+
 ## 修改配置
+
+### Python
+
+1. 导入 Python SDK ：`File | Project Structure | Platform Settings | SDKs`
+2. 配置 Python Interpreter：`File | Project Structure | Project Settings | Modules | Add `，添加 Python Framework 即可。
+
+### Scala
+
+1. 导入 Scala SDK：`File | Project Structure | Platform Settings | Global Libraries`
+2. 具体参考： [Scala开发环境搭建基础教程](work/programming/Scala/Scala开发环境搭建基础教程.md)
 
 ### Build
 
@@ -96,16 +113,19 @@ Project View - Options - Tree Appearance
 
 勾选 `Show Members`，`Folds Always on Top`
 
-### Add Back or Forward Button in new UI
+### UI
+
+#### Add Back or Forward Button in new UI
 
 1. Right click "Main Menu"
 2. Add "Back" or "Forward"  Button in Menu
 
 https://stackoverflow.com/questions/75554009/intellij-2023-new-ui-back-arrow-icon
 
-### Show tabs in multiple rows
+#### Show tabs in multiple rows
 
 File | Settings | Editor | General | Editor Tabs，Show tabs in multiple rows
+
 ## 调试技巧
 
 ### Reset Frame

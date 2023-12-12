@@ -5,16 +5,15 @@
 
 [Scala安装基础教程](work/programming/Scala/Scala安装基础教程.md)
 
-
-## IDE 配置
+## IDE 集成 Scala SDK
 
 ### IDAE
 
-
-Plugin-Scala
+1. 安装 Plugin  `Scala`
+2. 导入 `Scala SDK` ：`File | Project Structure | Platform Settings | Global Libraries`
 
 ### VSCode
 
 
 ## 参考链接
-1. 
+1. https://blog.csdn.net/weixin_45207751/article/details/131259706
