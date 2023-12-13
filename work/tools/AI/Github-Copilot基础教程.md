@@ -17,5 +17,21 @@ Github 首次订阅 Copilot 时，支持试用 30 天。后续则需要付费，
 
 付费方式建议使用 PayPel，支持绑定国内银联银行卡。
 
+
+## IDE 集成
+
+### JetBrains
+
+### VSCode
+
+
+## 常见问题
+
+问题：
+`connet 20.205.243.168 timeout`
+解决方法：
+方法一：重启插件
+方法二：调整 IP 映射， https://github.com/orgs/community/discussions/64334
+
 ## 参考链接
 1. [Github Copilot](https://github.com/features/copilot)
