@@ -60,12 +60,12 @@ Plugin 中检索 `Scala` 后安装即可。
 
 ### Python
 
-1. 导入 Python SDK ：`File | Project Structure | Platform Settings | SDKs`
+1. 配置 Python SDK ：`File | Project Structure | Platform Settings | SDKs`
 2. 配置 Python Interpreter：`File | Project Structure | Project Settings | Modules | Add `，添加 Python Framework 即可。
 
 ### Scala
 
-1. 导入 Scala SDK：`File | Project Structure | Platform Settings | Global Libraries`
+1. 配置 Scala SDK：`File | Project Structure | Platform Settings | Global Libraries`
 2. 具体参考： [Scala开发环境搭建基础教程](work/programming/Scala/Scala开发环境搭建基础教程.md)
 
 ### Build
