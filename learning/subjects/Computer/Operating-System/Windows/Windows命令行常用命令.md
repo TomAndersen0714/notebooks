@@ -34,6 +34,12 @@ netstat -ano | findstr "3306"
 
 ## WSL相关命令
 
+
+WSL 查看系统版本：
+```bash
+Wslfetch
+```
+
 WSL 查看当前版本：
 ```bash
 wsl -l -v
@@ -41,9 +47,11 @@ wsl -l -v
 
 WSL 停止或启动：
 ```bash
+# 停止
 net stop LxssManager
 wsl --shutdown
 
+# 启动
 net start LxssManager
 ```
 

@@ -9,16 +9,19 @@
 
 ### VSCode
 
-Bash Debug
+VSCode 中主要通过 `Bash Debugger` 插件集成 `bashdb` 来支持 Shell 调试功能：
 https://liushiming.cn/article/debug-bash-on-macos.html
 https://zbttl-github-io.vercel.app/vscode-diao-shi-bash-shell-jiao-ben/
 https://blog.csdn.net/babytiger/article/details/119937537
 
+同时需要注意的是在 Windows 环境下需要先安装 WSL 和 Ubuntu，WSL 安装详情参考 [WSL基础教程](learning/subjects/Computer/Operating-System/Windows/WSL/WSL基础教程.md)
 
 ### IDEA
 
-BashSupport Pro
+IDEA 中主要通过 `BashSupport Pro` 插件对应功能：
 https://cloud.tencent.com/developer/ask/sof/108254071
+
+
 ## 常见问题
 
 ### xargs
