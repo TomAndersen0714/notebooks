@@ -61,8 +61,15 @@ git clone --depth 1 https://github.com/grpc/grpc-java
 `-l | --list` : List tags. With optional `<pattern>...`, e.g.  git tag --list `'v-*'`, list only the tags that match the Pattern (s).
 
 
-### git show
+### git remote
 
+
+给现有 remote 添加 push URL，即同时支持推送多个仓库：
+```bash
+git remote set-url --add origin git@gitee.com:TomAndersen/notebooks.git
+```
+
+### git show
 
 
 ## 高级命令
