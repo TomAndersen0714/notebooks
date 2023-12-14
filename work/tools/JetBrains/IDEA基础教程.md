@@ -126,6 +126,14 @@ https://stackoverflow.com/questions/75554009/intellij-2023-new-ui-back-arrow-ico
 
 File | Settings | Editor | General | Editor Tabs，Show tabs in multiple rows
 
+
+#### Add commit tool window
+
+1. Interface: Settings | Version Control | Commit, then enable Use non-modal commit interface
+2. Window: go to Advanced Settings then Enable Commit tool window
+
+https://stackoverflow.com/a/72490630/13774262
+
 ## 调试技巧
 
 ### Reset Frame
