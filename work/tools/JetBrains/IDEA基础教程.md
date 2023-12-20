@@ -17,6 +17,8 @@ File | Settings | Project Structure | Platform Settings | SDKs | Add New SDK
 1. 建议使用下载安装 JetBrains ToolBox 启动或升级 IDE
 2. 直接重启主机
 
+具体参考：[JetBrains常见问题解决方案](work/tools/JetBrains/JetBrains常见问题解决方案.md)
+
 
 ## 安装插件
 

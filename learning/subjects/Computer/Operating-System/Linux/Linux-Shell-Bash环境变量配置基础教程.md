@@ -1,4 +1,4 @@
-# Linux Bash环境变量配置基础教程
+# Linux Bash 环境变量配置基础教程
 
 
 ## 前言

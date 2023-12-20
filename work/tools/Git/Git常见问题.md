@@ -11,7 +11,6 @@
 1. Windows 环境下，需要通过修改文件夹的所有者，来实现文件的所有者统一
 2. Unix 环境下，则通过 `chown -R` 命令，来递归修改文件夹及其文件的所有者
 
-
 任何命令操作，都要严格控制用户权限，尤其是在 WSL Git 的开发模式中，启动 WSL Terminal 时使用的是什么角色，则在 WSL 中创建的文件就会在 Windows Explorer 中显示为什么角色所有。
 
 如：以管理员身份启动 Windows Terminal，那么在 Windows 资源管理器中，就会以对应的用户进行创建文件。
@@ -23,6 +22,8 @@ Win：修改文件夹所有者为对应 git 用户， https://blog.csdn.net/tcjy
 Linux：`chown -R <current_user> <repo_folder>`
 
 方法三：设置 git 安全路径
+
+配置参数 `safe.directory`，具体参考 [Git配置基础教程](work/tools/Git/Git配置基础教程.md)。
 
 
 ## 网络
