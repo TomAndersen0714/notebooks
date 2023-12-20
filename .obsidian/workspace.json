@@ -4,22 +4,59 @@
     "type": "split",
     "children": [
       {
-        "id": "bac9c80645dbb339",
+        "id": "dd44d6e34e6615a8",
         "type": "tabs",
         "children": [
           {
-            "id": "944a9599d2f4b092",
+            "id": "0bd57e5d1395af7e",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "README.md",
+                "file": "learning/subjects/Computer/Operating-System/Linux/Linux-Shell脚本开发基础教程.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "fb8e499560c1a9bf",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "work/tools/JetBrains/IDEA基础教程.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "292c07164d156e8f",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "schedule/待办事项/每日待办清单.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "2e8bd68aa983bc98",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "work/tools/Terminal/Tabby基础教程.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -48,7 +85,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "阿里云 数据仓库",
+                "query": "toolbox",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -77,7 +114,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 362.49999618530273
+    "width": 307.5
   },
   "right": {
     "id": "6ba34ece4ec5cf8c",
@@ -93,7 +130,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "README.md"
+                "file": "work/tools/Terminal/Tabby基础教程.md"
               }
             }
           },
@@ -114,7 +151,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "README.md",
+                "file": "work/tools/Terminal/Tabby基础教程.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -131,7 +168,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "README.md",
+                "file": "work/tools/Terminal/Tabby基础教程.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -167,7 +204,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 331.5
+    "width": 215.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -182,53 +219,53 @@
       "markdown-table-editor:Open Markdown Table Editor": false
     }
   },
-  "active": "fbae03c9241a1983",
+  "active": "2e8bd68aa983bc98",
   "lastOpenFiles": [
-    "4913",
-    "work/component/Back-End/PostgreSQL/PostgreSQL开发规范.md",
-    "work/component/Big-Data/ClickHouse/operation/ClickHouse安装基础教程.md",
+    "schedule/待办事项/每日待办清单.md",
+    "work/tools/Terminal/Tabby基础教程.md",
+    "work/tools/JetBrains/IDEA基础教程.md",
+    "learning/subjects/Computer/Operating-System/Linux/Linux-Shell脚本开发基础教程.md",
+    "work/tools/JetBrains/JetBrains常见问题解决方案.md",
+    "life/love/关于和父母分享自己人生所见所闻的必要性的讨论.md",
+    "life/love",
+    "learning/subjects/Computer/Operating-System/Windows/Windows环境变量配置基础教程.md",
+    "learning/subjects/Computer/Operating-System/Linux/Linux-Shell命令行常用命令.md",
+    "learning/subjects/Computer/Operating-System/Linux/Linux-Shell-Bash环境变量配置基础教程.md",
+    "work/tools/Terminal/Windows-Terminal基础教程.md",
+    "work/tools/Terminal/Terminal客户端工具调研.md",
+    "learning/subjects/Computer/Operating-System/Windows/Windows命令行常用命令.md",
+    "work/component/Back-End/HTTP/HTTP基础教程.md",
+    "work/programming/Java/JVM/JVM类加载机制.md",
+    "work/programming/Java/Tools/Gradle/Gradle安装基础教程.md",
+    "work/programming/Java/Tools/Gradle/Gradle常见问题.md",
+    "work/programming/Java/Tools/Gradle/Gradle基础教程.md",
+    "work/career/creation/创业方向.md",
+    "work/career/creation/商业模式随记.md",
+    "创业思路.md",
+    "schedule/待办事项/每周工作总结.md",
     "work/methodology/Data-Engineering/Data-Development/Data-Warehouse/Analysis-and-Design/数据仓库搭建技术方案设计-模板.md",
-    "work/component/Big-Data/CDH/CDH-Kudu负载均衡解决方案.md",
-    "work/component/Big-Data/CDH/CDH-HDFS负载均衡方案.md",
-    "work/methodology/Data-Engineering/Data-Development/Data-Warehouse/Analysis-and-Design/数据仓库设计规范.md",
-    "work/methodology/Data-Engineering/Data-Development/Data-Warehouse/数据仓库开发基础教程(待定).md",
-    "work/methodology/Data-Engineering/Data-Development/Data-Warehouse/数据仓库开发流程及规范.md",
-    "work/component/Big-Data/CDH/CDH-6.3.1-离线安装部署教程.md",
-    "work/component/Common/Docker/Docker-Image打包基础教程.md",
-    "work/component/Big-Data/ClickHouse/ClickHouse-SQL基础教程.md",
-    "work/component/Big-Data/Apache-Zookeeper/Zookeeper安装基础教程.md",
-    "learning/subjects/Computer/Operating-System/Linux/Disk/磁盘开销问题解决方案.md",
-    "work/methodology/Data-Engineering/Data-Development/大数据数据字典模板.md",
-    "work/methodology/Data-Engineering/数据工程基础教程.md",
-    "work/component/Big-Data/ClickHouse/operation/ClickHouse慢查询SQL排查方案.md",
+    "work/tools/Git/Git常见问题.md",
+    "work/tools/Git/Git配置基础教程.md",
+    "work/tools/Git/Git常用命令.md",
+    "Git常用配置.md",
+    "work/tools/VSCode",
+    "test",
+    "work/tools/Database",
+    "work/component/Back-End/MongoDB/mechanism",
+    "work/component/Back-End/MariaDB",
+    "life/dress",
+    "work/component/Big-Data/Apache-Seatunnel",
+    "schedule/周报",
+    "learning/subjects/Finance",
     "resources/images/Pasted image 20231113155027.png",
     "resources/images/Pasted image 20231113155023.png",
-    "learning/subjects/Computer/Operating-System/Linux/Linux-Shell命令行常用命令.md",
-    "work/component/Big-Data/CDH/CDH-Impala-慢SQL查询排查方案.md",
     "resources/images/Pasted image 20231113154717.png",
     "resources/images/Pasted image 20231113154645.png",
     "resources/images/Pasted image 20231113154641.png",
     "resources/images/Pasted image 20231113154512.png",
-    "work/component/Big-Data/CDH/CDH-Impala资源隔离方案.md",
     "resources/images/Pasted image 20231113154409.png",
     "resources/images/Pasted image 20231113154402.png",
     "resources/images/Pasted image 20231113154352.png",
-    "resources/images/Pasted image 20231113154344.png",
-    "work/component/Big-Data/CDH/CDH-Impala高负载和慢查询SQL排查方案.md",
-    "work/component/Common/Docker/Docker基础教程.md",
-    "work/component/Big-Data/ClickHouse/ClickHouse-CLI工具基础教程.md",
-    "life/生活搞笑语录随记.md",
-    "work/component/Big-Data/Apache-Kafka/Kafka-Server常用命令.md",
-    "work/component/Big-Data/ClickHouse/operation/ClickHouse数据导入导出解决方案.md",
-    "learning/test/金融/证券从业人员资格考试/附件2： 证券业从业人员资格专场考试须知.pdf",
-    "learning/test/金融/银行从业资格证",
-    "learning/test/金融/期货从业资格证",
-    "life/photography",
-    "work/component/Big-Data/Apache-Kafka",
-    "work/component/Big-Data/Apache-Parquet",
-    "life/game",
-    "work/career/interview/简历/个人简历/数仓开发工程师_程诚2023_0925.pdf",
-    "work/career/interview/简历/个人简历/数仓开发工程师_程诚2023_0925 - 副本.pdf",
-    "work/component/Big-Data/Apache-Spark/solution"
+    "resources/images/Pasted image 20231113154344.png"
   ]
 }
