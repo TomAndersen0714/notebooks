@@ -6,9 +6,9 @@
 建议初学者，可以自己申请，或者淘宝购买学生账号，支持 JetBrains 全家桶。
 
 
-## 配置 JDK
+## 配置 Java 开发环境
 
-File | Settings | Project Structure | Platform Settings | SDKs | Add New SDK
+`File | Settings | Project Structure | Platform Settings | SDKs | Add New SDK`
 
 将之前安装的 Java 对应的 JAVA_HOME 路径，作为 SDK 的路径，将 SDK 添加到 IDEA 中。
 
@@ -19,6 +19,15 @@ File | Settings | Project Structure | Platform Settings | SDKs | Add New SDK
 
 具体参考：[JetBrains常见问题解决方案](work/tools/JetBrains/JetBrains常见问题解决方案.md)
 
+## 配置 Python 开发环境
+
+在实际项目开发过程中，经常可能出现同一个项目中同时存在 Java 和 Python 代码，而 IDEA 支持安装对应的插件，来实现多语言集成开发。
+
+具体见下文，“安装插件”和“修改配置”章节内容。
+
+## 配置 Scala 开发环境
+
+具体见下文，“安装插件”和“修改配置”章节内容。
 
 ## 安装插件
 
@@ -51,12 +60,10 @@ Microsoft Github AI 编程神器。
 
 ### Python
 
-在实际项目开发过程中，经常可能出现同一个项目中同时存在 Java 和 Python 代码，而 IDEA 支持安装对应的插件，来实现多语言集成开发。
-
-Plugin 中检索 `Python` 后安装即可。
+Plugin 中检索 `Python` 后安装对应插件即可。
 ### Scala
 
-Plugin 中检索 `Scala` 后安装即可。
+Plugin 中检索 `Scala` 后安装对应插件即可。
 
 ## 修改配置
 
