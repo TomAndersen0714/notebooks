@@ -42,30 +42,6 @@
                 "source": false
               }
             }
-          },
-          {
-            "id": "23672bb438b3cbfc",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "learning/subjects/Computer/Operating-System/Windows/Windows环境变量配置基础教程.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "eec4bdb818faa3bd",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "work/tools/JetBrains/IDEA基础教程.md",
-                "mode": "source",
-                "source": false
-              }
-            }
           }
         ],
         "currentTab": 2
@@ -233,10 +209,13 @@
   },
   "active": "292c07164d156e8f",
   "lastOpenFiles": [
+    "work/tools/Notepad/notepad基础教程.md",
+    "schedule/待办事项/每日待办清单.md",
     "learning/subjects/Computer/Operating-System/Windows/Windows环境变量配置基础教程.md",
+    "work/tools/VSCode/VScode基础教程.md",
+    "work/tools/Notepad",
     "work/tools/JetBrains/IDEA基础教程.md",
     "work/programming/Python/Python开发基础教程.md",
-    "schedule/待办事项/每日待办清单.md",
     "learning/subjects/Computer/Operating-System/Windows/Windows小工具推荐.md",
     "work/tools/Terminal/Tabby基础教程.md",
     "learning/subjects/Computer/Operating-System/Linux/Linux-Shell脚本开发基础教程.md",
@@ -258,8 +237,6 @@
     "创业思路.md",
     "schedule/待办事项/每周工作总结.md",
     "work/methodology/Data-Engineering/Data-Development/Data-Warehouse/Analysis-and-Design/数据仓库搭建技术方案设计-模板.md",
-    "work/tools/Git/Git常见问题.md",
-    "work/tools/Git/Git配置基础教程.md",
     "work/tools/VSCode",
     "test",
     "work/tools/Database",
@@ -268,7 +245,6 @@
     "life/dress",
     "work/component/Big-Data/Apache-Seatunnel",
     "schedule/周报",
-    "learning/subjects/Finance",
     "resources/images/Pasted image 20231113155027.png",
     "resources/images/Pasted image 20231113155023.png",
     "resources/images/Pasted image 20231113154717.png",
