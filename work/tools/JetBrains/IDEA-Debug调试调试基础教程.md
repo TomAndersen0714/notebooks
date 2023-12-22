@@ -1,4 +1,4 @@
-# IDEA Debug调试常用方法
+# IDEA Debug 调试基础教程
 
 
 ## Breakpoints 的种类
