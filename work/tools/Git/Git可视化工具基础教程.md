@@ -22,7 +22,7 @@ https://github.com/gitkraken/vscode-gitlens
 ## SourceTree
 
 特点：
-1. 免费，非开源，支持商用
+1. 免费，部分特性开源，支持商用
 2. 功能齐全
 安装教程：
 https://www.sourcetreeapp.com/
