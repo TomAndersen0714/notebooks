@@ -1,13 +1,17 @@
 # Git 可视化工具基础教程
 
 
+## Github Destop
+
+特点：
+1. 开源
+2. 功能单一
 
 ## SourceTree
 
 特点：
-1. 支持免费版，支持商用
-2. 非开源
-
+1. 免费，非开源，支持商用
+2. 功能齐全
 安装教程：
 https://www.sourcetreeapp.com/
 配置教程：

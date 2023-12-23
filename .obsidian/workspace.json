@@ -66,21 +66,9 @@
                 "source": false
               }
             }
-          },
-          {
-            "id": "3d3fa93bd603aca6",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "work/tools/Git/Git可视化工具基础教程.md",
-                "mode": "source",
-                "source": false
-              }
-            }
           }
         ],
-        "currentTab": 5
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -154,7 +142,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "work/tools/Git/Git可视化工具基础教程.md"
+                "file": "schedule/待办事项/每日待办清单.md"
               }
             }
           },
@@ -175,7 +163,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "work/tools/Git/Git可视化工具基础教程.md",
+                "file": "schedule/待办事项/每日待办清单.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -192,7 +180,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "work/tools/Git/Git可视化工具基础教程.md",
+                "file": "schedule/待办事项/每日待办清单.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -259,10 +247,10 @@
       "markdown-table-editor:Open Markdown Table Editor": false
     }
   },
-  "active": "3d3fa93bd603aca6",
+  "active": "45c1eb5dd227b304",
   "lastOpenFiles": [
-    "work/tools/Git/Git常用命令.md",
     "work/tools/Git/Git可视化工具基础教程.md",
+    "work/tools/Git/Git常用命令.md",
     "schedule/待办事项/每日待办清单.md",
     "work/component/Back-End/MongoDB/mechanism/MongoDB-Index索引结构.md",
     "schedule/待办事项/每周待办清单.md",
