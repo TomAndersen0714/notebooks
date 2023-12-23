@@ -66,9 +66,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "3d3fa93bd603aca6",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "work/tools/Git/Git可视化工具基础教程.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
         ],
-        "currentTab": 3
+        "currentTab": 5
       }
     ],
     "direction": "vertical"
@@ -142,7 +154,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "work/tools/Git/Git常用命令.md"
+                "file": "work/tools/Git/Git可视化工具基础教程.md"
               }
             }
           },
@@ -163,7 +175,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "work/tools/Git/Git常用命令.md",
+                "file": "work/tools/Git/Git可视化工具基础教程.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -180,7 +192,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "work/tools/Git/Git常用命令.md",
+                "file": "work/tools/Git/Git可视化工具基础教程.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -247,12 +259,13 @@
       "markdown-table-editor:Open Markdown Table Editor": false
     }
   },
-  "active": "a1fae0d51a428c4e",
+  "active": "3d3fa93bd603aca6",
   "lastOpenFiles": [
+    "work/tools/Git/Git常用命令.md",
+    "work/tools/Git/Git可视化工具基础教程.md",
     "schedule/待办事项/每日待办清单.md",
     "work/component/Back-End/MongoDB/mechanism/MongoDB-Index索引结构.md",
     "schedule/待办事项/每周待办清单.md",
-    "work/tools/Git/Git常用命令.md",
     "work/tools/Terminal/Terminal客户端工具调研.md",
     "work/methodology/Data-Engineering/Data-Development/大数据主流技术地图.md",
     "work/programming/Scala/Scala开发环境搭建基础教程.md",
@@ -278,7 +291,6 @@
     "work/tools/VPN/代理和VPN的区别.md",
     "work/tools/VPN/科学上网基础教程.md",
     "learning/subjects/Computer/Operating-System/Linux/Linux-Shell命令行常用命令.md",
-    "work/component/Back-End/MySQL/solution/MySQL开发常见问题.md",
     "life/dress",
     "work/component/Back-End/MongoDB/mechanism",
     "work/tools/Remote",
