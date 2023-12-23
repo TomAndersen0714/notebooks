@@ -8,19 +8,31 @@
         "type": "tabs",
         "children": [
           {
-            "id": "0bd57e5d1395af7e",
+            "id": "bbe4a7925565dae3",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "learning/subjects/Computer/Operating-System/Linux/Linux-Shell脚本开发基础教程.md",
+                "file": "schedule/待办事项/每周待办清单.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "fb8e499560c1a9bf",
+            "id": "d768ccd31e092f7e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "work/component/Back-End/MongoDB/mechanism/MongoDB-Index索引结构.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "b33ffe203932bf4c",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -32,55 +44,55 @@
             }
           },
           {
-            "id": "292c07164d156e8f",
+            "id": "84303a76291342f7",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "schedule/待办事项/每日待办清单.md",
+                "file": "work/programming/Scala/Scala开发环境搭建基础教程.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "8ad5585be71534c4",
+            "id": "a1fae0d51a428c4e",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "learning/subjects/Finance/反洗钱业务架构.md",
+                "file": "work/tools/Git/Git常用命令.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "aff80c012ad89e56",
+            "id": "330f8a57bf1f9ad0",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "learning/subjects/Finance/反洗钱技术架构.md",
+                "file": "work/tools/Terminal/Terminal客户端工具调研.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "1889a40024408c6b",
+            "id": "2fceeea25641f143",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "work/tools/PPT/PPT基础教程.md",
+                "file": "work/methodology/Data-Engineering/Data-Development/大数据主流技术地图.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 6
       }
     ],
     "direction": "vertical"
@@ -109,7 +121,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "单例模式",
+                "query": "detected dubious ownership",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -138,7 +150,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 307.5
+    "width": 370.49999618530273
   },
   "right": {
     "id": "6ba34ece4ec5cf8c",
@@ -154,7 +166,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "work/tools/PPT/PPT基础教程.md"
+                "file": "work/methodology/Data-Engineering/Data-Development/大数据主流技术地图.md"
               }
             }
           },
@@ -175,7 +187,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "work/tools/PPT/PPT基础教程.md",
+                "file": "work/methodology/Data-Engineering/Data-Development/大数据主流技术地图.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -192,7 +204,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "work/tools/PPT/PPT基础教程.md",
+                "file": "work/methodology/Data-Engineering/Data-Development/大数据主流技术地图.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -223,12 +235,28 @@
               "type": "advanced-tables-toolbar",
               "state": {}
             }
+          },
+          {
+            "id": "969424d15f5c2b6e",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {}
+            }
+          },
+          {
+            "id": "1489dc7b9626872b",
+            "type": "leaf",
+            "state": {
+              "type": "git-history-view",
+              "state": {}
+            }
           }
         ]
       }
     ],
     "direction": "horizontal",
-    "width": 215.5
+    "width": 285.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -243,45 +271,44 @@
       "markdown-table-editor:Open Markdown Table Editor": false
     }
   },
-  "active": "1889a40024408c6b",
+  "active": "2fceeea25641f143",
   "lastOpenFiles": [
-    "work/programming/Python/Operation/Python安装基础教程.md",
-    "schedule/待办事项/每日待办清单.md",
-    "work/tools/PPT/PPT基础教程.md",
-    "learning/subjects/Finance/反洗钱业务架构.md",
-    "learning/subjects/Finance/反洗钱技术架构.md",
-    "learning/subjects/Finance/EAST业务架构.md",
-    "work/tools/PPT",
-    "learning/subjects/Finance/Untitled.md",
-    "learning/subjects/Finance/Untitled",
-    "work/tools/JetBrains/IDEA-Debug调试调试基础教程.md",
-    "work/programming/Java/Java基础教程.md",
-    "work/programming/Java/Java开发环境搭建基础教程.md",
-    "learning/subjects/Finance/银保监会-EAST规范.md",
-    "learning/subjects/Finance/金融监管机构.md",
-    "work/methodology/Software-Engineering/Analysis-and-Design/Software-Analysis-and-Design/Object-Oriented-Design/面向对象的设计模式.md",
-    "work/career/interview/面试经验/面试常见考点-软件设计.md",
-    "learning/subjects/Computer/Operating-System/Windows/Windows环境变量配置基础教程.md",
-    "work/tools/Terminal/Tabby基础教程.md",
-    "resources/images/Pasted image 20231221150458.png",
-    "work/tools/Notepad/notepad基础教程.md",
-    "work/tools/VSCode/VScode基础教程.md",
-    "work/tools/Notepad",
-    "work/tools/JetBrains/IDEA基础教程.md",
-    "work/programming/Python/Python开发基础教程.md",
-    "learning/subjects/Computer/Operating-System/Windows/Windows小工具推荐.md",
-    "learning/subjects/Computer/Operating-System/Linux/Linux-Shell脚本开发基础教程.md",
-    "work/tools/JetBrains/JetBrains常见问题解决方案.md",
-    "life/love/关于和父母分享自己人生所见所闻的必要性的讨论.md",
-    "life/love",
-    "learning/subjects/Computer/Operating-System/Linux/Linux-Shell命令行常用命令.md",
-    "learning/subjects/Computer/Operating-System/Linux/Linux-Shell-Bash环境变量配置基础教程.md",
-    "work/tools/VSCode",
+    "work/tools/Terminal/Terminal客户端工具调研.md",
+    "work/tools/Git/Git常用命令.md",
+    "work/programming/Scala/Scala开发环境搭建基础教程.md",
+    "work/tools/Git/Git配置基础教程.md",
+    "work/tools/SSH/Windows配置SSH基础教程.md",
+    "work/tools/Gitee/Gitee配置SSH公钥教程.md",
+    "work/tools/SSH",
+    "work/tools/Gitee/Gitee基础教程.md",
+    "learning/subjects/Computer/Operating-System/Windows/WSL/WSL基础教程.md",
+    "schedule/待办事项/每周待办清单.md",
+    "work/tools/Git/Git常见问题.md",
+    "learning/subjects/Computer/Operating-System/Windows/WSL/WSL常见问题.md",
     "test",
+    "schedule/待办事项/每日待办清单.md",
+    "work/methodology/Data-Engineering/Data-Development/大数据主流技术地图.md",
+    "work/tools/JetBrains/IDEA基础教程.md",
+    "work/tools/VSCode/VScode基础教程.md",
+    "work/tools/VSCode",
+    "learning/subjects/Computer/Operating-System/Linux/Linux-Shell脚本开发基础教程.md",
+    "work/tools/Database/DBeaver基础教程.md",
     "work/tools/Database",
-    "work/component/Back-End/MongoDB/mechanism",
-    "work/component/Back-End/MariaDB",
+    "work/tools/AI/Github-Copilot基础教程.md",
+    "work/tools/Terminal/Windows-Terminal基础教程.md",
+    "work/programming/Scala/Scala安装基础教程.md",
+    "work/programming/Scala/Scala基础教程.md",
+    "work/component/Back-End/MongoDB/mechanism/MongoDB-Index索引结构.md",
+    "work/tools/VPN/代理和VPN的区别.md",
+    "work/tools/VPN/科学上网基础教程.md",
+    "learning/subjects/Computer/Operating-System/Linux/Linux-Shell命令行常用命令.md",
+    "work/component/Back-End/MySQL/solution/MySQL开发常见问题.md",
     "life/dress",
+    "work/component/Back-End/MongoDB/mechanism",
+    "work/tools/Remote",
+    "learning/subjects/Computer/Operating-System/Linux/Shell",
+    "work/component/Big-Data/Apache-Azkaban",
+    "work/component/Big-Data/Apache-Seatunnel",
     "resources/images/Pasted image 20231113155027.png",
     "resources/images/Pasted image 20231113155023.png",
     "resources/images/Pasted image 20231113154717.png",
@@ -290,6 +317,7 @@
     "resources/images/Pasted image 20231113154512.png",
     "resources/images/Pasted image 20231113154409.png",
     "resources/images/Pasted image 20231113154402.png",
-    "resources/images/Pasted image 20231113154352.png"
+    "resources/images/Pasted image 20231113154352.png",
+    "resources/images/Pasted image 20231113154344.png"
   ]
 }
