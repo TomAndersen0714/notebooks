@@ -67,9 +67,14 @@ git clone --depth 1 https://github.com/grpc/grpc-java
 ### git remote
 
 
-给现有 remote 添加 push URL，即同时支持推送多个仓库：
+`git remote set-url` ：给现有 remote 添加 push URL，即同时支持推送多个仓库：
 ```bash
 git remote set-url --add origin git@gitee.com:TomAndersen/notebooks.git
+```
+
+`git remote prune` ：清理 remote 中的已删除分支
+```bash
+git remote prune origin
 ```
 
 ### git show
