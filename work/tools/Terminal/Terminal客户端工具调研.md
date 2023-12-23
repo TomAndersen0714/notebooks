@@ -21,7 +21,10 @@ Shell与Terminal的关系，本人理解，可类比于网页和浏览器之间�
 
 
 
-## 2.免费
+## 免费
+
+
+### 非开源
 
 1. Solar-PuTTY: https://www.solarwinds.com/free-tools/solar-putty, Windows
 
