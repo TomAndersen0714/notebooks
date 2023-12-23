@@ -1,7 +1,7 @@
 # Git 可视化工具基础教程
 
 
-## VSCode Gitlens
+## VSCode Plugin - Gitlens
 
 VSCode Plugin 直接安装即可：
 https://github.com/gitkraken/vscode-gitlens
