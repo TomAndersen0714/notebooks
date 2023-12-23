@@ -8,18 +8,91 @@
         "type": "tabs",
         "children": [
           {
-            "id": "944a9599d2f4b092",
+            "id": "bbe4a7925565dae3",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "README.md",
+                "file": "schedule/待办事项/每周待办清单.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "d768ccd31e092f7e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "work/component/Back-End/MongoDB/mechanism/MongoDB-Index索引结构.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "b33ffe203932bf4c",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "work/tools/JetBrains/IDEA基础教程.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "84303a76291342f7",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "work/programming/Scala/Scala开发环境搭建基础教程.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "a1fae0d51a428c4e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "work/tools/Git/Git常用命令.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "330f8a57bf1f9ad0",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "work/tools/Terminal/Terminal客户端工具调研.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "2fceeea25641f143",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "work/methodology/Data-Engineering/Data-Development/大数据主流技术地图.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 6
       }
     ],
     "direction": "vertical"
@@ -48,7 +121,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "阿里云 数据仓库",
+                "query": "detected dubious ownership",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -77,7 +150,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 362.49999618530273
+    "width": 370.49999618530273
   },
   "right": {
     "id": "6ba34ece4ec5cf8c",
@@ -93,7 +166,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "README.md"
+                "file": "work/methodology/Data-Engineering/Data-Development/大数据主流技术地图.md"
               }
             }
           },
@@ -114,7 +187,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "README.md",
+                "file": "work/methodology/Data-Engineering/Data-Development/大数据主流技术地图.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -131,7 +204,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "README.md",
+                "file": "work/methodology/Data-Engineering/Data-Development/大数据主流技术地图.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -162,12 +235,28 @@
               "type": "advanced-tables-toolbar",
               "state": {}
             }
+          },
+          {
+            "id": "969424d15f5c2b6e",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {}
+            }
+          },
+          {
+            "id": "1489dc7b9626872b",
+            "type": "leaf",
+            "state": {
+              "type": "git-history-view",
+              "state": {}
+            }
           }
         ]
       }
     ],
     "direction": "horizontal",
-    "width": 331.5
+    "width": 285.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -182,53 +271,53 @@
       "markdown-table-editor:Open Markdown Table Editor": false
     }
   },
-  "active": "fbae03c9241a1983",
+  "active": "2fceeea25641f143",
   "lastOpenFiles": [
-    "4913",
-    "work/component/Back-End/PostgreSQL/PostgreSQL开发规范.md",
-    "work/component/Big-Data/ClickHouse/operation/ClickHouse安装基础教程.md",
-    "work/methodology/Data-Engineering/Data-Development/Data-Warehouse/Analysis-and-Design/数据仓库搭建技术方案设计-模板.md",
-    "work/component/Big-Data/CDH/CDH-Kudu负载均衡解决方案.md",
-    "work/component/Big-Data/CDH/CDH-HDFS负载均衡方案.md",
-    "work/methodology/Data-Engineering/Data-Development/Data-Warehouse/Analysis-and-Design/数据仓库设计规范.md",
-    "work/methodology/Data-Engineering/Data-Development/Data-Warehouse/数据仓库开发基础教程(待定).md",
-    "work/methodology/Data-Engineering/Data-Development/Data-Warehouse/数据仓库开发流程及规范.md",
-    "work/component/Big-Data/CDH/CDH-6.3.1-离线安装部署教程.md",
-    "work/component/Common/Docker/Docker-Image打包基础教程.md",
-    "work/component/Big-Data/ClickHouse/ClickHouse-SQL基础教程.md",
-    "work/component/Big-Data/Apache-Zookeeper/Zookeeper安装基础教程.md",
-    "learning/subjects/Computer/Operating-System/Linux/Disk/磁盘开销问题解决方案.md",
-    "work/methodology/Data-Engineering/Data-Development/大数据数据字典模板.md",
-    "work/methodology/Data-Engineering/数据工程基础教程.md",
-    "work/component/Big-Data/ClickHouse/operation/ClickHouse慢查询SQL排查方案.md",
+    "work/tools/Terminal/Terminal客户端工具调研.md",
+    "work/tools/Git/Git常用命令.md",
+    "work/programming/Scala/Scala开发环境搭建基础教程.md",
+    "work/tools/Git/Git配置基础教程.md",
+    "work/tools/SSH/Windows配置SSH基础教程.md",
+    "work/tools/Gitee/Gitee配置SSH公钥教程.md",
+    "work/tools/SSH",
+    "work/tools/Gitee/Gitee基础教程.md",
+    "learning/subjects/Computer/Operating-System/Windows/WSL/WSL基础教程.md",
+    "schedule/待办事项/每周待办清单.md",
+    "work/tools/Git/Git常见问题.md",
+    "learning/subjects/Computer/Operating-System/Windows/WSL/WSL常见问题.md",
+    "test",
+    "schedule/待办事项/每日待办清单.md",
+    "work/methodology/Data-Engineering/Data-Development/大数据主流技术地图.md",
+    "work/tools/JetBrains/IDEA基础教程.md",
+    "work/tools/VSCode/VScode基础教程.md",
+    "work/tools/VSCode",
+    "learning/subjects/Computer/Operating-System/Linux/Linux-Shell脚本开发基础教程.md",
+    "work/tools/Database/DBeaver基础教程.md",
+    "work/tools/Database",
+    "work/tools/AI/Github-Copilot基础教程.md",
+    "work/tools/Terminal/Windows-Terminal基础教程.md",
+    "work/programming/Scala/Scala安装基础教程.md",
+    "work/programming/Scala/Scala基础教程.md",
+    "work/component/Back-End/MongoDB/mechanism/MongoDB-Index索引结构.md",
+    "work/tools/VPN/代理和VPN的区别.md",
+    "work/tools/VPN/科学上网基础教程.md",
+    "learning/subjects/Computer/Operating-System/Linux/Linux-Shell命令行常用命令.md",
+    "work/component/Back-End/MySQL/solution/MySQL开发常见问题.md",
+    "life/dress",
+    "work/component/Back-End/MongoDB/mechanism",
+    "work/tools/Remote",
+    "learning/subjects/Computer/Operating-System/Linux/Shell",
+    "work/component/Big-Data/Apache-Azkaban",
+    "work/component/Big-Data/Apache-Seatunnel",
     "resources/images/Pasted image 20231113155027.png",
     "resources/images/Pasted image 20231113155023.png",
-    "learning/subjects/Computer/Operating-System/Linux/Linux-Shell命令行常用命令.md",
-    "work/component/Big-Data/CDH/CDH-Impala-慢SQL查询排查方案.md",
     "resources/images/Pasted image 20231113154717.png",
     "resources/images/Pasted image 20231113154645.png",
     "resources/images/Pasted image 20231113154641.png",
     "resources/images/Pasted image 20231113154512.png",
-    "work/component/Big-Data/CDH/CDH-Impala资源隔离方案.md",
     "resources/images/Pasted image 20231113154409.png",
     "resources/images/Pasted image 20231113154402.png",
     "resources/images/Pasted image 20231113154352.png",
-    "resources/images/Pasted image 20231113154344.png",
-    "work/component/Big-Data/CDH/CDH-Impala高负载和慢查询SQL排查方案.md",
-    "work/component/Common/Docker/Docker基础教程.md",
-    "work/component/Big-Data/ClickHouse/ClickHouse-CLI工具基础教程.md",
-    "life/生活搞笑语录随记.md",
-    "work/component/Big-Data/Apache-Kafka/Kafka-Server常用命令.md",
-    "work/component/Big-Data/ClickHouse/operation/ClickHouse数据导入导出解决方案.md",
-    "learning/test/金融/证券从业人员资格考试/附件2： 证券业从业人员资格专场考试须知.pdf",
-    "learning/test/金融/银行从业资格证",
-    "learning/test/金融/期货从业资格证",
-    "life/photography",
-    "work/component/Big-Data/Apache-Kafka",
-    "work/component/Big-Data/Apache-Parquet",
-    "life/game",
-    "work/career/interview/简历/个人简历/数仓开发工程师_程诚2023_0925.pdf",
-    "work/career/interview/简历/个人简历/数仓开发工程师_程诚2023_0925 - 副本.pdf",
-    "work/component/Big-Data/Apache-Spark/solution"
+    "resources/images/Pasted image 20231113154344.png"
   ]
 }
