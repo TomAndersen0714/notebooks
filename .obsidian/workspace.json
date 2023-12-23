@@ -68,7 +68,7 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -142,7 +142,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "schedule/待办事项/每日待办清单.md"
+                "file": "work/tools/Git/Git常用命令.md"
               }
             }
           },
@@ -163,7 +163,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "schedule/待办事项/每日待办清单.md",
+                "file": "work/tools/Git/Git常用命令.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -180,7 +180,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "schedule/待办事项/每日待办清单.md",
+                "file": "work/tools/Git/Git常用命令.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -247,8 +247,9 @@
       "markdown-table-editor:Open Markdown Table Editor": false
     }
   },
-  "active": "45c1eb5dd227b304",
+  "active": "a1fae0d51a428c4e",
   "lastOpenFiles": [
+    "schedule/待办事项/每日待办清单.md",
     "work/component/Back-End/MongoDB/mechanism/MongoDB-Index索引结构.md",
     "schedule/待办事项/每周待办清单.md",
     "work/tools/Git/Git常用命令.md",
@@ -264,7 +265,6 @@
     "work/tools/Git/Git常见问题.md",
     "learning/subjects/Computer/Operating-System/Windows/WSL/WSL常见问题.md",
     "test",
-    "schedule/待办事项/每日待办清单.md",
     "work/tools/JetBrains/IDEA基础教程.md",
     "work/tools/VSCode/VScode基础教程.md",
     "work/tools/VSCode",
