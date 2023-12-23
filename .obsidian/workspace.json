@@ -8,18 +8,6 @@
         "type": "tabs",
         "children": [
           {
-            "id": "bbe4a7925565dae3",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "schedule/待办事项/每周待办清单.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
             "id": "d768ccd31e092f7e",
             "type": "leaf",
             "state": {
@@ -68,31 +56,19 @@
             }
           },
           {
-            "id": "330f8a57bf1f9ad0",
+            "id": "45c1eb5dd227b304",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "work/tools/Terminal/Terminal客户端工具调研.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "2fceeea25641f143",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "work/methodology/Data-Engineering/Data-Development/大数据主流技术地图.md",
+                "file": "schedule/待办事项/每日待办清单.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
         ],
-        "currentTab": 6
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -166,7 +142,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "work/methodology/Data-Engineering/Data-Development/大数据主流技术地图.md"
+                "file": "schedule/待办事项/每日待办清单.md"
               }
             }
           },
@@ -187,7 +163,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "work/methodology/Data-Engineering/Data-Development/大数据主流技术地图.md",
+                "file": "schedule/待办事项/每日待办清单.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -204,7 +180,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "work/methodology/Data-Engineering/Data-Development/大数据主流技术地图.md",
+                "file": "schedule/待办事项/每日待办清单.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -271,10 +247,13 @@
       "markdown-table-editor:Open Markdown Table Editor": false
     }
   },
-  "active": "2fceeea25641f143",
+  "active": "45c1eb5dd227b304",
   "lastOpenFiles": [
-    "work/tools/Terminal/Terminal客户端工具调研.md",
+    "work/component/Back-End/MongoDB/mechanism/MongoDB-Index索引结构.md",
+    "schedule/待办事项/每周待办清单.md",
     "work/tools/Git/Git常用命令.md",
+    "work/tools/Terminal/Terminal客户端工具调研.md",
+    "work/methodology/Data-Engineering/Data-Development/大数据主流技术地图.md",
     "work/programming/Scala/Scala开发环境搭建基础教程.md",
     "work/tools/Git/Git配置基础教程.md",
     "work/tools/SSH/Windows配置SSH基础教程.md",
@@ -282,12 +261,10 @@
     "work/tools/SSH",
     "work/tools/Gitee/Gitee基础教程.md",
     "learning/subjects/Computer/Operating-System/Windows/WSL/WSL基础教程.md",
-    "schedule/待办事项/每周待办清单.md",
     "work/tools/Git/Git常见问题.md",
     "learning/subjects/Computer/Operating-System/Windows/WSL/WSL常见问题.md",
     "test",
     "schedule/待办事项/每日待办清单.md",
-    "work/methodology/Data-Engineering/Data-Development/大数据主流技术地图.md",
     "work/tools/JetBrains/IDEA基础教程.md",
     "work/tools/VSCode/VScode基础教程.md",
     "work/tools/VSCode",
@@ -298,7 +275,6 @@
     "work/tools/Terminal/Windows-Terminal基础教程.md",
     "work/programming/Scala/Scala安装基础教程.md",
     "work/programming/Scala/Scala基础教程.md",
-    "work/component/Back-End/MongoDB/mechanism/MongoDB-Index索引结构.md",
     "work/tools/VPN/代理和VPN的区别.md",
     "work/tools/VPN/科学上网基础教程.md",
     "learning/subjects/Computer/Operating-System/Linux/Linux-Shell命令行常用命令.md",
