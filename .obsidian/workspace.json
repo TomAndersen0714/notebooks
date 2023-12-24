@@ -8,54 +8,6 @@
         "type": "tabs",
         "children": [
           {
-            "id": "d768ccd31e092f7e",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "work/component/Back-End/MongoDB/mechanism/MongoDB-Index索引结构.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "b33ffe203932bf4c",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "work/tools/JetBrains/IDEA基础教程.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "84303a76291342f7",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "work/programming/Scala/Scala开发环境搭建基础教程.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "a1fae0d51a428c4e",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "work/tools/Git/Git常用命令.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
             "id": "45c1eb5dd227b304",
             "type": "leaf",
             "state": {
@@ -68,31 +20,31 @@
             }
           },
           {
-            "id": "1a197c112fa0c790",
+            "id": "519b807ddbfd644d",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "work/tools/Git/Git可视化工具基础教程.md",
+                "file": "work/tools/JetBrains/IDEA基础教程.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "e45a400858c0c512",
+            "id": "1b7afc4f7f75488e",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "work/tools/Git/Git常用命令.md",
+                "file": "work/tools/VSCode/VScode基础教程.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
         ],
-        "currentTab": 6
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -166,7 +118,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "work/tools/Git/Git常用命令.md"
+                "file": "work/tools/VSCode/VScode基础教程.md"
               }
             }
           },
@@ -187,7 +139,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "work/tools/Git/Git常用命令.md",
+                "file": "work/tools/VSCode/VScode基础教程.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -204,7 +156,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "work/tools/Git/Git常用命令.md",
+                "file": "work/tools/VSCode/VScode基础教程.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -271,13 +223,15 @@
       "markdown-table-editor:Open Markdown Table Editor": false
     }
   },
-  "active": "e45a400858c0c512",
+  "active": "1b7afc4f7f75488e",
   "lastOpenFiles": [
-    "work/tools/Git/Git可视化工具基础教程.md",
+    "test",
+    "4913",
     "work/tools/JetBrains/IDEA基础教程.md",
-    "work/tools/VSCode/VScode基础教程.md",
     "schedule/待办事项/每日待办清单.md",
     "work/tools/Git/Git常用命令.md",
+    "work/tools/Git/Git可视化工具基础教程.md",
+    "work/tools/VSCode/VScode基础教程.md",
     "work/component/Back-End/MongoDB/mechanism/MongoDB-Index索引结构.md",
     "schedule/待办事项/每周待办清单.md",
     "work/tools/Terminal/Terminal客户端工具调研.md",
@@ -291,7 +245,6 @@
     "learning/subjects/Computer/Operating-System/Windows/WSL/WSL基础教程.md",
     "work/tools/Git/Git常见问题.md",
     "learning/subjects/Computer/Operating-System/Windows/WSL/WSL常见问题.md",
-    "test",
     "work/tools/VSCode",
     "learning/subjects/Computer/Operating-System/Linux/Linux-Shell脚本开发基础教程.md",
     "work/tools/Database/DBeaver基础教程.md",
@@ -302,7 +255,6 @@
     "work/programming/Scala/Scala基础教程.md",
     "work/tools/VPN/代理和VPN的区别.md",
     "work/tools/VPN/科学上网基础教程.md",
-    "learning/subjects/Computer/Operating-System/Linux/Linux-Shell命令行常用命令.md",
     "life/dress",
     "work/component/Back-End/MongoDB/mechanism",
     "work/tools/Remote",
