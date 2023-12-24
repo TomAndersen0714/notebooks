@@ -17,5 +17,15 @@
 
 ## 配置
 
-RenderWhitespace：显示空格
+### RenderWhitespace
+
+显示空格 RenderWhitespace
+配置路径：`Settings | RenderWhitespace`
+配置参数：选择 `All`
 参考 https://www.python100.com/html/G55KIOA1333G.html
+
+### EOL
+设置默认换行符 EOL
+配置路径： `Setting | EOL`
+配置参数：`\n`
+参考： https://blog.csdn.net/TomAndersen/article/details/106458684
