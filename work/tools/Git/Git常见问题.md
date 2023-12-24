@@ -43,13 +43,15 @@ Linux：`chown -R <current_user> <repo_folder>`
 **DNS 解析 github.com 出的 IP 无法访问**
 
 
-## 使用
+## 命令
 
-**`git fetch` 无法获取远程分支信息**
-
+**`git fetch` 无法获取远程分支信息：**
 - `git clone` 时，如果使用 `git clone --depth=1` 命令限制 `depth` ，会导致项目只会获取特定数量 commit 相关的分支，而不是全部分支，这样可以大大加快克隆的速度，但同时也无法获取其他 commit 相关的分支信息。
 - 如果要解除限制，可以使用 `git remote set-branches origin '*'` 命令，修改 `.git/Config` 中的配置。
 
 
+**`git add *` 无法添加 Linux 隐藏文件，如 `.gitignore` 等：**
+- 在 Shell 中 `*` 是一种统配符，匹配的是任意数量的字符，但不包括 `.` 符号开头的文件，如 `.gitignore`。
+- 在 Shell 中符号 `.` 表示的是当前目录，使用 `git add .` 表示的将当前文件夹添加到 catch 暂存区，因此使用 `git add .` 替换 `git add *`，即可解决对应问题。
 
 
