@@ -8,30 +8,6 @@
         "type": "tabs",
         "children": [
           {
-            "id": "0bd57e5d1395af7e",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "learning/subjects/Computer/Operating-System/Linux/Linux-Shell脚本开发基础教程.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "fb8e499560c1a9bf",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "work/tools/JetBrains/IDEA基础教程.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
             "id": "292c07164d156e8f",
             "type": "leaf",
             "state": {
@@ -44,43 +20,31 @@
             }
           },
           {
-            "id": "8ad5585be71534c4",
+            "id": "510bda32ebc8fb7c",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "learning/subjects/Finance/反洗钱业务架构.md",
+                "file": "work/tools/JetBrains/IDEA基础教程.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "aff80c012ad89e56",
+            "id": "b502c9e6f1da11aa",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "learning/subjects/Finance/反洗钱技术架构.md",
+                "file": "work/component/Big-Data/Apache-Hive/Apache-Hive-SQL/Apache-Hive-SQL参数引用.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "1889a40024408c6b",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "work/tools/PPT/PPT基础教程.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "6efcffd61a91a831",
+            "id": "6944dad63e46bb08",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -88,7 +52,7 @@
             }
           }
         ],
-        "currentTab": 6
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -146,7 +110,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 307.5
+    "width": 296.5
   },
   "right": {
     "id": "6ba34ece4ec5cf8c",
@@ -247,13 +211,22 @@
       "markdown-table-editor:Open Markdown Table Editor": false
     }
   },
-  "active": "6efcffd61a91a831",
+  "active": "6944dad63e46bb08",
   "lastOpenFiles": [
-    "work/tools/PPT/PPT基础教程.md",
-    "work/programming/Python/Operation/Python安装基础教程.md",
+    "work/component/Big-Data/Apache-Hive/Apache-Hive-SQL/Apache-Hive-SQL参数引用.md",
+    "learning/subjects/Computer/Operating-System/Linux/Linux-Shell命令行常用命令.md",
+    "work/component/Big-Data/Apache-Hive/Apache-HiveSQL基础教程.md",
+    "work/tools/JetBrains/IDEA基础教程.md",
+    "work/programming/Java/Library/guice.md",
     "schedule/待办事项/每日待办清单.md",
-    "learning/subjects/Finance/反洗钱业务架构.md",
+    "work/programming/Java/Library/Guava.md",
+    "work/programming/Java/Java相关书籍.md",
+    "work/programming/Groovy/Groovy基础教程.md",
+    "work/tools/PPT/PPT基础教程.md",
+    "learning/subjects/Finance/新人要求.md",
     "learning/subjects/Finance/反洗钱技术架构.md",
+    "learning/subjects/Finance/反洗钱业务架构.md",
+    "work/programming/Python/Operation/Python安装基础教程.md",
     "learning/subjects/Finance/EAST业务架构.md",
     "work/tools/PPT",
     "learning/subjects/Finance/Untitled.md",
@@ -269,17 +242,8 @@
     "work/tools/Terminal/Tabby基础教程.md",
     "resources/images/Pasted image 20231221150458.png",
     "work/tools/Notepad/notepad基础教程.md",
-    "work/tools/VSCode/VScode基础教程.md",
     "work/tools/Notepad",
-    "work/tools/JetBrains/IDEA基础教程.md",
-    "work/programming/Python/Python开发基础教程.md",
-    "learning/subjects/Computer/Operating-System/Windows/Windows小工具推荐.md",
-    "learning/subjects/Computer/Operating-System/Linux/Linux-Shell脚本开发基础教程.md",
-    "work/tools/JetBrains/JetBrains常见问题解决方案.md",
-    "life/love/关于和父母分享自己人生所见所闻的必要性的讨论.md",
     "life/love",
-    "learning/subjects/Computer/Operating-System/Linux/Linux-Shell命令行常用命令.md",
-    "learning/subjects/Computer/Operating-System/Linux/Linux-Shell-Bash环境变量配置基础教程.md",
     "work/tools/VSCode",
     "test",
     "work/tools/Database",
