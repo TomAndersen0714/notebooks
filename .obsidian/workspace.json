@@ -42,21 +42,9 @@
                 "source": false
               }
             }
-          },
-          {
-            "id": "e79bd8c019401103",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "work/methodology/源码阅读基础教程.md",
-                "mode": "source",
-                "source": false
-              }
-            }
           }
         ],
-        "currentTab": 3
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -130,7 +118,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "work/methodology/源码阅读基础教程.md"
+                "file": "work/component/Big-Data/Apache-Hive/Apache-Hive-SQL/Apache-Hive-SQL参数引用.md"
               }
             }
           },
@@ -151,7 +139,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "work/methodology/源码阅读基础教程.md",
+                "file": "work/component/Big-Data/Apache-Hive/Apache-Hive-SQL/Apache-Hive-SQL参数引用.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -168,7 +156,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "work/methodology/源码阅读基础教程.md",
+                "file": "work/component/Big-Data/Apache-Hive/Apache-Hive-SQL/Apache-Hive-SQL参数引用.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -219,10 +207,11 @@
       "markdown-table-editor:Open Markdown Table Editor": false
     }
   },
-  "active": "e79bd8c019401103",
+  "active": "b502c9e6f1da11aa",
   "lastOpenFiles": [
-    "work/component/Big-Data/Apache-Hive/Apache-Hive-SQL/Apache-Hive-SQL参数引用.md",
+    "4913",
     "work/methodology/源码阅读基础教程.md",
+    "work/component/Big-Data/Apache-Hive/Apache-Hive-SQL/Apache-Hive-SQL参数引用.md",
     "schedule/待办事项/每日待办清单.md",
     "learning/subjects/Computer/Operating-System/Linux/Linux-Shell命令行常用命令.md",
     "work/component/Big-Data/Apache-Hive/Apache-HiveSQL基础教程.md",
