@@ -31,7 +31,7 @@ VSCode 中主要通过 `Bash Debugger` 插件集成 `bashdb` 来支持 Shell 调
 其中参数解释如下：
 1. `name` ：指定当前配置文件的名称，显示在 `Run and Debug` 工具栏下
 2. `cwd` ：指定运行时的 work directory，即当前工作目录要根据实际情况自己手动调整
-3. `args` ：指定运行时传入对应脚本的参数，需要自己针对不同的脚本文件手动指定
+3. `args` ：指定运行时传入对应脚本的参数，需要自己针对不同的脚本文件手动修改此运行配置文件中的参数来指定
 
 常用快捷键：
 1. `F5` ：继续执行，直到下一个断点 breakpoint
@@ -44,7 +44,7 @@ https://blog.csdn.net/babytiger/article/details/119937537
 
 ### IDEA
 
-IDEA 中主要通过 `BashSupport Pro` 插件对应功能：
+IDEA 中主要通过 `BashSupport Pro` 插件的调试功能来实现 Shell 脚本调试：
 https://cloud.tencent.com/developer/ask/sof/108254071
 
 
@@ -52,7 +52,7 @@ https://cloud.tencent.com/developer/ask/sof/108254071
 
 ### xargs
 
-使用 `xargs -n 1` 命令来换行以此执行速度太慢，建议使用 `tr ' ' '\n\n' | xargs` 命令替换。
+使用 `xargs -n 1` 命令来换行时执行速度太慢，其中 `-n 1` 参数会严重影响 Shell 程序性能，建议使用 `tr ' ' '\n\n' | xargs` 命令替换。
 
 ## 参考链接
 1. https://chetaofeng.github.io/2018/12/19/Linux-Shell%E8%84%9A%E6%9C%AC%E8%B0%83%E8%AF%95/

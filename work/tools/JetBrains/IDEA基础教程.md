@@ -143,6 +143,13 @@ File | Settings | Editor | General | Editor Tabs，Show tabs in multiple rows
 
 https://stackoverflow.com/a/72490630/13774262
 
+
+### IDEA MaxHeapSize
+
+`Help | Edit Custom VM Options`
+https://blog.csdn.net/2301_76696220/article/details/134683935
+
+
 ## 调试技巧
 
 ### Reset Frame

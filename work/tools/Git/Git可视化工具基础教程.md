@@ -1,6 +1,21 @@
 # Git 可视化工具基础教程
 
 
+## 前言
+
+Git 可视化工具千奇百怪，从开源、商用等角度来看，目前个人理解使用体验最好的，还是 VSCode 的 GitLens 插件，以及 IDEA 内置的 Git 仓库管理功能。
+
+
+## IDEA Git
+
+配置教程：
+1. Open Git tool window in Main menu
+2. Add commit tool window
+	1. Interface: `Settings | Version Control | Commit`, then enable `Use non-modal commit interface`
+	2. Window: go to `Settings | Advanced Settings` then Enable `Commit tool window`
+https://stackoverflow.com/a/72490630/13774262
+
+
 ## VSCode Plugin - Gitlens
 
 VSCode Plugin 直接安装即可：

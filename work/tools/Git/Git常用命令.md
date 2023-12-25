@@ -56,7 +56,7 @@ git clone --depth 1 https://github.com/grpc/grpc-java
 ### git branch
 
 
-`-v` ：显示分支详细信息
+`-vv` ：显示分支详细信息
 `-D <branch>` ：删除指定分支，但不能是删除当前分支。
 
 ### git tag

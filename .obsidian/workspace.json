@@ -20,55 +20,19 @@
             }
           },
           {
-            "id": "519b807ddbfd644d",
+            "id": "5bd6e90dbe6808f3",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "work/tools/JetBrains/IDEA基础教程.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "1b7afc4f7f75488e",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "work/tools/VSCode/VScode基础教程.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "419caa17bb356535",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "learning/subjects/Computer/Operating-System/Windows/Windows命令行常用命令.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "2f30c94576781567",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "work/tools/Git/Git常见问题.md",
+                "file": "learning/subjects/Finance/新人要求.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -142,7 +106,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "work/tools/Git/Git常见问题.md"
+                "file": "learning/subjects/Finance/新人要求.md"
               }
             }
           },
@@ -163,7 +127,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "work/tools/Git/Git常见问题.md",
+                "file": "learning/subjects/Finance/新人要求.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -180,7 +144,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "work/tools/Git/Git常见问题.md",
+                "file": "learning/subjects/Finance/新人要求.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -247,16 +211,26 @@
       "markdown-table-editor:Open Markdown Table Editor": false
     }
   },
-  "active": "2f30c94576781567",
+  "active": "5bd6e90dbe6808f3",
   "lastOpenFiles": [
-    "learning/subjects/Computer/Operating-System/Windows/Windows命令行常用命令.md",
+    "learning/subjects/Finance/EAST业务架构.md",
+    "learning/subjects/Finance/新人要求.md",
+    "learning/subjects/Finance/银保监会-EAST规范.md",
+    "learning/subjects/Finance/反洗钱技术架构.md",
+    "learning/subjects/Finance/反洗钱业务架构.md",
+    "learning/subjects/Finance/金融监管机构.md",
+    "新人.md",
+    "schedule/待办事项/每日待办清单.md",
+    "work/tools/JetBrains/IDEA基础教程.md",
+    "work/tools/Git/Git可视化工具基础教程.md",
+    "work/tools/Git/Git常用命令.md",
+    "learning/subjects/Computer/Operating-System/Linux/Linux-Shell脚本开发基础教程.md",
+    "Shell开发常见.md",
     "work/tools/VSCode/VScode基础教程.md",
+    "learning/subjects/Computer/Operating-System/Windows/Windows命令行常用命令.md",
+    "work/tools/Git/Git常见问题.md",
     "test",
     "4913",
-    "work/tools/JetBrains/IDEA基础教程.md",
-    "schedule/待办事项/每日待办清单.md",
-    "work/tools/Git/Git常用命令.md",
-    "work/tools/Git/Git可视化工具基础教程.md",
     "work/component/Back-End/MongoDB/mechanism/MongoDB-Index索引结构.md",
     "schedule/待办事项/每周待办清单.md",
     "work/tools/Terminal/Terminal客户端工具调研.md",
@@ -268,18 +242,8 @@
     "work/tools/SSH",
     "work/tools/Gitee/Gitee基础教程.md",
     "learning/subjects/Computer/Operating-System/Windows/WSL/WSL基础教程.md",
-    "work/tools/Git/Git常见问题.md",
-    "learning/subjects/Computer/Operating-System/Windows/WSL/WSL常见问题.md",
     "work/tools/VSCode",
-    "learning/subjects/Computer/Operating-System/Linux/Linux-Shell脚本开发基础教程.md",
-    "work/tools/Database/DBeaver基础教程.md",
     "work/tools/Database",
-    "work/tools/AI/Github-Copilot基础教程.md",
-    "work/tools/Terminal/Windows-Terminal基础教程.md",
-    "work/programming/Scala/Scala安装基础教程.md",
-    "work/programming/Scala/Scala基础教程.md",
-    "work/tools/VPN/代理和VPN的区别.md",
-    "work/tools/VPN/科学上网基础教程.md",
     "life/dress",
     "work/component/Back-End/MongoDB/mechanism",
     "work/tools/Remote",
