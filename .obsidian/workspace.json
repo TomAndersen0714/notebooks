@@ -8,7 +8,31 @@
         "type": "tabs",
         "children": [
           {
-            "id": "45c1eb5dd227b304",
+            "id": "0bd57e5d1395af7e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "learning/subjects/Computer/Operating-System/Linux/Linux-Shell脚本开发基础教程.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "fb8e499560c1a9bf",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "work/tools/JetBrains/IDEA基础教程.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "292c07164d156e8f",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -20,19 +44,51 @@
             }
           },
           {
-            "id": "5bd6e90dbe6808f3",
+            "id": "8ad5585be71534c4",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "learning/subjects/Finance/新人要求.md",
+                "file": "learning/subjects/Finance/反洗钱业务架构.md",
                 "mode": "source",
                 "source": false
               }
             }
+          },
+          {
+            "id": "aff80c012ad89e56",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "learning/subjects/Finance/反洗钱技术架构.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "1889a40024408c6b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "work/tools/PPT/PPT基础教程.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "6efcffd61a91a831",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {}
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 6
       }
     ],
     "direction": "vertical"
@@ -61,7 +117,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "CodeG",
+                "query": "单例模式",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -90,7 +146,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 370.49999618530273
+    "width": 307.5
   },
   "right": {
     "id": "6ba34ece4ec5cf8c",
@@ -105,9 +161,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "learning/subjects/Finance/新人要求.md"
-              }
+              "state": {}
             }
           },
           {
@@ -127,7 +181,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "learning/subjects/Finance/新人要求.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -144,7 +197,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "learning/subjects/Finance/新人要求.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -175,28 +227,12 @@
               "type": "advanced-tables-toolbar",
               "state": {}
             }
-          },
-          {
-            "id": "969424d15f5c2b6e",
-            "type": "leaf",
-            "state": {
-              "type": "git-view",
-              "state": {}
-            }
-          },
-          {
-            "id": "1489dc7b9626872b",
-            "type": "leaf",
-            "state": {
-              "type": "git-history-view",
-              "state": {}
-            }
           }
         ]
       }
     ],
     "direction": "horizontal",
-    "width": 285.5
+    "width": 215.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -211,44 +247,45 @@
       "markdown-table-editor:Open Markdown Table Editor": false
     }
   },
-  "active": "5bd6e90dbe6808f3",
+  "active": "6efcffd61a91a831",
   "lastOpenFiles": [
-    "learning/subjects/Finance/EAST业务架构.md",
-    "learning/subjects/Finance/新人要求.md",
-    "learning/subjects/Finance/银保监会-EAST规范.md",
-    "learning/subjects/Finance/反洗钱技术架构.md",
-    "learning/subjects/Finance/反洗钱业务架构.md",
-    "learning/subjects/Finance/金融监管机构.md",
-    "新人.md",
+    "work/tools/PPT/PPT基础教程.md",
+    "work/programming/Python/Operation/Python安装基础教程.md",
     "schedule/待办事项/每日待办清单.md",
-    "work/tools/JetBrains/IDEA基础教程.md",
-    "work/tools/Git/Git可视化工具基础教程.md",
-    "work/tools/Git/Git常用命令.md",
-    "learning/subjects/Computer/Operating-System/Linux/Linux-Shell脚本开发基础教程.md",
-    "Shell开发常见.md",
+    "learning/subjects/Finance/反洗钱业务架构.md",
+    "learning/subjects/Finance/反洗钱技术架构.md",
+    "learning/subjects/Finance/EAST业务架构.md",
+    "work/tools/PPT",
+    "learning/subjects/Finance/Untitled.md",
+    "learning/subjects/Finance/Untitled",
+    "work/tools/JetBrains/IDEA-Debug调试调试基础教程.md",
+    "work/programming/Java/Java基础教程.md",
+    "work/programming/Java/Java开发环境搭建基础教程.md",
+    "learning/subjects/Finance/银保监会-EAST规范.md",
+    "learning/subjects/Finance/金融监管机构.md",
+    "work/methodology/Software-Engineering/Analysis-and-Design/Software-Analysis-and-Design/Object-Oriented-Design/面向对象的设计模式.md",
+    "work/career/interview/面试经验/面试常见考点-软件设计.md",
+    "learning/subjects/Computer/Operating-System/Windows/Windows环境变量配置基础教程.md",
+    "work/tools/Terminal/Tabby基础教程.md",
+    "resources/images/Pasted image 20231221150458.png",
+    "work/tools/Notepad/notepad基础教程.md",
     "work/tools/VSCode/VScode基础教程.md",
-    "learning/subjects/Computer/Operating-System/Windows/Windows命令行常用命令.md",
-    "work/tools/Git/Git常见问题.md",
-    "test",
-    "4913",
-    "work/component/Back-End/MongoDB/mechanism/MongoDB-Index索引结构.md",
-    "schedule/待办事项/每周待办清单.md",
-    "work/tools/Terminal/Terminal客户端工具调研.md",
-    "work/methodology/Data-Engineering/Data-Development/大数据主流技术地图.md",
-    "work/programming/Scala/Scala开发环境搭建基础教程.md",
-    "work/tools/Git/Git配置基础教程.md",
-    "work/tools/SSH/Windows配置SSH基础教程.md",
-    "work/tools/Gitee/Gitee配置SSH公钥教程.md",
-    "work/tools/SSH",
-    "work/tools/Gitee/Gitee基础教程.md",
-    "learning/subjects/Computer/Operating-System/Windows/WSL/WSL基础教程.md",
+    "work/tools/Notepad",
+    "work/tools/JetBrains/IDEA基础教程.md",
+    "work/programming/Python/Python开发基础教程.md",
+    "learning/subjects/Computer/Operating-System/Windows/Windows小工具推荐.md",
+    "learning/subjects/Computer/Operating-System/Linux/Linux-Shell脚本开发基础教程.md",
+    "work/tools/JetBrains/JetBrains常见问题解决方案.md",
+    "life/love/关于和父母分享自己人生所见所闻的必要性的讨论.md",
+    "life/love",
+    "learning/subjects/Computer/Operating-System/Linux/Linux-Shell命令行常用命令.md",
+    "learning/subjects/Computer/Operating-System/Linux/Linux-Shell-Bash环境变量配置基础教程.md",
     "work/tools/VSCode",
+    "test",
     "work/tools/Database",
-    "life/dress",
     "work/component/Back-End/MongoDB/mechanism",
-    "work/tools/Remote",
-    "learning/subjects/Computer/Operating-System/Linux/Shell",
-    "work/component/Big-Data/Apache-Azkaban",
+    "work/component/Back-End/MariaDB",
+    "life/dress",
     "resources/images/Pasted image 20231113155027.png",
     "resources/images/Pasted image 20231113155023.png",
     "resources/images/Pasted image 20231113154717.png",
@@ -257,7 +294,6 @@
     "resources/images/Pasted image 20231113154512.png",
     "resources/images/Pasted image 20231113154409.png",
     "resources/images/Pasted image 20231113154402.png",
-    "resources/images/Pasted image 20231113154352.png",
-    "resources/images/Pasted image 20231113154344.png"
+    "resources/images/Pasted image 20231113154352.png"
   ]
 }
