@@ -65,6 +65,14 @@ Plugin 中检索 `Python` 后安装对应插件即可。
 
 Plugin 中检索 `Scala` 后安装对应插件即可。
 
+### Lombok
+
+
+
+### Guice
+
+
+
 ## 修改配置
 
 ### Python
