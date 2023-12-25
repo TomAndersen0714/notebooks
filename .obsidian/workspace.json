@@ -44,11 +44,15 @@
             }
           },
           {
-            "id": "6944dad63e46bb08",
+            "id": "e79bd8c019401103",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "work/methodology/源码阅读基础教程.md",
+                "mode": "source",
+                "source": false
+              }
             }
           }
         ],
@@ -125,7 +129,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "work/methodology/源码阅读基础教程.md"
+              }
             }
           },
           {
@@ -145,6 +151,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "work/methodology/源码阅读基础教程.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -161,6 +168,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "work/methodology/源码阅读基础教程.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -211,14 +219,15 @@
       "markdown-table-editor:Open Markdown Table Editor": false
     }
   },
-  "active": "6944dad63e46bb08",
+  "active": "e79bd8c019401103",
   "lastOpenFiles": [
     "work/component/Big-Data/Apache-Hive/Apache-Hive-SQL/Apache-Hive-SQL参数引用.md",
+    "work/methodology/源码阅读基础教程.md",
+    "schedule/待办事项/每日待办清单.md",
     "learning/subjects/Computer/Operating-System/Linux/Linux-Shell命令行常用命令.md",
     "work/component/Big-Data/Apache-Hive/Apache-HiveSQL基础教程.md",
     "work/tools/JetBrains/IDEA基础教程.md",
     "work/programming/Java/Library/guice.md",
-    "schedule/待办事项/每日待办清单.md",
     "work/programming/Java/Library/Guava.md",
     "work/programming/Java/Java相关书籍.md",
     "work/programming/Groovy/Groovy基础教程.md",
