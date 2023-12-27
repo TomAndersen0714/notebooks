@@ -71,7 +71,7 @@ Plugin 中检索 `Scala` 后安装对应插件即可。
 
 ### Guice
 
-
+基于 Google Guice 框架开发的辅助插件
 
 ## 修改配置
 
