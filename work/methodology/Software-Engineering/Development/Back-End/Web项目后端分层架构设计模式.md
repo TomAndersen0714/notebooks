@@ -10,3 +10,5 @@ controller只是控制调用逻辑，service是为了提供服务，DAO是为了
 
 
 controller层类命名应该是动词+名词，service层类命名应该是名词，DAO层类命名应该是名词
+
+详见：[软件架构设计模式](work/methodology/Software-Engineering/Analysis-and-Design/Software-Analysis-and-Design/软件架构设计模式.md)
