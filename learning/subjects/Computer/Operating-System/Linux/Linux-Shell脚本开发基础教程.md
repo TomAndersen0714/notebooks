@@ -37,6 +37,9 @@ VSCode 中主要通过 `Bash Debugger` 插件集成 `bashdb` 来支持 Shell 调
 1. `F5` ：继续执行，直到下一个断点 breakpoint
 2. `F10` ：继续执行下一条语句
 
+注意事项：
+1. 目前发现，Windows VSCode 中使用 `Bash Debugger` 时，会出现日期字符串赋值错误问题，在 `WATCH` 以及 `DEBUG CONSOLE` 等窗口中，会将 `a=2023-12-07` 这种表达式，识别为数据表达式进行计算，而不是直接赋值为字符串，会显示 a 变量的结果为 `2004`，但在 Shell 中是为真实值 `2023-12-07`
+
 参考：
 https://liushiming.cn/article/debug-bash-on-macos.html
 https://zbttl-github-io.vercel.app/vscode-diao-shi-bash-shell-jiao-ben/

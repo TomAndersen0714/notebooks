@@ -5,6 +5,8 @@
 
 https://cwiki.apache.org/confluence/display/Hive/LanguageManual+Types
 
+基于 NULL 值的直接函数计算结果都是 NULL。
+
 ## DDL
 
 https://cwiki.apache.org/confluence/display/Hive/LanguageManual+DDL
