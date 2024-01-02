@@ -105,6 +105,11 @@ https://blog.csdn.net/lianghecai52171314/article/details/104658201
 然后再按照桶编号进行分区排序，在每个桶中计算，整型在桶中的排序后的序号，最后根据桶的全局偏移量和桶中排序序号，求和得到整型字段的全局排序序号。
 
 
+##### Distinct VS Group By
+
+https://www.zhihu.com/question/328860878?utm_id=0
+
+简单来说，两者在性能方面并没有区别，具体可通过 explain 查看 distinct 语句，观察 Hive 是否有将 Distinct 的执行计划优化为 group by operator。
 
 ### 数据膨胀问题
 
