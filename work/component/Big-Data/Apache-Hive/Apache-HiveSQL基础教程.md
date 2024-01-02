@@ -45,6 +45,9 @@ https://cwiki.apache.org/confluence/display/Hive/LanguageManual+LateralView
 
 [CSDN-Hive SQL 中的 lateral view 与 explode（列转行）以及行转列](https://blog.csdn.net/qq_42374697/article/details/115273726)
 
+`LATERAL VIEW OUTER`
+`LATERAL VIEW explode`，行转列，即 ClickHouse  `arrayJoin` 
+
 ## Hive SQL 查询性能优化
 
 [Apache-HiveSQL查询性能优化教程](work/component/Big-Data/Apache-Hive/Apache-Hive-SQL/Apache-HiveSQL查询性能优化教程.md)
