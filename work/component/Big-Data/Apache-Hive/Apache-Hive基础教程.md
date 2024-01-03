@@ -1,8 +1,11 @@
 # Apache Hive 基础教程
 
 
-## Architecture
+## Introduction
 
+Hive 的作用是什么，即 Hive 这个工具是用于解决什么场景下的什么问题？
+
+## Architecture
 
 ### Driver
 
