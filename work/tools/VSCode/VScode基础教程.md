@@ -29,3 +29,11 @@
 配置路径： `Setting | EOL`
 配置参数：`\n`
 参考： https://blog.csdn.net/TomAndersen/article/details/106458684
+
+
+### Editor: Word Wrap
+
+设置显示时，行溢出后自动换行显示。
+配置路径： `Setting | Editor: Word Wrap`
+配置参数：`on`
+快捷键：`Alt+z`
