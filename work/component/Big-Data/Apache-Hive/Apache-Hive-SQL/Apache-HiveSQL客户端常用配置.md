@@ -4,3 +4,6 @@
 
 `hive.cli.print.header`
 
+`hive.compute.query.using.stats`
+
+https://blog.csdn.net/TomAndersen/article/details/106560747

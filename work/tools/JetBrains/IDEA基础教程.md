@@ -111,13 +111,15 @@ File | Settings | Build, Execution, Deployment | Build Tools | Gradle
 
 File | Settings | Editor | File Encodings
 
-设置文件编码方式，避免出现命令行乱码。
+设置文件编码方式，避免源码和 properties 配置文件出现乱码。
 
-`Global Encoding` 和 `Project Encoding` 都设置成 `UTF-8`
+`Global Encoding` 和 `Project Encoding` 都设置成 `UTF-8`。
 
-`Default encoding for properties files` 设置成 `UTF-8`
+`Default encoding for properties files` 设置成 `UTF-8`。
 
-`Create UTF-8 files` 设置成 `with NO BOM`
+`Create UTF-8 files` 设置成 `with NO BOM`。
+
+`Transparent native-to-ascii conversion` 选项，取消勾选。
 
 
 ### Keymap
