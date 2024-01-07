@@ -4,24 +4,24 @@
 
 JavaScript是世界上最流行的脚本语言。JavaScript是属于Web的语言，适用于PC、笔记本电脑、平板电脑和手机，最初是为了在浏览器中运行而设计出来。
 
-JavaScript最初被设计为向HTML页面增加交互性。许多HTML开发者都不是程序员，但是JavaScript却拥有非常简单的语法，几乎每个人都有能力将小的JavaScript代码块添加到HTML文档中。
+JavaScript 最初被设计为向 HTML 页面增加交互性。许多 HTML 开发者都不是程序员，但是 JavaScript 却拥有非常简单的语法，几乎每个人都有能力将小的 JavaScript 代码块添加到 HTML 文档中。
 
 JavaScript是Web开发人员必学的三门语言之一：
 1. HTML定义了网页的内容和层级
 2. CSS定义了网页内容的样式
 3. JavaScript定义了网页元素的行为
 
-JavaScript是一种轻量级的脚本编程语言，支持插入HTML文档中，可由所有的现代浏览器执行。其中JavaScript标准版本，被称为ECMAScript，由Ecma国际组织维护和发布，目前主流的标准版本为`ECMAScript 6, ES6`。
+JavaScript 是一种轻量级的脚本编程语言，支持插入 HTML 文档中，可由所有的现代浏览器执行。其中 JavaScript 标准版本，被称为 ECMAScript，由 Ecma 国际组织维护和发布，目前主流的标准版本为 `ECMAScript 6, ES6`。
 
 JS是一种编程语言，可以实现具体的算法和应用程序，而HTML和CSS只是一种标记和描述性语言。
 
 
 >ChatGPT 3.5: 
->JavaScript是一种脚本语言，通常用于创建交互式网页和Web应用程序。它由Brendan Eich在1995年创造，最初被命名为LiveScript，后来更名为JavaScript。JavaScript是一种动态、解释型语言，可在Web浏览器中运行。它不需要编译，而是在运行时解释。JavaScript可以与HTML和CSS集成，允许创建动态网页和复杂的Web应用程序。
+>JavaScript 是一种脚本语言，通常用于创建交互式网页和 Web 应用程序。它由 Brendan Eich 在 1995 年创造，最初被命名为 LiveScript，后来更名为 JavaScript。JavaScript 是一种动态、解释型语言，可在 Web 浏览器中运行。它不需要编译，而是在运行时解释。JavaScript 可以与 HTML 和 CSS 集成，允许创建动态网页和复杂的 Web 应用程序。
 >
->JavaScript的语法类似于C和Java，具有面向对象的特性。它支持变量、数组、条件语句、循环语句、函数等基本编程结构。JavaScript还有一些特殊的特性，例如闭包、异步编程、原型继承等，这些特性可以让开发人员编写出更加优秀的代码。
+>JavaScript 的语法类似于 C 和 Java，具有面向对象的特性。它支持变量、数组、条件语句、循环语句、函数等基本编程结构。JavaScript 还有一些特殊的特性，例如闭包、异步编程、原型继承等，这些特性可以让开发人员编写出更加优秀的代码。
 >
->除了在Web浏览器中使用，JavaScript还可以在服务器端使用，例如使用Node.js。Node.js可以使JavaScript运行在服务器上，以实现Web应用程序、命令行工具等。此外，JavaScript也被广泛用于开发移动应用程序、桌面应用程序和游戏等。
+>除了在 Web 浏览器中使用，JavaScript 还可以在服务器端使用，例如使用 Node.js 。 Node.js 可以使 JavaScript 运行在服务器上，以实现 Web 应用程序、命令行工具等。此外，JavaScript 也被广泛用于开发移动应用程序、桌面应用程序和游戏等。
 
 
 

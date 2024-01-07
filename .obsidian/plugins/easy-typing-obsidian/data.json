@@ -17,7 +17,7 @@
   "InlineLinkSpaceMode": 1,
   "InlineLinkSmartSpace": true,
   "UserDefinedRegSwitch": true,
-  "UserDefinedRegExp": "{{.*?}}|++\n\\[\\!.*?\\][-+]{0,1}|-+\n(file:///|https?://|ftp://|obsidian://|zotero://|www.)[^\\s（）《》。,，！？;；：“”‘’\\)\\(\\[\\]\\{\\}']+|++\n\\d{2}:\\d{1,2}|++\n\n[a-zA-Z0-9_\\-.]+@[a-zA-Z0-9_\\-.]+|++\n(?<!#)#[\\u4e00-\\u9fa5\\w\\/]+|++\n\n[#].*|++",
+  "UserDefinedRegExp": "{{.*?}}|++\n\\[\\!.*?\\][-+]{0,1}|-+\n(file:///|https?://|ftp://|obsidian://|zotero://|www.)[^\\s（）《》。,，！？;；：“”‘’\\)\\(\\[\\]\\{\\}']+|++\n\\d{2}:\\d{1,2}|++\n\n[a-zA-Z0-9_\\-.]+@[a-zA-Z0-9_\\-.]+|++\n(?<!#)#[\\u4e00-\\u9fa5\\w\\/]+|++\n\n[#].*|++\n\n(\\w+\\.)+(js|com|cn)+|++",
   "debug": false,
   "userSelRepRuleTrigger": [
     "-",
