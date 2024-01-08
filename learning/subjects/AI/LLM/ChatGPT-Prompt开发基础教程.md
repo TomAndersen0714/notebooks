@@ -1,4 +1,4 @@
-# ChatGPT Prompt 技术基础教程
+# ChatGPT Prompt 开发基础教程
 
 
 ## 前言
