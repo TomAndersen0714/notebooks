@@ -120,9 +120,10 @@ LangChain 提供了 QAGenerateChain 用于读取文档，并基于文档生成 Q
 
 ## 参考连接
 
-1. [Embedding](https://en.wikipedia.org/wiki/Embedding)
-2. [Deeplearning AI - LangChain for LLM Application Development]( https://learn.deeplearning.ai/langchain )
-3. [LangChain Documentation - getting start](https://python.langchain.com/en/latest/getting_started/getting_started.html)
-4. [Github-LangChain](https://github.com/hwchase17/langchain)
-5. [BiliBili-吴恩达最新 ChatGPT 课程《LLM 应用程序开发的 LangChain》](https://www.bilibili.com/video/BV1zu4y1Z7mc/?p=1&vd_source=2c8ffe4f87b0f9d96f6386c909e5ac1d) 
-6. [稀土掘金-精华笔记：吴恩达 x LangChain《基于 LangChain 的大语言模型应用开发》(上)](https://juejin.cn/post/7248599585735114789#heading-31)
+1. [Prompt-ChatGPT开发基础教程](learning/subjects/AI/LLM/Prompt-ChatGPT开发基础教程.md)
+2. [Embedding](https://en.wikipedia.org/wiki/Embedding)
+3. [Deeplearning AI - LangChain for LLM Application Development]( https://learn.deeplearning.ai/langchain )
+4. [LangChain Documentation - getting start](https://python.langchain.com/en/latest/getting_started/getting_started.html)
+5. [Github-LangChain](https://github.com/hwchase17/langchain)
+6. [BiliBili-吴恩达最新 ChatGPT 课程《LLM 应用程序开发的 LangChain》](https://www.bilibili.com/video/BV1zu4y1Z7mc/?p=1&vd_source=2c8ffe4f87b0f9d96f6386c909e5ac1d) 
+7. [稀土掘金-精华笔记：吴恩达 x LangChain《基于 LangChain 的大语言模型应用开发》(上)](https://juejin.cn/post/7248599585735114789#heading-31)
