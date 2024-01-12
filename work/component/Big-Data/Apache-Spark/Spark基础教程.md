@@ -25,6 +25,14 @@ Apache Spark 的 shuffle 描述的是数据从 map side task 输出到 reduce si
 
 Spark 中每个 Stage 的每个 map/reduce side task 都会有唯一标识：mapId 和 reduceId 。每个 shuffle 过程也有唯一标识：shuffleId 。
 
+## Context
+
+Application: Job =1: n
+Job: stage = 1: n
+Stage: task = 1: n
+
+
+Spark Application 中 Job 的 ID 从小到大顺序，即是 Job 在源码中提交的顺序，当 Job 提交之后，源码会继续向后执行，直到遇见下一个 Job。如果下一个 Job 依赖前一个 Job 生成的 RDD，则 Job 会等待前面的 Job 执行完成，否则会直接提交下一个 Job，同一个 Application 中多个 Job 之间可以并行执行。
 
 
 ## 参考链接

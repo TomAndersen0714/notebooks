@@ -157,6 +157,10 @@ File | Settings | Editor | General | Editor Tabs，Show tabs in multiple rows
 https://stackoverflow.com/a/72490630/13774262
 
 
+#### Highlighting Usages of element at caret
+
+File | Settings | Editor | Code Editing | Highlighting on Caret Movement
+
 ### IDEA MaxHeapSize
 
 `Help | Edit Custom VM Options`
