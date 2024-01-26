@@ -7,7 +7,8 @@
 ### 插件
 
 参考链接：
-[CSDN - 2023 年 VSCode 插件最新推荐（54 款）](https://blog.csdn.net/qw_6918966011/article/details/131867706)
+
+[2023年VSCode插件最新推荐（54款）-CSDN博客](https://blog.csdn.net/qw_6918966011/article/details/131867706)
 
 #### GitLens
 

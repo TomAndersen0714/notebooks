@@ -49,3 +49,7 @@ git config --global --unset-all safe.directory
 
 ```
 
+`core.longpaths` ：解决 Windows 上 Git 告警 filename too long 的问题 
+```bash
+git config --global core.longpaths true
+```

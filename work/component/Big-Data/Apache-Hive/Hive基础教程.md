@@ -16,7 +16,7 @@ Hive 的作用是什么，即 Hive 这个工具是用于解决什么场景下的
 
 ## Hive SQL
 
-[Apache-HiveSQL基础教程](work/component/Big-Data/Apache-Hive/Apache-HiveSQL基础教程.md)
+[HiveSQL基础教程](work/component/Big-Data/Apache-Hive/HiveSQL基础教程.md)
 
 
 ### 参考链接

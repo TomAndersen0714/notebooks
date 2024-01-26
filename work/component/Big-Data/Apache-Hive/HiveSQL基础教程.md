@@ -1,4 +1,4 @@
-# Apache Hive SQL 基础教程
+# Hive SQL 基础教程
 
 
 ## Data Type
@@ -9,11 +9,32 @@ https://cwiki.apache.org/confluence/display/Hive/LanguageManual+Types
 
 ## DDL
 
-https://cwiki.apache.org/confluence/display/Hive/LanguageManual+DDL
+[LanguageManual DDL - Apache Hive - Apache Software Foundation](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+DDL)
+
+
+### Show
+
+[Show - LanguageManual DDL - Apache Hive - Apache Software Foundation](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+DDL#LanguageManualDDL-Show)
+
+```sql
+SHOW PARTITIONS table_name;
+```
+
+
+### Describe
+
+[Describe - LanguageManual DDL - Apache Hive - Apache Software Foundation](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+DDL#LanguageManualDDL-Describe)
+
+```sql
+DESCRIBE [EXTENDED|FORMATTED] [db_name.]table_name [column_name] PARTITION partition_spec;
+```
+
 
 ## DML
 
 https://cwiki.apache.org/confluence/display/Hive/LanguageManual+DML
+
+
 
 ## DQL
 

@@ -34,10 +34,34 @@ Stage: task = 1: n
 
 Spark Application 中 Job 的 ID 从小到大顺序，即是 Job 在源码中提交的顺序，当 Job 提交之后，源码会继续向后执行，直到遇见下一个 Job。如果下一个 Job 依赖前一个 Job 生成的 RDD，则 Job 会等待前面的 Job 执行完成，否则会直接提交下一个 Job，同一个 Application 中多个 Job 之间可以并行执行。
 
+## Spark Deploy Mode
+
+`deploy-mode` 选项指定的是 spark driver 的运行位置，其中 Cluster 代表在集群中运行 Spark Driver，Client 则代表在本地运行 Spark Driver。
+
+Cluster
+
+Client
+
+## Spark Cluster Manager
+
+`master` 选项指定的是 Spark 集群的地址，Local 代表 Spark Application 提交的是本地运行的 Spark 进程，其他则代表是提交给 Spark 集群。
+
+Standalone
+[Spark Standalone Mode - Spark 3.5.0 Documentation](https://spark.apache.org/docs/latest/spark-standalone.html)
+
+YARN
+[Running Spark on YARN - Spark 3.5.0 Documentation](https://spark.apache.org/docs/latest/running-on-yarn.html)
+
+Mesos
+[Running Spark on Mesos - Spark 3.5.0 Documentation](https://spark.apache.org/docs/latest/running-on-mesos.html) 
+
+K8S
+[Running Spark on Kubernetes - Spark 3.5.0 Documentation](https://spark.apache.org/docs/latest/running-on-kubernetes.html)
+
 
 ## 参考链接
-1. [Apache Spark](https://spark.apache.org/)
-2. [微信-五分钟学大数据-Spark SQL 底层执行流程详解](https://mp.weixin.qq.com/s/CWdBLhgUrLxlsavTFhA0rA)
-3. [Github - Spark Shuffle 机制](https://paxinla.github.io/posts/2021/02/spark-shuffle-ji-zhi.html)
-4. [微信-五分钟学大数据-Spark 面试八股文（上万字面试必备宝典）](https://mp.weixin.qq.com/s/Lx3kWDs_XjhuyibX8dhFMQ)
-5. 
+1. [Apache Spark™ - Unified Engine for large-scale data analytics](https://spark.apache.org)
+2. [Overview - Spark 3.5.0 Documentation](https://spark.apache.org/docs/latest/)
+3. [微信-五分钟学大数据-Spark SQL 底层执行流程详解](https://mp.weixin.qq.com/s/CWdBLhgUrLxlsavTFhA0rA)
+4. [Github - Spark Shuffle 机制](https://paxinla.github.io/posts/2021/02/spark-shuffle-ji-zhi.html)
+5. [微信-五分钟学大数据-Spark 面试八股文（上万字面试必备宝典）](https://mp.weixin.qq.com/s/Lx3kWDs_XjhuyibX8dhFMQ)

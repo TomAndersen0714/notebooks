@@ -17,7 +17,7 @@
 1. 删除 Maven 本地 repository 中对应 plugin 版本文件夹；
 2. IDEA 中点击 `File | Invalidate caches`，清除缓存并重启。
 
-**解决方案 2-2**：手动使用官方 Maven 命令行工具下载缺失的 Plugin，并在 IDEA 中重新加载。
+**解决方案 2-2（成功）**：手动使用官方 Maven 命令行工具下载缺失的 Plugin，并在 IDEA 中重新加载。
 1. 下载安装官方 Maven，并使用命令行安装对应的 Maven plugins。命令如下：
 ```bash
 

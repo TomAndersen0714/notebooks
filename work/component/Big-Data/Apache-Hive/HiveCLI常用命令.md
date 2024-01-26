@@ -1,4 +1,4 @@
-# Apache Hive CLI 常用命令
+# Hive CLI 常用命令
 
 
 

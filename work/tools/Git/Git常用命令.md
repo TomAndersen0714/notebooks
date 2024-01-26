@@ -60,8 +60,15 @@ git clone --depth 1 https://github.com/grpc/grpc-java
 
 `-vv` ：显示分支详细信息
 `-D <branch>` ：删除指定分支，但不能是删除当前分支。
+`-u` ：设置分支对应的远程分支
+```bash
+git branch -u <remote-name>/<remote-branch>
+git branch -u <remote-name>/<remote-branch> <local-branch>
+```
 
 ### git tag
+
+`git tag <tag_name>`
 
 `-l | --list` : List tags. With optional `<pattern>...`, e.g.  git tag --list `'v-*'`, list only the tags that match the Pattern (s).
 

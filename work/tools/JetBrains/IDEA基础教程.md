@@ -119,7 +119,7 @@ File | Settings | Editor | File Encodings
 
 `Create UTF-8 files` 设置成 `with NO BOM`。
 
-`Transparent native-to-ascii conversion` 选项，取消勾选，避免在 IDEA 中自动将 ASCII 编码以视图的方式转换为中文，而实际文件依旧是 ASCII 码值。
+`Transparent native-to-ascii conversion` 选项，取消勾选，避免在 IDEA 中自动将 ASCII 编码以视图的方式转换为中文，而写入时实际文件依旧是 ASCII 码值。
 
 
 ### Keymap
