@@ -68,9 +68,9 @@ OOM：
 1. OOM 常见报错日志，如 `Container Killed by Yarn For Exceeding Memory`
 
 
-## Spark Memory 解析
+## Spark Executor 内存解析
 
-[SparkSql内存专题——Spark on YARN Executor整体内存理解\_spark executor内存使用情况如何查看-CSDN博客](https://blog.csdn.net/xiaoluobutou/article/details/129416657)
+[Spark on YARN Executor整体内存理解\_spark executor内存使用情况如何查看-CSDN博客](https://blog.csdn.net/xiaoluobutou/article/details/129416657)
 
 ## Spark SQL
 
@@ -80,6 +80,8 @@ OOM：
 
 ## Adaptive Query Execution
 
+
+[Performance Tuning - Spark 3.5.0 Documentation](https://spark.apache.org/docs/latest/sql-performance-tuning.html#adaptive-query-execution)
 
 ## 参考链接
 1. [Performance Tuning - Spark 3.5.0 Documentation](https://spark.apache.org/docs/latest/sql-performance-tuning.html)
