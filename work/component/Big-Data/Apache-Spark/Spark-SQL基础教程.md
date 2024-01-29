@@ -3,6 +3,17 @@
 
 [Spark SQL and DataFrames - Spark 3.5.0 Documentation](https://spark.apache.org/docs/latest/sql-programming-guide.html)
 
+## SQL Reference
+
+[SQL Syntax - Spark 3.5.0 Documentation](https://spark.apache.org/docs/latest/sql-ref-syntax.html)
+
+### TABLE
+
+
+### VIEW
+
+
+### FUNCTION
 
 
 ## Performance Tuning
