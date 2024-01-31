@@ -21,7 +21,7 @@ Apache Spark 的 shuffle 描述的是数据从 map side task 输出到 reduce si
 
 一次 shuffle ，map side 有和 RDD 的分区数相同数量的 task 执行；reduce side 默认取参数 spark. Default. Parallelism 或 spark. Sql. Shuffle. Partitions 的值作为分区数 (若该参数未配置，则取 map side 的最后一个 RDD 的分区数)，分区数决定 reduce side 的 task 的数量。
 
-参数 spark. Default. Parallelism 只有在处理 RDD 时才起作用；参数 spark. Sql. Shuffle. Partitions 是对 DataFrame 起作用。
+参数 `spark.default.parallelism` 只有在处理 RDD 时才起作用；参数 `spark.sql.shuffle.partitions` 是对 DataFrame 起作用。
 
 Spark 中每个 Stage 的每个 map/reduce side task 都会有唯一标识：mapId 和 reduceId 。每个 shuffle 过程也有唯一标识：shuffleId 。
 
@@ -33,6 +33,8 @@ Stage: task = 1: n
 
 
 Spark Application 中 Job 的 ID 从小到大顺序，即是 Job 在源码中提交的顺序，当 Job 提交之后，源码会继续向后执行，直到遇见下一个 Job。如果下一个 Job 依赖前一个 Job 生成的 RDD，则 Job 会等待前面的 Job 执行完成，否则会直接提交下一个 Job，同一个 Application 中多个 Job 之间可以并行执行。
+
+Spark Application 中 Job 划分的依据是 Action 算子，Stage 划分的依据是 Transform Shuffle 算子。
 
 ## Spark Deploy Mode
 
