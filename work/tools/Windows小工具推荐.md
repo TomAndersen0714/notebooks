@@ -29,7 +29,7 @@ Free Download Manager
 EmEditor
 
 Markdown文档编辑
-Typora、Obsidian
+Obsidian、Typora
 
 思维导图
 Xmind
@@ -40,3 +40,7 @@ uTools
 Windows官方工具包
 PowerToys，PS：由于此工具包包含的工具较多，很可能会和其他工具存在快捷键冲突
 https://learn.microsoft.com/zh-cn/windows/powertoys/
+
+截图工具
+PixPin
+[PixPin 截图/贴图/长截图/文字识别/标注 | PixPin 截图/贴图/长截图/文字识别/标注](https://pixpinapp.com/)

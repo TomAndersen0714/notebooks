@@ -58,6 +58,9 @@
 极个别任务量太大
 1. 数据倾斜
 
+[Spark性能优化之数据倾斜](work/component/Big-Data/Apache-Spark/solution/Spark性能优化之数据倾斜.md)
+
+
 任务量太大
 1. 小文件数量太多
 
