@@ -7,15 +7,26 @@
 
 [SQL Syntax - Spark 3.5.0 Documentation](https://spark.apache.org/docs/latest/sql-ref-syntax.html)
 
-### TABLE
+
+### DDL
+#### TABLE
+
+#### VIEW
+
+#### FUNCTION
 
 
-### VIEW
+### DQL
 
+[SELECT - Spark 3.5.0 Documentation](https://spark.apache.org/docs/latest/sql-ref-syntax-qry-select.html)
 
-### FUNCTION
+#### Function
 
+[Functions - Spark 3.5.0 Documentation](https://spark.apache.org/docs/latest/sql-ref-functions.html)
 
+#### Lateral View
+
+[LATERAL VIEW Clause - Spark 3.5.0 Documentation](https://spark.apache.org/docs/latest/sql-ref-syntax-qry-select-lateral-view.html)
 ## Performance Tuning
 
 [Performance Tuning - Spark SQL - Spark 3.5.0 Documentation](https://spark.apache.org/docs/latest/sql-performance-tuning.html)

@@ -43,7 +43,7 @@ https://cwiki.apache.org/confluence/display/Hive/LanguageManual+DML
 
 https://cwiki.apache.org/confluence/display/Hive/LanguageManual+UDF
 
-[Apache-HiveSQL常用函数和运算符](work/component/Big-Data/Apache-Hive/Apache-Hive-SQL/Apache-HiveSQL常用函数和运算符.md)
+[HiveSQL常用函数和运算符](work/component/Big-Data/Apache-Hive/Apache-Hive-SQL/HiveSQL常用函数和运算符.md)
 
 #### Operators
 
@@ -63,15 +63,14 @@ Table-generating functions transform a single input row to multiple output rows.
 
 https://cwiki.apache.org/confluence/display/Hive/LanguageManual+LateralView
 
+[Hive SQL中的 lateral view 与 explode（列转行）以及行转列\_lateral view explode-CSDN博客](https://blog.csdn.net/qq_42374697/article/details/115273726)
 
-[CSDN-Hive SQL 中的 lateral view 与 explode（列转行）以及行转列](https://blog.csdn.net/qq_42374697/article/details/115273726)
-
-`LATERAL VIEW OUTER`
-`LATERAL VIEW explode`，行转列，即 ClickHouse  `arrayJoin` 
+`LATERAL VIEW explode`，列转行（行展开），即 ClickHouse 中的 `arrayJoin`。 
+`LATERAL VIEW posexplode`，和 `LATERAL VIEW explode` 的区别在于，`posexplode` 在进行行展开时，需要在当前生成 View 的头部产生额外的一列，保存当前行的行号。
 
 ## Hive SQL 查询性能优化
 
-[Apache-HiveSQL查询性能优化教程](work/component/Big-Data/Apache-Hive/Apache-Hive-SQL/Apache-HiveSQL查询性能优化教程.md)
+[HiveSQL查询性能优化教程](work/component/Big-Data/Apache-Hive/Apache-Hive-SQL/HiveSQL查询性能优化教程.md)
 
 ## 参考链接
 1. [Hive SQL LanguageManual](https://cwiki.apache.org/confluence/display/Hive/LanguageManual)
