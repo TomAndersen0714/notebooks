@@ -1,6 +1,10 @@
 # Python 开发基础教程
 
 
+## 开发环境
+
+[Python开发环境搭建基础教程](work/programming/Python/Python开发环境搭建基础教程.md)
+
 ## 开发流程
 
 分析、设计、开发、测试、部署、运维
