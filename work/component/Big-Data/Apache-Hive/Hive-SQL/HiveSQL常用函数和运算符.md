@@ -13,4 +13,4 @@ https://cwiki.apache.org/confluence/display/Hive/LanguageManual+UDF
 
 ### Windowing and Analytics Functions
 
-[HiveSQL-Window-Function开窗函数](work/component/Big-Data/Apache-Hive/Apache-Hive-SQL/HiveSQL-Window-Function开窗函数.md)
+[HiveSQL-Window-Function开窗函数](work/component/Big-Data/Apache-Hive/Hive-SQL/HiveSQL-Window-Function开窗函数.md)

@@ -43,7 +43,7 @@ https://cwiki.apache.org/confluence/display/Hive/LanguageManual+DML
 
 https://cwiki.apache.org/confluence/display/Hive/LanguageManual+UDF
 
-[HiveSQL常用函数和运算符](work/component/Big-Data/Apache-Hive/Apache-Hive-SQL/HiveSQL常用函数和运算符.md)
+[HiveSQL常用函数和运算符](work/component/Big-Data/Apache-Hive/Hive-SQL/HiveSQL常用函数和运算符.md)
 
 #### Operators
 
@@ -75,7 +75,7 @@ https://cwiki.apache.org/confluence/display/Hive/LanguageManual+LateralView
 
 ## Hive SQL 查询性能优化
 
-[HiveSQL查询性能优化教程](work/component/Big-Data/Apache-Hive/Apache-Hive-SQL/HiveSQL查询性能优化教程.md)
+[HiveSQL查询性能优化教程](work/component/Big-Data/Apache-Hive/Hive-SQL/HiveSQL查询性能优化教程.md)
 
 ## 参考链接
 1. [Hive SQL LanguageManual](https://cwiki.apache.org/confluence/display/Hive/LanguageManual)

@@ -5,9 +5,9 @@
 
 ## Transform 算子
 
+Repartition
 
 ### Shuffle 算子
-
 
 
 ## Action 算子
