@@ -54,7 +54,8 @@ Normal user-defined functions, such as concat (), take in a single input row and
 #### Table-Generating Functions (UDTF)
 
 Table-generating functions transform a single input row to multiple output rows.
- 
+
+UDTF 支持接收单行结果，并展开为多行，但是在 SELECT 语句中使用 UDTF 时，能且仅能使用一个 UDTF 函数，无法使用其他的 Expression。
 #### Aggregate Functions (UDAF)
 
 

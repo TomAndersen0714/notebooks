@@ -1,6 +1,5 @@
 # Python 开发环境搭建基础教程
 
-
 ## IDE
 
 [PyCharm基础教程](work/tools/JetBrains/PyCharm基础教程.md)
