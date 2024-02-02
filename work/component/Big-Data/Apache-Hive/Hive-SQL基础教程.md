@@ -68,7 +68,9 @@ https://cwiki.apache.org/confluence/display/Hive/LanguageManual+LateralView
 
 `LATERAL VIEW`，创建一个临时 View，并和子查询表关联生成笛卡尔积。
 `LATERAL VIEW explode`，列转行（行展开），即 ClickHouse 中的 `arrayJoin`。 
-`LATERAL VIEW posexplode`，和 `LATERAL VIEW explode` 的区别在于，`posexplode` 在进行行展开时，需要在当前生成 View 的头部产生额外的一列，保存当前行的行号。
+`LATERAL VIEW posexplode`，和 `LATERAL VIEW explode` 的区别在于
+1. `posexplode` 在进行行展开时，需要在当前生成 View 的头部产生额外的一列，保存当前行的行号。
+2. `posexplode` 仅支持 Array 类型的输入参数，而 `explode` 支持 Array 和 Map 类型的输入参数。
 
 ## Hive SQL 查询性能优化
 
