@@ -42,5 +42,6 @@ PowerToys，PS：由于此工具包包含的工具较多，很可能会和其他
 https://learn.microsoft.com/zh-cn/windows/powertoys/
 
 截图工具
-PixPin
+
+PixPin，最好用的截图工具
 [PixPin 截图/贴图/长截图/文字识别/标注 | PixPin 截图/贴图/长截图/文字识别/标注](https://pixpinapp.com/)

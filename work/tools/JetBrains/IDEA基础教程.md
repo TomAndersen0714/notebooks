@@ -139,6 +139,8 @@ Project View - Options - Tree Appearance
 
 #### Add Back or Forward Button in new UI
 
+增加“前进”和“后退”快捷按钮到菜单栏
+
 1. Right click "Main Menu"
 2. Add "Back" or "Forward"  Button in Menu
 
@@ -146,10 +148,13 @@ https://stackoverflow.com/questions/75554009/intellij-2023-new-ui-back-arrow-ico
 
 #### Show tabs in multiple rows
 
+支持 Tab 页面，多行显示
+
 File | Settings | Editor | General | Editor Tabs，Show tabs in multiple rows
 
-
 #### Add commit tool window
+
+添加 git commit 菜单
 
 1. Interface: `Settings | Version Control | Commit`, then enable `Use non-modal commit interface`
 2. Window: go to `Settings | Advanced Settings` then Enable `Commit tool window`
@@ -159,7 +164,16 @@ https://stackoverflow.com/a/72490630/13774262
 
 #### Highlighting Usages of element at caret
 
+编辑器中，高亮当前光标选中的元素
+
 File | Settings | Editor | Code Editing | Highlighting on Caret Movement
+
+#### Show whitespaces
+
+编辑器中，显示空格和 Tab
+
+File | Settings | Editor | General | Appearance | Show whitespaces
+
 
 ### IDEA MaxHeapSize
 
