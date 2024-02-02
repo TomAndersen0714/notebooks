@@ -31,3 +31,4 @@ spark-sql --version
 
 ## 参考链接
 1. [Downloads | Apache Spark](https://spark.apache.org/downloads.html)
+2. [(超详细) Spark环境搭建（Local模式、 StandAlone模式、Spark On Yarn模式）-CSDN博客](https://blog.csdn.net/JunLeon/article/details/123625680)
