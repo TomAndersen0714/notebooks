@@ -27,6 +27,8 @@
 #### Lateral View
 
 [LATERAL VIEW Clause - Spark 3.5.0 Documentation](https://spark.apache.org/docs/latest/sql-ref-syntax-qry-select-lateral-view.html)
+
+`LATERAL VIEW`，创建一个临时 View，并和子查询表关联生成笛卡尔积。
 ## Performance Tuning
 
 [Performance Tuning - Spark SQL - Spark 3.5.0 Documentation](https://spark.apache.org/docs/latest/sql-performance-tuning.html)
