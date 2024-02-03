@@ -63,7 +63,7 @@ Set 命令作用主要是显示系统中已经存在的 shell 变量，以及设
 grep -rohE '\-\-type=[a-zA-Z0-9_]+'
 
 # 递归检索文件夹中文件内容, 打印包含指定字符串的文件
-grep -rl "bdp-client"
+grep -rl "client"
 ```
 
 #### awk
