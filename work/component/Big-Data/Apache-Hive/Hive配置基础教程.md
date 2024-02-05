@@ -1,4 +1,4 @@
-# HiveSQL 客户端常用配置
+# Hive 配置基础教程
 
 
 设置 Hive 执行引擎：
@@ -22,4 +22,3 @@ When set to true Hive will answer a few queries like min, max, and count (1) pur
 
 ## 参考链接
 1. [Configuration Properties - Apache Hive - Apache Software Foundation](https://cwiki.apache.org/confluence/display/hive/configuration+properties)
-2. [Hive配置基础教程](work/component/Big-Data/Apache-Hive/Hive配置基础教程.md)
