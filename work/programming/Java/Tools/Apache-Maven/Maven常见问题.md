@@ -35,7 +35,7 @@ mvn dependency:get -DrepoUrl=http://repo.maven.apache.org/maven2/ -Dartifact=ro.
 1. 手动下载 Maven 3.3.9 及以下版本，代替 IDEA 内置的 Maven。
 
 ## Maven Version
-
+ 
 **报错信息**：
 `ERROR 'parent.version' is either LATEST or RELEASE (both of them are being deprecated)`
 **可能原因 1**：
