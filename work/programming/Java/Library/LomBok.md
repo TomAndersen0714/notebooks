@@ -5,4 +5,4 @@ Project Lombok 是一个 java 库，可以通过注解的方式，在编译阶�
 常用的注解有，`@Slf4j`，`@Getter`，`@Setter`。
 
 ## 参考链接
-1. https://github.com/projectlombok/lombok
+1. [GitHub - projectlombok/lombok: Very spicy additions to the Java programming language.](https://github.com/projectlombok/lombok)

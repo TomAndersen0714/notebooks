@@ -1,3 +1,3 @@
 # redisson
 
-https://github.com/redisson/redisson
+[GitHub - redisson/redisson: Redisson - Easy Redis Java client with features of In-Memory Data Grid. Sync/Async/RxJava/Reactive API. Over 50 Redis based Java objects and services: Set, Multimap, SortedSet, Map, List, Queue, Deque, Semaphore, Lock, AtomicLong, Map Reduce, Bloom filter, Spring Cache, Tomcat, Scheduler, JCache API, Hibernate, RPC, local cache ...](https://github.com/redisson/redisson)
