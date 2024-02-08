@@ -12,11 +12,14 @@ https://spark.apache.org/docs/3.2.0/cluster-overview.html
 宽依赖：一个父 RDD 会对应多个子 RDD，即前后 RDD 的依赖关系是发散的。
 窄依赖：一个父 RDD 只会对应一个子 RDD，一个子 RDD 可以对应任意多个父 RDD，即前后 RDD 的依赖关系是收敛的。
 
+
 ## Shuffle
 
 Apache Spark 的 shuffle 描述的是数据从 map side task 输出到 reduce side task 输入的这段过程。
 
 在 RDD 的依赖关系中，如果一个父 RDD 中的分区被不只一个子 RDD 中的分区所依赖，则称父子 RDD 之间存在宽依赖。只要有宽依赖的存在，则必定会有 shuffle 过程。通常，重分区的操作 (repartition、coalesce)、各种 ByKey 算子、Join 相关操作 (cogroup、join 等) 都会触发 shuffle 过程。
+
+Shuffle 过程会将 RDD Partition 中数据，按照指定的规则，分配给下游的 RDD partition。
 
 一次 shuffle ，map side 有和 RDD 的分区数相同数量的 task 执行；reduce side 默认取参数 spark. Default. Parallelism 或 spark. Sql. Shuffle. Partitions 的值作为分区数 (若该参数未配置，则取 map side 的最后一个 RDD 的分区数)，分区数决定 reduce side 的 task 的数量。
 
