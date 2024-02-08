@@ -131,7 +131,7 @@ Session对象，用来维持会话状态，会自动维护连续请求的Cookie�
 
 ## HTTPS
 
-[HTTPS基础教程](work/component/Back-End/HTTP/HTTPS基础教程.md)
+[HTTPS基础教程](work/framework/Back-End/HTTP/HTTPS基础教程.md)
 
 
 ## 参考链接

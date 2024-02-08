@@ -10,7 +10,7 @@
 
 ## 安装Node.js
 
-参考[Node.js基础教程](work/component/Front-End/Node.js/Node.js基础教程.md)
+参考[Node.js基础教程](work/framework/Front-End/Node.js/Node.js基础教程.md)
 
 
 ## WebStrom

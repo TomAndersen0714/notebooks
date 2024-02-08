@@ -1,6 +1,8 @@
 # Google Guice
 
 
+Google Guice 是一个轻量级的支持依赖注入的 Java 开发框架。
+
 ## 基础概念
 
 
