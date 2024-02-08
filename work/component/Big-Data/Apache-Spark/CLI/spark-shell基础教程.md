@@ -3,7 +3,7 @@
 
 ## 简介
 
-
+既支持 Scala 交互式查询，也支持提交 jar 包执行 Spark Application。
 
 ## spark-shell 常用命令
 
