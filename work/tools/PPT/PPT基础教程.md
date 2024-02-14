@@ -14,4 +14,5 @@
 
 
 ## 参考链接
-1. 
+1. [PPT教程 | PPT高手之路，零基础做出高逼格PPT，免费PPT设计制作技巧教学！OFFICE/WPS/演示/幻灯片/PPT模板/keynote/汇报/总结\_哔哩哔哩\_bilibili](https://www.bilibili.com/video/BV1xf4y157Db/)
+2. [AI&PPT教程丨全B站最用心的AI&PPT免费教程！教你用AI一键生成PPT！/ChatGPT/Midjourney/Office/人工智能/办公软件/课程\_哔哩哔哩\_bilibili](https://www.bilibili.com/video/BV1t14y1C7P4/)
