@@ -1,4 +1,4 @@
-# ChatGPT相关产品
+# ChatGPT 同类产品
 
 
 ## New Bing
