@@ -58,7 +58,7 @@
 极个别任务量太大
 1. 数据倾斜
 
-[Spark性能优化之数据倾斜](work/component/Big-Data/Apache-Spark/solution/Spark性能优化之数据倾斜.md)
+[Spark性能优化之数据倾斜解决方法](work/component/Big-Data/Apache-Spark/solution/Spark性能优化之数据倾斜解决方法.md)
 
 
 任务量太大
@@ -69,6 +69,10 @@
 
 OOM：
 1. OOM 常见报错日志，如 `Container Killed by Yarn For Exceeding Memory`
+
+解决方案：
+1. Spark SQL 先主动 shuffle，然后 aggregation，会减少 partial aggregation 的 memory 开销
+2. 增加 `spark.sql.shuffle.partitions` 数值
 
 
 ## Spark Executor 内存解析
