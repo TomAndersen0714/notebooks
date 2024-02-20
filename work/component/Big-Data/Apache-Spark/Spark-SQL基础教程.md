@@ -15,14 +15,34 @@
 
 #### FUNCTION
 
+[Functions - Spark 3.5.0 Documentation](https://spark.apache.org/docs/latest/sql-ref-functions.html)
 
 ### DQL
 
 [SELECT - Spark 3.5.0 Documentation](https://spark.apache.org/docs/latest/sql-ref-syntax-qry-select.html)
 
-#### Function
+#### SORT BY
 
-[Functions - Spark 3.5.0 Documentation](https://spark.apache.org/docs/latest/sql-ref-functions.html)
+[SORT BY Clause - Spark 3.5.0 Documentation](https://spark.apache.org/docs/latest/sql-ref-syntax-qry-select-sortby.html)
+
+#### DISTRIBUTE BY
+
+[DISTRIBUTE BY Clause - Spark 3.5.0 Documentation](https://spark.apache.org/docs/latest/sql-ref-syntax-qry-select-distribute-by.html)
+
+#### CLUSTER BY
+
+[CLUSTER BY Clause - Spark 3.5.0 Documentation](https://spark.apache.org/docs/latest/sql-ref-syntax-qry-select-clusterby.html)
+
+#### ORDER BY
+
+[ORDER BY Clause - Spark 3.5.0 Documentation](https://spark.apache.org/docs/latest/sql-ref-syntax-qry-select-orderby.html)
+
+#### Hints
+
+[Hints - Spark 3.5.0 Documentation](https://spark.apache.org/docs/latest/sql-ref-syntax-qry-select-hints.html)
+#### JOIN
+
+[JOIN - Spark 3.5.0 Documentation](https://spark.apache.org/docs/latest/sql-ref-syntax-qry-select-join.html)
 
 #### Lateral View
 
