@@ -66,6 +66,10 @@ git branch -u <remote-name>/<remote-branch>
 git branch -u <remote-name>/<remote-branch> <local-branch>
 ```
 
+
+### git merge
+
+`--suqash` : This allows you to create a single commit on top of the current branch whose effect is the same as merging another branch (or more in case of an octopus). 使用此选项时，会将源分支的代码保先存在 stage 区域，而不是直接复制 commit log 到目标分支。因为，使用此命令后，你可以选择任意内容进行 commit，或者仅提交一次 commit，来减小 merge 时的日志。
 ### git tag
 
 `git tag <tag_name>`
