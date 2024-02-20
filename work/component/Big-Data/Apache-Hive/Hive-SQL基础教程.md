@@ -29,6 +29,8 @@ SHOW PARTITIONS table_name;
 DESCRIBE [EXTENDED|FORMATTED] [db_name.]table_name [column_name] PARTITION partition_spec;
 ```
 
+### Function
+
 
 ## DML
 
@@ -36,7 +38,12 @@ DESCRIBE [EXTENDED|FORMATTED] [db_name.]table_name [column_name] PARTITION parti
 
 ## DQL
 
+[LanguageManual Select - Apache Hive - Apache Software Foundation](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+Select)
 
+
+### JOIN
+
+[LanguageManual Joins - Apache Hive - Apache Software Foundation](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+Joins)
 ### Lateral View
 
 [LanguageManual LateralView - Apache Hive - Apache Software Foundation](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+LateralView)
