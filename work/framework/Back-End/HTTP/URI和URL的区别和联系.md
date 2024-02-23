@@ -7,7 +7,7 @@
 
 
 ## URL
-https://developer.mozilla.org/en-US/docs/Learn/Common_questions/Web_mechanics/What_is_a_URL
+[What is a URL? - Learn web development | MDN](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/Web_mechanics/What_is_a_URL)
 
 ### Absolute URLs
 
@@ -34,6 +34,6 @@ https://developer.mozilla.org/en-US/docs/Learn/Common_questions/Web_mechanics/Wh
 
 
 ## 参考链接
-1. https://en.wikipedia.org/wiki/Uniform_Resource_Identifier#URLs_and_URNs
-2. https://en.wikipedia.org/wiki/URL
+1. [Uniform Resource Identifier - Wikipedia](https://en.wikipedia.org/wiki/Uniform_Resource_Identifier#URLs_and_URNs)
+2. [URL - Wikipedia](https://en.wikipedia.org/wiki/URL)
 

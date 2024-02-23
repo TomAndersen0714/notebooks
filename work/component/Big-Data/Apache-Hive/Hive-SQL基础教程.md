@@ -44,6 +44,17 @@ DESCRIBE [EXTENDED|FORMATTED] [db_name.]table_name [column_name] PARTITION parti
 ### JOIN
 
 [LanguageManual Joins - Apache Hive - Apache Software Foundation](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+Joins)
+
+
+#### Inner Join
+
+
+#### Left Semi Join
+
+`Left Semi Join` 其实功能上等价于 MySQL 中 Where 子句中常用的 Exist 或 In 子句，并且支持多列值同时判断。
+
+`Left Semi Join` 和 `Inner Join` 的主要区别在于，当右表的 Join Key 不唯一时，`Inner Join` 会使得数据膨胀，而 `Left Semi Join` 最多只会保留左表数据，而不会使得数据集膨胀，相当于 `Left Semi Join` 等价于先对右表的 Join Key 去重后再进行 Inner Join，即 `Group By/Distinct + Inner Join`。
+
 ### Lateral View
 
 [LanguageManual LateralView - Apache Hive - Apache Software Foundation](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+LateralView)
