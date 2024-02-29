@@ -139,10 +139,13 @@ Project View - Options - Tree Appearance
 
 #### Add Back or Forward Button in new UI
 
-增加“前进”和“后退”快捷按钮到菜单栏
+增加“前进”和“后退”快捷按钮到主菜单工具栏
 
-1. Right click "Main Menu"
-2. Add "Back" or "Forward"  Button in Menu
+1. Right Click the space of Toolbar
+2. Click "Customize Toolbar"
+3. Click "Add Actions", then click "Add Action"
+4. Click "Main Menu" → "Navigate"→"Back" or "Forward", then click "OK"
+5. Hold and Drag “Back” or "Forward" to right position
 
 https://stackoverflow.com/questions/75554009/intellij-2023-new-ui-back-arrow-icon
 
