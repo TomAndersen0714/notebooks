@@ -28,6 +28,9 @@ Free Download Manager
 超大型文本文件查看和编辑
 EmEditor
 
+文件对比工具
+
+
 Markdown文档编辑
 Obsidian、Typora
 
