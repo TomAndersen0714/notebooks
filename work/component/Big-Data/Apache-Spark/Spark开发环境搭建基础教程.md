@@ -1,6 +1,6 @@
 # Spark 开发环境搭建基础教程
 
-基于 Maven 和 IDEA，搭建 Spark 应用开发环境。
+基于 Maven 和 IDEA，搭建 Spark 应用开发的 IDE 环境。
 
 ## 安装并配置 JDK
 
@@ -33,3 +33,4 @@ Spark
 
 ## 参考链接
 1. [spark开发环境搭建（基于idea 和maven） - 知乎](https://zhuanlan.zhihu.com/p/55450219)
+2. [如何使用Intellij搭建Spark开发环境-腾讯云开发者社区-腾讯云](https://cloud.tencent.com/developer/article/1078026)
