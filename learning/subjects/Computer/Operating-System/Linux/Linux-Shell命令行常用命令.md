@@ -146,6 +146,11 @@ hostname -I
 
 ### Disk
 
+#### cd
+
+`-P` ：进入指定路径的实际路径，而非软链接路径
+
+
 #### lsblk
 查看磁盘信息
 
@@ -173,6 +178,7 @@ lshw -short -class processor
 查看Processor信息
 
 ### 参考链接
-1. [Linux 命令在线搜索](https://wangchujiang.com/linux-command/)
-2. https://github.com/jaywcjlove/linux-command
+1. [Linux命令搜索引擎 命令，Linux Linux命令搜索引擎 命令详解：最专业的Linux命令大全，内容包含Linux命令手册、详解、学习，值得收藏的Linux命令速查手册。 -  Linux 命令搜索引擎](https://wangchujiang.com/linux-command/)
+2. [GitHub - jaywcjlove/linux-command: Linux命令大全搜索工具，内容包含Linux命令手册、详解、学习、搜集。https://git.io/linux](https://github.com/jaywcjlove/linux-command)
+3. [Linux 命令大全 | 菜鸟教程](https://www.runoob.com/linux/linux-command-manual.html)
 
