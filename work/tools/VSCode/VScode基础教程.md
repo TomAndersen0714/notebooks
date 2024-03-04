@@ -7,7 +7,6 @@
 ### 插件
 
 参考链接：
-
 [2023年VSCode插件最新推荐（54款）-CSDN博客](https://blog.csdn.net/qw_6918966011/article/details/131867706)
 
 #### GitLens
@@ -15,6 +14,14 @@
 
 #### ShellMan
 
+
+#### Partial diff
+
+VSCode 内置的 Compare 功能，仅支持不同的 File 进行 Diff，而 Partial Diff 插件，则可以实现文本 Diff，不论这些文本来自于 VSCode 的哪些文件。
+
+#### Copilot
+
+AI 时代编程必备工具，Github 提供。
 
 ## 配置
 
