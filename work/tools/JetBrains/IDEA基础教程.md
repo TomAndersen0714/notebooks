@@ -184,6 +184,12 @@ File | Settings | Editor | General | Appearance | Show whitespaces
 https://blog.csdn.net/2301_76696220/article/details/134683935
 
 
+### Close Reformat on Paste
+
+在 IDEA 编辑器中粘贴代码时，默认会自动格式化，导致和复制的内容不符，因此建议关闭此功能，即将 `Reformat on Paste` 设置为 None。
+
+File | Settings | Editor | General | Smart Keys | Reformat on Paste
+
 ## 调试技巧
 
 ### Reset Frame
