@@ -49,6 +49,9 @@ git clone --depth 1 https://github.com/grpc/grpc-java
 ### git commit
 
 
+`--amend` ：将当前 stage 内的内容，提交并合并到最近的一次 commit 中，此命令只能合并到最近一次的 commit，如果要合并到更远的 commit 中，则需要使用 git rebase 命令，先跳转到历史的 commit，然后再进行合并，并重新生成新的后续的历史 commit。
+
+
 ### git stash
 
 
