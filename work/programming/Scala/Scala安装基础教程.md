@@ -1,6 +1,12 @@
 # Scala 安装基础教程
 
 
+## 下载安装
+
+下载对应系统的安装包。
+## 配置
+
+配置环境变量 `SCALA_HOME`，指向 Scala 安装路径下的 bin 目录。
 
 ## 参考链接
 1. [The Scala Programming Language](https://www.scala-lang.org/)
