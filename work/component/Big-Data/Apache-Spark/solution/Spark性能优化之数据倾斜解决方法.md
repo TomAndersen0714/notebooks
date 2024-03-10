@@ -4,7 +4,7 @@
 ## 诊断方式
 
 
-Spark UI 或 Spark HistoryServer
+Spark Application Master 或 Spark HistoryServer
 1. EventTimeLine
 2. Executor shuffle read
 
