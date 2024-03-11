@@ -96,3 +96,4 @@ OOM：
 3. [Spark性能优化指南——基础篇 - 美团技术团队](https://tech.meituan.com/2016/04/29/spark-tuning-basic.html)
 4. [Spark性能优化指南——高级篇 - 美团技术团队](https://tech.meituan.com/2016/05/12/spark-tuning-pro.html)
 5. [Spark数据倾斜问题分析和解决-CSDN博客](https://blog.csdn.net/weixin_43291055/article/details/133770448)
+6. [Spark性能优化指南-高级篇](https://mp.weixin.qq.com/s/gqBlYim7JYjAXW3CYssLBA)
