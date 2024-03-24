@@ -63,8 +63,9 @@ DESCRIBE [EXTENDED|FORMATTED] [db_name.]table_name [column_name] PARTITION parti
 [Hive SQL中的 lateral view 与 explode（列转行）以及行转列\_lateral view explode-CSDN博客](https://blog.csdn.net/qq_42374697/article/details/115273726)
 
 `LATERAL VIEW`，创建一个临时 View，并和子查询结果表关联生成笛卡尔积。
-`LATERAL VIEW explode`，列转行（行展开），即 ClickHouse 中的 `arrayJoin`。 
-`LATERAL VIEW posexplode`，和 `LATERAL VIEW explode` 的区别在于
+`LATERAL VIEW explode`，列转行（行展开，数据行变多），即 ClickHouse 中的 `arrayJoin`。 
+
+`LATERAL VIEW posexplode`，和 `LATERAL VIEW explode` 的区别在于：
 1. `posexplode` 在进行行展开时，需要在当前生成 View 的头部产生额外的一列，保存当前行的行号。
 2. `posexplode` 仅支持 Array 类型的输入参数，而 `explode` 支持 Array 和 Map 类型的输入参数。
 
