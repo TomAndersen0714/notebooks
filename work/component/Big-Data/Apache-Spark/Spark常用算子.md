@@ -17,6 +17,8 @@ Collect
 
 Show
 
+Take
+
 ### Shuffle 算子
 
 CountByKey
