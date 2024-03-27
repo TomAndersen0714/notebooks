@@ -21,6 +21,10 @@
 
 - **Executor 减少，导致下游 stage 无法 skip，且分配较少的 Task，进而 Executor 出现 OOM**
 
-两次任务的数据量相同，但后者 executor 数据量较少，task 也很少，进而使得 OOM（原因待定）
+两次任务的数据量相同，但后者 executor 数据量较少，task 也很少，进而出现 OOM（原因待定）。
+
+尝试增大，Spark. Scheduler. MaxRegisteredResourcesWaitingTime。
 
 - **Could not execute broadcast in 900 seconds**
+
+增大 `spark.sql,broadcastTimeout` 参数，使得此参数的值大于 broadcast join 的时间开销即可，避免等待 broadcast 的时候 timeout。
