@@ -20,6 +20,7 @@
 	1. 提取并生成当前 Python 环境中所包含的所有 Python 包
 	2. `pip3 freeze> <filename>`，如 `pip3 freeze > requirements.txt`。导出当前 Python 环境模块到 `requirements.txt` 文件中，通常用于 Python 环境迁移
 
+PS：如果想要导出一个 Python 项目所依赖的包，可以使用 `pipreqs` 工具，此工具可以扫描项目，找出项目实际使用的包，并生成 `requirements.txt` 文件。安装命令 `pip install pipreqs`，使用方式 `pipreqs <path>`。
 ## List
 
 

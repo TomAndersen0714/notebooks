@@ -11,10 +11,13 @@
 
 **方法 1：通过 `pip config` 命令修改配置文件内容**
 
-`pip config set --global global.index-url https://mirrors.aliyun.com/pypi/simple/`
+```shell
+pip config set --global global.index-url https://mirrors.aliyun.com/pypi/simple/
+pip config set --global global.trusted-host mirrors.aliyun.com
+```
 
 
-**方法 2 ：修改配置文件（配置优先级为升序）**
+**方法 2 ：手动修改配置文件（配置优先级为升序）**
 
 Unix:
 1. Global
@@ -35,7 +38,9 @@ index-url=https://mirrors.aliyun.com/pypi/simple/
 
 **方法 3：通过 `-i` 参数指定本次使用下载源**
 
-`sudo pipinstall <package name> -i <mirror_url>`
+```shell
+pip install <package name> -i <mirror_url>
+```
 
 
 **常用 PyPI 源镜像 URL**：
