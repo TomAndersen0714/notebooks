@@ -4,10 +4,17 @@
 
 [Configuration - pip documentation v24.0](https://pip.pypa.io/en/stable/topics/configuration/)
 
+配置文件中配置项的 `global/freeze/install/...` 等指的是 `Per-command section`，用于指定在使用对应 pip 子命令时，加载的参数，`global` 则代表针对所有子命令都生效。
+
 ## 配置 Pip repository 源
 
 
-**方法 1 ：修改配置文件（配置优先级为升序）**
+**方法 1：通过 `pip config` 命令修改配置文件内容**
+
+`pip config set --global global.index-url https://mirrors.aliyun.com/pypi/simple/`
+
+
+**方法 2 ：修改配置文件（配置优先级为升序）**
 
 Unix:
 1. Global
@@ -25,10 +32,8 @@ Unix:
 index-url=https://mirrors.aliyun.com/pypi/simple/
 ```
 
-配置文件中配置项的 `global/freeze/install/...` 等指的是 `Per-command section`，用于指定在使用对应 pip 子命令时，加载的参数，`global` 则代表针对所有子命令都生效。
 
-
-**方法二：通过 `-i` 参数指定本次使用下载源**
+**方法 3：通过 `-i` 参数指定本次使用下载源**
 
 `sudo pipinstall <package name> -i <mirror_url>`
 

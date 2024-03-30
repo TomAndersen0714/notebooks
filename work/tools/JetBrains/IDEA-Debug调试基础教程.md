@@ -74,6 +74,9 @@ Debug 时，可以通过执行表达式功能（Evaluate Expression），来实�
 ![](resources/images/Pasted%20image%2020230916204159.png)
 
 ![](resources/images/Pasted%20image%2020230916204248.png)
+
 ## 参考链接
-1. [IntelliJ IDEA 2023.2 Debugging Breakpoints](https://www.jetbrains.com/help/idea/using-breakpoints.html#breakpoint-types)
-2. [BiliBili-分享 4 个我一直在用的 IDEA Debug 小技巧](https://www.bilibili.com/video/BV1Rm4y1P7j8)
+
+1. [Breakpoints | IntelliJ IDEA Documentation](https://www.jetbrains.com/help/idea/using-breakpoints.html#breakpoint-types)
+2. [Alter the program's execution flow | IntelliJ IDEA Documentation](https://www.jetbrains.com/help/idea/altering-the-program-s-execution-flow.html#breakpoint-expressions)
+3. [BiliBili-分享 4 个我一直在用的 IDEA Debug 小技巧](https://www.bilibili.com/video/BV1Rm4y1P7j8)

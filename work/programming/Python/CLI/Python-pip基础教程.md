@@ -1,6 +1,5 @@
 # Python-pip 基础教程
 
-
 ## 前言
 
 PyPI (Python Package Index) 是 Python 编程语言的软件存储库。开发者可以通过 PyPI 查找和安装由 Python 社区开发和共享的软件，也可以将自己开发的库上传至 PyPI。[PyPI官方仓库](https://pypi.org/)
@@ -11,11 +10,11 @@ Pip3 和 pip 的命令大部分都相同，`pip3` 和 `pip` 通常可以直接�
 
 ### 安装
 
-方案一：如果是通过apt或者yum等包管理工具安装的话，则需要手动安装pip/pip3工具，但一般情况下安装完对应版本的Python后会自带安装pip工具：
+方法一：如果是在低版本 Unix 环境下通过 apt 或者 yum 等包管理工具安装 Python 的话，中需要手动安装 pip/pip3 工具
 1. APT：`apt install python-pip python-pip3`
 2. YUM：`sudo yum install python-pip python3-pip`
 
-方案二：如果是通过源码编译安装Python，则在其Scripts文件夹下就带有pip工具
+方法二：如果是通过源码编译安装 Python，则在其 Scripts 文件夹下就带有 pip 工具。
 
 ### 配置
 
