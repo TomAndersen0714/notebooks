@@ -9,7 +9,6 @@
 
 建议初学者，可以自己申请，或者淘宝购买学生账号，支持 JetBrains 全家桶。
 
-
 ## 远程 Run/Debug
 
 ### 配置远程解释器
@@ -41,17 +40,13 @@ Run/Debug Configuration 支持设置 Working Directory、Parameter 等等，既�
 
 Microsoft Github AI 编程神器。
 
-
-
 ## 修改配置
 
 
 添加 Python Interpreters
 
-
 设置 Python Interpreter Path（可选）
-https://blog.csdn.net/roughman9999/article/details/79458262
-
+[pycharm设置python path\_pycharm python path-CSDN博客](https://blog.csdn.net/roughman9999/article/details/79458262)
 
 ## 常见问题
 
@@ -71,3 +66,7 @@ https://youtrack.jetbrains.com/issue/PY-53568/Targets-API-Path-mappings-field-is
 3. 重建 Remote Interpreter
 4. 修改 Deployment SSH Server 的 Path Mapping
 5. 在 RUN/Debug Configurations 中修改每次运行时配置的 Path Mapping。
+
+## 参考链接
+
+1. [Python基础教程](work/programming/Python/Python基础教程.md)
