@@ -31,7 +31,11 @@ PS：如果想要导出一个 Python 项目所依赖的包，可以使用 `pipre
 ## Config
 
 1. **pip config**
-	1. 
+	1. `pip config set --global global.index-url https://mirrors.aliyun.com/pypi/simple/`
+
+[pip config - pip documentation v24.0](https://pip.pypa.io/en/stable/cli/pip_config/)
+
+
 ## 参考链接
 1. [Commands - pip documentation v24.0](https://pip.pypa.io/en/stable/cli/)
 2. [pip config - pip documentation v24.0](https://pip.pypa.io/en/stable/cli/pip_config/)
