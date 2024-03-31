@@ -1,5 +1,8 @@
-# HiveSQL 客户端常用配置
+# HiveSQL 配置基础教程
 
+
+设置 MR Job 提交队列名：
+`mapreduce.job.queuename`
 
 设置 Hive 执行引擎：
 `hive.execution.engine`
@@ -21,5 +24,5 @@ When set to true Hive will answer a few queries like min, max, and count (1) pur
 [Hive中使用count(1)或count()统计行数时结果为0的原因\_hive统计表行数-CSDN博客](https://blog.csdn.net/TomAndersen/article/details/106560747)
 
 ## 参考链接
-1. [Configuration Properties - Apache Hive - Apache Software Foundation](https://cwiki.apache.org/confluence/display/hive/configuration+properties)
+1. [Configuration Properties - Apache Hive - Apache Software Foundation](https://cwiki.apache.org/confluence/display/Hive/Configuration+Properties)
 2. [Hive配置基础教程](work/component/Big-Data/Apache-Hive/Hive配置基础教程.md)
