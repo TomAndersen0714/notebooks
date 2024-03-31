@@ -1,4 +1,4 @@
-# Spark 开发环境搭建基础教程
+# Spark Application 开发环境搭建基础教程
 
 基于 Maven 和 IDEA，搭建 Spark 应用开发的 IDE 环境。
 

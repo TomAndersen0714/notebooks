@@ -1,9 +1,9 @@
-# Spark 开发基础教程
+# Spark App 开发基础教程
 
 
 ## Spark 开发环境搭建
 
-[Spark开发环境搭建基础教程](work/component/Big-Data/Apache-Spark/Spark开发环境搭建基础教程.md)
+[Spark-Application开发环境搭建基础教程](work/component/Big-Data/Apache-Spark/Spark-Application开发环境搭建基础教程.md)
 
 ## 开发常用API
 
