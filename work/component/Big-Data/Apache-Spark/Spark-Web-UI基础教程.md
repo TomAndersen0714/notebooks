@@ -1,6 +1,5 @@
 # Spark Web UI 基础教程
 
-
 ## SQL
 
 Spark Web UI 的 SQL 一栏中，展示了 Spark 执行计划对应的 SQL 视图，如果 Spark Application 中执行了 SQL，则会直接展示对应的 SQL 的实际执行计划在该页面。
