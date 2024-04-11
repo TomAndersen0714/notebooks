@@ -17,7 +17,7 @@
 
 #### Partial diff
 
-VSCode 内置的 Compare 功能，仅支持不同的 File 进行 Diff，而 Partial Diff 插件，则可以实现文本 Diff，不论这些文本来自于 VSCode 的哪些文件。
+和 JetBrain 不同的是，VSCode 内置的 Compare 功能，仅支持不同的 File 进行 Diff，而 Partial Diff 插件，则可以实现文本 Diff，不论这些文本来自于 VSCode 的哪些文件，弥补这部分功能。
 
 #### Copilot
 
