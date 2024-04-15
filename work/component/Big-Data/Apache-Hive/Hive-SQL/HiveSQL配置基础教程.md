@@ -23,6 +23,16 @@ When set to true Hive will answer a few queries like min, max, and count (1) pur
 
 [Hive中使用count(1)或count()统计行数时结果为0的原因\_hive统计表行数-CSDN博客](https://blog.csdn.net/TomAndersen/article/details/106560747)
 
+
+`hive.support.quoted.identifiers=None`
+[\[HIVE-6013\] Supporting Quoted Identifiers in Column Names - ASF JIRA](https://issues.apache.org/jira/browse/HIVE-6013)
+
+Hive SQL 的 SELECT 子句支持正则表达式，可以实现查询除了某列之外的其他列，如：
+```sql
+set hive.support.quoted.identifiers=None;
+select `(user_id)?+.+` from user_action_table;
+```
+
 ## 参考链接
 1. [Configuration Properties - Apache Hive - Apache Software Foundation](https://cwiki.apache.org/confluence/display/Hive/Configuration+Properties)
 2. [Hive配置基础教程](work/component/Big-Data/Apache-Hive/Hive配置基础教程.md)
