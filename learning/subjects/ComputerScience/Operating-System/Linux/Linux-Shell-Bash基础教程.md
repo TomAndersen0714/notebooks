@@ -23,7 +23,7 @@ non-interactive（非交互式）：即 shell 与用户不存在交互，而是�
 
 ## Bash Shell
 
-[Linux-Shell-Bash环境变量配置基础教程](learning/subjects/Computer/Operating-System/Linux/Linux-Shell-Bash环境变量配置基础教程.md)
+[Linux-Shell-Bash环境变量配置基础教程](learning/subjects/ComputerScience/Operating-System/Linux/Linux-Shell-Bash环境变量配置基础教程.md)
 
 ## 参考链接
 1. [Bash Reference Manual - Bash Features](https://www.gnu.org/software/bash/manual/html_node/Bash-Startup-Files.html)

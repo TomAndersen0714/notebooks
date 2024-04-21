@@ -29,7 +29,7 @@ echo $my_var  # 输出 "Hello, world!"
 VSCode 中主要通过 `Bash Debugger` 插件集成 `bashdb` 来支持 Shell 调试功能。
 
 注意：
-1. 在 Windows 环境下需要预先安装 WSL 和 Ubuntu，否则无法运行 bashdb。PS：WSL 安装详情参考 [WSL基础教程](learning/subjects/Computer/Operating-System/Windows/WSL/WSL基础教程.md)
+1. 在 Windows 环境下需要预先安装 WSL 和 Ubuntu，否则无法运行 bashdb。PS：WSL 安装详情参考 [WSL基础教程](learning/subjects/ComputerScience/Operating-System/Windows/WSL/WSL基础教程.md)
 
 添加 Run/Debug 配置文件步骤：
 1. 打开对应的 Shell 脚本文件，点击 `Run | Add Configuration`，然后选择默认的 `bashdb` 配置模板

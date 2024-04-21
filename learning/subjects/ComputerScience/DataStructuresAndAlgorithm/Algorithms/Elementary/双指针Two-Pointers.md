@@ -128,7 +128,7 @@
 解题思路：
 1. Two pointers：
 	1. 思路：根据三个指针指向的元素和目标值之间的关系，先将数组进行排序 Sort，然后遍历数组，假设当前游标指向的元素为结果向量中的最小元素。那么接下来的任务就是判断，游标之后的元素中是否有某两个元素的值之和等于特定值（或满足某特定条件），故而将三数问题，转换为了双数问题，从而应用 Two Pointers 进行求解。
-	2. 证明 1：由于条件 1，因此在进行排序 Sort 之后，此问题便变成了多个子问题 [双数求和-值最接近+解不唯一](learning/subjects/Computer/Data-Structures-and-Algorithm/Algorithms/Elementary/双指针Two-Pointers.md#双数求和-值最接近+解不唯一) 。
+	2. 证明 1：由于条件 1，因此在进行排序 Sort 之后，此问题便变成了多个子问题 [双数求和-值最接近+解不唯一](learning/subjects/ComputerScience/DataStructuresAndAlgorithm/Algorithms/Elementary/双指针Two-Pointers.md#双数求和-值最接近+解不唯一) 。
 
 
 #### 4 Sum

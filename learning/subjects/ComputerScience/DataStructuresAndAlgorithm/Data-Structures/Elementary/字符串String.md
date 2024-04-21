@@ -93,7 +93,7 @@
 
 ### 反转整数（属于Math 题）
 
-[数学Math](learning/subjects/Computer/Data-Structures-and-Algorithm/Algorithms/Elementary/数学Math.md)
+[数学Math](learning/subjects/ComputerScience/DataStructuresAndAlgorithm/Algorithms/Elementary/数学Math.md)
 
 [LeetCode 7. Reverse Integer](https://leetcode.com/problems/reverse-integer/)
 

@@ -83,15 +83,15 @@
 
 ##### 2 Sum
 
-[双指针Two-Pointers](learning/subjects/Computer/Data-Structures-and-Algorithm/Algorithms/Elementary/双指针Two-Pointers.md) -2 Sum 
+[双指针Two-Pointers](learning/subjects/ComputerScience/DataStructuresAndAlgorithm/Algorithms/Elementary/双指针Two-Pointers.md) -2 Sum 
 
 ##### 3 Sum
 
-[双指针Two-Pointers](learning/subjects/Computer/Data-Structures-and-Algorithm/Algorithms/Elementary/双指针Two-Pointers.md) -3 Sum 
+[双指针Two-Pointers](learning/subjects/ComputerScience/DataStructuresAndAlgorithm/Algorithms/Elementary/双指针Two-Pointers.md) -3 Sum 
 
 ##### 4 Sum
 
-[双指针Two-Pointers](learning/subjects/Computer/Data-Structures-and-Algorithm/Algorithms/Elementary/双指针Two-Pointers.md) -4 Sum 
+[双指针Two-Pointers](learning/subjects/ComputerScience/DataStructuresAndAlgorithm/Algorithms/Elementary/双指针Two-Pointers.md) -4 Sum 
 
 
 

@@ -53,7 +53,7 @@
 
 #### Union-Find 算法
 
-[并查集Union-Find](learning/subjects/Computer/Data-Structures-and-Algorithm/Algorithms/Intermediate/并查集Union-Find.md)
+[并查集Union-Find](learning/subjects/ComputerScience/DataStructuresAndAlgorithm/Algorithms/Intermediate/并查集Union-Find.md)
 
 #### Prim 算法
 
@@ -89,8 +89,8 @@
 
 ### 刷题清单
 
-- [ ] LeetCode399、LeetCode990、LeetCode128 [并查集Union-Find](learning/subjects/Computer/Data-Structures-and-Algorithm/Algorithms/Intermediate/并查集Union-Find.md)
-- [ ] LeetCode200、LeetCode547、LeetCode684 [并查集Union-Find](learning/subjects/Computer/Data-Structures-and-Algorithm/Algorithms/Intermediate/并查集Union-Find.md)
+- [ ] LeetCode399、LeetCode990、LeetCode128 [并查集Union-Find](learning/subjects/ComputerScience/DataStructuresAndAlgorithm/Algorithms/Intermediate/并查集Union-Find.md)
+- [ ] LeetCode200、LeetCode547、LeetCode684 [并查集Union-Find](learning/subjects/ComputerScience/DataStructuresAndAlgorithm/Algorithms/Intermediate/并查集Union-Find.md)
 - [ ] LeetCode310、LeetCode785、LeetCode1584。 https://blog.csdn.net/a435262767/article/details/105204081
 
 ### 207 课程安排-图是否成环
