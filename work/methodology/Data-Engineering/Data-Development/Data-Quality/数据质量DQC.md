@@ -18,6 +18,10 @@
 
 主键唯一性
 
+数据量阈值
+
+数据量波动
+
 ### 表间质量
 
 外键
@@ -29,3 +33,4 @@
 
 Google Aviator 表达式。
 
+[GitHub - killme2008/aviatorscript: A high performance scripting language hosted on the JVM.](https://github.com/killme2008/aviatorscript)
