@@ -13,6 +13,11 @@
 
 #### VIEW
 
+
+Views are based on the result-set of an SQL query. `CREATE VIEW` constructs a virtual table that has no physical data therefore other operations like `ALTER VIEW` and `DROP VIEW` only change metadata.
+
+Spark 中视图是无法存储
+
 #### FUNCTION
 
 [Functions - Spark 3.5.0 Documentation](https://spark.apache.org/docs/latest/sql-ref-functions.html)
@@ -48,7 +53,26 @@
 
 [LATERAL VIEW Clause - Spark 3.5.0 Documentation](https://spark.apache.org/docs/latest/sql-ref-syntax-qry-select-lateral-view.html)
 
-`LATERAL VIEW`，创建一个临时 View，并和子查询表关联生成笛卡尔积。
+`LATERAL VIEW`，创建一个临时 View，并和子查询数据集关联，并生成笛卡尔积。
+
+#### Explain
+
+[EXPLAIN - Spark 3.5.1 Documentation](https://spark.apache.org/docs/latest/sql-ref-syntax-qry-explain.html)
+
+### Auxiliary Statements
+
+#### Cache Table
+
+[CACHE TABLE - Spark 3.5.1 Documentation](https://spark.apache.org/docs/latest/sql-ref-syntax-aux-cache-cache-table.html)
+[Spark原理之Cache Table的工作原理及实现自动缓存重复表的思考\_spark cache table-CSDN博客](https://blog.csdn.net/u014445499/article/details/138003052)
+
+CACHE TABLE statement caches contents of a table or output of a query with the given storage level. If a query is cached, then a temp view will be created for this query. This reduces scanning of the original files in future queries.
+
+If storageLevel is not explicitly set using OPTIONS clause, the default storageLevel is set to `MEMORY_AND_DISK`.
+
+使用此语法，可以由用户自定义要缓存的结果集，实际上就是一个临时表（Temporary Table）、物化视图（Materialized View），不过数据存储在 Spark 集群内部，由 Application 所分配的 executors 管理。
+
+
 ## Performance Tuning
 
 [Performance Tuning - Spark SQL - Spark 3.5.0 Documentation](https://spark.apache.org/docs/latest/sql-performance-tuning.html)
