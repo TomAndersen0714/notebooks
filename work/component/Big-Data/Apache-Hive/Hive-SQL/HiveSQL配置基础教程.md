@@ -33,6 +33,11 @@ set hive.support.quoted.identifiers=None;
 select `(user_id)?+.+` from user_action_table;
 ```
 
+
+Hive CTE 物化视图配置：
+`set hive.optimize.cte.materialize.threshold`
+[Hive with语句你所不知道的秘密-CSDN博客](https://blog.csdn.net/godlovedaniel/article/details/115480115)
+
 ## 参考链接
 1. [Configuration Properties - Apache Hive - Apache Software Foundation](https://cwiki.apache.org/confluence/display/Hive/Configuration+Properties)
 2. [Hive配置基础教程](work/component/Big-Data/Apache-Hive/Hive配置基础教程.md)
