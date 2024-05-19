@@ -280,62 +280,7 @@ B --> A: Message 2
 对于比较简单的、临时性的图形，建议使用 PlantUML、Mermaid 这种支持文本化保存的工具来绘制，简单快捷，不需要关心图形的相对位置；而对于比较复杂的、需要长期存储的图形，建议使用在线的（如：ProcessOn）、离线的（如：Visual Paradigm）的应用工具来绘制，支持的图形功能也更强。
 
 
-### PlantUML
-
-PlantUML是一种开源工具，定义了一种特殊的描述性语言来表示图表，基于这些描述语言可以生成对应的可视化图表，包括UML（统一建模语言）图形。
-
-它允许开发人员和设计师使用纯文本来描述系统的结构、行为和交互，然后自动生成相应的图形表示。
-
-使用PlantUML，您可以使用简单的文本语法来定义类、接口、关系、活动、时序等元素，并通过解析这些文本描述生成对应的图形。它支持多种类型的UML图，包括类图、时序图、活动图、用例图、组件图等。
-
-Documentation
-https://github.com/plantuml/plantuml
-https://plantuml.com/en/
-[微信公众号-程序媛山楂-神仙级UML工具，助你高效绘制流程图～](https://mp.weixin.qq.com/s/qyE4dpiwqfBpMbwR6TH68Q)
-
-Online Demo
-https://www.plantuml.com/
-https://www.planttext.com/
-
-### Mermaid
-
-Mermaid 是一个开源的 JavaScript 库，用于绘制流程图、时序图、类图和其他各种图表。它使用简洁的文本语法来描述图表结构，并将其转换为可视化图形。Mermaid 可以直接嵌入到 Markdown 文档、网页或其他文档中，以创建可交互和易于阅读的图表。
-
-但 Mermaid 能够支持的 UML 图形有限，只能支持一些常用的 UML 图形，如果想要自由使用所有的 UML 图形，还是需要使用 PlantUML 这类专业绘图工具。
-
-这类通过代码自动生成图形的工具，其特点都是无法自行控制结构，不适合复杂图形。
-
-Documentation
-https://github.com/mermaid-js/mermaid
-https://mermaid.js.org/intro/
-
-Online Demo
-https://mermaid.live/
-
-
-### ProcessOn
-
-Web网页应用，云端存储，部分功能免费
-
-https://www.processon.com/
-
-[微信公众号-ProcessOn-产品经理常用UML图之「用例图」，附8张优质实例图！](https://mp.weixin.qq.com/s/_ZmXacP3MYRLK_GwBnLWYw)
-
-
-### Visual Paradigm
-
-Desktop桌面应用，收费，但同时支持社区免费版本
-
-https://www.visual-paradigm.com/cn/download/community.jsp
-
-[微信公众号-陶朱公Boy-绝杀processOn，这款UML画图神器，阿里字节都用疯了，你还不知道？](https://mp.weixin.qq.com/s/WWqbBMS7-3TNGcOXLJ26KQ)
-
-
-### Enterprise Architect
-
-Desktop桌面应用，收费，提供30天试用版，同时支持学术license
-
-
+详情见：[建模工具基础教程](work/tools/Design/建模工具基础教程.md)
 
 ## 参考链接
 1. [Wiki-Unified Modeling Language](https://en.wikipedia.org/wiki/Unified_Modeling_Language)
