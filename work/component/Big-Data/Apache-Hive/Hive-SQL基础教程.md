@@ -74,13 +74,20 @@ DESCRIBE [EXTENDED|FORMATTED] [db_name.]table_name [column_name] PARTITION parti
 
 [LanguageManual UDF - Apache Hive - Apache Software Foundation](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+UDF)
 
-[HiveSQL常用函数和运算符](work/component/Big-Data/Apache-Hive/Hive-SQL/HiveSQL常用函数和运算符.md)
-
 #### Operators
+
+`a <=> b` : 支持判断 null 值的等于符号。
 
 #### Functions
 
+[HiveSQL常用函数](work/component/Big-Data/Apache-Hive/Hive-SQL/HiveSQL常用函数.md)
+
 Normal user-defined functions, such as concat (), take in a single input row and output a single output row.
+
+第三方 Hive UDF 仓库：
+[GitHub - jeromebanks/brickhouse: Hive UDF's for the data warehouse](https://github.com/jeromebanks/brickhouse)
+[GitHub - brndnmtthws/facebook-hive-udfs: Facebook's Hive UDFs](https://github.com/brndnmtthws/facebook-hive-udfs)
+[GitHub - aaronshan/hive-third-functions: Some useful custom hive udf functions, especial array, json, math, string functions.](https://github.com/aaronshan/hive-third-functions)
 
 #### Table-Generating Functions (UDTF)
 
@@ -91,9 +98,9 @@ UDTF 支持接收单行结果，并展开为多行，但是在 SELECT 语句中�
 
 
 
-## Hive SQL 查询性能优化
+## Hive SQL 优化
 
-[HiveSQL查询性能优化教程](work/component/Big-Data/Apache-Hive/Hive-SQL/HiveSQL查询性能优化教程.md)
+[HiveSQL性能优化基础教程](work/component/Big-Data/Apache-Hive/Hive-SQL/HiveSQL性能优化基础教程.md)
 
 ## 参考链接
 1. [Hive SQL LanguageManual](https://cwiki.apache.org/confluence/display/Hive/LanguageManual)

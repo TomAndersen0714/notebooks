@@ -1,4 +1,4 @@
-# Apache Hive SQL 常用函数和运算符
+# Apache Hive SQL 常用函数
 
 
 ## Functions
@@ -7,6 +7,7 @@
 
 https://cwiki.apache.org/confluence/display/Hive/LanguageManual+UDF
 
+- Explode
 - Posexplode
 
 

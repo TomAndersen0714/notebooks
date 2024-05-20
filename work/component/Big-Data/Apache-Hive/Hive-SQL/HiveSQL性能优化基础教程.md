@@ -1,4 +1,4 @@
-# Apache Hive SQL 性能优化教程
+# Apache Hive SQL 性能优化基础教程
 
 
 ## 什么样的 SQL 需要性能优化
