@@ -1,4 +1,4 @@
-# HiveSQL 常用优化参数
+# HiveSQL 常用优化配置
 
 
 ## MapSide Join
