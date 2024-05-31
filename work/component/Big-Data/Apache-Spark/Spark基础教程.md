@@ -36,8 +36,12 @@ Stage: task = 1: n
 
 Spark Application 中 Job 的 ID 从小到大顺序，即是 Job 在源码中提交的顺序，当 Job 提交之后，源码会继续向后执行，直到遇见下一个 Job。如果下一个 Job 依赖前一个 Job 生成的 RDD，则 Job 会等待前面的 Job 执行完成，否则会直接提交下一个 Job，同一个 Application 中多个 Job 之间可以并行执行。
 
-Spark Application 中 Job 划分的依据是 Action 算子，Stage 划分的依据是 Transform Shuffle 算子。
+**Spark Application 中 Job 划分的依据是 Action 算子，Stage 划分的依据是 Shuffle Transform 算子。**
 
+在 Apache Spark 中，应用程序（Spark Application）是由多个作业（Job）组成的，而每个作业又可以细分为多个阶段（Stage），这些阶段进一步被拆分成任务（Task）并行执行。
+
+1. Job 划分的依据是 Action 算子：当应用程序执行到某个 Action 算子时，比如 collect (), save () 或 count () 等，Spark 会创建一个新的 Job。Action 算子是触发计算并将数据从 Spark 环境移出的操作，它们标志着一个具体的计算需求，因此是 Spark 划分 Job 的边界。
+2. Stage 划分的依据是宽依赖（Shuffle Transform）算子：在 Job 内部，Stage 的划分依据是 DAG（有向无环图）中的宽依赖关系。当一个 RDD（弹性分布式数据集）的转换操作导致数据需要跨节点重新分布时，就形成了宽依赖，最常见的宽依赖操作是 shuffle，如 groupByKey ()、reduceByKey () 等。为了优化执行效率，Spark 会在宽依赖处切分 Stage，确保 Stage 内的所有任务可以流水线式执行，减少数据的重排次数。因此，Stage 的划分是为了最小化 shuffle 操作，提高整体执行效率。
 ## Spark Deploy Mode
 
 `deploy-mode` 选项指定的是 spark driver 的运行位置，其中 Cluster 代表在集群中运行 Spark Driver，Client 则代表在本地运行 Spark Driver。

@@ -29,3 +29,7 @@ CACHE TABLE testCache OPTIONS ('storageLevel' 'DISK_ONLY') SELECT * FROM testDat
 -- uncache table
 UNCACHE TABLE [ IF EXISTS ] table_identifier
 ```
+
+
+## 参考链接
+1. [京东Spark基于Bloom Filter算法的Runtime Filter Join优化机制 - 脉脉](https://maimai.cn/article/detail?fid=1707795020&efid=dSfxdmyhmG6D8hDYUYvB4Q)
