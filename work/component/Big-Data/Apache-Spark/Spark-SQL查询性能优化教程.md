@@ -11,7 +11,7 @@
 
 ## Spark SQL 常用优化方法
 
-### Cache Table / Uncache Table
+### Cache/Uncache Table Table
 
 [CACHE TABLE - Spark 3.5.1 Documentation](https://spark.apache.org/docs/latest/sql-ref-syntax-aux-cache-cache-table.html)
 [Spark原理之Cache Table的工作原理及实现自动缓存重复表的思考\_spark cache table-CSDN博客](https://blog.csdn.net/u014445499/article/details/138003052)
@@ -30,6 +30,11 @@ CACHE TABLE testCache OPTIONS ('storageLevel' 'DISK_ONLY') SELECT * FROM testDat
 UNCACHE TABLE [ IF EXISTS ] table_identifier
 ```
 
+
+## Spark SQL 谓词下推
+
+
+Spark SQL 在 JOIN 时，会自动进行谓词下推，对于 JOIN Key，则会自动下推 Join key is not null 的条件在 table scan 的阶段，但如果是 left join，则只会下推 right 表，而不会下推 left 表。
 
 ## 参考链接
 1. [京东Spark基于Bloom Filter算法的Runtime Filter Join优化机制 - 脉脉](https://maimai.cn/article/detail?fid=1707795020&efid=dSfxdmyhmG6D8hDYUYvB4Q)
