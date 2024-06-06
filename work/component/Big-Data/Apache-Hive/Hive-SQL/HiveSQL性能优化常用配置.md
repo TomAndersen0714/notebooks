@@ -1,25 +1,32 @@
 # HiveSQL 性能优化常用配置
 
 
-## MapSide Join
-
-Hive Map Side 配置：
-`set hive.auto.convert.join=true`
-
-
-Hive Map Side Join 配置在 0.11.1 版本之后就是默认开启的。
-`The default value for hive.auto.convert.join was false in Hive 0.10.0.  Hive 0.11.0 changed the default to true (HIVE-3297). Note that hive-default.xml.template incorrectly gives the default as false in Hive 0.11.0 through 0.13.1.`
+## Map Join
 
 [LanguageManual JoinOptimization - Apache Hive - Apache Software Foundation](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+JoinOptimization)
 
-## CTE 物化
+Hive Map Side 配置：
+`set hive.auto.convert.join=true`
+`set hive.mapjoin.smalltable.filesize=25000000`
+
+Hive Map Join 配置在 0.11.1 版本之后就是默认开启的。
+[Configuration Properties - Apache Hive - Apache Software Foundation - ConfigurationProperties-hive.auto.convert.join](https://cwiki.apache.org/confluence/display/Hive/Configuration+Properties#ConfigurationProperties-hive.auto.convert.join)
+
+Hive Map Join 小表阈值：
+`hive.smalltable.filesize` or `hive.mapjoin.smalltable.filesize`
+- The threshold (in bytes) for the input file size of the small tables; if the file size is smaller than this threshold, it will try to convert the common join into map join.
+- Default Value: `25000000`
+- `hive.smalltable.filesize` : added In: Hive 0.7.0 with HIVE-1642 (replaced by `hive.mapjoin.smalltable.filesize` in Hive 0.8.1)
+- `hive.mapjoin.smalltable.filesize` : added In: Hive 0.8.1 with HIVE-2499
+
+## CTE Materialize 物化
 
 Hive CTE 物化阈值配置：
 `set hive.optimize.cte.materialize.threshold=1`
 
 此配置设置的值对应着 CTE 引用的次数，如果 SQL 中 CTE 的“引用次数”超过此次数则会对其进行物化，可以通过 Explain 命令，查看前后执行计划，如果其中包含有 `Move Operator`，则说明执行了物化操作。
 
-在低版本 Hive 中会与 `hive.auto.convert.join` 冲突，出现丢失数据的情况，因此使用此优化特性时，建议关闭 `set hive.auto.convert.join=false`。
+在低版本 Hive 中会与 Map join 特性 `hive.auto.convert.join` 冲突，出现丢失数据的情况，因此使用此优化特性时，建议关闭 `set hive.auto.convert.join=false`。
 
 
 坑点：

@@ -32,7 +32,11 @@ SQL 性能评估指标：
 
 数据膨胀是指任务的输出条数/数据量级比输入条数/数据量级大很多，如 100M 的数据作为任务输入，最后输出 1T 的数据。这种情况不仅运行效率会降低，部分任务节点在运行 key 值量级过大时，有可能发生资源不足或失败情况。
 
-## 常见性能问题优化方法
+## Hive SQL 优化常用配置
+
+[HiveSQL性能优化常用配置](work/component/Big-Data/Apache-Hive/Hive-SQL/HiveSQL性能优化常用配置.md)
+
+## Hive SQL 常见性能问题优化方法
 
 
 ### 数据倾斜问题
@@ -55,7 +59,7 @@ SQL 性能评估指标：
 
 ##### 小文件合并读取
 
-提交 SQL 时，设置相应 InputFormat 参数，使用特定的 InputFormat 类来进行文件读取，如 CombineInputFormat，将小文件读取合并后再创建对应的 Mapper 处理数据。
+提交 SQL 时，设置相应 InputFormat 参数，使用特定的 InputFormat 类来进行文件读取，如 CombineInputFormat，将小文件读取合并后再创建对应的 Mapper 处理数据，即减少 Map 数量。
 
 ##### 随机数据分布
 
@@ -63,7 +67,7 @@ SQL 性能评估指标：
 在 Map 阶段时，可以使用随机分布函数 `distribute by rand()`，控制 Map 端输出结果的分发策略，即 Map 端如何拆分数据给 Reduce 端（默认基于针对列使用 Hash 算法的计算结果），打乱数据分布，至少不会在 Map 端就开始出现数据倾斜。
 
 方法二：
-在 Map 阶段时，针对 Reduce Key 增加随机数前缀
+在 Map 阶段时，针对 Reduce Key 增加随机数前缀（加盐），进行初步聚合之后，再去前缀（去盐），最后再进行聚合。
 
 #### Join 端优化
 
@@ -107,7 +111,7 @@ https://blog.csdn.net/lianghecai52171314/article/details/104658201
 
 ##### Distinct VS Group By
 
-https://www.zhihu.com/question/328860878?utm_id=0
+[知乎- hive的distinct与group by的区别是什么？](https://www.zhihu.com/question/328860878)
 
 简单来说，两者在性能方面并没有区别，具体可通过 explain 查看 distinct 语句，观察 Hive 是否有将 Distinct 的执行计划优化为 group by operator。
 
@@ -124,7 +128,7 @@ https://www.zhihu.com/question/328860878?utm_id=0
 #### 复杂查询拆解
 
 
-## Hive On Spark
+## Hive on Spark
 
 
 [Cloudera Enterprise 6.3.x Documentation - Tuning Apache Hive on Spark in CDH](https://docs.cloudera.com/documentation/enterprise/6/6.3/topics/admin_hos_tuning.html#hos_tuning)
