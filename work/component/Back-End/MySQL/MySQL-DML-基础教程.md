@@ -1,8 +1,5 @@
 # MySQL DML 基础教程
 
-
-
-
 ## Insert Into
 
 
