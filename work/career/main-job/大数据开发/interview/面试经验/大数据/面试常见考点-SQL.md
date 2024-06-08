@@ -58,7 +58,7 @@ Window define：RANGE BETWEEN UNBOUNDED PROCEEDING AND UNBOUNDED FOLLOWING
 
 ### 性能调优方法
 
-[Spark-SQL性能优化教程](work/component/Big-Data/Apache-Spark/Spark-SQL性能优化教程.md)
+[Spark-SQL性能优化基础教程](work/component/Big-Data/Apache-Spark/Spark-SQL性能优化基础教程.md)
 
 
 ## ClickHouse SQL

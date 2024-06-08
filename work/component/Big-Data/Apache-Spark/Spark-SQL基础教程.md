@@ -82,8 +82,6 @@ If storageLevel is not explicitly set using OPTIONS clause, the default storageL
 
 Adaptive Query Execution (AQE) is an optimization technique in Spark SQL that makes use of the runtime statistics to choose the most efficient query execution plan, which is enabled by default since Apache Spark 3.2.0. Spark SQL can turn on and off AQE by spark. Sql. Adaptive. Enabled as an umbrella configuration. As of Spark 3.0, there are three major features in AQE: including coalescing post-shuffle partitions, converting sort-merge join to broadcast join, and skew join optimization.
 
-
-
 ## Client
 
 [spark-sql基础教程](work/component/Big-Data/Apache-Spark/CLI/spark-sql基础教程.md)
@@ -91,3 +89,5 @@ Adaptive Query Execution (AQE) is an optimization technique in Spark SQL that ma
 ## 参考链接
 1. [Spark SQL and DataFrames - Spark 3.5.0 Documentation](https://spark.apache.org/docs/latest/sql-programming-guide.html)
 2. [微信-字节跳动数据平台-观点｜SparkSQL 在企业级数仓建设的优势](https://mp.weixin.qq.com/s/CLr6KfdzKhtfaT89NHv_8g)
+3. [Spark性能优化指南——基础篇 - 美团技术团队](https://tech.meituan.com/2016/04/29/spark-tuning-basic.html)
+4. [Spark性能优化指南——高级篇 - 美团技术团队](https://tech.meituan.com/2016/05/12/spark-tuning-pro.html)
