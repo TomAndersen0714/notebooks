@@ -1,4 +1,4 @@
-# Spark SQL 查询性能优化教程
+# Spark SQL 性能优化教程
 
 
 ## 什么样的 SQL 需要性能优化
