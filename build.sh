@@ -1,5 +1,5 @@
 #!/bin/bash
-# 此脚本用于git commit, 以及打包完整项目并同步
+# 此脚本用于提交 git commit, 以及打包完整项目并同步
 
 set -ex
 
@@ -13,8 +13,8 @@ if [ ! -d "$git_path" ]; then
     exit 1
 fi
 
-if [ "$option" != "commit" ] && [ "$option" != "zip" ]; then
-    echo "option must be commit or zip"
+if [ "$option" != "commit" ] && [ "$option" != "pack" ]; then
+    echo "option must be commit or pack"
     exit 1
 fi
 
@@ -27,21 +27,23 @@ function git_commit() {
 
 function zip_package() {
     # define variables
-    pkg_path=$(basename "$git_path")
+    pkg_file=$(basename "$git_path")_$(date +%Y%m%d%H%M%S).zip
+    pkg_file_path="./output/$pkg_file"
 
     # remove old package
-    rm -f "$pkg_path.zip"
+    rm -f "$pkg_file_path"
 
     # zip packing and overwrite old package
-    zip -r "$pkg_path.zip" "$git_path"
+    zip -r "$pkg_file_path" "$git_path"
 }
 
+# main
 # choose function to execute depend on option using case statement
 case $option in
 commit)
     git_commit
     ;;
-zip)
+pack)
     zip_package
     ;;
 esac
