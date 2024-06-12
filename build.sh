@@ -31,10 +31,11 @@ function zip_package() {
     pkg_file_path="./output/$pkg_file"
 
     # remove old package
-    rm -f "$pkg_file_path"
+    rm -f "$pkg_file"
 
     # zip packing and overwrite old package
-    zip -r "$pkg_file_path" "$git_path"
+    zip -r "$pkg_file" "$git_path"
+    mv "$pkg_file" "$pkg_file_path"
 }
 
 # main
