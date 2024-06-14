@@ -36,6 +36,20 @@ SQL 性能评估指标：
 
 [HiveSQL性能优化常用配置](work/component/Big-Data/Apache-Hive/Hive-SQL/HiveSQL性能优化常用配置.md)
 
+
+## Hive SQL 性能问题诊断方法
+
+Hive SQL on MapReduce 任务如何定位数据倾斜对应代码段
+1. 查看 Application Master 或者 JobHistory 页面
+	1. JobServer 中点击 Task Type 下的 map 或 reduce，即可跳转到对应的 Task 耗时页面
+	2. Application Master 中点击 Map 或 Reduce 对应的数量，即可跳转到对应的 Task 耗时页面
+	3. 通过耗时页面倒序，可以看到是否存在数据倾斜
+2. 通过 Explain 查看 Hive SQL 对应的执行计划
+3. 查看 Application Name 或者 Job Name 中的 stage ID（如 stage-12）
+4. 通过 Stage ID 去检索执行计划，即可定位到事故对应执行计划
+5. 通过执行计划中引用的表名，检索原始 SQL 代码，然后即可定位到事故代码段
+
+
 ## Hive SQL 常见性能问题优化方法
 
 
