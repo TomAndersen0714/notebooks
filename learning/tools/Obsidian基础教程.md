@@ -18,6 +18,11 @@ PlantUML
 
 Auto Link Title
 [OB0207 obsidian 自动获取url链接：auto-link-title插件使用\_auto link title-CSDN博客](https://blog.csdn.net/qq_41520353/article/details/128675834)
+Excalidraw
+[GitHub - excalidraw/excalidraw: Virtual whiteboard for sketching hand-drawn like diagrams](https://github.com/excalidraw/excalidraw)
+开源手绘风格绘图工具
+[左手文字，右手图形，用Excalidraw去弥补Obsidian笔记的不足\_哔哩哔哩\_bilibili](https://www.bilibili.com/video/BV1j8411S7pT/)
+
 
 ## 自定义配置
 
