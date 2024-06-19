@@ -9,6 +9,21 @@
 
 [为什么 SQL 查询会存在性能问题](work/component/Back-End/MySQL/solution/MySQL-SQL查询性能优化教程.md#为什么%20SQL%20查询会存在性能问题)
 
+
+## Spark SQL 常见性能问题及诊断方法
+
+### Spark SQL 常见性能问题
+
+- Out of Heap memory on Executors
+- Low Memory Overhead on Executors
+- Shuffle block greater than 2 GB
+- Network TimeOut.
+
+### Spark SQL 性能问题定位方法
+
+[CSDN-诸葛子房-Spark 任务优化分析](https://blog.csdn.net/weixin_43291055/article/details/133770448)
+[SparkSql 慢任务诊断案例](https://mp.weixin.qq.com/s/3RrpzO5rPthKfyGX8MvnFw)
+
 ## Spark SQL 常用优化方法
 
 ### Cache/Uncache Table Table

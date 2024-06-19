@@ -40,18 +40,22 @@
 #### 解决方法
 
 
-## Spark 任务常见性能问题的症状、原因及其解决方案
+## Spark 任务常见性能问题、诊断及解决方法
 
-[CSDN-诸葛子房-Spark 任务优化分析](https://blog.csdn.net/weixin_43291055/article/details/133770448)
-
-[SparkSql 慢任务诊断案例](https://mp.weixin.qq.com/s/3RrpzO5rPthKfyGX8MvnFw)
-
+### 常见性能问题
 
 [4 Common Reasons for FetchFailed Exception in Apache Spark - DZone](https://dzone.com/articles/four-common-reasons-for-fetchfailed-exception-in-a)
 - Out of Heap memory on Executors
 - Low Memory Overhead on Executors
 - Shuffle block greater than 2 GB
 - Network TimeOut.
+
+### 常用诊断方法
+
+[CSDN-诸葛子房-Spark 任务优化分析](https://blog.csdn.net/weixin_43291055/article/details/133770448)
+
+[SparkSql 慢任务诊断案例](https://mp.weixin.qq.com/s/3RrpzO5rPthKfyGX8MvnFw)
+
 
 ### 慢查询
 
@@ -75,23 +79,18 @@ OOM：
 2. 增加 `spark.sql.shuffle.partitions` 数值
 
 
-## Spark Executor 内存解析
-
-[Spark on YARN Executor整体内存理解\_spark executor内存使用情况如何查看-CSDN博客](https://blog.csdn.net/xiaoluobutou/article/details/129416657)
-
-## Spark SQL
-
-[Spark SQL Guide - Performance Tuning - Spark 3.5.0 Documentation](https://spark.apache.org/docs/latest/sql-performance-tuning.html)
-
-`spark.sql.shuffle.partitions`
-
-## Adaptive Query Execution
-
+### Adaptive Query Execution
 
 [Performance Tuning - Spark 3.5.0 Documentation](https://spark.apache.org/docs/latest/sql-performance-tuning.html#adaptive-query-execution)
 
+## Spark SQL 性能优化
+
+[Spark SQL Guide - Performance Tuning - Spark 3.5.0 Documentation](https://spark.apache.org/docs/latest/sql-performance-tuning.html)
+
+[Spark-SQL性能优化基础教程](work/component/Big-Data/Apache-Spark/Spark-SQL性能优化基础教程.md)
+
 ## 参考链接
-1. [Performance Tuning - Spark 3.5.0 Documentation](https://spark.apache.org/docs/latest/sql-performance-tuning.html)
+1. [Performance Tuning - Spark 3.5.1 Documentation](https://spark.apache.org/docs/latest/sql-performance-tuning.html)
 2. [Tuning - Spark 3.5.0 Documentation](https://spark.apache.org/docs/latest/tuning.html#tuning-spark)
 3. [Spark性能优化指南——基础篇 - 美团技术团队](https://tech.meituan.com/2016/04/29/spark-tuning-basic.html)
 4. [Spark性能优化指南——高级篇 - 美团技术团队](https://tech.meituan.com/2016/05/12/spark-tuning-pro.html)
