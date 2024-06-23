@@ -3,7 +3,7 @@
 
 ## sys.path
 
-Python 命令行，直接运行脚本时，即 `python path/to/script/py`，默认会将脚本其所在的路径添加到 ` sys. Path ` 中（而不是将当前工作路径 work directory 添加到 ` sys.path `）。
+Python 命令行，直接运行脚本时，即 `python path/to/script/py`，默认会将脚本其所在的路径添加到 ` sys.path ` 中（而不是将当前工作路径 work directory 添加到 ` sys.path `）。
 
 Python 命令行，将 Python Model 以脚本方式运行时，即 `python -m path.to.module`，会将当前路径（即 work directory）添加到 `sys.path` 中。
 

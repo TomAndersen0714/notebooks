@@ -106,7 +106,11 @@ File | Settings | Build, Execution, Deployment | Build Tools | Gradle
 
 `Use Gradle from`，选择 `gradle-wrapper.properties file`，即使用 Gradle 官方推荐的 Wrapper 来执行 Gradle 命令。
 
+### Line separator
 
+`File | Settings | Editor | Code Style | Line separator`
+
+选择 \\n 作为默认下划线。
 ### Encoding
 
 File | Settings | Editor | File Encodings
@@ -134,6 +138,22 @@ File | Settings | Keymap
 Project View - Options - Tree Appearance
 
 勾选 `Show Members`，`Folds Always on Top`
+
+
+### Font
+
+`File | Settings | Editor | Font`
+
+Size: 15, Line height: 1.2。
+
+`typography settings | Fallback font`，设置为 `SimHei`
+
+### Terminal
+
+`File | Settings | Tools | Terminal`
+
+`Application Settings` 中设置 `Shell Path`，来指定默认启动的 Terminal Shell。
+
 
 ### UI
 

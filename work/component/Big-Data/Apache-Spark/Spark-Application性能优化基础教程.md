@@ -75,8 +75,9 @@ OOM：
 1. OOM 常见报错日志，如 `Container Killed by Yarn For Exceeding Memory`
 
 解决方案：
-1. Spark SQL 先主动 shuffle，然后 aggregation，会减少 partial aggregation 的 memory 开销
+1. Spark SQL 先主动使用 Distributed By 触发 shuffle，然后 aggregation，会减少 partial aggregation 的 memory 开销
 2. 增加 `spark.sql.shuffle.partitions` 数值
+3. 增加 `spark.executor.instances` 和 `spark.executor.memory` 参数大小，指定分配更多的资源
 
 
 ### Adaptive Query Execution
