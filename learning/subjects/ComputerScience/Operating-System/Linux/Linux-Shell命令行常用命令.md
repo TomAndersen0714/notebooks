@@ -123,6 +123,13 @@ unalias kd
 ln -s /mnt/c/Users/ericcheng/Desktop desktop
 ```
 
+
+#### find
+
+常用选项：
+- `-name` ：以指定字符串 pattern 进行检索
+- `-iname` ：以指定字符串 pattern 进行非大小写敏感检索
+
 ### Network
 
 

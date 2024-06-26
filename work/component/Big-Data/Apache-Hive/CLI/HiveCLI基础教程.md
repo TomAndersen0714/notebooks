@@ -1,5 +1,25 @@
 # Hive CLI 基础教程
 
+## 常用子命令
+
+[LanguageManual Commands - Apache Hive - Apache Software Foundation](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+Commands)
+
+```
+set
+reset
+
+add file
+add jar
+
+list file
+list jar
+
+delete file
+delete jar
+
+dfs <dfs command>
+
+```
 
 ## 常用选项
 

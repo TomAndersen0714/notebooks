@@ -9,20 +9,16 @@ SQL 性能评估维度：
 2. 服务质量 QoS VS 资源开销
 3. 慢查询 SQL VS 高负载查询 SQL 
 
-
 SQL 性能评估指标：
 1. 客户端评估指标：查询响应时间
 2. 服务端评估指标：CPU、内存、磁盘 IOPS、磁盘吞吐、网络带宽等
-
 
 ## 为什么 SQL 查询会存在性能问题
 
 
 从宏观上来说，一般情况下，可以把一个 SQL 查询看做是一个由多个 subtask 组成的一个 task。如果 SQL 执行性能很差，必然是查询的任务总量（$T_n = \sum_{i=1}^{n} task_i$）太大，即要么是 subtask 数量太多，要么是某些 subtask 的执行时间太长，故 SQL 查询的优化方向也是从这两个方面着手。
 
-
-## 常见性能问题和排查方法
-
+## 常见性能问题和诊断方法
 
 ### 数据倾斜
 
@@ -32,14 +28,14 @@ SQL 性能评估指标：
 
 数据膨胀是指任务的输出条数/数据量级比输入条数/数据量级大很多，如 100M 的数据作为任务输入，最后输出 1T 的数据。这种情况不仅运行效率会降低，部分任务节点在运行 key 值量级过大时，有可能发生资源不足或失败情况。
 
-## Hive SQL 优化常用配置
-
-[HiveSQL性能优化常用配置](work/component/Big-Data/Apache-Hive/Hive-SQL/HiveSQL性能优化常用配置.md)
-
-
 ## Hive SQL 性能问题诊断方法
 
-Hive SQL on MapReduce 任务如何定位数据倾斜对应代码段
+
+### Hive on MapReduce
+
+**数据倾斜问题诊断和定位**
+
+Hive SQL on MapReduce 任务如何诊断和定位数据倾斜
 1. 查看 Application Master 或者 JobHistory 页面
 	1. JobServer 中点击 Task Type 下的 map 或 reduce，即可跳转到对应的 Task 耗时页面
 	2. Application Master 中点击 Map 或 Reduce 对应的数量，即可跳转到对应的 Task 耗时页面
@@ -48,6 +44,17 @@ Hive SQL on MapReduce 任务如何定位数据倾斜对应代码段
 3. 查看 Application Name 或者 Job Name 中的 stage ID（如 stage-12）
 4. 通过 Stage ID 去检索执行计划，即可定位到事故对应执行计划
 5. 通过执行计划中引用的表名，检索原始 SQL 代码，然后即可定位到事故代码段
+
+
+### Hive on Spark
+
+
+[Cloudera Enterprise 6.3.x Documentation - Tuning Apache Hive on Spark in CDH](https://docs.cloudera.com/documentation/enterprise/6/6.3/topics/admin_hos_tuning.html#hos_tuning)
+[【尚硅谷大数据技术 Hive On Spark 调优（离线数仓项目实战）-哔哩哔哩】](https://b23.tv/f2mPHla)
+
+## Hive SQL 优化常用配置
+
+[HiveSQL性能优化常用配置](work/component/Big-Data/Apache-Hive/Hive-SQL/HiveSQL性能优化常用配置.md)
 
 
 ## Hive SQL 常见性能问题优化方法
@@ -141,12 +148,6 @@ https://blog.csdn.net/lianghecai52171314/article/details/104658201
 
 #### 复杂查询拆解
 
-
-## Hive on Spark
-
-
-[Cloudera Enterprise 6.3.x Documentation - Tuning Apache Hive on Spark in CDH](https://docs.cloudera.com/documentation/enterprise/6/6.3/topics/admin_hos_tuning.html#hos_tuning)
-[【尚硅谷大数据技术 Hive On Spark 调优（离线数仓项目实战）-哔哩哔哩】](https://b23.tv/f2mPHla)
 
 ## 参考链接
 1. [微信-大数据技术团队-Hive SQL 高级进阶 10 大技巧](https://mp.weixin.qq.com/s/AKXXfbGBqndv6Fe1yjHryA)
