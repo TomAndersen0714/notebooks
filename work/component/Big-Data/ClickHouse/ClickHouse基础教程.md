@@ -10,7 +10,6 @@ https://clickhouse.com/docs/en/intro
 
 https://clickhouse.com/docs/en/getting-started/quick-start
 
-
 ## Overview
 
 https://clickhouse.com/docs/en/development/architecture
