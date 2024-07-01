@@ -4,7 +4,7 @@
 
 
 
-## Spark SQL
+## Hive/Spark SQL
 
 ```sql
 -- coalesce_files_num 变量指的是合并后的文件数量
