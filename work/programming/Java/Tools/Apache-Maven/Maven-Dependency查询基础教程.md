@@ -1,4 +1,4 @@
-# Maven 查询基础教程
+# Maven Dependency 查询基础教程
 
 
 ## 通过 Groups/Artifacts/Categories 检索

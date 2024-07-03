@@ -11,7 +11,7 @@
 ## IDE
 ### JetBrain IDEA
 
-[IDEA基础教程](work/tools/JetBrains/IDEA基础教程.md)
+[IDEA基础教程](work/tools/JetBrains/IDEA/IDEA基础教程.md)
 
 ### VSCode
 

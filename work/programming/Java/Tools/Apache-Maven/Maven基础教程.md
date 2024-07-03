@@ -1,13 +1,15 @@
 # Maven 基础教程
 
 
+## Maven 安装基础教程
+
+[Maven安装基础教程](work/programming/Java/Tools/Apache-Maven/Maven安装基础教程.md)
 ## Maven 配置教程
 
 
-### 配置文件简介
+### 配置文件
 
 https://maven.apache.org/configure.html#maven_args-environment-variable
-
 
 ### settings.xml
 
