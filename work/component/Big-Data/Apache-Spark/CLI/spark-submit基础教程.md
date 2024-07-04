@@ -1,5 +1,11 @@
 # spark-submit 基础教程
 
+## 简介
+
+Spark-submit 命令行工具是 Apache Spark 的一个核心组件，用于提交 Spark 应用程序到 Spark 集群上运行。
+
+Spark-submit 命令行工具支持提交 Scala/Java 代码实现的 jar 文件，也支持 Python 实现的 Py 文件，将其中定义的 Spark Application 提交给 Spark 集群运行。
+
 ## spark-submit
 
 ### Options

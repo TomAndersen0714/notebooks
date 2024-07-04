@@ -1,9 +1,10 @@
 # spark-shell 基础教程
 
-
 ## 简介
 
-Spark-shell 是 Apache Spark 提供的一个交互式命令行工具，它允许用户直接输入 Scala 或者 Java 代码来运行 Spark 操作。
+Spark-shell 是 Apache Spark 提供的一个交互式命令行工具，它允许用户直接输入 Scala 代码来运行 Spark 操作。
+
+其底层实际上是在交互式运行一个 Spark Application。
 
 Spark-shell 为用户提供了一个即时的、交互式的环境来学习 Spark API、测试 Spark 代码片段、进行数据探索和分析。它在启动时自动创建一个 SparkSession 实例，使用户能够立即开始执行 Spark 任务。
 
