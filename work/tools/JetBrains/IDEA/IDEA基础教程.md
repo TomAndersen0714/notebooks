@@ -1,7 +1,7 @@
 # IDEA基础教程
 
 
-## 安装 IDEA
+## IDEA 安装
 
 建议初学者，可以自己申请，或者淘宝购买学生账号，支持 JetBrains 全家桶。
 
@@ -210,27 +210,11 @@ https://blog.csdn.net/2301_76696220/article/details/134683935
 
 File | Settings | Editor | General | Smart Keys | Reformat on Paste
 
-## 调试技巧
+## IDEA Debugger 调试
 
-### Reset Frame
+[IDEA-Debug调试基础教程](work/tools/JetBrains/IDEA/IDEA-Debug调试基础教程.md)
 
-Debug | Debugger | Reset Frame
-
-在 Debugger 窗口下可以选中特定的 Frame 条目，然后点击右键，选择"Reset Frame"可以，回退调用栈中指定 Frame 的上一层，程序执行的 Cursor 也会回到上一层的代码行。
-
-通过 Reset Frame 的方式，可以快速回退程序执行路径，避免通过重启程序回到跳过的 Break Point。
-
-
-### Evaluate Expression
-
-在 Debug 时，可以通过选中指定的代码段，点击右键打开菜单，选中“Evaluate Expression”来执行代码片段。
-
-这个功能可以用于直接探测指定代码的返回值，而不用进入代码内部；也可以用于修改，运行时的变量值，来进行自测。
-
-使用此功能时，需要注意的是，任何代码段都是在程序中实际执行过的，会实际影响到内存中的变量。
-
-
-## Git 使用技巧
+## IDEA Git 使用技巧
 
 ### 调整本地 Commit 内容和顺序
 

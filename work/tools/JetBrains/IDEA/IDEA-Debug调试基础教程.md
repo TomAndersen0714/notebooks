@@ -48,6 +48,8 @@ https://www.bilibili.com/video/BV1Rm4y1P7j8
 
 ### 方法栈回退（Reset/Delete Frame）
 
+Debug | Debugger | Reset Frame
+
 在 Debugger 窗口下的 Frames 是当前程序的方法调用栈，每次都会保存当前的方法调用栈帧（Frame）。
 
 在 Debug 过程中，如果某个方法执行一段后，如果想回退到进入此方法之前，则可以通过 Frames 窗口下选中指定的 Frame，然后点击 Reset Frame 或者 Delete Frame，都可以将对应栈帧 Frame 之后的所有 Frame 删除，程序的当前行会回退到方法栈栈顶的方法入口处。
@@ -55,6 +57,7 @@ https://www.bilibili.com/video/BV1Rm4y1P7j8
 通过这种方法，可以在调试进某个方法时，适时回退到入口处，重新执行。指的注意的是，已经执行的代码段中，所修改的变量，不会随之回退。
 
 如：Debug 时，某个方法的执行过程未能及时观测到，则可以通过 Reset/Delete Frame 功能，将程序执行代码行回退到某个方法调用前。
+
 
 ![](resources/images/Pasted%20image%2020230916203912.png)
 
@@ -69,6 +72,12 @@ https://www.bilibili.com/video/BV1Rm4y1P7j8
 Debug 时，可以通过执行表达式功能（Evaluate Expression），来实时执行特定的代码段，并显示对应的执行结果。
 
 如：Debug 时可以通过设置断点等方式，在执行某段代码之前暂停程序，然后执行代码段，来调整程序运行的分支；或者是在提前停止，并设置变量值，来测试后续的代码行。
+
+如：在 Debug 时，可以通过选中指定的代码段，点击右键打开菜单，选中“Evaluate Expression”来执行代码片段。
+
+这个功能可以用于直接探测指定代码的返回值，而不用进入代码内部；也可以用于修改，运行时的变量值，来进行自测。
+
+使用此功能时，需要注意的是，任何代码段都是在程序中实际执行过的，会实际影响到内存中的变量。
 
 
 ![](resources/images/Pasted%20image%2020230916204159.png)
