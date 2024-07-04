@@ -8,9 +8,6 @@ Spark Web UI 的 SQL 一栏中，展示了 Spark 执行计划对应的 SQL 视�
 同时 SQL 的实际执行计划最后的节点，也会显示当前 SQL query 每次执行的结果，如：写入操作，则执行计划的日志会显示写入的文件数和数据量。
 
 
-
-
-
 ## Spark Web UI 中如何定位执行计划对应的代码
 
 在进行 Spark Application（主要是 Spark SQL 的情况） 性能优化和问题排查时，经常需要通过 Spark Web SQL 页面查看对应 application 的执行计划，并确定事故点对应的代码片段：

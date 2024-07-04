@@ -3,7 +3,7 @@
 
 ## Cluster Overview
 
-https://spark.apache.org/docs/3.2.0/cluster-overview.html
+[Cluster Mode Overview - Spark 3.5.1 Documentation](https://spark.apache.org/docs/latest/cluster-overview.html)
 
 ## RDD
 
