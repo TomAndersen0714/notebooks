@@ -3,7 +3,9 @@
 
 ## 简介
 
-既支持 Scala 交互式查询，也支持提交 jar 包执行 Spark Application。
+Spark-shell 是 Apache Spark 提供的一个交互式命令行工具，它允许用户直接输入 Scala 或者 Java 代码来运行 Spark 操作。
+
+Spark-shell 为用户提供了一个即时的、交互式的环境来学习 Spark API、测试 Spark 代码片段、进行数据探索和分析。它在启动时自动创建一个 SparkSession 实例，使用户能够立即开始执行 Spark 任务。
 
 ## spark-shell 常用命令
 
@@ -22,5 +24,5 @@ Spark-shell 启动时，默认会使用当前登录的系统用户。从报错�
 
 
 ## 参考链接
-1. [Apache Spark Documentation - spark-shell](https://spark.apache.org/docs/3.2.0/quick-start.html#interactive-analysis-with-the-spark-shell)
+1. [Quick Start - Spark 3.5.1 Documentation](https://spark.apache.org/docs/latest/quick-start.html#interactive-analysis-with-the-spark-shell)
 2. [大象教程-Spark Shell 的使用](https://www.hadoopdoc.com/spark/spark-shell)
