@@ -5,7 +5,7 @@
 
 ### Transitive Dependencies
 
-继承式依赖
+相互依赖的 Maven 项目，采取的是继承式依赖
 ### Dependency Scope 
 
 依赖的作用范围
