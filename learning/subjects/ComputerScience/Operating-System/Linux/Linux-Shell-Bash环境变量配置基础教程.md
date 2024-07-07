@@ -62,9 +62,9 @@ Bash的`--noprofile`选项，可以抑制此动作。
 
 ## 小结
 
-1. 如果是设置系统级别环境变量（针对所有用户生效），建议以`.sh`脚本文件的形式，添加到`/etc/profile.d/*.sh`中。
+**环境变量设置建议：**
+1. 如果是设置系统级别环境变量（针对所有用户生效），建议以 `.sh` 脚本文件的形式，添加到 `/etc/profile.d/*.sh` 中，支持可插拔。
 2. 如果是设置用户级别环境变量，建议添加到`~/.bashrc`文件中。
-
 
 ## 参考链接
 1. [Bash Reference Manual - Bash Features](https://www.gnu.org/software/bash/manual/html_node/Bash-Startup-Files.html)
