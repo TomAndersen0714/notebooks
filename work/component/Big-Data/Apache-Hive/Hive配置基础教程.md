@@ -20,5 +20,9 @@ When set to true Hive will answer a few queries like min, max, and count (1) pur
 
 [Hive中使用count(1)或count()统计行数时结果为0的原因\_hive统计表行数-CSDN博客](https://blog.csdn.net/TomAndersen/article/details/106560747)
 
+
+设置 Hive Metastore 的 uri 地址：
+`hive.metastore.uris`
+[AdminManual Metastore Administration - Apache Hive - Apache Software Foundation](https://cwiki.apache.org/confluence/display/Hive/AdminManual+Metastore+Administration)
 ## 参考链接
 1. [Configuration Properties - Apache Hive - Apache Software Foundation](https://cwiki.apache.org/confluence/display/hive/configuration+properties)
