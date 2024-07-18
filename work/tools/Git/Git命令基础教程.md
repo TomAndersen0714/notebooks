@@ -178,7 +178,7 @@ https://waynerv.com/posts/git-rebase-intro/
 # Note that empty commits are commented out
 ```
 
-Rebase的行为可以大致分为三类：
+Rebase 的行为可以大致分为三类：
 1. 第一类：保留 commit，不合并
 	1. Pick: 标记为 pick 的 commit 会在 rebase 操作后会直接保留下来，不做任何改动，也不会合并，最上面的 commit 最好标记为这一类；
 	2. Reword： 这一类 commit 也会保存下来，不过在保存下来之前会有一次修改 commit message 的机会；

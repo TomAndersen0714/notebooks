@@ -18,21 +18,23 @@ SQL 性能评估指标：
 
 从宏观上来说，一般情况下，可以把一个 SQL 查询看做是一个由多个 subtask 组成的一个 task。如果 SQL 执行性能很差，必然是查询的任务总量（$T_n = \sum_{i=1}^{n} task_i$）太大，即要么是 subtask 数量太多，要么是某些 subtask 的执行时间太长，故 SQL 查询的优化方向也是从这两个方面着手。
 
-## 常见性能问题和诊断方法
+## Hive SQL 常见性能问题和诊断方法
 
-### 数据倾斜
+
+### Hive SQL 常见性能问题
+#### 数据倾斜
 
 数据倾斜是指在分布式计算时，大量相同的 key 对应的数据被分发到同一个 reduce 节点中，导致该节点的任务数据量远大于其他节点的平均数据量，运行时间远高于其他节点的平均运行时间，拖累了整体 SQL 查询的执行时间。
 
-### 数据膨胀
+#### 数据膨胀
 
 数据膨胀是指任务的输出条数/数据量级比输入条数/数据量级大很多，如 100M 的数据作为任务输入，最后输出 1T 的数据。这种情况不仅运行效率会降低，部分任务节点在运行 key 值量级过大时，有可能发生资源不足或失败情况。
 
 ## Hive SQL 性能问题诊断方法
 
-
 ### Hive on MapReduce
 
+[Hive group by 数据倾斜问题处理\_group by数据倾斜了,怎么快速找出字段-CSDN博客](https://zhugezifang.blog.csdn.net/article/details/127447167)
 **数据倾斜问题诊断和定位**
 
 Hive SQL on MapReduce 任务如何诊断和定位数据倾斜
@@ -45,12 +47,9 @@ Hive SQL on MapReduce 任务如何诊断和定位数据倾斜
 4. 通过 Stage ID 去检索执行计划，即可定位到事故对应执行计划
 5. 通过执行计划中引用的表名，检索原始 SQL 代码，然后即可定位到事故代码段
 
-
 ### Hive on Spark
 
-
-[Cloudera Enterprise 6.3.x Documentation - Tuning Apache Hive on Spark in CDH](https://docs.cloudera.com/documentation/enterprise/6/6.3/topics/admin_hos_tuning.html#hos_tuning)
-[【尚硅谷大数据技术 Hive On Spark 调优（离线数仓项目实战）-哔哩哔哩】](https://b23.tv/f2mPHla)
+[Cloudera Enterprise 6.3.x Documentation - Tuning Apache Hive on Spark in CDH](https://docs.cloudera.com/documentation/enterprise/6/6.3/topics/admin_hos_tuning.html#hos_tuning)[【尚硅谷大数据技术 Hive On Spark 调优（离线数仓项目实战）-哔哩哔哩】](https://b23.tv/f2mPHla)
 
 ## Hive SQL 优化常用配置
 

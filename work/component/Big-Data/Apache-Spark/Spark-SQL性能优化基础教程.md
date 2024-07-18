@@ -14,15 +14,23 @@
 
 ### Spark SQL 常见性能问题
 
+[4 Common Reasons for FetchFailed Exception in Apache Spark - DZone](https://dzone.com/articles/four-common-reasons-for-fetchfailed-exception-in-a)
+
 - Out of Heap memory on Executors
 - Low Memory Overhead on Executors
 - Shuffle block greater than 2 GB
 - Network TimeOut.
 
-### Spark SQL 性能问题定位方法
+### Spark SQL 性能问题诊断方法
+
+#### 数据倾斜
 
 [CSDN-诸葛子房-Spark 任务优化分析](https://blog.csdn.net/weixin_43291055/article/details/133770448)
 [SparkSql 慢任务诊断案例](https://mp.weixin.qq.com/s/3RrpzO5rPthKfyGX8MvnFw)
+
+#### Broadcast Join Timeout
+
+[Spark braodcast join timeout 300 - yuexiuping - 博客园](https://www.cnblogs.com/yuexiuping/p/15043556.html)
 
 ## Spark SQL 常用优化方法
 
