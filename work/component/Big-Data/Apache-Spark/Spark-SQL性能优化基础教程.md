@@ -34,8 +34,29 @@
 
 ## Spark SQL 常用优化思路和方法
 
+优化 Spark SQL 的目标，一般主要是减少 Spark Application 的空间或时间资源的开销（整体或局部）。
 
-### 避免重复读取
+### 减少读取数据量
+
+减少对应任务读取数据量
+
+#### 减少读取行
+
+表筛选条件尽量显式前置。
+
+Case 1：Spark SQL 在 Join 时，会自动下推 `join key is not null` 的条件到执行计划最开始的 table scan 阶段，但如果是 left join，则只会下推 right 表的 join key，而不会下推 left 表的 join key，即无法提前过滤 left 表的无效行。因此可以通过将 left 表的 `join key is not null` 条件下推，以提前减少无效行读取。
+
+Case2：Spark SQL 中在 join 后使用 where 语句时，是先进行 join，然后再执行 where 语句筛选过滤行。因此可以通过将 where 语句下推到 left 表和 right 表的子查询中，以提前减少无效行读取。
+
+#### 减少读取列
+
+按需取列，尽量显示列出对应列字段名，避免使用 `select *`。
+
+Case1：。
+
+### 减少重复读取
+
+Spark SQL 中，针对每个
 
 #### Cache/Uncache Table Table
 
@@ -58,16 +79,10 @@ UNCACHE TABLE [ IF EXISTS ] table_identifier
 
 #### Broadcast Join
 
-### 减少读取数据量
 
-减少对应任务读取数据量
-#### Spark SQL 谓词下推
+### 增加读取速度
 
-Spark SQL 在 JOIN 时，会自动进行谓词下推，对于 JOIN Key，则会自动下推 Join key is not null 的条件在 table scan 的阶段，但如果是 left join，则只会下推 right 表，而不会下推 left 表。
-
-### 减少读取文件数
-
-小文件合并
+#### 小文件合并
 
 
 ## 参考链接
