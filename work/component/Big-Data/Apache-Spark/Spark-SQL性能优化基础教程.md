@@ -92,6 +92,14 @@ Broadcast Join 相关配置：
 
 Broadcast Join 相关 Hint 语法：
 
+[Performance Tuning - Spark 3.5.1 Documentation](https://spark.apache.org/docs/latest/sql-performance-tuning.html#join-strategy-hints-for-sql-queries)
+[Hints - Spark 3.5.1 Documentation](https://spark.apache.org/docs/latest/sql-ref-syntax-qry-select-hints.html#join-hints)
+
+
+>Suggests that Spark use broadcast join. The join side with the hint will be broadcast regardless of `autoBroadcastJoinThreshold`. If both sides of the join have the broadcast hints, the one with the smaller size (based on stats) will be broadcast. 
+>
+>The aliases for BROADCAST are BROADCASTJOIN and MAPJOIN.
+
 ```sql
 -- Join Hints for broadcast join
 SELECT /*+ BROADCAST(t1) */ * FROM t1 INNER JOIN t2 ON t1.key = t2.key;
