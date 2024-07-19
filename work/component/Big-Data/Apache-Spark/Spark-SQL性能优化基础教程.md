@@ -81,7 +81,7 @@ UNCACHE TABLE [ IF EXISTS ] table_identifier
 
 #### Broadcast Join
 
-通过配置并触发 Broadcast Join 算法，避免 Join 时的 Shuffle 阶段，减少数据 IO。
+通过配置并触发 Broadcast Join 算法，避免 Join 时的 Shuffle 阶段，减少数据 IO，提升性能。
 
 Broadcast Join 相关配置：
 
@@ -111,6 +111,7 @@ SELECT /*+ MAPJOIN(t2) */ * FROM t1 right JOIN t2 ON t1.key = t2.key;
 
 #### 小文件合并
 
+##### Distribute by
 
 ```sql
 insert into t1
@@ -119,10 +120,67 @@ from t2
 distribute by ceiling(rand()*${coalesce_files_num})
 ```
 
-### 数据量分布均匀
+##### Partition Hints
+
+[Hints - Spark 3.5.1 Documentation](https://spark.apache.org/docs/latest/sql-ref-syntax-qry-select-hints.html#partitioning-hints)
+
+```sql
+SELECT /*+ COALESCE(3) */ * FROM t;
+
+SELECT /*+ REPARTITION(3) */ * FROM t;
+
+SELECT /*+ REPARTITION(c) */ * FROM t;
+
+SELECT /*+ REPARTITION(3, c) */ * FROM t;
+
+SELECT /*+ REPARTITION_BY_RANGE(c) */ * FROM t;
+
+SELECT /*+ REPARTITION_BY_RANGE(3, c) */ * FROM t;
+
+SELECT /*+ REBALANCE */ * FROM t;
+
+SELECT /*+ REBALANCE(3) */ * FROM t;
+
+SELECT /*+ REBALANCE(c) */ * FROM t;
+
+SELECT /*+ REBALANCE(3, c) */ * FROM t;
+
+-- multiple partitioning hints
+EXPLAIN EXTENDED SELECT /*+ REPARTITION(100), COALESCE(500), REPARTITION_BY_RANGE(3, c) */ * FROM t;
+== Parsed Logical Plan ==
+'UnresolvedHint REPARTITION, [100]
++- 'UnresolvedHint COALESCE, [500]
+   +- 'UnresolvedHint REPARTITION_BY_RANGE, [3, 'c]
+      +- 'Project [*]
+         +- 'UnresolvedRelation [t]
+
+== Analyzed Logical Plan ==
+name: string, c: int
+Repartition 100, true
++- Repartition 500, false
+   +- RepartitionByExpression [c#30 ASC NULLS FIRST], 3
+      +- Project [name#29, c#30]
+         +- SubqueryAlias spark_catalog.default.t
+            +- Relation[name#29,c#30] parquet
+
+== Optimized Logical Plan ==
+Repartition 100, true
++- Relation[name#29,c#30] parquet
+
+== Physical Plan ==
+Exchange RoundRobinPartitioning(100), false, [id=#121]
++- *(1) ColumnarToRow
+   +- FileScan parquet default.t[name#29,c#30] Batched: true, DataFilters: [], Format: Parquet,
+      Location: CatalogFileIndex[file:/spark/spark-warehouse/t], PartitionFilters: [],
+      PushedFilters: [], ReadSchema: struct<name:string>
+```
+
+### 数据均匀分布
+
 
 #### 增加 partition 数量
 `spark.sql.shuffle.partitions`
+
 
 
 
