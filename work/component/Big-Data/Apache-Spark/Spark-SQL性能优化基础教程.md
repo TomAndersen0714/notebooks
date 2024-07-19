@@ -44,7 +44,7 @@
 
 表筛选条件尽量显式前置。
 
-Case 1：Spark SQL 在 Join 时，会自动下推 `join key is not null` 的条件到执行计划最开始的 table scan 阶段，但如果是 left join，则只会下推 right 表的 join key，而不会下推 left 表的 join key，即无法提前过滤 left 表的无效行。因此可以通过将 left 表的 `join key is not null` 条件下推，以提前减少无效行读取。
+Case 1：Spark SQL 在 Join 时，会自动下推 `Join key is not null` 的条件到执行计划最开始的 table scan 阶段，但如果是 left join，则只会下推 right 表的 join key，而不会下推 left 表的 join key，即无法提前过滤 left 表的无效行。因此可以通过将 left 表的 `Join key is not null` 条件下推，以提前减少无效行读取。
 
 Case2：Spark SQL 中在 join 后使用 where 语句时，是先进行 join，然后再执行 where 语句筛选过滤行。因此可以通过将 where 语句下推到 left 表和 right 表的子查询中，以提前减少无效行读取。
 
@@ -78,6 +78,7 @@ UNCACHE TABLE [ IF EXISTS ] table_identifier
 ```
 
 #### Broadcast Join
+
 
 
 ### 增加读取速度
