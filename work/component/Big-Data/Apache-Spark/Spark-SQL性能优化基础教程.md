@@ -38,27 +38,28 @@
 
 ### 减少读取数据量
 
-减少对应任务读取数据量
+减少对应 Stage 的读取数据量。
 
 #### 减少读取行
 
-表筛选条件尽量显式前置。
+Where 语句尽量显式前置。
 
 Case 1：Spark SQL 在 Join 时，会自动下推 `Join key is not null` 的条件到执行计划最开始的 table scan 阶段，但如果是 left join，则只会下推 right 表的 join key，而不会下推 left 表的 join key，即无法提前过滤 left 表的无效行。因此可以通过将 left 表的 `Join key is not null` 条件下推，以提前减少无效行读取。
 
-Case2：Spark SQL 中在 join 后使用 where 语句时，是先进行 join，然后再执行 where 语句筛选过滤行。因此可以通过将 where 语句下推到 left 表和 right 表的子查询中，以提前减少无效行读取。
+Case2：Spark SQL 中在 Join 后使用 Where 语句时，是先进行 Join，然后再执行 Where 语句筛选和过滤行。因此可以通过将 Where 语句下推到 left 表和 right 表的子查询中，以提前减少无效行的读取。
 
 #### 减少读取列
 
-按需取列，尽量显示列出对应列字段名，避免使用 `select *`。
+按需取列，查表时显式列出对应列字段名，尽量避免使用 `select *`。
 
-Case1：。
+Case1：当表中
+
 
 ### 减少重复读取
 
-Spark SQL 中，针对每个
+Spark SQL 中，针对同一个 CTE 的多次查询，在实际执行时，依旧会重复触发 RDD 的查询。
 
-#### Cache/Uncache Table Table
+#### Cache Table Table
 
 [CACHE TABLE - Spark 3.5.1 Documentation](https://spark.apache.org/docs/latest/sql-ref-syntax-aux-cache-cache-table.html)
 [Spark原理之Cache Table的工作原理及实现自动缓存重复表的思考\_spark cache table-CSDN博客](https://blog.csdn.net/u014445499/article/details/138003052)
@@ -67,7 +68,7 @@ CACHE TABLE statement caches contents of a table or output of a query with the g
 
 If storageLevel is not explicitly set using OPTIONS clause, the default storageLevel is set to `MEMORY_AND_DISK`.
 
-使用此语法，可以由用户自定义要缓存的结果集，实际上就是一个临时表（Temporary Table）、物化视图（Materialized View），不过数据存储在 Spark 集群内部，由 Application 所分配的 executors 管理。
+使用 cache table 时，可以由用户自定义要缓存的结果集，类比于临时表（Temporary Table）、物化视图（Materialized View），其物理数据存储在 Spark executor 上。
 
 ```sql
 -- cache table
@@ -77,14 +78,42 @@ CACHE TABLE testCache OPTIONS ('storageLevel' 'DISK_ONLY') SELECT * FROM testDat
 UNCACHE TABLE [ IF EXISTS ] table_identifier
 ```
 
-#### Broadcast Join
+### Broadcast Join
 
+通过配置并使用 Broadcast Join，在 Join 时避免小表重复读取。
 
+相关配置
+
+| Property Name                        | Default          | Meaning                                                                                                                                                                                                                                                                                                                                          | Since Version |
+| ------------------------------------ | ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------- |
+| spark.sql.autoBroadcastJoinThreshold | 10485760 (10 MB) | Configures the maximum size in bytes for a table that will be broadcast to all worker nodes when performing a join. By setting this value to -1, broadcasting can be disabled. Note that currently statistics are only supported for Hive Metastore tables where the command ANALYZE TABLE `<tableName>` COMPUTE STATISTICS noscan has been run. | 1.1.0         |
+| spark.sql.broadcastTimeout           | 300              | Timeout in seconds for the broadcast wait time in broadcast joins                                                                                                                                                                                                                                                                                | 1.3.0         |
+
+相关 Hint 操作
+```sql
+-- Join Hints for broadcast join
+SELECT /*+ BROADCAST(t1) */ * FROM t1 INNER JOIN t2 ON t1.key = t2.key;
+SELECT /*+ BROADCASTJOIN (t1) */ * FROM t1 left JOIN t2 ON t1.key = t2.key;
+SELECT /*+ MAPJOIN(t2) */ * FROM t1 right JOIN t2 ON t1.key = t2.key;
+```
 
 ### 增加读取速度
 
 #### 小文件合并
 
 
+```sql
+insert into t1
+select *
+from t2
+distribute by ceiling(rand()*${coalesce_files_num})
+```
+
+### 减少数据倾斜
+
+
+
+
 ## 参考链接
+
 1. [京东Spark基于Bloom Filter算法的Runtime Filter Join优化机制 - 脉脉](https://maimai.cn/article/detail?fid=1707795020&efid=dSfxdmyhmG6D8hDYUYvB4Q)
