@@ -69,7 +69,7 @@ Spark SQL 中，针对同一个 CTE 的多次查询，在实际执行时，依�
 >
 >If storageLevel is not explicitly set using OPTIONS clause, the default storageLevel is set to `MEMORY_AND_DISK`.
 
-使用 cache table 时，可以由用户自定义要缓存的结果集，类比于临时表（Temporary Table）、物化视图（Materialized View），其物理数据存储在 Spark executor 上。
+Spark cache table ，类似临时表（Temporary Table）、物化视图（Materialized View），其物理数据存储在 Spark executor 上。
 
 ```sql
 -- cache table
@@ -83,14 +83,14 @@ UNCACHE TABLE [ IF EXISTS ] table_identifier
 
 通过配置并触发 Broadcast Join 算法，避免 Join 时的 Shuffle 阶段，减少数据 IO，提升性能。
 
-Broadcast Join 相关配置：
+Broadcast Join 相关配置，自动触发：
 
 | Property Name                        | Default          | Meaning                                                                                                                                                                                                                                                                                                                                          | Since Version |
 | ------------------------------------ | ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------- |
 | spark.sql.autoBroadcastJoinThreshold | 10485760 (10 MB) | Configures the maximum size in bytes for a table that will be broadcast to all worker nodes when performing a join. By setting this value to -1, broadcasting can be disabled. Note that currently statistics are only supported for Hive Metastore tables where the command ANALYZE TABLE `<tableName>` COMPUTE STATISTICS noscan has been run. | 1.1.0         |
 | spark.sql.broadcastTimeout           | 300              | Timeout in seconds for the broadcast wait time in broadcast joins                                                                                                                                                                                                                                                                                | 1.3.0         |
 
-Broadcast Join 相关 Hint 语法：
+Broadcast Join 相关 Hint，手动触发：
 
 [Performance Tuning - Spark 3.5.1 Documentation](https://spark.apache.org/docs/latest/sql-performance-tuning.html#join-strategy-hints-for-sql-queries)
 [Hints - Spark 3.5.1 Documentation](https://spark.apache.org/docs/latest/sql-ref-syntax-qry-select-hints.html#join-hints)
@@ -108,6 +108,7 @@ SELECT /*+ MAPJOIN(t2) */ * FROM t1 right JOIN t2 ON t1.key = t2.key;
 ```
 
 ### 增加读取速度
+
 
 #### 小文件合并
 
