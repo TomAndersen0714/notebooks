@@ -21,15 +21,20 @@
 - Shuffle block greater than 2 GB
 - Network TimeOut.
 
-### Spark SQL 性能问题诊断方法
+### Spark SQL 常见性能问题诊断方法
 
-#### 数据倾斜
+#### OOM 内存不足
+
+
+#### Data Skew 数据倾斜
 
 [CSDN-诸葛子房-Spark 任务优化分析](https://blog.csdn.net/weixin_43291055/article/details/133770448)
 [SparkSql 慢任务诊断案例](https://mp.weixin.qq.com/s/3RrpzO5rPthKfyGX8MvnFw)
 
-#### Broadcast Join Timeout
+#### Time out 超时
 
+等待资源启动超时
+执行过程中超时
 [Spark braodcast join timeout 300 - yuexiuping - 博客园](https://www.cnblogs.com/yuexiuping/p/15043556.html)
 
 ## Spark SQL 常用优化思路和方法
@@ -42,7 +47,7 @@
 
 #### 减少读取行
 
-Where 语句尽量显式前置。
+Where 语句下推、前置。
 
 Case 1：Spark SQL 在 Join 时，会自动下推 `Join key is not null` 的条件到执行计划最开始的 table scan 阶段，但如果是 left join，则只会下推 right 表的 join key，而不会下推 left 表的 join key，即无法提前过滤 left 表的无效行。因此可以通过将 left 表的 `Join key is not null` 条件下推，以提前减少无效行读取。
 
@@ -50,14 +55,13 @@ Case2：Spark SQL 中在 Join 后使用 Where 语句时，是先进行 Join，�
 
 #### 减少读取列
 
-按需取列，查表时显式列出对应列字段名，尽量避免使用 `select *`。
+SQL Select 语句中按需取列，显式列出对应列字段名，尽量避免使用 `SELECT *`。
 
 Case1：当表中
 
-
 ### 减少重复读取
 
-Spark SQL 中，针对同一个 CTE 的多次查询，在实际执行时，依旧会重复触发 RDD 的查询。
+Spark SQL 中，默认情况下，针对同一个 CTE、View 或 Table 的多次重复查询，会重复触发数据读取和 RDD 的生成。
 
 #### Cache Table
 
@@ -69,19 +73,26 @@ Spark SQL 中，针对同一个 CTE 的多次查询，在实际执行时，依�
 >
 >If storageLevel is not explicitly set using OPTIONS clause, the default storageLevel is set to `MEMORY_AND_DISK`.
 
-Spark cache table ，类似临时表（Temporary Table）、物化视图（Materialized View），其物理数据存储在 Spark executor 上。
+Spark cache table ，类似临时表（Temporary Table）、物化视图（Materialized View），其数据 cache 在 Spark executor 中，支持快速重复读。
 
 ```sql
 -- cache table
-CACHE TABLE testCache OPTIONS ('storageLevel' 'DISK_ONLY') SELECT * FROM testData;
+CACHE [ LAZY ] TABLE table_identifier [ OPTIONS ( 'storageLevel' [ = ] value ) ]
+[ [ AS ] query ]
+-- cache table example
+CACHE TABLE testCache OPTIONS ('storageLevel' 'MEMORY_AND_DISK')
+AS SELECT * FROM testData;
 
 -- uncache table
-UNCACHE TABLE [ IF EXISTS ] table_identifier
+UNCACHE TABLE [ IF EXISTS ] table_identifier;
+
+-- clear cache
+CLEAR CACHE;
 ```
 
 #### Broadcast Join
 
-通过配置并触发 Broadcast Join 算法，避免 Join 时的 Shuffle 阶段，减少数据 IO，提升性能。
+通过配置并触发 Broadcast Join 算法，避免 Sort-merge Join 时的 Shuffle 阶段，减少数据 IO，提升性能。
 
 Broadcast Join 相关配置，自动触发：
 
@@ -90,7 +101,7 @@ Broadcast Join 相关配置，自动触发：
 | spark.sql.autoBroadcastJoinThreshold | 10485760 (10 MB) | Configures the maximum size in bytes for a table that will be broadcast to all worker nodes when performing a join. By setting this value to -1, broadcasting can be disabled. Note that currently statistics are only supported for Hive Metastore tables where the command ANALYZE TABLE `<tableName>` COMPUTE STATISTICS noscan has been run. | 1.1.0         |
 | spark.sql.broadcastTimeout           | 300              | Timeout in seconds for the broadcast wait time in broadcast joins                                                                                                                                                                                                                                                                                | 1.3.0         |
 
-Broadcast Join 相关 Hint，手动触发：
+Broadcast Join Hint，手动触发：
 
 [Performance Tuning - Spark 3.5.1 Documentation](https://spark.apache.org/docs/latest/sql-performance-tuning.html#join-strategy-hints-for-sql-queries)
 [Hints - Spark 3.5.1 Documentation](https://spark.apache.org/docs/latest/sql-ref-syntax-qry-select-hints.html#join-hints)
@@ -114,16 +125,17 @@ SELECT /*+ MAPJOIN(t2) */ * FROM t1 right JOIN t2 ON t1.key = t2.key;
 
 ##### Distribute by
 
+[DISTRIBUTE BY Clause - Spark 3.5.1 Documentation](https://spark.apache.org/docs/latest/sql-ref-syntax-qry-select-distribute-by.html)
+
 ```sql
-insert into t1
-select *
-from t2
-distribute by ceiling(rand()*${coalesce_files_num})
+INSERT INTO t1
+SELECT * FROM t2
+DISTEIBUTE BY ceiling(rand()*${files_num})
 ```
 
 ##### Partition Hints
 
-[Hints - Spark 3.5.1 Documentation](https://spark.apache.org/docs/latest/sql-ref-syntax-qry-select-hints.html#partitioning-hints)
+[Partitioning Hints - Spark 3.5.1 Documentation](https://spark.apache.org/docs/latest/sql-ref-syntax-qry-select-hints.html#partitioning-hints)
 
 ```sql
 SELECT /*+ COALESCE(3) */ * FROM t;
