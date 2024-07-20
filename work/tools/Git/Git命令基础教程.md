@@ -64,7 +64,6 @@ collaborate (see also: git help workflows)
 ### git clone
 
 
-
 `-b <name>, --branch <name>`
 ```
 git clone -b v1.55.1 https://github.com/grpc/grpc-java
@@ -78,7 +77,6 @@ git clone -b v1.55.1 https://github.com/grpc/grpc-java
 ```
 git clone --depth 1 https://github.com/grpc/grpc-java
 ```
-
 
 
 ### git fetch
