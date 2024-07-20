@@ -214,12 +214,13 @@ Exchange RoundRobinPartitioning(100), false, [id=#121]
 ### 数据均匀分布
 
 
-#### 增加 shuffle 阶段 partition 数量
+#### 增加 partition 数量
 
-`spark.sql.shuffle.partitions`
+增加 Spark SQL Shuffle 阶段生成的 partition 数量
 
-
-
+| Property Name                | Default | Meaning                                                                                                                                                                                                               | Since Version |
+| ---------------------------- | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------- |
+| spark.sql.shuffle.partitions | 200     | The default number of partitions to use when shuffling data for joins or aggregations. Note: For structured streaming, this configuration cannot be changed between query restarts from the same checkpoint location. | 1.1.0 <br>    |
 
 ## 参考链接
 
