@@ -211,10 +211,10 @@ Exchange RoundRobinPartitioning(100), false, [id=#121]
       PushedFilters: [], ReadSchema: struct<name:string>
 ```
 
-### 数据均匀分布
+### 调整并行度
 
 
-#### 增加 partition 数量
+#### 调整 partition 数量
 
 增加 Spark SQL Shuffle 阶段生成的 partition 数量
 
