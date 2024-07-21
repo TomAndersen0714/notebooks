@@ -1,13 +1,14 @@
 # Spark SQL 性能优化基础教程
 
 
-## 什么样的 SQL 需要性能优化
+## 为什么要进行 Spark SQL 性能优化
+
+提升计算资源利用率
+提升任务的执行效率，减少任务的执行时间
+
+## 什么样的 Spark SQL 需要性能优化
 
 [什么样的 SQL 需要性能优化](work/component/Back-End/MySQL/solution/MySQL-SQL查询性能优化教程.md#什么样的%20SQL%20需要性能优化)
-
-## 为什么 SQL 查询会存在性能问题
-
-[为什么 SQL 查询会存在性能问题](work/component/Back-End/MySQL/solution/MySQL-SQL查询性能优化教程.md#为什么%20SQL%20查询会存在性能问题)
 
 ## Spark SQL 常见性能问题及诊断方法
 
@@ -19,8 +20,6 @@
 - Low Memory Overhead on Executors
 - Shuffle block greater than 2 GB
 - Network TimeOut.
-
-### Spark SQL 常见性能问题诊断方法
 
 #### OOM 内存不足
 
@@ -36,6 +35,14 @@
 等待资源启动超时
 执行过程中超时
 [Spark braodcast join timeout 300 - yuexiuping - 博客园](https://www.cnblogs.com/yuexiuping/p/15043556.html)
+
+### Spark SQL 常用诊断方法
+
+#### 查看日志
+
+
+#### 查看 Spark SQL 执行计划
+
 
 ## Spark SQL 常用优化思路和方法
 
