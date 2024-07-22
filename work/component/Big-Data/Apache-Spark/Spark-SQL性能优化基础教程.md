@@ -14,6 +14,7 @@
 
 ### Spark SQL 常见性能问题
 
+[大数据技术 - Spark - 《有数中台FAQ》](https://study.sf.163.com/documents/read/service_support/dsc-t-03)
 [4 Common Reasons for FetchFailed Exception in Apache Spark - DZone](https://dzone.com/articles/four-common-reasons-for-fetchfailed-exception-in-a)
 
 - Out of Heap memory on Executors
@@ -23,25 +24,32 @@
 
 #### OOM 内存不足
 
-
-#### Data Skew 数据倾斜
+#### 数据倾斜
 
 [CSDN-诸葛子房-Spark 任务优化分析](https://blog.csdn.net/weixin_43291055/article/details/133770448)
 [SparkSql 慢任务诊断案例](https://mp.weixin.qq.com/s/3RrpzO5rPthKfyGX8MvnFw)
 
 #### Time out 超时
 
-等待资源启动超时
-执行过程中超时
 [Spark braodcast join timeout 300 - yuexiuping - 博客园](https://www.cnblogs.com/yuexiuping/p/15043556.html)
 
 ### Spark SQL 常用诊断方法
 
 #### 查看日志
 
+OOM 报错常见日志：
+- `org.apache.spark.shuffle.FetchFailedException: Failed to connect to xxx`
+- `org.apache.spark.shuffle.MetadataFetchFailedException: Missing an output location for shuffle xxx`
+-  `ExecutorLostFailure (executor xxx exited caused by one of the running tasks) Reason: Container killed by YARN for exceeding memory limits.
+BroadcastJoin Timeout 报错常见日志：
+- `org.apache.spark.SparkException: Could not execute broadcast in 300 secs.`
 
-#### 查看 Spark SQL 执行计划
+#### 查看 Spark UI
 
+Spark UI | Stages | Details for Stage | Tasks：
+
+数据倾斜特征：
+![](resources/images/Pasted%20image%2020240722101654.png)
 
 ## Spark SQL 常用优化思路和方法
 
@@ -53,7 +61,7 @@
 
 #### 减少读取行
 
-##### Where 语句过滤前置
+##### Where 前置
 
 Case 1：Spark SQL 在 Join 时，会自动下推 `Join key is not null` 的条件到执行计划最开始的 table scan 阶段，但如果是 left join，则只会下推 right 表的 join key，而不会下推 left 表的 join key，即无法提前过滤 left 表的无效行。因此可以通过手动将 left 表的 `Join key is not null` 条件下推，以提前减少无效行读取。
 
@@ -92,8 +100,7 @@ TakeOrderedAndProject(limit=3, orderBy=[number#3 ASC NULLS FIRST], output=[numbe
 +- LocalTableScan [number#3]
 ```
 
-
-##### Bloom Filter
+##### Bloom Filter 过滤
 
 [京东Spark基于Bloom Filter算法的Runtime Filter Join优化机制 - 脉脉](https://maimai.cn/article/detail?fid=1707795020&efid=dSfxdmyhmG6D8hDYUYvB4Q)
 
@@ -226,11 +233,13 @@ Exchange RoundRobinPartitioning(100), false, [id=#121]
       PushedFilters: [], ReadSchema: struct<name:string>
 ```
 
-### 调整并行度
+### 减小 Task 处理数据量
 
-#### 调整 partition 数量
+#### 增加 partition 数量
 
-增加 Spark SQL Shuffle 阶段生成的 partition 数量
+Partition Hints：
+
+Set spark.sql.shuffle.partitions：增加 Spark SQL Shuffle 阶段生成的 partition 数 ` spark.sql.shuffle.partitions ` 
 
 | Property Name                | Default | Meaning                                                                                                                                                                                                               | Since Version |
 | ---------------------------- | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------- |
@@ -241,3 +250,4 @@ Exchange RoundRobinPartitioning(100), false, [id=#121]
 1. [Spark性能优化指南——基础篇 - 美团技术团队](https://tech.meituan.com/2016/04/29/spark-tuning-basic.html)
 2. [Spark性能优化指南——高级篇 - 美团技术团队](https://tech.meituan.com/2016/05/12/spark-tuning-pro.html)
 3. [京东Spark基于Bloom Filter算法的Runtime Filter Join优化机制 - 脉脉](https://maimai.cn/article/detail?fid=1707795020&efid=dSfxdmyhmG6D8hDYUYvB4Q)
+4. [Spark排错与优化 - linhaifeng - 博客园](https://www.cnblogs.com/linhaifeng/p/16245352.html)
