@@ -24,6 +24,7 @@
 
 #### OOM 内存不足
 
+
 #### 数据倾斜
 
 [CSDN-诸葛子房-Spark 任务优化分析](https://blog.csdn.net/weixin_43291055/article/details/133770448)
@@ -43,12 +44,16 @@ OOM 报错常见日志：
 -  `ExecutorLostFailure (executor xxx exited caused by one of the running tasks) Reason: Container killed by YARN for exceeding memory limits.
 BroadcastJoin Timeout 报错常见日志：
 - `org.apache.spark.SparkException: Could not execute broadcast in 300 secs.`
+- `java.util.concurrent.TimeoutException: Futures timed out after [300 seconds]`
 
 #### 查看 Spark UI
 
-Spark UI | Stages | Details for Stage | Tasks：
+Spark UI | Stages | Details for Stage | Tasks
 
-数据倾斜特征：
+**OOM** ：Task 失败，并抛出相应的错误日志
+![](resources/images/Pasted%20image%2020240722104343.png)
+
+**数据倾斜**：某个 Task 的 Duration 和 Records 会远大于其他 Task
 ![](resources/images/Pasted%20image%2020240722101654.png)
 
 ## Spark SQL 常用优化思路和方法
