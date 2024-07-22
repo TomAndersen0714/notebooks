@@ -25,7 +25,7 @@
 #### OOM 内存不足
 
 
-#### 数据倾斜
+#### Task 数据倾斜
 
 [CSDN-诸葛子房-Spark 任务优化分析](https://blog.csdn.net/weixin_43291055/article/details/133770448)
 [SparkSql 慢任务诊断案例](https://mp.weixin.qq.com/s/3RrpzO5rPthKfyGX8MvnFw)
@@ -39,12 +39,18 @@
 #### 查看日志
 
 OOM 报错常见日志：
+- `org.apache.spark.shuffle.FetchFailedException: Failure while fetching StreamChunkId`
 - `org.apache.spark.shuffle.FetchFailedException: Failed to connect to xxx`
 - `org.apache.spark.shuffle.MetadataFetchFailedException: Missing an output location for shuffle xxx`
--  `ExecutorLostFailure (executor xxx exited caused by one of the running tasks) Reason: Container killed by YARN for exceeding memory limits.
+- `ERROR cluster.YarnShceduler: Lost executor xx on xx` 
+- `ExecutorLostFailure (executor xxx exited caused by one of the running tasks) Reason: Container killed by YARN for exceeding memory limits`
+
 BroadcastJoin Timeout 报错常见日志：
-- `org.apache.spark.SparkException: Could not execute broadcast in 300 secs.`
+- `org.apache.spark.SparkException: Could not execute broadcast in 300 secs`
 - `java.util.concurrent.TimeoutException: Futures timed out after [300 seconds]`
+
+RPC Timeout 报错常见日志：
+- `org.apache.spark.rpc.RpcTimeoutException: Cannot receive any reply in 120 seconds`
 
 #### 查看 Spark UI
 
@@ -62,8 +68,7 @@ Spark UI | Stages | Details for Stage | Tasks
 
 ### 减少读取数据量
 
-减少对应 Stage 的读取数据量。
-
+减少 Task 读取的数据量。
 #### 减少读取行
 
 ##### Where 前置
