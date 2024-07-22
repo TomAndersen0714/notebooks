@@ -1,4 +1,4 @@
-# spark-sql  基础教程
+# spark-sql  命令行工具基础教程
 
 ## 简介
 

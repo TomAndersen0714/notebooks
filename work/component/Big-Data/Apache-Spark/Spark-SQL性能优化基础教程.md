@@ -29,7 +29,6 @@
 [CSDN-诸葛子房-Spark 任务优化分析](https://blog.csdn.net/weixin_43291055/article/details/133770448)
 [SparkSql 慢任务诊断案例](https://mp.weixin.qq.com/s/3RrpzO5rPthKfyGX8MvnFw)
 
-
 #### Time out 超时
 
 等待资源启动超时
@@ -54,13 +53,13 @@
 
 #### 减少读取行
 
-Where 语句下推、前置。
+##### Where 语句过滤前置
 
 Case 1：Spark SQL 在 Join 时，会自动下推 `Join key is not null` 的条件到执行计划最开始的 table scan 阶段，但如果是 left join，则只会下推 right 表的 join key，而不会下推 left 表的 join key，即无法提前过滤 left 表的无效行。因此可以通过手动将 left 表的 `Join key is not null` 条件下推，以提前减少无效行读取。
 
 Case2：Spark SQL 中在 Join 后使用 Where 语句时，是先进行 Join，然后再执行 Where 语句筛选和过滤行。因此可以通过手动将 Where 语句下推到 left 表和 right 表的子查询中，以提前减少无效行的读取。
 
-Case3：Spark SQL 使用 Order By+Limit 语句查询 TopN 时，优化器会对 partition 中的数据进行局部排序 local sort 并局部筛选 local limit，减少后续读取数据量，然后再去执行全局排序 global limit。
+Case3：Spark SQL 使用 Order By+Limit 语句查询 TopN 时，优化器会对 partition 中的数据进行局部排序 local sort 并局部筛选 local limit，减少后续读取数据量，然后再去执行全局排序和筛选 global limit。
 
 
 ```sql
@@ -92,6 +91,15 @@ GlobalLimit 3
 TakeOrderedAndProject(limit=3, orderBy=[number#3 ASC NULLS FIRST], output=[number#3])
 +- LocalTableScan [number#3]
 ```
+
+
+##### Bloom Filter
+
+[京东Spark基于Bloom Filter算法的Runtime Filter Join优化机制 - 脉脉](https://maimai.cn/article/detail?fid=1707795020&efid=dSfxdmyhmG6D8hDYUYvB4Q)
+
+当大表 Inner Join/Right Join 小表（即以小表为主表）时，若小表的数据量太大而无法通过 Broadcast 广播给所有 Executor 时（即无法使用 BroadcastJoin），则可以考虑根据基于小表构建 BloomFilter，并用于提前过滤大表的数据。
+
+进而减少后续大表在执行 SortMergeJoin 的 Exchange（Shuffle） 和 Sort 阶段时，输入的数据量，提升整体性能。
 
 #### 减少读取列
 
@@ -230,4 +238,6 @@ Exchange RoundRobinPartitioning(100), false, [id=#121]
 
 ## 参考链接
 
-1. [京东Spark基于Bloom Filter算法的Runtime Filter Join优化机制 - 脉脉](https://maimai.cn/article/detail?fid=1707795020&efid=dSfxdmyhmG6D8hDYUYvB4Q)
+1. [Spark性能优化指南——基础篇 - 美团技术团队](https://tech.meituan.com/2016/04/29/spark-tuning-basic.html)
+2. [Spark性能优化指南——高级篇 - 美团技术团队](https://tech.meituan.com/2016/05/12/spark-tuning-pro.html)
+3. [京东Spark基于Bloom Filter算法的Runtime Filter Join优化机制 - 脉脉](https://maimai.cn/article/detail?fid=1707795020&efid=dSfxdmyhmG6D8hDYUYvB4Q)
