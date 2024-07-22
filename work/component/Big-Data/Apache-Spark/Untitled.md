@@ -6,36 +6,13 @@
 提升计算资源利用率
 提升任务的执行效率，减少任务的执行时间
 
-## 什么样的 Spark SQL 需要性能优化
-
-[什么样的 SQL 需要性能优化](work/component/Back-End/MySQL/solution/MySQL-SQL查询性能优化教程.md#什么样的%20SQL%20需要性能优化)
-
 ## Spark SQL 常见性能问题及诊断方法
 
-### Spark SQL 常见性能问题
+#### 常见问题
 
-[大数据技术 - Spark - 《有数中台FAQ》](https://study.sf.163.com/documents/read/service_support/dsc-t-03)
-[4 Common Reasons for FetchFailed Exception in Apache Spark - DZone](https://dzone.com/articles/four-common-reasons-for-fetchfailed-exception-in-a)
-
-- Out of Heap memory on Executors
-- Low Memory Overhead on Executors
-- Shuffle block greater than 2 GB
-- Network TimeOut.
-
-#### OOM 内存不足
-
-
-#### Task 数据倾斜
-
-[CSDN-诸葛子房-Spark 任务优化分析](https://blog.csdn.net/weixin_43291055/article/details/133770448)
-[SparkSql 慢任务诊断案例](https://mp.weixin.qq.com/s/3RrpzO5rPthKfyGX8MvnFw)
-
-#### Time out 任务超时
-
-[Spark braodcast join timeout 300 - yuexiuping - 博客园](https://www.cnblogs.com/yuexiuping/p/15043556.html)
-
-### Spark SQL 常用诊断方法
-
+1. OOM 内存不足
+2. Data Skew 数据倾斜
+3. Timeout 任务执行超时
 #### 查看日志
 
 OOM 报错常见日志：
@@ -71,48 +48,12 @@ Spark UI | Stages | Details for Stage | Tasks
 减少 Task 读取的数据量。
 #### 减少读取行
 
-##### Where 前置
+##### Where 过滤前置
 
 Case 1：Spark SQL 在 Join 时，会自动下推 `Join key is not null` 的条件到执行计划最开始的 table scan 阶段，但如果是 left join，则只会下推 right 表的 join key，而不会下推 left 表的 join key，即无法提前过滤 left 表的无效行。因此可以通过手动将 left 表的 `Join key is not null` 条件下推，以提前减少无效行读取。
 
 Case2：Spark SQL 中在 Join 后使用 Where 语句时，是先进行 Join，然后再执行 Where 语句筛选和过滤行。因此可以通过手动将 Where 语句下推到 left 表和 right 表的子查询中，以提前减少无效行的读取。
-
-Case3：Spark SQL 使用 Order By+Limit 语句查询 TopN 时，优化器会对 partition 中的数据进行局部排序 local sort 并局部筛选 local limit，减少后续读取数据量，然后再去执行全局排序和筛选 global limit。
-
-
-```sql
-scala> val myDF = Seq(83, 90, 40, 94, 12, 70, 56, 70, 28, 91).toDF("number")
-scala> myDF.orderBy("number").limit(3).explain(true)
-
-== Parsed Logical Plan ==
-GlobalLimit 3
-+- LocalLimit 3
-   +- Sort [number#3 ASC NULLS FIRST], true
-      +- Project [value#1 AS number#3]
-         +- LocalRelation [value#1]
-
-== Analyzed Logical Plan ==
-number: int
-GlobalLimit 3
-+- LocalLimit 3
-   +- Sort [number#3 ASC NULLS FIRST], true
-      +- Project [value#1 AS number#3]
-         +- LocalRelation [value#1]
-
-== Optimized Logical Plan ==
-GlobalLimit 3
-+- LocalLimit 3
-   +- Sort [number#3 ASC NULLS FIRST], true
-      +- LocalRelation [number#3]
-
-== Physical Plan ==
-TakeOrderedAndProject(limit=3, orderBy=[number#3 ASC NULLS FIRST], output=[number#3])
-+- LocalTableScan [number#3]
-```
-
-##### Bloom Filter 过滤
-
-[京东Spark基于Bloom Filter算法的Runtime Filter Join优化机制 - 脉脉](https://maimai.cn/article/detail?fid=1707795020&efid=dSfxdmyhmG6D8hDYUYvB4Q)
+##### Bloom Filter 过滤前置
 
 当大表 Inner Join/Right Join 小表（即以小表为主表）时，若小表的数据量太大而无法通过 Broadcast 广播给所有 Executor 时（即无法使用 BroadcastJoin），则可以考虑根据基于小表构建 BloomFilter，并用于提前过滤大表的数据。
 
@@ -195,7 +136,6 @@ INSERT INTO t1
 SELECT * FROM t2
 DISTEIBUTE BY ceiling(rand()*${files_num})
 ```
-
 ##### Partition Hints
 
 [Partitioning Hints - Spark 3.5.1 Documentation](https://spark.apache.org/docs/latest/sql-ref-syntax-qry-select-hints.html#partitioning-hints)
@@ -247,9 +187,8 @@ Exchange RoundRobinPartitioning(100), false, [id=#121]
 
 #### 增加 partition 数量
 
-Partition Hints：
-
-Set spark.sql.shuffle.partitions：增加 Spark SQL Shuffle 阶段生成的 partition 数 ` spark.sql.shuffle.partitions ` 
+1. 使用 Partition Hints：同上
+2. 调整 spark.sql.shuffle.partitions ：增加 Spark SQL Shuffle 阶段生成的 partition 数 ` spark.sql.shuffle.partitions ` 
 
 | Property Name                | Default | Meaning                                                                                                                                                                                                               | Since Version |
 | ---------------------------- | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------- |
