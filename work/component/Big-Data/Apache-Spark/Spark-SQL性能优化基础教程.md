@@ -17,19 +17,16 @@
 [大数据技术 - Spark - 《有数中台FAQ》](https://study.sf.163.com/documents/read/service_support/dsc-t-03)
 [4 Common Reasons for FetchFailed Exception in Apache Spark - DZone](https://dzone.com/articles/four-common-reasons-for-fetchfailed-exception-in-a)
 
-- Out of Heap memory on Executors
-- Low Memory Overhead on Executors
-- Shuffle block greater than 2 GB
-- Network TimeOut.
+1. OOM 内存不足
+2. Data Skew 数据倾斜
+3. Timeout 执行超时
 
 #### OOM 内存不足
-
 
 #### Task 数据倾斜
 
 [CSDN-诸葛子房-Spark 任务优化分析](https://blog.csdn.net/weixin_43291055/article/details/133770448)
 [SparkSql 慢任务诊断案例](https://mp.weixin.qq.com/s/3RrpzO5rPthKfyGX8MvnFw)
-
 #### Time out 任务超时
 
 [Spark braodcast join timeout 300 - yuexiuping - 博客园](https://www.cnblogs.com/yuexiuping/p/15043556.html)
@@ -45,7 +42,7 @@ OOM 报错常见日志：
 - `ERROR cluster.YarnShceduler: Lost executor xx on xx` 
 - `ExecutorLostFailure (executor xxx exited caused by one of the running tasks) Reason: Container killed by YARN for exceeding memory limits`
 
-BroadcastJoin Timeout 报错常见日志：
+Broadcast Join Timeout 报错常见日志：
 - `org.apache.spark.SparkException: Could not execute broadcast in 300 secs`
 - `java.util.concurrent.TimeoutException: Futures timed out after [300 seconds]`
 
@@ -64,18 +61,17 @@ Spark UI | Stages | Details for Stage | Tasks
 
 ## Spark SQL 常用优化思路和方法
 
-优化 Spark SQL 的目标，一般主要是减少 Spark Application 的空间或时间资源的开销（整体或局部）。
 
 ### 减少读取数据量
 
-减少 Task 读取的数据量。
+通过减少 Task 读取的数据量，提升整体性能，以避免出现 OOM 和超时问题。
 #### 减少读取行
 
-##### Where 前置
+##### Where 过滤前置
 
-Case 1：Spark SQL 在 Join 时，会自动下推 `Join key is not null` 的条件到执行计划最开始的 table scan 阶段，但如果是 left join，则只会下推 right 表的 join key，而不会下推 left 表的 join key，即无法提前过滤 left 表的无效行。因此可以通过手动将 left 表的 `Join key is not null` 条件下推，以提前减少无效行读取。
+Case 1：Spark SQL 在 Join 时，会自动下推 `Join key is not null` 的条件到执行计划最开始的 table scan 阶段，但如果是 left join，则只会下推 right 表的 join key，而不会下推 left 表的 join key，即无法提前过滤 left 表的无效行。可以通过手动将 left 表的 `Join key is not null` 条件下推，以提前减少无效行读取。
 
-Case2：Spark SQL 中在 Join 后使用 Where 语句时，是先进行 Join，然后再执行 Where 语句筛选和过滤行。因此可以通过手动将 Where 语句下推到 left 表和 right 表的子查询中，以提前减少无效行的读取。
+Case2：Spark SQL 中在 Join 后使用 Where 语句时，是先进行 Join，然后再执行 Where 语句筛选和过滤行。可以通过手动将 Where 语句下推到 left 表和 right 表的子查询中，以提前减少无效行的读取。
 
 Case3：Spark SQL 使用 Order By+Limit 语句查询 TopN 时，优化器会对 partition 中的数据进行局部排序 local sort 并局部筛选 local limit，减少后续读取数据量，然后再去执行全局排序和筛选 global limit。
 
@@ -114,19 +110,19 @@ TakeOrderedAndProject(limit=3, orderBy=[number#3 ASC NULLS FIRST], output=[numbe
 
 [京东Spark基于Bloom Filter算法的Runtime Filter Join优化机制 - 脉脉](https://maimai.cn/article/detail?fid=1707795020&efid=dSfxdmyhmG6D8hDYUYvB4Q)
 
-当大表 Inner Join/Right Join 小表（即以小表为主表）时，若小表的数据量太大而无法通过 Broadcast 广播给所有 Executor 时（即无法使用 BroadcastJoin），则可以考虑根据基于小表构建 BloomFilter，并用于提前过滤大表的数据。
+当大表 Inner Join/Right Join 小表（即以小表为主表）时，若小表的数据量太大而无法通过 Broadcast 广播给所有 Executor 时（即无法使用 BroadcastJoin），则可以考虑根据基于小表构建 BloomFilter 文件，并广播给 Executor，用于提前过滤大表的数据。
 
-进而减少后续大表在执行 SortMergeJoin 的 Exchange（Shuffle） 和 Sort 阶段时，输入的数据量，提升整体性能。
+进而减少后续大表在执行 SortMerge Join 的 Exchange（Shuffle） 和 Sort 阶段时，输入的数据量，提升任务整体性能。
 
 #### 减少读取列
 
-SQL Select 语句中按需取列，显式列出对应列字段名，尽量避免使用 `SELECT *`。
+SQL Select 语句中按需取列，显式列出对应列字段名，尽量避免使用 `SELECT *`，即减少对应 Task 的读取数据量。
 
-Case1：当表中
+Case1：当表中存在几十个字段，但实际上当前查询只需要几个字段时，减少查询使用字段，能大量减少查询时生成的 RDD 大小。
 
 ### 减少重复读取
 
-Spark SQL 中，默认情况下，针对同一个 CTE、View 或 Table 的多次重复查询，会重复触发数据读取和 RDD 的生成。
+Spark SQL 中，默认情况下，针对同一个 CTE、View 或 Table 的多次重复查询，会重复触发数据读取和 RDD 的生成，为了避免重复查询，应尽量缓存重复数据，减少重复读，以提升任务整体性能。
 
 #### Cache Table
 
@@ -157,7 +153,7 @@ CLEAR CACHE;
 
 #### Broadcast Join
 
-通过配置并触发 Broadcast Join 算法，避免 Sort-merge Join 时的 Shuffle 阶段，减少数据 IO，提升性能。
+通过配置并触发 Broadcast Join 算法，避免 Sort-merge Join 时的 Shuffle 阶段，减少数据 IO，提升性能，进而可以避免 Shuffle（Exchange）阶段可能存在的数据倾斜 Data Skew。
 
 Broadcast Join 相关配置，自动触发：
 
@@ -243,17 +239,50 @@ Exchange RoundRobinPartitioning(100), false, [id=#121]
       PushedFilters: [], ReadSchema: struct<name:string>
 ```
 
-### 减小 Task 处理数据量
+### 合理划分任务数据量
 
-#### 增加 partition 数量
+#### 调整 partition 数量
 
-Partition Hints：
-
-Set spark.sql.shuffle.partitions：增加 Spark SQL Shuffle 阶段生成的 partition 数 ` spark.sql.shuffle.partitions ` 
+1. 使用 Partition Hints：同上
+2. 调整 spark.sql.shuffle.partitions ：调整 Spark SQL Shuffle 阶段生成的 partition 数 ` spark.sql.shuffle.partitions`，使得每个 Task 处理的数据量的分布合理，避免出现 OOM。
 
 | Property Name                | Default | Meaning                                                                                                                                                                                                               | Since Version |
 | ---------------------------- | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------- |
 | spark.sql.shuffle.partitions | 200     | The default number of partitions to use when shuffling data for joins or aggregations. Note: For structured streaming, this configuration cannot be changed between query restarts from the same checkpoint location. | 1.1.0 <br>    |
+
+#### 任务拆分
+
+Spark SQL 的执行计划通常为自顶向下的树形结构，对于存在性能问题的任务，可以尝试将其进行水平，或者垂直拆分，尤其是存在数据倾斜的任务。
+
+##### 垂直拆分
+
+对于执行时间超长、OOM 这类任务，可以根据具体的运算逻辑，将对应的任务垂直拆分为多个任务，分步处理，避免单任务处理的数据量太大、逻辑过于复杂，导致任务执行时出现 OOM、超时等报错而执行失败。
+
+对于 Group By 聚合类数据倾斜的任务，可以尝试通过加盐（salting）、加字段的方式进行分步聚合。
+
+对于 Inner Join 筛选类数据倾斜的任务，如果小表不满足 BroadcastJoin 条件，则可以尝试通过大表加盐（salting）+小表膨胀（scaling）的方式
+
+```sql
+SELECT
+    t1.key
+FROM (
+    SELECT
+        concat(floor(rand()*10), key) AS new_key
+    FROM t1
+) t1
+INNER JOIN (
+    SELECT concat(prefix, key) as new_key
+    FROM t2
+    LATERAL VIEW explode(array(1,2,3,4,5,6,7,8,9,10)) t AS prefix
+) t2
+on t1.new_key = t2.new_key
+```
+
+##### 水平拆分
+
+对于 OOM、执行时间长的任务，可以尝试将其水平拆解为多个执行过程相同的任务，减少单个任务的数据量。
+
+对于数据倾斜的任务，可以通过 Hash 取模的方式进行随机抽样，并统计 Key 的 count 值，以获取存在数据倾斜的 Key，并针对这些数据进行任务水平拆分。针对数据倾斜的少量 Key 采取 Broadcast Join 等方式，以避免 Shuffle 数据倾斜。
 
 ## 参考链接
 
@@ -261,3 +290,4 @@ Set spark.sql.shuffle.partitions：增加 Spark SQL Shuffle 阶段生成的 part
 2. [Spark性能优化指南——高级篇 - 美团技术团队](https://tech.meituan.com/2016/05/12/spark-tuning-pro.html)
 3. [京东Spark基于Bloom Filter算法的Runtime Filter Join优化机制 - 脉脉](https://maimai.cn/article/detail?fid=1707795020&efid=dSfxdmyhmG6D8hDYUYvB4Q)
 4. [Spark排错与优化 - linhaifeng - 博客园](https://www.cnblogs.com/linhaifeng/p/16245352.html)
+5. [spark 数据倾斜优化 - 阿伟宝座 - 博客园](https://www.cnblogs.com/saowei/p/16044630.html#spark-%E6%95%B0%E6%8D%AE%E5%80%BE%E6%96%9C%E4%BC%98%E5%8C%96)
