@@ -1,12 +1,15 @@
 {
-  "Tabout": true,
+  "Tabout": false,
   "SelectionEnhance": true,
   "IntrinsicSymbolPairs": true,
   "BaseObEditEnhance": true,
   "FW2HWEnhance": true,
+  "BetterCodeEdit": true,
   "AutoFormat": true,
   "ExcludeFiles": "",
   "ChineseEnglishSpace": true,
+  "ChineseNumberSpace": true,
+  "EnglishNumberSpace": true,
   "ChineseNoSpace": true,
   "PunctuationSpace": true,
   "AutoCapital": true,
@@ -51,5 +54,10 @@
   ],
   "userSelRuleSettingsOpen": false,
   "userDelRuleSettingsOpen": false,
-  "userCvtRuleSettingsOpen": false
+  "userCvtRuleSettingsOpen": false,
+  "EnterTwice": false,
+  "TryFixChineseIM": true,
+  "PuncRectify": false,
+  "FixMacOSContextMenu": false,
+  "TryFixMSIME": false
 }

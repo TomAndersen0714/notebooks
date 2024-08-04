@@ -3,7 +3,7 @@
 
 ## 安装
 
-https://github.com/dbeaver/dbeaver
+[GitHub - dbeaver/dbeaver: Free universal database tool and SQL client](https://github.com/dbeaver/dbeaver)
 
 ## 配置
 
@@ -20,7 +20,7 @@ DBeaver 默认 Maven 镜像为 Maven 官方镜像，一般为了加速或者私�
 2. 腾讯云： http://mirrors.cloud.tencent.com/nexus/repository/maven-public/
 
 参考：
-https://blog.csdn.net/cuichongxin/article/details/131414589
+[DBeaver连接mysql时报错com.mysql.cj.jdbc.Driver的解决方法【修改驱动下载的maven地址和重新下载驱动】-CSDN博客](https://blog.csdn.net/cuichongxin/article/details/131414589)
 
 ### 手动设置数据库驱动下载链接
 
@@ -40,9 +40,10 @@ DBeaver 中的数据库驱动的默认下载链接，并非全都来自于 Maven
 4. “下载/更新”过程中，如果出现某个依赖的 Maven 包不存在，则直接忽略。
 
 参考：
-https://www.cnblogs.com/sunpengblog/p/11858764.html
+[dbeaver驱动问题解决方案 - 啊啊啊啊鹏 - 博客园](https://www.cnblogs.com/sunpengblog/p/11858764.html)
 
 ## 参考链接
-1. https://github.com/dbeaver/dbeaver
-2. https://blog.csdn.net/cuichongxin/article/details/131414589
-3. https://www.cnblogs.com/sunpengblog/p/11858764.html
+
+1. [GitHub - dbeaver/dbeaver: Free universal database tool and SQL client](https://github.com/dbeaver/dbeaver)
+2. [DBeaver连接mysql时报错com.mysql.cj.jdbc.Driver的解决方法【修改驱动下载的maven地址和重新下载驱动】-CSDN博客](https://blog.csdn.net/cuichongxin/article/details/131414589)
+3. [dbeaver驱动问题解决方案 - 啊啊啊啊鹏 - 博客园](https://www.cnblogs.com/sunpengblog/p/11858764.html)

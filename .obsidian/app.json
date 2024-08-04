@@ -12,7 +12,7 @@
   "useMarkdownLinks": true,
   "newLinkFormat": "absolute",
   "strictLineBreaks": false,
-  "autoConvertHtml": false,
+  "autoConvertHtml": true,
   "pdfExportSettings": {
     "includeName": false,
     "pageSize": "A4",
