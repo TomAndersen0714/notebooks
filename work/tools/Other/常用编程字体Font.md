@@ -10,10 +10,18 @@
 
 ## 常见编程字体
 
-Consolas:
-VScode 默认字体
+### Hack
 
-## 在线字体样式查看
+[GitHub - Hack-with-Github/Awesome-Hacking: A collection of various awesome lists for hackers, pentesters and security researchers](https://github.com/Hack-with-Github/Awesome-Hacking)
+### Consolas
+
+VScode 默认字体之一。
+
+### JetBrain Mono
+
+JetBrain 系列 IDE 默认编程字体之一。
+
+## 字体样式在线查看
 
 [Programming Fonts - Test Drive](https://www.programmingfonts.org/)
 

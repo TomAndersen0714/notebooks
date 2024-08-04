@@ -1,8 +1,8 @@
 {
   "accentColor": "",
   "theme": "moonstone",
-  "interfaceFontFamily": "Consolas,微软雅黑,Hack",
-  "textFontFamily": "Consolas,微软雅黑,Hack",
+  "interfaceFontFamily": "Hack,微软雅黑",
+  "textFontFamily": "Hack,微软雅黑",
   "monospaceFontFamily": "Hack",
   "baseFontSize": 12,
   "nativeMenus": true,
