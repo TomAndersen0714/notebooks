@@ -3,6 +3,8 @@
 
 ## 第三方插件
 
+### 常用插件
+
 Editing Toolbar
 
 Easy Typing
@@ -26,7 +28,7 @@ Excalidraw
 
 KanBan
 
-## 第三方插件配置
+### 常用插件配置
 
 Easy Typing
 
@@ -53,10 +55,18 @@ User-defined Regular Expression, one expression per line:
 [知识管理神器 Obsidian，终于有了白板功能！ - 少数派](https://sspai.com/post/77463)
 [一起来看看大佬们的Obsidian白板（Canvas）使用案例分享 - 哔哩哔哩](https://www.bilibili.com/read/cv21024214)
 
-## 数据同步
+## 数据同步方案
+
+### OneDrive
+
+目前 OneDrive 数据同步的方案并不成熟，其中主要的缺点在于 OneDrive 无法保存空文件，以及 Obsidian Remotely Save 插件无法同步一些以 `.git` 这类以 `.` 为开头的文件夹内容，相当于 git 中的内容无法同步。
 
 [obsidian全平台好用的保姆级免费同步方案\_obsidian onedrive-CSDN博客](https://blog.csdn.net/xiaozhuang0827/article/details/135267966)
 [Obsidian Remotely Save 插件+OneDrive 实现多平台同步 - 经验分享 - Obsidian 中文论坛](https://forum-zh.obsidian.md/t/topic/5291)
+
+### 云盘
+
+阿里云盘、百度网盘等。
 
 ## 参考链接
 

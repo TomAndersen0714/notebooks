@@ -1,6 +1,13 @@
 {
   "choices": [],
-  "macros": [],
+  "macros": [
+    {
+      "name": "checkbox",
+      "id": "68adf2dd-77f3-4178-a696-b6b8a1ee922c",
+      "commands": [],
+      "runOnStartup": false
+    }
+  ],
   "inputPrompt": "single-line",
   "devMode": false,
   "templateFolderPath": "",

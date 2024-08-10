@@ -12,6 +12,12 @@ INSERT INTO TABLE tablename1 [PARTITION (partcol1=val1, partcol2=val2 ...)] sele
 ```
 
 
+Demo:
+
+```SQL
+
+```
+
 ### Hive extension (multiple inserts) 同源多次写入
 
 ```sql
@@ -28,6 +34,11 @@ INSERT INTO TABLE tablename1 [PARTITION (partcol1=val1, partcol2=val2 ...)] sele
 [INSERT OVERWRITE TABLE tablename2 [PARTITION ... [IF NOT EXISTS]] select_statement2] ...;
 ```
 
+Demo:
+
+```SQL
+
+```
 
 ### Dynamic Partition Inserts 动态分区写入
 
@@ -44,6 +55,12 @@ INSERT INTO TABLE tablename1 [PARTITION (partcol1=val1, partcol2=val2 ...)] sele
 FROM page_view_stg pvs
 INSERT OVERWRITE TABLE page_view PARTITION(dt='2008-06-08', country)
        SELECT pvs.viewTime, pvs.userid, pvs.page_url, pvs.referrer_url, null, null, pvs.ip, pvs.cnt
+```
+
+Demo:
+
+```SQL
+
 ```
 
 ## Load
