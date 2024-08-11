@@ -130,6 +130,23 @@ ln -s /mnt/c/Users/ericcheng/Desktop desktop
 - `-name` ：以指定字符串 pattern 进行检索
 - `-iname` ：以指定字符串 pattern 进行非大小写敏感检索
 
+#### tar
+
+常用选项
+- `-c, --create`: 创建归档文件
+- `-f, --file`: 指定归档文件名
+- `-z, --gzip, --gunzip, --ungzip`: 使用 gzip 算法压缩归档文件
+- `-v, --verbose`: 打印命令执行过程
+- `-x, --extract, --get`: 提取归档文件
+- `-u, --update`: 将发生变化的文件增量添加到归档文件中
+
+常用命令
+- 创建归档文件 `tar -cvf archive.tar /path/to/directory`
+- 更新归档文件 `tar -uvf archive.tar /path/to/directory`
+- 解压缩 `.tar` 归档文件：`tar -xvf archive.tar`
+- 解压缩 `.tar.gz` 归档文件：`tar -xzvf archive.tar.gz`
+- 解压缩到指定目录：`tar -xzvf archive.tar.gz -C /path/to/destination`
+
 ### Network
 
 
