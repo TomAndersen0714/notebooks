@@ -138,7 +138,7 @@ ln -s /mnt/c/Users/ericcheng/Desktop desktop
 - `-z, --gzip, --gunzip, --ungzip`: 使用 gzip 算法压缩归档文件
 - `-v, --verbose`: 打印命令执行过程
 - `-x, --extract, --get`: 提取归档文件
-- `-u, --update`: 将发生变化的文件增量添加到归档文件中
+- `-u, --update`: 将发生变化的文件增量添加到归档文件中，PS：增量同步并不一定会提高效率，因为
 
 常用命令
 - 创建归档文件 `tar -cvf archive.tar /path/to/directory`
