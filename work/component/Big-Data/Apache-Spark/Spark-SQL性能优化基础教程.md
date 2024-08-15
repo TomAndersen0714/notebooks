@@ -120,11 +120,11 @@ SQL Select 语句中按需取列，显式列出对应列字段名，尽量避免
 
 Case1：当表中存在几十个字段，但实际上当前查询只需要几个字段时，减少查询使用字段，能大量减少查询时生成的 RDD 大小。
 
-### 减少重复读取
+#### 减少重复读取
 
 Spark SQL 中，默认情况下，针对同一个 CTE、View 或 Table 的多次重复查询，会重复触发数据读取和 RDD 的生成，为了避免重复查询，应尽量缓存重复数据，减少重复读，以提升任务整体性能。
 
-#### Cache Table
+##### Cache Table
 
 [CACHE TABLE - Spark 3.5.1 Documentation](https://spark.apache.org/docs/latest/sql-ref-syntax-aux-cache-cache-table.html)
 [Spark原理之Cache Table的工作原理及实现自动缓存重复表的思考\_spark cache table-CSDN博客](https://blog.csdn.net/u014445499/article/details/138003052)
@@ -151,11 +151,15 @@ UNCACHE TABLE [ IF EXISTS ] table_identifier;
 CLEAR CACHE;
 ```
 
-#### Broadcast Join
+##### Broadcast Join
+
+[Spark-JOIN算法基础教程](work/component/Big-Data/Apache-Spark/mechanism/Spark-JOIN算法基础教程.md)
 
 通过配置并触发 Broadcast Join 算法，避免 Sort-merge Join 时的 Shuffle 阶段，减少数据 IO，提升性能，进而可以避免 Shuffle（Exchange）阶段可能存在的数据倾斜 Data Skew。
 
-Broadcast Join 相关配置，自动触发：
+Broadcast Join 支持自动触发，但是必须得是**非 left/full outer join 的主表**，以及必须是实体表，即**已缓存或者创建过的表**。如果需要 Broadcast Join 的表是主表，则可以先针对非主表执行 inner join 来执行 inner join，即自动触发 Broadcast Join，以低代价提前过滤数据。
+
+Broadcast Join 自动触发，相关配置：
 
 | Property Name                        | Default          | Meaning                                                                                                                                                                                                                                                                                                                                                  | Since Version |
 | ------------------------------------ | ---------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------- |

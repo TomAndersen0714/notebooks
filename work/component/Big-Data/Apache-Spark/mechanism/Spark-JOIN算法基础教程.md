@@ -7,6 +7,9 @@
 Spark SQL 中 BoardCast Join 自动触发的必要条件：
 1. 小表为非 Left Join (Left Outer Join)。[pyspark - Broadcast join in spark not working for left outer - Stack Overflow](https://stackoverflow.com/questions/62735494/broadcast-join-in-spark-not-working-for-left-outer)
 2. 小表为 Hive MetaStore 中存在的表。`Note that currently statistics are only supported for Hive Metastore tables where the command ANALYZE TABLE <tableName> COMPUTE STATISTICS noscan has been run` 。
+
+
+
 ## 参考链接
 
 1. [【Spark的五种Join策略解析】\_spark sql中修改join策略-CSDN博客](https://blog.csdn.net/u012432611/article/details/132824637)
