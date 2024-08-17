@@ -80,7 +80,6 @@
 7. 【推荐】将大 SQL 拆分成小 SQL, 减少数据库性能抖动，减少应用内存开销
 8. 【推荐】尽量避免 SELECT * 类型的 SQL，尽量明确查询字段，降低 IO 吞吐量，提升查询效率
 
-
 ## 参考链接
 
 1. [PostgreSQL 中文社区-PostgreSQL 数据库开发规范](https://mp.weixin.qq.com/s/qOobyeo3ROnFnA4NAbG4fg)
