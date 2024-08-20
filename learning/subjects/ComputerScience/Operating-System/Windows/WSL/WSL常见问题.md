@@ -9,8 +9,8 @@
 1. 在“服务”页面中重启 LxssManager 服务。
 2. 如果 LxssManager 被挂起，无法手动重启，则可以通过 PowerShell 等 Shell 查找对应的 PID：`tasklist /svc /fi "imagename eq svchost. Exe" | findstr LxssManager`。然后直接终止对应进程，然后重新打开 WSL 即可：`kill <pid>`。
 
-如果 Ubuntu 版本是 WSL 2，需要确保虚拟机平台、Hyper-V 功能已被打开：
-1. 查看 WSL 的 Linux 子系统版本： `wsl -l -v`
+如果 Ubuntu 版本是 WSL 2，还需要确保虚拟机平台、Hyper-V 功能已被打开：
+1. 查看 WSL 的 Linux 子系统版本信息： `wsl -l -v`
 2. 开启 Windows 功能：“控制面板” -> “程序” -> “启用或关闭Windows功能”
 
 ### WSL2: Wsl/Service/CreateInstance/CreateVm/HCS/0x80070032.
