@@ -15,7 +15,7 @@
 
 ### WSL2: Wsl/Service/CreateInstance/CreateVm/HCS/0x80070032.
 
-直接运行 wsl. Exe 时报错 `Wsl/Service/CreateInstance/CreateVm/HCS/0x80070032`，错误代码 `0x80070032` 表示 "The request is not supported"（请求不被支持）。
+直接运行 wsl.exe 程序时报错 `Wsl/Service/CreateInstance/CreateVm/HCS/0x80070032`，错误代码 `0x80070032` 表示 "The request is not supported"（请求不被支持）。
 
 WSL2 中需要确保 Windows 上虚拟机平台、Hyper-V 两个功能已被打开：
 1. 查看 WSL 的 Linux 子系统版本： `wsl -l -v`
