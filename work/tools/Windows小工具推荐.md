@@ -3,6 +3,7 @@
 
 进程管理
 Process Lasso
+[software.3d66.com/list/setup\_9123.html](https://software.3d66.com/list/setup_9123.html)
 
 文件查找
 Everything
