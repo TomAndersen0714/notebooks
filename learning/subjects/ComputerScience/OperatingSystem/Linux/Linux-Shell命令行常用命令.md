@@ -1,4 +1,4 @@
-# Linux命令行常用命令
+# Linux Shell 命令行常用命令
 
 
 ## 前言
@@ -105,6 +105,26 @@ unalias kd
 示例：
 - `seq 1 10`
 - `seq 1 2 10`
+
+#### xsel
+
+默认仅支持主机登录的方式，不支持远程登录，如 SSH。
+
+[Windows/Mac/Linux/ssh将shell内容输出到剪贴板\_mac sh xcopy-CSDN博客](https://blog.csdn.net/SmalOSnail/article/details/120589901)
+
+```bash
+# 将文本内容打印到剪贴板
+echo "hello xsel" | xsel --clipboard
+```
+
+#### xclip
+
+默认仅支持主机登录的方式，不支持远程登录，如 SSH。
+
+```bash
+# 将文本内容打印到剪贴板
+echo "hello xclip" | xclip -selection c
+```
 
 
 ### File

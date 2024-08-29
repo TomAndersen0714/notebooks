@@ -23,12 +23,22 @@ WSL2 中需要确保 Windows 上虚拟机平台、Hyper-V 两个功能已被打�
 
 ### WSL2: The remote procedure call failed. 远程过程调用失败
 
-https://github.com/docker/for-win/issues/7208
+[WSL2 backend always crash System.InvalidOperationException: Failed to deploy distro docker-desktop · Issue #7208 · docker/for-win · GitHub](https://github.com/docker/for-win/issues/7208)
 
 1. 卸载 Docker Desktop
 2. 控制面板-程序-启动或关闭 Windows 功能，关闭 Hyper-V
 3. 控制面板-程序-启动或关闭 Windows 功能，关闭 Windows Subsystem for Linux
 4. 重启主机
+
+### WSL2: Can't open display: (null) 
+
+WSL2 无法运行依赖可视化的命令行工具，如 xsel。
+
+[windows subsystem for linux - WSL: when I try to use GUI package get error "Can't open display" - Ask Ubuntu](https://askubuntu.com/a/1470362)
+
+1. Open `C:\Users\<username>\.wslconfig`
+2. Find the line: `guiApplications=false` and change it to `guiApplications=true`. If you can not find the line, add it in the file.
+3. Restart your PC (or just do `wsl --shutdown` followed by `wsl` as suggested by @bkakilli).
 
 ## 网络问题
 
