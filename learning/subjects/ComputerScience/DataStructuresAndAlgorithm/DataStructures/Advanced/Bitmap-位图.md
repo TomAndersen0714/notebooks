@@ -39,7 +39,7 @@ Roaring Bitmap，又叫做咆哮位图。
 
 只会返回两个结果，可能在（存在假阳性的可能），或者一定不在
 
-[Bloom-Filter-布隆过滤器](learning/subjects/ComputerScience/DataStructuresAndAlgorithm/Data-Structures/Advanced/Bloom-Filter-布隆过滤器.md)
+[Bloom-Filter-布隆过滤器](learning/subjects/ComputerScience/DataStructuresAndAlgorithm/DataStructures/Advanced/Bloom-Filter-布隆过滤器.md)
 
 
 ### 应用场景

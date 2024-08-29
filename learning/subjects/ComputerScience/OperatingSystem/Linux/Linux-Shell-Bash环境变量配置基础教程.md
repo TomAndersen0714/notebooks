@@ -67,5 +67,6 @@ Bash的`--noprofile`选项，可以抑制此动作。
 2. 如果是设置用户级别环境变量，建议添加到`~/.bashrc`文件中。
 
 ## 参考链接
+
 1. [Bash Reference Manual - Bash Features](https://www.gnu.org/software/bash/manual/html_node/Bash-Startup-Files.html)
 2. [《鸟哥的Linux私房菜-基础篇》-Bash shell 的操作环境](http://cn.linux.vbird.org/linux_basic/0320bash_4.php)

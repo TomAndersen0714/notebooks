@@ -13,7 +13,7 @@
 ## 配置
 
 
-参考： [WSL配置基础教程](learning/subjects/ComputerScience/Operating-System/Windows/WSL/WSL配置基础教程.md)
+参考： [WSL配置基础教程](learning/subjects/ComputerScience/OperatingSystem/Windows/WSL/WSL配置基础教程.md)
 
 ## 参考链接
 1. [知乎-史上最全的 WSL 安装教程](https://zhuanlan.zhihu.com/p/386590591)

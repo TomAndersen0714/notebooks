@@ -3,7 +3,6 @@
 
 ## 开发
 
-
 ### Shell 变量传递
 
 在 Shell 脚本中，当一个脚本调用另一个脚本时，被调用的脚本会继承调用脚本的**环境变量**，但并不会继承调用脚本的**普通变量**。
@@ -23,13 +22,12 @@ echo $my_var  # 输出 "Hello, world!"
 
 ## 调试
 
-
 ### VSCode
 
 VSCode 中主要通过 `Bash Debugger` 插件集成 `bashdb` 来支持 Shell 调试功能。
 
 注意：
-1. 在 Windows 环境下需要预先安装 WSL 和 Ubuntu，否则无法运行 bashdb。PS：WSL 安装详情参考 [WSL基础教程](learning/subjects/ComputerScience/Operating-System/Windows/WSL/WSL基础教程.md)
+1. 在 Windows 环境下需要预先安装 WSL 和 Ubuntu，否则无法运行 bashdb。PS：WSL 安装详情参考 [WSL基础教程](learning/subjects/ComputerScience/OperatingSystem/Windows/WSL/WSL基础教程.md)
 
 添加 Run/Debug 配置文件步骤：
 1. 打开对应的 Shell 脚本文件，点击 `Run | Add Configuration`，然后选择默认的 `bashdb` 配置模板
@@ -58,14 +56,14 @@ VSCode 中主要通过 `Bash Debugger` 插件集成 `bashdb` 来支持 Shell 调
 1. 目前发现，Windows VSCode 中使用 `Bash Debugger` 时，会出现日期字符串赋值错误问题，在 `WATCH` 以及 `DEBUG CONSOLE` 等窗口中，会将 `a=2023-12-07` 这种表达式，识别为数据表达式进行计算，而不是直接赋值为字符串，会显示 a 变量的结果为 `2004`，但在 Shell 中是为真实值 `2023-12-07`
 
 参考：
-https://liushiming.cn/article/debug-bash-on-macos.html
-https://zbttl-github-io.vercel.app/vscode-diao-shi-bash-shell-jiao-ben/
-https://blog.csdn.net/babytiger/article/details/119937537
+[使用vscode调试bash脚本](https://liushiming.cn/article/debug-bash-on-macos.html)
+[vscode 调试 bash shell 脚本 | Bao's 备忘录](https://zbttl-github-io.vercel.app/vscode-diao-shi-bash-shell-jiao-ben/)
+[如何使用vscode优雅的可视化的调试shell脚本\_vscode调试shell脚本-CSDN博客](https://blog.csdn.net/babytiger/article/details/119937537)
 
 ### IDEA
 
 IDEA 中主要通过 `BashSupport Pro` 插件的调试功能来实现 Shell 脚本调试：
-https://cloud.tencent.com/developer/ask/sof/108254071
+[在IntelliJ中设置shell脚本调试的断点-腾讯云开发者社区-腾讯云](https://cloud.tencent.com/developer/ask/sof/108254071)
 
 
 ## 常见问题
