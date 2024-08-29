@@ -102,7 +102,7 @@ Idea、Prompt、Experimental result、Error analysis、Idea...
 
 **Model无法精确限制数据长度，但会将结果限制在阈值附近。**
 
-**PS：机器学习模型的预测结果必然存在精度问题，在实际运用中，通常还需要搭配额外的程序，乃至人工来兜底，来保证应用的准确率在可接受范围。**
+**PS：机器学习模型的预测结果必然存在精度问题，在实际运用中，通常还需要搭配额外的程序，乃至人工来兜底，来保证应用的准确率在需求的可接受范围。**
 
 ### Example
 
@@ -148,10 +148,11 @@ PS：可能存在的缺陷：
 
 如，基于标题写文章、基于短文本写文章、基于预设配置回复Email
 
-ChatGPT Model和其他的NLP模型类似，也支持使用Temperature参数，来控制Model在相同的输入下，输出结果之间的相关性，或者说输出结果的概率分布的平滑程度。
+ChatGPT Model 和其他的 NLP 模型类似，也支持使用 Temperature 参数，来控制 Model 在相同的输入下，输出结果之间的相关性，或者说输出结果的概率分布的平滑程度。
 
 在 ChatGPT Model 中，Temperature 越小那么相同输入下，返回的输出结果之间就越接近，反之则区别越大，Temperature 的默认值也是最小值为 0，即在相同的输入下，每次都会返回选择最高概率的内容返回。
-https://platform.openai.com/docs/quickstart/adjust-your-settings
+
+[OpenAI Platform](https://platform.openai.com/docs/quickstart/adjust-your-settings)
 
 ### Chatbot
 
@@ -162,13 +163,15 @@ https://platform.openai.com/docs/quickstart/adjust-your-settings
 使用 OpenAI API（如 Python openai. ChatCompletion 对象），可以使用 Prompt 构建聊天自定义聊天机器人。
 https://platform.openai.com/docs/guides/chat
 
+
 ## 参考链接
 
 1. [Wiki - Large language model](https://en.wikipedia.org/wiki/Large_language_model)
 2. [Bilibili-【中文完整版全9集】ChatGPT提示工程师｜AI大神吴恩达教你写提示词｜prompt engineering](https://www.bilibili.com/video/BV14M4y147yH)
 3. [YouTube-ChatGPT Prompt Engineering for Developers: A short course from OpenAI and DeepLearning.AI](https://www.youtube.com/watch?v=H4YK_7MAckk&list=RDCMUCcIXc5mJsHVYTZR1maL5l9w&index=1)
 4. [ChatGPT|万字长文总结吴恩达prompt-engineering课](https://mp.weixin.qq.com/s/gUtB71uWI7Dg_tfRzaidCA)
-5. [ChatGPT Prompt Engineering for Developers](https://www.youtube.com/playlist?list=PLZnV2TKiv3wC0F5AQJwL3RGCfInRpu-LA)
-6. [DeepLearning.AI-ChatGPT Prompt Engineering for Developers](https://learn.deeplearning.ai/chatgpt-prompt-eng/lesson/1/introduction)
-7. [OpenAI Documentation](https://platform.openai.com/docs/introduction)
-8. [OpenAI Documentation Guides](https://platform.openai.com/docs/guides/)
+5. [GitHub - datawhalechina/llm-cookbook: 面向开发者的 LLM 入门教程，吴恩达大模型系列课程中文版](https://github.com/datawhalechina/llm-cookbook)
+6. [ChatGPT Prompt Engineering for Developers](https://www.youtube.com/playlist?list=PLZnV2TKiv3wC0F5AQJwL3RGCfInRpu-LA)
+7. [DeepLearning.AI-ChatGPT Prompt Engineering for Developers](https://learn.deeplearning.ai/chatgpt-prompt-eng/lesson/1/introduction)
+8. [OpenAI Documentation](https://platform.openai.com/docs/introduction)
+9. [OpenAI Documentation Guides](https://platform.openai.com/docs/guides/)
