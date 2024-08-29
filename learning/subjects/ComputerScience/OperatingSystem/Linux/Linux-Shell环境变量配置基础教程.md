@@ -66,13 +66,10 @@ Bash 的 `--noprofile` 选项，可以抑制此动作。
 # 列出所有当前环境变量及其值。
 printenv
 printenv PATH
-
 # 列出所有当前环境变量及其值
 env
-
 # `set` 命令不仅会列出环境变量，还会列出所有Shell变量和函数。
 set
-
 # 列出所有当前环境变量及其值
 export -p
 ```
