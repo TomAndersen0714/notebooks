@@ -2,7 +2,7 @@
   "foldHeading": true,
   "showFrontmatter": true,
   "showLineNumber": false,
-  "spellcheck": false,
+  "spellcheck": true,
   "spellcheckLanguages": null,
   "showInlineTitle": false,
   "promptDelete": false,
