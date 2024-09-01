@@ -5,6 +5,8 @@
 
 同时 EDA 十分有利于提前发现数据中可能存在的问题，避免后续数据开发过程中返工，或者数据分析时得出错误的结论。
 
+不论是内部数据、还是外部数据，数据探查 EDA 的流程都是必备的，尤其是外部数据，更容易出现不符合预期的情况。
+
 [What is Exploratory Data Analysis? | IBM](https://www.ibm.com/topics/exploratory-data-analysis)
 [Exploratory data analysis - Wikipedia](https://en.wikipedia.org/wiki/Exploratory_data_analysis)
 
