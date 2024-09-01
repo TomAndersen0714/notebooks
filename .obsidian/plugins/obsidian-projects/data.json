@@ -1,6 +1,86 @@
 {
   "version": 2,
-  "projects": [],
+  "projects": [
+    {
+      "fieldConfig": {
+        "status": {
+          "options": [
+            "true",
+            "false"
+          ]
+        }
+      },
+      "defaultName": "",
+      "templates": [],
+      "excludedNotes": [],
+      "isDefault": false,
+      "dataSource": {
+        "kind": "folder",
+        "config": {
+          "path": "schedule/todolist",
+          "recursive": true
+        }
+      },
+      "newNotesFolder": "",
+      "views": [
+        {
+          "config": {
+            "orderFields": [
+              "name",
+              "path",
+              "status"
+            ],
+            "fieldConfig": {}
+          },
+          "filter": {
+            "conjunction": "and",
+            "conditions": []
+          },
+          "colors": {
+            "conditions": []
+          },
+          "sort": {
+            "criteria": []
+          },
+          "id": "4e1ec3f9-5d37-4c71-89ef-a504ceb10581",
+          "name": "Table",
+          "type": "table"
+        },
+        {
+          "config": {
+            "groupByField": "status",
+            "columns": {
+              "false": {
+                "records": [
+                  "schedule/todolist/Untitled 1.md"
+                ]
+              },
+              "true": {
+                "records": [
+                  "schedule/todolist/Untitled.md"
+                ]
+              }
+            }
+          },
+          "filter": {
+            "conjunction": "and",
+            "conditions": []
+          },
+          "colors": {
+            "conditions": []
+          },
+          "sort": {
+            "criteria": []
+          },
+          "id": "9688e8a1-d823-41f6-b701-96332b99bbde",
+          "name": "Board",
+          "type": "board"
+        }
+      ],
+      "id": "6dacd24a-fa4d-465c-b68b-5178c0d15215",
+      "name": "Todolist Project"
+    }
+  ],
   "archives": [],
   "preferences": {
     "projectSizeLimit": 1000,
