@@ -17,11 +17,11 @@ WizTree
 文件预览
 QuickLook
 
-Gif录制
+Gif 录制
 ScreenToGif
 
-VPN客户端
-v2rayN
+VPN 客户端
+V 2 rayN
 
 文件下载
 Free Download Manager
@@ -32,16 +32,17 @@ EmEditor
 文件对比工具
 
 
-Markdown文档编辑
+Markdown 文档编辑
 Obsidian、Typora
 
 思维导图
 Xmind
 
 应用查找
-uTools
+UTools
+[utools无法搜索快捷方式和部分软件问题\_utools找不到软件-CSDN博客](https://blog.csdn.net/LongtengGensSupreme/article/details/116976366)
 
-Windows官方工具包
+Windows 官方工具包
 PowerToys，PS：由于此工具包包含的工具较多，很可能会和其他工具存在快捷键冲突
 https://learn.microsoft.com/zh-cn/windows/powertoys/
 
