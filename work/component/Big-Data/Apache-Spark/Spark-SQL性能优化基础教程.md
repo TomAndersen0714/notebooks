@@ -41,6 +41,7 @@ OOM 报错常见日志：
 - `org.apache.spark.shuffle.MetadataFetchFailedException: Missing an output location for shuffle xxx`
 - `ERROR cluster.YarnShceduler: Lost executor xx on xx` 
 - `ExecutorLostFailure (executor xxx exited caused by one of the running tasks) Reason: Container killed by YARN for exceeding memory limits`
+- `Container killed on request. Exit code is 143 Container exited with a non-zero exit code 143`
 
 Broadcast Join Timeout 报错常见日志：
 - `org.apache.spark.SparkException: Could not execute broadcast in 300 secs`
