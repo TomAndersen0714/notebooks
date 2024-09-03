@@ -1,6 +1,6 @@
 # Hive UDF 开发基础教程
 
-
+Todo: 要求有 Demo，要求有开发、调试操作和截图。
 ## UDF 简介
 
 在 Apache Hive 中，UDF（User-Defined Function）可以分为几种不同的类型，主要根据其功能和处理方式进行分类。以下是一些常见类型的 Hive UDF：
@@ -26,5 +26,7 @@
    - 这些函数的类可以同时继承自 `org.apache.hadoop.hive.ql.udf.generic.GenericUDTF` 和 `org.apache.hadoop.hive.ql.udf.generic.GenericUDF`。
 
 以上是 Hive 中常见的 UDF 类型，用户可以根据自己的需求选择合适的类型并实现相应的函数。
+
+
 
 

@@ -32,7 +32,7 @@ Window define：RANGE BETWEEN UNBOUNDED PROCEEDING AND UNBOUNDED FOLLOWING
 
 有一个 sql 突然执行很慢可能有什么原因？
 
-[HiveSQL性能优化基础教程](work/component/Big-Data/Apache-Hive/Hive-SQL/HiveSQL性能优化基础教程.md)
+[HiveSQL性能优化基础教程](work/component/Big-Data/Apache-Hive/development/HiveSQL性能优化基础教程.md)
 
 
 ### 场景题
@@ -58,7 +58,7 @@ Window define：RANGE BETWEEN UNBOUNDED PROCEEDING AND UNBOUNDED FOLLOWING
 
 ### 性能调优方法
 
-[Spark-SQL性能优化基础教程](work/component/Big-Data/Apache-Spark/API/Spark-SQL性能优化基础教程.md)
+[Spark-SQL性能优化基础教程](work/component/Big-Data/Apache-Spark/development/Spark-SQL性能优化基础教程.md)
 
 
 ## ClickHouse SQL

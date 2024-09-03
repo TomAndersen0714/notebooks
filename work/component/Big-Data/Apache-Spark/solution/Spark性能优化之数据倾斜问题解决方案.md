@@ -1,12 +1,21 @@
-# Spark 性能优化之数据倾斜问题解决方法
+# Spark 性能优化之数据倾斜问题解决方案
 
 
 ## 诊断方式
 
+在 Spark Application Master 或 Spark HistoryServer 中查看 Spark UI Web，判断
 
-Spark Application Master 或 Spark HistoryServer
 1. EventTimeLine
 2. Executor shuffle read
+
+## 优化方案
+
+### Group By 倾斜
+
+
+### Join 倾斜
+
+
 
 ## 参考链接
 

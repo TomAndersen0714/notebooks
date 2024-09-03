@@ -1,5 +1,6 @@
 # Hive SQL 基础教程
 
+
 ## Data Type
 
 [LanguageManual Types - Apache Hive - Apache Software Foundation](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+Types)
@@ -79,7 +80,7 @@ DESCRIBE [EXTENDED|FORMATTED] [db_name.]table_name [column_name] PARTITION parti
 
 #### Functions
 
-[HiveSQL常用函数](work/component/Big-Data/Apache-Hive/Hive-SQL/HiveSQL常用函数.md)
+[HiveSQL常用函数](work/component/Big-Data/Apache-Hive/development/HiveSQL常用函数.md)
 
 Normal user-defined functions, such as concat (), take in a single input row and output a single output row.
 
@@ -99,7 +100,7 @@ UDTF 支持接收单行结果，并展开为多行，但是在 SELECT 语句中�
 
 ## Hive SQL 优化
 
-[HiveSQL性能优化基础教程](work/component/Big-Data/Apache-Hive/Hive-SQL/HiveSQL性能优化基础教程.md)
+[HiveSQL性能优化基础教程](work/component/Big-Data/Apache-Hive/development/HiveSQL性能优化基础教程.md)
 
 ## 参考链接
 1. [Hive SQL LanguageManual](https://cwiki.apache.org/confluence/display/Hive/LanguageManual)

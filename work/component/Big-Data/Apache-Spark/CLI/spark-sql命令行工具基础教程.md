@@ -41,4 +41,4 @@ CLI options:
 ## 参考链接
 
 1. [Spark SQL CLI - Spark 3.5.1 Documentation](https://spark.apache.org/docs/latest/sql-distributed-sql-engine-spark-sql-cli.html#spark-sql-cli)
-2. [Spark-SQL基础教程](work/component/Big-Data/Apache-Spark/API/Spark-SQL基础教程.md)
+2. [Spark-SQL基础教程](work/component/Big-Data/Apache-Spark/development/Spark-SQL基础教程.md)

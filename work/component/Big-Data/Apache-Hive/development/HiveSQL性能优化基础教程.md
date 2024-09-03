@@ -53,7 +53,7 @@ Hive SQL on MapReduce 任务如何诊断和定位数据倾斜
 
 ## Hive SQL 优化常用配置
 
-[HiveSQL性能优化常用配置](work/component/Big-Data/Apache-Hive/Hive-SQL/HiveSQL性能优化常用配置.md)
+[HiveSQL性能优化常用配置](work/component/Big-Data/Apache-Hive/development/HiveSQL性能优化常用配置.md)
 
 
 ## Hive SQL 常见性能问题优化方法
@@ -149,6 +149,7 @@ https://blog.csdn.net/lianghecai52171314/article/details/104658201
 
 
 ## 参考链接
+
 1. [微信-大数据技术团队-Hive SQL 高级进阶 10 大技巧](https://mp.weixin.qq.com/s/AKXXfbGBqndv6Fe1yjHryA)
 2. [微信-数据仓库与Python大数据-Hive | 4 万字性能调优全面总结（推荐收藏）](https://mp.weixin.qq.com/s/9BCFrUqtDsrf7w8ipRow0Q)
 3. [微信-阿里云云栖号-大数据 SQL 数据倾斜与数据膨胀的优化与经验总结](https://mp.weixin.qq.com/s/0N0ZFFIZtQLp7CBBWuh_pQ)
