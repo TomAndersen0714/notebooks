@@ -3,42 +3,8 @@
 
 ## 常见性能问题的症状、原因及其解决方案
 
+[Spark-SQL性能优化基础教程](work/component/Big-Data/Apache-Spark/API/Spark-SQL性能优化基础教程.md)
 [MySQL-SQL查询性能优化教程](work/component/Back-End/MySQL/solution/MySQL-SQL查询性能优化教程.md)
-
-
-### 客户侧的慢查询
-
-任务执行耗时太长，客户侧无法忍受，需要加速整个任务的执行流程。
-
-#### 问题原因
-
-任务量的角度：
-原因 1：整个任务的任务量过大
-原因 2：
-
-
-资源开销的角度：
-原因 1：客户侧资源实际利用率低。即有资源，但没有使用或者使用不当。
-1. 客户侧提交任务中的算法问题
-原因 2：服务侧资源总量有限。即没有资源，巧妇难为无米之炊
-1. 服务侧资源总量有限，限制了客户侧的性能
-
-#### 解决方法
-
-
-### 服务侧的高负载查询
-
-服务侧
-
-#### 问题原因
-
-任务量的角度
-
-
-资源开销的角度
-
-#### 解决方法
-
 
 ## Spark 任务常见性能问题、诊断及解决方法
 
@@ -88,7 +54,7 @@ OOM：
 
 [Spark SQL Guide - Performance Tuning - Spark 3.5.0 Documentation](https://spark.apache.org/docs/latest/sql-performance-tuning.html)
 
-[Spark-SQL性能优化基础教程](work/component/Big-Data/Apache-Spark/Spark-SQL性能优化基础教程.md)
+[Spark-SQL性能优化基础教程](work/component/Big-Data/Apache-Spark/API/Spark-SQL性能优化基础教程.md)
 
 ## 参考链接
 1. [Performance Tuning - Spark 3.5.1 Documentation](https://spark.apache.org/docs/latest/sql-performance-tuning.html)

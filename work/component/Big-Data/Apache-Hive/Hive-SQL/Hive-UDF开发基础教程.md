@@ -1,4 +1,4 @@
-# Hive UDF 基础教程
+# Hive UDF 开发基础教程
 
 
 ## UDF 简介

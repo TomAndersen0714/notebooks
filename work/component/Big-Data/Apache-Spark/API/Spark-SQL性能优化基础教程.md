@@ -289,6 +289,13 @@ on t1.new_key = t2.new_key
 
 对于数据倾斜的任务，可以通过 Hash 取模的方式进行随机抽样，并统计 Key 的 count 值，以获取存在数据倾斜的 Key，并针对这些数据进行任务水平拆分。针对数据倾斜的少量 Key 采取 Broadcast Join 等方式，以避免 Shuffle 数据倾斜。
 
+
+### 申请更多资源
+
+1. spark.executor.instances
+2. spark.executor.memory
+3. spark.executor.memoryOverhead (spark.yarn.executor.memoryOverhead)
+
 ## 参考链接
 
 1. [Spark性能优化指南——基础篇 - 美团技术团队](https://tech.meituan.com/2016/04/29/spark-tuning-basic.html)

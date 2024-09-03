@@ -1,4 +1,4 @@
-# Spark 任务性能常见问题
+# Spark Application 常见性能问题
 
 
 ## Too slow
@@ -12,6 +12,13 @@
 存储和计算（即 datanode 和 nodemanager）要么完全分开独立部署，要么完全部署在一起，不要一部分分开部署，一部分部署在一起，如果一定要这样，不要开启数据本地化特性，或者降低等待时间；
 
 减小 `spark.locality.wait` 参数，实现 Task 的本地性等级快速降级。
+
+## Timeout
+
+- **Could not execute broadcast in 900 seconds**
+
+增大 `spark.sql,broadcastTimeout` 参数，使得此参数的值大于 broadcast join 的时间开销即可，避免等待 broadcast 的时候 timeout。
+
 ## OOM
 
 - **Task 中待处理的数据量倾斜，进而导致 Executor 出现 OOM**
@@ -25,12 +32,7 @@
 
 两次任务的数据量相同，但后者 executor 数据量较少，task 也很少，进而出现 OOM（原因待定）。
 
-增大，`spark.scheduler.maxRegisteredResourcesWaitingTime`，增加等待分配 Executor 的时间，尽量避免提前启动 Job。
+1. 增大，`spark.scheduler.maxRegisteredResourcesWaitingTime`，增加等待分配 Executor 的时间，尽量避免提前启动 Job。
+2. 增大，`spark.scheduler.minRegisteredResourcesRatio`，增大最小启动资源比例。
+3. `spark.dynamicAllocation.enabled`???
 
-增大，`spark.scheduler.minRegisteredResourcesRatio`，增大最小启动资源比例。
-
-`spark.dynamicAllocation.enabled`???
-
-- **Could not execute broadcast in 900 seconds**
-
-增大 `spark.sql,broadcastTimeout` 参数，使得此参数的值大于 broadcast join 的时间开销即可，避免等待 broadcast 的时候 timeout。
