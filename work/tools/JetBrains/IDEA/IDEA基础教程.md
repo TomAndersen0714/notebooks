@@ -48,7 +48,9 @@ https://github.com/alibaba/p3c/wiki
 https://github.com/alibaba/p3c/issues/900#issuecomment-1120173751
 https://github.com/alibaba/p3c/files/8644807/Alibaba.Java.Coding.Guidelines-2.1.1-fix-2022.1.zip
 
+### Regex Rename Files
 
+支持文件、文件夹快速批量重命名
 ### CodeGlance Pro
 
 提供代码缩略图
