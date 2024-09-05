@@ -3,8 +3,7 @@
 
 ## 诊断方式
 
-在 Spark Application Master 或 Spark HistoryServer 中查看 Spark UI Web，判断
-
+在 Spark Application Master 或 Spark HistoryServer 中查看 Spark UI Web，通过以下方式来判断是否具备数据倾斜的症状：
 1. EventTimeLine
 2. Executor shuffle read
 
@@ -15,6 +14,10 @@
 
 ### Join 倾斜
 
+大表 Join 小表倾斜
+
+
+大表 Join 大表倾斜
 
 
 ## 参考链接
