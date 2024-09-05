@@ -50,15 +50,16 @@
           "config": {
             "groupByField": "status",
             "columns": {
+              "true": {
+                "records": [],
+                "weight": 0
+              },
               "false": {
                 "records": [
+                  "schedule/todolist/Untitled.md",
                   "schedule/todolist/Untitled 1.md"
-                ]
-              },
-              "true": {
-                "records": [
-                  "schedule/todolist/Untitled.md"
-                ]
+                ],
+                "weight": 1
               }
             }
           },
