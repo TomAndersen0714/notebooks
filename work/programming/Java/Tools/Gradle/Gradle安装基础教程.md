@@ -106,17 +106,32 @@ OS:           Windows 11 10.0 amd64
 
 如，设置为`$GRADLE_HOME$/.gradle`，即统一放置在Gradle安装路径下，其中`$GRADLE_HOME$`代表Gradle安装路径。
 
-**如果出现 JetBrains IDE 中无法更新 Windows System Environment 的方案，打开 Gradle 菜单和 Terminal 打印都无法显示正确的环境变量值**
-
-1. 安装JetBrains ToolBox，升级和管理IDE
-2. 直接重启主机
 
 ## Upgrading
 
 https://docs.gradle.org/current/userguide/upgrading_version_7.html
 
 
+## Gradle In IDEA
+
+[【IDEA】配置Gradle与使用 - emdzz - 博客园](https://www.cnblogs.com/mindzone/p/12880854.html)
+
+在 `File | Settings | Build, Execution, Deployment | Build Tools | Gradle` 路径下配置 Gradle:
+1. 通过 `Gradle JVM` 选项，选择 Gradle 对应的 JVM 版本。
+2. 通过 `Use Gradle From` 选项，配置使用的 Gradle 脚手架，如直接使用已安装的 Gradle，或者使用 Gradle Wrapper 脚本工具。
+
+![](resources/images/Pasted%20image%2020240910233124.png)
+
+## 常见问题
+
+**JetBrains IDE 中无法更新 Windows System Environment 的方案，打开 Gradle 菜单和 Terminal 打印都无法显示正确的环境变量值**
+
+[IDEA常见问题](work/tools/JetBrains/IDEA/IDEA常见问题.md)
+
+
+
 ## 参考链接
-1. [Github Gradle](https://github.com/gradle/gradle)
+
+1. [GitHub - gradle/gradle: Adaptable, fast automation for all](https://github.com/gradle/gradle)
 2. [Gradle User Manual](https://docs.gradle.org/current/userguide/userguide.html)
-3. [Gradle Installing Gradle](https://docs.gradle.org/current/userguide/installation.html)
+3. [Installing Gradle](https://docs.gradle.org/current/userguide/installation.html)
