@@ -1,9 +1,10 @@
 # Scala 安装基础教程
 
 
-## JDK 前置依赖检查
+## 安装配置 JDK
 
-Scala 和 JDK 版本兼容检查：
+Scala 和 JDK 版本兼容性检查：
+[JDK Compatibility | Scala Documentation](https://docs.scala-lang.org/overviews/jdk-compatibility/overview.html#scala-compatibility-table)
 
 | JDK      | 3      | 2.13     | 2.12    | 2.11    |
 |----------|--------|----------|---------|---------|
