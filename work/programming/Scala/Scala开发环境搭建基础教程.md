@@ -9,8 +9,8 @@
 
 ### IDAE
 
-1. 安装 Plugin  `Scala`
-2. 导入 `Scala SDK` ：`File | Project Structure | Platform Settings | Global Libraries`
+1. 安装 Scala Plugin: `Scala`
+2. 导入 Scala SDK: `File | Project Structure | Platform Settings | Global Libraries`
 
 ### VSCode
 

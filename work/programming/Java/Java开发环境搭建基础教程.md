@@ -8,7 +8,7 @@
 
 [Gradle安装基础教程](work/programming/Java/Tools/Gradle/Gradle安装基础教程.md)
 
-## IDE
+## IDE 配置 JDK
 ### JetBrain IDEA
 
 [IDEA基础教程](work/tools/JetBrains/IDEA/IDEA基础教程.md)
