@@ -1,7 +1,6 @@
 # Gradle安装基础教程
 
 
-
 ## Prerequisites
 
 Gradle至少需要 jdk8 及以上，使用`java -version`检查java版本。
