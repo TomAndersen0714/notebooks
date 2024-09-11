@@ -152,6 +152,13 @@ Located within the project's top level directory, the files
 - `extensions.xml`
 
 
+## Maven in IDE
+
+### IDEA
+
+在 JetBrains IDEA 中通常会内置某个对应版本的 Maven，但此内置工具通常会存在一些奇怪的 BUG（比如：无法识别本地依赖），通常是建议自己手动安装独立的 Maven 之后，再去 `File | Settings | Build, Execution, Deployment | Build Tools | Maven` 中调整使用的 Maven 路径，指向独立安装的 Maven。
+
+
 ## 参考链接
 
 1. [Maven – Welcome to Apache Maven](https://maven.apache.org/)

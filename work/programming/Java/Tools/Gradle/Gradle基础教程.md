@@ -113,7 +113,7 @@ Gradle 官方推荐使用 Gradle Wrapper 来辅助执行 Build。Wrapper 是一�
 
 #### Create the Gradle Wrapper
 
-在一个 Gradle 新项目中，可以通过全局的 Gradle 工具来执行 Gradle 内置的 Wrapper Task，给当前的 Project 构建 Wrapper 脚本
+在一个 Gradle 新项目中，可以通过全局已安装的 Gradle 工具来执行 Gradle 内置的 Wrapper Task，给当前的 Project 构建 Wrapper 脚本
 
 ```bash
 gradle wrapper
@@ -125,10 +125,9 @@ gradle wrapper
 distributionUrl=https\://services.gradle.org/distributions/gradle-8.1.1-bin.zip
 ```
 
-
 #### Using the Gradle Wrapper
 
-使用 Gradle Wrapper 脚本，可以代替全局安装的 Gradle 来执行 Gradle Task
+在 Gradle 项目中，使用 Gradle Wrapper 脚本，可以代替全局安装的 Gradle 来执行 Gradle Task
 
 Windows: 
 ```bash
@@ -140,6 +139,8 @@ Unix:
 gradlew build
 ```
 
+Gradle Wrapper in IDEA:
+- 在 IDEA 中首次打开创建有 Gradle Wrapper 脚本 `gradlew.bat/gradlew` 的项目时，都应该先执行对应的脚本，即直接调用 `gradlew.bat/gradlew`，来下载对应的 Gradle，否则 IDEA 中内置的 Gradle 插件，无法正确 Load 对应的项目。
 
 #### Upgrading the Gradle Wrapper
 
