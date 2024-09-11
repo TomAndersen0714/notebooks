@@ -42,3 +42,12 @@
 - Gradle Build 配置脚本（`build.gradle`）中声明当前项目中指定的 Java 版本，在本地环境中并未找到，可能是未安装，也可能是配置文件中的 Java 相关配置项存在错误
 解决方案：
 - 如果是在 IDEA IDE 中，在 `File | Settings | Build, Execution, Deployment | Build Tools | Gradle` 中，通过 `Gradle JVM` 配置，设置 Gradle 使用的 JVM 安装路径，指向 build 配置脚本 `build.gradle` 中声明的对应版本
+
+## 编码问题
+
+**Gradl 编译时报错 "编码 GBK 的不可映射字符"**
+
+原因排查：
+- 
+解决方案：
+- 

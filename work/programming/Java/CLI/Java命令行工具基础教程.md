@@ -30,5 +30,7 @@ Jstack 是 Java 堆栈跟踪工具，用于获取 Java 进程的线程堆栈信�
 
 
 ## 参考链接
+
 1. [Oracle - Java SE8 - JDK Tools and Utilities](https://docs.oracle.com/javase/8/docs/technotes/tools/)
 2. [Oracle - Java SE11 - Tools Reference](https://docs.oracle.com/en/java/javase/11/tools/tools-and-command-reference.html)
+3. [Java命令大全-CSDN博客](https://blog.csdn.net/JokerLJG/article/details/128954677)
