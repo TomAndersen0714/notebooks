@@ -3,7 +3,7 @@
 
 ## Breakpoints 的种类
 
-https://www.jetbrains.com/help/idea/using-breakpoints.html#breakpoint-types
+[Breakpoints | IntelliJ IDEA Documentation](https://www.jetbrains.com/help/idea/using-breakpoints.html#breakpoint-types)
 
 ### Line breakpoints
 
@@ -48,7 +48,7 @@ https://www.bilibili.com/video/BV1Rm4y1P7j8
 
 ### 方法栈回退（Reset/Delete Frame）
 
-Debug | Debugger | Reset Frame
+**Debug | Debugger | Reset Frame**
 
 在 Debugger 窗口下的 Frames 是当前程序的方法调用栈，每次都会保存当前的方法调用栈帧（Frame）。
 
@@ -58,6 +58,7 @@ Debug | Debugger | Reset Frame
 
 如：Debug 时，某个方法的执行过程未能及时观测到，则可以通过 Reset/Delete Frame 功能，将程序执行代码行回退到某个方法调用前。
 
+或者点击某个 Frame，查看对应 Frame 对应的源码位置，进而理解代码的执行过程。
 
 ![](resources/images/Pasted%20image%2020230916203912.png)
 
@@ -67,6 +68,7 @@ Debug | Debugger | Reset Frame
 在 Debug 过程中，如果某个方法执行一段后，不想再执行，可以直接右键点击 Debugger 中 Frames 窗口中的 Frame，选择“Force Return”直接执行 return 代码，如果方法的声明有返回值，则在执行“Force Return”的同时，还需要提供返回值的表达式。
 
 ![](resources/images/Pasted%20image%2020230916203842.png)
+
 ### 执行表达式（Evaluate Expression）
 
 Debug 时，可以通过执行表达式功能（Evaluate Expression），来实时执行特定的代码段，并显示对应的执行结果。
@@ -84,8 +86,27 @@ Debug 时，可以通过执行表达式功能（Evaluate Expression），来实�
 
 ![](resources/images/Pasted%20image%2020230916204248.png)
 
+
+### 断点静音（Mute Breakpoints）
+
+在某些时候，不需要断点生效时候，可以通过 Mute Breakpoints 功能，将所有的断点静音，使得程序后续调试时不再在断点处中断，而是正常执行。此功能，在调试 Web App 接口时比较常用。
+
+![](resources/images/Pasted%20image%2020240912214635.png)
+
+
+### 断点条件（Condition）
+
+This option is used to specify a condition that is checked each time the breakpoint is hit. If the condition evaluates to `true`, the selected actions are performed. Otherwise, the breakpoint is ignored.
+
+此选项主要适用于，每次执行到断点处时，判断指定的 Condition 表达式的返回值是否是 true，如果是，则暂停执行，否则跳过当前断点。
+
+![](resources/images/Pasted%20image%2020240912224245.png)
+
+![](resources/images/Pasted%20image%2020240912223953.png)
+
 ## 参考链接
 
-1. [Breakpoints | IntelliJ IDEA Documentation](https://www.jetbrains.com/help/idea/using-breakpoints.html#breakpoint-types)
-2. [Alter the program's execution flow | IntelliJ IDEA Documentation](https://www.jetbrains.com/help/idea/altering-the-program-s-execution-flow.html#breakpoint-expressions)
-3. [BiliBili-分享 4 个我一直在用的 IDEA Debug 小技巧](https://www.bilibili.com/video/BV1Rm4y1P7j8)
+1. [Debug code | IntelliJ IDEA Documentation](https://www.jetbrains.com/help/idea/debugging-code.html)
+2. [Breakpoints | IntelliJ IDEA Documentation](https://www.jetbrains.com/help/idea/using-breakpoints.html#breakpoint-types)
+3. [Alter the program's execution flow | IntelliJ IDEA Documentation](https://www.jetbrains.com/help/idea/altering-the-program-s-execution-flow.html#breakpoint-expressions)
+4. [BiliBili-分享 4 个我一直在用的 IDEA Debug 小技巧](https://www.bilibili.com/video/BV1Rm4y1P7j8)

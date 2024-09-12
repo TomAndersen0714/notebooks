@@ -1,4 +1,4 @@
-# Gradle命令行常用命令
+# Gradle 命令行常用命令
 
 PS：由于gradle wrapper实际上是使用指定的Gradle版本执行gradle命令，因此`gradlew`命令行的使用方式和`gradle`基本完全一致。
 

@@ -31,7 +31,7 @@ Insight
 
 #### Projects
 
-在 Gradle 中，Project 是 Gradle Build 的基本单位，每个 Gradle 项目的根目录下，都有一个包含构建配置的 Kotlin 脚本 `build.gradle`，或 Groovy 脚本 `build.gradle.kts`，用于定义任务、依赖项、插件和其他配置，其中 Build 过程可以包含多个项目 Project 和子项目 Subproject。
+在 Gradle 中，Project 是 Gradle Build 的基本单位，每个 Gradle 项目的根目录下，都有一个包含构建配置的 Kotlin 脚本 `build.gradle`，或 Groovy 脚本 `build.gradle.kts`，用于定义属于当前 Project 的任务、依赖项、插件和其他配置，其中 Build 过程可以包含多个项目 Project 和子项目 Subproject。
 
 #### Tasks
 
