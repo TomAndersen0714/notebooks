@@ -126,7 +126,7 @@ https://docs.gradle.org/current/userguide/upgrading_version_7.html
 
 **JetBrains IDE 中无法更新 Windows System Environment 的方案，打开 Gradle 菜单和 Terminal 打印都无法显示正确的环境变量值**
 
-[IDEA常见问题](work/tools/JetBrains/IDEA/IDEA常见问题.md)
+[IDEA常见问题](work/tools/IT/JetBrains/IDEA/IDEA常见问题.md)
 
 
 

@@ -15,7 +15,7 @@
 
 ## WebStrom
 
-[WebStorm基础教程](work/tools/JetBrains/WebStorm基础教程.md)
+[WebStorm基础教程](work/tools/IT/JetBrains/WebStorm基础教程.md)
 
 
 ## VSCode

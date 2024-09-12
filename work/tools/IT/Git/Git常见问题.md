@@ -23,7 +23,7 @@ Linux：`chown -R <current_user> <repo_folder>`
 
 方法三：设置 git 安全路径
 
-配置参数 `safe.directory`，具体参考 [Git配置基础教程](work/tools/Git/Git配置基础教程.md)。
+配置参数 `safe.directory`，具体参考 [Git配置基础教程](work/tools/IT/Git/Git配置基础教程.md)。
 
 
 ## 网络

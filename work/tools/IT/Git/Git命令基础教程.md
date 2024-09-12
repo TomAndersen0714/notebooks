@@ -153,7 +153,7 @@ git remote prune origin
 
 `--add`
 
-[Git配置基础教程](work/tools/Git/Git配置基础教程.md)
+[Git配置基础教程](work/tools/IT/Git/Git配置基础教程.md)
 
 ### git rebase
 

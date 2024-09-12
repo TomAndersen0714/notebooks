@@ -16,7 +16,7 @@
 1. 建议使用下载安装 JetBrains ToolBox 启动或升级 IDE
 2. 直接重启主机
 
-具体参考：[JetBrains常见问题解决方案](work/tools/JetBrains/JetBrains常见问题解决方案.md)
+具体参考：[JetBrains常见问题解决方案](work/tools/IT/JetBrains/JetBrains常见问题解决方案.md)
 
 ## 配置 Python 开发环境
 
@@ -213,7 +213,7 @@ File | Settings | Editor | General | Smart Keys | Reformat on Paste
 
 ## IDEA Debugger 调试
 
-[IDEA-Debug调试基础教程](work/tools/JetBrains/IDEA/IDEA-Debug调试基础教程.md)
+[IDEA-Debug调试基础教程](work/tools/IT/JetBrains/IDEA/IDEA-Debug调试基础教程.md)
 
 ## IDEA Git 使用技巧
 

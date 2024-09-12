@@ -11,7 +11,7 @@
 ## IDE 配置 JDK
 ### JetBrain IDEA
 
-[IDEA基础教程](work/tools/JetBrains/IDEA/IDEA基础教程.md)
+[IDEA基础教程](work/tools/IT/JetBrains/IDEA/IDEA基础教程.md)
 
 ### VSCode
 

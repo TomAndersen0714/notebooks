@@ -7,7 +7,7 @@
 
 ## GoLand
 
-[GoLand基础教程](work/tools/JetBrains/GoLand基础教程.md)
+[GoLand基础教程](work/tools/IT/JetBrains/GoLand基础教程.md)
 
 
 ## 参考链接
