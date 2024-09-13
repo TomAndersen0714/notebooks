@@ -1,7 +1,14 @@
 # Obsidian基础教程
 
 
-## 第三方插件
+## 核心功能
+
+### Canvas
+
+[知识管理神器 Obsidian，终于有了白板功能！ - 少数派](https://sspai.com/post/77463)
+[一起来看看大佬们的Obsidian白板（Canvas）使用案例分享 - 哔哩哔哩](https://www.bilibili.com/read/cv21024214)
+
+## 插件
 
 ### 常用插件
 
@@ -49,24 +56,24 @@ User-defined Regular Expression, one expression per line:
 \d+(:\d+)+|++
 ```
 
-## Canvas
-
-
-[知识管理神器 Obsidian，终于有了白板功能！ - 少数派](https://sspai.com/post/77463)
-[一起来看看大佬们的Obsidian白板（Canvas）使用案例分享 - 哔哩哔哩](https://www.bilibili.com/read/cv21024214)
-
 ## 数据同步方案
 
-### OneDrive
+### 对象存储
 
-目前 OneDrive 数据同步的方案并不成熟，其中主要的缺点在于 OneDrive 无法保存空文件，以及 Obsidian Remotely Save 插件无法同步一些以 `.git` 这类以 `.` 为开头的文件夹内容，相当于 git 中的内容无法同步。
-
-[obsidian全平台好用的保姆级免费同步方案\_obsidian onedrive-CSDN博客](https://blog.csdn.net/xiaozhuang0827/article/details/135267966)
-[Obsidian Remotely Save 插件+OneDrive 实现多平台同步 - 经验分享 - Obsidian 中文论坛](https://forum-zh.obsidian.md/t/topic/5291)
+[对象存储和传统存储的区别、对象存储OSS、COS、OBS的区别\_oss储存和一般储存的区别-CSDN博客](https://blog.csdn.net/qq_15821487/article/details/124926518)
+[知乎-obsidian第三方同步方案(remotely插件+腾讯云cos)-保姆级教程](https://zhuanlan.zhihu.com/p/479961754)
 
 ### 云盘
 
 阿里云盘、百度网盘等。
+
+
+### OneDrive
+
+目前 OneDrive 数据同步的方案并不成熟，其中主要的缺点在于 OneDrive 无法保存空文件，以及 Obsidian Remotely Save 插件无法同步一些以 `.git` 这类以 `.` 为开头的文件夹内容，相当于 `.git` 文件中的内容无法同步，即无法同步完整的 Git 仓库内容。
+
+[obsidian全平台好用的保姆级免费同步方案\_obsidian onedrive-CSDN博客](https://blog.csdn.net/xiaozhuang0827/article/details/135267966)
+[Obsidian Remotely Save 插件+OneDrive 实现多平台同步 - 经验分享 - Obsidian 中文论坛](https://forum-zh.obsidian.md/t/topic/5291)
 
 ## 参考链接
 
