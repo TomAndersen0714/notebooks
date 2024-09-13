@@ -35,3 +35,11 @@ Maven 下载指定依赖:
 mvn dependency:get -DgroupId="com.alibaba" -DartifactId="fastjson" -Dversion="1.2.70"
 mvn dependency:get -Dartifact="com.google.guava:guava:30.1.1-jre"
 ```
+
+
+## 参考链接
+
+1. [Maven – Available Plugins](https://maven.apache.org/plugins/index.html)
+2. [Maven: Common Maven Commands Reference #maven · GitHub](https://gist.github.com/adojos/f51a3e908b0fe65340b4e99ce3bf3b8e)
+3. [Apache Maven Dependency Plugin – Introduction](https://maven.apache.org/plugins/maven-dependency-plugin/index.html)
+4. [Site Unreachable](https://maven.apache.org/archetype/maven-archetype-plugin/index.html)
