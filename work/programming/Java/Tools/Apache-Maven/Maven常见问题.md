@@ -4,8 +4,8 @@
 ## Maven Dependency
 
 **问题描述:**
- - `ERROR Unresolved plugin: 'org.apache.maven.plugins:maven-assembly-plugin:2.2.1'`
- - `Plugin 'org.apache.maven.plugins:maven-source-plugin:2.2.1' not found`
+ - Maven Build 时报错： `ERROR Unresolved plugin: 'org.apache.maven.plugins:maven-assembly-plugin:2.2.1'`
+ - IDAE 中 pom.xml 文件报错： `Plugin 'org.apache.maven.plugins:maven-source-plugin:2.2.1' not found`
 
 **排查结果**：
 1. **问题原因*：
@@ -18,8 +18,8 @@
 		- 删除 Maven 本地 repository 中对应 plugin 的版本文件夹，并重启 IDEA。
 		- IDEA 中点击 `File | Invalidate caches`，清除缓存并重启。
 	- **解决方案（成功）**：手动使用官方 Maven 命令行工具下载缺失的 Plugin，并在 IDEA 中重新加载。
-		- 下载安装官方 Maven，并使用命令行安装对应的 Maven plugins。命令如下：`mvn dependency:get -Dartifact="ro.isdc.wro4j:wro4j-maven-plugin:1.8.0" -DrepoUrl=http://repo.maven.apache.org/maven2/`
-		- 进入菜单页 `File | Settings | Build, Execution, Deployment | Build Tools | Maven`，在 `Local repository` 选项处，点击 Overrride 后，或者直接重新打开 Project，即可重新加载本地 repository。
+		- 命令行下载 Dependency：下载安装官方 Maven，并使用命令行安装对应的 Maven plugins。命令如下：`mvn dependency:get -Dartifact="org.apache.maven.plugins:maven-javadoc-plugin:2.9.1" -DrepoUrl=http://repo.maven.apache.org/maven2/`
+		- 重新加载项目：进入菜单页 `File | Settings | Build, Execution, Deployment | Build Tools | Maven`，在 `Local repository` 选项处，点击 Overrride 后，或者直接重新打开 Project，即可重新加载本地 repository。
 	- **参考链接**：
 		- [java - Maven plugins can not be found in IntelliJ - Stack Overflow](https://stackoverflow.com/a/40308560/13774262)
 		- [Troubleshooting common Maven issues | IntelliJ IDEA Documentation](https://www.jetbrains.com/help/idea/troubleshooting-common-maven-issues.html#klwtar_1)
@@ -29,7 +29,7 @@
 ## Maven Version
  
 **问题描述**：
--  `ERROR 'parent.version' is either LATEST or RELEASE (both of them are being deprecated)`
+- Maven Build 时报错：`ERROR 'parent.version' is either LATEST or RELEASE (both of them are being deprecated)`
 **排查结果**：
 1. **问题原因**：
 	- 当使用 Maven 3.5.2 等版本时，IDEA 在 Load Project 时便会抛出类似信息，如 `[WARNING] 'dependencies.dependency.version' for <groupId>:<artifactId>:jar is either LATEST or RELEASE (both of them are being deprecated)`
@@ -41,7 +41,7 @@
 ## Maven Run
 
 **问题描述**：
-- Maven 项目编译完成后，点击 Run Main 方法时，却抛出异常 `ClassNotFoundException`
+- Maven Build 编译通过后，点击 Run Main 方法时，却抛出异常 `ClassNotFoundException`
 **问题原因**：
 - Maven 项目的配置文件 pom.xml 中对应的 Dependency 中的 scope 被命名为了除 `compile/runtime` 之外的其他 scope（比如 `provided`），其对应的 Dependency 依赖在编译时是不会一起打包的，这种场景适用于当前项目对应的依赖属于独立维护和部署的情况。
 **解决方案**：

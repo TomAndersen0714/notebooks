@@ -6,7 +6,9 @@
 ## Maven 命令行常用命令
 
 
-Maven 创建项目:
+Maven archetype:
+- 初始化项目
+- Generate a skeleton project structure from an archetype.
 ```bash
 # 基于指定 archetype 创建 Maven 项目
 mvn archetype:generate
@@ -25,20 +27,19 @@ mvn compile
 ```
 
 Maven install:
+- 构建项目，并将项目内容安装到本地 Repository，支持其他项目作为依赖 Dependency 引入
 - Builds the project and installs resulting artifacts (JAR, WAR, etc) into your local Maven repository
 ```
 mvn install
 mvn install -DskipTests # 跳过测试
 ```
 
-
-Maven 下载指定依赖:
-
-注意事项:
-- Id 参数需要加上双引号，否则在 Windows 命令行会传入错误参数。
+Maven dependency:
+- 下载指定依赖
+- 注意事项: 各项参数需要加上双引号，否则在 Windows 命令行会传入错误参数。
 ```bash
 mvn dependency:get -DgroupId="com.alibaba" -DartifactId="fastjson" -Dversion="1.2.70"
-mvn dependency:get -Dartifact="com.google.guava:guava:30.1.1-jre"
+mvn dependency:get -Dartifact="org.apache.maven.plugins:maven-javadoc-plugin:2.9.1"
 ```
 
 
