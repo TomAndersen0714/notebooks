@@ -1,5 +1,13 @@
 # SpringBoot 基础教程
 
+
+什么是 SpringBoot？
+
+为什么会出现 SpringBoot？
+
+站在前人的肩膀上：
+1. [GitHub - halo-dev/halo: 强大易用的开源建站工具。](https://github.com/halo-dev/halo)
+
 基于 Maven Wrapper 构建的项目结构参考：
 
 ```bash
