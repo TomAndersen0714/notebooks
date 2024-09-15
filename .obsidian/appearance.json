@@ -10,6 +10,8 @@
   "cssTheme": "",
   "enabledCssSnippets": [
     "code-inline",
-    "list-number"
+    "list-number",
+    "header-1",
+    "header-2"
   ]
 }

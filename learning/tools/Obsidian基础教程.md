@@ -1,6 +1,5 @@
 # Obsidian基础教程
 
-
 ## 核心功能
 
 ### Canvas
@@ -35,11 +34,14 @@ Excalidraw
 
 KanBan
 
+Git
+
+Trim Whitespace
 ### 常用插件配置
 
 Easy Typing
 
-User-defined Regular Expression, one expression per line: 
+User-defined Regular Expression, one expression per line:
 ```
 {{.*?}}|++
 \[\!.*?\][-+]{0,1}|-+
@@ -56,6 +58,12 @@ User-defined Regular Expression, one expression per line:
 \d+(:\d+)+|++
 ```
 
+## 样式修改
+
+[Obsidian主题样式修改半入门教学 - 经验分享 - Obsidian 中文论坛](https://forum-zh.obsidian.md/t/topic/180)
+
+Chrome 开发者工具打开对应快捷键“Ctrl+Shift+I”。
+
 ## 数据同步方案
 
 ### 对象存储
@@ -66,7 +74,6 @@ User-defined Regular Expression, one expression per line:
 ### 云盘
 
 阿里云盘、百度网盘等。
-
 
 ### OneDrive
 

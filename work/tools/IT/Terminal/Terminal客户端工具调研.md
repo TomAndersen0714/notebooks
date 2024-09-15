@@ -19,10 +19,7 @@ Shell与Terminal的关系，本人理解，可类比于网页和浏览器之间�
 3. FinalShell: https://www.hostbuf.com, Windows, Linux, MacOS
 4. MobaXterm: https://mobaxterm.mobatek.net, Windows
 
-
-
 ## 免费
-
 
 ### 非开源
 
@@ -40,9 +37,7 @@ Shell与Terminal的关系，本人理解，可类比于网页和浏览器之间�
 8. WindTerm: https://github.com/kingToolbox/WindTerm
 9. VScode remote-ssh: https://github.com/microsoft/vscode-remote-release
 10. WinSCP: https://github.com/winscp/winscp , Windows
-11. Alacritty: https://github.com/alacritty/alacritty 
-
-
+11. Alacritty: https://github.com/alacritty/alacritty
 
 ## 参考链接
 

@@ -1,7 +1,7 @@
 {
   "foldHeading": true,
   "showFrontmatter": true,
-  "showLineNumber": false,
+  "showLineNumber": true,
   "spellcheck": true,
   "spellcheckLanguages": null,
   "showInlineTitle": false,

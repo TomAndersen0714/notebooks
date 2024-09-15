@@ -4,7 +4,6 @@
 
 本文主要介绍 MergeTree 表引擎相关的索引功能，及其基础原理。
 
-
 ## 索引类型
 
 [Understanding ClickHouse Data Skipping Indexes | ClickHouse Docs](https://clickhouse.com/docs/en/optimize/skipping-indexes)
@@ -20,12 +19,11 @@
 
 ## 索引的原理
 
-[MergeTree | ClickHouse Docs #primary-keys-and-indexes-in-queries](https://clickhouse.com/docs/en/engines/table-engines/mergetree-family/mergetree#primary-keys-and-indexes-in-queries)
+[MergeTree | ClickHouse Docs | primary-keys-and-indexes-in-queries](https://clickhouse.com/docs/en/engines/table-engines/mergetree-family/mergetree#primary-keys-and-indexes-in-queries)
 
 ## 索引支持的函数(Functions support)
 
-[MergeTree #functions-support | ClickHouse Docs](https://clickhouse.com/docs/en/engines/table-engines/mergetree-family/mergetree/#functions-support)
-
+[MergeTree functions-support | ClickHouse Docs](https://clickhouse.com/docs/en/engines/table-engines/mergetree-family/mergetree/#functions-support)
 
 ## 参考链接
 1. [Understanding ClickHouse Data Skipping Indexes | ClickHouse Docs](https://clickhouse.com/docs/en/optimize/skipping-indexes)

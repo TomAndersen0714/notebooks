@@ -46,6 +46,6 @@ mvn dependency:get -Dartifact="org.apache.maven.plugins:maven-javadoc-plugin:2.9
 ## 参考链接
 
 1. [Maven – Available Plugins](https://maven.apache.org/plugins/index.html)
-2. [Maven: Common Maven Commands Reference #maven · GitHub](https://gist.github.com/adojos/f51a3e908b0fe65340b4e99ce3bf3b8e)
+2. [Maven: Common Maven Commands Reference · GitHub](https://gist.github.com/adojos/f51a3e908b0fe65340b4e99ce3bf3b8e)
 3. [Apache Maven Dependency Plugin – Introduction](https://maven.apache.org/plugins/maven-dependency-plugin/index.html)
 4. [Site Unreachable](https://maven.apache.org/archetype/maven-archetype-plugin/index.html)

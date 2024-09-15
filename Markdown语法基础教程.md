@@ -1,6 +1,5 @@
 # Markdown语法基础教程
 
-
 ## 基础语法
 
 ### 标题
@@ -12,8 +11,6 @@
 ##### 五级标题
 ###### 六级标题
 ```
-
-
 
 ### 文本样式
 ```
@@ -31,7 +28,6 @@ H~2~O is是液体。
 
 2^10^ 运算结果是 1024。
 ```
-
 
 *强调文本* _强调文本_
 
@@ -64,7 +60,6 @@ H~2~O is 是液体。
 
 ```
 
-
 ### 图片
 ```
 图片: ![Alt](https://img-home.csdnimg.cn/images/20220524100510.png)
@@ -75,13 +70,11 @@ H~2~O is 是液体。
 链接: [link](https://www.csdn.net/)
 ```
 
-
 ### 代码块
 ```javascript
 // An highlighted block
 var foo = 'bar';
 ```
-
 
 ### 表格
 ```
@@ -102,8 +95,6 @@ var foo = 'bar';
 手机  | $12
 导管  | $1
 
-
-
 ### 注脚
 ```
 一个具有注脚的文本。[^1]
@@ -111,10 +102,7 @@ var foo = 'bar';
 [^1]: 注脚的解释
 ```
 
-
-
 ## 高级语法
-
 
 ### Tex语法
 
@@ -127,7 +115,6 @@ $\sum_{x=0}^{n}$
 
 求和公式：$\sum_{x=0}^{n}$
 
-
 #### Tex公式块
 
 ```
@@ -135,7 +122,6 @@ $$
 $\ce{Zn^2+  <=>[+ 2OH-][+ 2H+]  $\underset{\text{amphoteres Hydroxid}}{\ce{Zn(OH)2 v}}$  <=>[+ 2OH-][+ 2H+]  $\underset{\text{Hydroxozikat}}{\ce{[Zn(OH)4]^2-}}$}$
 $$
 ```
-
 
 $$
 $\ce{Zn^2+  <=>[+ 2OH-][+ 2H+]  $\underset{\text{amphoteres Hydroxid}}{\ce{Zn(OH)2 v}}$  <=>[+ 2OH-][+ 2H+]  $\underset{\text{Hydroxozikat}}{\ce{[Zn(OH)4]^2-}}$}$
@@ -162,7 +148,6 @@ A[方形] -->B(圆角)
 
 从上至下
 
-
 ```mermaid
 flowchart TD
 A[方形] --> B(圆角)
@@ -170,8 +155,6 @@ A[方形] --> B(圆角)
     C --> |a=1| D[结果1]
     C --> |a=2| E[结果2]
 ```
-
-
 
 ##### 用户旅程图
 User Journey Diagram
@@ -198,7 +181,6 @@ title Pets adopted by volunteers
     "Rats" : 15
 ```
 
-
 ##### 甘特图
 
 ```mermaid
@@ -213,10 +195,9 @@ gantt
         another task    :24d
 ```
 
-
 #### PlantUML
 
-专业绘制 UML 图形的语法和开源工具，但并不算是流行，一般需要前端使用对应的工具才能进行文本解析和图像渲染。 
+专业绘制 UML 图形的语法和开源工具，但并不算是流行，一般需要前端使用对应的工具才能进行文本解析和图像渲染。
 
 https://github.com/plantuml/plantuml
 
@@ -249,9 +230,6 @@ Car <|-- GasolineCar
 
 @enduml
 ```
-
-
-
 
 ## 参考链接
 
