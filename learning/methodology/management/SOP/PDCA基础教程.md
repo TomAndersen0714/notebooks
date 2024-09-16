@@ -1,6 +1,6 @@
 # PDCA 基础教程
 
-戴明循环，也称为品质管理循环或 PDCA 循环。它是一个解决问题的周期流程，是一种 SOP (standard operating procedure) 范式。
+戴明循环，也称为品质管理循环或 PDCA 循环。它是一个解决问题的周期流程，是一种常用的 SOP (standard operating procedure) 设计范式。
 
 基于 PDCA 范式可以用于辅助构建各种 SOP 流程，实现流程的自我迭代。
 
