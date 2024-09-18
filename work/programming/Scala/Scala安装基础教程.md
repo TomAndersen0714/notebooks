@@ -1,6 +1,5 @@
 # Scala 安装基础教程
 
-
 ## 安装配置 JDK
 
 Scala 和 JDK 版本兼容性检查：

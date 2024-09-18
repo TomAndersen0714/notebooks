@@ -1,6 +1,5 @@
 # Gradle 安装基础教程
 
-
 ## Prerequisites
 
 Gradle至少需要 jdk8 及以上，使用`java -version`检查java版本。
@@ -10,22 +9,20 @@ Gradle至少需要 jdk8 及以上，使用`java -version`检查java版本。
 Gradle和Java的版本兼容表格
 https://docs.gradle.org/current/userguide/compatibility.html
 
-
 ## Installing
 
 ### Method1: Installing with a package manager
 
-Unix: 
+Unix:
 ```
 sdk install gradle
 ```
 
-MacOS: 
+MacOS:
 ```
 brew install gradle
 sudo port install gradle
 ```
-
 
 ### Method2: Installing manually
 
@@ -33,7 +30,6 @@ sudo port install gradle
 
 https://gradle.org/releases/
 此处直接下载binary-only(bin) 已编译安装包。
-
 
 #### Step2. Unpack the distribution
 
@@ -50,7 +46,6 @@ LICENSE  NOTICE  bin  README  init.d  lib  media
 Windows users
 使用解压工具，将压缩包内容解压到自定义路径下。
 
-
 #### Step 3. Configure your system environment
 
 编辑环境变量PATH，将Gradle bin文件夹路径添加到PATH中。
@@ -59,7 +54,6 @@ Linux & MacOS users
 ```bash
 export PATH=$PATH:/path/to/gradle-8.1.1/bin
 ```
-
 
 Windows users
 ```
@@ -97,7 +91,6 @@ JVM:          11.0.15.1 (Oracle Corporation 11.0.15.1+2-LTS-10)
 OS:           Windows 11 10.0 amd64
 ```
 
-
 ## Setting Environment
 
 ### GRADLE_USER_HOME
@@ -106,11 +99,9 @@ OS:           Windows 11 10.0 amd64
 
 如，设置为`$GRADLE_HOME$/.gradle`，即统一放置在Gradle安装路径下，其中`$GRADLE_HOME$`代表Gradle安装路径。
 
-
 ## Upgrading
 
 https://docs.gradle.org/current/userguide/upgrading_version_7.html
-
 
 ## Gradle In IDEA
 
@@ -127,8 +118,6 @@ https://docs.gradle.org/current/userguide/upgrading_version_7.html
 **JetBrains IDE 中无法更新 Windows System Environment 的方案，打开 Gradle 菜单和 Terminal 打印都无法显示正确的环境变量值**
 
 [IDEA常见问题](work/tools/IT/JetBrains/IDEA/IDEA常见问题.md)
-
-
 
 ## 参考链接
 
