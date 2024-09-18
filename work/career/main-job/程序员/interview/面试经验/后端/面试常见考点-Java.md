@@ -1,8 +1,6 @@
 # 面试常见考点-Java
 
-
 ## Java核心概念
-
 
 ### JVM
 
@@ -11,7 +9,6 @@
 
 - JVM 类加载过程
 [JVM类加载机制](work/programming/Java/JVM/JVM类加载机制.md)
-
 
 ### Java Collection
 
@@ -45,8 +42,6 @@ https://blog.csdn.net/Elroy1230/article/details/123681027
 
 - Java 中线程状态有哪些？是怎么变化流转的？
 [Javat-Thread线程的生命周期](work/programming/Java/API/Advanced/Concurrency/Javat-Thread线程的生命周期.md)
-
-
 
 ## 参考链接
 1. [BiliBili-【面试精选】美团大佬带你一周刷完 Java 面试八股文，比啃书效果好多了！](https://www.bilibili.com/video/BV1eD4y1w7Rp)
