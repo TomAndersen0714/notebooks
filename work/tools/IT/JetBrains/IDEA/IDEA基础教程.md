@@ -1,6 +1,5 @@
 # IDEA基础教程
 
-
 ## IDEA 安装
 
 建议初学者，自己申请，或者淘宝购买学生账号，支持 JetBrains 全家桶。
@@ -10,7 +9,6 @@
 `File | Settings | Project Structure | Platform Settings | SDKs | Add New SDK`
 
 将之前安装的 Java 对应的 JAVA_HOME 路径，作为 SDK 的路径，将 SDK 添加到 IDEA 中。
-
 
 **JetBrains IDE 中无法更新 System Environment 系统环境变量的解决方案：**
 1. 建议使用下载安装 JetBrains ToolBox 启动或升级 IDE
@@ -72,10 +70,15 @@ Java LomBok 是 Java 开发中的常用第三方注解框架，可以通过注�
 
 而 IDEA LomBok 插件，可以使得在编辑器中能正确识别对应的注解，以及调用其后续生成的代码时，编辑器静态代码检查时，不会报错。
 
+### MybatisX
+
+支持 MyBatis 中的语法提示，支持基于 IDEA DataBase 数据源的表结构自动生成 MyBatis/MyBatis Plus 代码和配置文件。
+
+[MyBatisX基础教程](work/component/Back-End/MyBatis/MyBatisX基础教程.md)
 
 ### Guice
 
-基于 Google Guice 框架开发的辅助插件
+基于 Google Guice 依赖注入框架开发的辅助插件。
 
 ## 修改配置
 
@@ -126,13 +129,11 @@ File | Settings | Editor | File Encodings
 
 `Transparent native-to-ascii conversion` 选项，取消勾选，避免在 IDEA 中自动将 ASCII 编码以视图的方式转换为中文，而编辑器内容写入文件时依旧是使用 ASCII 码值。
 
-
 ### Keymap
 
 File | Settings | Keymap
 
 删除或者调整快捷键配置 Plugins | Terminal | Close Tab，避免 Terminal 中 Bash 快捷键和 IDEA Terminal 快捷键发生冲突。
-
 
 ### Project
 
@@ -140,21 +141,19 @@ Project View - Options - Tree Appearance
 
 勾选 `Show Members`，`Folds Always on Top`
 
-
 ### Font
 
 `File | Settings | Editor | Font`
 
-Size: 15, Line height: 1.2。
-
-`typography settings | Fallback font`，设置为 `SimHei`
+1. `Size`: 13, `Line height`: 1.4。
+2. `Font`: `Hack`
+3. `typography settings | Fallback font`: `SimHei`
 
 ### Terminal
 
 `File | Settings | Tools | Terminal`
 
 `Application Settings` 中设置 `Shell Path`，来指定默认启动的 Terminal Shell。
-
 
 ### UI
 
@@ -185,7 +184,6 @@ File | Settings | Editor | General | Editor Tabs，Show tabs in multiple rows
 
 https://stackoverflow.com/a/72490630/13774262
 
-
 #### Highlighting Usages of element at caret
 
 编辑器中，高亮当前光标选中的元素
@@ -198,12 +196,10 @@ File | Settings | Editor | Code Editing | Highlighting on Caret Movement
 
 File | Settings | Editor | General | Appearance | Show whitespaces
 
-
 ### IDEA MaxHeapSize
 
 `Help | Edit Custom VM Options`
 https://blog.csdn.net/2301_76696220/article/details/134683935
-
 
 ### Close Reformat on Paste
 
