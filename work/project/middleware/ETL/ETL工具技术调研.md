@@ -1,5 +1,4 @@
-# ETL工具技术调研
-
+# ETL 工具技术调研
 
 数据同步工具、数据集成工具、数据ETL工具
 
@@ -17,8 +16,5 @@ https://github.com/apache/spark
 Apache Flink
 https://github.com/apache/flink
 
-
 sources:
 Pulsar Connector、RCP Connector、
-
-

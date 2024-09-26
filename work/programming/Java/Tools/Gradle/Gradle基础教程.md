@@ -1,6 +1,5 @@
 # Gradle 基础教程
 
-
 ## What is Gradle?
 
 Gradle 是一个开源的自动化构建工具，用于构建、测试和部署软件项目。它具有强大的灵活性和可扩展性，可以用于构建各种类型的项目，包括 Java、Kotlin、Groovy 等语言编写的应用程序、库和插件。
@@ -10,7 +9,6 @@ Gradle 基于 Groovy 和 Kotlin 语言的领域特定语言（DSL）进行构建
 Gradle 提供了强大的依赖管理机制，可以从远程仓库下载依赖库，并自动解决依赖冲突。它还支持增量构建，只编译和执行需要更新的部分，以加快构建速度。
 
 Gradle 是一个成熟且广泛使用的构建工具，在许多开发者和组织中得到了广泛应用。它与常见的集成开发环境（IDE）如 IntelliJ IDEA 和 Android Studio 集成良好，并提供了丰富的插件生态系统，以支持各种开发场景和工具集成。
-
 
 ### Design
 
@@ -26,7 +24,6 @@ IDE support
 
 Insight
 
-
 ### Terminology
 
 #### Projects
@@ -39,7 +36,6 @@ Task 中包含执行特定工作的逻辑，如编译代码、运行测试或部
 
 Task 主要由动作（Actions）、输入（Inputs）和输出（Outputs）组成。
 
-
 #### Plugins
 
 每个插件（Plugin），都对应着多个 Gradle Task。这些 Plugin 在 `build.gradle` 中被声明式引入，同时可以在脚本文件中定义对应的配置信息。每当引入某个 Plugin 时，则同时会引入其提供的 Gradle Task。
@@ -49,10 +45,6 @@ Task 主要由动作（Actions）、输入（Inputs）和输出（Outputs）组�
 插件使得在多个项目 Build 过程中可以重用逻辑和配置，减少构建脚本中的重复编写。通过适当地使用插件对构建过程进行建模，可以大大提高易用性和效率。
 
 此外插件（plugin）允许在构建中引入除 Task、File 和 dependency 之外的自定义概念，例如 source sets 等。
-
-
-
-
 
 #### Build Phases
 
@@ -71,7 +63,6 @@ Build 是执行 Gradle Project 中一系列 Task 的过程，用户可以通过 
 
 Gradle 配置文件（build. Gradle）中，定义了 Build 过程需要执行的 Task。Gradle 会根据需要的 Task 及其依赖关系，配置构建并运行最小的任务集合。
 
-
 #### DSL
 
 [Groovy基础教程](work/programming/Groovy/Groovy基础教程.md)
@@ -88,7 +79,6 @@ Gradle 项目根目录下的 `build.gradle.kts` 文件就是使用 Kotlin 语言
 
 尽管 Gradle 默认使用 Groovy 语言，但在 Gradle 社区中越来越多的项目开始转向使用 Kotlin 编写构建脚本，因为 Kotlin 具有更严格的类型检查和更强大的语言功能，可以提供更好的可维护性和可读性。
 
-
 ### Gradle Wrapper
 
 https://docs.gradle.org/current/userguide/gradle_wrapper.html
@@ -99,9 +89,7 @@ Gradle 官方推荐使用 Gradle Wrapper 来辅助执行 Build。Wrapper 是一�
 
 因此，使用 Wrapper 脚本，可以不需要事先手动全局安装 Gradle，可以直接通过调用该脚本来执行 Gradle Task，如构建 Project 等。Wrapper 脚本（`gradlew(.bat)`）通常和 Project 是强绑定的，不同的 Project 对应的 Wrapper 脚本通常也不同。
 
-
 ![](resources/images/Pasted%20image%2020230530221731.png)
-
 
 **使用 Gradle Wrapper 的优势，主要有以下几点**：
 1. 版本兼容：在特定版本的 Gradle 下编译 Project，使得 Build 过程更加可靠。由于 Gradle Wrapper 将 Gradle 的版本与 Project 一起绑定，可以确保 Project 在不同的开发环境中使用相同的 Gradle 版本执行 Build，从而避免由于 Gradle 版本不一致而导致的构建问题。
@@ -109,7 +97,6 @@ Gradle 官方推荐使用 Gradle Wrapper 来辅助执行 Build。Wrapper 是一�
 3. 简化 Build 环境配置：Gradle Wrapper 允许项目将 Gradle 的版本和配置文件捆绑在一起，使得每个项目都有自己独立的构建环境，不依赖于全局的 Gradle 安装。这样可以简化项目的配置和迁移，并且确保每个开发人员使用的是相同的 Gradle 版本。
 
 **PS：解耦可以使系统更灵活，聚合可以使系统更简单，切忌教条主义。**
-
 
 #### Create the Gradle Wrapper
 
@@ -129,12 +116,12 @@ distributionUrl=https\://services.gradle.org/distributions/gradle-8.1.1-bin.zip
 
 在 Gradle 项目中，使用 Gradle Wrapper 脚本，可以代替全局安装的 Gradle 来执行 Gradle Task
 
-Windows: 
+Windows:
 ```bash
 gradlew.bat build
 ```
 
-Unix: 
+Unix:
 ```
 gradlew build
 ```
@@ -154,7 +141,6 @@ Gradle Wrapper 支持通过执行 Gradle Task 升级 Wrapper 版本。
 ./gradlew wrapper --gradle-version 8.1.1
 ```
 
-
 ## Build Lifecycle
 
 Gradle 是一种基于依赖关系的编程范例，通过定义任务和任务之间的依赖关系来进行构建。Gradle 确保这些任务按照它们的依赖关系顺序执行。构建脚本和插件配置了这个依赖图。
@@ -163,7 +149,6 @@ Gradle 是一种基于依赖关系的编程范例，通过定义任务和任务�
 
 Gradle 每次 Build 都按照先后顺序执行三个阶段，initialization、configuration 和 execution。
 **PS: 直接命令行执行 gradle，即是开始执行 Build 过程。**
-
 
 #### Initialization
 
@@ -179,7 +164,6 @@ rootProject.name = 'basic'
 println 'This is executed during the initialization phase.'
 ```
 
-
 ##### Detect Settings File
 
 如果当前路径下未定位到 `settings.gradle(.kts)` 文件，Gradle 会在父级目录中定位配置文件
@@ -190,14 +174,12 @@ println 'This is executed during the initialization phase.'
 2. 确定需要添加进当前 Build 的 Sub-build
 3. 确定需要添加进当前 Project 的 Sub-project
 
-
 #### Configuration
 
 1. 读取被添加到当前 Build 中的每个 Project 对应的 Build 脚本文件 `build.gradle(.kts)`
 2. 针对 Build 脚本文件中声明的 Task，基于依赖关系，构建 Task Graph
 
-
-`build.gradle` example: 
+`build.gradle` example:
 ```Groovy
 println 'This is executed during the configuration phase.'
 
@@ -245,12 +227,11 @@ gradle.taskGraph.afterTask { Task task, TaskState state ->
 
 ```
 
-
 #### Execution
 
 基于 Configuration 阶段生成的 Task Graph，编排和执行 Task。其中可以包含 downloading libraries、compiling code、reading 和 writing。
 
-以下的 `build.gradle` example，演示了如何在 Task 执行过程中添加提示信息: 
+以下的 `build.gradle` example，演示了如何在 Task 执行过程中添加提示信息:
 ```Groovy
 tasks.register('ok')
 
@@ -274,7 +255,6 @@ gradle.taskGraph.afterTask { Task task, TaskState state ->
     }
 }
 ```
-
 
 ```bash
 > gradle -q broken
@@ -302,7 +282,6 @@ Execution failed for task ':broken'.
 BUILD FAILED in 0s
 ```
 
-
 ## Managed Directories
 
 https://docs.gradle.org/current/userguide/directory_layout.html
@@ -316,7 +295,6 @@ Gradle 主要使用 `gradle user home directory` 和 `project root directory` �
 可以通过修改 `GRADLE_USER_HOME` 环境变量，来改变 `Gradle user home directory` 的值。
 https://docs.gradle.org/current/userguide/build_environment.html#sec:gradle_environment_variables
 https://blog.mrhaki.com/2010/09/gradle-goodness-changing-gradle-user.html
-
 
 此文件夹的路径树，如下所示：
 ```bash
@@ -364,7 +342,6 @@ gradle.properties: Global Gradle configuration properties
 ```
 
 默认情况下，Gradle 会自动清理 `user home directory`。
-
 
 ### Project root directory
 
@@ -415,8 +392,6 @@ build.gradle or build.gradle.kts: Each subproject has its own Gradle build scrip
 
 和 `user home directory` 类似，默认情况下，Gradle 会自动清理 `project root directory`。
 
-
-
 ## Build Environment
 
 https://docs.gradle.org/current/userguide/build_environment.html
@@ -427,7 +402,17 @@ https://docs.gradle.org/current/userguide/build_environment.html
 
 ### System properties
 
+## Initializing Project
 
+[Part 1: Initializing the Project](https://docs.gradle.org/current/userguide/partr1_gradle_init.html#part1_begin)
+
+```bash
+
+mkdir authoring-tutorial
+cd authoring-tutorial
+gradle init --type java-application  --dsl groovy
+
+```
 
 ## Gradle Project Example
 
@@ -435,7 +420,6 @@ https://docs.gradle.org/current/samples/index.html
 
 ### Java
 https://docs.gradle.org/current/samples/sample_building_java_applications.html
-
 
 ## 参考链接
 1. [Gradle-Docs-What is Gradle?](https://docs.gradle.org/current/userguide/what_is_gradle.html)

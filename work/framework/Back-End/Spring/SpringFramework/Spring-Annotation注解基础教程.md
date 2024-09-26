@@ -10,7 +10,20 @@ Spring Framework:
 - [Spring注解@Transactional - 角刀牛Java - 博客园](https://www.cnblogs.com/jiaodaoniujava/p/17661395.html)
 
 Spring MVC:
-@Controller, @RequestMapping, @GetMapping, @PostMapping, @PutMapping, @DeleteMapping, @PatchMapping
+- Controller
+	- @Controller
+	- @GetMapping, @PostMapping, @PutMapping, @DeleteMapping, @PatchMapping
+	- @RequestMapping:
+		- `@RequestMapping (value="/path", method=RequestMethod.GET)` 是用于将被修饰的方法绑定到指定接口上
+	- @RequestBody:
+		- @RequestBody 注解修饰的参数，可以将 HTTP Request Body 反序列化为对应的 Java 对象
+		- [@RequestBody :: Spring Framework](https://docs.spring.io/spring-framework/reference/web/webmvc/mvc-controller/ann-methods/requestbody.html)
+	- @RequestParam:
+		- @RequestParam 注解主要用于从 HTTP Request Body 的 **表单数据（form-data）、URI 查询参数（query parameters）** 中获取参数值
+		- [@RequestParam :: Spring Framework](https://docs.spring.io/spring-framework/reference/web/webmvc/mvc-controller/ann-methods/requestparam.html)
+	- @ResponseBody:
+		- @ResponseBody 注解的作用是将 Controller 层方法的返回结果直接序列化到 HTTP Response Body 中
+		- [@ResponseBody :: Spring Framework](https://docs.spring.io/spring-framework/reference/web/webmvc/mvc-controller/ann-methods/responsebody.html)
 
 ## 参考链接
 

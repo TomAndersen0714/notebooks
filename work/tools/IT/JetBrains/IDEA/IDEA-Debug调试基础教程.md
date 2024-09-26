@@ -1,6 +1,5 @@
 # IDEA Debug 调试基础教程
 
-
 ## Breakpoints 的种类
 
 [Breakpoints | IntelliJ IDEA Documentation](https://www.jetbrains.com/help/idea/using-breakpoints.html#breakpoint-types)
@@ -41,7 +40,6 @@ https://www.bilibili.com/video/BV1Rm4y1P7j8
 
 如，程序抛出异常，则可以通过设置 Exception Breakpoint 异常断点全局定位抛出异常的代码行；如果想观察程序执行过程，则可以在想要设置的代码行处，设置最常见的 Line Breakpoint 行断点，Debug 时按行执行，观察程序。
 
-
 ![](resources/images/Pasted%20image%2020230916203939.png)
 
 ![](resources/images/Pasted%20image%2020230916204002.png)
@@ -64,7 +62,6 @@ https://www.bilibili.com/video/BV1Rm4y1P7j8
 
 ### 方法强制返回（Frame Force Return）
 
-
 在 Debug 过程中，如果某个方法执行一段后，不想再执行，可以直接右键点击 Debugger 中 Frames 窗口中的 Frame，选择“Force Return”直接执行 return 代码，如果方法的声明有返回值，则在执行“Force Return”的同时，还需要提供返回值的表达式。
 
 ![](resources/images/Pasted%20image%2020230916203842.png)
@@ -81,18 +78,15 @@ Debug 时，可以通过执行表达式功能（Evaluate Expression），来实�
 
 使用此功能时，需要注意的是，任何代码段都是在程序中实际执行过的，会实际影响到内存中的变量。
 
-
 ![](resources/images/Pasted%20image%2020230916204159.png)
 
 ![](resources/images/Pasted%20image%2020230916204248.png)
-
 
 ### 断点静音（Mute Breakpoints）
 
 在某些时候，不需要断点生效时候，可以通过 Mute Breakpoints 功能，将所有的断点静音，使得程序后续调试时不再在断点处中断，而是正常执行。此功能，在调试 Web App 接口时比较常用。
 
 ![](resources/images/Pasted%20image%2020240912214635.png)
-
 
 ### 断点条件（Condition）
 

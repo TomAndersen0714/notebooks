@@ -2,12 +2,30 @@
 
 ## Prerequisites
 
+Gradle 和 Java 的版本兼容表格
+https://docs.gradle.org/current/userguide/compatibility.html
+
 Gradle至少需要 jdk8 及以上，使用`java -version`检查java版本。
 
-### Compatibility
-
-Gradle和Java的版本兼容表格
-https://docs.gradle.org/current/userguide/compatibility.html
+| Java version | Support for toolchains | Support for running Gradle |
+|--------------|------------------------|----------------------------|
+| 8            | N/A                    | 2.0                        |
+| 9            | N/A                    | 4.3                        |
+| 10           | N/A                    | 4.7                        |
+| 11           | N/A                    | 5.0                        |
+| 12           | N/A                    | 5.4                        |
+| 13           | N/A                    | 6.0                        |
+| 14           | N/A                    | 6.3                        |
+| 15           | 6.7                    | 6.7                        |
+| 16           | 7.0                    | 7.0                        |
+| 17           | 7.3                    | 7.3                        |
+| 18           | 7.5                    | 7.5                        |
+| 19           | 7.6                    | 7.6                        |
+| 20           | 8.1                    | 8.3                        |
+| 21           | 8.4                    | 8.5                        |
+| 22           | 8.7                    | 8.8                        |
+| 23           | 8.10                   | 8.10                       |
+| 24           | N/A                    | N/A                        |
 
 ## Installing
 

@@ -1,7 +1,6 @@
 # Cookie、Session、Token 三者的区别和联系
 
-
-## HTTP 
+## HTTP
 
 标准 HTTP 协议是无状态 (Stateless) 的，各个 HTTP 请求之间相互独立。
 
@@ -33,9 +32,7 @@ Session 是一种在服务器端维护的会话状态管理机制，用于跟踪
 
 ## Token
 
-
 优势：安全性高，不依赖于 Cookie。
-
 
 ## 参考链接
 

@@ -1,6 +1,5 @@
 # Gradle 配置基础教程
 
-
 ## Gradle Wrapper 配置 Gradle 下载地址
 
 Gradle Wrapper 是和 Gradle 项目强制绑定的脚本工具，用于下载和使用指定版本的 Gradle 来执行各种 Gradle Task，其中 Gradle Wrapper 的配置文件默认为项目中的 `gradle/wrapper/gradle-wrapper.properties`。
@@ -12,9 +11,8 @@ https\://services.gradle.org/distributions/gradle-8.10.1-bin.zip
 
 建议更换为国内下载地址，或者企业内网地址，如腾讯云：
 ```
-https://mirrors.cloud.tencent.com/gradle/gradle-8.10.1-bin.zip
+https\://mirrors.cloud.tencent.com/gradle/gradle-8.10.1-bin.zip
 ```
-
 
 ## Gradle 配置 Maven 仓库地址
 
@@ -63,7 +61,6 @@ dependencies {
 gradle dependencies
 ./gradlew dependencies
 ```
-
 
 ### 全局生效
 

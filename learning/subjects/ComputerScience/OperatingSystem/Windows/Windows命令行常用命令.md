@@ -1,6 +1,5 @@
 # Windows命令行常用命令
 
-
 ## Windows Shell 常用命令
 
 ### 常用命令
@@ -27,15 +26,12 @@ netstat -ano | findstr "3306"
 `del` ：删除文件
 `where` ：查看可执行文件位置
 `echo` ：打印指定内容，如打印环境变量：`echo %GOPROXY%`
-
-
+`D:`：切换到指定磁盘根目录
 ### PowerShell
 
 `$env` ：打印环境变量，`$env:VariableName`，如：`$env:GOPROXY`
 
-
 ### WSL 常用命令
-
 
 WSL 查看系统版本：
 ```bash
@@ -73,9 +69,7 @@ wsl --update
 
 这些命令通常是针对 Windows 操作系统的。一些常见的 Windows 命令包括 dir（列出目录内容）、copy（复制文件）、del（删除文件）、echo（打印消息）等等。
 
-
 ## 参考链接
 1. [Microsoft-Windows Commands](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/windows-commands)
 2. [PowerShell Documentation](https://learn.microsoft.com/en-us/powershell/)
 3. [WiKi - Windows Batch Scripting](https://en.wikibooks.org/wiki/Windows_Batch_Scripting)
-

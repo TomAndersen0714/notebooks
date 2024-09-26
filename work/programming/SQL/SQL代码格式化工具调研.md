@@ -1,13 +1,10 @@
 # SQL 代码格式化工具调研
 
-
 ## 问题
 
 SQL 语言虽然有国际标准，但实际上业内的各个数据库中支持的 SQL 都不尽相同，故希望找一个能尽量兼容各种各样 SQL 语法的格式化工具。
 
-
 ## SQL 格式化模板示例
-
 
 ```sql
 select *
@@ -27,7 +24,6 @@ left join course_info c
 ```
 
 ## 工具调研
-
 
 ### SQLFluff
 
@@ -50,7 +46,6 @@ left join course_info c
 2. 代码检查和格式化速度太慢，不够轻量
 3. 检查和格式化 SQL 模板时，需要事先手动配置模板参数 dummy 值
 
-
 ### sql-formatter
 
 [GitHub - sql-formatter-org/sql-formatter: A whitespace formatter for different query languages](https://github.com/sql-formatter-org/sql-formatter)
@@ -67,8 +62,6 @@ left join course_info c
 
 缺点：
 1. 不支持SQL模板
-
-
 
 ### clickhouse-format
 
@@ -87,13 +80,9 @@ left join course_info c
 3. API 仅支持命令行 Cli、C++调用
 4. 仅支持 ClickHouse SQL
 
-
 ### 基于 ML 的代码格式化工具
 
 [GitHub - antlr/codebuff: Language-agnostic pretty-printing through machine learning (uh, like, is this possible? YES, apparently).](https://github.com/antlr/codebuff)
-
-
-
 
 ## 参考链接
 
