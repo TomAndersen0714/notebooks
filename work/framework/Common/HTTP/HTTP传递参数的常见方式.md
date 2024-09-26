@@ -14,7 +14,7 @@
 
 ## URL路径参数（Path Parameters）
 
-参数可以作为 URL 的一部分，直接嵌入在路径中。通常在 RESTful 风格的 API 中使用，用于标识资源的唯一标识符或参数。例如： http://example.com/api/resource/ {id}。
+参数可以作为 URL 的一部分，直接嵌入在路径中。通常在 RESTful 风格的 API 中使用，用于标识资源的唯一标识符或参数。例如： http://example.com/api/resource/{id}。
 
 应用场景：常用于传递表达层级结构、资源唯一标识符等参数。适合于 RESTful 风格的 API。
 

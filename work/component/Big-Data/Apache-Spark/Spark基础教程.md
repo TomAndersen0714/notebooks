@@ -1,6 +1,5 @@
 # Spark 基础教程
 
-
 ## Cluster Overview
 
 [Cluster Mode Overview - Spark 3.5.1 Documentation](https://spark.apache.org/docs/latest/cluster-overview.html)
@@ -11,7 +10,6 @@
 
 宽依赖：一个父 RDD 会对应多个子 RDD，即前后 RDD 的依赖关系是发散的。
 窄依赖：一个父 RDD 只会对应一个子 RDD，一个子 RDD 可以对应任意多个父 RDD，即前后 RDD 的依赖关系是收敛的。
-
 
 ## Shuffle
 
@@ -32,7 +30,6 @@ Spark 中每个 Stage 的每个 map/reduce side task 都会有唯一标识：map
 Application: Job =1: n
 Job: stage = 1: n
 Stage: task = 1: n
-
 
 Spark Application 中 Job 的 ID 从小到大顺序，即是 Job 在源码中提交的顺序，当 Job 提交之后，源码会继续向后执行，直到遇见下一个 Job。如果下一个 Job 依赖前一个 Job 生成的 RDD，则 Job 会等待前面的 Job 执行完成，否则会直接提交下一个 Job，同一个 Application 中多个 Job 之间可以并行执行。
 
@@ -61,11 +58,10 @@ YARN
 [Running Spark on YARN - Spark 3.5.0 Documentation](https://spark.apache.org/docs/latest/running-on-yarn.html)
 
 Mesos
-[Running Spark on Mesos - Spark 3.5.0 Documentation](https://spark.apache.org/docs/latest/running-on-mesos.html) 
+[Running Spark on Mesos - Spark 3.5.0 Documentation](https://spark.apache.org/docs/latest/running-on-mesos.html)
 
 K8S
 [Running Spark on Kubernetes - Spark 3.5.0 Documentation](https://spark.apache.org/docs/latest/running-on-kubernetes.html)
-
 
 ## 参考链接
 1. [Apache Spark™ - Unified Engine for large-scale data analytics](https://spark.apache.org)

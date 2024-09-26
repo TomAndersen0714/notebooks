@@ -16,10 +16,10 @@ Spring MVC:
 	- @RequestMapping:
 		- `@RequestMapping (value="/path", method=RequestMethod.GET)` 是用于将被修饰的方法绑定到指定接口上
 	- @RequestBody:
-		- @RequestBody 注解修饰的参数，可以将 HTTP Request Body 反序列化为对应的 Java 对象
+		- @RequestBody 注解修饰的参数，可以将 HTTP Request Body 反序列化为对应的 Java 对象，一般用于处理 `Content-Type=application/json` 类型的请求体
 		- [@RequestBody :: Spring Framework](https://docs.spring.io/spring-framework/reference/web/webmvc/mvc-controller/ann-methods/requestbody.html)
 	- @RequestParam:
-		- @RequestParam 注解主要用于从 HTTP Request Body 的 **表单数据（form-data）、URI 查询参数（query parameters）** 中获取参数值
+		- @RequestParam 注解主要用于从 HTTP Request Body 的 **URI 查询参数（query parameters）、表单数据（form-data）** 中获取参数值
 		- [@RequestParam :: Spring Framework](https://docs.spring.io/spring-framework/reference/web/webmvc/mvc-controller/ann-methods/requestparam.html)
 	- @ResponseBody:
 		- @ResponseBody 注解的作用是将 Controller 层方法的返回结果直接序列化到 HTTP Response Body 中

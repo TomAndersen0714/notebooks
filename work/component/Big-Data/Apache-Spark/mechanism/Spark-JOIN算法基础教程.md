@@ -1,8 +1,6 @@
 # Spark JOIN 算法基础教程
 
-
 ## BroadCast Join
-
 
 Spark SQL 中 BroadCast Join 自动触发的必要条件：
 1. Join 的种类必须满足特定条件
