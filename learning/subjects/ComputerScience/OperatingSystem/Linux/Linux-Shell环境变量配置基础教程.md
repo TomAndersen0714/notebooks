@@ -1,6 +1,5 @@
 # Linux Shell 环境变量配置基础教程
 
-
 ## 前言
 
 在 Linux 中，不同的 Shell 的环境配置文件也是不同的。以 Bash（Bourne Again SHell）和 Sh（Bourne SHell）为例，虽然 Bash 可以运行大部分 Sh 脚本，并且在大多数 Linux 系统中，默认使用 Bash 作为默认 Shell，但它们加载的环境配置文件是不同的。
@@ -8,7 +7,6 @@
 如果你使用的是 Bash 作为默认 Shell，那么除了系统级别的配置文件，可能还会执行 `~/.bash_profile, ~/.bash_login, and ~/.profile`。
 
 如果你使用的是 Sh 作为默认 Shell，那么只有 `~/.profile` 会被加载和执行。
-
 
 ## login shell, non-login shell
 
@@ -20,7 +18,6 @@
 1. 在某个 Terminal 中新建标签页，此时不需要输入账号密码，即运行了一个 non-login shell；
 2. 又如，在已经运行的 bash 中，再次运行 bash 命令进入新的 bash 命令行，也是属于 non-login shell；
 3. 又如，直接使用 `su <user>` 命令切换 Linux 用户，默认情况下，也是运行一个新的 non-login shell。
-
 
 ## login shell读取的环境配置文件
 
@@ -35,7 +32,6 @@
 2. `/etc/profile.d/*.sh`：/etc/profile. D 文件夹下的所有. Sh 文件
 3. `/etc/sysconfig/i18n`
 
-
 ### ~/.bash_profile, ~/.bash_login, and ~/.profile
 
 login Shell 在读取完 `/etc/profile` 之后，便会按照 `~/.bash_profile, ~/.bash_login, and ~/.profile` 的顺序读取用户级别的配置文件，并依次选择首个存在的文件读取并执行。
@@ -43,7 +39,6 @@ login Shell 在读取完 `/etc/profile` 之后，便会按照 `~/.bash_profile, 
 Bash 的 `--noprofile` 选项，可以抑制此动作。
 
 一般情况下 `~/.bash_profile` 文件中，还会包含类似于 `if [ -f ~/.bashrc ]; then . ~/.bashrc; fi` 命令，用于读取和执行 `~/.bashrc` 文件中的命令。
-
 
 ## non-login shell读取的环境配置文件
 
@@ -57,7 +52,6 @@ Bash 的 `--noprofile` 选项，可以抑制此动作。
 ```
 -bash-3.2$
 ```
-
 
 ## 查看环境变量
 
