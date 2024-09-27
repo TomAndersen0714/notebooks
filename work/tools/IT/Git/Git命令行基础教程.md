@@ -1,5 +1,4 @@
-# Git 命令基础教程
-
+# Git 命令行基础教程
 
 ## 简介
 
@@ -60,9 +59,7 @@ collaborate (see also: git help workflows)
 
 ### git init
 
-
 ### git clone
-
 
 `-b <name>, --branch <name>`
 ```
@@ -78,30 +75,22 @@ git clone -b v1.55.1 https://github.com/grpc/grpc-java
 git clone --depth 1 https://github.com/grpc/grpc-java
 ```
 
-
 ### git fetch
 
 `--all` ：获取所有 remote 的跟新到本地
 ### git pull
 
-
 ### git add
-
 
 ### git commit
 
-
 `--amend` ：将当前 stage 内的内容，提交并合并到最近的一次 commit 中，此命令只能合并到最近一次的 commit，如果要合并到更远的 commit 中，则需要使用 git rebase 命令，先跳转到历史的 commit，然后再进行合并，并重新生成新的后续的历史 commit。
-
 
 ### git stash
 
-
 ### git push
 
-
 ### git branch
-
 
 `-vv` ：显示分支详细信息
 `-a`：显示所有分支
@@ -112,7 +101,6 @@ git branch -u <remote-name>/<remote-branch>
 git branch -u <remote-name>/<remote-branch> <local-branch>
 ```
 
-
 ### git merge
 
 `--suqash` : This allows you to create a single commit on top of the current branch whose effect is the same as merging another branch (or more in case of an octopus). 使用此选项时，会将源分支的代码保先存在 stage 区域，而不是直接复制 commit log 到目标分支。因为，使用此命令后，你可以选择任意内容进行 commit，或者仅提交一次 commit，来减小 merge 时的日志。
@@ -122,22 +110,33 @@ git branch -u <remote-name>/<remote-branch> <local-branch>
 
 `-l | --list` : List tags. With optional `<pattern>...`, e.g.  git tag --list `'v-*'`, list only the tags that match the Pattern (s).
 
-
 ### git remote
-
 
 `git remote set-url` ：给现有 remote 添加 push URL，即支持 `git push` 时同时推送多个仓库：
 ```bash
 git remote set-url --add origin git@gitee.com:TomAndersen/notebooks.git
 ```
 
-`git remote prune` ：清理 remote 中的已删除分支
+`git remote prune` ：清理 remote repository 中的已删除分支
 ```bash
 git remote prune origin
 ```
 
-### git show
+`git remote add`: 添加 remote repository URL
+```bash
+git remote add origin_new git@github.com:TomAndersen0714/python-projects.git
+```
 
+`git remote remove`: 删除 remote repository URL
+```bash
+git remote remove origin_new
+```
+
+`git remote rename`: 重命名 remote repository URL 别名
+```bash
+git remote rename origin origin_new
+```
+### git show
 
 ## 高级命令
 
@@ -188,7 +187,6 @@ Rebase 的行为可以大致分为三类：
 3. 第三类：不保留，直接删除 commit
 	1. Drop：标记为 skip 的 commit 会直接被删除，就相当于这次 commit 从来没有发生过。同时，这个 commit 中涉及的所有代码修改全部会被删除。
 
-
 ### git rm
 
 ```shell
@@ -201,14 +199,12 @@ git rm --cached <file>
 git rm -r --cached <dir>
 ```
 
-
 ### git diff
 
 查看上次操作中发生过变更的文件名
 ```bash
 git diff --name-only HEAD@{1}..HEAD
 ```
-
 
 ### git submodule
 
