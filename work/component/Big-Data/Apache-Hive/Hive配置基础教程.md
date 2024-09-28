@@ -25,6 +25,7 @@
 
 `hive.server2.thrift.port`
 - Bind host on which to run the HiveServer2 Thrift interface. Can be overridden by setting `$HIVE_SERVER2_THRIFT_BIND_HOST`.
+- 此端口，同时也是 HiveServer2 的 JDBC 端口，支持 JDBC 协议
 - Default Value: `10000`
 - Added In: Hive 0.11.0 with [HIVE-2935](https://issues.apache.org/jira/browse/HIVE-2935)
 

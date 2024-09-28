@@ -32,7 +32,7 @@ Hive on Spark 相比于 Hive on MR，一般会拆分为更少的 stage，因为 
 
 ## Hive CLI
 
-[HiveCLI基础教程](work/component/Big-Data/Apache-Hive/CLI/HiveCLI基础教程.md)
+[HiveCLI命令行基础教程](work/component/Big-Data/Apache-Hive/CLI/HiveCLI命令行基础教程.md)
 
 ### 参考链接
 1. [Apache Hive](https://hive.apache.org/)
