@@ -1,6 +1,5 @@
 # Hive 开发基础教程
 
-
 ## 开发环境搭建
 
 [Hive开发环境搭建基础教程](work/component/Big-Data/Apache-Hive/Hive开发环境搭建基础教程.md)
