@@ -8,7 +8,6 @@
 
 ## 配置 Pip repository 源
 
-
 **方法 1：通过 `pip config` 命令修改配置文件内容**
 
 ```shell
@@ -16,10 +15,9 @@ pip config set --global global.index-url https://mirrors.aliyun.com/pypi/simple/
 pip config set --global global.trusted-host mirrors.aliyun.com
 ```
 
+**方法 2 ：手动修改配置文件**
 
-**方法 2 ：手动修改配置文件（配置优先级为升序）**
-
-Unix:
+Unix (配置优先级为升序):
 1. Global
 	1. In a “pip” subdirectory of any of the paths set in the environment variable XDG_CONFIG_DIRS (if it exists), for example `/etc/xdg/pip/pip.conf`.
 	2. This will be followed by loading `/etc/pip.conf`.
@@ -35,15 +33,14 @@ Unix:
 index-url=https://mirrors.aliyun.com/pypi/simple/
 ```
 
-
 **方法 3：通过 `-i` 参数指定本次使用下载源**
 
 ```shell
 pip install <package name> -i <mirror_url>
 ```
 
-
 **常用 PyPI 源镜像 URL**：
+
 1. 阿里云： https://mirrors.aliyun.com/pypi/simple/
 2. 清华： https://pypi.tuna.tsinghua.edu.cn/simple/
 3. 中国科技大学： https://pypi.mirrors.ustc.edu.cn/simple/
@@ -51,14 +48,12 @@ pip install <package name> -i <mirror_url>
 5. 山东理工大学： http://pypi.sdutlinux.org/
 6. 豆瓣： http://pypi.douban.com/simple/
 
-
 ## 配置 Model 安装路径
 
 **pip 的 module 默认安装路径 `site-packages` 和 `dist-packages` 的区别**：
 1. Dist-packages 是 Debian/Ubuntu 等 Linux 发行版的默认 Python 模块安装文件夹，即 `APT` 等包管理工具安装的 pip，默认 Python 模块安装路径为 `/usr/local/lib/pythonX.X/dist-packages`。 [参考链接](https://blog.csdn.net/huiseguiji1/article/details/45111891)
 2. Site-packages 是 RHEL/CentOS 等 Linux 发行版的默认 Python 模块安装文件夹，即 `YUM` 等包管理工具安装的 pip，默认 Python 模块安装路径为 `/usr/local/lib/pythonX.X/site-packages`。
 3. 通过编译源码安装的 pip 工具 Python 模块默认安装路径和 YUM 相同。[参考链接](https://blog.csdn.net/huiseguiji1/article/details/45111891)
-
 
 ## 参考链接
 1. [Configuration - pip documentation v24.0](https://pip.pypa.io/en/stable/topics/configuration/)

@@ -1,5 +1,4 @@
-# Python Interpreter Path 基础教程
-
+# Python Path 基础教程
 
 ## sys.path
 

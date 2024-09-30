@@ -20,8 +20,6 @@ Pip3 和 pip 的命令大部分都相同，`pip3` 和 `pip` 通常可以直接�
 
 [Python-pip配置基础教程](work/programming/Python/CLI/Python-pip配置基础教程.md)
 
-
-
 ## Pip 常用命令
 
 [Python-pip命令基础教程](work/programming/Python/CLI/Python-pip命令基础教程.md)

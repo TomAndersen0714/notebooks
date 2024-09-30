@@ -1,6 +1,5 @@
 # 基于Docker搭建Python开发环境
 
-
 ## 前言
 
 本文主要介绍基于Docker构建Python开发环境教程，便于开发环境的分发和快速部署，避免环境的重复安装、实现开发环境统一，以及支持通过IDE进行Python的远程开发。
@@ -18,5 +17,3 @@ docker pull python:3.6.8-alpine3.10
 设置容器CMD为运行SSH Server，以及运行Bash
 
 3. 使用PyCharm的SSH Interpreter连接镜像进行开发
-
-

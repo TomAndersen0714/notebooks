@@ -1,6 +1,7 @@
 # Python-pip 命令基础教程
 
 [Commands - pip documentation v24.0](https://pip.pypa.io/en/stable/cli/)
+
 ## Install
 
 1. **pip 升级 pip 命令**：`pip3 install--upgrade pip`
@@ -15,16 +16,13 @@
 
 ## Freeze
 
-
 1. **pip3 freeze**
 	1. 提取并生成当前 Python 环境中所包含的所有 Python 包
 	2. `pip3 freeze> <filename>`，如 `pip3 freeze > requirements.txt`。导出当前 Python 环境模块到 `requirements.txt` 文件中，通常用于 Python 环境迁移
 
 PS：如果想要导出一个 Python 项目所依赖的包，可以使用 `pipreqs` 工具，此工具可以扫描项目，找出项目实际使用的包，并生成 `requirements.txt` 文件。安装命令 `pip install pipreqs`，使用方式 `pipreqs <path>`。[How to use a Custom PyPi server? · Issue #222 · bndr/pipreqs · GitHub](https://github.com/bndr/pipreqs/issues/222#issuecomment-1206003850)
 
-
 ## List
-
 
 1. **pip3 list**
 	1. 查看已安装的 Python 模块（包），命令格式 `pip3 list`。加上 `--format=columns` 可以实现按列格式化输出，即 `pip3 list --format=columns`
@@ -36,7 +34,6 @@ PS：如果想要导出一个 Python 项目所依赖的包，可以使用 `pipre
 	1. 在 Global 对应的配置文件中，增加对所有子命令生效的配置： `pip config set --global global.index-url https://mirrors.aliyun.com/pypi/simple/`
 
 [pip config - pip documentation v24.0](https://pip.pypa.io/en/stable/cli/pip_config/)
-
 
 ## 参考链接
 1. [Commands - pip documentation v24.0](https://pip.pypa.io/en/stable/cli/)
