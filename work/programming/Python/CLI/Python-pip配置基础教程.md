@@ -8,14 +8,14 @@
 
 ## 配置 Pip repository 源
 
-**方法 1：通过 `pip config` 命令修改配置文件内容**
+**方法 1：通过配置文件配置-通过 `pip config` 命令修改**
 
 ```shell
 pip config set --global global.index-url https://mirrors.aliyun.com/pypi/simple/
 pip config set --global global.trusted-host mirrors.aliyun.com
 ```
 
-**方法 2 ：手动修改配置文件**
+**方法 2 ：通过配置文件配置-手动修改**
 
 Unix (配置优先级为升序):
 1. Global
@@ -33,10 +33,20 @@ Unix (配置优先级为升序):
 index-url=https://mirrors.aliyun.com/pypi/simple/
 ```
 
-**方法 3：通过 `-i` 参数指定本次使用下载源**
+**方法 3：通过命令行选项 `-i` 指定本次使用下载源**
 
 ```shell
 pip install <package name> -i <mirror_url>
+```
+
+**方法 4：通过环境变量配置- `PIP_INDEX_URL`**
+
+```
+# linux
+export PIP_INDEX_URL=https://pypi.tuna.tsinghua.edu.cn/simple
+
+# windows
+set PIP_INDEX_URL=https://pypi.tuna.tsinghua.edu.cn/simple
 ```
 
 **常用 PyPI 源镜像 URL**：

@@ -1,9 +1,8 @@
 # PyCharm 基础教程
 
-
 ## 安装 Python
 
-[Python基础教程](work/programming/Python/Python基础教程.md)
+[Python安装基础教程](work/programming/Python/Python安装基础教程.md)
 
 ## 安装 PyCharm
 
@@ -42,7 +41,6 @@ Microsoft Github AI 编程神器。
 
 ## 修改配置
 
-
 添加 Python Interpreters
 
 设置 Python Interpreter Path（可选）
@@ -50,11 +48,9 @@ Microsoft Github AI 编程神器。
 
 ## 常见问题
 
-
 ### 远程解释器无法使用
 
 创建 Remote SSH Interpreter 时，建议优先选择虚拟环境（没有，则需要在开发机服务器上创建，一般每个项目都有独立的 Python 虚拟环境，保证环境隔离），如果选择系统环境，可能导致无法正常使用。
-
 
 ### 远程解释器无法设置 Path Mapping
 

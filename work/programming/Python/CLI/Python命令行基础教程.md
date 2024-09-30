@@ -26,18 +26,7 @@ python -m site
 python3 -c "import os; print(os.getcwd())"
 ```
 
-**Python的模块安装路径site-packages 和dist-packages的区别**：
-dist-packages是 Debian/Ubuntu 等Linux发行版的默认Python模块安装文件夹。
-site-packages 是 RHEL/CentOS 等Linux发行版的默认Python模块安装文件夹。
-PS：Debian/Ubuntu 使用“pip、pip3”或者“easy_install”安装的模块 package 默认存放在“/usr/local/lib/python2.7/dist-packages”路径下
-PS：[参考链接](https://blog.csdn.net/huiseguiji1/article/details/45111891)
 
 **Python 安装 Python 虚拟环境**：
 
-[官方教程](https://packaging.python.org/tutorials/installing-packages/#creating-virtual-environments)
-
-创建 Python 虚拟环境的目的是为了实现 Python 运行环境的隔离，支持分离部署不同的模块。
-
-可以使用 Python3 自带工具 venv：创建 Python 虚拟环境 `python3 -m venv <env dir>`，加载虚拟环境的环境变量 `source <env_dir>/bin/activate`。
-
-需要删除 Python 虚拟环境时，直接删除对应的虚拟环境文件夹即可。
+[Python虚拟环境基础教程](work/programming/Python/Python虚拟环境基础教程.md)

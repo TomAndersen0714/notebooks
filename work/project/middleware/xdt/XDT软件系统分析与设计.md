@@ -1,10 +1,9 @@
-# XDT 软件系统分析与设计
+# XDT 软件分析与设计
 
 [面向对象软件分析与设计基础教程](work/methodology/Software-Engineering/Analysis-and-Design/Software-Analysis-and-Design/Object-Oriented-Design/面向对象软件分析与设计基础教程.md)
 
 RPC Connector:
 应该将 RCP 接口数据抽象成 RPC connector ，数据同步工具，仅仅支持简单的数据同步，SQL RPC 仅仅是通过 RPC 传递 SQL 参数的一种 connector 罢了
-
 
 ## 软件设计
 
@@ -27,18 +26,13 @@ RPC Connector:
 缓存组件：Cachetools
 https://github.com/tkem/cachetools
 
-
 ### 软件详细设计
 
-
 消息数据有多种状态，需要建立 UML 状态机图来进行区分
-
-
 
 ### 数据库设计
 
 由于缺少专业的软件开发设计思想，xplat-data-transfer 在设计之初，并未考虑到数据的持久化存储，这是一个很关键的部分，和写算法不同，实际的应用程序中，为了支持数据的可恢复，保障数据的持久性，一般都会进行数据库设计，而不是像写算法一样，将所有数据都丢到内存中。
-
 
 #### 有状态应用和无状态应用的区别
 

@@ -23,3 +23,11 @@ Pip3 和 pip 的命令大部分都相同，`pip3` 和 `pip` 通常可以直接�
 ## Pip 常用命令
 
 [Python-pip命令基础教程](work/programming/Python/CLI/Python-pip命令基础教程.md)
+
+## 常见问题
+
+**Python 的模块安装路径 site-packages 和 dist-packages 的区别**：
+- Dist-packages 是 Debian/Ubuntu 等 Linux 发行版的默认 Python 模块安装文件夹。
+- Site-packages 是 RHEL/CentOS 等 Linux 发行版的默认 Python 模块安装文件夹。
+- Debian/Ubuntu 使用“pip、pip 3”或者“easy_install”安装的模块 package 默认存放在“/usr/local/lib/python 2.7/dist-packages”路径下
+- [参考链接](https://blog.csdn.net/huiseguiji1/article/details/45111891)

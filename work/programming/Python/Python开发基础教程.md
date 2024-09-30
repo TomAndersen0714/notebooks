@@ -14,7 +14,7 @@
 
 [Python开发环境搭建基础教程](work/programming/Python/Python开发环境搭建基础教程.md)
 
-### 创建项目 requirements.txt
+### 生成 requirements.txt
 
 `requirements.txt` 文件是一个用于记录 Python 项目所依赖的软件包及其版本信息的文本文件。可以用于快速环境部署。
 
@@ -45,5 +45,9 @@ https://blog.csdn.net/smilehappiness/article/details/117337943
 
 ## 发布（Distribution）
 
+### Package
+[Overview of Python Packaging - Python Packaging User Guide](https://packaging.python.org/en/latest/overview/)
+发布
+### Binary
 Pyinstaller
 [Pyinstaller基础教程](work/programming/Python/CLI/Pyinstaller基础教程.md)

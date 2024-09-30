@@ -42,6 +42,21 @@ virtualenv <DIR>
 <DIR>\Scripts\activate
 ```
 
+### pipenv
+
+Pipenv 是 Pip 和 Venv 工具的结合升级版，用于进行 Python 项目的虚拟环境创建和依赖管理。
+
+[Pipenv](https://packaging.python.org/en/latest/key_projects/#pipenv) is a dependency manager for Python projects. If you’re familiar with Node.js ’ [npm](https://www.npmjs.com/) or Ruby’s [bundler](https://bundler.io/), it is similar in spirit to those tools.
+
+While [pip](https://packaging.python.org/en/latest/key_projects/#pip) alone is often sufficient for personal use, Pipenv is recommended for collaborative projects as it’s a higher-level tool that simplifies dependency management for common use cases.
+
+安装 pipenv：
+```shell
+pip install pipenv
+```
+
+
+
 ## 参考链接
 
 1. [Installing Packages - Python Packaging User Guide](https://packaging.python.org/tutorials/installing-packages/#creating-virtual-environments)
