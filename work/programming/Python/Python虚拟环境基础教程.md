@@ -1,6 +1,10 @@
 # Python 虚拟环境基础教程
 
-创建 Python 虚拟环境的目的是为了实现 Python 运行环境的隔离，支持环境隔离不同版本的模块。需要删除 Python 虚拟环境时，直接删除对应的虚拟环境文件夹即可。
+在 Python 中，同一个 Python 解释器下只能安装某单个版本的 python package，即项目使用同一个 Python 环境时，也只能同时 import 某单个版本的 python package 作为依赖。（而在 Java 中可以通过 Maven、Gradle 来控制项目依赖的版本，同时支持多种版本依赖）
+
+而在不同项目中，各自依赖的同名 package 其版本通常也不相同， Python 虚拟环境就是为了通过环境隔离，支持不同的项目中依赖和使用不同版本的模块。
+
+需要卸载 Python 虚拟环境时，直接删除对应的虚拟环境文件夹即可。
 
 [官方教程](https://packaging.python.org/tutorials/installing-packages/#creating-virtual-environments)
 
@@ -54,8 +58,6 @@ While [pip](https://packaging.python.org/en/latest/key_projects/#pip) alone is
 ```shell
 pip install pipenv
 ```
-
-
 
 ## 参考链接
 

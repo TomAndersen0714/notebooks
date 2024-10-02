@@ -16,18 +16,7 @@
 
 ### 生成 requirements.txt
 
-`requirements.txt` 文件是一个用于记录 Python 项目所依赖的软件包及其版本信息的文本文件。可以用于快速环境部署。
-
-导出当前 Python 环境下的所有 package 信息：
-1.  `pip freeze > requirements.txt`。
-导出指定文件路径下的所有 package 信息：
-1. `pip install pipreqs`
-2. `pipreqs /path/to/project --encoding=utf8--force`。
-
-PS：使用 `freeze` 和 `pipreqs` 工具，一般都无法直接导出 package 的真实名称，通常还需要人工检查 `requirements.txt` 文件，确定 package 名称和实际的一致。
-
-安装 `requirements.txt` 中指定的 package：` pip install -r requirements. Txt `。
-
+[Python如何生成requirement.txt文件](work/programming/Python/solution/Python如何生成requirement.txt文件.md)
 ### Python Application
 
 Python 应用程序，即带有 main 入口的，如 Web Application、CLI Tool 等。
