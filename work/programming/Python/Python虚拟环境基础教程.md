@@ -1,10 +1,10 @@
 # Python 虚拟环境基础教程
 
-在 Python 中，同一个 Python 解释器下只能安装某单个版本的 python package，即项目使用同一个 Python 环境时，也只能同时 import 某单个版本的 python package 作为依赖。（而在 Java 中可以通过 Maven、Gradle 来控制项目依赖的版本，同时支持多种版本依赖）
+在同一个 Python 环境中，只能安装某单个版本的 package ，也只能 import 某单个版本的 python package 作为依赖。而在 Java 中却可以通过 Maven、Gradle 来控制项目依赖的版本，同时支持多种版本依赖。
 
-而在不同项目中，各自依赖的同名 package 其版本通常也不相同， Python 虚拟环境就是为了通过环境隔离，支持不同的项目中依赖和使用不同版本的模块。
+在不同 Python 项目中，经常会出现各自依赖的同名 package 其版本不同的情况，而 Python 虚拟环境就是为了通过环境隔离，支持不同的项目中依赖和使用不同版本的模块。
 
-需要卸载 Python 虚拟环境时，直接删除对应的虚拟环境文件夹即可。
+当需要卸载 Python 虚拟环境时，直接删除对应的虚拟环境文件夹即可。
 
 [官方教程](https://packaging.python.org/tutorials/installing-packages/#creating-virtual-environments)
 
@@ -48,16 +48,13 @@ virtualenv <DIR>
 
 ### pipenv
 
-Pipenv 是 Pip 和 Venv 工具的结合升级版，用于进行 Python 项目的虚拟环境创建和依赖管理。
+Pipenv 是 Pip 和 Venv 工具的结合，支持虚拟环境和项目依赖管理，
 
-[Pipenv](https://packaging.python.org/en/latest/key_projects/#pipenv) is a dependency manager for Python projects. If you’re familiar with Node.js ’ [npm](https://www.npmjs.com/) or Ruby’s [bundler](https://bundler.io/), it is similar in spirit to those tools.
+[pipenv基础教程](work/programming/Python/CLI/pipenv基础教程.md)
 
-While [pip](https://packaging.python.org/en/latest/key_projects/#pip) alone is often sufficient for personal use, Pipenv is recommended for collaborative projects as it’s a higher-level tool that simplifies dependency management for common use cases.
+### poetry
 
-安装 pipenv：
-```shell
-pip install pipenv
-```
+[Poetry基础教程](work/programming/Python/CLI/Poetry基础教程.md)
 
 ## 参考链接
 
