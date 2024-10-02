@@ -8,25 +8,8 @@
 
 【推荐】不建议使用 relative imports，建议统一使用 absolute imports，避免两者混合使用，不利于阅读和理解。
 
-## 最佳实践
-
-初始化开发环境
-
-```
-# 创建Python虚拟环境
-python -m venv myenv
-
-# 加载虚拟环境
-source myenv/bin/activate
-
-# 配置PIP源
-pip config set --local global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
-pip config set --local global.trusted-host pypi.tuna.tsinghua.edu.cn
-
-# 安装项目依赖
-pip install -r requirements.txt
-```
-
 ## 参考链接
 
 1. [Python 风格指南 - 内容目录 — Google 开源项目风格指南](https://zh-google-styleguide.readthedocs.io/en/latest/google-python-styleguide/contents.html)
+2. [Python 项目工程化最佳实践指南Python 工程化这件事都没有统一的规范和项目管理的方案，也许是因为 Python - 掘金](https://juejin.cn/post/7170876308505755679)
+3. [项目结构 - Python 项目工程化开发指南](https://pyloong.github.io/pythonic-project-guidelines/guidelines/project_management/project_structure/#3)

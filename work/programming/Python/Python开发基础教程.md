@@ -14,16 +14,9 @@
 
 [Python开发环境搭建基础教程](work/programming/Python/Python开发环境搭建基础教程.md)
 
-### 生成 requirements.txt
+### 项目搭建
 
-[Python如何生成requirement.txt文件](work/programming/Python/solution/Python如何生成requirement.txt文件.md)
-### Python Application
-
-Python 应用程序，即带有 main 入口的，如 Web Application、CLI Tool 等。
-
-### Python Library
-
-[Packaging Python Projects](https://packaging.python.org/en/latest/overview/)
+[项目结构 - Python 项目工程化开发指南](https://pyloong.github.io/pythonic-project-guidelines/guidelines/project_management/project_structure/)
 
 ## 测试 (Test)
 
@@ -40,3 +33,27 @@ https://blog.csdn.net/smilehappiness/article/details/117337943
 ### Binary
 Pyinstaller
 [Pyinstaller基础教程](work/programming/Python/CLI/Pyinstaller基础教程.md)
+
+## 最佳实践
+
+初始化开发环境
+
+```
+# 创建Python虚拟环境
+python -m venv myenv
+
+# 加载虚拟环境
+source myenv/bin/activate
+
+# 配置PIP源
+pip config set --local global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
+pip config set --local global.trusted-host pypi.tuna.tsinghua.edu.cn
+
+# 安装项目依赖
+pip install -r requirements.txt
+```
+
+## 参考链接
+
+1. [Python 项目工程化最佳实践指南Python 工程化这件事都没有统一的规范和项目管理的方案，也许是因为 Python - 掘金](https://juejin.cn/post/7170876308505755679)
+2. [项目结构 - Python 项目工程化开发指南](https://pyloong.github.io/pythonic-project-guidelines/guidelines/project_management/project_structure/#3)
