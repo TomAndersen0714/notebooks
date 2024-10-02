@@ -11,8 +11,8 @@
 **方法 1：通过配置文件配置-通过 `pip config` 命令修改**
 
 ```shell
-pip config set --global global.index-url https://mirrors.aliyun.com/pypi/simple/
-pip config set --global global.trusted-host mirrors.aliyun.com
+pip config set --local global.index-url https://mirrors.aliyun.com/pypi/simple/
+pip config set --local global.trusted-host mirrors.aliyun.com
 ```
 
 **方法 2 ：通过配置文件配置-手动修改**
