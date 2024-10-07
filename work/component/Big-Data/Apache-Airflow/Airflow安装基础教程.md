@@ -1,7 +1,5 @@
 # Airflow安装基础教程
 
-
-
 ## 前言
 
 本文安装 Airflow 为 `Airflow2.x` 版本。目前（2022-12-22），[官方文档](https://airflow.apache.org/docs/apache-airflow/stable/installation/index.html#)中提供了共计6种安装方案：
@@ -13,12 +11,9 @@
 5. [Using Managed Airflow Services](https://airflow.apache.org/docs/apache-airflow/stable/installation/index.html#using-managed-airflow-services)
 6. [Using 3rd-party images, charts, deployments](https://airflow.apache.org/docs/apache-airflow/stable/installation/index.html#using-3rd-party-images-charts-deployments)
 
-
-
 本文主要采用PyPI工具安装Airflow，并以`standalone`形式初始化各个组件
 
 ## 具体步骤
-
 
 ### 1) 创建Python虚拟环境
 
@@ -33,8 +28,6 @@ python3 -m venv airflow_venv
 ```shell
 source airflow_venv/bin/active
 ```
-
-
 
 ### 2) 执行安装命令
 
@@ -51,7 +44,6 @@ CONSTRAINT_URL="https://raw.githubusercontent.com/apache/airflow/constraints-${A
 # For example: https://raw.githubusercontent.com/apache/airflow/constraints-2.5.0/constraints-3.7.txt
 pip install "apache-airflow==${AIRFLOW_VERSION}" --constraint "${CONSTRAINT_URL}"
 ```
-
 
 ### 3) 初始化并启动Airflow
 
@@ -70,7 +62,6 @@ airflow users create \
     --email spiderman@superhero.org
 ```
 
-
 修改配置文件airflow.cfg，调整默认配置
 
 ```ini
@@ -83,13 +74,11 @@ load_examples = False
 dag_dir_list_interval = 60
 ```
 
-
 重置数据库，删除默认的example dag
 
 ```shell
 airflow db reset
 ```
-
 
 启动airflow服务
 
@@ -102,7 +91,6 @@ airflow scheduler -D
 airflow celery worker -D   #启动celery worker
 airflow celery flower -D   #启动flower
 ```
-
 
 也可以直接执行`airflow standalone`命令自动执行
 
@@ -118,8 +106,6 @@ airflow standalone
 # Enable the example_bash_operator dag in the home page
 ```
 
-
-
 ### 4) 停止Airflow
 
 ```shell
@@ -134,8 +120,6 @@ cat airflow-worker.pid | xargs kill
 mv *.pid /tmp/
 ```
 
-
-
 ## 常见问题
 
 ### error: sqlite C library version too old (< 3.15.0)
@@ -146,14 +130,12 @@ mv *.pid /tmp/
 
 解决方案：[sqlite3安装基础教程](work/component/Back-End/SQLite/sqlite3安装基础教程.md)
 
-
 ### Airflow - alembic.util.exc.CommandError: Can't locate revision identified
 
 报错信息：`Airflow - alembic.util.exc.CommandError: Can't locate revision identified`
 
 问题原因：Airflow 数据库存在问题，建议重置 airflow 数据库，`airflow reset db`，如果重置数据库报错无法级联删除，则需要自己手动连接对应数据库执行删除命令。
 
-
 ## 参考链接
 
-1. https://airflow.apache.org/docs/apache-airflow/stable/start.html
+1. [Fetching Title#9xfp](https://airflow.apache.org/docs/apache-airflow/stable/start.html)

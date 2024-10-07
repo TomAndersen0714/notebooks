@@ -4,7 +4,7 @@
 
 Spark-sql 命令行工具是 Apache Spark 的一个组件，它允许用户直接在命令行中执行 SQL 语句，而无需编写额外的代码。
 
-其底层实际上是在交互式运行一个 Spark Application。
+其底层实际上是在交互式运行一个 Spark Application，会在启动时打印对应的 Application Id。
 
 这个工具特别适合进行快速的数据探索和测试 SQL 查询，它提供了一个简单而强大的方式来与 Spark SQL 交互。
 
@@ -40,5 +40,5 @@ CLI options:
 
 ## 参考链接
 
-1. [Spark SQL CLI - Spark 3.5.1 Documentation](https://spark.apache.org/docs/latest/sql-distributed-sql-engine-spark-sql-cli.html#spark-sql-cli)
+1. [Spark SQL CLI - Spark 3.5.3 Documentation](https://spark.apache.org/docs/latest/sql-distributed-sql-engine-spark-sql-cli.html)
 2. [Spark-SQL基础教程](work/component/Big-Data/Apache-Spark/development/Spark-SQL基础教程.md)

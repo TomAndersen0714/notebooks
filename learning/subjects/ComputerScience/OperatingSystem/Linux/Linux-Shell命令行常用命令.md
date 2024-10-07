@@ -1,6 +1,5 @@
 # Linux Shell 命令行常用命令
 
-
 ## 前言
 
 Shell（Shell 解释器）：Shell 是一种命令行解释器，负责解释和执行用户输入的命令。它是用户与操作系统内核之间的接口。在 Linux 系统中，常见的 Shell 有 Bash（Bourne Again Shell）、Sh（Bourne Shell）、Ksh（Korn Shell）、Csh（C Shell）等。Shell 提供了命令行界面（CLI）来与系统进行交互，并支持执行命令、编写脚本、管道操作、环境变量设置等功能，如 Bash、Sh、ZSH 等。
@@ -15,15 +14,12 @@ Terminal（终端）：Terminal 是用户与 Shell 进行交互的界面。它�
 
 ## Bash 常用命令
 
-
 ### Environment
-
 
 #### export
 
 设置PS1变量，即命令行前缀提示字符的格式，此类命令通常会被放置在：
 `export PS1='[\u@\h \W]\$ '`
-
 
 #### set
 
@@ -34,7 +30,6 @@ Set 命令作用主要是显示系统中已经存在的 shell 变量，以及设
 - `-e` ：若指令传回值不等于 0，则立即退出 shell。
 - `-x` ：执行指令后，会先显示该指令及所下的参数。
 - ` +<参数> ` ：取消某个 set 曾启动的特性。
-
 
 ### Text
 
@@ -55,7 +50,6 @@ Set 命令作用主要是显示系统中已经存在的 shell 变量，以及设
 - `-C` ：打印匹配行的前后 3 行
 - `-A` ：打印匹配行的后 3 行
 - `-B` ：打印匹配行的前 3 行
-
 
 常用命令：
 ```bash
@@ -84,7 +78,6 @@ grep -rl "client"
 # 取消别名命令
 unalias kd
 ```
-
 
 #### xargs
 
@@ -126,13 +119,10 @@ echo "hello xsel" | xsel --clipboard
 echo "hello xclip" | xclip -selection c
 ```
 
-
 ### File
-
 
 #### file
 查看文件类型
-
 
 #### ln
 
@@ -143,13 +133,15 @@ echo "hello xclip" | xclip -selection c
 ln -s /mnt/c/Users/ericcheng/Desktop desktop
 ```
 
-
 #### find
 
 常用选项：
 - `-name` ：以指定字符串 pattern 进行检索
 - `-iname` ：以指定字符串 pattern 进行非大小写敏感检索
-
+常用命令：
+```bash
+find /path/to/directory -type f -name "python*"
+```
 #### tar
 
 常用选项
@@ -169,9 +161,7 @@ ln -s /mnt/c/Users/ericcheng/Desktop desktop
 
 ### Network
 
-
 #### ifconfig
-
 
 #### hostname
 
@@ -188,10 +178,7 @@ hostname -I
 
 ### User
 
-
 #### id
-
-
 
 ### Memory
 
@@ -204,12 +191,10 @@ hostname -I
 
 `-P` ：进入指定路径的实际路径，而非软链接路径
 
-
 #### lsblk
 查看磁盘信息
 
 ### Other
-
 
 #### lshw
 查看主机硬件配置
@@ -237,4 +222,3 @@ lshw -short -class processor
 1. [Linux命令搜索引擎 命令，Linux Linux命令搜索引擎 命令详解：最专业的Linux命令大全，内容包含Linux命令手册、详解、学习，值得收藏的Linux命令速查手册。 -  Linux 命令搜索引擎](https://wangchujiang.com/linux-command/)
 2. [GitHub - jaywcjlove/linux-command: Linux命令大全搜索工具，内容包含Linux命令手册、详解、学习、搜集。https://git.io/linux](https://github.com/jaywcjlove/linux-command)
 3. [Linux 命令大全 | 菜鸟教程](https://www.runoob.com/linux/linux-command-manual.html)
-

@@ -1,10 +1,10 @@
 # Python 虚拟环境基础教程
 
-在同一个 Python 环境中，只能安装某单个版本的 package ，也只能 import 某单个版本的 python package 作为依赖。而在 Java 中却可以通过 Maven、Gradle 来控制项目依赖的版本，同时支持多种版本依赖。
+同一 Python 环境的每个 package 只能安装某一个版本，也只能 import 某一个版本的 python package 作为依赖，无法同时支持不同项目的不同版本依赖。
 
-在不同 Python 项目中，经常会出现各自依赖的同名 package 其版本不同的情况，而 Python 虚拟环境就是为了通过环境隔离，支持不同的项目中依赖和使用不同版本的模块。
+而在 Java 中却可以通过 Maven、Gradle 来控制项目依赖的版本，同时支持多种版本依赖。
 
-当需要卸载 Python 虚拟环境时，直接删除对应的虚拟环境文件夹即可。
+Python 虚拟环境就是为了通过环境隔离，支持不同的项目中依赖和使用不同版本的模块。当需要卸载 Python 虚拟环境时，直接删除对应的虚拟环境文件夹即可。
 
 [官方教程](https://packaging.python.org/tutorials/installing-packages/#creating-virtual-environments)
 

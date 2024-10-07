@@ -30,13 +30,15 @@ poetry source add custom-repo https://pypi.tuna.tsinghua.edu.cn/simple/
 poetry add <package_name>
 # 添加并安装 python package, 使用指定的 repository
 poetry add <package_name> --source <repository_name>
+# 删除python package, 及其依赖的package
+poetry remove <package_name>
 
 # 进入项目的 python 虚拟环境
 poetry shell
 # 退出 python 虚拟环境
 exit
 
-# 安装当前项目依赖
+# 安装当前项目所需依赖
 poetry install
 
 # 检索repository中的package
@@ -44,6 +46,9 @@ poetry search <package_name>
 
 # 导出requirements.txt
 poetry export --format requirements.txt --output requirements.txt --without-hashes
+
+# 根据pyproject.toml文件重新生成poetry lock版本文件
+poetry lock --no-update
 ```
 
 ## 常见问题
@@ -54,6 +59,20 @@ poetry export --format requirements.txt --output requirements.txt --without-hash
 - 一般是由于网络问题，导致即便设置了国内 PyPI 镜像，也会报错
 解决方案
 - 关闭相关代理工具，使用普通网络重新尝试
+
+报错信息
+- `Because apache-airflow (2.5.0) depends on sqlalchemy (>=1.4) and python-projects depends on sqlalchemy (>=1.3.24,<1.4.0), apache-airflow is forbidden. So, because python-projects depends on apache-airflow (2.5.0), version solving failed.`
+问题原因
+- 项目直接依赖的 package（即在 `pyproject.toml` 文件中声明的）和待安装的 package 的依赖存在版本冲突，但 poetry 只能自动更新间接依赖，不能更新直接依赖
+解决方案
+- [Python-poetry如何更新package](work/programming/Python/solution/Python-poetry如何更新package.md)
+
+报错信息
+- Poetry remove 包时候报错找不到对应的包 `The following packages were not found: pandas`
+问题原因
+- 如果你在使用 `poetry remove` 命令时遇到报错，提示找不到包，但使用 `poetry show` 命令时能看到对应的包，这可能是因为你尝试移除的包是一个间接依赖（即它是其他包的依赖），而不是直接在 `pyproject.toml` 文件中声明的依赖。
+解决方案
+- 因为属于当前项目的间接依赖，不建议删除
 
 ## 参考链接
 

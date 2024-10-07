@@ -35,6 +35,11 @@ PS：如果想要导出一个 Python 项目所依赖的包，可以使用 `pipre
 
 [pip config - pip documentation v24.0](https://pip.pypa.io/en/stable/cli/pip_config/)
 
+## Index
+
+1. `pip index versions <package_name>`
+	1. 查看指定 package 的所有版本号
 ## 参考链接
+
 1. [Commands - pip documentation v24.0](https://pip.pypa.io/en/stable/cli/)
 2. [pip config - pip documentation v24.0](https://pip.pypa.io/en/stable/cli/pip_config/)
