@@ -37,6 +37,13 @@ Requirements.txt 文件中版本声明格式：
 
 ![](resources/images/Pasted%20image%2020241008090946.png)
 
+
+## Poetry
+
+```bash
+# 导出requirements.txt
+poetry export --format requirements.txt --without-hashes --output requirements.txt
+```
 ## 参考链接
 
 1. [Use requirements.txt | PyCharm Documentation](https://www.jetbrains.com/help/pycharm/managing-dependencies.html)

@@ -4,6 +4,8 @@
 
 Python 项目的虚拟环境和依赖管理工具，相当于 pip 和 venv 工具的结合。
 
+`pyproject.toml` 文件中声明了当前项目中各个 python 依赖兼容的版本范围，而 `poetry.lock` 中则声明了当前 python 项目中具体使用的 python package 的版本信息。
+
 ## 安装
 
 ```shell
@@ -38,7 +40,7 @@ poetry shell
 # 退出 python 虚拟环境
 exit
 
-# 安装当前项目所需依赖
+# 安装当前项目所需依赖, 会依据 poetry.lock 文件来安装具体某个版本的package, 如果 poetry.lock 文件未更新, 则会基于 pyproject.toml 文件来更新 lock 文件
 poetry install
 
 # 检索repository中的package
@@ -47,8 +49,12 @@ poetry search <package_name>
 # 导出requirements.txt
 poetry export --format requirements.txt --output requirements.txt --without-hashes
 
-# 根据pyproject.toml文件重新生成poetry lock版本文件
+# 根据 pyproject.toml 文件重新生成 poetry lock 版本文件 poetry.lock
 poetry lock --no-update
+
+# 安装当前项目依赖兼容的最新版本,并更新 poetry.lock 文件
+poetry update
+poetry update <package_name>
 ```
 
 ## 常见问题

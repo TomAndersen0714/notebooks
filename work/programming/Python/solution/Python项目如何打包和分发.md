@@ -2,7 +2,7 @@
 
 ## Python Package
 
-对于 Library 类别的 Python 项目，一般需要通过打包成 python package 分发到其他的 python 环境和项目中使用。此类项目中一般通过 `setup.py` 文件来声明当前 python 项目对应的 python package 信息。
+对于 Library 类别的 Python 项目，一般需要通过打包成 python package 分发到其他的 python 环境和项目中使用。此类 Python 项目中一般需要通过 `setup.py` 文件来声明当前 python 项目对应的 python package 信息。
 
 [Overview of Python Packaging - Python Packaging User Guide](https://packaging.python.org/en/latest/overview/)
 
