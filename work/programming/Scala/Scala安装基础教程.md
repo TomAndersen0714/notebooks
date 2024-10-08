@@ -23,7 +23,7 @@ JDK 安装：
 
 ## 配置
 
-配置环境变量 `SCALA_HOME`，指向 Scala 安装路径下的 bin 目录即可。
+配置环境变量 `SCALA_HOME`，指向 Scala 安装路径目录即可。
 
 ## 参考链接
 

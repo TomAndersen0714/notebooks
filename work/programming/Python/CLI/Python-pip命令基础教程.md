@@ -4,7 +4,7 @@
 
 ## Install
 
-1. **pip 升级 pip 命令**：`pip3 install--upgrade pip`
+1. **升级 package**：`pip3 install--upgrade <package_name>`，如 `pip3 install--upgrade pip`
 2. **pip3 install**：
 	1. 安装 Python 模块，命令格式 `pip3 install <package_name>`，如 `pip3 install mrjob`
 	2. 安装 whl 文件（wheel 离线安装包）：`pip3 install <wheel_file_name>`

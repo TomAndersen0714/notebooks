@@ -16,6 +16,7 @@ pip install -U pyinstaller
 
 [Using PyInstaller — PyInstaller 6.10.0 documentation](https://pyinstaller.org/en/stable/usage.html)
 
+Demo:
 ```bash
 # windows中dll文件和exe文件分开打包
 pyinstaller your_program.py
@@ -23,9 +24,23 @@ pyinstaller your_program.py
 # windows中dll文件和exe文件打包到同一文件中, 这样可执行文件相对较大
 pyinstaller --onefile your_program.py
 
-# Clean PyInstaller cache and remove temporary files before building.
-pyinstaller --onefile --clean your_program.py
+# --name: 指定生成的可执行文件名称
+pyinstaller --onefile --clean your_program.py --name your_program
 ```
+
+常用选项：
+1. `-F | --onefile`
+	1. Create a one-file bundled executable. Windows 中 dll 文件和 exe 文件打包到同一文件中, 这样生成的可执行文件可执行较好，但文件体积相对较大。
+	2. `pyinstaller --onefile your_program.py`
+2. `--clean`
+	1. Clean PyInstaller cache and remove temporary files before building.
+	2. `pyinstaller --onefile --clean your_program.py`
+3. `-n NAME, --name NAME`
+	1. Name to assign to the bundled app and spec file (default: first script’s basename). 指定输出的可执行文件前缀名。
+	2. `pyinstaller your_program.py --name your_program`
+4. `-p DIR, --paths DIR`
+	1. A path to search for imports (like using PYTHONPATH). Multiple paths are allowed, separated by `':'`, or use this option multiple times. Equivalent to supplying the `pathex` argument in the spec file. 用于指定各种依赖的额外检索路径。
+	2. `pyinstaller your_program.py -p C:\Windows\System32\downlevel --name your_program`
 
 ## 常见问题
 

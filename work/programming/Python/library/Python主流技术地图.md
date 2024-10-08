@@ -5,6 +5,15 @@
 1. Flask
 2. Django
 
-## CMD
+## CLI
 
 1. Argparse: [GitHub - ThomasWaldmann/argparse: python argparse, pypi version (moved from google code)](https://github.com/ThomasWaldmann/argparse/)
+
+## Dependency
+
+1. Poetry
+2. Pipenv
+
+## Package
+
+1. PyInstaller
