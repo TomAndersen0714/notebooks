@@ -32,6 +32,15 @@ PS：如果想要导出一个 Python 项目所依赖的包，可以使用 `pipre
 
 1. **pip config**
 	1. 在 Global 对应的配置文件中，增加对所有子命令生效的配置： `pip config set --global global.index-url https://mirrors.aliyun.com/pypi/simple/`
+	2. --global
+		- Use the system-wide configuration file only
+		- (environment variable: PIP_GLOBAL)
+	3. --user
+		- Use the user configuration file only
+		- (environment variable: PIP_USER)
+	4. --site
+		- Use the current environment configuration file only
+		- (environment variable: PIP_SITE)
 
 [pip config - pip documentation v24.0](https://pip.pypa.io/en/stable/cli/pip_config/)
 

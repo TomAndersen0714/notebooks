@@ -12,7 +12,9 @@ Pyinstaller 不支持跨平台编译，即如果需要生成对应操作系统�
 pip install -U pyinstaller
 ```
 
-## Demo
+## CLI
+
+[Using PyInstaller — PyInstaller 6.10.0 documentation](https://pyinstaller.org/en/stable/usage.html)
 
 ```bash
 # windows中dll文件和exe文件分开打包
@@ -20,6 +22,9 @@ pyinstaller your_program.py
 
 # windows中dll文件和exe文件打包到同一文件中, 这样可执行文件相对较大
 pyinstaller --onefile your_program.py
+
+# Clean PyInstaller cache and remove temporary files before building.
+pyinstaller --onefile --clean your_program.py
 ```
 
 ## 常见问题
@@ -33,6 +38,15 @@ pyinstaller --onefile your_program.py
 - `pip uninstall typing`
 参考链接：
 - [python - The 'typing' package is an obsolete backport of a standard library package and is incompatible with PyInstaller - Stack Overflow](https://stackoverflow.com/questions/70710731/the-typing-package-is-an-obsolete-backport-of-a-standard-library-package-and-i)
+
+报错信息
+- `cannot get architecture from file: xxx.dll. Reason: 'The file is empty'`
+解决方案
+- 找到对应可用的（非空的） `dll` 文件路径，并通过 `-p` 参数来指定依赖导入的文件夹路径，如： `-p C:\Windows\System32\downlevel`
+参考链接
+- [【Python】解决使用pyinstaller打包Tkinker程序报错问题 - 郑立赛 - 博客园](https://www.cnblogs.com/zhenglisai/p/11418144.html)
+
 ## 参考链接
 
 1. [PyInstaller Manual — PyInstaller 6.10.0 documentation](https://pyinstaller.org/en/stable/)
+2. [Using PyInstaller — PyInstaller 6.10.0 documentation](https://pyinstaller.org/en/stable/usage.html)

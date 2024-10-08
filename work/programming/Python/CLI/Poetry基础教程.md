@@ -6,6 +6,8 @@ Python 项目的虚拟环境和依赖管理工具，相当于 pip 和 venv 工�
 
 `pyproject.toml` 文件中声明了当前项目中各个 python 依赖兼容的版本范围，而 `poetry.lock` 中则声明了当前 python 项目中具体使用的 python package 的版本信息。
 
+Poetry 是根据项目路径和项目名称来生成和定位 Python 虚拟环境的路径的。
+
 ## 安装
 
 ```shell
@@ -55,6 +57,9 @@ poetry lock --no-update
 # 安装当前项目依赖兼容的最新版本,并更新 poetry.lock 文件
 poetry update
 poetry update <package_name>
+
+# 查看当前项目虚拟环境信息
+poetry env info
 ```
 
 ## 常见问题
@@ -79,6 +84,11 @@ poetry update <package_name>
 - 如果你在使用 `poetry remove` 命令时遇到报错，提示找不到包，但使用 `poetry show` 命令时能看到对应的包，这可能是因为你尝试移除的包是一个间接依赖（即它是其他包的依赖），而不是直接在 `pyproject.toml` 文件中声明的依赖。
 解决方案
 - 因为属于当前项目的间接依赖，不建议删除
+
+报错信息
+- PowerShell 中执行 `poetry shell` 时，报错禁止在此系统上运行脚本
+解决方案
+- [Windows-PowerShell基础教程](learning/subjects/ComputerScience/OperatingSystem/Windows/Windows-PowerShell基础教程.md)
 
 ## 参考链接
 
