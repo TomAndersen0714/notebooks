@@ -1,8 +1,5 @@
 # IntelliJ 插件开发基础教程
 
-
-
-
 ## 参考链接
 
 1. [IntelliJ Platform SDK | IntelliJ Platform Plugin SDK](https://plugins.jetbrains.com/docs/intellij/welcome.html)

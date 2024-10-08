@@ -30,6 +30,16 @@ Suspend the program when Throwable or its subclasses are thrown. They apply glob
 
 当程序抛出 Throwable 的对象时，暂停程序。这种类型的断点，是全局设置的，并不是在某一特定代码行进行设置。
 
+## Breakpoints 的属性
+
+The following policies are available for the breakpoints that suspend program execution:
+- `All`: all threads are suspended when any of the threads hits the breakpoint.
+- `Thread`: only the thread which hits the breakpoint is suspended.
+
+If you want a policy to be used as the default one, click the Make default button.
+
+IDEA 中断点有两种属性，一种是 `All`，代表任何线程触发断点时，其他所有线程也会一起暂停执行，`Thread` 则代表，只有当前线程会暂停执行。
+
 ## Debugger 调试常用功能
 
 https://www.bilibili.com/video/BV1Rm4y1P7j8

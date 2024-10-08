@@ -6,7 +6,7 @@
 
 ## 编码
 
-【推荐】不建议使用 relative imports，建议统一使用 absolute imports，避免两者混合使用，不利于阅读和理解。
+【推荐】不建议使用 relative imports，建议统一使用 absolute imports，避免两者混合使用，增强可读性。
 
 ## 参考链接
 
