@@ -35,13 +35,13 @@ https://blog.csdn.net/smilehappiness/article/details/117337943
 
 ### Binary
 
-对于 Application 类的 Python 项目，一般是打包成不同操作系统对应的 binary 可执行文件，用于免安装 python 环境直接运行。
+对于 Application 类的 Python 项目，一般是打包成不同操作系统对应的 binary 可执行文件，用于免安装对应语言和依赖而直接运行提供对应的软件功能。
 
 [Pyinstaller基础教程](work/programming/Python/CLI/Pyinstaller基础教程.md)
 
 ### Source
 
-对于开源项目而言，一般还会将源代码打包成对应的压缩文件，如 `.tar.gz/.7zip` 等。
+对于开源项目而言，一般还会将源代码打包成对应的压缩文件，如 `.tar.gz/.7zip` 等，用于进行源代码的分发。
 
 ## 最佳实践
 
