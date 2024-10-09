@@ -3,7 +3,7 @@
 在官方文档中，Maven 命令行中使用的各项子命令，届被称为 Maven Plugin。
 [Maven – Available Plugins](https://maven.apache.org/plugins/index.html)
 
-## Maven 命令行常用命令
+## 常用命令
 
 Maven archetype:
 - 初始化项目
@@ -26,23 +26,33 @@ mvn clean
 Maven compile:
 ```bash
 mvn compile
+mvn compile -DskipTests
 ```
 
 Maven install:
 - 构建项目，并将项目内容安装到本地 Repository，支持其他项目作为依赖 Dependency 引入
 - Builds the project and installs resulting artifacts (JAR, WAR, etc) into your local Maven repository
-```
+```bash
 mvn install
-mvn install -DskipTests # 跳过测试
+mvn install -DskipTests
 ```
 
 Maven dependency:
-- 下载指定依赖
+解析当前项目依赖：
+```bash
+mvn dependency:resolve
+```
+
+下载指定依赖
 - 注意事项: 各项参数需要加上双引号，否则在 Windows 命令行会传入错误参数。
 ```bash
 mvn dependency:get -DgroupId="com.alibaba" -DartifactId="fastjson" -Dversion="1.2.70"
 mvn dependency:get -Dartifact="org.apache.maven.plugins:maven-javadoc-plugin:2.9.1"
 ```
+
+## 常用选项
+
+`-DskipTests`: 跳过测试流程
 
 ## 参考链接
 

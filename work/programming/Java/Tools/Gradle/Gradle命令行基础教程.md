@@ -53,6 +53,13 @@ Dependencies：解析当前项目的依赖，并下载缺少的依赖
 gradle dependencies
 ```
 
+Build:
+- designate assembling all outputs and running all checks
+- 编译和构建当前项目
+```bash
+gradle build
+```
+
 Run:
 - The `run` task tells Gradle to execute the `main` method in the class assigned to the `mainClass` property in `build.gradle(.kts)` file.
 ```
