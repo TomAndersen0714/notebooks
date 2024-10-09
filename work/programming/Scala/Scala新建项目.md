@@ -6,7 +6,7 @@
 
 ## Maven
 
-[Site Unreachable](https://docs.scala-lang.org/tutorials/scala-with-maven.html)
+[scala-with-maven](https://docs.scala-lang.org/tutorials/scala-with-maven.html)
 
 ## IDEA
 

@@ -1,12 +1,18 @@
 # Maven安装基础教程
 
+## 兼容性检查
+
+检查 Maven 和 JDK 的兼容性（compatibility），确定需要安装的 Maven 和 JDK 版本。
+[Maven – Maven Releases History](https://maven.apache.org/docs/history.html)
 
 ## 下载教程
 
 https://maven.apache.org/download.cgi
 
-Maven3 archive:
+Maven archive:
+https://archive.apache.org/dist/maven
 https://archive.apache.org/dist/maven/maven-3/
+https://archive.apache.org/dist/maven/maven-4/
 
 ## 安装教程
 
@@ -15,6 +21,7 @@ https://maven.apache.org/install.html
 ### 安装配置 JDK
 
 Have a JDK installation on your system. Either set the `JAVA_HOME` environment variable pointing to your JDK installation or have the `java` executable on your `PATH`.
+[Oracle-JDK安装基础教程](work/programming/Java/operation/Oracle-JDK安装基础教程.md)
 
 ### 解压 Maven 压缩包
 

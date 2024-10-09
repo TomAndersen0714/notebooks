@@ -1,6 +1,5 @@
 # Maven 配置基础教程
 
-
 ### 所有配置文件
 
 [Maven – Configuring Apache Maven](https://maven.apache.org/configure.html#maven_args-environment-variable)
@@ -121,7 +120,6 @@ Located within the project's top level directory, the files
 - `maven.config`
 - `jvm.config`
 - `extensions.xml`
-
 
 ## 参考链接
 
