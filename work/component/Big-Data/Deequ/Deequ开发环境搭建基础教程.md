@@ -10,12 +10,12 @@
 
 ## 安装 SDK
 
-[Oracle-JDK安装基础教程](work/programming/Java/Operation/Oracle-JDK安装基础教程.md)
+[Oracle-JDK安装基础教程](work/programming/Java/operation/Oracle-JDK安装基础教程.md)
 [Scala安装基础教程](work/programming/Scala/Scala安装基础教程.md)
 
 ## 安装 Maven
 
-[Maven安装基础教程](work/programming/Java/Tools/Apache-Maven/Maven安装基础教程.md)
+[Maven安装基础教程](work/programming/Java/tools/Apache-Maven/Maven安装基础教程.md)
 
 ## 常见问题
 

@@ -3,11 +3,11 @@
 
 ## Maven 安装基础教程
 
-[Maven安装基础教程](work/programming/Java/Tools/Apache-Maven/Maven安装基础教程.md)
+[Maven安装基础教程](work/programming/Java/tools/Apache-Maven/Maven安装基础教程.md)
 
 ## Maven 配置教程
 
-[Maven配置基础教程](work/programming/Java/Tools/Apache-Maven/Maven配置基础教程.md)
+[Maven配置基础教程](work/programming/Java/tools/Apache-Maven/Maven配置基础教程.md)
 
 ## Maven in IDE
 

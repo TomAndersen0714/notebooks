@@ -3,7 +3,7 @@
 
 ## Java 官方文档
 
-[JDK8 - Java-Tutorials](work/programming/Java/API/Java-Tutorials.md)
+[JDK8 - Java-Tutorials](work/programming/Java/programing/Java-Tutorials.md)
 [Oracle - Standard Edition 8 Documentation](https://docs.oracle.com/javase/8/docs/)
 [Oracle - Java Language and Virtual Machine Specifications](https://docs.oracle.com/javase/specs/)
 

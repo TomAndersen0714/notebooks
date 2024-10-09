@@ -1,6 +1,5 @@
 # JVM GC 垃圾回收
 
-
 Yong GC（Minor GC）：
 1. Eden 区满、Survivor 区满时触发
 2. 通常采用复制清除算法

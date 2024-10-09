@@ -1,5 +1,4 @@
-
 # Gradle Plugin 插件
 
-
-## java
+Java
+Scala

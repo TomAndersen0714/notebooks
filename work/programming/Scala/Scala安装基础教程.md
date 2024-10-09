@@ -15,7 +15,7 @@ Scala 和 JDK 版本兼容性检查：
 | 8 (LTS)  | 3.0.0  | 2.13.0   | 2.12.0  | 2.11.0  |
 
 JDK 安装：
-[Oracle-JDK安装基础教程](work/programming/Java/Operation/Oracle-JDK安装基础教程.md)
+[Oracle-JDK安装基础教程](work/programming/Java/operation/Oracle-JDK安装基础教程.md)
 
 ## 下载安装
 
