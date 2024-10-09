@@ -1,4 +1,4 @@
-# Maven 初始化项目
+# Maven 新建项目
 
 Maven archetype: Generate a skeleton project structure from an archetype.
 

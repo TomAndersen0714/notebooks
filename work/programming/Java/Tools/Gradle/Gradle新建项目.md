@@ -1,4 +1,4 @@
-# Gradle 初始化项目
+# Gradle 新建项目
 
 [Part 1: Initializing the Project](https://docs.gradle.org/current/userguide/partr1_gradle_init.html#part1_begin)
 

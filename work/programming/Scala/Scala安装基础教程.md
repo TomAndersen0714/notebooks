@@ -1,6 +1,6 @@
 # Scala 安装基础教程
 
-## 安装配置 JDK
+## 安装前置依赖-JDK
 
 Scala 和 JDK 版本兼容性检查：
 [JDK Compatibility | Scala Documentation](https://docs.scala-lang.org/overviews/jdk-compatibility/overview.html#scala-compatibility-table)
@@ -19,11 +19,15 @@ JDK 安装：
 
 ## 下载安装
 
-下载对应系统的安装包。
+下载对应系统的 Scala 压缩包，并解压到分配的安装路径下。
+
+[All Available Versions | The Scala Programming Language](https://www.scala-lang.org/download/all.html)
 
 ## 配置
 
-配置环境变量 `SCALA_HOME`，指向 Scala 安装路径目录即可。
+配置环境变量 `SCALA_HOME`，指向 Scala 安装路径目录，将 `$SCALA_HOME/bin` 添加到环境变量 `PATH` 中，或者直接添加 bin 绝对路径到 `PATH` 变量中。
+
+验证安装：`scala -version`。
 
 ## 参考链接
 

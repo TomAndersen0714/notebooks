@@ -26,6 +26,11 @@ poetry new <project_path>
 cd <project_path>
 poetry init
 
+# 进入项目的 python 虚拟环境
+poetry shell
+# 退出 python 虚拟环境
+exit
+
 # 配置package的repository
 poetry source add <repository_name> <repository_url>
 poetry source add custom-repo https://pypi.tuna.tsinghua.edu.cn/simple/
@@ -36,11 +41,6 @@ poetry add <package_name>
 poetry add <package_name> --source <repository_name>
 # 删除python package, 及其依赖的package
 poetry remove <package_name>
-
-# 进入项目的 python 虚拟环境
-poetry shell
-# 退出 python 虚拟环境
-exit
 
 # 安装当前项目所需依赖, 会依据 poetry.lock 文件来安装具体某个版本的package, 如果 poetry.lock 文件未更新, 则会基于 pyproject.toml 文件来更新 lock 文件
 poetry install
@@ -86,7 +86,7 @@ poetry env info
 - 因为属于当前项目的间接依赖，不建议删除
 
 报错信息
-- PowerShell 中执行 `poetry shell` 时，报错禁止在此系统上运行脚本
+- PowerShell 中执行 `poetry shell` 时，报错“在此系统上禁止运行脚本”
 解决方案
 - [Windows-PowerShell基础教程](learning/subjects/ComputerScience/OperatingSystem/Windows/Windows-PowerShell基础教程.md)
 

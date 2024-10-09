@@ -8,6 +8,8 @@
 
 ### IDAE
 
+[Get started with Scala | IntelliJ IDEA Documentation](https://www.jetbrains.com/help/idea/get-started-with-scala.html)
+
 1. 安装 JetBrain Scala Plugin: `Scala`
 2. 导入 Scala SDK: `File | Project Structure | Platform Settings | Global Libraries`
 
@@ -21,4 +23,6 @@
 	1. [VScode配置与运行scala\_vscode scala-CSDN博客](https://blog.csdn.net/zhangfafa_c/article/details/136965254)
 
 ## 参考链接
-1. https://blog.csdn.net/weixin_45207751/article/details/131259706
+
+1. [Idea集成scala\_scala对应jdk版本-CSDN博客](https://blog.csdn.net/weixin_45207751/article/details/131259706)
+2. [Get started with Scala | IntelliJ IDEA Documentation](https://www.jetbrains.com/help/idea/get-started-with-scala.html)

@@ -1,6 +1,5 @@
 # AI 编程工具汇总清单
 
-
 ## Copilot
 
 https://github.com/github/copilot-docs
@@ -11,7 +10,6 @@ https://www.bilibili.com/video/BV1nZ4y1U7x8
 
 https://mp.weixin.qq.com/s/F6VCM5KtAp-6dJnf2rQHbg
 https://www.bilibili.com/video/BV1tu4y1f7sF
-
 
 https://docs.github.com/en/copilot/github-copilot-chat/using-github-copilot-chat
 ## CodeWhisperer

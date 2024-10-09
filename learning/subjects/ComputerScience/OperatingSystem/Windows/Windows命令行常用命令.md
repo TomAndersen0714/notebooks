@@ -1,8 +1,12 @@
 # Windows命令行常用命令
 
+Windows has two command-line shells: the Command shell and [PowerShell](https://learn.microsoft.com/en-us/powershell/scripting/overview). Each shell is a software program that provides direct communication between you and the operating system or application, providing an environment to automate IT operations.
+
+推荐使用 PowerShell，功能强大，且有些命令和 Bash Shell 命令很接近。
+
 ## Windows Shell 常用命令
 
-### 常用命令
+### 通用命令
 
 `netsh` ：重置所有网络配置（需要重启），常用于网络连接突然中断或无法连接到互联网:
 ```bash
@@ -20,18 +24,19 @@ netstat -ano | findstr "8080"
 netstat -ano | findstr "3306"
 ```
 
-### cmd Shell
+### Command Shell 命令
 
 `cd` ：打开指定路径
 `del` ：删除文件
 `where` ：查看可执行文件位置
 `echo` ：打印指定内容，如打印环境变量：`echo %GOPROXY%`
 `D:`：切换到指定磁盘根目录
-### PowerShell
+
+### PowerShell 命令
 
 `$env` ：打印环境变量，`$env:VariableName`，如：`$env:GOPROXY`
 
-### WSL 常用命令
+### WSL 命令
 
 WSL 查看系统版本：
 ```bash
