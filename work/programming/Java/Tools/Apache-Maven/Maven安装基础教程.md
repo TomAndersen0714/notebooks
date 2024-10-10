@@ -20,12 +20,14 @@ https://maven.apache.org/install.html
 
 ### 安装配置 JDK
 
-Have a JDK installation on your system. Either set the `JAVA_HOME` environment variable pointing to your JDK installation or have the `java` executable on your `PATH`.
-[Oracle-JDK安装基础教程](work/programming/Java/operation/Oracle-JDK安装基础教程.md)
-
 注意事项：
 1. 如果配置了 `JAVA_HOME` 环境变量，则 Maven 会优先使用此变量指向的 JDK
 2. 否则，如果直接查找 `PATH` 环境变量，则 Maven 会使用其中指定的 JDK 版本
+3. 安装完成后，可以通过 `mvn -v` 命令查看其执行时，使用的 JDK 版本
+
+Have a JDK installation on your system. Either set the `JAVA_HOME` environment variable pointing to your JDK installation or have the `java` executable on your `PATH`.
+
+参考：[Oracle-JDK安装基础教程](work/programming/Java/operation/Oracle-JDK安装基础教程.md)
 
 ### 解压 Maven 压缩包
 

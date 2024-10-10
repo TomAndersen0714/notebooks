@@ -45,15 +45,25 @@
 **解决方案**：
 - 在 IDEA Run Configuration 中，设置 `Modify options - Add dependencies with 'provided' scope to classpath`，这样就能避免 Maven 项目中 scope 为 provided 的 dependency，因为打包时未被引入，而在 IDEA 中直接运行时出现 `ClassNotFoundException` 的异常。
 
-## JDK Version
+## JDK Compatibility
+
+Maven 选用 JDK 的策略：
+1. 如果配置了 `JAVA_HOME` 环境变量，则 Maven 会优先使用此变量指向的 JDK
+2. 否则，如果直接查找 `PATH` 环境变量，则 Maven 会使用其中指定的 JDK 版本
+3. 可以通过 `mvn -v` 命令查看其执行时，使用的 JDK 版本
 
 **问题描述**
 - IDEA 中使用 Maven 编译时报错 `Failed to execute goal net.alchim31.mavem:scala-maven-plugin:4.4.0:compile (scala-compile-first) on project deequ: Execution scala-compile-first of goal net.alchim31.mavem:scala-maven-plugin:4.4.0:compile failed`
 **问题原因**：
-- 在 IDEA 中使用 Maven 时，Maven 默认会使用当前 Project Structure 中指定的 JDK 版本，如果 JDK 版本和 Scala 版本不兼容时，在编译时便会抛出此
+- JDK 版本和 Scala 版本不兼容时，在编译时便会抛出此错误
+	- 在 IDEA 中使用外部的 Maven 、在命令行使用 Maven 时，Maven 会默认使用 `JAVA_HOME` 环境变量指向的 JDK，其次会使用 `PATH` 环境变量指向的 JDK
+	- 在 IDEA 中使用内置的 Maven 时，Maven 默认会使用当前 Project Structure 中指定的 JDK 版本
 **解决方案**：
-- 最终目标是使得 Maven 使用的 JDK 版本和 Scala 版本兼容
-	- 更换项目 Java SDK 版本，即在 `FILE | Project Structure | Project Settings | Project` 中选择和当前版本 Scala 兼容的 JDK 作为项目 SDK。
-	- 更换项目 Scala SDK 版本，即在 `FILE | Project Structure | Project Settings | Libraries` 或者 `FILE | Project Structure | Platform Settings | Global Libraries` 中更换 Scala SDK，使其和 JDK 版本兼容。
+- 目标是使得 Maven 使用的 JDK 版本和 Scala 版本兼容
+	- 更换项目 Maven 使用的 Java SDK 版本
+		- 如果使用的是内置 Maven，即在 `FILE | Project Structure | Project Settings | Project` 中选择和当前版本 Scala 兼容的 JDK 作为项目 SDK。
+		- 如果使用的是非内置的 Maven，则需要修改环境变量 `JAVA_HOME` 环境变量指向需要的 JDK 版本，以及 `PATH` 环境变量指向的 JDK
+	- 更换项目 Scala SDK 版本
+		- 在 pom.xml 文件中修改 Maven 项目的 Scala 依赖，即 `org.scala-lang:scala-library`，将其切换为适配 Maven 使用的 JDK 的版本
 **参考链接**：
 - [Scala安装基础教程](work/programming/Scala/Scala安装基础教程.md)
