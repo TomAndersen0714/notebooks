@@ -1,28 +1,7 @@
-# Maven 配置基础教程
+# Maven 如何配置 repository mirror 镜像
 
-### 所有配置文件
+修改对应级别配置路径下的 setting.xml 文件，参考：[Maven配置基础教程](work/programming/Java/tools/Apache-Maven/Maven配置基础教程.md)
 
-[Maven – Configuring Apache Maven](https://maven.apache.org/configure.html#maven_args-environment-variable)
-
-### settings.xml
-
-settings.xml 文件是 Maven 命令执行时使用的配置文件。
-
-Maven 安装完成后，通常会通过调整配置文件（maven 安装目录的 `conf/settings.xml`）中的 `localRepository` 参数，来配置 jar 包的安装路径；以及通过 `mirror` 参数，调整 Maven 官方仓库的代理镜像地址，一般为国内公开、企业或个人私有的镜像地址。
-
-参考文档：
-- 英文版: https://maven.apache.org/settings.html
-- 中文版: https://www.cnblogs.com/jingmoxukong/p/6050172.html#profiles
-
-User Level：
-- Located in `USER_HOME/.m2` the settings files is designed to contain any configuration for Maven usage across projects of current user.
-- 在 `USER_HOME/.m2` 路径下创建 `settings.xml`，实现用户级别 Maven 配置。
-
-Global Level:
-- Located in `${MAVEN_HOME}/conf/settings.xml`.
-- 在 Maven 安装路径的 conf 文件夹下配置 `settings.xml`，实现全局系统级别 Maven 配置。
-
-配置阿里云 Maven Repository 镜像 Demo:
 ```xml
 
 <?xml version="1.0" encoding="UTF-8"?>
@@ -113,19 +92,3 @@ under the License.
 	</mirror>
   </mirrors>
 ```
-
-### .mvn
-
-项目级别配置文件夹。
-
-Located within the project's top level directory, the files
-- `maven.config`
-- `jvm.config`
-- `extensions.xml`
-
-## 参考链接
-
-1. [Maven初始settings.xml以及国内Maven镜像站设置 - Biem - 博客园](https://www.cnblogs.com/biem/p/15656111.html)
-2. [maven全局配置文件settings.xml详解 - 静默虚空 - 博客园](https://www.cnblogs.com/jingmoxukong/p/6050172.html)
-3. [阿里云仓库服务](https://developer.aliyun.com/mvn/guide?spm=a2c6h.12873639.article-detail.7.10bb51edVtxz2D)
-4. [Maven之私服配置 - 蜗牛大师 - 博客园](https://www.cnblogs.com/wuqinglong/p/12057934.html)

@@ -11,7 +11,7 @@
 [Get started with Scala | IntelliJ IDEA Documentation](https://www.jetbrains.com/help/idea/get-started-with-scala.html)
 
 1. 安装 JetBrain Scala Plugin: `Scala`
-2. 导入 Scala SDK: `File | Project Structure | Platform Settings | Global Libraries`
+2. 手动导入 Scala SDK 作为项目依赖: `File | Project Structure`，参考 [IDEA如何手动引入Scala-SDK](work/tools/IT/JetBrains/IDEA/solution/IDEA如何手动引入Scala-SDK.md)
 
 ### VSCode
 
