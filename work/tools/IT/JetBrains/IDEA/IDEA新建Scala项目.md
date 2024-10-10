@@ -6,7 +6,8 @@
 
 ![](resources/images/Pasted%20image%2020241010102648.png)
 
-Maven Central 仓库的 Archetype 元数据经常加载不出来，这时候建议切换成手动添加，后续通过 Maven 侧边工具栏重新加载项目，实现初始化。
+Maven Central 仓库的 Archetype 元数据经常加载不出来，这时候建议切换成手动添加 Archetype: `net.alchim31.maven:scala-archetype-simple:1.7.0`，后续通过 Maven 侧边工具栏重新加载项目，实现初始化。
+
 ![](resources/images/Pasted%20image%2020241010103533.png)
 
 或者 Maven 命令行创建：

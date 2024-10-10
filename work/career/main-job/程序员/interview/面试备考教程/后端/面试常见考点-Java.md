@@ -16,7 +16,7 @@
 
 - Hashmap 的底层实现原理？
 
-[Java-HashMap基础教程](work/programming/Java/programing/Intermediate/Collections/Java-HashMap基础教程.md)
+[Java-HashMap基础教程](work/programming/Java/programming/Intermediate/Collections/Java-HashMap基础教程.md)
 
 JDk1.8，中 HashMap 是通过数组（Hash 分桶）+链表、红黑树的方式实现的。
 
@@ -41,7 +41,7 @@ https://blog.csdn.net/Elroy1230/article/details/123681027
 ### Java Concurrency
 
 - Java 中线程状态有哪些？是怎么变化流转的？
-[Javat-Thread线程的生命周期](work/programming/Java/programing/Advanced/Concurrency/Javat-Thread线程的生命周期.md)
+[Javat-Thread线程的生命周期](work/programming/Java/programming/Advanced/Concurrency/Javat-Thread线程的生命周期.md)
 
 ## 参考链接
 1. [BiliBili-【面试精选】美团大佬带你一周刷完 Java 面试八股文，比啃书效果好多了！](https://www.bilibili.com/video/BV1eD4y1w7Rp)

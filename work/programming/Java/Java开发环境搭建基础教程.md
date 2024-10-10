@@ -14,6 +14,6 @@
 ## 安装 IDE
 ### JetBrain IDEA
 
-[IDEA基础教程](work/tools/IT/JetBrains/IDEA/IDEA基础教程.md)
+[IDEA安装配置基础教程](work/tools/IT/JetBrains/IDEA/IDEA安装配置基础教程.md)
 
 ### VSCode

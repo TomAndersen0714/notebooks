@@ -1,8 +1,8 @@
 # Scala 新建项目
 
-## SBT
+## IDEA
 
-[sbt基础教程](work/programming/Scala/tools/sbt基础教程.md)
+[IDEA新建Scala项目](work/tools/IT/JetBrains/IDEA/IDEA新建Scala项目.md)
 
 ## Maven
 
@@ -19,9 +19,9 @@ mvn archetype:generate -DarchetypeGroupId=net.alchim31.maven -DarchetypeArtifact
 [Site Unreachable](https://docs.gradle.org/current/userguide/scala_plugin.html)
 [Building Scala Applications Sample](https://docs.gradle.org/current/samples/sample_building_scala_applications.html)
 
-## IDEA
+## SBT
 
-[IDEA新建Scala项目](work/tools/IT/JetBrains/IDEA/IDEA新建Scala项目.md)
+[sbt基础教程](work/programming/Scala/tools/sbt基础教程.md)
 
 ## 参考链接
 
