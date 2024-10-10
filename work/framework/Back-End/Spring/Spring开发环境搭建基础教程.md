@@ -4,4 +4,5 @@ JDK
 Maven
 Gradle
 IDEA
-- MybatisX Plugin
+- MybatisX
+- Lombok

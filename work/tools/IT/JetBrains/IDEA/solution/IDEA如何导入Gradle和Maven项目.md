@@ -6,7 +6,7 @@ IDEA 打开/导入 Gradle/Maven 项目后，会自动执行 `gradle dependencies
 
 ## Maven
 
-1. 打开、导入 Maven 项目后，配置使用本地安装的 Maven，不然默认会使用 IDEA 内置的 Maven，而 IDEA 内置的 Maven 经常有 BUG；
+1. 打开、导入 Maven 项目后，配置使用本地安装的 Maven，不然默认会使用 IDEA 内置的 Maven，而 IDEA 内置的 Maven 经常有 BUG；[IDEA如何配置Maven](work/tools/IT/JetBrains/IDEA/solution/IDEA如何配置Maven.md)
 2. 命令行执行 Maven 命令行解析依赖 `mvn dependency:resolve`；
 3. 如果 Maven 命令执行完成之后，IDEA 依旧无法识别，可能是 IDEA 中内置的 Maven 已经下载，但下载不完全，需要通过 Maven 命令行指定下载对应的依赖，对应命令参考 [Maven命令行基础教程](work/programming/Java/tools/Apache-Maven/Maven命令行基础教程.md)；
 4. 命令行执行 `mvn compile -DskipTests` 命令编译当前项目，来测试项目的开发环境搭建是否正确
@@ -14,7 +14,7 @@ IDEA 打开/导入 Gradle/Maven 项目后，会自动执行 `gradle dependencies
 
 ## Gradle
 
-1. 如果是普通的 Gradle 项目，直接导入，然后配置对应的 Gradle 路径即可；
+1. 如果是普通的 Gradle 项目，直接导入，然后配置对应的 Gradle 路径即可；[IDEA如何配置Gradle](work/tools/IT/JetBrains/IDEA/solution/IDEA如何配置Gradle.md)
 2. 如果是 Gradle Wrapper 项目，则需要先在命令行执行 `gradlew dependencies` 来自动下载对应版本的 Gradle 以及当前项目的依赖，之后 IDEA 才能正确识别当前项目所使用的 Gradle 版本。如果 Gradle 官方链接的下载速度太慢，或者需要使用私有仓库，则需要调整对应的下载 url，配置方式参考 [Gradle配置基础教程](work/programming/Java/tools/Gradle/Gradle配置基础教程.md)；
 3. 命令行执行 `gradle build` 或者 `gradlew build` 命令编译当前项目，来测试项目的开发环境搭建是否正确
 4. 最后再去 IDEA 的 Gradle 侧边栏工具箱中，选择重新加载所有 Gradle 项目，即 `Reload All Gradle Projects`。选中对应项目的对应 `Tasks/build/build`，并执行，执行成功则代表 IDEA 项目已经导入成功，相关的开发环境也已经准备完成。
