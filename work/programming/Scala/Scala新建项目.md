@@ -14,4 +14,6 @@
 
 ## 参考链接
 
-1. [Site Unreachable](https://docs.scala-lang.org/tutorials/scala-with-maven.html)
+1. [scala-with-maven](https://docs.scala-lang.org/tutorials/scala-with-maven.html)
+2. [scala-module-dependency-sample/maven-sample at master · scala/scala-module-dependency-sample · GitHub](https://github.com/scala/scala-module-dependency-sample/tree/master/maven-sample)
+3. [GitHub - davidB/scala-maven-plugin: The scala-maven-plugin (previously maven-scala-plugin) is used for compiling/testing/running/documenting scala code in maven.](https://github.com/davidB/scala-maven-plugin)

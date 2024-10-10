@@ -1,8 +1,6 @@
 # Maven pom.xml 项目配置文件基础教程
 
-
 ## What is a POM?
-
 
 ## Project Inheritance
 
@@ -14,8 +12,7 @@
 
 ### Transitive Dependencies
 
-
-### Dependency Scope 
+### Dependency Scope
 
 [Maven – Introduction to the Dependency Mechanism#scope](https://maven.apache.org/guides/introduction/introduction-to-dependency-mechanism.html#dependency-scope)
 
