@@ -6,7 +6,7 @@ set -ex
 # get parameters
 git_path=${1:-"."}
 option=${2:-"commit"}
-trailing_cmd=$3
+trailing_params=$3
 
 
 # check parameters
@@ -15,8 +15,8 @@ if [ ! -d "$git_path" ]; then
     exit 1
 fi
 
-if [ "$option" != "commit" ] && [ "$option" != "pack" ]; then
-    echo "option must be commit or pack"
+if [ "$option" != "commit" ] && [ "$option" != "pack" ] && [ "$option" != "push" ]; then
+    echo "option must be commit, pack or push"
     exit 1
 fi
 
@@ -26,15 +26,15 @@ git_repo=$(basename "$(git -C "${git_path}" rev-parse --show-toplevel)")
 # define functions
 function git_commit() {
     # handle commit message
-    if [ -z "$trailing_cmd" ]; then
-        trailing_cmd="update $(date)"
+    if [ -z "$trailing_params" ]; then
+        trailing_params="update $(date)"
     else
-        trailing_cmd="update $(date) $trailing_cmd"
+        trailing_params="update $(date) $trailing_params"
     fi
 
     # git commit
     git -C "$git_path" add .
-    git -C "$git_path" commit -m "$trailing_cmd"
+    git -C "$git_path" commit -m "$trailing_params"
 }
 
 function zip_package() {
@@ -56,7 +56,11 @@ function zip_package() {
 
 function git_push() {
     # git push
-    git -C "$git_path" push "$trailing_cmd"
+    if [ -z "$trailing_params" ]; then
+        git -C "$git_path" push
+    else
+        git -C "$git_path" push "$trailing_params"
+    fi
 }
 
 # main
@@ -71,4 +75,5 @@ pack)
 push)
     git_push
     ;;
-esac
+esac
+
