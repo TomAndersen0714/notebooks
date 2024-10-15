@@ -14,6 +14,10 @@
 1. Poetry
 2. Pipenv
 
-## Package
+## Serialization
+
+1. Pickle
+
+## Packing
 
 1. PyInstaller

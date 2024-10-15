@@ -1,6 +1,5 @@
 # Spark Application 配置基础教程
 
-
 ## Overview
 
 [Cluster Mode Overview - Spark 3.5.1 Documentation](https://spark.apache.org/docs/latest/cluster-overview.html)
@@ -9,7 +8,6 @@
 ## Spark On YARN Configuration
 
 [Running Spark on YARN - Spark 3.5.0 Documentation](https://spark.apache.org/docs/latest/running-on-yarn.html#spark-properties)
-
 
 ### Spark On YARN 常用配置
 

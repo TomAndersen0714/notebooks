@@ -1,6 +1,5 @@
 # Spark 性能优化之数据倾斜问题解决方案
 
-
 ## 诊断方式
 
 在 Spark Application Master 或 Spark HistoryServer 中查看 Spark UI Web，通过以下方式来判断是否具备数据倾斜的症状：
@@ -9,16 +8,15 @@
 
 ## 优化方案
 
-### Group By 倾斜
+### Group By 倾斜时
 
+如果是满足结合律（即因子的顺序不影响结果）的指标，如：sum/max/min 这类，则可以直接水平拆分（热点数据单独处理）、垂直拆分（分步聚合），或者两种拆分方式相互组合。
 
-### Join 倾斜
+### Join 倾斜时
 
 大表 Join 小表倾斜
 
-
 大表 Join 大表倾斜
-
 
 ## 参考链接
 

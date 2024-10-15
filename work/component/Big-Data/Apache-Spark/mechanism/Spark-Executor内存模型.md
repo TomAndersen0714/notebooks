@@ -1,6 +1,5 @@
 # Spark Executor 内存模型
 
-
 ## 前言
 
 本文主要用于介绍 Spark Executor on YARN 的内存模型。
@@ -8,7 +7,6 @@
 不同版本的 Spark 中，对应的 executor 内存模型也不同，本文中介绍的内存模型对应的 Spark 版本为 v2.4.3 。
 
 ## Spark Executor 内存组成
-
 
 `org.apache.spark.deploy.yarn.Client#verifyClusterResources` 源码摘录
 
@@ -42,7 +40,6 @@
     // getting all the node reports and computing ourselves.
   }
 ```
-
 
 ExecutorMemory:
 1. EXECUTOR_MEMORY

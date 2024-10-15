@@ -1,5 +1,4 @@
-# Spark 读写 ClickHouse 基础教程
-
+# Spark 如何读写 ClickHouse 数据库
 
 ## 参考链接
 

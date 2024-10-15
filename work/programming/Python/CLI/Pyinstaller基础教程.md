@@ -29,18 +29,23 @@ pyinstaller --onefile --clean your_program.py --name your_program
 ```
 
 常用选项：
-1. `-F | --onefile`
+1. `-D, --onedir`
+	1. Create a one-folder bundle containing an executable (default)
+	2. 打包成包含可执行文件的文件夹形式
+2. `-F | --onefile`
 	1. Create a one-file bundled executable. Windows 中 dll 文件和 exe 文件打包到同一文件中, 这样生成的可执行文件可执行较好，但文件体积相对较大。
 	2. `pyinstaller --onefile your_program.py`
-2. `--clean`
+3. `--clean`
 	1. Clean PyInstaller cache and remove temporary files before building.
 	2. `pyinstaller --onefile --clean your_program.py`
-3. `-n NAME, --name NAME`
+4. `-n NAME, --name NAME`
 	1. Name to assign to the bundled app and spec file (default: first script’s basename). 指定输出的可执行文件前缀名。
 	2. `pyinstaller your_program.py --name your_program`
-4. `-p DIR, --paths DIR`
+5. `-p DIR, --paths DIR`
 	1. A path to search for imports (like using PYTHONPATH). Multiple paths are allowed, separated by `':'`, or use this option multiple times. Equivalent to supplying the `pathex` argument in the spec file. 用于指定各种依赖的额外检索路径。
 	2. `pyinstaller your_program.py -p C:\Windows\System32\downlevel --name your_program`
+6. `-i | --icon`
+	1. apply the icon to a Windows executable
 
 ## 常见问题
 
@@ -60,6 +65,13 @@ pyinstaller --onefile --clean your_program.py --name your_program
 - 找到对应可用的（非空的） `dll` 文件路径，并通过 `-p` 参数来指定依赖导入的文件夹路径，如： `-p C:\Windows\System32\downlevel`
 参考链接
 - [【Python】解决使用pyinstaller打包Tkinker程序报错问题 - 郑立赛 - 博客园](https://www.cnblogs.com/zhenglisai/p/11418144.html)
+
+性能问题：
+- Pyinstaller `--onefile` 打包的单个 exe 文件启动太慢
+排查原因：
+- 无解问题，因为一旦项目引入 Python 包过多过大，就会导致单个 exe 文件启动变慢，需要解压频繁并生成大量临时文件
+解决方案
+- 绕过这个问题，使用 `-D, --onedir` 的方式进行打包，可执行文件和依赖分开，毕竟大型 Windows 程序都是这么处理的
 
 ## 参考链接
 

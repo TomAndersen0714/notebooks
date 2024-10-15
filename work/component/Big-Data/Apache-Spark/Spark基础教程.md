@@ -39,6 +39,7 @@ Spark Application 中 Job 的 ID 从小到大顺序，即是 Job 在源码中提
 
 1. Job 划分的依据是 Action 算子：当应用程序执行到某个 Action 算子时，比如 collect (), save () 或 count () 等，Spark 会创建一个新的 Job。Action 算子是触发计算并将数据从 Spark 环境移出的操作，它们标志着一个具体的计算需求，因此是 Spark 划分 Job 的边界。
 2. Stage 划分的依据是宽依赖（Shuffle Transform）算子：在 Job 内部，Stage 的划分依据是 DAG（有向无环图）中的宽依赖关系。当一个 RDD（弹性分布式数据集）的转换操作导致数据需要跨节点重新分布时，就形成了宽依赖，最常见的宽依赖操作是 shuffle，如 groupByKey ()、reduceByKey () 等。为了优化执行效率，Spark 会在宽依赖处切分 Stage，确保 Stage 内的所有任务可以流水线式执行，减少数据的重排次数。因此，Stage 的划分是为了最小化 shuffle 操作，提高整体执行效率。
+
 ## Spark Deploy Mode
 
 `deploy-mode` 选项指定的是 spark driver 的运行位置，其中 Cluster 代表在集群中运行 Spark Driver，Client 则代表在本地运行 Spark Driver。
@@ -64,8 +65,10 @@ K8S
 [Running Spark on Kubernetes - Spark 3.5.0 Documentation](https://spark.apache.org/docs/latest/running-on-kubernetes.html)
 
 ## 参考链接
-1. [Apache Spark™ - Unified Engine for large-scale data analytics](https://spark.apache.org)
-2. [Overview - Spark 3.5.0 Documentation](https://spark.apache.org/docs/latest/)
-3. [微信-五分钟学大数据-Spark SQL 底层执行流程详解](https://mp.weixin.qq.com/s/CWdBLhgUrLxlsavTFhA0rA)
-4. [Github - Spark Shuffle 机制](https://paxinla.github.io/posts/2021/02/spark-shuffle-ji-zhi.html)
-5. [微信-五分钟学大数据-Spark 面试八股文（上万字面试必备宝典）](https://mp.weixin.qq.com/s/Lx3kWDs_XjhuyibX8dhFMQ)
+
+1. [Spark documentation archive: Index of /dist/spark/docs](https://archive.apache.org/dist/spark/docs/)
+2. [Apache Spark™ - Unified Engine for large-scale data analytics](https://spark.apache.org)
+3. [Overview - Spark 3.5.0 Documentation](https://spark.apache.org/docs/latest/)
+4. [微信-五分钟学大数据-Spark SQL 底层执行流程详解](https://mp.weixin.qq.com/s/CWdBLhgUrLxlsavTFhA0rA)
+5. [Github - Spark Shuffle 机制](https://paxinla.github.io/posts/2021/02/spark-shuffle-ji-zhi.html)
+6. [微信-五分钟学大数据-Spark 面试八股文（上万字面试必备宝典）](https://mp.weixin.qq.com/s/Lx3kWDs_XjhuyibX8dhFMQ)

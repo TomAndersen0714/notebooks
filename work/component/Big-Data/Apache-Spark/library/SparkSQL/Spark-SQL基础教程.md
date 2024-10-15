@@ -19,6 +19,11 @@ Spark 中视图是无法存储
 
 [Functions - Spark 3.5.0 Documentation](https://spark.apache.org/docs/latest/sql-ref-functions.html)
 
+Built-in Functions
+[Spark SQL, Built-in Functions](https://spark.apache.org/docs/latest/api/sql/)
+
+UDFs
+
 ### DQL
 
 [SELECT - Spark 3.5.0 Documentation](https://spark.apache.org/docs/latest/sql-ref-syntax-qry-select.html)

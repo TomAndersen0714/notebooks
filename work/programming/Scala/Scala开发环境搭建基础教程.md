@@ -24,5 +24,6 @@
 
 ## 参考链接
 
-1. [Idea集成scala\_scala对应jdk版本-CSDN博客](https://blog.csdn.net/weixin_45207751/article/details/131259706)
+1. [Scala IDEs | Scala Documentation](https://docs.scala-lang.org/getting-started/scala-ides.html)
 2. [Get started with Scala | IntelliJ IDEA Documentation](https://www.jetbrains.com/help/idea/get-started-with-scala.html)
+3. [Idea集成scala\_scala对应jdk版本-CSDN博客](https://blog.csdn.net/weixin_45207751/article/details/131259706)

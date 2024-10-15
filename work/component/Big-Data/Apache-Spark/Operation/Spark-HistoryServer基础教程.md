@@ -1,6 +1,5 @@
 # Spark HistoryServer 基础教程
 
-
 提交 Spark On YARN 时，Spark Application ID 和 YARN Application ID 完全相同。
 
 ## 参考链接

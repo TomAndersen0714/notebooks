@@ -53,7 +53,7 @@ Maven 选用 JDK 的策略：
 3. 可以通过 `mvn -v` 命令查看其执行时，使用的 JDK 版本
 
 **问题描述**
-- IDEA 中使用 Maven 编译时报错 `Failed to execute goal net.alchim31.mavem:scala-maven-plugin:4.4.0:compile (scala-compile-first) on project deequ: Execution scala-compile-first of goal net.alchim31.mavem:scala-maven-plugin:4.4.0:compile failed`
+- IDEA 中使用 Maven 编译时报错 `Failed to execute goal net.alchim31.maven:scala-maven-plugin:4.4.0:compile (scala-compile-first) on project deequ: Execution scala-compile-first of goal net.alchim31.maven:scala-maven-plugin:4.4.0:compile failed`
 **问题原因**：
 - JDK 版本和 Scala 版本不兼容时，在编译时便会抛出此错误
 	- 在 IDEA 中使用外部的 Maven 、在命令行使用 Maven 时，Maven 会默认使用 `JAVA_HOME` 环境变量指向的 JDK，其次会使用 `PATH` 环境变量指向的 JDK

@@ -205,12 +205,16 @@ https://blog.csdn.net/2301_76696220/article/details/134683935
 
 在 IDEA 编辑器中粘贴代码时，默认会自动格式化，导致和复制的内容不符，因此建议关闭此功能，即将 `Reformat on Paste` 设置为 None。
 
-File | Settings | Editor | General | Smart Keys | Reformat on Paste
+`File | Settings | Editor | General | Smart Keys | Reformat on Paste`
 
-## IDEA Debugger 调试
+### Show Tabs in Multiple rows
+
+配置 `File | Settings | Editor | General | Editor Tabs`，`Appearance | Show Tabs in` 勾选 `Multiple rows`，开启标签页多行显示。
+
+## IDEA Debugger 基础教程
 
 [IDEA-Debug调试基础教程](work/tools/IT/JetBrains/IDEA/IDEA-Debug调试基础教程.md)
 
-## IDEA Git 使用技巧
+## IDEA Git 基础教程
 
 [IDEA-Git功能基础教程](work/tools/IT/JetBrains/IDEA/IDEA-Git功能基础教程.md)

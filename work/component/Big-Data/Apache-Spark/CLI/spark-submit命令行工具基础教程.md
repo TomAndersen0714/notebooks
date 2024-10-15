@@ -2,7 +2,7 @@
 
 ## 简介
 
-Spark-submit 命令行工具是 Apache Spark 的一个核心组件，用于提交 Spark 应用程序到 Spark 集群上运行。
+Spark-submit 命令行工具是 Apache Spark 的一个核心组件，用于提交编译好的 Spark 应用程序包到 Spark 集群上运行。
 
 Spark-submit 命令行工具支持提交 Scala/Java 代码实现的 jar 文件，也支持 Python 实现的 Py 文件，将其中定义的 Spark Application 提交给 Spark 集群运行。
 
@@ -12,7 +12,7 @@ Spark-submit 命令行工具支持提交 Scala/Java 代码实现的 jar 文件�
 
 Some of the commonly used options are:
 - `--class` : The entry point for your application (e.g. `org.apache.spark.examples.SparkPi`)
-- `--master`: The master URL for the cluster (e.g. `spark://23.195.26.187:7077` )  
+- `--master`: The master URL for the cluster (e.g. `spark://23.195.26.187:7077` )
 - `--deploy-mode`: Whether to deploy your driver on the worker nodes (cluster) or locally as an external client (client) (default: `client`)
 - `--conf`: Arbitrary Spark configuration property in key=value format. For values that contain spaces wrap “key=value” in quotes (as shown). Multiple configurations should be passed as separate arguments. `(e.g. --conf <key>=<value> --conf <key2>=<value2>)`
 - `application-jar` : Path to a bundled jar including your application and all dependencies. The URL must be globally visible inside of your cluster, for instance, an `hdfs://path` or a `file://path` that is present on all nodes.
@@ -99,7 +99,6 @@ export HADOOP_CONF_DIR=XXX
   http://path/to/examples.jar \
   1000
 ```
-
 
 ## spark-submit PySpark Application
 

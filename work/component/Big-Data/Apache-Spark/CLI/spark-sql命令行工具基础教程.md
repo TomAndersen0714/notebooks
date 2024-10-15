@@ -1,4 +1,4 @@
-# spark-sql  命令行工具基础教程
+# spark-sql 命令行工具基础教程
 
 ## 简介
 
@@ -41,4 +41,4 @@ CLI options:
 ## 参考链接
 
 1. [Spark SQL CLI - Spark 3.5.3 Documentation](https://spark.apache.org/docs/latest/sql-distributed-sql-engine-spark-sql-cli.html)
-2. [Spark-SQL基础教程](work/component/Big-Data/Apache-Spark/development/Spark-SQL基础教程.md)
+2. [Spark-SQL基础教程](work/component/Big-Data/Apache-Spark/library/SparkSQL/Spark-SQL基础教程.md)

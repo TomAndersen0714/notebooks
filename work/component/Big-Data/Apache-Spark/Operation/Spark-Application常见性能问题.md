@@ -1,8 +1,6 @@
 # Spark Application 常见性能问题
 
-
 ## Too slow
-
 
 **Executor 分配的 Task 数量倾斜**
 
@@ -27,7 +25,6 @@
 
 参考：[Spark性能优化之数据倾斜问题解决方案](work/component/Big-Data/Apache-Spark/solution/Spark性能优化之数据倾斜问题解决方案.md)
 
-
 - **Executor 减少，导致下游 stage 无法 skip，且分配较少的 Task，进而 Executor 出现 OOM**
 
 两次任务的数据量相同，但后者 executor 数据量较少，task 也很少，进而出现 OOM（原因待定）。
@@ -35,4 +32,3 @@
 1. 增大，`spark.scheduler.maxRegisteredResourcesWaitingTime`，增加等待分配 Executor 的时间，尽量避免提前启动 Job。
 2. 增大，`spark.scheduler.minRegisteredResourcesRatio`，增大最小启动资源比例。
 3. `spark.dynamicAllocation.enabled`???
-

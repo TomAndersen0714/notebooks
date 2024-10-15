@@ -1,9 +1,8 @@
 # Spark Application 性能优化基础教程
 
-
 ## 常见性能问题的症状、原因及其解决方案
 
-[Spark-SQL性能优化基础教程](work/component/Big-Data/Apache-Spark/development/Spark-SQL性能优化基础教程.md)
+[Spark-SQL性能优化基础教程](work/component/Big-Data/Apache-Spark/library/SparkSQL/Spark-SQL性能优化基础教程.md)
 [MySQL-SQL查询性能优化教程](work/component/Back-End/MySQL/solution/MySQL-SQL查询性能优化教程.md)
 
 ## Spark 任务常见性能问题、诊断及解决方法
@@ -22,7 +21,6 @@
 
 [SparkSql 慢任务诊断案例](https://mp.weixin.qq.com/s/3RrpzO5rPthKfyGX8MvnFw)
 
-
 ### 慢查询
 
 极个别任务量太大
@@ -30,10 +28,8 @@
 
 [Spark性能优化之数据倾斜问题解决方案](work/component/Big-Data/Apache-Spark/solution/Spark性能优化之数据倾斜问题解决方案.md)
 
-
 任务量太大
 1. 小文件数量太多
-
 
 ### 高负载查询
 
@@ -45,7 +41,6 @@ OOM：
 2. 增加 `spark.sql.shuffle.partitions` 数值
 3. 增加 `spark.executor.instances` 和 `spark.executor.memory` 参数大小，指定分配更多的资源
 
-
 ### Adaptive Query Execution
 
 [Performance Tuning - Spark 3.5.0 Documentation](https://spark.apache.org/docs/latest/sql-performance-tuning.html#adaptive-query-execution)
@@ -54,7 +49,7 @@ OOM：
 
 [Spark SQL Guide - Performance Tuning - Spark 3.5.0 Documentation](https://spark.apache.org/docs/latest/sql-performance-tuning.html)
 
-[Spark-SQL性能优化基础教程](work/component/Big-Data/Apache-Spark/development/Spark-SQL性能优化基础教程.md)
+[Spark-SQL性能优化基础教程](work/component/Big-Data/Apache-Spark/library/SparkSQL/Spark-SQL性能优化基础教程.md)
 
 ## 参考链接
 1. [Performance Tuning - Spark 3.5.1 Documentation](https://spark.apache.org/docs/latest/sql-performance-tuning.html)
