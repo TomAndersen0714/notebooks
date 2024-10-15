@@ -6,6 +6,8 @@ set -ex
 # get parameters
 git_path=${1:-"."}
 option=${2:-"commit"}
+trailing_cmd=$3
+
 
 # check parameters
 if [ ! -d "$git_path" ]; then
@@ -18,24 +20,43 @@ if [ "$option" != "commit" ] && [ "$option" != "pack" ]; then
     exit 1
 fi
 
+# handle parameters
+git_repo=$(basename "$(git -C "${git_path}" rev-parse --show-toplevel)")
+
 # define functions
 function git_commit() {
+    # handle commit message
+    if [ -z "$trailing_cmd" ]; then
+        trailing_cmd="update $(date)"
+    else
+        trailing_cmd="update $(date) $trailing_cmd"
+    fi
+
     # git commit
     git -C "$git_path" add .
-    git -C "$git_path" commit -m "update $(date)"
+    git -C "$git_path" commit -m "$trailing_cmd"
 }
 
 function zip_package() {
     # define variables
-    pkg_file=$(basename "$git_path")_$(date +%Y%m%d%H%M%S).zip
-    pkg_file_path="./output/$pkg_file"
-
-    # remove old package
-    rm -f "$pkg_file"
+    pkg_file=${git_repo}_$(date +%Y%m%d%H%M%S).zip
+    sync_path_1="./output/"
+    sync_path_2="$HOME/onedrive/Packages/"
 
     # zip packing and overwrite old package
     zip -r "$pkg_file" "$git_path"
-    mv "$pkg_file" "$pkg_file_path"
+    cp "$pkg_file" "$sync_path_1"
+    cp "$pkg_file" "$sync_path_2"
+
+    # remove expired git_repo package
+    rm -f "$pkg_file"
+    find "$sync_path_1" -name "${git_repo}_*.zip" -type f -mtime +2 -exec rm -f '{}' ';'
+    find "$sync_path_2" -name "${git_repo}_*.zip" -type f -mtime +2 -exec rm -f '{}' ';'
+}
+
+function git_push() {
+    # git push
+    git -C "$git_path" push "$trailing_cmd"
 }
 
 # main
@@ -47,4 +68,7 @@ commit)
 pack)
     zip_package
     ;;
-esac
+push)
+    git_push
+    ;;
+esac
