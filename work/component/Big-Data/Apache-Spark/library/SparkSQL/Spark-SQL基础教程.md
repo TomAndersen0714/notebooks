@@ -13,16 +13,9 @@
 
 Views are based on the result-set of an SQL query. `CREATE VIEW` constructs a virtual table that has no physical data therefore other operations like `ALTER VIEW` and `DROP VIEW` only change metadata.
 
-Spark 中视图是无法存储
-
 #### FUNCTION
 
-[Functions - Spark 3.5.0 Documentation](https://spark.apache.org/docs/latest/sql-ref-functions.html)
-
-Built-in Functions
-[Spark SQL, Built-in Functions](https://spark.apache.org/docs/latest/api/sql/)
-
-UDFs
+[Spark-SQL-Functions函数](work/component/Big-Data/Apache-Spark/library/SparkSQL/Spark-SQL-Functions函数.md)
 
 ### DQL
 

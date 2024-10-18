@@ -14,6 +14,13 @@
 mvn archetype:generate -DarchetypeGroupId=net.alchim31.maven -DarchetypeArtifactId=scala-archetype-simple
 ```
 
+注意：建议删除此项目模板 pom.xml 文件的插件配置 `sourceDirectory` 和 `testSourceDirectory`，避免在增加 java 代码时，Maven compile 时仅使用指定路径，而不包含 java 源代码路径（`src/main/java`）。
+
+```xml
+<sourceDirectory>src/main/scala</sourceDirectory>  
+<testSourceDirectory>src/test/scala</testSourceDirectory>
+```
+
 ## Gradle
 
 [Site Unreachable](https://docs.gradle.org/current/userguide/scala_plugin.html)

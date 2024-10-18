@@ -7,12 +7,7 @@
 ## Spark Application 开发
 
 [Spark-Application开发基础教程](work/component/Big-Data/Apache-Spark/development/Spark-Application开发基础教程.md)
-## Spark SQL 开发
 
-[Spark-SQL开发基础教程](work/component/Big-Data/Apache-Spark/library/SparkSQL/Spark-SQL开发基础教程.md)
-## Spark UDF 开发
-
-[Spark-SQL-UDF开发基础教程](work/component/Big-Data/Apache-Spark/library/SparkSQL/Spark-SQL-UDF开发基础教程.md)
 ## Spark 源码开发
 
 [Spark源码开发基础教程](work/component/Big-Data/Apache-Spark/development/Spark源码开发基础教程.md)

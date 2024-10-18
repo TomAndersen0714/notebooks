@@ -4,18 +4,16 @@
 
 ## 安装并配置 JDK
 
-
 ## 安装并配置 Scala SDK
 
+[Scala安装基础教程](work/programming/Scala/Scala安装基础教程.md)
+[IDEA如何引入Scala-SDK](work/tools/IT/JetBrains/IDEA/solution/IDEA如何引入Scala-SDK.md)
 
 ## 安装并配置 Maven
 
-
 ## 安装并配置 IDEA
 
-
 ## 创建 Maven Scala 项目开发 Spark 应用
-
 
 ### 配置 Maven 项目依赖
 

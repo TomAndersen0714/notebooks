@@ -1,11 +1,8 @@
 # Zookeeper 安装基础教程
 
-
-
 ## 拉取 ZK 镜像
 
 PS：由于本次平台搭建所在的线上环境无法直接拉取 Docker 公共仓库的 image，因此需要在线下拉取然后导出导入的方式实现 image 的加载
-
 
 ```bash
 # 线下pull镜像
@@ -22,9 +19,7 @@ unzip zookeeper-3.7.0-image.tar.zip
 docker load -i zookeeper-3.7.0-image.tar
 ```
 
-
 ## 配置 ZK 集群
-
 
 ### 节点列表
 
@@ -33,8 +28,6 @@ docker load -i zookeeper-3.7.0-image.tar
 | znzjk-133213-prod-mini-bigdata-clickhouse | 10.22.133.213 | zookeeper_1 |
 | znzjk-133214-prod-mini-bigdata-clickhouse | 10.22.133.214 | zookeeper_2 |
 |    znzjk-133215-prod-mini-bigdata-cdh     | 10.22.133.215 | zookeeper_3 |
-
-
 
 ### ZK1
 
@@ -45,11 +38,9 @@ docker load -i zookeeper-3.7.0-image.tar
 mkdir -p /data/zookeeper/conf/ /etc/zookeeper/
 ```
 
-
 #### 创建配置文件 zoo.cfg
 
 `在/data/zookeeper/conf/路径下创建配置文件zoo.cfg，内容同上，同时需要修改读写权限`
-
 
 ```bash
 vim /data/zookeeper/conf/zoo.cfg
@@ -103,17 +94,14 @@ server.2=znzjk-133214-prod-mini-bigdata-clickhouse:2888:3888
 server.3=znzjk-133215-prod-mini-bigdata-cdh:2888:3888
 ```
 
-
 #### 创建日志配置文件log4j.properties
 
 `在/data/zookeeper/conf/路径下创建配置文件log4j.properties，同时需要修改读写权限`
-
 
 ```bash
 vim /data/zookeeper/conf/log4j.properties
 chmod 666 /data/zookeeper/conf/log4j.properties
 ```
-
 
 ```xml
 log4j.rootLogger=INFO,INFO_LOG,ERROR_LOG
@@ -146,7 +134,6 @@ chmod 744 /etc/zookeeper/zk1_start.sh
 /etc/zookeeper/zk1_start.sh
 ```
 
-
 PS：使用 Docker 容器的网桥模式创建集群，缺点在于 hosts 无法实现动态增加，需要事先固定好
 
 ```bash
@@ -172,7 +159,6 @@ docker run -d \
 zookeeper:3.7.0
 ```
 
-
 ### ZK2
 
 #### 创建容器数据卷对应宿主机路径
@@ -186,7 +172,6 @@ zookeeper:3.7.0
 同上
 
 #### 创建 zk 容器
-
 
 ```bash
 vim /etc/zookeeper/zk2_start.sh
@@ -217,9 +202,6 @@ docker run -d \
 zookeeper:3.7.0
 ```
 
-
-
-
 ### ZK3
 
 #### 创建容器数据卷对应宿主机路径
@@ -239,7 +221,6 @@ vim /etc/zookeeper/zk3_start.sh
 chmod 744 /etc/zookeeper/zk3_start.sh
 /etc/zookeeper/zk3_start.sh
 ```
-
 
 ```bash
 #!/bin/bash
@@ -264,7 +245,6 @@ docker run -d \
 zookeeper:3.7.0
 ```
 
-
 ## 检查 zkServer 集群状态
 
 ```bash
@@ -288,12 +268,4 @@ Zookeeper Server 必须按照 myId 从小到大的顺序启动，如果顺序错
 - 解决方案 1：找到 leader 节点，重启 leader 节点的 zookeeper
 - 解决方案 2：按照 my_id 顺序依次重启所有 zookeeper
 
-
 ## End
-
-
-
-
-
-
-

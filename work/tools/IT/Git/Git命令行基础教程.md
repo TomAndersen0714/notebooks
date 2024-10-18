@@ -90,6 +90,11 @@ git clone --depth 1 https://github.com/grpc/grpc-java
 
 ### git push
 
+`--set-upstream`: 设置当前分支对应的远程分支
+```bash
+git push --set-upstream origin master
+```
+
 ### git branch
 
 `-vv` ：显示分支详细信息
@@ -213,5 +218,23 @@ PS: Git submodule管理起来十分复杂，不建议使用
 git submodule add <remote URL> <directory>
 ```
 
+### git format-patch
+
+```bash
+# 将提交点abc1234到HEAD的所有提交生成对应的patch补丁
+git format-patch abc1234
+# 将提交范围abc1234..def5678的所有提交生成对应的patch补丁
+git format-patch abc1234..def5678
+```
+
+### git apply
+
+此命令只会应用补丁到暂存区，而不会直接创建提交，如果需要直接创建提交，则需要使用 `git am` 命令
+```bash
+# 应用补丁文件
+git apply path_to_file.patch
+```
+
 ## 参考链接
+
 1. [Git Reference](https://git-scm.com/docs)

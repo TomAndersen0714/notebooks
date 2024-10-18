@@ -45,6 +45,19 @@
 **解决方案**：
 - 在 IDEA Run Configuration 中，设置 `Modify options - Add dependencies with 'provided' scope to classpath`，这样就能避免 Maven 项目中 scope 为 provided 的 dependency，因为打包时未被引入，而在 IDEA 中直接运行时出现 `ClassNotFoundException` 的异常。
 
+## Maven Compile
+
+**问题描述**：
+- Maven 执行 compile 时，只编译了 scala 代码，但是并未编译 java 代码
+**问题原因**：
+- 因为 Maven pom.xml 文件中插件的配置存在问题
+**解决方案**：
+1. Maven pom.xml 文件中删除 `sourceDirectory` 和 `testSourceDirectory` 相关配置，避免强制声明源代码和测试代码路径，而是让 Maven 插件采用默认路径
+```xml
+<sourceDirectory>src/main/scala</sourceDirectory>  
+<testSourceDirectory>src/test/scala</testSourceDirectory>
+```
+
 ## JDK Compatibility
 
 Maven 选用 JDK 的策略：

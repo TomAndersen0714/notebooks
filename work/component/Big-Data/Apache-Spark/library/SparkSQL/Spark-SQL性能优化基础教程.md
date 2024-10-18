@@ -1,6 +1,5 @@
 # Spark SQL 性能优化基础教程
 
-
 ## 为什么要进行 Spark SQL 性能优化
 
 提升计算资源利用率
@@ -39,7 +38,7 @@ OOM 报错常见日志：
 - `org.apache.spark.shuffle.FetchFailedException: Failure while fetching StreamChunkId`
 - `org.apache.spark.shuffle.FetchFailedException: Failed to connect to xxx`
 - `org.apache.spark.shuffle.MetadataFetchFailedException: Missing an output location for shuffle xxx`
-- `ERROR cluster.YarnShceduler: Lost executor xx on xx` 
+- `ERROR cluster.YarnShceduler: Lost executor xx on xx`
 - `ExecutorLostFailure (executor xxx exited caused by one of the running tasks) Reason: Container killed by YARN for exceeding memory limits`
 - `Container killed on request. Exit code is 143 Container exited with a non-zero exit code 143`
 
@@ -62,7 +61,6 @@ Spark UI | Stages | Details for Stage | Tasks
 
 ## Spark SQL 常用优化思路和方法
 
-
 ### 减少读取数据量
 
 通过减少 Task 读取的数据量，提升整体性能，以避免出现 OOM 和超时问题。
@@ -75,7 +73,6 @@ Case 1：Spark SQL 在 Join 时，会自动下推 `Join key is not null` 的条�
 Case2：Spark SQL 中在 Join 后使用 Where 语句时，是先进行 Join，然后再执行 Where 语句筛选和过滤行。可以通过手动将 Where 语句下推到 left 表和 right 表的子查询中，以提前减少无效行的读取。
 
 Case3：Spark SQL 使用 Order By+Limit 语句查询 TopN 时，优化器会对 partition 中的数据进行局部排序 local sort 并局部筛选 local limit，减少后续读取数据量，然后再去执行全局排序和筛选 global limit。
-
 
 ```sql
 scala> val myDF = Seq(83, 90, 40, 94, 12, 70, 56, 70, 28, 91).toDF("number")
@@ -172,7 +169,7 @@ Broadcast Join Hint，手动触发：
 [Performance Tuning - Spark 3.5.1 Documentation](https://spark.apache.org/docs/latest/sql-performance-tuning.html#join-strategy-hints-for-sql-queries)
 [Hints - Spark 3.5.1 Documentation](https://spark.apache.org/docs/latest/sql-ref-syntax-qry-select-hints.html#join-hints)
 
->Suggests that Spark use broadcast join. The join side with the hint will be broadcast regardless of `autoBroadcastJoinThreshold`. If both sides of the join have the broadcast hints, the one with the smaller size (based on stats) will be broadcast. 
+>Suggests that Spark use broadcast join. The join side with the hint will be broadcast regardless of `autoBroadcastJoinThreshold`. If both sides of the join have the broadcast hints, the one with the smaller size (based on stats) will be broadcast.
 >
 >The aliases for BROADCAST are BROADCASTJOIN and MAPJOIN.
 
@@ -288,7 +285,6 @@ on t1.new_key = t2.new_key
 对于 OOM、执行时间长的任务，可以尝试将其水平拆解为多个执行过程相同的任务，减少单个任务的数据量。
 
 对于数据倾斜的任务，可以通过 Hash 取模的方式进行随机抽样，并统计 Key 的 count 值，以获取存在数据倾斜的 Key，并针对这些数据进行任务水平拆分。针对数据倾斜的少量 Key 采取 Broadcast Join 等方式，以避免 Shuffle 数据倾斜。
-
 
 ### 申请更多资源
 

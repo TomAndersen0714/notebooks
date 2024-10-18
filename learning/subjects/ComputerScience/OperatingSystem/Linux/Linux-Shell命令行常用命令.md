@@ -117,6 +117,9 @@ echo "hello xsel" | xsel --clipboard
 ```bash
 # 将文本内容打印到剪贴板
 echo "hello xclip" | xclip -selection c
+
+# 将剪贴板内容输出到文本
+xclip -selection clipboard -o > build.sh
 ```
 
 ### File

@@ -1,4 +1,4 @@
-# IDEA 如何手动引入 Scala SDK
+# IDEA 如何引入 Scala SDK
 
 ## 项目引入
 

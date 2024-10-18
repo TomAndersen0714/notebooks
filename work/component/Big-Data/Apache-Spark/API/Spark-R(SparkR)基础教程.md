@@ -1,4 +1,3 @@
-
 SparkR (R on Spark)
 
 [SparkR (R on Spark) - Spark 3.5.3 Documentation](https://spark.apache.org/docs/latest/sparkr.html)

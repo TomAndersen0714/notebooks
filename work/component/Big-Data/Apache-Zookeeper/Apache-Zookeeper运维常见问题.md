@@ -1,6 +1,5 @@
 # Apache Zookeeper 运维常见问题
 
-
 ## Java. Io. IOException: The current epoch, 1a5 is less than the accepted epoch
 
 ```
@@ -12,7 +11,6 @@ java.io.IOException: The current epoch, 1a5 is less than the accepted epoch, ad
 	at org.apache.zookeeper.server.quorum.QuorumPeerMain.initializeAndRun(QuorumPeerMain.java:118)
 	at org.apache.zookeeper.server.quorum.QuorumPeerMain.main(QuorumPeerMain.java:81)
 ```
-
 
 **原因解析：**
 当前 Zookeeper Server 的 dataDir 已经损坏，版本落后太多
