@@ -1,6 +1,5 @@
 # UML(统一建模语言)基础教程
 
-
 ## UML 概述
 
 UML（Unified Modeling Language，统一建模语言）是由对象管理组织（Object Management Group, OMG）制定的一个通用的、可视化的建模语言标准，可以用来描述、可视化、构造和文档化（specifying, visualizing, constructing, and documenting）软件密集型系统的各种工件，并且已被 ISO 确立为国际标准。
@@ -9,14 +8,12 @@ UML（Unified Modeling Language，统一建模语言）是由对象管理组织�
 
 目前最新版本的 UML 名为 UML2。
 
-
 ### UML 概念模型
 
 UML 概念模型主要包含三个部分：
 1. 事物（Things）
 2. 关系（Relationship）
 3. UML 图（Diagrams）
-
 
 ### UML 适用和不适用的场景
 
@@ -28,7 +25,6 @@ UML 概念模型主要包含三个部分：
 **不适用场景**：
 1. OO 技术使用很少，项目中现有的方式已经完全适用
 2. 需求实现难度低，文字描述就可以阐述清楚
-
 
 ### OO 基本概念
 
@@ -43,7 +39,6 @@ UML 概念模型主要包含三个部分：
 分组事物（Grouping Thing）：UML 模型中的结构
 
 注释事物（Annotational Thing）：UML 模型的注解部分
-
 
 ## UML Relationship (关系)
 
@@ -66,7 +61,6 @@ A ..> B : dependency: A use B
 
 @enduml
 ```
-
 
 ### 关联（Association）
 
@@ -122,7 +116,6 @@ Product <|.. ProductA
 Product <|.. ProductB
 @enduml
 ```
-
 
 ## UML Diagrams（图）
 
@@ -200,7 +193,6 @@ ObjectB --> ObjectC
 
 ```
 
-
 #### 组合结构图（Composite Structure Diagrams）
 
 #### 组件图（Component Diagrams）
@@ -232,7 +224,6 @@ fc --> UC3
 @enduml
 ```
 
-
 #### 活动图（Activity Diagrams）
 
 https://www.cnblogs.com/wolf-sun/p/3432135.html
@@ -258,7 +249,6 @@ ObjectA -> ObjectB: Message3
 
 ```
 
-
 #### 时序图（Timing Diagrams）
 
 ```plantuml
@@ -272,13 +262,11 @@ B --> A: Message 2
 
 #### 交互概览图（Interaction Overview Diagrams）
 
-
 ## UML 绘制工具
 
 **图表只是一种工具，只需要有一个能用的即可，不用非得纠结哪个工具才是最好的，重要的是方法。**
 
 对于比较简单的、临时性的图形，建议使用 PlantUML、Mermaid 这种支持文本化保存的工具来绘制，简单快捷，不需要关心图形的相对位置；而对于比较复杂的、需要长期存储的图形，建议使用在线的（如：ProcessOn）、离线的（如：Visual Paradigm）的应用工具来绘制，支持的图形功能也更强。
-
 
 详情见：[建模工具基础教程](work/tools/Design/建模工具基础教程.md)
 

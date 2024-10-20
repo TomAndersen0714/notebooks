@@ -26,10 +26,13 @@ EDA 除了需要了解当前数据集中每行数据代表的业务流程，还�
 
 ## 数据探查常用工具
 
-[GitHub - fbdesignpro/sweetviz: Visualize and compare datasets, target values and associations, with one line of code.](https://github.com/fbdesignpro/sweetviz)
-
-[Deequ基础教程](work/component/Big-Data/Deequ/Deequ基础教程.md)
+1. [GitHub - fbdesignpro/sweetviz: Visualize and compare datasets, target values and associations, with one line of code.](https://github.com/fbdesignpro/sweetviz)
+2. [Deequ基础教程](work/component/Big-Data/Deequ/Deequ基础教程.md)
 
 ## 参考链接
 
 1. [4 Libraries that can perform EDA in one line of python code](https://towardsdatascience.com/4-libraries-that-can-perform-eda-in-one-line-of-python-code-b13938a06ae)
+2. [What is Exploratory Data Analysis? | IBM](https://www.ibm.com/topics/exploratory-data-analysis)
+3. [Exploratory data analysis - Wikipedia](https://en.wikipedia.org/wiki/Exploratory_data_analysis)
+4. [GitHub - fbdesignpro/sweetviz: Visualize and compare datasets, target values and associations, with one line of code.](https://github.com/fbdesignpro/sweetviz)
+5. [Deequ基础教程](work/component/Big-Data/Deequ/Deequ基础教程.md)
