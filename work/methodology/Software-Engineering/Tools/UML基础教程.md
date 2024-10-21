@@ -125,6 +125,19 @@ https://www.cnblogs.com/wolf-sun/category/531196.html
 
 ### 结构图（Structural Diagrams）
 
+#### 组件图（Component Diagrams）
+
+```plantuml
+@startuml
+
+[First Component] as one
+[Second Component] as two
+DataAccess -> one
+one ..> HTTP : use
+
+@enduml
+
+```
 #### 包图（Package Diagrams）
 
 ```plantuml
@@ -179,6 +192,8 @@ Car <|-- GasolineCar
 
 #### 对象图（Object Diagrams）
 
+重点在于描述类之间的关系
+
 ```plantuml
 @startuml
 
@@ -194,8 +209,6 @@ ObjectB --> ObjectC
 ```
 
 #### 组合结构图（Composite Structure Diagrams）
-
-#### 组件图（Component Diagrams）
 
 #### 部署图（Deployment Diagrams）
 
@@ -268,9 +281,10 @@ B --> A: Message 2
 
 对于比较简单的、临时性的图形，建议使用 PlantUML、Mermaid 这种支持文本化保存的工具来绘制，简单快捷，不需要关心图形的相对位置；而对于比较复杂的、需要长期存储的图形，建议使用在线的（如：ProcessOn）、离线的（如：Visual Paradigm）的应用工具来绘制，支持的图形功能也更强。
 
-详情见：[建模工具基础教程](work/tools/Design/建模工具基础教程.md)
+详情见：[模型设计工具基础教程](work/methodology/Software-Engineering/Tools/模型设计工具基础教程.md)
 
 ## 参考链接
+
 1. [Wiki-Unified Modeling Language](https://en.wikipedia.org/wiki/Unified_Modeling_Language)
 2. [SparxSystems - UML2 Tutorial](https://sparxsystems.com/resources/tutorials/uml2/index.html)
 3. [Tutorialspoint - UML Tutorial](https://www.tutorialspoint.com/uml/index.htm)

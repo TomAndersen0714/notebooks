@@ -106,7 +106,7 @@ var foo = 'bar';
 
 ### Tex语法
 
-一般需要前端使用 [KaTeX](work/programming/JavaScript/Libraries/Visualization/KaTeX.md) 或 [MathJax](work/programming/JavaScript/Libraries/Visualization/MathJax.md) 等工具才能实现文本解析和图像渲染。
+一般需要前端使用 [KaTeX](work/programming/JavaScript/Library/Visualization/KaTeX.md) 或 [MathJax](work/programming/JavaScript/Library/Visualization/MathJax.md) 等工具才能实现文本解析和图像渲染。
 
 #### Tex行内公式
 ```
@@ -129,11 +129,13 @@ $$
 
 ### 图表类
 
-需要注意的是，通过声明式语言来绘制图表，仅限于一些简单的图表，当图表比较复杂时，则建议使用专业的图形绘制工具来设计和生成，毕竟声明式语言的功能都十分有限，越是复杂的图表维护起来相比于专业软件，要困难得多。
+需要注意的是，通过 DSL 语言来绘制图表，仅限于一些简单的图表，当图表比较复杂时，则建议使用专业的图形绘制工具来设计和生成，毕竟声明式语言的功能都十分有限，越是复杂的图表维护起来相比于专业软件，要困难得多。
+
+一般推荐，使用 DSL 图形语言快速生成粗粒度且抽象的图形，然后使用 Draw IO 导入，再进行细节的美化，以及更详细的内容填充。
 
 #### Mermaid
 
-[Mermaid](work/programming/JavaScript/Libraries/Visualization/Mermaid.md)
+[Mermaid基础教程](work/methodology/Software-Engineering/Tools/Mermaid基础教程.md)
 
 ##### 流程图
 

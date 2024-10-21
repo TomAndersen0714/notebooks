@@ -13,6 +13,7 @@ Companion Object 伴生对象
 
 Case Class 样例类
 - 样例类是一种特殊的类，它们经过优化以被用于模式匹配
+- 样例类的 Constructor Parameter 默认是 val 类型，即不可修改的
 
 Case Object 样例对象
 - 针对单例对象，也可以用于模式匹配的样例对象

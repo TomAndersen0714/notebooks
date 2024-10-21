@@ -1,0 +1,79 @@
+# Mermaid 基础教程
+
+## 简介
+
+Mermaid 是一个开源的 JavaScript 库，用于绘制流程图、时序图、类图和其他各种图表。它使用简洁的文本语法来描述图表结构，并将其转换为可视化图形。Mermaid 可以直接嵌入到 Markdown 文档、网页或其他文档中，以创建可交互和易于阅读的图表。
+
+但 Mermaid 能够支持的 UML 图形有限，只能支持一些常用的 UML 图形，如果想要自由使用所有的 UML 图形，还是需要使用 PlantUML 这类专业绘图工具。
+
+这类通过代码自动生成图形的工具，其特点都是无法自行控制流程细节，适合简单的标准图形，不适合复杂图形。
+
+Documentation
+https://github.com/mermaid-js/mermaid
+https://mermaid.js.org/intro/
+
+Online Demo
+https://mermaid.live/
+
+## 常用图例
+
+### 流程图
+
+从左到右
+```mermaid
+flowchart LR
+A[方形] -->B(圆角)
+    B --> C{条件a}
+    C -->|a=1| D[结果1]
+    C -->|a=2| E[结果2]
+```
+
+从上至下
+
+```mermaid
+flowchart TD
+A[方形] --> B(圆角)
+    B --> C{条件a}
+    C --> |a=1| D[结果1]
+    C --> |a=2| E[结果2]
+```
+
+### 用户旅程图
+
+User Journey Diagram
+```mermaid
+journey
+    title My working day
+    section Go to work
+      Make tea: 5: Me
+      Go upstairs: 3: Me
+      Do work: 1: Me, Cat
+    section Go home
+      Go downstairs: 5: Me
+      Sit down: 5: Me
+```
+
+### 饼图
+Pie Chart
+
+```mermaid
+pie
+title Pets adopted by volunteers
+    "Dogs" : 386
+    "Cats" : 85
+    "Rats" : 15
+```
+
+### 甘特图
+
+```mermaid
+gantt
+    title A Gantt Diagram
+    dateFormat YYYY-MM-DD
+    section Section
+        A task          :a1, 2014-01-01, 30d
+        Another task    :after a1, 20d
+    section Another
+        Task in Another :2014-01-12, 12d
+        another task    :24d
+```
