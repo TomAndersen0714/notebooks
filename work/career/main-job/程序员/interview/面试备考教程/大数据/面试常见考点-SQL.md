@@ -25,7 +25,7 @@ RANGE BETWEEN UNBOUNDED PROCEEDING AND UNBOUNDED FOLLOWING
 ### 性能调优方法
 
 大表 JOIN 大表，某个 Key 出现数据倾斜该怎么办？
-- 
+- 先抽样统计，找出热点 Key
 
 Hive SQL 突然执行很慢可能有什么原因？
 - 集群资源不足，Application 启动时一直在申请和等待资源

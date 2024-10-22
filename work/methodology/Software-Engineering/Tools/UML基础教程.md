@@ -160,7 +160,9 @@ ClassC --> ClassD
 
 ```
 
-#### 类图（Class or Structural Diagrams）
+#### 类图（Class Diagrams）
+
+[UML类图详解统一建模语言（Unified Modeling Language，缩写UML）是非专利的第三代建模和规约语 - 掘金](https://juejin.cn/post/6844903893327937550)
 
 ```plantuml
 @startuml
@@ -292,3 +294,4 @@ B --> A: Message 2
 5. [Bilibili-北京航空航天大学-软件学院-UML2面向对象分析与设计](https://www.bilibili.com/video/BV1fq4y1q7KP)
 6. [清华大学出版社-UML2面向对象分析与设计（第2版）-资源下载](http://www.tup.tsinghua.edu.cn/booksCenter/book_07138701.html#)
 7. [阿里巴巴-Java开发手册(黄山版)](https://github.com/alibaba/p3c)
+8. [UML类图详解统一建模语言（Unified Modeling Language，缩写UML）是非专利的第三代建模和规约语 - 掘金](https://juejin.cn/post/6844903893327937550)

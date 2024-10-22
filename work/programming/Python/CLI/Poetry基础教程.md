@@ -34,7 +34,7 @@ exit
 # 配置package的repository
 poetry source add <repository_name> <repository_url>
 poetry source add custom-repo https://pypi.tuna.tsinghua.edu.cn/simple/
-
+ 
 # 添加并安装 python package
 poetry add <package_name>
 # 添加并安装 python package, 使用指定的 repository

@@ -38,6 +38,163 @@ A[方形] --> B(圆角)
     C --> |a=2| E[结果2]
 ```
 
+### 序列图
+
+```mermaid
+sequenceDiagram  
+actor User  
+User ->> MetricExample$ : main  
+activate MetricExample$  
+MetricExample$ ->> ExampleUtils$ : withSpark  
+activate ExampleUtils$  
+ExampleUtils$ ->> SparkSession$ : builder  
+activate SparkSession$  
+SparkSession$ -->> ExampleUtils$ : #32;   
+deactivate SparkSession$  
+ExampleUtils$ ->> Builder : master  
+activate Builder  
+Builder -->> ExampleUtils$ : #32;   
+deactivate Builder  
+ExampleUtils$ ->> Builder : appName  
+activate Builder  
+Builder -->> ExampleUtils$ : #32;   
+deactivate Builder  
+ExampleUtils$ ->> Builder : config  
+activate Builder  
+Builder -->> ExampleUtils$ : #32;   
+deactivate Builder  
+ExampleUtils$ ->> Builder : getOrCreate  
+activate Builder  
+Builder -->> ExampleUtils$ : #32;   
+deactivate Builder  
+ExampleUtils$ ->> SparkContext : setCheckpointDir  
+activate SparkContext  
+SparkContext -->> ExampleUtils$ : #32;   
+deactivate SparkContext  
+ExampleUtils$ ->> SparkSession : stop  
+activate SparkSession  
+SparkSession -->> ExampleUtils$ : #32;   
+deactivate SparkSession  
+ExampleUtils$ ->> MetricExample$ : session -&gt;  
+activate MetricExample$  
+MetricExample$ ->> ExampleUtils$ : itemsAsDataframe  
+activate ExampleUtils$  
+ExampleUtils$ ->> SparkContext : parallelize  
+activate SparkContext  
+SparkContext -->> ExampleUtils$ : #32;   
+deactivate SparkContext  
+ExampleUtils$ ->> SparkSession : createDataFrame  
+activate SparkSession  
+SparkSession -->> ExampleUtils$ : #32;   
+deactivate SparkSession  
+ExampleUtils$ -->> MetricExample$ : #32;   
+deactivate ExampleUtils$  
+MetricExample$ ->> Analysis : addAnalyzer  
+activate Analysis  
+Analysis ->> Analysis$ : apply  
+activate Analysis$  
+Analysis$ -->> Analysis : #32;   
+deactivate Analysis$  
+Analysis -->> MetricExample$ : #32;   
+deactivate Analysis  
+MetricExample$ ->> Analysis : addAnalyzer  
+activate Analysis  
+Analysis ->> Analysis$ : apply  
+activate Analysis$  
+Analysis$ -->> Analysis : #32;   
+deactivate Analysis$  
+Analysis -->> MetricExample$ : #32;   
+deactivate Analysis  
+MetricExample$ ->> Analysis : addAnalyzer  
+activate Analysis  
+Analysis ->> Analysis$ : apply  
+activate Analysis$  
+Analysis$ -->> Analysis : #32;   
+deactivate Analysis$  
+Analysis -->> MetricExample$ : #32;   
+deactivate Analysis  
+MetricExample$ ->> Analysis : addAnalyzer  
+activate Analysis  
+Analysis ->> Analysis$ : apply  
+activate Analysis$  
+Analysis$ -->> Analysis : #32;   
+deactivate Analysis$  
+Analysis -->> MetricExample$ : #32;   
+deactivate Analysis  
+MetricExample$ ->> Analysis : addAnalyzer  
+activate Analysis  
+Analysis ->> Analysis$ : apply  
+activate Analysis$  
+Analysis$ -->> Analysis : #32;   
+deactivate Analysis$  
+Analysis -->> MetricExample$ : #32;   
+deactivate Analysis  
+MetricExample$ ->> Analysis : addAnalyzer  
+activate Analysis  
+Analysis ->> Analysis$ : apply  
+activate Analysis$  
+Analysis$ -->> Analysis : #32;   
+deactivate Analysis$  
+Analysis -->> MetricExample$ : #32;   
+deactivate Analysis  
+MetricExample$ ->> Analysis : addAnalyzer  
+activate Analysis  
+Analysis ->> Analysis$ : apply  
+activate Analysis$  
+Analysis$ -->> Analysis : #32;   
+deactivate Analysis$  
+Analysis -->> MetricExample$ : #32;   
+deactivate Analysis  
+MetricExample$ ->> Analysis : addAnalyzer  
+activate Analysis  
+Analysis ->> Analysis$ : apply  
+activate Analysis$  
+Analysis$ -->> Analysis : #32;   
+deactivate Analysis$  
+Analysis -->> MetricExample$ : #32;   
+deactivate Analysis  
+MetricExample$ ->> Analysis : addAnalyzer  
+activate Analysis  
+Analysis ->> Analysis$ : apply  
+activate Analysis$  
+Analysis$ -->> Analysis : #32;   
+deactivate Analysis$  
+Analysis -->> MetricExample$ : #32;   
+deactivate Analysis  
+MetricExample$ ->> Analysis : addAnalyzer  
+activate Analysis  
+Analysis ->> Analysis$ : apply  
+activate Analysis$  
+Analysis$ -->> Analysis : #32;   
+deactivate Analysis$  
+Analysis -->> MetricExample$ : #32;   
+deactivate Analysis  
+MetricExample$ ->> Analysis : addAnalyzer  
+activate Analysis  
+Analysis ->> Analysis$ : apply  
+activate Analysis$  
+Analysis$ -->> Analysis : #32;   
+deactivate Analysis$  
+Analysis -->> MetricExample$ : #32;   
+deactivate Analysis  
+MetricExample$ ->> AnalysisRunner$ : run  
+activate AnalysisRunner$  
+AnalysisRunner$ ->> AnalysisRunner$ : doAnalysisRun  
+activate AnalysisRunner$  
+AnalysisRunner$ -->> AnalysisRunner$ : #32;   
+deactivate AnalysisRunner$  
+AnalysisRunner$ -->> MetricExample$ : #32;   
+deactivate AnalysisRunner$  
+MetricExample$ ->> IterableLike : foreach  
+activate IterableLike  
+IterableLike -->> MetricExample$ : #32;   
+deactivate IterableLike  
+MetricExample$ -->> ExampleUtils$ : #32;   
+deactivate MetricExample$  
+ExampleUtils$ -->> MetricExample$ : #32;   
+deactivate ExampleUtils$  
+deactivate MetricExample$
+```
 ### 用户旅程图
 
 User Journey Diagram
