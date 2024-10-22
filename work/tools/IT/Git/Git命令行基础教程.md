@@ -90,8 +90,9 @@ git clone --depth 1 https://github.com/grpc/grpc-java
 
 ### git push
 
-`--set-upstream`: 设置当前分支对应的远程分支
+`--set-upstream`: 推送的同时设置当前分支对应的远程分支
 ```bash
+git push origin master
 git push --set-upstream origin master
 ```
 
@@ -104,6 +105,7 @@ git push --set-upstream origin master
 ```bash
 git branch -u <remote-name>/<remote-branch>
 git branch -u <remote-name>/<remote-branch> <local-branch>
+git branch -u dev release/1.2.2-spark-2.4-dev
 ```
 
 ### git merge
