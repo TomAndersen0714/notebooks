@@ -23,7 +23,7 @@
 
 通常是因为存在热点数据，导致数据出现倾斜。
 
-参考：[Spark性能优化之数据倾斜问题解决方案](work/component/Big-Data/Apache-Spark/solution/Spark性能优化之数据倾斜问题解决方案.md)
+参考：[Spark性能优化之数据倾斜问题解决方案](work/component/Big-Data/Apache-Spark/operation/Spark性能优化之数据倾斜问题解决方案.md)
 
 - **Executor 减少，导致下游 stage 无法 skip，且分配较少的 Task，进而 Executor 出现 OOM**
 

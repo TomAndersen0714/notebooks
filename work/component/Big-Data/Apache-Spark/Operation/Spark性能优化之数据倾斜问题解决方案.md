@@ -2,17 +2,26 @@
 
 ## 诊断方式
 
-在 Spark Application Master 或 Spark HistoryServer 中查看 Spark UI Web，通过以下方式来判断是否具备数据倾斜的症状：
+在 Spark Application Master 或 Spark HistoryServer 中查看 Spark UI Web，通过以下指标来判断是否具备数据倾斜的症状：
+
 1. EventTimeLine
 2. Executor shuffle read
 
 ## 优化方案
 
-### Group By 倾斜时
+### Group By 倾斜
 
-如果是满足结合律（即因子的顺序不影响结果）的指标，如：sum/max/min 这类，则可以直接水平拆分（热点数据单独处理）、垂直拆分（分步聚合），或者两种拆分方式相互组合。
+如果是满足结合律（即表达式的因子顺序交换不影响结果）的指标，如：sum/max/min 这类，则可以采取以下三种方式：
 
-### Join 倾斜时
+1. 垂直拆分：增加聚合字段，减小聚合粒度，从细到粗，分步聚合
+	1. 如 `Group By department`，改为 `Group By department, user` 等
+	2. 如果没有合适的字段，也可以自行生成新字段，如 `floor(random(5))`
+2. 水平拆分：热点数据手动统计并采样，热点数据单独处理
+3. 两种拆分方式相互组合
+
+### Join 倾斜
+
+小表 Join 小表倾斜
 
 大表 Join 小表倾斜
 

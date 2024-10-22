@@ -59,7 +59,7 @@ Spark UI | Stages | Details for Stage | Tasks
 **数据倾斜**：某个 Task 的 Duration 和 Records 会远大于其他 Task
 ![](resources/images/Pasted%20image%2020240722101654.png)
 
-## Spark SQL 常用优化思路和方法
+## Spark SQL 常用优化思路
 
 ### 减少读取数据量
 
@@ -70,9 +70,9 @@ Spark UI | Stages | Details for Stage | Tasks
 
 Case 1：Spark SQL 在 Join 时，会自动下推 `Join key is not null` 的条件到执行计划最开始的 table scan 阶段，但如果是 left join，则只会下推 right 表的 join key，而不会下推 left 表的 join key，即无法提前过滤 left 表的无效行。可以通过手动将 left 表的 `Join key is not null` 条件下推，以提前减少无效行读取。
 
-Case2：Spark SQL 中在 Join 后使用 Where 语句时，是先进行 Join，然后再执行 Where 语句筛选和过滤行。可以通过手动将 Where 语句下推到 left 表和 right 表的子查询中，以提前减少无效行的读取。
+Case 2：Spark SQL 中在 Join 后使用 Where 语句时，是先进行 Join，然后再执行 Where 语句筛选和过滤行。可以通过手动将 Where 语句下推到 left 表和 right 表的子查询中，以提前减少无效行的读取。
 
-Case3：Spark SQL 使用 Order By+Limit 语句查询 TopN 时，优化器会对 partition 中的数据进行局部排序 local sort 并局部筛选 local limit，减少后续读取数据量，然后再去执行全局排序和筛选 global limit。
+Case 3：Spark SQL 使用 Order By+Limit 语句查询 TopN 时，优化器会对 partition 中的数据进行局部排序 local sort 并局部筛选 local limit，减少后续读取数据量，然后再去执行全局排序和筛选 global limit。
 
 ```sql
 scala> val myDF = Seq(83, 90, 40, 94, 12, 70, 56, 70, 28, 91).toDF("number")
@@ -116,7 +116,7 @@ TakeOrderedAndProject(limit=3, orderBy=[number#3 ASC NULLS FIRST], output=[numbe
 
 SQL Select 语句中按需取列，显式列出对应列字段名，尽量避免使用 `SELECT *`，即减少对应 Task 的读取数据量。
 
-Case1：当表中存在几十个字段，但实际上当前查询只需要几个字段时，减少查询使用字段，能大量减少查询时生成的 RDD 大小。
+Case 1：当表中存在几十个字段，但实际上当前查询只需要几个字段时，减少查询使用字段，能大量减少查询时生成的 RDD 大小。
 
 #### 减少重复读取
 
@@ -262,13 +262,14 @@ Spark SQL 的执行计划通常为自顶向下的树形结构，对于存在性�
 
 对于 Group By 聚合类数据倾斜的任务，可以尝试通过加盐（salting）、加字段的方式进行分步聚合。
 
-对于 Inner Join 筛选类数据倾斜的任务，如果小表不满足 BroadcastJoin 条件，则可以尝试通过大表加盐（salting）+小表膨胀（scaling）的方式
+对于 Inner Join 类数据倾斜的任务，如果小表不满足 BroadcastJoin 条件，则可以尝试通过大表加盐（salting）+小表膨胀（scaling）的方式，如：
 
 ```sql
 SELECT
     t1.key
 FROM (
     SELECT
+	    key,
         concat(floor(rand()*10), key) AS new_key
     FROM t1
 ) t1
@@ -288,9 +289,10 @@ on t1.new_key = t2.new_key
 
 ### 申请更多资源
 
-1. spark.executor.instances
-2. spark.executor.memory
-3. spark.executor.memoryOverhead (spark.yarn.executor.memoryOverhead)
+通过调整以下配置，增加 Application 申请的资源
+1. `spark.executor.instances`
+2. `spark.executor.memory`
+3. `spark.executor.memoryOverhead(spark.yarn.executor.memoryOverhead)`
 
 ## 参考链接
 
