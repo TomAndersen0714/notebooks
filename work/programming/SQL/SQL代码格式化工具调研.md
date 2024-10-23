@@ -46,6 +46,10 @@ left join course_info c
 2. 代码检查和格式化速度太慢，不够轻量
 3. 检查和格式化 SQL 模板时，需要事先手动配置模板参数 dummy 值
 
+### sqlglot
+
+[GitHub - tobymao/sqlglot: Python SQL Parser and Transpiler](https://github.com/tobymao/sqlglot)
+
 ### sql-formatter
 
 [GitHub - sql-formatter-org/sql-formatter: A whitespace formatter for different query languages](https://github.com/sql-formatter-org/sql-formatter)

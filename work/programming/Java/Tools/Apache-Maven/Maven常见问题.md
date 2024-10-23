@@ -58,6 +58,18 @@
 <testSourceDirectory>src/test/scala</testSourceDirectory>
 ```
 
+**问题描述**：
+- Maven 3.9.3 编译依赖 Spark 的项目时候报错 `java.lang.NoSuchMethodError: org.fusesource.jansi.AnsiConsole.wrapOutputStream(Ljava/io/OutputStream;)Ljava/io/OutputStream;`
+**问题原因**：
+- Maven 版本和 Maven Plugin `net.alchim31.maven:scala-maven-plugin` 存在版本冲突
+**解决方案**：
+- 方案一：将 Maven 版本降低到 `3.8.1` 及以下（建议：`3.6.3`）
+- 方案二：在项目中将引用的 Maven Plugin `net.alchim31.maven:scala-maven-plugin` 版本升级到 `4.8.0` 以上
+**参考链接**：
+- https://issues.apache.org/jira/browse/SPARK-37634
+- https://github.com/microsoft/azure-pipelines-tasks/issues/15265
+- https://blog.51cto.com/chencoding/7073513
+
 ## JDK Compatibility
 
 Maven 选用 JDK 的策略：
