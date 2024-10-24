@@ -7,12 +7,12 @@
  - IDAE 中 pom.xml 文件报错： `Plugin 'org.apache.maven.plugins:maven-source-plugin:2.2.1' not found`
 
 **排查结果**：
-1. **问题原因*：
+- **问题原因 1**：
 	- Maven 配置文件，或者命令行中的配置，指向的 Repository 中确实不存在对应的 jar 包
 	- **解决方案**：
 		- 仔细排查 `settings.xml` 文件中的 `mirrors` 等参数，访问 Repository 网页，确定是否是配置路径等错误，配置正确的 `mirrors` 参数。
-2. **问题原因**：
-	- JetBrain IDEA 中内置的 Maven 是存在 Index BUG 的，不论使用的是官方还是私有 Maven 镜像，都会出现这种问题，即 Mirror 中存在，但 IDEA Maven 就是无法识别并下载。
+- **问题原因 2**：
+	- JetBrain IDEA 中内置的 Maven 是存在 BUG 的，不论使用的是官方还是私有 Maven 镜像，都会出现这种问题，即 Mirror 中存在，但 IDEA Maven 就是无法识别并下载。
 	- **解决方案（未成功）**：
 		- 删除 Maven 本地 repository 中对应 plugin 的版本文件夹，并重启 IDEA。
 		- IDEA 中点击 `File | Invalidate caches`，清除缓存并重启。
@@ -29,12 +29,11 @@
 
 **问题描述**：
 - Maven Build 时报错：`ERROR 'parent.version' is either LATEST or RELEASE (both of them are being deprecated)`
-**排查结果**：
-1. **问题原因**：
-	- 当使用 Maven 3.5.2 等版本时，IDEA 在 Load Project 时便会抛出类似信息，如 `[WARNING] 'dependencies.dependency.version' for <groupId>:<artifactId>:jar is either LATEST or RELEASE (both of them are being deprecated)`
-	- 当使用高版本的 Maven，解析使用了已废弃特性的 `pom.xml` 文件时，则会抛出 `ERROR`，而非 `WARNING`，导致 Maven 无法正常构建
-	- **解决方案：
-		- 切换到 Maven 3.3.9 版本以下，进行编译。
+**问题原因**：
+- 当使用 Maven 3.5.2 等版本时，IDEA 在 Load Project 时便会抛出类似信息，如 `[WARNING] 'dependencies.dependency.version' for <groupId>:<artifactId>:jar is either LATEST or RELEASE (both of them are being deprecated)`
+- 当使用高版本的 Maven，解析使用了已废弃特性的 `pom.xml` 文件时，则会抛出 `ERROR`，而非 `WARNING`，导致 Maven 无法正常构建
+**解决方案：
+- 切换到 Maven 3.3.9 版本以下，进行编译。
 
 ## Maven Run
 
@@ -70,19 +69,18 @@
 - https://github.com/microsoft/azure-pipelines-tasks/issues/15265
 - https://blog.51cto.com/chencoding/7073513
 
-## JDK Compatibility
-
-Maven 选用 JDK 的策略：
-1. 如果配置了 `JAVA_HOME` 环境变量，则 Maven 会优先使用此变量指向的 JDK
-2. 否则，如果直接查找 `PATH` 环境变量，则 Maven 会使用其中指定的 JDK 版本
-3. 可以通过 `mvn -v` 命令查看其执行时，使用的 JDK 版本
+## Maven JDK Compatibility
 
 **问题描述**
-- IDEA 中使用 Maven 编译时报错 `Failed to execute goal net.alchim31.maven:scala-maven-plugin:4.4.0:compile (scala-compile-first) on project deequ: Execution scala-compile-first of goal net.alchim31.maven:scala-maven-plugin:4.4.0:compile failed`
+- IDEA 中使用 Maven 编译 Scala 代码时插件 scala-maven-plugin 报错 `Failed to execute goal net.alchim31.maven:scala-maven-plugin:4.4.0:compile (scala-compile-first) on project deequ: Execution scala-compile-first of goal net.alchim31.maven:scala-maven-plugin:4.4.0:compile failed`
 **问题原因**：
 - JDK 版本和 Scala 版本不兼容时，在编译时便会抛出此错误
 	- 在 IDEA 中使用外部的 Maven 、在命令行使用 Maven 时，Maven 会默认使用 `JAVA_HOME` 环境变量指向的 JDK，其次会使用 `PATH` 环境变量指向的 JDK
 	- 在 IDEA 中使用内置的 Maven 时，Maven 默认会使用当前 Project Structure 中指定的 JDK 版本
+- Maven 选用 JDK 的策略：
+	1. 如果配置了 `JAVA_HOME` 环境变量，则 Maven 会优先使用此变量指向的 JDK
+	2. 否则，如果直接查找 `PATH` 环境变量，则 Maven 会使用其中指定的 JDK 版本
+	3. 可以通过 `mvn -v` 命令查看其执行时，使用的 JDK 版本
 **解决方案**：
 - 目标是使得 Maven 使用的 JDK 版本和 Scala 版本兼容
 	- 更换项目 Maven 使用的 Java SDK 版本

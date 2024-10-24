@@ -6,7 +6,6 @@ mongosh是MongoDB 5.0及以上版本的官方推出的跨平台、可扩展的Ja
 
 本文主要演示mongosh在 CentOS 7 下的安装步骤。
 
-
 ## 安装方法
 
 ### 一：通过 Yum Repository 安装
@@ -30,7 +29,6 @@ gpgkey=https://www.mongodb.org/static/pgp/server-6.0.asc
 #### 连接测试
 `mongosh mongodb://root:3SqzSt65@10.248.33.114:27017`
 
-
 ### 二：离线下载RPM包进行安装
 
 #### 下载RPM离线包
@@ -47,14 +45,11 @@ Architecture (for example, x86_64)
 
 如：`wget https://downloads.mongodb.com/compass/mongodb-mongosh-1.1.0.el7.x86_64.rpm`
 
-
 #### 安装RPM包
 `rpm -ivh <rpm_package_name>`
 
-
 #### 连接测试
-如使用 URL 连接，`mongosh mongodb://xdmp:20E6QK8V@10.248.33.114:27017` 
-
+如使用 URL 连接，`mongosh mongodb://xdmp:20E6QK8V@10.248.33.114:27017`
 
 ## 参考链接
 

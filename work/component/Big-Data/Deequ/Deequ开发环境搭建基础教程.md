@@ -3,10 +3,11 @@
 ## 前言
 
 各组件版本：
-1. Java: `1.8.0`
-2. Scala: `2.13.3`
+1. Maven: `3.6.3`
+2. Java: `1.8.0`
 3. Deequ: `1.2.2-spark-2.4`
-4. Spark: `2.4.3`
+	1. Spark: `2.4.3`
+	2. Scala: `2.12.10`，Scala-maven-plugin: `4.4.0`
 
 ## 安装 SDK
 

@@ -2,11 +2,13 @@
 
 ## 前言
 
-本文主要用于介绍 Spark Executor on YARN 的内存模型。
-
-不同版本的 Spark 中，对应的 executor 内存模型也不同，本文中介绍的内存模型对应的 Spark 版本为 v2.4.3 。
+本文主要用于介绍 Spark Executor on YARN 的内存模型。不同版本的 Spark 中，对应的 executor 内存模型也不同，本文中介绍的内存模型对应的 Spark 版本为 v2.4.3 。
 
 ## Spark Executor 内存组成
+
+Spark Executor On YARN 的 Memory，主要由 executorMemory、executorMemoryOverhead、pysparkWorkerMemory 三部分组成。
+
+![](resources/images/Pasted%20image%2020240822112520.png)
 
 `org.apache.spark.deploy.yarn.Client#verifyClusterResources` 源码摘录
 
@@ -41,16 +43,17 @@
   }
 ```
 
-ExecutorMemory:
+堆内内存 ExecutorMemory:
 1. EXECUTOR_MEMORY
 	1. `spark.executor.memory`, since 0.7.0
 
-ExecutorMemoryOverhead
+堆外内存 ExecutorMemoryOverhead
 1. EXECUTOR_MEMORY_OVERHEAD
 	1. `spark.executor.memoryOverhead`, since 2.3.0
 2. MEMORY_OVERHEAD_FACTOR * ExecutorMemory
-	1. `spark.executor.memoryOverheadFactor`, since 3.3.0
-	2. Default 0.10
+	1. MEMORY_OVERHEAD_FACTOR
+		1. `spark.executor.memoryOverheadFactor`, since 3.3.0
+		2. Default 0.10
 3. MEMORY_OVERHEAD_MIN
 	1. Default 384
 
@@ -58,20 +61,19 @@ PysparkWorkerMemory
 1. PYSPARK_EXECUTOR_MEMORY
 	1. `spark.executor.pyspark.memory`, since 2.4.0
 
-![](resources/images/Pasted%20image%2020240822112520.png)
-
 ## Spark Executor 内存管理
 
-在 Spark 中，内存使用主要分为两大类：执行内存（Execution Memory）和存储内存（Storage Memory）。执行内存用于计算处理，如 shuffles（洗牌）、joins（连接）、sorts（排序）和 aggregations（聚合）；而存储内存则用于缓存和在集群中传播内部数据。在 Spark 中，execution 执行内存和 storage 存储内存共享一个统一的区域（M）。当没有使用执行内存时，存储内存可以占用所有可用的内存，反之亦然。在必要时，执行内存可以驱逐存储内存，但只到存储内存的使用量降到某个阈值（R）以下。换句话说，R 描述了 M 中的一个子区域，在该区域内，缓存的数据块不会被驱逐。由于实现机制的复杂性，存储内存不能驱逐执行内存。
+在 Spark 中不论是堆内 on-heap，或者堆外 off-heap，其内存都主要分为两大类：执行内存（Execution Memory）和存储内存（Storage Memory）。Execution 内存用于计算处理，如 shuffles、joins、sorts 和 aggregations，而 Storage 内存则用于 Cache 缓存和广播 Broadcast 数据集。
 
-此设计确保了几项理想的特性。首先，不利用缓存的应用可以使用全部内存空间进行执行操作，避免不必要的磁盘溢出。其次，利用缓存的应用可以预留一定的存储空间（R），确保其数据块不会被驱逐。最后，这种方法为多种工作负载提供了合理的即插即用性能，而无需用户深入了解内部内存划分的细节。
+Execution 内存和 Storage 内存共享一个统一的区域（M）。当没有使用 Execution 内存时，Storage 内存可以占用所有可用的内存，反之亦然。
 
-尽管有两个相关的配置参数，但典型用户通常不需要调整它们，因为默认值已适用于大多数工作负载：
+在必要时，Execution 内存可以强迫 Storage 区域进行内存回收，直到 Storage 内存的使用量降到某个阈值（R）以下，即 R 是 M 中的用于保存 Storage 的最小内存空间。
 
-- `spark.memory.fraction` 表示 M 占用的比例，计算公式为 (JVM 堆空间 - 300MiB) 的百分比（默认值为 0.6）。其余的空间（40%）留给用户数据结构、Spark 的内部元数据以及作为安全储备，以防出现稀疏或异常大的记录导致的 OOM（内存溢出）错误。
+虽然有两个相关的配置参数，但一般用户通常不需要调整它们，因为默认值已适用于大多数工作负载：
+- `spark.memory.fraction` 表示 M 占用对内的比例，计算公式为 (JVM 堆空间 - 300MiB) 的百分比（默认值为 0.6）。其余的空间（40%）留给用户数据结构、Spark 的内部元数据以及作为安全储备，以防出现稀疏或异常大的记录导致的 OOM（内存溢出）错误。
 - `spark.memory.storageFraction` 表示 R 占 M 的比例（默认值为 0.5）。R 是 M 内部的一块存储区域，其内的缓存数据块不会被执行操作驱逐。
 
-`spark.memory.fraction` 的值应该设置在能够在 JVM 的老年代或“终身代”中舒适适应这部分堆空间。
+![](resources/images/Pasted%20image%2020241024193346.png)
 
 ## 参考链接
 

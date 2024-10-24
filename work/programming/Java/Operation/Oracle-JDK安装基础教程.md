@@ -1,6 +1,5 @@
 # Oracle JDK安装基础教程
 
-
 ## 前言
 
 - JDK(Java Development kit)，即Java开发工具包，JDK中包含有JRE，JRE(Java Runtime Environment)，即Java运行环境，JRE中包含有JVM(Java Virtual Machine)，即Java虚拟机，用于解决Java跨平台开发的兼容性问题，实现了一次开发多处运行
@@ -22,8 +21,12 @@
 
 ## 配置环境变量
 
+Linux:
 1. 增加 `JAVA_HOME` 环境变量，将变量指向 Java 安装路径。
-2. 修改 `Path` 环境变量，将 `JAVA_HOME/bin` 文件夹添加到 Path 中。
+2. 修改 `Path` 环境变量，将 `$JAVA_HOME/bin` 文件夹添加到 Path 中。
+
+Windows:
+1. 同上
 
 ## 验证安装
 
@@ -37,4 +40,3 @@ java -version
 2. [Overview of JDK Installation(Oracle JDK 17)](https://docs.oracle.com/en/java/javase/17/install/overview-jdk-installation.html)
 3. [Installing the 64-Bit JDK 17 on Linux Platforms](https://docs.oracle.com/en/java/javase/17/install/installation-jdk-linux-platforms.html#GUID-ADC9C14A-5F51-4C32-802C-9639A947317F)
 4. [Installation of the JDK on Microsoft Windows Platforms](https://docs.oracle.com/en/java/javase/17/install/installation-jdk-microsoft-windows-platforms.html#GUID-A7E27B90-A28D-4237-9383-A58B416071CA)
-

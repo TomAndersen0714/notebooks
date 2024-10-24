@@ -14,7 +14,6 @@
 8. `db.currentOp()`：查看集群当前正在执行的操作
 9. `db.killOp()`：终止输入的opid对应的操作，对集群都生效
 
-
 ### Collections
 
 1. [官方链接](https://www.mongodb.com/docs/manual/reference/method/js-collection/)
@@ -24,20 +23,17 @@
 5. `db.collection.countDocuments()` ：查看collection 集合中 document 的数量
 6. `db.collection.distinct(field, query, options)` ：查看 collection 中指定字段的不同值，如“db. Qc_rule. Distinct ("seller_nick")”
 
-
 ## Operators
 
 ### Query and Projection Operators
 
 https://www.mongodb.com/docs/manual/reference/operator/query/#std-label-query-selectors
 
-
 `$exists`
 
 ```sql
 db.<collection_name>.findOne({"_id": { $exists: true }})
 ```
-
 
 ### Aggregate operators
 
@@ -59,11 +55,8 @@ db.voc_customer.aggregate([
 ])
 ```
 
-
 ## Mongo查询常见问题
 报错“MongoServerError: not primary and secondaryOk=false”，可以在命令行执行“rs.secondaryOk()”命令解决
-
-
 
 ## 参考链接
 1. [MongoDB Manual - method](https://www.mongodb.com/docs/manual/reference/method/)

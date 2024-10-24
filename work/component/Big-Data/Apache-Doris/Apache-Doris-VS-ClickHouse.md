@@ -1,8 +1,5 @@
 # Apache Doris VS. ClickHouse
 
-
-
-
 ## 参考链接
 
 1. [微信-京东零售技术-Apache Doris 和 ClickHouse 的深度分析](https://mp.weixin.qq.com/s/fyVSRB3wxmsZUx4kY1eQRQ)

@@ -1,6 +1,34 @@
 # Python 项目结构最佳实践
 
-其中对于 package 类项目，需要有 `setup.py` 文件。
+Python Library 项目
+
+```bash
+<project_name>
+├── LICENSE
+├── README.md
+├── docs
+├── poetry.lock
+├── <python_package_name>
+├───├──__init__.py
+├───├──main.py
+├── pyproject.toml
+├── tests
+```
+
+客户端项目：
+
+```bash
+<project_name>
+├── LICENSE
+├── README.md
+├── docs
+├── poetry.lock
+├── src
+├───├──__init__.py
+├───├──main.py
+├── pyproject.toml
+├── tests
+```
 
 ## 参考链接
 

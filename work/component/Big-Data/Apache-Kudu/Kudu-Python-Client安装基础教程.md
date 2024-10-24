@@ -1,10 +1,8 @@
 # Kudu Python Client 安装基础教程
 
-
 ## 前言
 
 1. CDH 6.3.x官方文档：[CDH 6.3.x - Kudu Python Client](https://docs.cloudera.com/documentation/enterprise/6/6.3/topics/kudu_development.html#concept_jmn_dhc_jkb)
-
 
 ## 安装步骤
 
@@ -12,10 +10,9 @@
 
 https://kudu.apache.org/releases/1.8.0/docs/installation.html#build_cpp_client
 
-**安装kudu-client、kudu-client-devel包：** 
+**安装kudu-client、kudu-client-devel包：**
 
 **下载链接**：[Kudu Package Locations](https://kudu.apache.org/releases/1.8.0/docs/installation.html#install_packages)，PS：注意系统、组件的版本要对齐
-
 
 **方法一，使用yum repository，在线安装，需先下载配置对应的yum repository**
 
@@ -34,7 +31,6 @@ sudo yum install kudu-client0-1.4.0+cdh5.12.2+0-1.cdh5.12.2.p0.8.el7.x86_64.rpm
 sudo yum install kudu-client-devel-1.4.0+cdh5.12.2+0-1.cdh5.12.2.p0.8.el7.x86_64.rpm
 ```
 
-
 ### 2. 安装Kudu Python Client
 
 **CentoOS 环境**
@@ -49,7 +45,6 @@ Pip3 升级 setup tools：`pip3 install --upgrade pip setuptools`
 Pip3 安装 Cpython：`pip3 install cython==0.29.32`
 Pip3 安装 pytest-runner：`pip3 install pytest-runner==5.3.2`
 Pip3 安装 kudu-python：`pip3 install kudu-python==1.2.0`
-
 
 PS：必要时可以使用 PyPI 镜像源，清华 `-i https://pypi.tuna.tsinghua.edu.cn/simple/`，阿里云 `-i https://mirrors.aliyun.com/pypi/simple/`
 
@@ -74,4 +69,3 @@ https://stackoverflow.com/questions/21530577/fatal-error-python-h-no-such-file-o
 
 1. [CDH 6.3.x - Kudu Python Client](https://docs.cloudera.com/documentation/enterprise/6/6.3/topics/kudu_development.html#concept_jmn_dhc_jkb)
 2. [Apache Kudu - Install Using Packages](https://kudu.apache.org/releases/1.8.0/docs/installation.html#install_packages)
-

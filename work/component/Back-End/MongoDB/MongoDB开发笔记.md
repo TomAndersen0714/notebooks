@@ -1,6 +1,5 @@
 # MongoDB 开发笔记
 
-
 ## Reading
 
 ### Explain
@@ -13,17 +12,14 @@ MongoDB 拉取数据时，在正式执行之前，必须通过 `cursor.explain` 
 
 其中 explain 的 verbose 参数使用默认值 `queryPlanner`。
 
-
 ### Index Hint
 
 一般情况下，**建议不要使用 Index hint 强制使用索引**，直接使用 Mongo 默认的优化计划，除非你十分了解 Mongo 底层的索引原理
-
 
 ### SecondaryPreferred
 
 **读取 MongoDB 数据时，如果对数据一致性要求不严格，可以将 secondaryPreferred 参数设置为 SECONDARY**
 MongoDB 读取 database 和 collection 拉取数据时，可以尝试使用 read_preference 参数，并将其显式设置为 SECONDARY，而非默认的 Primary，即避免直接查询主库，增加主库的负载，保证主要业务流程不受影响，即手动进行资源隔离，即便从库宕机，也不影响主库的正常业务。
-
 
 ## Mongo Client
 
