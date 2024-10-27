@@ -22,7 +22,7 @@ Global Level:
 - Located in `${MAVEN_HOME}/conf/settings.xml`.
 - 在 Maven 安装路径的 conf 文件夹下配置 `settings.xml`，实现全局系统级别 Maven 配置。
 
-配置阿里云 Maven Repository 镜像 Demo:
+配置阿里云 Maven Repository 镜像示例:
 ```xml
 
 <?xml version="1.0" encoding="UTF-8"?>

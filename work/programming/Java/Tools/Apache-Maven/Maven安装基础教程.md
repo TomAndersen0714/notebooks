@@ -45,6 +45,12 @@ tar xzvf apache-maven-3.9.9-bin.tar.gz
 
 - Add the `bin` directory of the created directory `apache-maven-3.9.9` to the `PATH` environment variable
 
+### 配置 Maven 仓库镜像
+
+在全局级别配置文件（`${MAVEN_HOME}/conf/settings.xml`）中配置 Maven 镜像地址，加速 Maven 依赖下载。
+
+[Maven配置基础教程](work/programming/Java/tools/Apache-Maven/Maven配置基础教程.md)
+
 ### 验证安装结果
 
 - Confirm with `mvn -v` in a new shell. The result should look similar to
