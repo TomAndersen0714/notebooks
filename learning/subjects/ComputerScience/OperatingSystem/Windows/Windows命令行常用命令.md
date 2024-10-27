@@ -38,7 +38,6 @@ netstat -ano | findstr "3306"
 
 Memory Compression:
 对于内存 RAM 资源充足的，不用开启此功能，此功能会额外开销 CPU 资源，反之，则维持默认状态即可。每次调整功能后需要重启才能生效，可以通过**任务管理器-内存**页面，观察已压缩的内存空间大小是否为 0 来判断是否已经成功禁用 Memory Compression。
-
 ```bash
 # 查看内存压缩功能是否开启
 Get-MMAgent
