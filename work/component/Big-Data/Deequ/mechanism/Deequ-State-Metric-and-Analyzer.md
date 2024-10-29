@@ -1,6 +1,6 @@
 # Deequ State, Metric and Analyzer
 
-## 前言
+## 概览
 
 本文内容基于 Deequ `1.2.2-spark-2.4` 版本。
 
@@ -16,7 +16,18 @@ Metric:
 Analyzer:
 - Analyzer 是 Deequ 中用于加工 Data、State、Metric 三者的标准工具箱，每个 Analyzer 都与 Data、State、Metric 三者一一对应。相当于 Data、State、Metric 三者是“食材”，而 Analyzer 则承担着“厨具”的职责。
 
-// todo 增加图形表示四者之间的关系，Analyzer: Data -> State -> Metric
+```mermaid
+flowchart LR
+
+B(DataFrame)
+C(State)
+D(Metrc)
+
+subgraph Analyzer
+B -.->|computeStateFrom| C
+C -.->|computeMetricFrom| D
+end
+```
 
 ## State 接口
 
@@ -181,13 +192,13 @@ trait Metric[T] {
 
 **Metric 主要结构和功能**:
 
-- `entity`: Metric 分析的实例类型，此字段类型是枚举值，目前有 DataSet、Column、Mutlicolumn 三种。
+- `entity`: Metric 指标对应的聚合运算粒度，此字段类型是枚举值，目前有 DataSet、Column、Mutlicolumn 三种，分别对应按整个数据集聚合、按照指定列聚合、按照多个列聚合。
 - `instance`: Metric 分析的实例名称，如：某个字段名。
 - `name`: Metric 对应的名称。
 - `value`: Metric 对应的 Value，即本次运算分析的最终结果。
 - `flatten(): Seq[DoubleMetric]`:
 	- 返回扁平化处理后的 Metrics，主要用于简化某些嵌套类的 Metric，便于后续统一数据结构和序列化等操作
-	- 方法签名中的 DoubleMetric 也侧面说明 Deequ 代码中存在类型定义和依赖混乱的问题，父类方法居然依赖子类的类型定义，子类又依赖于父类的定义，相当于循环依赖...
+	- 方法签名中的 DoubleMetric 也侧面说明 Deequ 代码中存在类型定义和依赖混乱的问题，父类方法居然依赖子类的类型定义，子类又依赖于父类的定义，即循环依赖...
 
 ### DoubleMetric 类
 
@@ -273,6 +284,10 @@ class GroupingAnalyzer~S, M~ {
   <<Abstract>>
 }
 
+class FrequencyBasedAnalyzer~S, M~ {
+  <<Abstract>>
+}
+
 class KLLSketch 
 
 class SampleAnalyzer 
@@ -281,14 +296,23 @@ class ScanShareableAnalyzer~S, M~ {
   <<Interface>>
 }
 
-class StandardScanShareableAnalyzer~S~
+class StandardScanShareableAnalyzer~S~ {
+  <<Abstract>>
+}
+
+class Size
+class Sum
 
 ApproxQuantile  ..>  ScanShareableAnalyzer~S, M~
-GroupingAnalyzer~S, M~  ..>  Analyzer~S, M~
+GroupingAnalyzer~S, M~  -->  Analyzer~S, M~
+FrequencyBasedAnalyzer~S, M~  -->  Analyzer~S, M~
 KLLSketch  ..>  ScanShareableAnalyzer~S, M~
 SampleAnalyzer  ..>  Analyzer~S, M~
 ScanShareableAnalyzer~S, M~  -->  Analyzer~S, M~
-StandardScanShareableAnalyzer~S~  ..>  ScanShareableAnalyzer~S, M~
+StandardScanShareableAnalyzer~S~  -->  ScanShareableAnalyzer~S, M~
+
+Size ..> StandardScanShareableAnalyzer~S~
+Sum ..> StandardScanShareableAnalyzer~S~
 ```
 
 ### ScanShareableAnalyzer 接口
