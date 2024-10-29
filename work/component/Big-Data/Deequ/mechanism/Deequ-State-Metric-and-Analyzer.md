@@ -1,14 +1,22 @@
 # Deequ State, Metric and Analyzer
 
-Analyzer: Data -> State -> Metric
-
 ## 前言
 
 本文内容基于 Deequ `1.2.2-spark-2.4` 版本。
 
-Data: Spark DataFrame，即需要进行数据分析的具体数据集。
+Data:
+- Spark DataFrame，即需要 Analyzer 进行数据分析的具体数据集。
 
-// todo 增加图形表示四者之间的关系
+State:
+- Analyzer 针对具体数据集 Data 进行聚合运算后生成的中间运算结果，同类 State 之间支持合并，生成 State 的阶段是每个分析过程的主要运算阶段。
+
+Metric:
+- Analyzer 基于中间结果 State 生成的最终结果 Metric。相比于承担聚合运算的 State，Metric 的职责更多的是针对数据分析结果的一种整合，通常只是一些简单的数学运算。
+
+Analyzer:
+- Analyzer 是 Deequ 中用于加工 Data、State、Metric 三者的标准工具箱，每个 Analyzer 都与 Data、State、Metric 三者一一对应。相当于 Data、State、Metric 三者是“食材”，而 Analyzer 则承担着“厨具”的职责。
+
+// todo 增加图形表示四者之间的关系，Analyzer: Data -> State -> Metric
 
 ## State 接口
 
