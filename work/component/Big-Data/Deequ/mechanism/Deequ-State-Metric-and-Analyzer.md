@@ -265,248 +265,23 @@ classDiagram
 direction BT
 class Analyzer~S, M~ {
   <<Interface>>
-
-  + loadStateAndComputeMetric(StateLoader) Option~M~
-
-  + aggregateStateTo(StateLoader, StateLoader, StatePersister) void
-
-  + computeMetricFrom(Option~S~) M
-
-  + preconditions() Seq~Function1~StructType, Unit~~
-
-  + calculate(Dataset~Row~, Option~StateLoader~, Option~StatePersister~) M
-
-  + calculateMetric(Option~S~, Option~StateLoader~, Option~StatePersister~) M
-
-  + toFailureMetric(Exception) M
-
-  + computeStateFrom(Dataset~Row~) Option~S~
-
-  + copyStateTo(StateLoader, StatePersister) void
-
 }
 
-class ApproxQuantile {
-
-  + ApproxQuantile(String, double, double, Option~String~)
-
-  + aggregationFunctions() List~Column~
-
-  + aggregateStateTo(StateLoader, StateLoader, StatePersister) void
-
-  + copyStateTo(StateLoader, StatePersister) void
-
-  + PARAM_CHECKS() Function1~StructType, Unit~
-
-  + unapply(ApproxQuantile) Option~Tuple4~String, Object, Object, Option~String~~~
-
-  + apply(String, double, double, Option~String~) ApproxQuantile
-
-  + copy(String, double, double, Option~String~) ApproxQuantile
-
-  + where() Option~String~
-
-  + calculateMetric(Option~ApproxQuantileState~, Option~StateLoader~, Option~StatePersister~) DoubleMetric
-
-  + column() String
-
-  + computeMetricFrom(Option~ApproxQuantileState~) DoubleMetric
-
-  + quantile() double
-
-  + filterCondition() Option~String~
-
-  + fromAggregationResult(Row, int) Option~ApproxQuantileState~
-
-  + metricFromAggregationResult(Row, int, Option~StateLoader~, Option~StatePersister~) DoubleMetric
-
-  + loadStateAndComputeMetric(StateLoader) Option~DoubleMetric~
-
-  + preconditions() Seq~Function1~StructType, Unit~~
-
-  + relativeError() double
-
-  + productPrefix() String
-
-  + calculate(Dataset~Row~, Option~StateLoader~, Option~StatePersister~) DoubleMetric
-
-  + toFailureMetric(Exception) DoubleMetric
-
-  + productIterator() Iterator~Object~
-
-  + curried() Function1~T1, Function1~T2, Function1~T3, Function1~T4, R~~~~
-
-  + tupled() Function1~Tuple4~T1, T2, T3, T4~, R~
-
-  + computeStateFrom(Dataset~Row~) Option~ApproxQuantileState~
-
-}
+class ApproxQuantile
 
 class GroupingAnalyzer~S, M~ {
-
-  + GroupingAnalyzer()
-
-  + loadStateAndComputeMetric(StateLoader) Option~M~
-
-  + aggregateStateTo(StateLoader, StateLoader, StatePersister) void
-
-  + calculate(Dataset~Row~, Option~StateLoader~, Option~StatePersister~) M
-
-  + groupingColumns() Seq~String~
-
-  + calculateMetric(Option~S~, Option~StateLoader~, Option~StatePersister~) M
-
-  + preconditions() Seq~Function1~StructType, Unit~~
-
-  + copyStateTo(StateLoader, StatePersister) void
-
+  <<Abstract>>
 }
 
-class KLLSketch {
+class KLLSketch 
 
-  + KLLSketch(String, Option~KLLParameters~)
-
-  + sketchSize() int
-
-  + productIterator() Iterator~Object~
-
-  + shrinkingFactor_$eq(double) void
-
-  + column() String
-
-  + copy(String, Option~KLLParameters~) KLLSketch
-
-  + DEFAULT_SKETCH_SIZE() int
-
-  + calculate(Dataset~Row~, Option~StateLoader~, Option~StatePersister~) KLLMetric
-
-  - PARAM_CHECK() Function1~StructType, Unit~
-
-  + kllParameters() Option~KLLParameters~
-
-  + aggregationFunctions() Seq~Column~
-
-  + preconditions() Seq~Function1~StructType, Unit~~
-
-  + calculateMetric(Option~KLLState~, Option~StateLoader~, Option~StatePersister~) KLLMetric
-
-  + numberOfBuckets() int
-
-  + DEFAULT_SHRINKING_FACTOR() double
-
-  + productPrefix() String
-
-  + unapply(KLLSketch) Option~Tuple2~String, Option~KLLParameters~~~
-
-  + toFailureMetric(Exception) KLLMetric
-
-  + numberOfBuckets_$eq(int) void
-
-  + shrinkingFactor() double
-
-  + sketchSize_$eq(int) void
-
-  + fromAggregationResult(Row, int) Option~KLLState~
-
-  + computeMetricFrom(Option~KLLState~) KLLMetric
-
-  + MAXIMUM_ALLOWED_DETAIL_BINS() int
-
-  + metricFromAggregationResult(Row, int, Option~StateLoader~, Option~StatePersister~) KLLMetric
-
-  + computeStateFrom(Dataset~Row~) Option~KLLState~
-
-  + aggregateStateTo(StateLoader, StateLoader, StatePersister) void
-
-  + loadStateAndComputeMetric(StateLoader) Option~KLLMetric~
-
-  + apply(String, Option~KLLParameters~) KLLSketch
-
-  + copyStateTo(StateLoader, StatePersister) void
-
-}
-
-class SampleAnalyzer {
-
-  + SampleAnalyzer(String)
-
-  + loadStateAndComputeMetric(StateLoader) Option~DoubleMetric~
-
-  + apply(String) SampleAnalyzer
-
-  + column() String
-
-  + computeStateFrom(Dataset~Row~) Option~NumMatches~
-
-  + copy(String) SampleAnalyzer
-
-  + compose(Function1~A, T1~) Function1~A, R~
-
-  + productIterator() Iterator~Object~
-
-  + toFailureMetric(Exception) DoubleMetric
-
-  + andThen(Function1~R, A~) Function1~T1, A~
-
-  + preconditions() Seq~Function1~StructType, Unit~~
-
-  + unapply(SampleAnalyzer) Option~String~
-
-  + calculate(Dataset~Row~, Option~StateLoader~, Option~StatePersister~) DoubleMetric
-
-  + computeMetricFrom(Option~NumMatches~) DoubleMetric
-
-  + aggregateStateTo(StateLoader, StateLoader, StatePersister) void
-
-  + copyStateTo(StateLoader, StatePersister) void
-
-  + calculateMetric(Option~NumMatches~, Option~StateLoader~, Option~StatePersister~) DoubleMetric
-
-  + productPrefix() String
-
-}
+class SampleAnalyzer 
 
 class ScanShareableAnalyzer~S, M~ {
-
-<<Interface>>
-
-  + metricFromAggregationResult(Row, int, Option~StateLoader~, Option~StatePersister~) M
-
-  + fromAggregationResult(Row, int) Option~S~
-
-  + computeStateFrom(Dataset~Row~) Option~S~
-
-  + aggregationFunctions() Seq~Column~
-
+  <<Interface>>
 }
 
-class StandardScanShareableAnalyzer~S~ {
-
-  + StandardScanShareableAnalyzer(String, String, Value)
-
-  + metricFromAggregationResult(Row, int, Option~StateLoader~, Option~StatePersister~) DoubleMetric
-
-  + loadStateAndComputeMetric(StateLoader) Option~DoubleMetric~
-
-  + additionalPreconditions() Seq~Function1~StructType, Unit~~
-
-  + calculateMetric(Option~S~, Option~StateLoader~, Option~StatePersister~) DoubleMetric
-
-  + preconditions() Seq~Function1~StructType, Unit~~
-
-  + computeMetricFrom(Option~S~) DoubleMetric
-
-  + copyStateTo(StateLoader, StatePersister) void
-
-  + toFailureMetric(Exception) DoubleMetric
-
-  + aggregateStateTo(StateLoader, StateLoader, StatePersister) void
-
-  + computeStateFrom(Dataset~Row~) Option~S~
-
-  + calculate(Dataset~Row~, Option~StateLoader~, Option~StatePersister~) DoubleMetric
-
-}
+class StandardScanShareableAnalyzer~S~
 
 ApproxQuantile  ..>  ScanShareableAnalyzer~S, M~
 GroupingAnalyzer~S, M~  ..>  Analyzer~S, M~
@@ -536,6 +311,16 @@ class ScanShareableAnalyzer~S, M~ {
 
 }
 ```
+
+**ScanShareableAnalyzer 接口常用功能介绍:**
+
+- `def aggregationFunctions(): Seq[Column]`: 返回一组 Column，其中 Column 对象是针对 DataFrame 的列聚合运算的定义（如：sum、max 等）
+- `def fromAggregationResult(result: Row, offset: Int): Option[S]`
+- `def computeStateFrom(data: DataFrame): Option[S]`: 通过 aggregationFunctions 方法返回的聚合运算表达式，针对 Data 进行聚合运算，并将生成的结果的首行 Row 作为 Result 传入 fromAggregationResult 方法，进而生成对应的 State
+	- 注意： ScanShareableAnalyzer 默认针对 Data 进行聚合运算的结果默认只取一行，是因为此类 Analyzer 默认针对数据集的运算只会返回一条结果，即聚合粒度是整个数据集
+	- 此处不得不再吐槽一下，这里接口的设计得有点太窄了，对于后续 State 的计算不够灵活
+
+**com.amazon.deequ.analyzers.ScanShareableAnalyzer 源码:**
 
 ```scala
 /** An analyzer that runs a set of aggregation functions over the data,  
@@ -570,14 +355,6 @@ class ScanShareableAnalyzer~S, M~ {
 }
 ```
 
-ScanShareableAnalyzer 接口常用功能介绍:
-
-- `def aggregationFunctions(): Seq[Column]`: 返回一组 Column，其中 Column 对象是针对 DataFrame 的列聚合运算的定义（如：sum、max 等）
-- `def fromAggregationResult(result: Row, offset: Int): Option[S]`
-- `def computeStateFrom(data: DataFrame): Option[S]`: 通过 aggregationFunctions 方法返回的聚合运算表达式，针对 Data 进行聚合运算，并将生成的结果的首行 Row 作为 Result 传入 fromAggregationResult 方法，进而生成对应的 State
-	- 注意： ScanShareableAnalyzer 默认针对 Data 进行聚合运算的结果默认只取一行，是因为此类 Analyzer 默认针对数据集的运算只会返回一条结果，即聚合粒度是整个数据集
-	- 此处不得不再吐槽一下，这里接口的设计得有点太窄了，对于后续 State 的计算不够灵活
-
 ### GroupingAnalyzer 抽象类
 
 ```mermaid
@@ -593,7 +370,7 @@ class GroupingAnalyzer~S, M~ {
 }
 ```
 
-GroupingAnalyzer 常用功能介绍：
+**GroupingAnalyzer 常用功能介绍：**
 
 - `def groupingColumns(): Seq[String]`: 返回当前 GroupingAnalyzer 的分组列名
 
@@ -616,9 +393,77 @@ FrequencyBasedAnalyzer 中引入了 State FrequenciesAndNumRows，进而支持�
 
 其中 FrequenciesAndNumRows 主要用于保存 Frequencies (运算的中间结果) 和 NumRows (原始数据集 DataFrame 的行记录数)，便于后续两者结合
 
-FrequencyBasedAnalyzer 常用功能介绍：
+**FrequencyBasedAnalyzer 常用功能介绍：**
+- `computeFrequencies(data: DataFrame, groupingColumns: Seq[String], where: Option[String] = None): FrequenciesAndNumRows`:
 
-- `def computeFrequencies(data: DataFrame,  groupingColumns: Seq[String],  where: Option[String] = None)  : FrequenciesAndNumRows`:
+**com.amazon.deequ.analyzers.FrequencyBasedAnalyzer 源码:**
+
+```scala
+/** Base class for all analyzers that operate the frequencies of groups in the data */
+abstract class FrequencyBasedAnalyzer(columnsToGroupOn: Seq[String])
+  extends GroupingAnalyzer[FrequenciesAndNumRows, DoubleMetric] {
+
+  override def groupingColumns(): Seq[String] = { columnsToGroupOn }
+
+  override def computeStateFrom(data: DataFrame): Option[FrequenciesAndNumRows] = {
+    Some(FrequencyBasedAnalyzer.computeFrequencies(data, groupingColumns()))
+  }
+
+  /** We need at least one grouping column, and all specified columns must exist */
+  override def preconditions: Seq[StructType => Unit] = {
+    Seq(atLeastOne(columnsToGroupOn)) ++ columnsToGroupOn.map { hasColumn } ++
+      columnsToGroupOn.map { isNotNested } ++ super.preconditions
+  }
+}
+
+object FrequencyBasedAnalyzer {
+
+  /** Compute the frequencies of groups in the data, essentially via a query like
+    *
+    * SELECT colA, colB, ..., COUNT(*)
+    * FROM DATA
+    * WHERE colA IS NOT NULL OR colB IS NOT NULL OR ...
+    * GROUP BY colA, colB, ...
+    */
+  def computeFrequencies(
+      data: DataFrame,
+      groupingColumns: Seq[String],
+      where: Option[String] = None)
+    : FrequenciesAndNumRows = {
+
+    val columnsToGroupBy = groupingColumns.map { name => col(name) }.toArray
+    val projectionColumns = columnsToGroupBy :+ col(COUNT_COL)
+
+    val atLeastOneNonNullGroupingColumn = groupingColumns
+      .foldLeft(expr(false.toString)) { case (condition, name) =>
+        condition.or(col(name).isNotNull)
+      }
+
+    val frequencies = data
+      .select(columnsToGroupBy: _*)
+      .where(atLeastOneNonNullGroupingColumn)
+      .transform(filterOptional(where))
+      .groupBy(columnsToGroupBy: _*)
+      .agg(count(lit(1)).alias(COUNT_COL))
+      .select(projectionColumns: _*)
+
+    val numRows = data
+      .select(columnsToGroupBy: _*)
+      .where(atLeastOneNonNullGroupingColumn)
+      .transform(filterOptional(where))
+      .count()
+
+    FrequenciesAndNumRows(frequencies, numRows)
+  }
+
+  private def filterOptional(where: Option[String])(data: DataFrame) : DataFrame = {
+    where match {
+      case Some(condition) => data.filter(condition)
+      case _ => data
+    }
+  }
+}
+```
 
 ## 参考链接
 
