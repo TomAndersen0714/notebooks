@@ -8,20 +8,11 @@ Analyzer: Data -> State -> Metric
 
 Data: Spark DataFrame，即需要进行数据分析的具体数据集。
 
+// todo 增加图形表示四者之间的关系
+
 ## State 接口
 
 在 Deequ 中，State (`com.amazon.deequ.analyzers.State`) 主要是用于保存 Analyzer 针对 DataFrame 使用 Spark 算子统计出的中间结果 (即 ` com.amazon.deequ.analyzers.Analyzer #computeStateFrom ` 方法)，State 支持同类之间相互合并，且最后都是被 Analyzer 用于加工生成对应的 Metric。
-
-```mermaid
-classDiagram
-direction BT
-class State~S~ {
-<<Interface>>
-  + sum(S) S
-  + $plus(S) S
-  + sumUntyped(State~?~) S
-}
-```
 
 ```scala
 /**  
@@ -54,7 +45,7 @@ DoubleValuedState (`com.amazon.deequ.analyzers.DoubleValuedState`) 是 State 接
 
 目前版本的 Deequ 中，此接口的 metricValue 方法仅应用于 `com.amazon.deequ.analyzers.StandardScanShareableAnalyzer#computeMetricFrom` 中，即用于计算和生成 DoubleMetric。
 
-### NumMatches
+### NumMatches 类
 
 NumMatches (`com.amazon.deequ.analyzers.NumMatches`) 是 DoubleValuedState 接口的一个具体实现类，以 `numMatches: Long` 的形式保存了 State。
 
@@ -74,7 +65,7 @@ case class NumMatches(numMatches: Long) extends DoubleValuedState[NumMatches] {
 }
 ```
 
-### NumMatchesAndCount
+### NumMatchesAndCount 类
 
 NumMatchesAndCount (`com.amazon.deequ.analyzers.NumMatchesAndCount`) 也是 DoubleValuedState 接口的一个具体实现类，相比于 NumMatches，此类 State 额外增加了 `count: Long` 属性（一般是记录当前分析的 DataFrame 总行数）。
 
@@ -99,7 +90,7 @@ NumMatchesAndCount 主要的功能是保存指标值 Metric Value 对应的分�
 }
 ```
 
-### FrequenciesAndNumRows
+### FrequenciesAndNumRows 类
 
 ```scala
 /** State representing frequencies of groups in the data, as well as overall #rows */  
@@ -141,47 +132,7 @@ case class FrequenciesAndNumRows(frequencies: DataFrame, numRows: Long)
 
 ## Metric 接口
 
-Metric 主要是用于保存 Analyzer 通过 State 生成的指标结果 (即 `com.amazon.deequ.analyzers.Analyzer#computeStateFrom` 方法)，此模块主要用于存放和读取已经计算完成的指标结果。
-
-```mermaid
-classDiagram
-direction BT
-
-class Metric~T~ {
-<<Interface>>
-  + flatten() Seq~DoubleMetric~
-  + value() Try~T~
-  + instance() String
-  + entity() Value
-  + name() String
-}
-```
-
-**com.amazon.deequ.metrics.Metric**:
-
-```scala
-/** Common trait for all data quality metrics */
-trait Metric[T] {
-  val entity: Entity.Value
-  val instance: String
-  val name: String
-  val value: Try[T]
-
-  /*
-   * Composite metric objects e.g histogram can implement this method to
-   * returned flattened view of the internal values in terms of double metrics.
-   * @see HistogramMetric for sample
-   */
-  def flatten(): Seq[DoubleMetric]
-}
-```
-
-**Metric 主要结构和功能**:
-- `entity`:
-- `instance`:
-- `name`:
-- `def flatten(): Seq[DoubleMetric]`:
-	- 此处也侧面说明 Deequ 代码中存在类型定义和依赖混乱的问题，父类方法居然依赖子类的类型定义，子类又依赖于父类的定义，相当于循环依赖...
+Metric 主要是用于保存 Analyzer 通过 State 生成的指标结果 (此过程主要实现在 `com.amazon.deequ.analyzers.Analyzer#computeStateFrom` 方法)，主要用于存放和读取已经计算完成的指标结果。
 
 ```mermaid
 classDiagram
@@ -201,9 +152,38 @@ KeyedDoubleMetric  ..>  Metric~T~
 
 ```
 
-### DoubleMetric
+**com.amazon.deequ.metrics.Metric 源码**:
 
-**com.amazon.deequ.metrics.DoubleMetric**:
+```scala
+/** Common trait for all data quality metrics */
+trait Metric[T] {
+  val entity: Entity.Value
+  val instance: String
+  val name: String
+  val value: Try[T]
+
+  /*
+   * Composite metric objects e.g histogram can implement this method to
+   * returned flattened view of the internal values in terms of double metrics.
+   * @see HistogramMetric for sample
+   */
+  def flatten(): Seq[DoubleMetric]
+}
+```
+
+**Metric 主要结构和功能**:
+
+- `entity`: Metric 分析的实例类型，此字段类型是枚举值，目前有 DataSet、Column、Mutlicolumn 三种。
+- `instance`: Metric 分析的实例名称，如：某个字段名。
+- `name`: Metric 对应的名称。
+- `value`: Metric 对应的 Value，即本次运算分析的最终结果。
+- `flatten(): Seq[DoubleMetric]`:
+	- 返回扁平化处理后的 Metrics，主要用于简化某些嵌套类的 Metric，便于后续统一数据结构和序列化等操作
+	- 方法签名中的 DoubleMetric 也侧面说明 Deequ 代码中存在类型定义和依赖混乱的问题，父类方法居然依赖子类的类型定义，子类又依赖于父类的定义，相当于循环依赖...
+
+### DoubleMetric 类
+
+**com.amazon.deequ.metrics.DoubleMetric 源码**:
 
 ```scala
 /** Common trait for all data quality metrics where the value is double */
@@ -218,9 +198,9 @@ case class DoubleMetric(
 }
 ```
 
-### KeyedDoubleMetric
+### KeyedDoubleMetric 类
 
-**com.amazon.deequ.metrics.KeyedDoubleMetric**:
+**com.amazon.deequ.metrics.KeyedDoubleMetric 源码**:
 
 ```scala
 case class KeyedDoubleMetric(
@@ -276,8 +256,7 @@ Analyzer 常用功能介绍：
 classDiagram
 direction BT
 class Analyzer~S, M~ {
-
-<<Interface>>
+  <<Interface>>
 
   + loadStateAndComputeMetric(StateLoader) Option~M~
 
@@ -591,7 +570,7 @@ ScanShareableAnalyzer 接口常用功能介绍:
 	- 注意： ScanShareableAnalyzer 默认针对 Data 进行聚合运算的结果默认只取一行，是因为此类 Analyzer 默认针对数据集的运算只会返回一条结果，即聚合粒度是整个数据集
 	- 此处不得不再吐槽一下，这里接口的设计得有点太窄了，对于后续 State 的计算不够灵活
 
-### GroupingAnalyzer
+### GroupingAnalyzer 抽象类
 
 ```mermaid
 classDiagram
@@ -610,7 +589,7 @@ GroupingAnalyzer 常用功能介绍：
 
 - `def groupingColumns(): Seq[String]`: 返回当前 GroupingAnalyzer 的分组列名
 
-### FrequencyBasedAnalyzer
+### FrequencyBasedAnalyzer 抽象类
 
 ```mermaid
 classDiagram
