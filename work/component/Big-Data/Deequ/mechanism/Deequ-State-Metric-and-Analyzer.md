@@ -31,8 +31,13 @@ end
 
 ## State 接口
 
-在 Deequ 中，State (`com.amazon.deequ.analyzers.State`) 主要是用于保存 Analyzer 针对 DataFrame 使用 Spark 算子统计出的中间结果 (即 ` com.amazon.deequ.analyzers.Analyzer #computeStateFrom ` 方法)，State 支持同类之间相互合并，且最后都是被 Analyzer 用于加工生成对应的 Metric。
+在 Deequ 中，State 主要是用于保存 Analyzer 针对 DataFrame 使用 Spark 算子统计出的中间结果 (即 `com.amazon.deequ.analyzers.Analyzer#computeStateFrom` 方法)，State 支持同类之间相互合并，且最后都是被 Analyzer 用于加工生成对应的 Metric。
 
+其中 State 接口只有一个需要实现的方法，即 `def sum(other: S): S`，其功能是支持与其他的 State Merge 成一个新的 State。
+
+State 接口只定义了需要实现的功能，而 State 生成时所需的数据结构部分，则实现在了其子类中，子类的实现方式不同，其对应的数据结构也不尽相同。
+
+**com.amazon.deequ.analyzers.State 源码:**
 ```scala
 /**  
   * A state (sufficient statistic) computed from data, from which we can compute a metric.  * Must be combinable with other states of the same type  * (= algebraic properties of a commutative semi-group)  */trait State[S <: State[S]] {  
@@ -52,11 +57,35 @@ end
 }
 ```
 
-其中 State 接口只有一个需要实现的方法，即 `def sum(other: S): S`，其功能是支持与其他的 State Merge 成一个新的 State。
+**State 类图:**
 
-State 接口只定义了需要实现的功能，而 State 生成时所需的数据结构部分，则实现在了其子类中，子类的实现方式不同，其对应的数据结构也不尽相同。
+```mermaid
+classDiagram
+direction BT
+class ApproxQuantileState
+class DataTypeHistogram
+class DoubleValuedState~S~ {
+<<Interface>>
 
-// todo，增加一个继承链对应的类图，概要版
+}
+class FrequenciesAndNumRows
+class KLLState
+class NumMatchesAndCount
+class State~S~ {
+<<Interface>>
+
+}
+class SumState
+
+ApproxQuantileState  ..>  State~S~ 
+DataTypeHistogram  ..>  State~S~ 
+DoubleValuedState~S~  -->  State~S~ 
+FrequenciesAndNumRows  ..>  State~S~ 
+KLLState  ..>  State~S~ 
+NumMatchesAndCount  ..>  DoubleValuedState~S~ 
+SumState  ..>  DoubleValuedState~S~ 
+
+```
 
 ### DoubleValuedState 接口
 
@@ -66,10 +95,11 @@ DoubleValuedState (`com.amazon.deequ.analyzers.DoubleValuedState`) 是 State 接
 
 ### NumMatches 类
 
-NumMatches (`com.amazon.deequ.analyzers.NumMatches`) 是 DoubleValuedState 接口的一个具体实现类，以 `numMatches: Long` 的形式保存了 State。
+NumMatches 是 DoubleValuedState 接口的一个具体实现类，以 `numMatches: Long` 的形式保存了 State。
 
 NumMatches 是最基础的 State 之一，可以应用于各种可加性指标 Metric 的数据分析 Analyzer 运算中，如 Count、Sum 等。
 
+**com.amazon.deequ.analyzers.NumMatches 源码：**
 ```scala
 case class NumMatches(numMatches: Long) extends DoubleValuedState[NumMatches] {  
   
@@ -86,10 +116,11 @@ case class NumMatches(numMatches: Long) extends DoubleValuedState[NumMatches] {
 
 ### NumMatchesAndCount 类
 
-NumMatchesAndCount (`com.amazon.deequ.analyzers.NumMatchesAndCount`) 也是 DoubleValuedState 接口的一个具体实现类，相比于 NumMatches，此类 State 额外增加了 `count: Long` 属性（一般是记录当前分析的 DataFrame 总行数）。
+NumMatchesAndCount 也是 DoubleValuedState 接口的一个具体实现类，相比于 NumMatches，此类 State 额外增加了 `count: Long` 属性（一般是记录当前分析的 DataFrame 总行数）。
 
 NumMatchesAndCount 主要的功能是保存指标值 Metric Value 对应的分子和分母，适用于计算比值 Ratio 这类复合指标。
 
+**com.amazon.deequ.analyzers.NumMatchesAndCount 源码:**
 ```scala
 /** A state for computing ratio-based metrics,  
   * contains #rows that match a predicate and overall #rows */case class NumMatchesAndCount(numMatches: Long, count: Long)  
@@ -111,6 +142,7 @@ NumMatchesAndCount 主要的功能是保存指标值 Metric Value 对应的分�
 
 ### FrequenciesAndNumRows 类
 
+**com.amazon.deequ.analyzers.FrequenciesAndNumRows 源码:**
 ```scala
 /** State representing frequencies of groups in the data, as well as overall #rows */  
 case class FrequenciesAndNumRows(frequencies: DataFrame, numRows: Long)  
@@ -152,6 +184,8 @@ case class FrequenciesAndNumRows(frequencies: DataFrame, numRows: Long)
 ## Metric 接口
 
 Metric 主要是用于保存 Analyzer 通过 State 生成的指标结果 (此过程主要实现在 `com.amazon.deequ.analyzers.Analyzer#computeStateFrom` 方法)，主要用于存放和读取已经计算完成的指标结果。
+
+**Metric 类图:**
 
 ```mermaid
 classDiagram
@@ -264,12 +298,13 @@ class Analyzer~S, M~ {
 
 Analyzer 是 Deequ 中用于加工 Data、State、Metric 三者的工具箱，每个 Analyzer 都与 Data、State、Metric 一一对应。
 
-Analyzer 常用功能介绍：
-- `def computeStateFrom(data: DataFrame): Option[S]`: 输入 Spark DataFrame，触发转换运算，获得对应的中间状态 State
-- `def computeMetricFrom(state: Option[S]): M`: 输入 State，基于中间结果，生成最终的 Metric
+**Analyzer 常用功能介绍：**
+- `def computeStateFrom(data: DataFrame): Option[S]`: 输入 Spark DataFrame，触发转换运算，获得对应的中间结果 State
+- `def computeMetricFrom(state: Option[S]): M`: 输入 State，基于中间结果 State，生成最终的 Metric
 - `def preconditions: Seq[StructType => Unit]`: 返回一组函数，用于表示执行 Analyzer 之前对应的 DataFrame 的数据结构 Schema 需要满足的一系列前提条件
-- `def calculate(data: DataFrame, aggregateWith: Option[StateLoader] = None, saveStatesWith: Option[StatePersister] = None): M`: 调用 preconditions、computeStateFrom、computeMetricFrom，用于生成对应的 Metric
+- `def calculate(data: DataFrame, aggregateWith: Option[StateLoader] = None, saveStatesWith: Option[StatePersister] = None): M`: 调用 preconditions、computeStateFrom、computeMetricFrom 等方法，用于生成对应的 Metric
 
+**Analyzer 类图:**
 ```mermaid
 
 classDiagram
@@ -415,7 +450,7 @@ class FrequencyBasedAnalyzer {
 
 FrequencyBasedAnalyzer 中引入了 State FrequenciesAndNumRows，进而支持保存 GroupBy+Count 算子运算后的 DataFrame (此时的 DataFrame 可以类比为一种 Map 结构，Key 为 GroupBy 的列，Value 为对应的 Count 计数) 作为中间结果。
 
-其中 FrequenciesAndNumRows 主要用于保存 Frequencies (运算的中间结果) 和 NumRows (原始数据集 DataFrame 的行记录数)，便于后续两者结合
+其中 FrequenciesAndNumRows 主要用于保存 Frequencies (运算的中间结果) 和 NumRows (原始数据集 DataFrame 的行记录数)，用于后续计算。
 
 **FrequencyBasedAnalyzer 常用功能介绍：**
 - `computeFrequencies(data: DataFrame, groupingColumns: Seq[String], where: Option[String] = None): FrequenciesAndNumRows`:
