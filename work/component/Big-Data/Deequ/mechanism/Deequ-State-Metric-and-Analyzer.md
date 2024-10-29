@@ -4,16 +4,16 @@
 
 本文内容基于 Deequ `1.2.2-spark-2.4` 版本。
 
-Data:
+**Data:**
 - Spark DataFrame，即需要 Analyzer 进行数据分析的具体数据集。
 
-State:
+**State:**
 - Analyzer 针对具体数据集 Data 进行聚合运算后生成的中间运算结果，同类 State 之间支持合并，生成 State 的阶段是每个分析过程的主要运算阶段。
 
-Metric:
+**Metric:**
 - Analyzer 基于中间结果 State 生成的最终结果 Metric。相比于承担聚合运算的 State，Metric 的职责更多的是针对数据分析结果的一种整合，通常只是一些简单的数学运算。
 
-Analyzer:
+**Analyzer:**
 - Analyzer 是 Deequ 中用于加工 Data、State、Metric 三者的标准工具箱，每个 Analyzer 都与 Data、State、Metric 三者一一对应。相当于 Data、State、Metric 三者是“食材”，而 Analyzer 则承担着“厨具”的职责。
 
 ```mermaid
@@ -39,6 +39,7 @@ end
 State 接口只定义了需要实现的功能，而 State 生成时所需的数据结构部分，则实现在了其子类中，子类的实现方式不同，其对应的数据结构也不尽相同。
 
 **com.amazon.deequ.analyzers.State 源码:**
+
 ```scala
 /**  
   * A state (sufficient statistic) computed from data, from which we can compute a metric.  * Must be combinable with other states of the same type  * (= algebraic properties of a commutative semi-group)  */trait State[S <: State[S]] {  
@@ -90,9 +91,18 @@ SumState  ..>  DoubleValuedState~S~
 
 ### DoubleValuedState 接口
 
-DoubleValuedState (`com.amazon.deequ.analyzers.DoubleValuedState`) 是 State 接口的一个子接口，主要功能是在基础的 State 上新增 `def metricValue(): Double` 方法，使得 State 支持获取当前 State 中间结果中 Double 类型的 Value。
+DoubleValuedState 是 State 接口的一个子接口，主要功能是在基础的 State 上新增 `def metricValue(): Double` 方法，使得 State 支持获取当前 State 中间结果中 Double 类型的 Value。
 
-目前版本的 Deequ 中，此接口的 metricValue 方法仅应用于 `com.amazon.deequ.analyzers.StandardScanShareableAnalyzer#computeMetricFrom` 中，即用于计算和生成 DoubleMetric。
+目前版本的 Deequ 中，此接口的 `metricValue` 方法仅应用于 `com.amazon.deequ.analyzers.StandardScanShareableAnalyzer#computeMetricFrom` 中，即用于生成 DoubleMetric。
+
+**com.amazon.deequ.analyzers.DoubleValuedState 源码:**
+
+```scala
+/** A state which produces a double valued metric  */
+trait DoubleValuedState[S <: DoubleValuedState[S]] extends State[S] {
+  def metricValue(): Double
+}
+```
 
 ### NumMatches 类
 
@@ -101,6 +111,7 @@ NumMatches 是 DoubleValuedState 接口的一个具体实现类，以 `numMatche
 NumMatches 是最基础的 State 之一，可以应用于各种可加性指标 Metric 的数据分析 Analyzer 运算中，如 Count、Sum 等。
 
 **com.amazon.deequ.analyzers.NumMatches 源码：**
+
 ```scala
 case class NumMatches(numMatches: Long) extends DoubleValuedState[NumMatches] {  
   
@@ -122,6 +133,7 @@ NumMatchesAndCount 也是 DoubleValuedState 接口的一个具体实现类，相
 NumMatchesAndCount 主要的功能是保存指标值 Metric Value 对应的分子和分母，适用于计算比值 Ratio 这类复合指标。
 
 **com.amazon.deequ.analyzers.NumMatchesAndCount 源码:**
+
 ```scala
 /** A state for computing ratio-based metrics,  
   * contains #rows that match a predicate and overall #rows */case class NumMatchesAndCount(numMatches: Long, count: Long)  
@@ -144,6 +156,7 @@ NumMatchesAndCount 主要的功能是保存指标值 Metric Value 对应的分�
 ### FrequenciesAndNumRows 类
 
 **com.amazon.deequ.analyzers.FrequenciesAndNumRows 源码:**
+
 ```scala
 /** State representing frequencies of groups in the data, as well as overall #rows */  
 case class FrequenciesAndNumRows(frequencies: DataFrame, numRows: Long)  
@@ -186,26 +199,6 @@ case class FrequenciesAndNumRows(frequencies: DataFrame, numRows: Long)
 
 Metric 主要是用于保存 Analyzer 通过 State 生成的指标结果 (此过程主要实现在 `com.amazon.deequ.analyzers.Analyzer#computeStateFrom` 方法)，主要用于存放和读取已经计算完成的指标结果。
 
-**Metric 类图:**
-
-```mermaid
-classDiagram
-direction BT
-class DoubleMetric
-class HistogramMetric
-class KLLMetric
-class KeyedDoubleMetric
-class Metric~T~ {
-<<Interface>>
-}
-
-DoubleMetric  ..>  Metric~T~ 
-HistogramMetric  ..>  Metric~T~ 
-KLLMetric  ..>  Metric~T~ 
-KeyedDoubleMetric  ..>  Metric~T~ 
-
-```
-
 **com.amazon.deequ.metrics.Metric 源码**:
 
 ```scala
@@ -230,10 +223,30 @@ trait Metric[T] {
 - `entity`: Metric 指标对应的聚合运算粒度，此字段类型是枚举值，目前有 DataSet、Column、Mutlicolumn 三种，分别对应按整个数据集聚合、按照指定列聚合、按照多个列聚合。
 - `instance`: Metric 分析的实例名称，如：某个字段名。
 - `name`: Metric 对应的名称。
-- `value`: Metric 对应的 Value，即本次运算分析的最终结果。
-- `flatten(): Seq[DoubleMetric]`:
+- `value`: Metric 对应的 Value，即本次分析运算的最终结果。
+- `def flatten(): Seq[DoubleMetric]`:
 	- 返回扁平化处理后的 Metrics，主要用于简化某些嵌套类的 Metric，便于后续统一数据结构和序列化等操作
 	- 方法签名中的 DoubleMetric 也侧面说明 Deequ 代码中存在类型定义和依赖混乱的问题，父类方法居然依赖子类的类型定义，子类又依赖于父类的定义，即循环依赖...
+
+**Metric 类图:**
+
+```mermaid
+classDiagram
+direction BT
+class DoubleMetric
+class HistogramMetric
+class KLLMetric
+class KeyedDoubleMetric
+class Metric~T~ {
+<<Interface>>
+}
+
+DoubleMetric  ..>  Metric~T~ 
+HistogramMetric  ..>  Metric~T~ 
+KLLMetric  ..>  Metric~T~ 
+KeyedDoubleMetric  ..>  Metric~T~ 
+
+```
 
 ### DoubleMetric 类
 
@@ -299,13 +312,15 @@ class Analyzer~S, M~ {
 
 Analyzer 是 Deequ 中用于加工 Data、State、Metric 三者的工具箱，每个 Analyzer 都与 Data、State、Metric 一一对应。
 
-**Analyzer 常用功能介绍：**
+**Analyzer 接口常用功能介绍：**
+
 - `def computeStateFrom(data: DataFrame): Option[S]`: 输入 Spark DataFrame，触发转换运算，获得对应的中间结果 State
 - `def computeMetricFrom(state: Option[S]): M`: 输入 State，基于中间结果 State，生成最终的 Metric
 - `def preconditions: Seq[StructType => Unit]`: 返回一组函数，用于表示执行 Analyzer 之前对应的 DataFrame 的数据结构 Schema 需要满足的一系列前提条件
 - `def calculate(data: DataFrame, aggregateWith: Option[StateLoader] = None, saveStatesWith: Option[StatePersister] = None): M`: 调用 preconditions、computeStateFrom、computeMetricFrom 等方法，用于生成对应的 Metric
 
 **Analyzer 类图:**
+
 ```mermaid
 
 classDiagram
@@ -454,7 +469,8 @@ FrequencyBasedAnalyzer 中引入了 State FrequenciesAndNumRows，进而支持�
 其中 FrequenciesAndNumRows 主要用于保存 Frequencies (运算的中间结果) 和 NumRows (原始数据集 DataFrame 的行记录数)，用于后续计算。
 
 **FrequencyBasedAnalyzer 常用功能介绍：**
-- `computeFrequencies(data: DataFrame, groupingColumns: Seq[String], where: Option[String] = None): FrequenciesAndNumRows`:
+
+- `def computeFrequencies(data: DataFrame, groupingColumns: Seq[String], where: Option[String] = None): FrequenciesAndNumRows`:
 
 **com.amazon.deequ.analyzers.FrequencyBasedAnalyzer 源码:**
 
