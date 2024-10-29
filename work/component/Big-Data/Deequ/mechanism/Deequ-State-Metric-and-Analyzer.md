@@ -155,6 +155,8 @@ NumMatchesAndCount 主要的功能是保存指标值 Metric Value 对应的分�
 
 ### FrequenciesAndNumRows 类
 
+FrequenciesAndNumRows 
+
 **com.amazon.deequ.analyzers.FrequenciesAndNumRows 源码:**
 
 ```scala
@@ -445,6 +447,8 @@ class GroupingAnalyzer~S, M~ {
 }
 ```
 
+GroupingAnalyzer 抽象类是 Analyzer 接口的一个实现类，
+
 **GroupingAnalyzer 常用功能介绍：**
 
 - `def groupingColumns(): Seq[String]`: 返回当前 GroupingAnalyzer 的分组列名
@@ -470,7 +474,7 @@ FrequencyBasedAnalyzer 中引入了 State FrequenciesAndNumRows，进而支持�
 
 **FrequencyBasedAnalyzer 常用功能介绍：**
 
-- `def computeFrequencies(data: DataFrame, groupingColumns: Seq[String], where: Option[String] = None): FrequenciesAndNumRows`:
+- `def computeFrequencies(data: DataFrame, groupingColumns: Seq[String], where: Option[String] = None): FrequenciesAndNumRows`: 基于 Data 执行 Select+Where+Group，以及 Where+Count 查询，并生成对应的 DataFrame 和 NumRows，以此生成 FrequenciesAndNumRows State
 
 **com.amazon.deequ.analyzers.FrequencyBasedAnalyzer 源码:**
 
