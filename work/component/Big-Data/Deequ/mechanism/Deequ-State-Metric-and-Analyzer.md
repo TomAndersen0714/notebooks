@@ -155,7 +155,7 @@ NumMatchesAndCount 主要的功能是保存指标值 Metric Value 对应的分�
 
 ### FrequenciesAndNumRows 类
 
-FrequenciesAndNumRows 
+FrequenciesAndNumRows 相比于 NumMatches，增加了 frequencies 成员属性，用于保存 Analyzer 中针对 Data 执行 GroupBy 算子后的运算结果。
 
 **com.amazon.deequ.analyzers.FrequenciesAndNumRows 源码:**
 
@@ -447,11 +447,23 @@ class GroupingAnalyzer~S, M~ {
 }
 ```
 
-GroupingAnalyzer 抽象类是 Analyzer 接口的一个实现类，
+GroupingAnalyzer 抽象类是 Analyzer 接口的一个实现类，相比于基础的 Analyzer 增加了 `def groupingColumns(): Seq[String]` 方法用于获取当前 Analyzer 的分组列名集合，通常会通过子类覆盖的方式，自定义其计算时需要的分组列。
 
-**GroupingAnalyzer 常用功能介绍：**
+**com.amazon.deequ.analyzers.GroupingAnalyzer 源码:**
 
-- `def groupingColumns(): Seq[String]`: 返回当前 GroupingAnalyzer 的分组列名
+```scala
+/** Base class for analyzers that require to group the data by specific columns */
+abstract class GroupingAnalyzer[S <: State[_], +M <: Metric[_]] extends Analyzer[S, M] {
+
+  /** The columns to group the data by */
+  def groupingColumns(): Seq[String]
+
+  /** Ensure that the grouping columns exist in the data */
+  override def preconditions: Seq[StructType => Unit] = {
+    groupingColumns().map { name => Preconditions.hasColumn(name) } ++ super.preconditions
+  }
+}
+```
 
 ### FrequencyBasedAnalyzer 抽象类
 
@@ -470,7 +482,7 @@ class FrequencyBasedAnalyzer {
 
 FrequencyBasedAnalyzer 中引入了 State FrequenciesAndNumRows，进而支持保存 GroupBy+Count 算子运算后的 DataFrame (此时的 DataFrame 可以类比为一种 Map 结构，Key 为 GroupBy 的列，Value 为对应的 Count 计数) 作为中间结果。
 
-其中 FrequenciesAndNumRows 主要用于保存 Frequencies (运算的中间结果) 和 NumRows (原始数据集 DataFrame 的行记录数)，用于后续计算。
+其中 FrequenciesAndNumRows 主要用于保存 Frequencies ( Group By 运算结果) 和 NumRows (原始数据集 DataFrame 的行记录数)，一起用于计算和生成后续的 DoubleMetric 指标。
 
 **FrequencyBasedAnalyzer 常用功能介绍：**
 
