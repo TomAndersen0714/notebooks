@@ -10,6 +10,8 @@ Data: Spark DataFrame，即需要进行数据分析的具体数据集。
 
 ## State 接口
 
+在 Deequ 中，State (`com.amazon.deequ.analyzers.State`) 主要是用于保存 Analyzer 针对 DataFrame 使用 Spark 算子统计出的中间结果 (即 ` com.amazon.deequ.analyzers.Analyzer #computeStateFrom ` 方法)，State 支持同类之间相互合并，且最后都是被 Analyzer 用于加工生成对应的 Metric。
+
 ```mermaid
 classDiagram
 direction BT
@@ -21,13 +23,30 @@ class State~S~ {
 }
 ```
 
-State (`com.amazon.deequ.analyzers.State`) 主要是用于保存 Analyzer 针对 DataFrame 使用 Spark 算子统计出的中间结果 (即 ` com.amazon.deequ.analyzers.Analyzer #computeStateFrom ` 方法)，State 支持同类之间相互合并，且最后都是被 Analyzer 用于加工生成对应的 Metric。
+```scala
+/**  
+  * A state (sufficient statistic) computed from data, from which we can compute a metric.  * Must be combinable with other states of the same type  * (= algebraic properties of a commutative semi-group)  */trait State[S <: State[S]] {  
+  
+  // Unfortunately this is required due to type checking issues  
+  private[analyzers] def sumUntyped(other: State[_]): S = {  
+    sum(other.asInstanceOf[S])  
+  }  
+  
+  /** Combine this with another state */  
+  def sum(other: S): S  
+  
+  /** Same as sum, syntatic sugar */  
+  def +(other: S): S = {  
+    sum(other)  
+  }  
+}
+```
 
 其中 State 接口只有一个需要实现的方法，即 `def sum(other: S): S`，其功能是支持与其他的 State Merge 成一个新的 State。
 
 State 接口只定义了需要实现的功能，而 State 生成时所需的数据结构部分，则实现在了其子类中，子类的实现方式不同，其对应的数据结构也不尽相同。
 
-// todo，增加一个继承链对应的类图
+// todo，增加一个继承链对应的类图，概要版
 
 ### DoubleValuedState 接口
 
@@ -122,6 +141,8 @@ case class FrequenciesAndNumRows(frequencies: DataFrame, numRows: Long)
 
 ## Metric 接口
 
+Metric 主要是用于保存 Analyzer 通过 State 生成的指标结果 (即 `com.amazon.deequ.analyzers.Analyzer#computeStateFrom` 方法)，此模块主要用于存放和读取已经计算完成的指标结果。
+
 ```mermaid
 classDiagram
 direction BT
@@ -136,84 +157,41 @@ class Metric~T~ {
 }
 ```
 
-Metric (`com.amazon.deequ.metrics.Metric`) 主要是用于保存 Analyzer 通过 State 生成的指标结果 (即 `com.amazon.deequ.analyzers.Analyzer#computeStateFrom` 方法)，此模块主要用于存放和读取已经计算完成的指标结果。
+**com.amazon.deequ.metrics.Metric**:
 
-Metric 常用功能:
+```scala
+/** Common trait for all data quality metrics */
+trait Metric[T] {
+  val entity: Entity.Value
+  val instance: String
+  val name: String
+  val value: Try[T]
+
+  /*
+   * Composite metric objects e.g histogram can implement this method to
+   * returned flattened view of the internal values in terms of double metrics.
+   * @see HistogramMetric for sample
+   */
+  def flatten(): Seq[DoubleMetric]
+}
+```
+
+**Metric 主要结构和功能**:
+- `entity`:
+- `instance`:
+- `name`:
 - `def flatten(): Seq[DoubleMetric]`:
 	- 此处也侧面说明 Deequ 代码中存在类型定义和依赖混乱的问题，父类方法居然依赖子类的类型定义，子类又依赖于父类的定义，相当于循环依赖...
 
 ```mermaid
 classDiagram
 direction BT
-class DoubleMetric {
-  + DoubleMetric(Value, String, String, Try~Object~) 
-  + productPrefix() String
-  + entity() Value
-  + value() Try~Object~
-  + curried() Function1~T1, Function1~T2, Function1~T3, Function1~T4, R~~~~
-  + copy(Value, String, String, Try~Object~) DoubleMetric
-  + unapply(DoubleMetric) Option~Tuple4~Value, String, String, Try~Object~~~
-  + flatten() Seq~DoubleMetric~
-  + instance() String
-  + productIterator() Iterator~Object~
-  + tupled() Function1~Tuple4~T1, T2, T3, T4~, R~
-  + name() String
-  + apply(Value, String, String, Try~Object~) DoubleMetric
-}
-class HistogramMetric {
-  + HistogramMetric(String, Try~Distribution~) 
-  + tupled() Function1~Tuple2~T1, T2~, R~
-  + copy(String, Try~Distribution~) HistogramMetric
-  + column() String
-  + entity() Value
-  + unapply(HistogramMetric) Option~Tuple2~String, Try~Distribution~~~
-  + productPrefix() String
-  + curried() Function1~T1, Function1~T2, R~~
-  + name() String
-  + flatten() Seq~DoubleMetric~
-  + value() Try~Distribution~
-  + apply(String, Try~Distribution~) HistogramMetric
-  + instance() String
-  + productIterator() Iterator~Object~
-}
-class KLLMetric {
-  + KLLMetric(String, Try~BucketDistribution~) 
-  + productIterator() Iterator~Object~
-  + productPrefix() String
-  + name() String
-  + column() String
-  + copy(String, Try~BucketDistribution~) KLLMetric
-  + apply(String, Try~BucketDistribution~) KLLMetric
-  + tupled() Function1~Tuple2~T1, T2~, R~
-  + value() Try~BucketDistribution~
-  + entity() Value
-  + unapply(KLLMetric) Option~Tuple2~String, Try~BucketDistribution~~~
-  + instance() String
-  + curried() Function1~T1, Function1~T2, R~~
-  + flatten() Seq~DoubleMetric~
-}
-class KeyedDoubleMetric {
-  + KeyedDoubleMetric(Value, String, String, Try~Map~String, Object~~) 
-  + copy(Value, String, String, Try~Map~String, Object~~) KeyedDoubleMetric
-  + instance() String
-  + flatten() Seq~DoubleMetric~
-  + unapply(KeyedDoubleMetric) Option~Tuple4~Value, String, String, Try~Map~String, Object~~~~
-  + tupled() Function1~Tuple4~T1, T2, T3, T4~, R~
-  + productPrefix() String
-  + productIterator() Iterator~Object~
-  + name() String
-  + entity() Value
-  + apply(Value, String, String, Try~Map~String, Object~~) KeyedDoubleMetric
-  + curried() Function1~T1, Function1~T2, Function1~T3, Function1~T4, R~~~~
-  + value() Try~Map~String, Object~~
-}
+class DoubleMetric
+class HistogramMetric
+class KLLMetric
+class KeyedDoubleMetric
 class Metric~T~ {
 <<Interface>>
-  + flatten() Seq~DoubleMetric~
-  + value() Try~T~
-  + instance() String
-  + entity() Value
-  + name() String
 }
 
 DoubleMetric  ..>  Metric~T~ 
@@ -225,7 +203,45 @@ KeyedDoubleMetric  ..>  Metric~T~
 
 ### DoubleMetric
 
-FQN: com.amazon.deequ.metrics.DoubleMetric
+**com.amazon.deequ.metrics.DoubleMetric**:
+
+```scala
+/** Common trait for all data quality metrics where the value is double */
+case class DoubleMetric(
+    entity: Entity.Value,
+    name: String,
+    instance: String,
+    value: Try[Double])
+  extends Metric[Double] {
+
+  override def flatten(): Seq[DoubleMetric] = Seq(this)
+}
+```
+
+### KeyedDoubleMetric
+
+**com.amazon.deequ.metrics.KeyedDoubleMetric**:
+
+```scala
+case class KeyedDoubleMetric(
+    entity: Entity.Value,
+    name: String,
+    instance: String,
+    value: Try[Map[String, Double]])
+  extends Metric[Map[String, Double]] {
+
+  override def flatten(): Seq[DoubleMetric] = {
+    if (value.isSuccess) {
+      value.get.map { case (key, correspondingValue) =>
+        DoubleMetric(entity, s"$name-$key", instance, Success(correspondingValue))
+      }
+      .toSeq
+    } else {
+      Seq(DoubleMetric(entity, s"$name", instance, Failure(value.failed.get)))
+    }
+  }
+}
+```
 
 ## Analyzer 接口
 
@@ -534,7 +550,41 @@ class ScanShareableAnalyzer~S, M~ {
 }
 ```
 
-ScanShareableAnalyzer 常用功能介绍:
+```scala
+/** An analyzer that runs a set of aggregation functions over the data,  
+  * can share scans over the data */trait ScanShareableAnalyzer[S <: State[_], +M <: Metric[_]] extends Analyzer[S, M] {  
+  
+  /** Defines the aggregations to compute on the data */  
+  private[deequ] def aggregationFunctions(): Seq[Column]  
+  
+  /** Computes the state from the result of the aggregation functions */  
+  private[deequ] def fromAggregationResult(result: Row, offset: Int): Option[S]  
+  
+  /** Runs aggregation functions directly, without scan sharing */  
+  override def computeStateFrom(data: DataFrame): Option[S] = {  
+    val aggregations = aggregationFunctions()  
+    val result = data.agg(aggregations.head, aggregations.tail: _*).collect().head  
+    fromAggregationResult(result, 0)  
+  }  
+  
+  /** Produces a metric from the aggregation result */  
+  private[deequ] def metricFromAggregationResult(  
+      result: Row,  
+      offset: Int,  
+      aggregateWith: Option[StateLoader] = None,  
+      saveStatesWith: Option[StatePersister] = None)  
+    : M = {  
+  
+    val state = fromAggregationResult(result, offset)  
+  
+    calculateMetric(state, aggregateWith, saveStatesWith)  
+  }  
+  
+}
+```
+
+ScanShareableAnalyzer 接口常用功能介绍:
+
 - `def aggregationFunctions(): Seq[Column]`: 返回一组 Column，其中 Column 对象是针对 DataFrame 的列聚合运算的定义（如：sum、max 等）
 - `def fromAggregationResult(result: Row, offset: Int): Option[S]`
 - `def computeStateFrom(data: DataFrame): Option[S]`: 通过 aggregationFunctions 方法返回的聚合运算表达式，针对 Data 进行聚合运算，并将生成的结果的首行 Row 作为 Result 传入 fromAggregationResult 方法，进而生成对应的 State
@@ -556,7 +606,9 @@ class GroupingAnalyzer~S, M~ {
 }
 ```
 
-`def groupingColumns(): Seq[String]`: 返回当前 GroupingAnalyzer 的分组列名
+GroupingAnalyzer 常用功能介绍：
+
+- `def groupingColumns(): Seq[String]`: 返回当前 GroupingAnalyzer 的分组列名
 
 ### FrequencyBasedAnalyzer
 
