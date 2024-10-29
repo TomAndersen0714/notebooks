@@ -1,0 +1,6 @@
+.mermaid {
+    overflow: scroll; /*溢出时使用scroll滚动条*/
+}
+.mermaid svg {
+    zoom: 0.7; /*缩放比例*/
+}

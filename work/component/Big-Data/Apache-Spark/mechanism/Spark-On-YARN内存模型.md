@@ -10,10 +10,9 @@
 
 ## Driver VS Executor
 
-Driver 是 Spark 应用的主进程，负责管理和协调整个 Spark 应用程序的执行，以及存储 SparkContext、SparkSession 等共享对象，其内存主要由 Driver Memory 和 Driver Memory Overhead 两部分组成：
+Driver 是 Spark 应用的主进程 Main Progress，负责管理和协调整个 Spark 应用程序的执行，以及存储 SparkContext、SparkSession 等共享对象，其内存主要由 Driver Memory 和 Driver Memory Overhead 两部分组成：
 
 ```scala
-
 // org.apache.spark.deploy.yarn.Client#VerifyClusterResources
     val amMem = amMemory + amMemoryOverhead
     if (amMem > maxMem) {
@@ -27,9 +26,9 @@ Driver 是 Spark 应用的主进程，负责管理和协调整个 Spark 应用�
       amMemoryOverhead))
 ```
 
-在 Cluster 部署模式下，Driver 进程运行在 YARN 集群的 Application Master（即 Container）中，其阈值分别由配置 `spark.driver.memory` 和 `spark.driver.memoryOverhead` 来控制。
+在 Cluster 部署模式下，Driver 进程运行在 YARN 集群的 Application Master（即 Container）中，其内存分配的阈值分别由配置 `spark.driver.memory` 和 `spark.driver.memoryOverhead` 来控制。
 
-在 Client 部署模式下，Driver 进程运行在 Application 提交命令执行的服务器上，Application Master 只负责管理资源，而不负责 Spark 任务的分发，其阈值分别由配置 `spark.yarn.am.memory`（默认值 512 m）和 `spark.yarn.am.memoryOverhead` 来控制。
+在 Client 部署模式下，Driver 进程运行在 Application 提交命令执行的服务器上，Application Master 只负责资源管理，而不负责 Spark 任务的分发，其内存分配的阈值分别由配置 `spark.yarn.am.memory`（默认值 512 m）和 `spark.yarn.am.memoryOverhead` 来控制。
 
 若未设置 `spark.yarn.am.memoryOverhead` ，则取 `MEMORY_OVERHEAD_FACTOR * amMemory` 和 `MEMORY_OVERHEAD_MIN` 两者之间的最大值，其中 `MEMORY_OVERHEAD_FACTOR` 默认值为 0.1，`MEMORY_OVERHEAD_MIN` 默认值为 384。
 
@@ -54,7 +53,7 @@ Driver 是 Spark 应用的主进程，负责管理和协调整个 Spark 应用�
   }
 ```
 
-Executor 是 Spark Task 实际运行的节点，同时负责保存 Task 运行的中间和最终结果。在 YARN 集群中，Executor 的 Memory，主要由 Executor Memory、Executor Memory Overhead 和 Pyspark Worker Memory 三部分组成。
+Spark 中 Executor 是 Task 实际运行的节点，同时负责保存 Task 运行的中间和最终结果，所有 Executor 皆受 Driver 管理。在 YARN 集群中，Executor 的内存，主要由 Executor Memory、Executor Memory Overhead 和 Pyspark Worker Memory 三部分组成。
 
 ```scala
 // org.apache.spark.deploy.yarn.Client
@@ -75,11 +74,11 @@ Executor 是 Spark Task 实际运行的节点，同时负责保存 Task 运行�
     }
 ```
 
-Executor Memory：对应配置参数为 `spark.executor.memory`，默认值为 1 g。
+其中 Executor Memory 对应配置参数为 `spark.executor.memory`，默认值为 1 g。
 
-Executor Memory Overhead：优先取配置参数 `spark.executor.memoryOverhead`，若此配置值为空，则取 `MEMORY_OVERHEAD_FACTOR * executorMemory`，和 `MEMORY_OVERHEAD_MIN` 两者之间的最大值，其中 `MEMORY_OVERHEAD_FACTOR` 默认值为 0.10，`MEMORY_OVERHEAD_MIN` 默认值为 384 MB。
+而 Executor Memory Overhead 对应的取值逻辑为，优先取配置参数 `spark.executor.memoryOverhead`，若此配置值为空，则取 `MEMORY_OVERHEAD_FACTOR * executorMemory`，和 `MEMORY_OVERHEAD_MIN` 两者之间的 Max 最大值，其中 `MEMORY_OVERHEAD_FACTOR` 默认值为 0.10，`MEMORY_OVERHEAD_MIN` 默认值为 384 MB。
 
-PySpark Executor Memory：如果是 PySpark 上提交的 Application，则还需要申请 PySpark Executor Memory 用于运行 PySpark Executor，其对应配置参数为 `spark.executor.pyspark.memory`，默认值为 0。
+此外，如果是 PySpark 上提交的 Application，则还需要申请 PySpark Executor Memory 用于运行 PySpark Executor，其对应配置参数为 `spark.executor.pyspark.memory`，默认值为 0。
 
 其中 YARN Container 内存分配相关配置参数如下:
 - `yarn.nodemanager.resource.memory-mb`: YARN 中 NM 节点最多可以分配给 Container 的总物理内存大小
@@ -88,9 +87,9 @@ PySpark Executor Memory：如果是 PySpark 上提交的 Application，则还需
 
 ## Heap Memory VS Off-Heap Memory
 
-Off-heap Memory 指的是非 JVM 内存空间，即不由 JVM 控制，而是由 Java 程序自行申请、使用和释放的系统内存，可以用于避免 JVM GC 操作，以及 IO 时堆内外内存的频繁拷贝，对当前程序的性能产生的负面影响，在 JDK 1.8 中一般是通过 `sun.misc` 包中提供的 API 进行 off-heap 内存操作。
+Off-heap Memory 指的是非 JVM 管理的内存空间，即不由 JVM 控制，而是由 Java 程序自行申请、使用和释放的系统内存，使用此内存空间可以用于避免 JVM GC 操作，以及 IO 时堆内外内存的频繁拷贝，优化当前应用的整体性能，其在 JDK 1.8 中一般是通过 `sun.misc` 包中提供的 API 进行 off-heap 内存操作。
 
-Off-heap Memory 受到 `spark.executor.memoryOverhead` 和 `spark.driver.memoryOverhead` 参数控制，同样占用 YARN Container 内存资源的一部分。
+Off-heap Memory 受到 `spark.executor.memoryOverhead`、`spark.driver.memoryOverhead`、`spark.driver.memory` 和 `spark.driver.memoryOverhead` 等配置参数控制，也同样占用 YARN Container 内存资源的一部分。
 
 ```scala
 // org.apache.spark.deploy.yarn.YarnAllocator

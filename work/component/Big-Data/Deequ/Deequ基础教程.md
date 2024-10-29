@@ -18,3 +18,4 @@ Deequ 文档:
 
 1. [GitHub - awslabs/deequ: Deequ is a library built on top of Apache Spark for defining "unit tests for data", which measure data quality in large datasets.](https://github.com/awslabs/deequ)
 2. [Test data quality at scale with Deequ | AWS Big Data Blog](https://aws.amazon.com/cn/blogs/big-data/test-data-quality-at-scale-with-deequ/)
+3. [DEEQU, I mean Data Quality. We say how we can turn the world upside… | by Ajith Shetty | Medium](https://ajithshetty28.medium.com/deequ-i-mean-data-quality-a0e6c048469d)

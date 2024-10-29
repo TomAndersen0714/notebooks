@@ -11,6 +11,6 @@
   "TrimLeadingTabs": false,
   "TrimMultipleTabs": false,
   "TrimTrailingLines": true,
-  "TrimLeadingLines": false,
+  "TrimLeadingLines": true,
   "TrimMultipleLines": true
 }
