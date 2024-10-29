@@ -25,8 +25,8 @@ D(Metrc)
 
 subgraph Analyzer
 	direction LR
-	B -.->|computeStateFrom| C
-	C -.->|computeMetricFrom| D
+	B -->|computeStateFrom| C
+	C -->|computeMetricFrom| D
 end
 ```
 
