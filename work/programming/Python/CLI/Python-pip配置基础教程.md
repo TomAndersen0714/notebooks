@@ -8,7 +8,7 @@
 
 ## 配置 Pip repository 源
 
-**方法 1：通过配置文件配置-通过 `pip config` 命令修改**
+**方法 1：通过配置文件配置-通过 `pip config` 命令修改（推荐）**
 
 ```shell
 pip config set --local global.index-url https://mirrors.aliyun.com/pypi/simple/

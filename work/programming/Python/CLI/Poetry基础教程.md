@@ -34,6 +34,8 @@ exit
 # 配置package的repository
 poetry source add <repository_name> <repository_url>
 poetry source add custom-repo https://pypi.tuna.tsinghua.edu.cn/simple/
+# 配置 repository 时设置对应的 priority, 1.8.0版本之前需要设置为 default 才是默认生效
+poetry source add custom-repo https://pypi.tuna.tsinghua.edu.cn/simple/ --priority=default
  
 # 添加并安装 python package
 poetry add <package_name>
@@ -61,6 +63,10 @@ poetry update <package_name>
 # 查看当前项目虚拟环境信息
 poetry env info
 ```
+
+## 常用选项
+
+`-vvv`：打印详细日志，适用于调试各种网络问题。
 
 ## 常见问题
 
