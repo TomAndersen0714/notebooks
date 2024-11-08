@@ -7,12 +7,12 @@
 - [AdminManual Metastore Administration - Apache Hive - Apache Software Foundation](https://cwiki.apache.org/confluence/display/Hive/AdminManual+Metastore+Administration)
 
 `hive.server2.thrift.bind.host`
-- Port number of HiveServer 2 Thrift interface. Can be overridden by setting `$HIVE_SERVER2_THRIFT_PORT`.
+- Bind host on which to run the HiveServer 2 Thrift interface. Can be overridden by setting `$HIVE_SERVER 2_THRIFT_BIND_HOST`.
 - Default Value: `localhost`
 - Added In: Hive 0.11.0 with [HIVE-2935](https://issues.apache.org/jira/browse/HIVE-2935)
 
 `hive.server2.thrift.port`
-- Bind host on which to run the HiveServer 2 Thrift interface. Can be overridden by setting `$HIVE_SERVER2_THRIFT_BIND_HOST`.
+- Bind host on which to run the HiveServer 2 Thrift interface. Can be overridden by setting `$HIVE_SERVER2_THRIFT_PORT`.
 - 此端口，同时也是 HiveServer 2 的 JDBC 端口，支持 JDBC 协议
 - Default Value: `10000`
 - Added In: Hive 0.11.0 with [HIVE-2935](https://issues.apache.org/jira/browse/HIVE-2935)
@@ -56,6 +56,7 @@
 - Default Value: `column`
 - Demo: ```set hive.support.quoted.identifiers=None; select `(user_id)?+.+` from user_action_table;```
 - [\[HIVE-6013\] Supporting Quoted Identifiers in Column Names - ASF JIRA]( https://issues.apache.org/jira/browse/HIVE-6013 )
+
 ## 参考链接
 
 1. [Configuration Properties - Apache Hive - Apache Software Foundation](https://cwiki.apache.org/confluence/display/hive/configuration+properties)

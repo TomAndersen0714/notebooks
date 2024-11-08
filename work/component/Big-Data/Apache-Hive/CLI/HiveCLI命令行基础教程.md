@@ -22,6 +22,7 @@ usage: hive
  -v,--verbose                     Verbose mode (echo executed SQL to the
                                   console)
 --database <dbname>      Specify the database to use
+--service <service>      Start the service, e.g hiveserver2
 ```
 
 Note: The variant "`-hiveconf`" is supported as well as "`--hiveconf`".
@@ -32,7 +33,13 @@ The CLI when invoked without the -i option will attempt to load `$HIVE_HOME/bin/
 
 Hive Shell 在启动时，会自动加载相关的初始化文件 `.hiverc`（类似于，Linux Shell 环境变量），脚本中都是 Hive 命令，常见的是通过 `add jar + create function` 等命令，来初始化 UDF、UDTF 等函数。
 
-## Hive 命令行常用命令
+## Hive Service
+
+
+Hive-metastore基础教程
+[Hive-HiveServer2基础教程](work/component/Big-Data/Apache-Hive/operation/Hive-HiveServer2基础教程.md)
+
+## Hive 常用命令
 
 [Hive命令基础教程](work/component/Big-Data/Apache-Hive/Hive命令基础教程.md)
 
