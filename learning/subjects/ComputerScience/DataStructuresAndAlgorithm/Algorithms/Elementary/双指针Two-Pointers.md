@@ -152,10 +152,11 @@
 #### 最长无重复字符子串
 
 问题概述：
-- [- LeetCode](https://leetcode.com/problems/longest-substring-without-repeating-characters/description/)
+- [3. Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/description/)
 - 查找字符串中最长的无重复字符子串
 解题思路：
-- 双指针 Two Pointers (左右指针)
+- 双指针 Two Pointers (滑动窗口)
+	- 使用 BitSet 集合（或者 Boolean 数组）来标记子串中已经出现的字符，然后滑动窗口双指针遍历字符串中的所有字符，左右指针都先从
 
 #### 最长回文字符串
 
