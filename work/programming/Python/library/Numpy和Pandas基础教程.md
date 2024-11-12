@@ -2,7 +2,7 @@
 
 ## 前言
 
-NumPy: 同质多维数组 (ndarray) ，即各个元素类型都相同的一个多维数组。
+NumPy: 同质多维数组 (Ndarray) ，即各个元素类型都相同的一个多维数组。
 
 Pandas: 异构数据表格 (DataFrame) 和序列 (Series) 。DataFrame 可以看做是一张二维表，而序列 Series 则可以看做是 DataFrame 表中的某一列，同一序列 Series 中元素的数据类型都相同。
 
@@ -18,3 +18,6 @@ Pandas: 异构数据表格 (DataFrame) 和序列 (Series) 。DataFrame 可以看
 1. [Pandas 教程 | 菜鸟教程](https://www.runoob.com/pandas/pandas-tutorial.html)
 2. [NumPy 教程 | 菜鸟教程](https://www.runoob.com/numpy/numpy-tutorial.html)
 3. [pandas documentation — pandas 2.2.3 documentation](https://pandas.pydata.org/docs/)
+4. [NumPy documentation — NumPy v2.1 Manual](https://numpy.org/doc/stable/)
+5. [NumPy: the absolute basics for beginners — NumPy v2.1 Manual](https://numpy.org/doc/stable/user/absolute_beginners.html)
+6. [NumPy quickstart — NumPy v2.1 Manual](https://numpy.org/doc/stable/user/quickstart.html)
