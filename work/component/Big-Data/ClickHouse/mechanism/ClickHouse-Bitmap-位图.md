@@ -1,36 +1,32 @@
 # ClickHouse Bitmap位图
 
-
 ## ClickHouse Bitmap
 
 ### 简介
 
-ClickHouse中，`Bitmap Object`通常有两种构建方式：
-1. 一种是使用`groupBitmap`聚合函数附加`State`后缀，即`groupBitmapState`将任意个无符号整型聚合后，生成对应的Bitmap对象；
-2. 二是使用`bitmapBuild`函数，将输入的无符号整型数组，转换后生成对应的Bitmap对象。
+ClickHouse 中，`Bitmap Object` 通常有两种构建方式：
+1. 一种是使用 `groupBitmap` 聚合函数附加 `State` 后缀，即 `groupBitmapState` 将任意个无符号整型聚合后，生成对应的 Bitmap对象；
+2. 二是使用 `bitmapBuild` 函数，将输入的无符号整型数组，转换后生成对应的 Bitmap 对象。
 
-ClickHouse中Bitmap对象的基数（即不同非符号整数数量）小于等于32时，实际上存储时使用的是`Set`对象，当基数大于32时，则使用的是`RoaringBitmap`对象，这也是为什么ClickHouse低基数的bitmap会比高基数的bitmap速度要快。
-
+ClickHouse 中 Bitmap 对象的基数（即不同非符号整数数量）小于等于 32 时，实际上存储时使用的是 `Set` 对象，当基数大于 32 时，则使用的是 `RoaringBitmap` 对象，这也是为什么 ClickHouse 低基数的 bitmap 会比高基数的 bitmap 速度要快。
 
 ### 应用场景
 
 1. 用户画像
 2. 人群圈选
-3. AB测试
+3. AB 测试
 4. 精准去重计数
-
 
 ## Bitmap相关的函数
 
 ### Bitmap Functions
 https://clickhouse.com/docs/en/sql-reference/functions/bitmap-functions
 
-Bitmap Function主要用于处理单个或两个Bitmap对象的运算。
-
+Bitmap Function 主要用于处理单个或两个 Bitmap 对象的运算。
 
 #### bitmapBuild
 
-将无符号整型数组，转换为对应的Bitmap对象。PS：bitmap中重复记录只会记录一次。
+将无符号整型数组，转换为对应的 Bitmap 对象。PS：bitmap 中重复记录只会记录一次。
 
 ```sql
 SELECT bitmapBuild([1, 2, 3, 4, 5]) AS res, toTypeName(res);
@@ -38,12 +34,11 @@ SELECT bitmapBuild([1, 2, 3, 4, 5]) AS res, toTypeName(res);
 
 #### bitmapToArray
 
-将bitmap对象，转换为无符号整型数组的形式。
+将 bitmap 对象，转换为无符号整型数组的形式。
 
 ```sql
 SELECT bitmapToArray(bitmapBuild([1, 2, 3, 4, 5])) AS res;
 ```
-
 
 ### Bitmap Aggregate Functions
 
@@ -53,32 +48,26 @@ FROM system.functions
 WHERE name LIKE '%groupBitmap%'
 ```
 
-
 #### groupBitmap
 https://clickhouse.com/docs/en/sql-reference/aggregate-functions/reference/groupbitmap
 
-输入任意数量`UInt*`类型的无符号整数，生成对应的bitmap对象后，仅返回bitmap的基数。
+输入任意数量 `UInt*` 类型的无符号整数，生成对应的 bitmap 对象后，仅返回 bitmap 的基数。
 
-如果附加`State`后缀，则返回对应的Bitmap对象，即`AggregateFunction(groupBitmap, UInt*)`类型的数值。
-如果附加`Merge`后缀，则是输入任意数量Bitmap对象，返回对应聚合后的bitmap基数（UInt64类型）。
-
+如果附加 `State` 后缀，则返回对应的 Bitmap 对象，即 `AggregateFunction(groupBitmap, UInt*)` 类型的数值。
+如果附加 `Merge` 后缀，则是输入任意数量 Bitmap 对象，返回对应聚合后的 bitmap 基数（UInt 64 类型）。
 
 #### groupBitmapAnd
 https://clickhouse.com/docs/en/sql-reference/aggregate-functions/reference/groupbitmapand
 
-输入任意数量`AggregateFunction(groupBitmap, UInt*)`类型数值，执行AND与运算，最后返回UInt64类型的bitmap基数。
+输入任意数量 `AggregateFunction(groupBitmap, UInt*)` 类型数值，执行 AND 与运算，最后返回 UInt 64 类型的 bitmap 基数。
 
-如果附加`State`后缀，则返回AND与运算后对应的Bitmap对象结果，即`AggregateFunction(groupBitmap, UInt*)`类型的数值。
-
+如果附加 `State` 后缀，则返回 AND 与运算后对应的 Bitmap 对象结果，即 `AggregateFunction(groupBitmap, UInt*)` 类型的数值。
 
 #### groupBitmapOr
 https://clickhouse.com/docs/en/sql-reference/aggregate-functions/reference/groupbitmapor
 
-
 #### groupBitmapXor
 https://clickhouse.com/docs/en/sql-reference/aggregate-functions/reference/groupbitmapxor
-
-
 
 ## Example and Benchmark
 
@@ -175,26 +164,24 @@ SELECT COUNT(DISTINCT UserID) FROM test.visits;
 SELECT uniqExact(UserID) FROM test.visits;
 ```
 
-小结：在160-40w数据量的情况下，使用groupBitmapMerge去重，耗时约为uniqExact的7分之1。
-
+小结：在 160-40 w 数据量的情况下，使用 groupBitmapMerge 去重，耗时约为 uniqExact 的 7 分之 1。
 
 ## 常见问题
 
 ### 问题1: groupBitmapOr等函数计算结果和实际不符
 
 github issue: groupBitmapOr result incorrect in distribued table #31335
-在低版本中groupBitmapOr、groupBitmapAnd在查询Distribued表时，计算结果不正确
+在低版本中 groupBitmapOr、groupBitmapAnd 在查询 Distribued 表时，计算结果不正确
 https://github.com/ClickHouse/ClickHouse/issues/31335
 https://github.com/ClickHouse/ClickHouse/pull/32529
 
 **解决方案**：
-不要针对Distribued表直接查询并使用对应的聚合函数，需要将Distribued表中所需的字段以子查询的形式查询出来，如`SELECT * FROM test.distribued_all`，然后在再使用bitmap相关的聚合函数进行聚合。
+不要针对 Distribued 表直接查询并使用对应的聚合函数，需要将 Distribued 表中所需的字段以子查询的形式查询出来，如 `SELECT * FROM test.distribued_all`，然后在再使用 bitmap 相关的聚合函数进行聚合。
 
-个人推测是因为在直接查询分布式Distribued表时，查询会被转换为对应的本地表查询，而在将本地表的查询结果汇总时，低版本ClickHouse中并没有针对此问题进行特殊处理，进而导致查询结果与实际不符。
-
-
+个人推测是因为在直接查询分布式 Distribued 表时，查询会被转换为对应的本地表查询，而在将本地表的查询结果汇总时，低版本 ClickHouse 中并没有针对此问题进行特殊处理，进而导致查询结果与实际不符。
 
 ## 参考链接
+
 1. https://clickhouse.com/docs/en/sql-reference/data-types/aggregatefunction
 2. https://clickhouse.com/docs/en/sql-reference/aggregate-functions/reference/groupbitmap
 3. https://clickhouse.com/docs/en/sql-reference/aggregate-functions/reference/groupbitmapand

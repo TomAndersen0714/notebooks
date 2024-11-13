@@ -20,9 +20,7 @@ SELECT ...
 2. 如果创建时，指定了`TO [db].[table]`，则表明 Materialized View 转换后的数据需要存储入到对应的表中，且声明时禁止使用`POPULATE`选项，来重刷源表的历史数据。
 3. `POPULATE`选项，用于控制是否在创建 Materialized View 的同时，使用源表（SELECT查询结果）的数据，来初始化视图的数据，进行填充。
 
-
 ## Example
-
 
 ```sql
 -- DROP TABLE IF EXISTS test.mv_source
@@ -60,17 +58,14 @@ SELECT *
 FROM test.sink_mv;
 ```
 
-
 ## 应用场景
 
 1. Materialized View 天然适合于各种数据实时处理的应用场景，可以用于构建“实时数据仓库”，但由于 ClickHouse Server qps 负载有限的问题，因此主要适合于构建“准实时数仓”，实时性不算强。
-
 
 ## 注意事项
 
 1. 由于 Table Schema 在开发和生产环境中经常会发生变化，如果不同时修改对应的 Materialized View 物化视图，则默认情况下会导致 INSERT 数据阻塞，除非将 `materialized_views_ignore_errors` 参数设置为 `true`。
 2. Materialized View 支持定义 SELECT 语句中使用 JOIN，但在实际开发和生产环境中，需要注意 JOIN 的性能问题，避免因 qps 太高，而导致资源开销太大。
-
 
 ## 参考链接
 1. https://clickhouse.com/docs/en/engines/table-engines/special/materializedview

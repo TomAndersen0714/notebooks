@@ -61,7 +61,7 @@ Hive SQL 突然执行很慢可能有什么原因？
 
 ## ClickHouse SQL
 
-[ClickHouse-SQL性能优化教程](work/component/Big-Data/ClickHouse/ClickHouse-SQL性能优化教程.md)
+[ClickHouse-SQL性能优化教程](work/component/Big-Data/ClickHouse/API/ClickHouse-SQL性能优化教程.md)
 
 [ClickHouse慢查询SQL排查方案](work/component/Big-Data/ClickHouse/operation/ClickHouse慢查询SQL排查方案.md)
 

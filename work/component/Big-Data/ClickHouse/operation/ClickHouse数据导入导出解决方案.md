@@ -1,6 +1,6 @@
 # ClickHouse数据导入导出解决方案
 
-[ClickHouse-CLI工具基础教程](work/component/Big-Data/ClickHouse/ClickHouse-CLI工具基础教程.md)
+[ClickHouse-CLI工具基础教程](work/component/Big-Data/ClickHouse/CLI/ClickHouse-CLI工具基础教程.md)
 
 ## ClickHouse 支持的数据格式及其对应数据类型
 

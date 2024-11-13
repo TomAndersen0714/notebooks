@@ -1,6 +1,5 @@
 # ClickHouse Join 联接算法
 
-
 ## 常见的 JOIN 算法
 
 [JOIN算法](learning/subjects/ComputerScience/DataStructuresAndAlgorithm/Algorithms/Advanced/JOIN算法.md)
@@ -9,7 +8,6 @@
 https://clickhouse.com/docs/en/sql-reference/statements/select/join#memory-limitations
 
 > By default, ClickHouse uses the hash join algorithm. ClickHouse takes the right_table and creates a hash table for it in RAM. If join_algorithm = 'auto' is enabled, then after some threshold of memory consumption, ClickHouse falls back to merge join algorithm. For JOIN algorithms description see the join_algorithm setting.
-
 
 ## ClickHouse Join Algorithm
 https://clickhouse.com/docs/en/operations/settings/settings#settings-join_algorithm
