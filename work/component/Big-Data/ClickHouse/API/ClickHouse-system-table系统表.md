@@ -157,6 +157,8 @@ move_ttl_info.max:                     []
 
 ### query_log
 
+查看各个查询对应的元数据。
+
 [query\_log | ClickHouse Docs](https://clickhouse.com/docs/en/operations/system-tables/query_log)
 
 Example:
