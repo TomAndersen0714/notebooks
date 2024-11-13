@@ -1,11 +1,8 @@
 # CDH Kudu负载均衡方案
 
-
 ## kudu cluster rebalance
 
-
 **官方文档：**[Running Tablet Rebalancing Tool](https://docs.cloudera.com/documentation/enterprise/6/6.3/topics/kudu_administration_cli.html#rebalancer_tool)
-
 
 **测试环境版本：**
 
@@ -24,7 +21,6 @@ revision b4310ca4289bd207fd5b32f5fe001609b4093c27
 build type RELEASE
 built by jenkins at 14 Mar 2019 00:03:44 PST on cldrn-ub1604-ec2-c5d-18xlarge-spotblk-0c10.vpc.cloudera.com
 ```
-
 
 ### rebalance工具简介
 
@@ -115,7 +111,6 @@ server.
       specified, includes all tables.) type: string default: ""
 ```
 
-
 ### 查看集群中表副本分布和数据倾斜情况
 
 **测试环境：**
@@ -130,7 +125,6 @@ sudo -u kudu kudu cluster rebalance --output_replica_distribution_details --repo
 sudo -u kudu kudu cluster rebalance --output_replica_distribution_details --report_only -max_run_time_sec 300 zjk-bigdata002 > kudu_cluster.log
 ```
 
-
 ### 针对指定表进行负载均衡
 
 **测试环境：**
@@ -138,8 +132,6 @@ sudo -u kudu kudu cluster rebalance --output_replica_distribution_details --repo
 ```Shell
 sudo -u kudu kudu cluster rebalance --output_replica_distribution_details -max_run_time_sec 300 -tables "impala::test_fishpond.buyers" cdh0,cdh1,cdh2 > kudu_rebalance.log
 ```
-
-
 
 **线上环境：**
 
@@ -151,27 +143,19 @@ sudo -u kudu kudu cluster rebalance --output_replica_distribution_details -max_r
 sudo -u kudu kudu cluster rebalance --output_replica_distribution_details -max_run_time_sec 300 -tables "impala::dipper_ods.ask_order_conversion_stat_day" zjk-bigdata002 > kudu_rebalance.log
 ```
 
-
 ### 线上操作流程记录
 
 **线上操作节点为：jstzjk-133176-prod-tb-bigdata-bigdata（10.20.133.176）**
 
-
 1. **记录上线前Kudu集群存储负载情况**
 
-
-
 ![1671778471208-3](resources/images/CDH-Kudu负载均衡解决方案/1671778471208-3.png)
-
-
 
 2. **查看Kudu集群负载倾斜情况**
 
 ```Shell
 sudo -u kudu kudu cluster rebalance --output_replica_distribution_details --report_only -max_run_time_sec 300 zjk-bigdata002 > kudu_cluster.log
 ```
-
-
 
 3. **记录需要执行负载均衡的表**
 
@@ -206,15 +190,11 @@ sudo -u kudu kudu cluster rebalance --output_replica_distribution_details --repo
  6ce9fb65bb024b3ba12f073632a1f7e5 | 11016         | 2919         | impala::pub_app.shop_overview_dd
 ```
 
-
-
 4. **查看磁盘占用最多的表**
 
 **PS：两者取交集，优先处理**
 
 ![1671778471165-1](resources/images/CDH-Kudu负载均衡解决方案/1671778471165-1.png)
-
-
 
 5. **针对大表挨个执行负载均衡命令（限制单个命令执行时间），并对比执行前后对应表记录数量是否正确，同时观察Grafana监控**
 
@@ -224,21 +204,15 @@ PS：-max_run_time_sec设置为300，即每次执行最长为5分钟
 sudo -u kudu kudu cluster rebalance --output_replica_distribution_details -max_run_time_sec 300 -tables "impala::xd_data.ask_order_buyers_kudu_bak" zjk-bigdata002 > kudu_rebalance.log
 ```
 
-
-
 6. **针对小表一次梭哈**
 
 ```Shell
 sudo -u kudu kudu cluster rebalance --output_replica_distribution_details -max_run_time_sec 300 zjk-bigdata002 > kudu_rebalance.log
 ```
 
-
-
 7. **记录负载均衡后的Kudu集群存储负载情况**
 
 ![1671778471165-2](resources/images/CDH-Kudu负载均衡解决方案/1671778471165-2.png)
-
-
 
 ## 参考链接
 

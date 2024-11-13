@@ -8,15 +8,14 @@
 
 二分查找（Binary Search）是一种依靠三指针（Three Poiners）来在有序（Sorted）序列中，查找指定元素的算法。
 
-
 ### 解题模式
 
 假设三指针分别为 left、mid、right，则二分查找的解题模式如下：
 
 1. 设置循环条件：
-	1. 设置循环条件为 `left<=right` 
+	1. 设置循环条件为 `left<=right`
 2. 每次循环时通过左右双指针来确定下一次比较的元素位置
-	1. `mid = left + (right - left) / 2`，注意这里需要先执行减法和除法，再执行加法，避免精度溢出。 
+	1. `mid = left + (right - left) / 2`，注意这里需要先执行减法和除法，再执行加法，避免精度溢出。
 3. 通过对比 `mid` 指针指向的元素值与目标值的大小，调整下次检索范围
 	1. 如果 `element[mid]>target`，则 `right=mid-1`
 	2. 如果 `element[mid]<target`，则 `left=mid+1`
@@ -49,6 +48,3 @@
 ##### 三数求和-解不唯一
 
 [LeetCode 15. 3Sum](https://leetcode.com/problems/3sum/)
-
-
-

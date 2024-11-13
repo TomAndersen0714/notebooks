@@ -16,21 +16,13 @@ java.lang.RuntimeException: Error applying authorization policy on hive configur
 sudo -u hdfs hdfs dfs -chmod 777 /tmp
 ```
 
-
-
-
-
 **Q2：CM Web** **UI中显示某主机未连接Host Monitor**
 
 **A2：检查集群中/etc/hosts文件是否配置正确。如果正确，那么此告警一般等待几分钟后便会自动解除。**
 
-
-
 **Q3：CM Web** **UI显示的节点hostname和实际不同**
 
 **A3：检查集群中/etc/hosts文件是否配置正确，本机的ip反向映射唯一**
-
-
 
 **Q4：CM中显示某主机NTP服务未同步至任何远程服务器**
 

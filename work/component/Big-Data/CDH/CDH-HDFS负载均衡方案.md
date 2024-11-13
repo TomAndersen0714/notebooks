@@ -4,15 +4,11 @@
 
 **官方文档**：[HDFS Balancers | 6.3.x | Cloudera Documentation](https://docs.cloudera.com/documentation/enterprise/6/6.3/topics/admin_hdfs_balancer.html#DummyId)
 
-
-
 ### 查看HDFS集群磁盘开销情况
 
 ```shell
 sudo -u hdfs hdfs dfsadmin -report > balance_report.log
 ```
-
-
 
 ### 查看HDFS集群DataNode数据块分布情况
 
@@ -20,13 +16,9 @@ sudo -u hdfs hdfs dfsadmin -report > balance_report.log
 
 ![1671778903120-17](resources/images/CDH-HDFS负载均衡方案/1671778903120-17.png)
 
-
-
-### 修改Balancer相关配置
+### 修改 Balancer 相关配置
 
 **PS：避免资源使用过度，降低集群整体服务质量，甚至导致集群服务不可用，尽量选择支持热加载的配置**
-
-
 
 1. `dfs.datanode.balance.max.concurrent.moves`
 
@@ -36,15 +28,11 @@ sudo -u hdfs hdfs dfsadmin -report > balance_report.log
 The property dfs.datanode.balance.max.concurrent.moves sets the maximum number of threads used by the DataNode balancer for pending moves. It is a throttling mechanism to prevent the balancer from taking too many resources from the DataNode and interfering with normal cluster operations. Increasing the value allows the balancing process to complete more quickly, decreasing the value allows rebalancing to complete more slowly, but is less likely to compete for resources with other tasks on the DataNode
 ```
 
-
-
 2. `dfs.balancer.moverThreads`
 
 **Thread pool size for executing block moves. 默认值1000，修改为10（无需重启）**
 
 ![img](resources/images/CDH-HDFS负载均衡方案/1671778903112-10.png)
-
-
 
 3. `dfs.balancer.dispatcherThreads`
 
@@ -52,15 +40,11 @@ The property dfs.datanode.balance.max.concurrent.moves sets the maximum number o
 
 ![img](resources/images/CDH-HDFS负载均衡方案/1671778903113-11.png)
 
-
-
 4. `Excluded Hosts`
 
 **Hosts to exclude from the balancing process. 默认值为空，修改为关键服务所在节点，避免资源竞争（无需重启）**
 
 ![img](resources/images/CDH-HDFS负载均衡方案/1671778903113-12.png)
-
-
 
 5. `Included Hosts`，**PS：Included Hosts和Excluded Hosts只能二选一**
 
@@ -68,15 +52,9 @@ The property dfs.datanode.balance.max.concurrent.moves sets the maximum number o
 
 ![1671778903113-13](resources/images/CDH-HDFS负载均衡方案/1671778903113-13.png)
 
-
-
-
-
 6. **设置Balancer堆内存，由于内存资源充足，可以适当增加内存分配（无需重启）**
 
 ![1671778903114-14](resources/images/CDH-HDFS负载均衡方案/1671778903114-14.png)
-
-
 
 ## 线上操作流程记录
 
@@ -84,16 +62,11 @@ The property dfs.datanode.balance.max.concurrent.moves sets the maximum number o
 
 ![1671778903120-17](resources/images/CDH-HDFS负载均衡方案/1671778903120-17.png)
 
-
-
-
 2. **查看HDFS集群存储资源使用情况**
 
 ```Bash
 sudo -u hdfs hdfs dfsadmin -report > hdfs_cluster.log
 ```
-
-
 
 ```Bash
 WARNING: Use of this script to execute dfsadmin is deprecated.
@@ -221,8 +194,6 @@ Last contact: Mon Jun 13 15:51:54 CST 2022
 Last Block Report: Mon Jun 13 10:24:04 CST 2022
 ```
 
-
-
 3. **按照指定配置运行负载均衡工具，同时监控对应日志（jstzjk-133176-prod-tb-bigdata-bigdata）**
 
 ```Fortran
@@ -231,22 +202,16 @@ cd /data0/var/log/hadoop-hdfs
 tail -f hadoop-cmf-hdfs-BALANCER-jstzjk-133176-prod-tb-bigdata-bigdata.log.out
 ```
 
-
-
 4. **通过观察发现，balancer当前参数的实际迁移速度太慢，故尝试增大相关参数，然后再次执行迁移命令，并监控对应日志（jstzjk-133176-prod-tb-bigdata-bigdata）**
 
-- dfs.balancer.moverThreads，默认值为1000，从之前的10修改为100
-- dfs.balancer.dispatcherThreads，默认值为1000，从之前的10修改为100
+- `dfs.balancer.moverThreads`，默认值为1000，从之前的10修改为100
+- `dfs.balancer.dispatcherThreads`，默认值为1000，从之前的10修改为100
 
 ![1671778903114-15](resources/images/CDH-HDFS负载均衡方案/1671778903114-15.png)
-
-
 
 5. **由于数据传输带宽限制（数据迁移在不影响稳定性前提下，预计需要1000小时左右），重新评估HDFS负载均衡的方案、工作量和必要性后，决定暂时挂起HDFS的负载均衡工作，决定后续再观察集群负载情况**
 
 ![1671778903114-16](resources/images/CDH-HDFS负载均衡方案/1671778903114-16.png)
-
-
 
 ## 参考链接
 

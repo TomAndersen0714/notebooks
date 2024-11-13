@@ -22,7 +22,6 @@
 4. `yarn.scheduler.minimum-allocation-mb`，容器可以请求的最小物理内存量（以 MiB 为单位）。
 5. `yarn.scheduler.maximum-allocation-mb`，可为容器请求的最大物理内存数量（以 MiB 为单位）。
 
-
 ## 解决方法
 
 ### 方法 1
@@ -30,7 +29,6 @@
 
 ### 方案 2
 设置 CDH YARN 的配置 `yarn.scheduler.maximum-allocation-mb`，或者 CDH NodeManager 的配置 `yarn.nodemanager.resource.memory-mb`，通过降低可分配资源，降低资源调度倾斜带来的影响。
-
 
 ## 参考链接
 1. https://blog.51cto.com/ikeguang/3054842
