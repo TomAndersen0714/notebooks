@@ -1,9 +1,5 @@
 # HDFS 小文件数量治理方案
 
-
-
-
-
 ## Hive/Spark SQL
 
 ```sql
