@@ -12,13 +12,15 @@ https://mp.weixin.qq.com/s/F6VCM5KtAp-6dJnf2rQHbg
 https://www.bilibili.com/video/BV1tu4y1f7sF
 
 https://docs.github.com/en/copilot/github-copilot-chat/using-github-copilot-chat
-## CodeWhisperer
 
-To be or not to be, this is a question worth thinking about.
 ## Cursor
 
 https://www.cursor.so/
 https://www.bilibili.com/video/BV1wx4y1N7GN
+
+## CodeWhisperer
+
+To be or not to be, this is a question worth thinking about.
 
 ## CodeGeeX
 

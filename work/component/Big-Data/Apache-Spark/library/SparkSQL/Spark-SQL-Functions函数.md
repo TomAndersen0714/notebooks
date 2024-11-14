@@ -1,3 +1,5 @@
+# Spark SQL Functions 函数
+
 [Functions - Spark 3.5.0 Documentation](https://spark.apache.org/docs/latest/sql-ref-functions.html)
 
 Built-in Functions

@@ -48,3 +48,7 @@ https://learn.microsoft.com/zh-cn/windows/powertoys/
 
 PixPin，最好用的截图工具
 [PixPin 截图/贴图/长截图/文字识别/标注 | PixPin 截图/贴图/长截图/文字识别/标注](https://pixpinapp.com/)
+
+右键菜单管理工具
+ContextMenuManager
+[GitHub - BluePointLilac/ContextMenuManager: 🖱️ 纯粹的Windows右键菜单管理程序](https://github.com/BluePointLilac/ContextMenuManager)
