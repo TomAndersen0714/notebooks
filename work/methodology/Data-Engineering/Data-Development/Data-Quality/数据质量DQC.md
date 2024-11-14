@@ -12,7 +12,7 @@
 
 字段的数据长度
 
-字段的数据内容
+字段的内容格式
 
 主键唯一性
 
@@ -22,7 +22,8 @@
 
 ### 表间数据质量
 
-外键
+表间关联键
+表间数据量对齐
 
 ## 如何进行数据质量校验
 
@@ -32,8 +33,14 @@ Google Aviator 表达式。
 
 [GitHub - killme2008/aviatorscript: A high performance scripting language hosted on the JVM.](https://github.com/killme2008/aviatorscript)
 
-## 数据质量的量化
+## 数据质量的监控
 
 ### 数据基线和服务等级协议 SLA
 
 [数据基线和服务等级协议SLA](work/methodology/Data-Engineering/Data-Development/Data-Quality/数据基线和服务等级协议SLA.md)
+
+### DQC 数据质量中心
+
+## 参考链接
+
+1. [Deequ基础教程](work/component/Big-Data/Deequ/Deequ基础教程.md)
