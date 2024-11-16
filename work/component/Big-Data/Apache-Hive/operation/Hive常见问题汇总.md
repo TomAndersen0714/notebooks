@@ -1,5 +1,4 @@
-# Hive 运维常见问题
-
+# Hive 常见问题汇总
 
 **Hive 分区表新增字段问题：**
 
@@ -20,4 +19,5 @@ ALTER TABLE default.test_table ADD columns (column1 string,column2 string) CASCA
 [Adding new columns to an already partitioned Hive ... - Cloudera Community - 245636](https://community.cloudera.com/t5/Community-Articles/Adding-new-columns-to-an-already-partitioned-Hive-table/ta-p/245636)
 
 ## 参考链接
+
 1. [Adding new columns to an already partitioned Hive ... - Cloudera Community - 245636](https://community.cloudera.com/t5/Community-Articles/Adding-new-columns-to-an-already-partitioned-Hive-table/ta-p/245636)

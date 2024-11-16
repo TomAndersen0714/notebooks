@@ -18,6 +18,10 @@ https://docs.github.com/en/copilot/github-copilot-chat/using-github-copilot-chat
 https://www.cursor.so/
 https://www.bilibili.com/video/BV1wx4y1N7GN
 
+## 通义千问
+
+https://tongyi.aliyun.com/qianwen/
+
 ## CodeWhisperer
 
 To be or not to be, this is a question worth thinking about.
