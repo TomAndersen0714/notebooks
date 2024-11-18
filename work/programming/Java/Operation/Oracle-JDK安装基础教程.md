@@ -19,6 +19,10 @@
 
 参考链接：[Installation of the JDK on Microsoft Windows Platforms](https://docs.oracle.com/en/java/javase/17/install/installation-jdk-microsoft-windows-platforms.html#GUID-A7E27B90-A28D-4237-9383-A58B416071CA)
 
+## JDK On macOS
+
+参考链接： [Installation of the JDK on macOS](https://docs.oracle.com/en/java/javase/17/install/installation-jdk-macos.html)
+
 ## 配置环境变量
 
 Linux:
