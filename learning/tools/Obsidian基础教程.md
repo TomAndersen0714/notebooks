@@ -58,6 +58,11 @@ User-defined Regular Expression, one expression per line:
 \d+(:\d+)+|++
 ```
 
+### 插件离线安装
+
+如果 Obsidian 软件内部无法访问对应的 Github 插件社区时，则可以尝试直接去网站下载对应的 js 和 css 文件，到 plugin 文件夹。
+[Obsidian如何手动下载并安装插件-以看板插件的安装为例 - 紫电\_2021 - 博客园](https://www.cnblogs.com/zd2021/articles/15410243.html)
+
 ## 样式修改
 
 [Obsidian主题样式修改半入门教学 - 经验分享 - Obsidian 中文论坛](https://forum-zh.obsidian.md/t/topic/180)
