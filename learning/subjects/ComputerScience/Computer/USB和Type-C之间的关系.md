@@ -26,3 +26,4 @@ USB 3.2 Gen 2，具有视频显示功能 (Display Port)，以及最大传输速�
 
 1. [如何确认电脑Type-C接口支持的功能？](https://www.msi.cn/support/technical_details/NB_TB_Compatibility)
 2. [What’s the Difference Between USB 3.1 Gen 1, Gen 2 and USB 3.2? - Kingston Technology](https://www.kingston.com/en/usb-flash-drives/usb-30)
+3. [USB-C Introduction: What is USB-C DisplayPort (DP Alt Mode) | BenQ US](https://www.benq.com/en-us/knowledge-center/knowledge/usb-c-introduction-what-is-dp-alt-mode.html)

@@ -19,7 +19,7 @@
 ### 鼠标滚动不顺滑
 
 下载 MOS App
-[Mac小工具推荐](learning/subjects/ComputerScience/OperatingSystem/Mac/Mac小工具推荐.md)
+[Mac常用小工具](learning/subjects/ComputerScience/OperatingSystem/Mac/Mac常用小工具.md)
 
 ## 窗口管理
 
@@ -28,7 +28,7 @@
 修改系统快捷键。如果只是修改“APP 快捷键”，则部分 APP 也许会不支持这种全局增加快捷键的方式，尤其是那些已经内置了快捷键的 APP。
 
 使用 Keyboard Maestro 工具增加按键映射，将 `Command+Q` 映射为执行 `Command+M`，实现窗口快速最小化。
-[Mac小工具推荐](learning/subjects/ComputerScience/OperatingSystem/Mac/Mac小工具推荐.md)
+[Mac常用小工具](learning/subjects/ComputerScience/OperatingSystem/Mac/Mac常用小工具.md)
 [Mac 有办法全局统一管理快捷键吗？ - V2EX](https://www.v2ex.com/t/846411)
 [「Keyboard Maestro」的搜索结果\_马克喵](https://www.macat.vip/?cat=&s=Keyboard+Maestro)
 
