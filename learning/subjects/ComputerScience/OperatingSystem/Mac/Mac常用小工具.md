@@ -9,6 +9,21 @@
 [马克喵\_获取最新MAC破解软件](https://www.macat.vip/)
 [分享一些不错的Mac破解软件网站 - 资源荟萃 - LINUX DO](https://linux.do/t/topic/29102)
 
+## 命令行
+
+包管理工具 Homebrew
+[Homebrew — The Missing Package Manager for macOS (or Linux)](https://brew.sh/)
+
+## 虚拟机
+
+Parallels Desktop
+[👍 全网首发PD正版免费 v20.1.1(55740)永久直破解商业版 支持intel/M1/2 pd虚拟机 Parallels Desktop启动器 PD破解小助手\_马克喵](https://www.macat.vip/25088.html)
+
+## LocalsSend
+
+支持跨平台文件、文本、剪贴板传输，目前最好用的跨平台数据传输工具。
+[LocalSend - 下载](https://localsend.org/zh-CN/download)
+
 ## MOS
 
 解决 Mac OS 下的鼠标滚轮不够平滑的问题。
