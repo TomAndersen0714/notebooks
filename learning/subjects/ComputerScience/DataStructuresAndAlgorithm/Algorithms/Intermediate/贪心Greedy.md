@@ -2,9 +2,34 @@
 
 ## 算法简介
 
+贪心 Greedy 算法的应用场景在于针对那些求全局最优解，同时支持拆分为多个子问题的问题。比如：买卖股票最大收益、跳跃游戏等，原问题或者经过转换后的原问题，都是求最优解。
+
+贪心算法的主要思路是：
+1. 分析原问题，将其转换为求最优解问题
+2. 将原问题拆分为多个最优子问题
+3. 迭代每个子问题，并递推求解，直到求出原始问题解
+
+起始贪心算法求解的问题，即便具备相应的特征也不一定可以找到对应的求解路径，很多时候都是试出来的，并没有统一的套路。
+
+当然，如果贪心算法无法找到对应的解决思路，可以尝试使用动态规划求解，贪心算法可以看做是动态规划算法的一种特殊剪枝情况，能够用于加速动态规划求解过程。
+
 ## 经典例题
 
-### 300 最长子序列长度
+### 子序列问题
 
-1. [300. Longest Increasing Subsequence](https://leetcode.com/problems/longest-increasing-subsequence/description)
-2. [300. Longest Increasing Subsequence 力扣（LeetCode）](https://leetcode.cn/problems/longest-increasing-subsequence/solutions/147667/zui-chang-shang-sheng-zi-xu-lie-by-leetcode-soluti)
+#### 300，最长子序列长度
+
+### 股票买卖问题
+
+#### 122，买卖股票最大收益 2
+
+### 跳跃游戏
+
+#### 55，跳跃游戏 1
+
+#### 45，跳跃游戏 2
+
+## 参考链接
+
+1. [代码随想录](https://programmercarl.com/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93%E7%AF%87.html)
+2. [代码随想录](https://programmercarl.com/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95%E7%90%86%E8%AE%BA%E5%9F%BA%E7%A1%80.html#%E8%B4%AA%E5%BF%83%E7%9A%84%E5%A5%97%E8%B7%AF-%E4%BB%80%E4%B9%88%E6%97%B6%E5%80%99%E7%94%A8%E8%B4%AA%E5%BF%83)
