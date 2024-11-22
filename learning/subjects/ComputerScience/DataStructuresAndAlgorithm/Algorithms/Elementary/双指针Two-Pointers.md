@@ -194,7 +194,7 @@
 - [11. Container With Most Water](https://leetcode.com/problems/container-with-most-water/description/)
 
 解决思路：
-- 双指针 Two Pointer
+- 双指针 Two Pointer + 贪心 Greedy
 	- 通过不断移动左右双指针，进而找到最大的盛水面积对应的左右边界，而盛水面积，主要取决于两边柱子的最小高度，以及两边柱子的距离。
 	- 在移动左右指针时，只有四种情况
 		- 如果移动高的那一边，会有两种情况：
