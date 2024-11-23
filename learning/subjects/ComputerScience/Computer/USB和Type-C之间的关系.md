@@ -14,6 +14,10 @@ USB 3.2 Gen 2，具有视频显示功能 (Display Port)，以及最大传输速�
 
 雷电协议，Apple 和 Microsoft 一起研发，仅应用于 Type-c 接口。
 
+## 全功能 Type-C
+
+特指同时包含 PD 充电、视频显示、数据传输等全部功能的 Type-C 接口，即也包括 Thunderbolt 雷电接口。
+
 ## 总结
 
 |                                  | **USB 3.2**  <br>**Gen 1x1**   | **USB 3.2**  <br>**Gen 1x2** | **USB 3.2**  <br>**Gen 2x1** | **USB 3.2**  <br>**Gen 2x2** | Thunderbolt |
