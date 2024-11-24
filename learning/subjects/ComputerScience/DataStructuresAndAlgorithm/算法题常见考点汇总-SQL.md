@@ -8,7 +8,7 @@
 
 ### Hive
 
-[HiveSQL常用函数](work/component/Big-Data/Apache-Hive/development/HiveSQL常用函数.md)
+[HiveSQL函数基础教程](work/component/Big-Data/Apache-Hive/development/HiveSQL函数基础教程.md)
 
 ### Spark
 
