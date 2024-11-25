@@ -32,10 +32,22 @@
 [Mac 有办法全局统一管理快捷键吗？ - V2EX](https://www.v2ex.com/t/846411)
 [「Keyboard Maestro」的搜索结果\_马克喵](https://www.macat.vip/?cat=&s=Keyboard+Maestro)
 
-## 快速切换打开的窗口
+### 快速切换打开的窗口
 
 解决 Mac 无法像 Windows 一样，支持 Alt+Tab 键快速切换窗口的功能。
 [AltTab - Windows alt-tab on macOS](https://alt-tab-macos.netlify.app/)
+
+## 顶部菜单栏管理
+
+### 菜单移动和删除
+
+按住 Command 键，鼠标左键选中后拖动即可调整顺序和删除
+[mac怎么管理顶部菜单状态栏? 怎么添加,删除, 排序移动顶部菜单状态栏图标? 超详细简单一看就会.\_mac顶部状态栏图标添加-CSDN博客](https://blog.csdn.net/weixin_37281289/article/details/114242348)
+
+### 隐藏顶部菜单 Hidden Bar
+
+支持菜单折叠和展示
+[Hidden Bar：一键折叠，给 macOS 菜单栏解压 - 少数派](https://sspai.com/post/58194)
 
 ## 安全问题
 
