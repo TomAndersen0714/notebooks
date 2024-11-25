@@ -2,35 +2,12 @@
 
 https://clickhouse.com/docs/en/sql-reference
 
-## JOIN
+## SELECT
 
-LEFT JOIN 时，若右表的 JOIN Key 有空值，则右表空值会匹配该字段所有值，因此 LEFT JOIN 时，右表 JOIN Key Expression 中的字段不应该存在空值。
-```sql
-SELECT *
-FROM (
-    SELECT 'a' AS a
-) AS a
-LEFT JOIN (
-    SELECT '' AS a
-    UNION ALL
-    SELECT 'b' AS a
-)
-USING(a)
-```
+[SELECT Query | ClickHouse Docs](https://clickhouse.com/docs/en/sql-reference/statements/select)
 
-```sql
-SELECT *
-FROM (
-    SELECT '' AS a
-) AS a
-LEFT JOIN (
-    SELECT 'a' AS a
-    UNION ALL
-    SELECT 'b' AS a
-)
-USING(a)
-```
+### JOIN
 
-## SQL 优化
+## 性能优化
 
 [ClickHouse-SQL性能优化教程](work/component/Big-Data/ClickHouse/API/ClickHouse-SQL性能优化教程.md)
