@@ -154,6 +154,6 @@ https://blog.csdn.net/lianghecai52171314/article/details/104658201
 2. [微信-数据仓库与Python大数据-Hive | 4 万字性能调优全面总结（推荐收藏）](https://mp.weixin.qq.com/s/9BCFrUqtDsrf7w8ipRow0Q)
 3. [微信-阿里云云栖号-大数据 SQL 数据倾斜与数据膨胀的优化与经验总结](https://mp.weixin.qq.com/s/0N0ZFFIZtQLp7CBBWuh_pQ)
 4. [【尚硅谷大数据技术 Hive On Spark 调优（离线数仓项目实战）-哔哩哔哩】](https://b23.tv/f2mPHla)
-5. [MySQL-SQL查询性能优化教程](work/component/Back-End/MySQL/solution/MySQL-SQL查询性能优化教程.md)
+5. [MySQL-SQL性能优化教程](work/component/Back-End/MySQL/solution/MySQL-SQL性能优化教程.md)
 6. [Apache Hive - LanguageManual JoinOptimization](https://cwiki.apache.org/confluence/display/hive/languagemanual+joinoptimization)
 

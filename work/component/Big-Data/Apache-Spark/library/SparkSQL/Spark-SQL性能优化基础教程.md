@@ -7,7 +7,7 @@
 
 ## 什么样的 Spark SQL 需要性能优化
 
-[什么样的 SQL 需要性能优化](work/component/Back-End/MySQL/solution/MySQL-SQL查询性能优化教程.md#什么样的%20SQL%20需要性能优化)
+[什么样的 SQL 需要性能优化](work/component/Back-End/MySQL/solution/MySQL-SQL性能优化教程.md#什么样的%20SQL%20需要性能优化)
 
 ## Spark SQL 常见性能问题及诊断方法
 

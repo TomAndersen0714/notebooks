@@ -8,6 +8,6 @@ https://clickhouse.com/docs/en/sql-reference
 
 ### JOIN
 
-## 性能优化
+## SQL 性能优化
 
 [ClickHouse-SQL性能优化教程](work/component/Big-Data/ClickHouse/API/ClickHouse-SQL性能优化教程.md)

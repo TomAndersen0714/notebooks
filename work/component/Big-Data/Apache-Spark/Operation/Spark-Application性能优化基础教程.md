@@ -3,7 +3,7 @@
 ## 常见性能问题的症状、原因及其解决方案
 
 [Spark-SQL性能优化基础教程](work/component/Big-Data/Apache-Spark/library/SparkSQL/Spark-SQL性能优化基础教程.md)
-[MySQL-SQL查询性能优化教程](work/component/Back-End/MySQL/solution/MySQL-SQL查询性能优化教程.md)
+[MySQL-SQL性能优化教程](work/component/Back-End/MySQL/solution/MySQL-SQL性能优化教程.md)
 
 ## Spark 任务常见性能问题、诊断及解决方法
 

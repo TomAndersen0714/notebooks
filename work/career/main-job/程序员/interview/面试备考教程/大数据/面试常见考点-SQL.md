@@ -16,7 +16,7 @@ RANGE BETWEEN UNBOUNDED PROCEEDING AND UNBOUNDED FOLLOWING
 有一个 sql 突然执行很慢可能有什么原因？
 - 从宏观上来说，一般情况下，可以把一个 SQL 查询看做是一个由多个 subtask 组成的一个 task。如果 SQL 执行速度较慢，必然是任务总量太大，即要么是 subtask 数量太多，要么是某些 subtask 的执行时间太长。估优化方向也是从这两个方面着手。
 
-[MySQL-SQL查询性能优化教程](work/component/Back-End/MySQL/solution/MySQL-SQL查询性能优化教程.md)
+[MySQL-SQL性能优化教程](work/component/Back-End/MySQL/solution/MySQL-SQL性能优化教程.md)
 
 ### 场景题
 
