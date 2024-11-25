@@ -1,6 +1,6 @@
 # ClickHouse 慢查询 SQL 排查方案
 
-## 定位慢查询
+## 检索筛选慢查询
 
 查询分析系统表 `system.query_log` 筛选慢查询:
 
@@ -44,9 +44,9 @@ ORDER BY {{desc_order_key}} desc
 LIMIT {{limit}}
 ```
 
-## 定位慢查询问题点
+## 定位慢查询代码段
 
-### EXPLAIN 慢查询
+### EXPLAIN 分析
 
 [EXPLAIN Statement | ClickHouse Docs](https://clickhouse.com/docs/en/sql-reference/statements/explain)
 
