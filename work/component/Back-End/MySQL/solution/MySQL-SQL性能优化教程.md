@@ -2,7 +2,7 @@
 
 ## 什么是性能
 
-[程序的性能](learning/subjects/ComputerScience/Programming/程序的性能.md)
+[软件程序的性能](learning/subjects/ComputerScience/Programming/软件程序的性能.md)
 
 ## 为什么要进行 SQL 性能优化
 
