@@ -1,9 +1,12 @@
-# MySQL SQL 查询性能优化教程
+# MySQL SQL 性能优化教程
+
+## 什么是性能
+
+[程序的性能](learning/subjects/ComputerScience/Programming/程序的性能.md)
 
 ## 为什么要进行 SQL 性能优化
 
-提升计算资源利用率
-提升任务的执行效率
+节约资源、节省时间、提升处理能力
 
 ## 什么样的 SQL 需要性能优化
 
