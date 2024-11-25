@@ -1,11 +1,12 @@
-# ClickHouse慢查询SQL排查方案
+# ClickHouse 慢查询 SQL 排查方案
 
+## 定位慢查询
 
-## 查询日志表 system.query_log
+查询分析系统表 `system.query_log` 筛选慢查询:
 
-ClickHouse Server 会自动搜集记录并采集 SQL 查询日志，定时将其写入到 `system.query_log` 表中，通过查询此表，可以排查和分析慢查询 SQL 的日志。
+ClickHouse Server 会自动搜集记录并采集 SQL 查询日志，定时将其写入到 `system.query_log` 表中，通过查询此表，可以排查和定位系统的慢查询。
 
-### 查询qps统计
+### 查询 qps 统计
 
 ```sql
 SELECT hostname,
@@ -27,9 +28,7 @@ ORDER BY hostname,
     minute
 ```
 
-
-
-### 慢查询sql查询
+### 慢查询 sql 查询
 
 ```SQL
 SELECT
@@ -44,3 +43,13 @@ WHERE toYYYYMMDD(event_date) BETWEEN toYYYYMMDD(toDateTime('{{datetime.start}}')
 ORDER BY {{desc_order_key}} desc
 LIMIT {{limit}}
 ```
+
+## 定位慢查询问题点
+
+### EXPLAIN 慢查询
+
+[EXPLAIN Statement | ClickHouse Docs](https://clickhouse.com/docs/en/sql-reference/statements/explain)
+
+EXPLAIN SYNTAX: 查看优化后的 SQL 语句，判断是否有明显的代码问题。
+
+EXPLAIN PLAN: 查看 SQL 的执行计划，观察其中的 Indexes 字段，判断是否命中索引。

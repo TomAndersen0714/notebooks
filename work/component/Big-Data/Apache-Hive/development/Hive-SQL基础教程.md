@@ -10,6 +10,32 @@
 
 [LanguageManual DDL - Apache Hive - Apache Software Foundation](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+DDL)
 
+### Create/Drop/Truncate/Alter Table
+
+#### Table
+
+```
+DROP TABLE IF EXISTS mammut_user.test_table_1;
+
+CREATE TABLE mammut_user.test_table_1(
+    `column1` INT COMMENT '列1',
+    `column2` DOUBLE COMMENT '列2',
+    `column3` STRING COMMENT '列3',
+    `column4` DECIMAL(18,2) COMMENT '列4'
+)
+COMMENT '测试表'
+PARTITIONED BY (
+    ds STRING COMMENT '分区1-YYYYMMDD'
+)
+STORED AS ORC;
+```
+
+PS：值得注意的是，Hive Table DDL 语句中的 Partition 和 Store 都是使用的过去式，即 Partitioned 和 Stored，这是 Hive
+
+#### Partition
+
+#### Column
+
 ### Show
 
 [Show - LanguageManual DDL - Apache Hive - Apache Software Foundation](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+DDL#LanguageManualDDL-Show)
