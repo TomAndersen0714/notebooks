@@ -1,6 +1,5 @@
 # JVM 内存模型
 
-
 ## 堆（Heap）
 
 堆（Heap）是线程共享的 JVM 内存空间。
@@ -25,17 +24,19 @@ JVM 启动之后创建，Heap 用来存放 Java 对象的实例，堆内存是�
 
 ## 本地方法栈（Native Method Stack）
 
-本地方法栈（Native Method Stack）和虚拟机栈（VM Stack）的功能十分类似，不过一个是存储 Java 方法的栈帧，一个是存储 Native 方法的栈帧，其中 Native 方法主要指的是使用非 Java 语言实现的方法。
+本地方法栈（Native Method Stack）和虚拟机栈（VM Stack）的功能十分类似，不过一个是存储 Java 方法的栈帧，一个是存储 Native 方法的栈帧，其中 Native 方法主要指的是使用非 Java 语言实现的方法，JDK 中的内置 Native 方法主要都是 C 语言实现的方法。
 
 ## 方法区（Method Area）
 
 方法区（Method Area）是线程共享的 JVM 内存空间。
 
-在 JVM 规范中，方法区（Method Area）主要用来存储加载后的类信息、常量、静态变量、Class 对象、即时编译器编译生成的机器码等数据，方法区也被称为非堆内存（Non-heap）。
+在 JVM 规范中，方法区（Method Area）主要用来存储加载后的类结构，如：运行常量池（Run-Time Constant Pool）、字段、方法、即时编译器编译生成的机器码等数据。
 
 在 Oracle JDK 1.7 及之前的 JVM（HotSpot）中，是通过堆内存中的永久代（Perm Generation）区域的物理方式来实现 JVM 方法区的。
 
-自 Oracle JDK 1.8 开始，JVM 放弃了 HotSpot 中永久代（PermGen）的实现方式，而是吸取了 JRockit VM 的技术，使用元空间（Meta Space）来代替旧版 HotSpot 中的永久代（PermGen），来实现方法区（Method Area）。
+自 Oracle JDK 1.8 开始，JVM 放弃了 HotSpot 中通过堆内存 Heap 中永久代（PermGen）的实现方式，而是吸取了 JRockit VM 的技术，使用非堆内存（堆外内存，non-heap）的元空间（Meta Space）来代替旧版 HotSpot 中的永久代（PermGen），实现方法区（Method Area）。
+
+其中元空间（Meta Space）是非堆内存（non-heap）的一部分，但仍属于 JVM 管理，不过不用参与 GC。
 
 ## 程序计数器（Program Counter Register）
 
