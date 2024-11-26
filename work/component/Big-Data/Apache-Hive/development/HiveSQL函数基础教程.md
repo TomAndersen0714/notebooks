@@ -65,7 +65,7 @@ NULL
 | array_contains(Array<T>, value) | boolean         | Returns TRUE if the array contains value.                                                                                                                                                 |
 | sort_array(Array<T>)            | array<t>        | Sorts the input array in ascending order according to the natural ordering of the array elements and returns it (as of version [0.9.0](https://issues.apache.org/jira/browse/HIVE-2279)). |
 
-##### 字符串函数
+##### String 函数
 
 - `binary(string)` ：字符串转换为字节
 - `length(string)` ：计算字符串长度

@@ -25,9 +25,19 @@ FROM stu_scores;
 (ROWS | RANGE) BETWEEN [num] FOLLOWING AND (UNBOUNDED | [num]) FOLLOWING
 ```
 
-### OVER(PARTITION BY, ORDER BY)
+### OVER(...)
 
-`OVER(PARTITION BY, ORDER BY)` 是用于声明当前行的初始窗口，`PARTITION BY` 代表按照多个指定列的值进行分组，和当前值相同的在同一个窗口，`ORDER BY` 则是用于定义当前窗口中，行与行之间的相对顺序。
+用于定义窗口的大小和行数据的顺序。
+
+### PARTITION BY, 和 ORDER BY
+
+`PARTITION BY, ORDER BY` 是用于声明当前行对应窗口的初始大小和顺序，`PARTITION BY` 代表按照多个指定列的值进行分组，和当前值相同的在同一个窗口，`ORDER BY` 则是用于定义当前窗口中，行与行之间的相对顺序。
+
+**注意事项：**
+1. 当 `ORDER BY` 被声明时，则窗口默认为 `RANGE BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW`，即会选取 ORDER BY 列之前的值到当前行的值的窗口。
+2. When ORDER BY is specified with missing WINDOW clause, the WINDOW specification defaults to `RANGE BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW`.
+3. 当 `ORDER BY` 和 Windows 都未被声明时，则窗口默认为 `ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING`，即整个数据范围。
+4. When both ORDER BY and WINDOW clauses are missing, the WINDOW specification defaults to `ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING`.
 
 ### RANGE BETWEEN 和 ROWS BETWEEN
 
@@ -35,7 +45,7 @@ FROM stu_scores;
 
 `ROWS BETWEEN` 是基于物理位置的范围定义。它考虑行之间的物理相对位置，不考虑行的实际值。这意味着无论值如何，只要行在指定的物理位置范围内，它们都被视为在同一个窗口内。
 
-### UNBOUNDED, CURRENT ROW, `[num]`
+### UNBOUNDED, CURRENT ROW, 和 `[num]`
 
 `UNBOUNDED`, `CURRENT ROW`, `[num]` 是用于声明当前窗口的上下边界，相对于当前行的偏移量，`UNBOUNDED` 代表边界和 `OVER()`
 
