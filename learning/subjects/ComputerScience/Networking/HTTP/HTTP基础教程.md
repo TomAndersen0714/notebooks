@@ -114,7 +114,7 @@ Session 对象，用来维持会话状态，会自动维护连续请求的 Cooki
 
 ## HTTPS
 
-[HTTPS基础教程](work/framework/Common/HTTP/HTTPS基础教程.md)
+[HTTPS基础教程](learning/subjects/ComputerScience/Networking/HTTP/HTTPS基础教程.md)
 
 ## 参考链接
 
